@@ -1,0 +1,9 @@
+{
+  "appId": "com.kedar.chemistry.alt",
+  "appName": "KEDAR'S CHEMISTRY Cyber",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

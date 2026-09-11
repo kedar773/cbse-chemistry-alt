@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 11 Chemistry · Chemical Thermodynamics — Master Study Notes</title>
+<link href="../../assets/vendor/katex/katex.min.css" rel="stylesheet"/>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px; line-height: 1.7; color: #1a1a2e; background: #f0f4f8;
+}
+/* ===== COLOR TOKENS ===== */
+:root {
+  --navy: #0d1b3e; --deepblue: #1a3a6b; --teal: #00b4d8;
+  --amber: #ffb703; --coral: #e63946; --green: #2ec4b6;
+  --lightbg: #f0f4f8; --cardbg: #ffffff; --text: #1a1a2e;
+  --textlight: #555; --border: #dde3ed;
+}
+/* ===== TAB CONTAINER ===== */
+.tab-container { max-width: 1200px; margin: 0 auto; padding: 0; }
+.tab-nav {
+  display: flex; background: var(--navy); position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(13,27,62,0.3); overflow-x: auto;
+}
+.tab-nav button {
+  flex: 1; min-width: 140px; padding: 16px 20px; background: transparent; color: rgba(255,255,255,0.6);
+  border: none; border-bottom: 3px solid transparent; cursor: pointer;
+  font-size: 15px; font-weight: 600; transition: all 0.25s; white-space: nowrap;
+  font-family: inherit;
+}
+.tab-nav button:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.06); }
+.tab-nav button.active { color: #fff; border-bottom-color: var(--teal); background: rgba(255,255,255,0.08); }
+.tab-content { display: none; padding: 32px 28px; background: var(--lightbg); min-height: 70vh; }
+.tab-content.active { display: block; }
+/* ===== CARDS ===== */
+.card {
+  background: var(--cardbg); border-radius: 12px; padding: 28px 32px; margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid var(--border);
+}
+.card h2 { font-size: 22px; color: var(--navy); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--teal); }
+.card h3 { font-size: 18px; color: var(--deepblue); margin: 20px 0 10px; }
+.card h4 { font-size: 16px; color: var(--deepblue); margin: 14px 0 8px; }
+.card p { margin-bottom: 12px; color: var(--text); }
+.card ul, .card ol { margin: 8px 0 12px 24px; }
+.card li { margin-bottom: 6px; }
+/* ===== EXAM BADGE ===== */
+.exam-badge {
+  display: inline-block; background: var(--coral); color: #fff; font-size: 12px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px; margin-left: 8px; white-space: nowrap;
+  vertical-align: middle; letter-spacing: 0.3px;
+}
+.exam-badge.vhy { background: #9b2226; }
+.freq-badge {
+  display: inline-block; background: #e85d04; color: #fff; font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 4px; margin: 4px 4px 4px 0; white-space: nowrap;
+}
+/* ===== CROSS-REF ===== */
+.xref { color: var(--teal); font-weight: 600; font-size: 13px; cursor: pointer; }
+.xref:hover { text-decoration: underline; }
+/* ===== DERIVATION BUBBLE ===== */
+.derivation-btn {
+  display: inline-block; background: #fef3cd; color: #856404; border: 1px solid #ffc107;
+  border-radius: 6px; padding: 4px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: 0.2s; margin: 6px 0; user-select: none;
+}
+.derivation-btn:hover { background: #ffe69c; transform: translateY(-1px); }
+.derivation-btn.active { background: #ffc107; color: #533f03; }
+.derivation-panel {
+  max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.3s ease;
+  background: #fdfcf0; border: 1px solid #ffe69c; border-radius: 8px; margin: 4px 0 12px;
+}
+.derivation-panel.open { max-height: 2000px; padding: 20px 24px; }
+.derivation-panel h4 { color: #856404; margin-bottom: 8px; }
+.derivation-panel .step { margin: 6px 0; padding-left: 16px; border-left: 3px solid var(--amber); }
+.derivation-panel .hots { background: #e8f4fd; border-radius: 6px; padding: 10px 14px; margin: 8px 0; border-left: 3px solid var(--teal); }
+.derivation-panel .hots strong { color: var(--deepblue); }
+/* ===== TABLES ===== */
+.content-table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px;
+}
+.content-table th { background: var(--deepblue); color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
+.content-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+.content-table tr:nth-child(even) { background: #f8fafc; }
+.content-table tr:hover { background: #eef5ff; }
+/* ===== DETAILS/SUMMARY (NCERT) ===== */
+details.ncert {
+  background: #fafbfc; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; overflow: hidden;
+}
+details.ncert summary {
+  padding: 14px 18px; cursor: pointer; font-weight: 600; color: var(--deepblue);
+  background: #f0f4f8; transition: 0.2s; display: flex; align-items: center; gap: 8px;
+}
+details.ncert summary::before { content: '▸'; font-size: 18px; transition: transform 0.25s; color: var(--teal); }
+details.ncert[open] summary::before { transform: rotate(90deg); }
+details.ncert summary:hover { background: #e4eaf3; }
+details.ncert .solution { padding: 16px 20px; }
+details.ncert .solution p { margin-bottom: 8px; }
+details.ncert .solution .step { margin: 4px 0 4px 16px; }
+/* ===== PROCESS MATRIX ===== */
+.process-matrix { font-size: 13px; }
+.process-matrix td:first-child { font-weight: 600; color: var(--navy); }
+/* ===== FORMULA BOX ===== */
+.formula-box {
+  background: #e8f4fd; border-left: 4px solid var(--teal); border-radius: 6px;
+  padding: 14px 18px; margin: 12px 0;
+}
+.formula-box .label { font-size: 12px; color: var(--textlight); text-transform: uppercase; letter-spacing: 0.5px; }
+.variables-table td:first-child { font-weight: 600; color: var(--deepblue); width: 140px; }
+/* ===== TAB 4 CANVAS ===== */
+.sim-container { background: var(--cardbg); border-radius: 12px; padding: 20px; margin-bottom: 28px; border: 1px solid var(--border); }
+.sim-container h2 { color: var(--navy); font-size: 20px; margin-bottom: 4px; }
+.sim-container .sim-subtitle { color: var(--textlight); font-size: 14px; margin-bottom: 14px; }
+.sim-layout { display: flex; gap: 20px; flex-wrap: wrap; }
+.sim-layout .canvas-wrap { flex: 1 1 580px; }
+.sim-layout .controls-wrap { flex: 0 0 280px; display: flex; flex-direction: column; gap: 12px; }
+.sim-layout .controls-wrap label { font-size: 14px; font-weight: 600; color: var(--deepblue); display: flex; justify-content: space-between; align-items: center; }
+.sim-layout .controls-wrap input[type=range] { width: 100%; margin: 4px 0; accent-color: var(--teal); }
+.sim-layout .controls-wrap .btn {
+  background: var(--deepblue); color: #fff; border: none; padding: 10px 16px; border-radius: 6px;
+  font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 14px;
+}
+.sim-layout .controls-wrap .btn:hover { background: var(--teal); }
+.sim-layout .controls-wrap .btn.active { background: var(--coral); }
+.sim-layout .controls-wrap select {
+  width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px;
+  font-size: 14px; background: #fff; color: var(--text);
+}
+.readout-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: #f8fafc;
+  border-radius: 8px; padding: 12px; border: 1px solid var(--border);
+}
+.readout-grid .item { font-size: 13px; display: flex; justify-content: space-between; }
+.readout-grid .item .val { font-weight: 700; color: var(--navy); font-family: 'Courier New', monospace; }
+/* ===== GAUGE ===== */
+.gauge-wrap { position: relative; width: 200px; height: 200px; margin: 0 auto; }
+.gauge-wrap svg { width: 100%; height: 100%; }
+.gauge-needle { transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); transform-origin: 100px 100px; }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .tab-nav button { font-size: 13px; padding: 12px 10px; min-width: auto; }
+  .tab-content { padding: 16px 12px; }
+  .card { padding: 18px 16px; }
+  .sim-layout .canvas-wrap { flex: 1 1 100%; }
+  .sim-layout .controls-wrap { flex: 1 1 100%; }
+  .readout-grid { grid-template-columns: 1fr; }
+}
+/* ===== PRINT ===== */
+@media print {
+  body { background: #fff !important; color: #000 !important; font-size: 11px; }
+  .tab-nav { display: none !important; }
+  .tab-content { display: block !important; padding: 0 !important; background: #fff !important; min-height: auto !important; }
+  .tab-content:not(.active) { display: block !important; }
+  .card { box-shadow: none !important; border: 1px solid #ddd !important; break-inside: avoid; padding: 12px 16px !important; margin-bottom: 12px !important; }
+  .derivation-btn { display: none !important; }
+  .derivation-panel { max-height: none !important; overflow: visible !important; padding: 10px 16px !important; border: 1px solid #ddd !important; }
+  #tab4 { display: none !important; }
+  details.ncert { break-inside: avoid; }
+  details.ncert summary { background: #f5f5f5 !important; }
+  details.ncert:not([open]) { border: 1px solid #ccc !important; }
+  details.ncert:not([open]) .solution { display: block !important; padding: 12px 16px !important; }
+  .exam-badge { border: 1px solid #999 !important; color: #000 !important; background: transparent !important; }
+  .formula-box { border-left-color: #555 !important; background: transparent !important; }
+  .content-table th { background: #333 !important; color: #fff !important; }
+  .sim-container { display: none !important; }
+  .process-matrix { font-size: 10px; }
+  .variables-table td:first-child { width: 100px; }
+  .xref { color: #000 !important; }
+}
+</style>
+</head>
+<body>
+<div class="tab-container">
+<nav class="tab-nav" id="tabNav">
+<button class="active" onclick="switchTab(1)">🔬 State Functions &amp; First Law</button>
+<button onclick="switchTab(2)">⚡ Second &amp; Third Laws</button>
+<button onclick="switchTab(3)">📘 NCERT Solutions</button>
+<button onclick="switchTab(4)">🛠️ Virtual Engine Lab</button>
+</nav>
+<!-- ===== TAB 1 ===== -->
+<section class="tab-content active" id="tab1">
+<div class="card">
+<h2>1.1 Thermodynamic Terms</h2>
+<p><strong>System:</strong> The part of the universe under investigation. <strong>Surroundings:</strong> Everything else. <strong>Universe</strong> = System + Surroundings.</p>
+<table class="content-table">
+<tr><th>Type</th><th>Exchange with Surroundings</th><th>Example</th></tr>
+<tr><td><strong>Open</strong></td><td>Matter + Energy</td><td>Open beaker — steam escapes, heat flows out</td></tr>
+<tr><td><strong>Closed</strong></td><td>Energy only</td><td>Copper vessel with lid — heat transfers, mass fixed</td></tr>
+<tr><td><strong>Isolated</strong></td><td>None</td><td>Thermos flask — no heat, no mass exchange</td></tr>
+</table>
+<p><strong>State Variables</strong> (p, V, T, n, U, H) describe the state of the system. <span class="exam-badge">⚡ CBSE Expected — High Yield</span></p>
+<p><strong>State Functions</strong> depend only on the initial and final states (ΔU, ΔH, ΔS, ΔG). <strong>Path Functions</strong> depend on the route taken (q, w).</p>
+</div>
+<div class="card">
+<h2>1.2 Internal Energy &amp; the First Law of Thermodynamics</h2>
+<p><strong>Internal Energy (U):</strong> Total energy stored within a system (translational, rotational, vibrational KE + PE of molecules, bonds, electrons).</p>
+<div class="formula-box">
+<div class="label">First Law of Thermodynamics</div>
+<p>\[ \Delta U = q + w \]</p>
+</div>
+<table class="content-table variables-table">
+<tr><td>ΔU</td><td>Change in internal energy (J or kJ)</td></tr>
+<tr><td>q</td><td>Heat exchanged (J) — +q = heat absorbed (system gains), −q = heat released</td></tr>
+<tr><td>w</td><td>Work done on/by the system (J) — +w = work done <em>on</em> the system, −w = work done <em>by</em> the system</td></tr>
+</table>
+<p><strong>Sign Convention (IUPAC):</strong> Both q and w are positive when energy enters the system, negative when energy leaves.</p>
+<span class="derivation-btn" onclick="toggleDerivation('deriv1')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv1">
+<h4>Derivation</h4>
+<p>The First Law is a statement of <strong>energy conservation</strong>. If a system absorbs heat q and work w is done on it, the total energy of the system increases by (q + w). Since energy cannot be created or destroyed:</p>
+<p class="step">\[ \Delta U_{\text{system}} + \Delta U_{\text{surroundings}} = 0 \]</p>
+<p class="step">For the system alone: \[ \Delta U = q + w \]</p>
+<p><strong>Cyclic Process:</strong> If the system returns to its initial state, ΔU = 0, so q = −w.</p>
+<div class="hots">
+<strong>🔥 HOTS Application Strategies:</strong><br/>
+          1. <strong>Sign Analysis:</strong> If a gas expands (−w) and absorbs heat (+q), ΔU = q − w. If the system is insulated (q = 0), then ΔU = w — all energy change is via work (adiabatic).<br/>
+          2. <strong>Cyclic Engines:</strong> In a cyclic process (ΔU = 0), the net heat absorbed equals the net work done: q = −w. This is the basis of all heat engine analysis.<br/>
+          3. <strong>Isolated System:</strong> If both q = 0 and w = 0, then ΔU = 0 — internal energy is constant.
+        </div>
+</div>
+<h3>Process Variations Matrix</h3>
+<table class="content-table process-matrix">
+<tr><th>Process</th><th>Conditions</th><th>ΔU = q + w reduces to</th><th>Real Example</th></tr>
+<tr><td>Isothermal</td><td>ΔT = 0 (ideal gas: ΔU = 0)</td><td>q = −w</td><td>Slow expansion of gas in a cylinder immersed in a water bath</td></tr>
+<tr><td>Adiabatic</td><td>q = 0</td><td>ΔU = w</td><td>Rapid compression in a diesel engine (no heat transfer in/out)</td></tr>
+<tr><td>Isochoric</td><td>ΔV = 0, w = 0</td><td>ΔU = q<sub>V</sub></td><td>Bomb calorimeter — constant volume, all heat goes to ΔU</td></tr>
+<tr><td>Isobaric</td><td>Δp = 0</td><td>ΔU = q<sub>p</sub> − pΔV</td><td>Open beaker reaction at atmospheric pressure</td></tr>
+<tr><td>Free Expansion</td><td>p<sub>ext</sub> = 0, w = 0</td><td>ΔU = q</td><td>Gas expanding into vacuum</td></tr>
+</table>
+</div>
+<div class="card">
+<h2>1.3 Work: Pressure-Volume (PV) Work</h2>
+<p>Mechanical work done by/on a gas as it expands or contracts against an external pressure:</p>
+<div class="formula-box">
+<div class="label">General PV Work</div>
+<p>\[ w = -\int_{V_i}^{V_f} P_{\text{ext}} \, dV \]</p>
+</div>
+<span class="derivation-btn" onclick="toggleDerivation('deriv2a')">📐 Reversible Work Derivation</span>
+<div class="derivation-panel" id="deriv2a">
+<h4>Derivation: Reversible Isothermal Work for an Ideal Gas</h4>
+<p class="step"><strong>Step 1:</strong> For a reversible process, P<sub>ext</sub> = P<sub>gas</sub> ± dP ≈ P<sub>gas</sub> at every instant.</p>
+<p class="step"><strong>Step 2:</strong> From the ideal gas law: \[ P = \frac{nRT}{V} \]</p>
+<p class="step"><strong>Step 3:</strong> Substitute: \[ w_{\text{rev}} = -\int_{V_i}^{V_f} \frac{nRT}{V}\,dV = -nRT\int_{V_i}^{V_f}\frac{dV}{V} \]</p>
+<p class="step"><strong>Step 4:</strong> Integrate: \[ w_{\text{rev}} = -nRT\ln\frac{V_f}{V_i} = -2.303\,nRT\log\frac{V_f}{V_i} \]</p>
+<p><strong>SI Units:</strong> n (mol), R = 8.314 J mol⁻¹ K⁻¹, T (K) → w in Joules.</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. Maximum work is obtained in a reversible expansion (area under curve is maximal).<br/>
+          2. For compression, the reversible process requires minimum work input.<br/>
+          3. <strong>Exam Tip:</strong> Compare w<sub>rev</sub> vs w<sub>irrev</sub> — for the same ΔV, |w<sub>rev</sub>| &gt; |w<sub>irrev</sub>|.
+        </div>
+</div>
+<span class="derivation-btn" onclick="toggleDerivation('deriv2b')">📐 Irreversible Work Derivation</span>
+<div class="derivation-panel" id="deriv2b">
+<h4>Derivation: Irreversible (Constant P<sub>ext</sub>) Work</h4>
+<p class="step">If the external pressure is constant throughout the expansion:</p>
+<p class="step">\[ w_{\text{irrev}} = -\int_{V_i}^{V_f} P_{\text{ext}}\,dV = -P_{\text{ext}}(V_f - V_i) = -P_{\text{ext}}\Delta V \]</p>
+<p class="step">For an ideal gas expanding irreversibly against constant atmospheric pressure: \[ w_{\text{irrev}} = -P_{\text{atm}}\Delta V \]</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. <strong>Free expansion (vacuum):</strong> P<sub>ext</sub> = 0 ⇒ w = 0. If also adiabatic (q = 0), then ΔU = 0 and ΔT = 0.<br/>
+          2. In a two-step irreversible process, the total work is the sum of work from each step.<br/>
+          3. <strong>Exam link:</strong> NCERT Q6.3 and Q6.4 deal directly with these calculations.
+        </div>
+</div>
+</div>
+<div class="card">
+<h2>1.4 Enthalpy <span class="exam-badge">⚡ CBSE Expected — High Yield</span></h2>
+<p>Enthalpy is defined as: \[ H = U + pV \]</p>
+<p>Most chemical reactions occur at constant pressure (open to atmosphere), not constant volume. Enthalpy accounts for the PV work automatically.</p>
+<p>At constant pressure: \[ q_p = \Delta H \]</p>
+<div class="formula-box">
+<div class="label">ΔH–ΔU Relationship</div>
+<p>\[ \Delta H = \Delta U + \Delta n_g RT \]</p>
+</div>
+<table class="content-table variables-table">
+<tr><td>ΔH</td><td>Enthalpy change (kJ mol⁻¹)</td></tr>
+<tr><td>ΔU</td><td>Internal energy change (kJ mol⁻¹)</td></tr>
+<tr><td>Δn<sub>g</sub></td><td>(moles of gaseous products) − (moles of gaseous reactants)</td></tr>
+</table>
+<span class="derivation-btn" onclick="toggleDerivation('deriv3')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv3">
+<h4>Derivation: H = U + PV</h4>
+<p class="step"><strong>At constant pressure:</strong> q<sub>p</sub> = ΔU + PΔV (from First Law, since w = −PΔV and ΔU = q<sub>p</sub> − PΔV)</p>
+<p class="step"><strong>Define H = U + PV:</strong> ΔH = ΔU + Δ(PV). At constant P: ΔH = ΔU + PΔV.</p>
+<p class="step"><strong>For reactions with gaseous species:</strong> PΔV = Δn<sub>g</sub>RT (assuming ideal gas behavior)</p>
+<p class="step">Therefore: \[ \Delta H = \Delta U + \Delta n_g RT \]</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. If Δn<sub>g</sub> &gt; 0 (more gas moles produced), then ΔH &gt; ΔU — the system has done work expanding, so extra heat is needed.<br/>
+          2. If Δn<sub>g</sub> = 0, then ΔH = ΔU (e.g., N₂ + O₂ → 2NO).<br/>
+          3. If Δn<sub>g</sub> &lt; 0 (gas consumed, e.g., 2H₂ + O₂ → 2H₂O(l)), ΔH &lt; ΔU — surroundings do work on the system.<br/>
+          4. <strong>Real context:</strong> Combustion of methane: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l). Δn<sub>g</sub> = 1 − 3 = −2, so ΔH = ΔU − 2RT, meaning ΔH is more negative than ΔU.
+        </div>
+</div>
+<h3>Process Variations</h3>
+<table class="content-table process-matrix">
+<tr><th>Condition</th><th>Heat exchanged equals</th><th>Application</th></tr>
+<tr><td>Constant volume (q<sub>V</sub>)</td><td>ΔU = q<sub>V</sub></td><td>Bomb calorimeter (Tab 4.3)</td></tr>
+<tr><td>Constant pressure (q<sub>p</sub>)</td><td>ΔH = q<sub>p</sub></td><td>Coffee-cup calorimeter, open lab reactions</td></tr>
+</table>
+</div>
+<div class="card">
+<h2>1.5 Heat Capacity <span class="exam-badge">⚡ CBSE Expected — High Yield</span></h2>
+<p><strong>Specific Heat Capacity (c):</strong> Heat required to raise 1 g of a substance by 1 K (J g⁻¹ K⁻¹).</p>
+<p><strong>Molar Heat Capacity (C):</strong> Heat required to raise 1 mol by 1 K (J mol⁻¹ K⁻¹).</p>
+<p>\[ q = m c \Delta T = n C \Delta T \]</p>
+<p>\[ C_p = \text{Molar heat capacity at constant pressure} \]</p>
+<p>\[ C_v = \text{Molar heat capacity at constant volume} \]</p>
+<div class="formula-box">
+<div class="label">Mayer's Relation (for ideal gases)</div>
+<p>\[ C_p - C_v = R \]</p>
+</div>
+<span class="derivation-btn" onclick="toggleDerivation('deriv4')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv4">
+<h4>Derivation: C<sub>p</sub> − C<sub>v</sub> = R</h4>
+<p class="step"><strong>Step 1:</strong> At constant volume, dU = C<sub>v</sub> dT (all heat goes to internal energy).</p>
+<p class="step"><strong>Step 2:</strong> At constant pressure, dH = C<sub>p</sub> dT. But H = U + PV.</p>
+<p class="step"><strong>Step 3:</strong> dH = dU + d(PV) = C<sub>v</sub>dT + d(RT) = C<sub>v</sub>dT + RdT = (C<sub>v</sub> + R)dT</p>
+<p class="step"><strong>Step 4:</strong> Comparing: C<sub>p</sub> dT = (C<sub>v</sub> + R) dT ⇒ C<sub>p</sub> − C<sub>v</sub> = R.</p>
+<p><strong>For monatomic ideal gas:</strong> C<sub>v</sub> = (3/2)R, C<sub>p</sub> = (5/2)R. <strong>For diatomic:</strong> C<sub>v</sub> = (5/2)R, C<sub>p</sub> = (7/2)R.</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. γ = C<sub>p</sub>/C<sub>v</sub> is the <strong>adiabatic index</strong>. For monatomic gas γ = 1.67, diatomic γ = 1.40, polyatomic γ ≈ 1.33.<br/>
+          2. In adiabatic processes: PV<sup>γ</sup> = constant, TV<sup>γ−1</sup> = constant, TP<sup>(1−γ)/γ</sup> = constant.<br/>
+          3. <strong>Exam trick:</strong> For an ideal gas undergoing an adiabatic process, w = C<sub>v</sub>ΔT = ΔU.
+        </div>
+</div>
+</div>
+<div class="card">
+<h2>1.6 Calorimetry</h2>
+<h3>Bomb Calorimeter (Constant Volume)</h3>
+<p>\[ q_V = C_{\text{cal}} \Delta T = \Delta U \]</p>
+<p>📌 <span class="xref">[See Solved Q 6.8]</span> — direct NCERT application.</p>
+<h3>Coffee-Cup Calorimeter (Constant Pressure)</h3>
+<p>\[ q_p = m c \Delta T = \Delta H \]</p>
+<span class="derivation-btn" onclick="toggleDerivation('deriv11')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv11">
+<h4>Derivation: Bomb Calorimeter — ΔU from Temperature Rise</h4>
+<p class="step"><strong>Step 1:</strong> In a bomb calorimeter, V = constant ⇒ w = 0, so ΔU = q<sub>V</sub>.</p>
+<p class="step"><strong>Step 2:</strong> The heat released by the combustion is absorbed by the calorimeter assembly (water + bomb + stirrer + thermometer).</p>
+<p class="step"><strong>Step 3:</strong> If the calorimeter has total heat capacity C<sub>cal</sub> (in J K⁻¹), then q<sub>V</sub> = C<sub>cal</sub> × ΔT.</p>
+<p class="step"><strong>Step 4:</strong> The internal energy change of the reaction is ΔU = −q<sub>V</sub> (negative because heat is <em>released</em>).</p>
+<p class="step"><strong>Step 5:</strong> To convert to per mole: ΔU = −C<sub>cal</sub>ΔT / n<sub>fuel</sub>.</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. To find C<sub>cal</sub>, burn a standard substance with known ΔU (e.g., benzoic acid).<br/>
+          2. Once C<sub>cal</sub> is known, any unknown fuel's ΔU can be determined.<br/>
+          3. <strong>Exam link:</strong> If the water equivalent is given (W in g), then C<sub>cal</sub> = W × 4.184 J K⁻¹.
+        </div>
+</div>
+</div>
+<div class="card">
+<h2>1.7 Hess's Law of Constant Heat Summation <span class="exam-badge">⚡ CBSE Expected — High Yield</span></h2>
+<p>"The total enthalpy change for a chemical reaction is the same regardless of whether it occurs in a single step or multiple steps."</p>
+<div class="formula-box">
+<p>\[ \Delta_r H = \Delta_r H_1 + \Delta_r H_2 + \Delta_r H_3 + \cdots \]</p>
+</div>
+<p>📌 <span class="xref">[See Solved Q 6.12 &amp; Q 6.14]</span></p>
+<span class="derivation-btn" onclick="toggleDerivation('deriv6')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv6">
+<h4>Conceptual Foundation</h4>
+<p class="step">Enthalpy is a <strong>state function</strong> — ΔH depends only on initial and final states, not the path taken.</p>
+<p class="step">If reaction A → D can proceed via: (i) A → D directly (ΔH₁), or (ii) A → B → C → D (ΔH₂ + ΔH₃ + ΔH₄), then ΔH₁ = ΔH₂ + ΔH₃ + ΔH₄.</p>
+<p><strong>Standard Enthalpy of Reaction from Formation Enthalpies:</strong></p>
+<p class="step">\[ \Delta_r H^\circ = \sum \nu_i \Delta_f H^\circ(\text{products}) - \sum \nu_j \Delta_f H^\circ(\text{reactants}) \]</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. <strong>Bond Enthalpy Method:</strong> Δ<sub>r</sub>H° = Σ(Bond enthalpies of bonds broken) − Σ(Bond enthalpies of bonds formed).<br/>
+          2. <strong>Born-Haber Cycle:</strong> Apply Hess's Law to calculate lattice enthalpy from ionization, electron affinity, sublimation, and dissociation data.<br/>
+          3. <strong>Exam strategy:</strong> Write the target equation, then manipulate given equations (reverse = flip sign, multiply = scale) to cancel intermediates.
+        </div>
+</div>
+</div>
+<div class="card">
+<h2>1.8 Standard Enthalpies of Reactions <span class="exam-badge">⚡ CBSE Expected — High Yield</span></h2>
+<table class="content-table">
+<tr><th>Type</th><th>Symbol</th><th>Definition</th><th>Example</th></tr>
+<tr><td>Formation</td><td>Δ<sub>f</sub>H°</td><td>Enthalpy to form 1 mol from elements in standard states</td><td>C(s) + 2H₂(g) → CH₄(g), Δ<sub>f</sub>H° = −74.81 kJ mol⁻¹</td></tr>
+<tr><td>Combustion</td><td>Δ<sub>c</sub>H°</td><td>Enthalpy to burn 1 mol completely in O₂</td><td>CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l), Δ<sub>c</sub>H° = −890.3 kJ mol⁻¹</td></tr>
+<tr><td>Fusion</td><td>Δ<sub>fus</sub>H</td><td>Enthalpy to melt 1 mol solid → liquid</td><td>H₂O(s) → H₂O(l), Δ<sub>fus</sub>H = +6.00 kJ mol⁻¹</td></tr>
+<tr><td>Vaporization</td><td>Δ<sub>vap</sub>H</td><td>Enthalpy to vaporize 1 mol liquid → gas</td><td>H₂O(l) → H₂O(g), Δ<sub>vap</sub>H = +40.79 kJ mol⁻¹</td></tr>
+<tr><td>Atomization</td><td>Δ<sub>a</sub>H°</td><td>Enthalpy to break 1 mol substance into atoms</td><td>H₂(g) → 2H(g), Δ<sub>a</sub>H° = +436 kJ mol⁻¹</td></tr>
+<tr><td>Bond Enthalpy</td><td>Δ<sub>bond</sub>H</td><td>Mean enthalpy to break a specific bond (gas phase)</td><td>C–H bond in CH₄ ≈ +413 kJ mol⁻¹</td></tr>
+</table>
+<p><strong>Standard State:</strong> Pure substance at 1 bar pressure. For elements, the most stable form at 1 bar and given T (e.g., C<sub>graphite</sub>(s), H₂(g), O₂(g)).</p>
+<p>📌 <span class="xref">[See Solved Q 6.10 — phase change enthalpy]</span></p>
+</div>
+<div class="card">
+<h2>1.9 Extensive vs Intensive Properties</h2>
+<table class="content-table">
+<tr><th>Extensive (depend on amount)</th><th>Intensive (independent of amount)</th></tr>
+<tr><td>U, H, S, G, V, q, w, C, m</td><td>T, p, ρ, specific heat (c), molar volume, Δ<sub>r</sub>H (per mole)</td></tr>
+</table>
+<p><span class="exam-badge">⚡ CBSE Expected — High Yield</span> Ratio of two extensive properties is always intensive.</p>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ===== TAB 2 ===== -->
+<section class="tab-content" id="tab2">
+<div class="card">
+<h2>2.1 Spontaneity — What Makes a Reaction Happen? <span class="exam-badge vhy">⚡ CBSE Expected — Very High Yield</span></h2>
+<p>A <strong>spontaneous process</strong> occurs without external intervention once started. <em>Not the same as "fast"</em> — spontaneity is about thermodynamic feasibility, not kinetics.</p>
+<p><strong>Real-world examples:</strong></p>
+<ul>
+<li>✅ Ice melting at 25°C — spontaneous (endothermic!)</li>
+<li>✅ Sugar dissolving in water — spontaneous</li>
+<li>✅ Rusting of iron — spontaneous but slow (months)</li>
+<li>❌ Water freezing at 25°C — non-spontaneous</li>
+</ul>
+<p><strong>Why ΔH alone is not a criterion:</strong> Ice melting is endothermic (ΔH &gt; 0) but spontaneous above 0°C. <em>Both enthalpy and entropy must be considered.</em></p>
+</div>
+<div class="card">
+<h2>2.2 Entropy (S) — The Measure of Disorder <span class="exam-badge">⚡ CBSE Expected — High Yield</span></h2>
+<p><strong>Entropy</strong> is a state function that quantifies the degree of randomness/disorder in a system.</p>
+<div class="formula-box">
+<div class="label">Entropy Change (Reversible Process)</div>
+<p>\[ \Delta S = \frac{q_{\text{rev}}}{T} \]</p>
+</div>
+<table class="content-table variables-table">
+<tr><td>ΔS</td><td>Entropy change (J K⁻¹)</td></tr>
+<tr><td>q<sub>rev</sub></td><td>Heat exchanged in a reversible process (J)</td></tr>
+<tr><td>T</td><td>Absolute temperature (K)</td></tr>
+</table>
+<span class="derivation-btn" onclick="toggleDerivation('deriv7')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv7">
+<h4>Conceptual Foundation</h4>
+<p class="step">For a reversible isothermal process: ΔS = q<sub>rev</sub>/T.</p>
+<p class="step"><strong>Why reversible?</strong> Entropy is a state function, so ΔS is path-independent. We evaluate ΔS by imagining a reversible path between the same initial and final states, because only along a reversible path is the system in equilibrium at every stage.</p>
+<p class="step"><strong>Phase change example:</strong> For melting ice at 273 K, q<sub>rev</sub> = Δ<sub>fus</sub>H = 6.00 kJ mol⁻¹, so ΔS = 6000 / 273 = +21.97 J K⁻¹ mol⁻¹.</p>
+<p class="step"><strong>Statistical interpretation (Boltzmann):</strong> \[ S = k \ln W \]</p>
+<p>where k = R/N<sub>A</sub> = 1.38 × 10⁻²³ J K⁻¹ (Boltzmann constant), and W = number of microstates.</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. Entropy increases with: increase in T, increase in V (gas expansion), increase in n (more moles), phase transition solid → liquid → gas.<br/>
+          2. For an ideal gas undergoing isothermal expansion: ΔS = nR ln(V₂/V₁) = −nR ln(P₂/P₁).<br/>
+          3. <strong>Exam prediction:</strong> Predict sign of ΔS for a reaction — more gas moles on product side → ΔS positive.
+        </div>
+</div>
+</div>
+<div class="card">
+<h2>2.3 The Second Law of Thermodynamics <span class="exam-badge">⚡ CBSE Expected — High Yield</span></h2>
+<p>"The entropy of the universe always increases for a spontaneous process."</p>
+<div class="formula-box">
+<p>\[ \Delta S_{\text{total}} = \Delta S_{\text{sys}} + \Delta S_{\text{surr}} &gt; 0 \]</p>
+</div>
+<span class="derivation-btn" onclick="toggleDerivation('deriv8')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv8">
+<h4>Understanding ΔS<sub>surr</sub></h4>
+<p class="step">The surroundings are so large that heat exchange does not change their temperature. For the surroundings, any heat transfer is effectively reversible:</p>
+<p class="step">\[ \Delta S_{\text{surr}} = -\frac{q_{\text{sys}}}{T} \]</p>
+<p class="step">At constant pressure: q<sub>sys</sub> = ΔH (for the system), so:</p>
+<p class="step">\[ \Delta S_{\text{surr}} = -\frac{\Delta H}{T} \]</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. For an exothermic reaction (ΔH &lt; 0), ΔS<sub>surr</sub> &gt; 0 — the surroundings gain disorder as they absorb heat.<br/>
+          2. For an endothermic reaction (ΔH &gt; 0), ΔS<sub>surr</sub> &lt; 0 — the surroundings lose entropy.<br/>
+          3. The Second Law implies that energy spontaneously disperses from localized to spread-out forms.
+        </div>
+</div>
+</div>
+<div class="card">
+<h2>2.4 The Third Law of Thermodynamics</h2>
+<p>"The entropy of a perfectly crystalline substance is zero at absolute zero (0 K)."</p>
+<p>This allows the calculation of <strong>absolute entropies</strong> (S°), not just entropy changes. Standard molar entropies are tabulated at 298 K.</p>
+<p><strong>Implication:</strong> All substances have positive entropy values at any T &gt; 0 K. Perfect order exists only at 0 K.</p>
+</div>
+<div class="card">
+<h2>2.5 Gibbs Free Energy (G) <span class="exam-badge vhy">⚡ CBSE Expected — Very High Yield</span></h2>
+<p>Gibbs free energy combines enthalpy and entropy into a single criterion for spontaneity at constant temperature and pressure.</p>
+<div class="formula-box">
+<div class="label">Gibbs Free Energy</div>
+<p>\[ G = H - TS \]</p>
+<p>\[ \Delta G = \Delta H - T\Delta S \]</p>
+</div>
+<table class="content-table variables-table">
+<tr><td>ΔG</td><td>Gibbs free energy change (kJ mol⁻¹)</td></tr>
+<tr><td>ΔH</td><td>Enthalpy change (kJ mol⁻¹)</td></tr>
+<tr><td>T</td><td>Absolute temperature (K)</td></tr>
+<tr><td>ΔS</td><td>Entropy change (kJ K⁻¹ mol⁻¹)</td></tr>
+</table>
+<p><strong>Spontaneity Criterion:</strong>
+        ΔG &lt; 0 → Spontaneous; ΔG = 0 → Equilibrium; ΔG &gt; 0 → Non-spontaneous.</p>
+<span class="derivation-btn" onclick="toggleDerivation('deriv9')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv9">
+<h4>Derivation: ΔG = ΔH − TΔS</h4>
+<p class="step"><strong>Starting point:</strong> ΔS<sub>total</sub> = ΔS<sub>sys</sub> + ΔS<sub>surr</sub> &gt; 0 (for spontaneity)</p>
+<p class="step"><strong>We know:</strong> ΔS<sub>surr</sub> = −ΔH<sub>sys</sub> / T (at constant P)</p>
+<p class="step"><strong>Substitute:</strong> ΔS<sub>total</sub> = ΔS<sub>sys</sub> − ΔH<sub>sys</sub> / T &gt; 0</p>
+<p class="step"><strong>Multiply by T:</strong> TΔS<sub>sys</sub> − ΔH<sub>sys</sub> &gt; 0</p>
+<p class="step"><strong>Rearrange:</strong> −(ΔH<sub>sys</sub> − TΔS<sub>sys</sub>) &gt; 0</p>
+<p class="step"><strong>Define ΔG:</strong> ΔG<sub>sys</sub> = ΔH<sub>sys</sub> − TΔS<sub>sys</sub></p>
+<p class="step"><strong>Therefore:</strong> ΔS<sub>total</sub> &gt; 0 ⇔ −ΔG/T &gt; 0 ⇔ ΔG &lt; 0</p>
+<p><strong>Physical meaning:</strong> ΔG is the maximum useful (non-PV) work obtainable from a system: ΔG = w<sub>non-expansion</sub>.</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. <strong>Reversible vs Irreversible:</strong> In a reversible process, the system does maximum useful work equal to −ΔG. In an irreversible process, less useful work is done.<br/>
+          2. The Gibbs energy change gives the <em>driving force</em> of a reaction.<br/>
+          3. 📌 <span class="xref">[See Solved Q 6.17 — temperature for spontaneity]</span>
+</div>
+</div>
+<h3>Spontaneity Matrix — The Four Cases</h3>
+<table class="content-table">
+<tr><th>ΔH</th><th>ΔS</th><th>ΔG = ΔH − TΔS</th><th>Spontaneity</th><th>Real Example</th></tr>
+<tr><td>− (exothermic)</td><td>+ (disorder ↑)</td><td>Always negative</td><td>Spontaneous at all T</td><td>2H₂O₂(l) → 2H₂O(l) + O₂(g)</td></tr>
+<tr><td>+ (endothermic)</td><td>+ (disorder ↑)</td><td>Negative at high T</td><td>Spontaneous at high T</td><td>Ice melting (above 273 K)</td></tr>
+<tr><td>− (exothermic)</td><td>− (disorder ↓)</td><td>Negative at low T</td><td>Spontaneous at low T</td><td>Formation of NH₃ (Haber process)</td></tr>
+<tr><td>+ (endothermic)</td><td>− (disorder ↓)</td><td>Always positive</td><td>Non-spontaneous at all T</td><td>2NO(g) → N₂(g) + O₂(g) at 298 K</td></tr>
+</table>
+</div>
+<div class="card">
+<h2>2.6 Gibbs Energy &amp; Chemical Equilibrium <span class="exam-badge">⚡ CBSE Expected — High Yield</span></h2>
+<div class="formula-box">
+<p>\[ \Delta G^\circ = -RT \ln K \]</p>
+<p>\[ \Delta G^\circ = -2.303\,RT \log K \]</p>
+</div>
+<table class="content-table variables-table">
+<tr><td>ΔG°</td><td>Standard Gibbs energy change (kJ mol⁻¹)</td></tr>
+<tr><td>R</td><td>Gas constant (8.314 J mol⁻¹ K⁻¹)</td></tr>
+<tr><td>T</td><td>Temperature (K)</td></tr>
+<tr><td>K</td><td>Equilibrium constant (dimensionless)</td></tr>
+</table>
+<span class="derivation-btn" onclick="toggleDerivation('deriv10')">📐 Derivation &amp; HOTS Depth</span>
+<div class="derivation-panel" id="deriv10">
+<h4>Derivation: ΔG° = −RT ln K</h4>
+<p class="step"><strong>Van't Hoff isotherm</strong> relates ΔG to reaction quotient Q: \[ \Delta G = \Delta G^\circ + RT \ln Q \]</p>
+<p class="step">At equilibrium, ΔG = 0 and Q = K: \[ 0 = \Delta G^\circ + RT \ln K \]</p>
+<p class="step">Therefore: \[ \Delta G^\circ = -RT \ln K \]</p>
+<div class="hots">
+<strong>🔥 HOTS Strategies:</strong><br/>
+          1. If K &gt; 1, ΔG° &lt; 0 (products favored at equilibrium).<br/>
+          2. If K = 1, ΔG° = 0 (equal product/reactant concentrations).<br/>
+          3. If K &lt; 1, ΔG° &gt; 0 (reactants favored).<br/>
+          4. <strong>Temperature dependence:</strong> Using ΔG° = ΔH° − TΔS°, we get: \[ \ln K = -\frac{\Delta H^\circ}{R}\left(\frac{1}{T}\right) + \frac{\Delta S^\circ}{R} \] — the van't Hoff equation for K vs. T.
+        </div>
+</div>
+<p>📌 <span class="xref">[See Solved Q 6.20 — ΔG° from equilibrium constant]</span></p>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ===== TAB 3 ===== -->
+<section class="tab-content" id="tab3">
+<div class="card">
+<h2>NCERT Chapter 6 — Full Solutions</h2>
+<p>All end-of-chapter questions (Q 6.1–6.22) with complete step-by-step solutions. Click each question to expand.</p>
+<p><span class="freq-badge">🔥 Frequent Exam Question</span> indicates problems that appear regularly in CBSE board exams.</p>
+</div>
+<div class="card">
+<h3>Multiple Choice Questions (Q 6.1 – 6.6)</h3>
+<details class="ncert">
+<summary>Q 6.1 — Which of the following is a thermodynamic state function?</summary>
+<div class="solution">
+<p><strong>Options:</strong> (a) q, (b) w, (c) ΔH, (d) Path</p>
+<p><strong>Answer: (c) ΔH</strong> <span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p><strong>Explanation:</strong> State functions depend only on initial and final states, not on the path. ΔH (enthalpy change) is a state function. q (heat) and w (work) are path functions.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.2 — For an adiabatic process, which is true?</summary>
+<div class="solution">
+<p><strong>Options:</strong> (a) ΔT = 0, (b) q = 0, (c) w = 0, (d) ΔU = 0</p>
+<p><strong>Answer: (b) q = 0</strong></p>
+<p><strong>Explanation:</strong> An adiabatic process is defined as one in which no heat is exchanged between system and surroundings. Hence q = 0. This means ΔU = w.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.3 — The enthalpies of all elements in their standard states are:</summary>
+<div class="solution">
+<p><strong>Options:</strong> (a) zero, (b) negative, (c) positive, (d) different for each</p>
+<p><strong>Answer: (a) zero</strong></p>
+<p><strong>Explanation:</strong> By convention, the standard enthalpy of formation (Δ<sub>f</sub>H°) of an element in its most stable allotropic form is taken as zero at 1 bar pressure.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.4 — ΔU° of combustion of CH₄(g) is −X kJ mol⁻¹. ΔH° is:</summary>
+<div class="solution">
+<p><strong>Answer: ΔH° = ΔU° + Δn<sub>g</sub>RT</strong> <span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p>CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)</p>
+<p>Δn<sub>g</sub> = 1 − (1 + 2) = −2</p>
+<p>ΔH° = ΔU° + (−2)RT = −X − 2RT</p>
+<p>Since R &gt; 0 and T &gt; 0: ΔH° = −(X + 2RT). So |ΔH°| &gt; |ΔU°|, or ΔH° is more negative than ΔU°.</p>
+<p><strong>Correct option:</strong> (b) ΔH° is less than ΔU° (more negative).</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.5 — Enthalpy of formation of CH₄(g) from given data</summary>
+<div class="solution">
+<p>Given: C(s) + O₂(g) → CO₂(g); Δ<sub>c</sub>H° = −393.5 kJ mol⁻¹</p>
+<p>H₂(g) + ½O₂(g) → H₂O(l); Δ<sub>c</sub>H° = −285.8 kJ mol⁻¹</p>
+<p>CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l); Δ<sub>c</sub>H° = −890.3 kJ mol⁻¹</p>
+<p><strong>Target:</strong> C(s) + 2H₂(g) → CH₄(g); Δ<sub>f</sub>H° = ?</p>
+<p><strong>Using Hess's Law:</strong></p>
+<p>Δ<sub>f</sub>H°(CH₄) = Δ<sub>c</sub>H°(C) + 2·Δ<sub>c</sub>H°(H₂) − Δ<sub>c</sub>H°(CH₄)</p>
+<p>= (−393.5) + 2(−285.8) − (−890.3)</p>
+<p>= −393.5 − 571.6 + 890.3 = <strong>−74.8 kJ mol⁻¹</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.6 — A reaction has ΔH = −ve and ΔS = +ve. The reaction is:</summary>
+<div class="solution">
+<p><strong>Answer:</strong> Spontaneous at all temperatures.</p>
+<p><strong>Explanation:</strong> ΔG = ΔH − TΔS. If ΔH &lt; 0 and ΔS &gt; 0, then ΔG is always negative regardless of T. This corresponds to the first case in the spontaneity matrix.</p>
+</div>
+</details>
+</div>
+<div class="card">
+<h3>Numerical Problems (Q 6.7 – 6.15)</h3>
+<details class="ncert">
+<summary>Q 6.7 — A system absorbs 701 J of heat and does 394 J of work. What is ΔU?</summary>
+<div class="solution">
+<p><strong>Given:</strong> q = +701 J (heat absorbed = positive), w = −394 J (work done <em>by</em> system = negative)</p>
+<p><strong>First Law:</strong> ΔU = q + w = 701 + (−394) = <strong>+307 J</strong></p>
+<p>The internal energy of the system increases by 307 J.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.8 — Bomb calorimeter: combustion of 0.75 g benzene gives ΔT = 3.45°C, C<sub>cal</sub> = 891 J K⁻¹. Find ΔU per mole.</summary>
+<div class="solution">
+<p><span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p><strong>Step 1:</strong> q<sub>V</sub> = C<sub>cal</sub> × ΔT = 891 × 3.45 = 3074 J = 3.074 kJ</p>
+<p><strong>Step 2:</strong> ΔU = −q<sub>V</sub> = −3.074 kJ (heat released by reaction)</p>
+<p><strong>Step 3:</strong> Moles of C₆H₆ = 0.75 / 78.11 = 0.00960 mol</p>
+<p><strong>Step 4:</strong> ΔU per mol = −3.074 / 0.00960 = <strong>−320.2 kJ mol⁻¹</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.9 — Heat required to raise 60 g Al from 35°C to 55°C? (c<sub>Al</sub> = 0.9 J g⁻¹ K⁻¹)</summary>
+<div class="solution">
+<p>q = m × c × ΔT = 60 × 0.9 × (55 − 35) = 60 × 0.9 × 20 = <strong>1080 J</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.10 — Enthalpy change for freezing 1 mol water at 10°C → −10°C</summary>
+<div class="solution">
+<p><span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p><strong>Data:</strong> c<sub>water</sub> = 75.3 J mol⁻¹ K⁻¹, c<sub>ice</sub> = 36.8 J mol⁻¹ K⁻¹, Δ<sub>fus</sub>H = 6.00 kJ mol⁻¹</p>
+<p>The process has <strong>three steps:</strong></p>
+<p><strong>Step 1:</strong> Cool water from 10°C → 0°C: ΔH₁ = n·c<sub>water</sub>·ΔT = 1 × 75.3 × (−10) = −753 J = −0.753 kJ</p>
+<p><strong>Step 2:</strong> Freeze water at 0°C: ΔH₂ = −Δ<sub>fus</sub>H = −6.00 kJ (reverse of fusion)</p>
+<p><strong>Step 3:</strong> Cool ice from 0°C → −10°C: ΔH₃ = 1 × 36.8 × (−10) = −368 J = −0.368 kJ</p>
+<p><strong>Total:</strong> ΔH = −0.753 + (−6.00) + (−0.368) = <strong>−7.12 kJ mol⁻¹</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.11 — Heat released when 35.2 g CO₂ forms from C + O₂? (Δ<sub>f</sub>H° = −393.5 kJ mol⁻¹)</summary>
+<div class="solution">
+<p><strong>Moles of CO₂:</strong> 35.2 / 44.01 = 0.800 mol</p>
+<p><strong>Heat released:</strong> 0.800 × 393.5 = <strong>−314.8 kJ</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.12 — Δ<sub>r</sub>H for N₂O₄ + 3CO → N₂O + 3CO₂ from Δ<sub>f</sub>H° data</summary>
+<div class="solution">
+<p><span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p><strong>Given:</strong> Δ<sub>f</sub>H°(N₂O₄) = +9.16 kJ mol⁻¹, Δ<sub>f</sub>H°(CO) = −110.5, Δ<sub>f</sub>H°(N₂O) = +81.0, Δ<sub>f</sub>H°(CO₂) = −393.5 kJ mol⁻¹</p>
+<p>Δ<sub>r</sub>H° = Σν·Δ<sub>f</sub>H°(products) − Σν·Δ<sub>f</sub>H°(reactants)</p>
+<p>= [Δ<sub>f</sub>H°(N₂O) + 3·Δ<sub>f</sub>H°(CO₂)] − [Δ<sub>f</sub>H°(N₂O₄) + 3·Δ<sub>f</sub>H°(CO)]</p>
+<p>= [81.0 + 3(−393.5)] − [9.16 + 3(−110.5)]</p>
+<p>= [81.0 − 1180.5] − [9.16 − 331.5]</p>
+<p>= (−1099.5) − (−322.34) = <strong>−777.16 kJ mol⁻¹</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.13 — Standard enthalpy of formation of NH₃(g) from given Δ<sub>r</sub>H</summary>
+<div class="solution">
+<p><strong>Given:</strong> ½N₂(g) + ³⁄₂H₂(g) → NH₃(g); Δ<sub>r</sub>H° = −46.1 kJ mol⁻¹</p>
+<p>This is <em>already</em> the formation reaction for 1 mol of NH₃.</p>
+<p>Therefore: Δ<sub>f</sub>H°(NH₃) = <strong>−46.1 kJ mol⁻¹</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.14 — Standard enthalpy of formation of CH₃OH(l) using Hess's Law</summary>
+<div class="solution">
+<p><span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p><strong>Target:</strong> C(graphite) + 2H₂(g) + ½O₂(g) → CH₃OH(l)</p>
+<p><strong>Given:</strong><br/>
+          (1) C + O₂ → CO₂; Δ<sub>c</sub>H° = −393.5 kJ mol⁻¹<br/>
+          (2) H₂ + ½O₂ → H₂O(l); Δ<sub>c</sub>H° = −285.8 kJ mol⁻¹<br/>
+          (3) CH₃OH + ³⁄₂O₂ → CO₂ + 2H₂O; Δ<sub>c</sub>H° = −726.0 kJ mol⁻¹</p>
+<p><strong>Manipulate:</strong><br/>
+          (1) + 2×(2) − (3):<br/>
+          C + O₂ + 2H₂ + O₂ − CH₃OH − ³⁄₂O₂ → CO₂ + 2H₂O − CO₂ − 2H₂O</p>
+<p>Simplify: C + 2H₂ + ½O₂ − CH₃OH → 0</p>
+<p>So: C + 2H₂ + ½O₂ → CH₃OH</p>
+<p>Δ<sub>f</sub>H°(CH₃OH) = (−393.5) + 2(−285.8) − (−726.0)</p>
+<p>= −393.5 − 571.6 + 726.0 = <strong>−239.1 kJ mol⁻¹</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.15 — Enthalpy change and C–Cl bond enthalpy in CCl₄</summary>
+<div class="solution">
+<p><strong>Given:</strong> CCl₄(g) → C(g) + 4Cl(g); Δ<sub>a</sub>H° = +1304 kJ mol⁻¹</p>
+<p><strong>Mean C–Cl bond enthalpy:</strong> 1304 / 4 = <strong>+326 kJ mol⁻¹</strong></p>
+<p><strong>Note:</strong> This is the average bond enthalpy. The actual bond dissociation energies of the four C–Cl bonds in CCl₄ differ slightly due to step-wise effects.</p>
+</div>
+</details>
+</div>
+<div class="card">
+<h3>Conceptual &amp; Advanced Problems (Q 6.16 – 6.22)</h3>
+<details class="ncert">
+<summary>Q 6.16 — For an isolated system, ΔU = 0. What about ΔS?</summary>
+<div class="solution">
+<p><strong>Answer:</strong> ΔS &gt; 0</p>
+<p><strong>Explanation:</strong> An isolated system has no exchange with surroundings. The Second Law states that for any spontaneous process in an isolated system, ΔS &gt; 0. At equilibrium, ΔS = 0. Since ΔU = 0 does not specify equilibrium, any spontaneous internal change (diffusion, mixing, reaction) will increase entropy.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.17 — Find T where reaction becomes spontaneous: ΔH = +400 kJ, ΔS = +0.2 kJ K⁻¹</summary>
+<div class="solution">
+<p><span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p><strong>Spontaneity condition:</strong> ΔG &lt; 0 ⇒ ΔH − TΔS &lt; 0</p>
+<p>ΔH &lt; TΔS ⇒ T &gt; ΔH/ΔS</p>
+<p>T &gt; 400 / 0.2 = <strong>2000 K</strong></p>
+<p>The reaction becomes spontaneous above 2000 K (since ΔH &gt; 0 and ΔS &gt; 0, case 2).</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.18 — Predict signs of ΔH and ΔS for 2Cl(g) → Cl₂(g)</summary>
+<div class="solution">
+<p><strong>ΔH:</strong> Negative (bond formation releases energy, exothermic)</p>
+<p><strong>ΔS:</strong> Negative (2 moles of gas atoms → 1 mole of gas molecules; disorder decreases)</p>
+<p><strong>Spontaneity:</strong> ΔG = ΔH − TΔS = (−) − T(−) = (−) + T(+). At low T, ΔG &lt; 0 (spontaneous). At high T, ΔG may become &gt; 0.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.19 — ΔG° for 2A + B → 2D: ΔU = −10.5 kJ, ΔS = −44.1 J K⁻¹, T = 298 K</summary>
+<div class="solution">
+<p><span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p><strong>Step 1:</strong> Find ΔH from ΔU. Need Δn<sub>g</sub> — not applicable here as states not given. For condensed phases, ΔH ≈ ΔU.</p>
+<p>Assuming condensed phases: ΔH ≈ ΔU = −10.5 kJ</p>
+<p><strong>Step 2:</strong> Convert ΔS to kJ K⁻¹: ΔS = −44.1 J K⁻¹ = −0.0441 kJ K⁻¹</p>
+<p><strong>Step 3:</strong> ΔG = ΔH − TΔS = −10.5 − 298(−0.0441)</p>
+<p>= −10.5 + 13.14 = <strong>+2.64 kJ mol⁻¹</strong></p>
+<p>Since ΔG &gt; 0, the reaction is non-spontaneous at 298 K.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.20 — ΔG° for reaction with K = 10 at 300 K</summary>
+<div class="solution">
+<p><span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p>ΔG° = −2.303 RT log K</p>
+<p>= −2.303 × 8.314 × 300 × log(10)</p>
+<p>= −2.303 × 8.314 × 300 × 1</p>
+<p>= −5744 J mol⁻¹ = <strong>−5.74 kJ mol⁻¹</strong></p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.21 — Discuss thermodynamic stability of NO(g) from Δ<sub>f</sub>H° values</summary>
+<div class="solution">
+<p><strong>Given:</strong> ½N₂(g) + ½O₂(g) → NO(g); Δ<sub>f</sub>H° = +90 kJ mol⁻¹</p>
+<p>NO(g) has <strong>positive</strong> enthalpy of formation, meaning it requires energy to form NO from its elements. This makes NO <strong>thermodynamically less stable</strong> than N₂ and O₂.</p>
+<p>The decomposition 2NO → N₂ + O₂ would be exothermic (ΔH = −180 kJ). However, it's kinetically slow due to a high activation barrier (which is why NO exists in the atmosphere despite being thermodynamically unstable).</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Q 6.22 — Entropy change in surroundings for formation of 1 mol H₂O(l)</summary>
+<div class="solution">
+<p><span class="freq-badge">🔥 Frequent Exam Question</span></p>
+<p><strong>Given:</strong> H₂(g) + ½O₂(g) → H₂O(l); Δ<sub>f</sub>H° = −285.8 kJ mol⁻¹, T = 298 K</p>
+<p>ΔS<sub>surr</sub> = −ΔH<sub>sys</sub> / T = −(−285.8 × 10³) / 298</p>
+<p>= 285800 / 298 = <strong>+959 J K⁻¹</strong></p>
+<p>The positive value indicates the surroundings gain entropy as they absorb heat released by the exothermic reaction.</p>
+</div>
+</details>
+</div>
+<div class="card">
+<h3>In-Text Solved Examples</h3>
+<details class="ncert">
+<summary>Problem 6.3 — Isothermal reversible expansion work</summary>
+<div class="solution">
+<p><strong>Problem:</strong> 1 mol of ideal gas expands isothermally and reversibly from 2.0 L to 10.0 L at 300 K. Calculate w.</p>
+<p><strong>Solution:</strong></p>
+<p>w = −2.303 nRT log(V₂/V₁) = −2.303 × 1 × 8.314 × 300 × log(10/2)</p>
+<p>= −2.303 × 8.314 × 300 × 0.699</p>
+<p>= <strong>−4014 J</strong></p>
+<p>The negative sign indicates work done by the system.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Problem 6.4 — Isothermal irreversible expansion</summary>
+<div class="solution">
+<p><strong>Problem:</strong> Same as 6.3, but against constant external pressure of 1 atm.</p>
+<p><strong>Solution:</strong></p>
+<p>w = −P<sub>ext</sub>ΔV = −1 atm × (10.0 − 2.0) L = −8 L·atm</p>
+<p>Convert to Joules: 1 L·atm = 101.3 J</p>
+<p>w = −8 × 101.3 = <strong>−810.4 J</strong></p>
+<p><strong>Note:</strong> Irreversible work (−810 J) is much less than reversible work (−4014 J) for the same volume change.</p>
+</div>
+</details>
+<details class="ncert">
+<summary>Problem 6.6 — Bomb calorimeter calculation for graphite</summary>
+<div class="solution">
+<p><strong>Problem:</strong> 0.5 g graphite burnt in bomb calorimeter, ΔT = 0.85 K, C<sub>cal</sub> = 20.7 kJ K⁻¹. Find ΔU for combustion per mole.</p>
+<p><strong>Solution:</strong></p>
+<p>q<sub>V</sub> = C<sub>cal</sub>ΔT = 20.7 × 0.85 = 17.595 kJ</p>
+<p>ΔU = −q<sub>V</sub> = −17.595 kJ</p>
+<p>Moles of C = 0.5/12 = 0.04167 mol</p>
+<p>ΔU per mol = −17.595 / 0.04167 = <strong>−422 kJ mol⁻¹</strong></p>
+</div>
+</details>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ===== TAB 4 ===== -->
+<section class="tab-content" id="tab4">
+<div class="sim-container">
+<h2>4.1 Piston-Cylinder PV Work Simulator</h2>
+<p class="sim-subtitle">Animate an ideal gas, adjust conditions, and watch P, V, T, ΔU, q, and w update in real time.</p>
+<div class="sim-layout">
+<div class="canvas-wrap">
+<canvas height="400" id="pistonCanvas" width="580"></canvas>
+</div>
+<div class="controls-wrap">
+<label>Process Mode:
+            <select id="pistonMode">
+<option value="isothermal">Isothermal (T constant)</option>
+<option value="adiabatic">Adiabatic (q = 0)</option>
+</select>
+</label>
+<label>Reversibility:
+            <select id="pistonRev">
+<option value="reversible">Reversible (quasi-static)</option>
+<option value="irreversible">Irreversible (sudden P)</option>
+</select>
+</label>
+<label>Added Mass (kg): <span id="massVal">2</span>
+<input id="massSlider" max="10" min="0.5" step="0.5" type="range" value="2"/>
+</label>
+<button class="btn" id="pistonPushBtn">⬇ Compress</button>
+<button class="btn" id="pistonPullBtn">⬆ Expand</button>
+<button class="btn" id="pistonResetBtn">🔄 Reset</button>
+<div class="readout-grid">
+<div class="item">P (atm): <span class="val" id="dispP">1.00</span></div>
+<div class="item">V (L): <span class="val" id="dispV">5.00</span></div>
+<div class="item">T (K): <span class="val" id="dispTP">298</span></div>
+<div class="item">ΔU (J): <span class="val" id="dispU">0</span></div>
+<div class="item">q (J): <span class="val" id="dispQ">0</span></div>
+<div class="item">w (J): <span class="val" id="dispW">0</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sim-container">
+<h2>4.2 Spontaneity &amp; Gibbs Free Energy Core Matrix</h2>
+<p class="sim-subtitle">Adjust ΔH sign, ΔS sign, and temperature to see spontaneity change in real time with molecular animation.</p>
+<div class="sim-layout" style="align-items: center;">
+<div class="canvas-wrap" style="flex: 0 0 auto;">
+<canvas height="400" id="gibbsCanvas" width="400"></canvas>
+</div>
+<div class="canvas-wrap" style="flex: 0 0 auto;">
+<div class="gauge-wrap">
+<svg viewbox="0 0 200 200">
+<!-- Background ring -->
+<circle cx="100" cy="100" fill="none" r="82" stroke="#e8e8e8" stroke-width="18"></circle>
+<!-- Green arc: spontaneous (top → right, 270° → 30°) -->
+<path d="M100,18 A82,82 0 0,1 171,141" fill="none" opacity="0.9" stroke="#2ec4b6" stroke-linecap="round" stroke-width="18"></path>
+<!-- Yellow arc: equilibrium (right → bottom, 30° → 150°) -->
+<path d="M171,141 A82,82 0 0,1 29,141" fill="none" opacity="0.9" stroke="#ffb703" stroke-linecap="round" stroke-width="18"></path>
+<!-- Red arc: non-spontaneous (bottom → top, 150° → 270°) -->
+<path d="M29,141 A82,82 0 0,1 100,18" fill="none" opacity="0.9" stroke="#e63946" stroke-linecap="round" stroke-width="18"></path>
+<!-- Needle -->
+<g class="gauge-needle" id="gaugeNeedleGroup">
+<line stroke="#0d1b3e" stroke-linecap="round" stroke-width="3" x1="100" x2="100" y1="100" y2="22"></line>
+</g>
+<circle cx="100" cy="100" fill="#0d1b3e" r="7"></circle>
+<!-- Labels -->
+<text fill="#e63946" font-size="10" font-weight="700" x="20" y="105">Non-Spontaneous</text>
+<text fill="#2ec4b6" font-size="10" font-weight="700" x="130" y="105">Spontaneous</text>
+<text fill="#ffb703" font-size="10" font-weight="700" x="72" y="192">Equilibrium</text>
+</svg>
+</div>
+</div>
+<div class="controls-wrap" style="flex: 0 0 260px;">
+<label>ΔH Sign:
+            <select id="gibbsDH">
+<option value="-">− (Exothermic)</option>
+<option value="+">+ (Endothermic)</option>
+</select>
+</label>
+<label>ΔS Sign:
+            <select id="gibbsDS">
+<option value="+">+ (Disorder ↑)</option>
+<option value="-">− (Disorder ↓)</option>
+</select>
+</label>
+<label>Temperature (K): <span id="gibbsTempVal">298</span>
+<input id="gibbsTempSlider" max="1000" min="100" type="range" value="298"/>
+</label>
+<div class="readout-grid">
+<div class="item">ΔG (kJ): <span class="val" id="dispDG">—</span></div>
+<div class="item">ΔH (kJ): <span class="val" id="dispDH">−100</span></div>
+<div class="item">TΔS (kJ): <span class="val" id="dispTDS">−29.8</span></div>
+<div class="item" id="dispSpont" style="grid-column:span 2;text-align:center;font-weight:700;font-size:15px;color:var(--navy);">Spontaneous</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sim-container">
+<h2>4.3 Bomb Calorimeter Heat Transfer Sandbox</h2>
+<p class="sim-subtitle">Ignite a fuel, watch heat transfer to water, and compute ΔU step-by-step.</p>
+<div class="sim-layout">
+<div class="canvas-wrap">
+<canvas height="420" id="calCanvas" width="580"></canvas>
+</div>
+<div class="controls-wrap">
+<label>Fuel:
+            <select id="calFuel">
+<option value="methane">Methane (CH₄)</option>
+<option value="graphite">Graphite (C)</option>
+<option value="ethanol">Ethanol (C₂H₅OH)</option>
+</select>
+</label>
+<label>Mass of fuel (g):
+            <input id="calMass" max="5" min="0.1" step="0.1" type="number" value="0.5"/>
+</label>
+<label>Mass of water (g):
+            <input id="calWaterMass" max="500" min="50" step="10" type="number" value="200"/>
+</label>
+<button class="btn" id="calIgniteBtn">🔥 Ignite</button>
+<button class="btn" id="calResetBtn">🔄 Reset</button>
+<div class="readout-grid">
+<div class="item">ΔT (°C): <span class="val" id="calDT">0.00</span></div>
+<div class="item">q<sub>water</sub> (J): <span class="val" id="calQw">0</span></div>
+<div class="item">q<sub>cal</sub> (J): <span class="val" id="calQcal">0</span></div>
+<div class="item">ΔU (kJ mol⁻¹): <span class="val" id="calDU">—</span></div>
+</div>
+<div id="calSteps" style="font-size:12px;background:#f0f4f8;padding:8px;border-radius:6px;color:var(--deepblue);"></div>
+</div>
+</div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+</div>
+<script>
+// === KaTeX auto-render ===
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof renderMathInElement === 'function') {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ]
+    });
+  }
+});
+
+// === TAB SWITCHING ===
+function switchTab(n) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab' + n).classList.add('active');
+  document.querySelector('.tab-nav button:nth-child(' + n + ')').classList.add('active');
+  // Stop animations when leaving tab 4
+  if (n !== 4) {
+    if (typeof gibbsRunning !== 'undefined') gibbsRunning = false;
+    if (piston && piston.isAnimating) piston.isAnimating = false;
+  }
+  // Resize canvases after switching to tab 4
+  if (n === 4) {
+    setTimeout(() => {
+      ['pistonCanvas','gibbsCanvas','calCanvas'].forEach(id => {
+        const c = document.getElementById(id);
+        if (c) { c.width = c.offsetWidth || 580; c.height = c.offsetHeight || 400; }
+      });
+      if (typeof initPiston === 'function') { gibbsRunning = true; initPiston(); }
+      if (typeof initGibbs === 'function') initGibbs();
+      if (typeof initCal === 'function') initCal();
+    }, 50);
+  }
+}
+
+// === DERIVATION TOGGLES ===
+function toggleDerivation(id) {
+  const panel = document.getElementById(id);
+  const btn = panel.previousElementSibling;
+  if (panel.classList.contains('open')) {
+    panel.classList.remove('open');
+    if (btn && btn.classList) btn.classList.remove('active');
+  } else {
+    panel.classList.add('open');
+    if (btn && btn.classList) btn.classList.add('active');
+  }
+}
+</script>
+<script>
+// ===================================================
+//  TAB 4.1 — PISTON-CYLINDER PV WORK SIMULATOR
+// ===================================================
+
+const piston = {
+  canvas: null, ctx: null, W: 580, H: 400,
+  particles: [],
+  V: 5.0, P: 1.0, T: 298, n: 0.2,
+  w_total: 0, q_total: 0, dU_total: 0,
+  gamma: 1.4, R: 0.082057, R_J: 8.314,
+  V0: 5.0, P0: 1.0, T0: 298,
+  pistonX: 0, // will be computed from V
+  animId: null,
+  PVdata: [], // for graph
+  mode: 'isothermal',
+  rev: 'reversible',
+  mass: 2,
+  isAnimating: false,
+  animTarget: 0
+};
+
+function initPiston() {
+  const c = document.getElementById('pistonCanvas');
+  if (!c) return;
+  piston.canvas = c;
+  piston.ctx = c.getContext('2d');
+  piston.W = c.width || 580;
+  piston.H = c.height || 400;
+  // Reset state
+  piston.V = piston.V0; piston.P = piston.P0; piston.T = piston.T0;
+  piston.w_total = 0; piston.q_total = 0; piston.dU_total = 0;
+  piston.PVdata = [{P: piston.P, V: piston.V}];
+  piston.mode = document.getElementById('pistonMode').value;
+  piston.rev = document.getElementById('pistonRev').value;
+  piston.mass = parseFloat(document.getElementById('massSlider').value);
+  createPistonParticles();
+  drawPiston();
+}
+
+function createPistonParticles() {
+  piston.particles = [];
+  const count = 45;
+  // Cylinder dimensions
+  const cx = 40, cy = 40, cw = 240, ch = 300;
+  for (let i = 0; i < count; i++) {
+    piston.particles.push({
+      x: cx + 20 + Math.random() * (cw - 40),
+      y: cy + 20 + Math.random() * (ch - 60),
+      vx: (Math.random() - 0.5) * 2.5,
+      vy: (Math.random() - 0.5) * 2.5,
+      r: 3 + Math.random() * 2
+    });
+  }
+}
+
+function getPistonY() {
+  // Map volume to piston Y position (inverted: larger V = higher piston = smaller Y)
+  const minV = 1, maxV = 14;
+  const cy = 40, ch = 300;
+  const minY = cy + 30, maxY = cy + ch - 30;
+  const frac = (piston.V - minV) / (maxV - minV);
+  return maxY - frac * (maxY - minY);
+}
+
+function drawPiston() {
+  const ctx = piston.ctx;
+  if (!ctx) return;
+  const W = piston.W, H = piston.H;
+  ctx.clearRect(0, 0, W, H);
+
+  // ---- LEFT: Cylinder ----
+  const cx = 40, cw = 220;
+  const cylTop = 40, cylBottom = 340;
+  const pistonY = getPistonY();
+
+  // Cylinder walls
+  ctx.strokeStyle = '#333'; ctx.lineWidth = 3;
+  ctx.strokeRect(cx, cylTop, cw, cylBottom - cylTop);
+  // Fill gas region
+  const grad = ctx.createLinearGradient(cx, pistonY, cx + cw, pistonY);
+  grad.addColorStop(0, 'rgba(0,180,216,0.15)');
+  grad.addColorStop(0.5, 'rgba(0,180,216,0.08)');
+  grad.addColorStop(1, 'rgba(0,180,216,0.15)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(cx + 1, pistonY + 1, cw - 2, cylBottom - pistonY - 1);
+
+  // Piston head
+  ctx.fillStyle = '#555';
+  ctx.fillRect(cx - 2, pistonY - 8, cw + 4, 10);
+  ctx.fillStyle = '#777';
+  ctx.fillRect(cx, pistonY - 6, cw, 6);
+
+  // Particles
+  piston.particles.forEach(p => {
+    // Update particle motion
+    p.x += p.vx; p.y += p.vy;
+    // Bounce within cylinder below piston
+    if (p.x < cx + 10 || p.x > cx + cw - 10) p.vx *= -1;
+    if (p.y < pistonY + 15) p.vy = Math.abs(p.vy);
+    if (p.y > cylBottom - 10) p.vy = -Math.abs(p.vy);
+    // Clamp to bounds
+    p.x = Math.max(cx + 10, Math.min(cx + cw - 10, p.x));
+    p.y = Math.max(pistonY + 15, Math.min(cylBottom - 10, p.y));
+    // Draw
+    const speed = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
+    const hue = 200 + speed * 20;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `hsl(${hue}, 80%, 50%)`;
+    ctx.fill();
+  });
+
+  // Labels on cylinder
+  ctx.fillStyle = '#333'; ctx.font = '13px sans-serif';
+  ctx.fillText('Gas (n = ' + piston.n.toFixed(2) + ' mol)', cx + 10, cylTop + 20);
+  ctx.fillStyle = '#555'; ctx.font = '12px sans-serif';
+  ctx.fillText('P = ' + piston.P.toFixed(2) + ' atm', cx + 10, cylTop + 40);
+  ctx.fillText('V = ' + piston.V.toFixed(2) + ' L', cx + 10, cylTop + 58);
+  ctx.fillText('T = ' + piston.T.toFixed(1) + ' K', cx + 10, cylTop + 76);
+
+  // Weight on piston
+  if (piston.mass > 0) {
+    ctx.fillStyle = '#c0392b';
+    ctx.fillRect(cx + cw/2 - 12, pistonY - 28, 24, 18);
+    ctx.fillStyle = '#fff'; ctx.font = '10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(piston.mass + ' kg', cx + cw/2, pistonY - 15);
+    ctx.textAlign = 'left';
+  }
+
+  // ---- RIGHT: PV Graph ----
+  const gx = 310, gy = 30, gw = 250, gh = 310;
+  const gRight = gx + gw, gBottom = gy + gh;
+
+  // Graph background
+  ctx.fillStyle = '#f8fafc';
+  ctx.fillRect(gx, gy, gw, gh);
+  ctx.strokeStyle = '#ccc'; ctx.lineWidth = 1;
+  ctx.strokeRect(gx, gy, gw, gh);
+
+  // Axes
+  ctx.strokeStyle = '#333'; ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(gx, gy); ctx.lineTo(gx, gBottom); ctx.lineTo(gRight, gBottom);
+  ctx.stroke();
+
+  // Axis labels
+  ctx.fillStyle = '#333'; ctx.font = '12px sans-serif';
+  ctx.fillText('Volume (L)', gx + gw/2 - 30, gBottom + 18);
+  ctx.save(); ctx.translate(gx - 14, gy + gh/2); ctx.rotate(-Math.PI/2); ctx.fillText('Pressure (atm)', -25, 0); ctx.restore();
+
+  // Scale
+  const Vmax = 14, Vmin = 0, Pmax = 4, Pmin = 0;
+  function toGraph(v, p) {
+    return { x: gx + (v - Vmin)/(Vmax - Vmin) * gw, y: gBottom - (p - Pmin)/(Pmax - Pmin) * gh };
+  }
+
+  // Draw PV curve (theoretical)
+  if (piston.PVdata.length > 1) {
+    // Draw filled area under the curve
+    ctx.beginPath();
+    const pts = piston.PVdata.map(d => toGraph(d.V, d.P));
+    ctx.moveTo(pts[0].x, gBottom);
+    pts.forEach(pt => ctx.lineTo(pt.x, pt.y));
+    ctx.lineTo(pts[pts.length-1].x, gBottom);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(0,180,216,0.2)';
+    ctx.fill();
+
+    // Draw connecting line
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+    ctx.strokeStyle = '#00b4d8'; ctx.lineWidth = 2.5;
+    ctx.stroke();
+
+    // Draw points
+    pts.forEach((pt, i) => {
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 3, 0, Math.PI*2);
+      ctx.fillStyle = i === pts.length - 1 ? '#e63946' : '#00b4d8';
+      ctx.fill();
+    });
+
+    // Work label
+    const last = pts[pts.length-1];
+    ctx.fillStyle = '#e63946'; ctx.font = 'bold 11px sans-serif';
+    ctx.fillText('w = ' + piston.w_total.toFixed(0) + ' J', last.x - 30, last.y - 10);
+  }
+
+  // Grid lines
+  ctx.strokeStyle = '#eef0f2'; ctx.lineWidth = 0.5;
+  for (let v = 2; v < Vmax; v += 2) {
+    const pt = toGraph(v, 0);
+    ctx.beginPath(); ctx.moveTo(pt.x, gy); ctx.lineTo(pt.x, gBottom); ctx.stroke();
+  }
+  for (let p = 0.5; p < Pmax; p += 0.5) {
+    const pt = toGraph(0, p);
+    ctx.beginPath(); ctx.moveTo(gx, pt.y); ctx.lineTo(gRight, pt.y); ctx.stroke();
+  }
+
+  // Update readout
+  document.getElementById('dispP').textContent = piston.P.toFixed(2);
+  document.getElementById('dispV').textContent = piston.V.toFixed(2);
+  document.getElementById('dispTP').textContent = piston.T.toFixed(0);
+  document.getElementById('dispU').textContent = piston.dU_total.toFixed(0);
+  document.getElementById('dispQ').textContent = piston.q_total.toFixed(0);
+  document.getElementById('dispW').textContent = piston.w_total.toFixed(0);
+}
+
+function updatePistonState(dV) {
+  const V0 = piston.V;
+  const Vf = Math.max(0.5, Math.min(14, V0 + dV));
+  if (Vf === V0) return;
+  const dV_actual = Vf - V0;
+
+  if (piston.mode === 'isothermal') {
+    // PV = constant
+    const Pf = piston.P * V0 / Vf;
+    if (piston.rev === 'reversible') {
+      const w = -piston.n * piston.R_J * piston.T * Math.log(Vf / V0);
+      piston.w_total += w;
+      piston.q_total += -w; // ΔU = 0, q = -w
+    } else {
+      // Irreversible: constant P_ext = piston.P (before movement) for expansion
+      const Pext = dV_actual > 0 ? piston.P : Pf;
+      const w = -Pext * dV_actual * 101.325; // L*atm to J
+      piston.w_total += w;
+      piston.q_total += -w;
+    }
+    // ΔU = 0 for isothermal ideal gas
+    piston.P = Pf;
+    piston.T = piston.T0;
+  } else {
+    // Adiabatic: q = 0, ΔU = w
+    // PV^γ = constant
+    const Pf = piston.P * Math.pow(V0 / Vf, piston.gamma);
+    // w = ΔU = Cv * ΔT = n * Cv * (Tf - T0)
+    const Tf = Pf * Vf / (piston.n * 0.082057);
+    const Cv = 5/2 * piston.R_J; // diatomic approx
+    const w = piston.n * Cv * (Tf - piston.T);
+    piston.w_total += w;
+    piston.q_total += 0;
+    piston.dU_total += w;
+    piston.P = Pf;
+    piston.T = Tf;
+  }
+
+  piston.V = Vf;
+  piston.PVdata.push({P: piston.P, V: piston.V});
+  if (piston.PVdata.length > 100) piston.PVdata.shift();
+}
+
+function animatePiston(targetV) {
+  if (piston.isAnimating) return;
+  piston.isAnimating = true;
+  const steps = 30;
+  const V0 = piston.V;
+  const dV_step = (targetV - V0) / steps;
+  let step = 0;
+
+  function stepAnim() {
+    if (step >= steps) {
+      piston.isAnimating = false;
+      return;
+    }
+    updatePistonState(dV_step);
+    drawPiston();
+    step++;
+    setTimeout(stepAnim, 30);
+  }
+  stepAnim();
+}
+
+// Piston event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(initPiston, 100);
+
+  const modeSel = document.getElementById('pistonMode');
+  const revSel = document.getElementById('pistonRev');
+  const massSl = document.getElementById('massSlider');
+  const massVal = document.getElementById('massVal');
+
+  if (modeSel) modeSel.addEventListener('change', function() {
+    piston.mode = this.value;
+    piston.PVdata = [{P: piston.P, V: piston.V}];
+    drawPiston();
+  });
+
+  if (revSel) revSel.addEventListener('change', function() {
+    piston.rev = this.value;
+    piston.PVdata = [{P: piston.P, V: piston.V}];
+    drawPiston();
+  });
+
+  if (massSl) massSl.addEventListener('input', function() {
+    piston.mass = parseFloat(this.value);
+    if (massVal) massVal.textContent = this.value;
+    drawPiston();
+  });
+
+  document.getElementById('pistonPushBtn').addEventListener('click', function() {
+    const dV = -0.5 - piston.mass * 0.15;
+    const target = Math.max(0.5, piston.V + dV);
+    animatePiston(target);
+  });
+
+  document.getElementById('pistonPullBtn').addEventListener('click', function() {
+    const dV = 0.5 + piston.mass * 0.1;
+    const target = Math.min(14, piston.V + dV);
+    animatePiston(target);
+  });
+
+  document.getElementById('pistonResetBtn').addEventListener('click', function() {
+    initPiston();
+  });
+});
+
+// ===================================================
+//  TAB 4.2 — GIBBS FREE ENERGY DASHBOARD
+// ===================================================
+
+const gibbs = {
+  canvas: null, ctx: null, W: 400, H: 400,
+  particles: [],
+  DH: -100, DS: 0.1, T: 298,
+  animId: null,
+  isOrdered: false
+};
+
+function initGibbs() {
+  const c = document.getElementById('gibbsCanvas');
+  if (!c) return;
+  gibbs.canvas = c;
+  gibbs.ctx = c.getContext('2d');
+  gibbs.W = c.width || 400;
+  gibbs.H = c.height || 400;
+  gibbs.DH = document.getElementById('gibbsDH').value === '-' ? -100 : 100;
+  gibbs.DS = document.getElementById('gibbsDS').value === '+' ? 0.1 : -0.1;
+  gibbs.T = parseFloat(document.getElementById('gibbsTempSlider').value);
+  createGibbsParticles();
+  updateGibbs();
+  if (gibbs.animId) cancelAnimationFrame(gibbs.animId);
+  gibbsLoop();
+}
+
+function createGibbsParticles() {
+  gibbs.particles = [];
+  const count = 80;
+  for (let i = 0; i < count; i++) {
+    gibbs.particles.push({
+      x: Math.random() * 350 + 25,
+      y: Math.random() * 350 + 25,
+      vx: (Math.random() - 0.5) * 3,
+      vy: (Math.random() - 0.5) * 3,
+      r: 3 + Math.random() * 3,
+      targetX: 25 + (i % 10) * 35 + 15,
+      targetY: 25 + Math.floor(i / 10) * 35 + 15,
+      hue: Math.random() * 60 + 200
+    });
+  }
+  gibbs.isOrdered = false;
+}
+
+function updateGibbs() {
+  const DG = gibbs.DH - gibbs.T * gibbs.DS;
+
+  document.getElementById('dispDG').textContent = DG.toFixed(1);
+  document.getElementById('dispDH').textContent = gibbs.DH.toFixed(0);
+  document.getElementById('dispTDS').textContent = (gibbs.T * gibbs.DS).toFixed(1);
+
+  const spontEl = document.getElementById('dispSpont');
+  const needle = document.getElementById('gaugeNeedleGroup');
+
+  let angle;
+  if (DG < -50) {
+    spontEl.textContent = 'Spontaneous ✓'; spontEl.style.color = '#2ec4b6';
+    angle = 45;
+    gibbs.isOrdered = gibbs.DS < 0;
+  } else if (DG < 0) {
+    spontEl.textContent = 'Spontaneous (weak)'; spontEl.style.color = '#7bc96b';
+    angle = 20;
+    gibbs.isOrdered = gibbs.DS < 0;
+  } else if (DG === 0) {
+    spontEl.textContent = 'At Equilibrium ⚖️'; spontEl.style.color = '#ffb703';
+    angle = 120;
+    gibbs.isOrdered = false;
+  } else if (DG < 50) {
+    spontEl.textContent = 'Non-Spontaneous ✗'; spontEl.style.color = '#e63946';
+    angle = 150;
+    gibbs.isOrdered = false;
+  } else {
+    spontEl.textContent = 'Non-Spontaneous ✗✗'; spontEl.style.color = '#e63946';
+    angle = 210;
+    gibbs.isOrdered = false;
+  }
+
+  if (needle) {
+    needle.style.transform = `rotate(${angle}deg)`;
+    needle.style.transformOrigin = '100px 100px';
+  }
+}
+
+let gibbsRunning = true;
+
+function gibbsLoop() {
+  if (!gibbsRunning) { gibbs.animId = null; return; }
+  const ctx = gibbs.ctx;
+  if (!ctx) return;
+  const W = gibbs.W, H = gibbs.H;
+
+  // Background
+  const bgHue = gibbs.DH < 0 ? 210 : 10;
+  const bgLight = gibbs.DH < 0 ? 20 : 25;
+  ctx.fillStyle = `hsl(${bgHue}, 30%, ${bgLight}%)`;
+  ctx.fillRect(0, 0, W, H);
+
+  // Update particles based on DS
+  const isPos = gibbs.DS > 0;
+  const speedMult = isPos ? 1.5 : 0.3;
+  const orderForce = gibbs.isOrdered ? 0.05 : (isPos ? -0.01 : 0.02);
+
+  gibbs.particles.forEach(p => {
+    if (isPos) {
+      // Scatter: random walk
+      p.vx += (Math.random() - 0.5) * 0.5;
+      p.vy += (Math.random() - 0.5) * 0.5;
+      const maxV = 3;
+      if (Math.abs(p.vx) > maxV) p.vx = Math.sign(p.vx) * maxV;
+      if (Math.abs(p.vy) > maxV) p.vy = Math.sign(p.vy) * maxV;
+      p.x += p.vx;
+      p.y += p.vy;
+    } else {
+      // Order: move toward target grid
+      p.vx += (p.targetX - p.x) * 0.02;
+      p.vy += (p.targetY - p.y) * 0.02;
+      p.vx *= 0.9; p.vy *= 0.9;
+      p.x += p.vx;
+      p.y += p.vy;
+    }
+    // Boundary bounce
+    if (p.x < 5 || p.x > W - 5) p.vx *= -1;
+    if (p.y < 5 || p.y > H - 5) p.vy *= -1;
+    p.x = Math.max(5, Math.min(W - 5, p.x));
+    p.y = Math.max(5, Math.min(H - 5, p.y));
+
+    // Draw particle
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    const speed = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
+    const alpha = Math.min(1, 0.3 + speed * 0.15);
+    ctx.fillStyle = `hsla(${p.hue}, 80%, 60%, ${alpha})`;
+    ctx.fill();
+
+    // Connection lines when ordering
+    if (!isPos && gibbs.isOrdered) {
+      ctx.strokeStyle = `hsla(${p.hue}, 50%, 50%, 0.1)`;
+      ctx.lineWidth = 0.5;
+      gibbs.particles.forEach(p2 => {
+        const dx = p.x - p2.x, dy = p.y - p2.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 25 && dist > 0) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.stroke();
+        }
+      });
+    }
+  });
+
+  // Label
+  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  ctx.font = '12px sans-serif';
+  const dsLabel = gibbs.DS > 0 ? 'ΔS > 0 : Scattering ↑' : 'ΔS < 0 : Ordering ↓';
+  ctx.fillText(dsLabel, 10, 20);
+  const dhLabel = gibbs.DH < 0 ? 'ΔH < 0 : Exothermic' : 'ΔH > 0 : Endothermic';
+  ctx.fillText(dhLabel, 10, 38);
+
+  gibbs.animId = requestAnimationFrame(gibbsLoop);
+}
+
+// Gibbs event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(initGibbs, 200);
+
+  const dhSel = document.getElementById('gibbsDH');
+  const dsSel = document.getElementById('gibbsDS');
+  const tSl = document.getElementById('gibbsTempSlider');
+  const tVal = document.getElementById('gibbsTempVal');
+
+  if (dhSel) dhSel.addEventListener('change', function() {
+    gibbs.DH = this.value === '-' ? -100 : 100;
+    updateGibbs();
+  });
+
+  if (dsSel) dsSel.addEventListener('change', function() {
+    gibbs.DS = this.value === '+' ? 0.1 : -0.1;
+    gibbs.isOrdered = false;
+    createGibbsParticles();
+    updateGibbs();
+  });
+
+  if (tSl) tSl.addEventListener('input', function() {
+    gibbs.T = parseFloat(this.value);
+    if (tVal) tVal.textContent = this.value;
+    updateGibbs();
+  });
+});
+
+// ===================================================
+//  TAB 4.3 — BOMB CALORIMETER SANDBOX
+// ===================================================
+
+const calorimeter = {
+  canvas: null, ctx: null, W: 580, H: 420,
+  state: 'idle', // idle, sparking, burning, heating, done
+  waterTemp: 25,
+  maxTemp: 32,
+  sparkPhase: 0,
+  heatPhase: 0,
+  fuelData: {
+    methane: { name: 'Methane (CH₄)', DU: -890.3, M: 16.04, formula: 'CH₄ + 2O₂ → CO₂ + 2H₂O' },
+    graphite: { name: 'Graphite (C)', DU: -393.5, M: 12.01, formula: 'C + O₂ → CO₂' },
+    ethanol: { name: 'Ethanol (C₂H₅OH)', DU: -1367, M: 46.07, formula: 'C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O' }
+  },
+  currentFuel: 'methane',
+  fuelMass: 0.5,
+  waterMass: 200,
+  DT: 0,
+  qWater: 0,
+  qCal: 0,
+  dU: 0,
+  Ccal: 20.7, // kJ/K
+  animId: null,
+  waves: []
+};
+
+function initCal() {
+  const c = document.getElementById('calCanvas');
+  if (!c) return;
+  calorimeter.canvas = c;
+  calorimeter.ctx = c.getContext('2d');
+  calorimeter.W = c.width || 580;
+  calorimeter.H = c.height || 420;
+  calorimeter.state = 'idle';
+  calorimeter.waterTemp = 25;
+  calorimeter.sparkPhase = 0;
+  calorimeter.heatPhase = 0;
+  calorimeter.DT = 0;
+  calorimeter.qWater = 0;
+  calorimeter.qCal = 0;
+  calorimeter.dU = 0;
+  calorimeter.waves = [];
+  drawCal();
+  updateCalReadout();
+}
+
+function drawCal() {
+  const ctx = calorimeter.ctx;
+  if (!ctx) return;
+  const W = calorimeter.W, H = calorimeter.H;
+  ctx.clearRect(0, 0, W, H);
+
+  // Outer jacket (insulated)
+  const jx = 30, jy = 20, jw = 380, jh = 360;
+  ctx.fillStyle = '#555';
+  ctx.fillRect(jx - 4, jy - 4, jw + 8, jh + 8);
+  ctx.fillStyle = '#e8e0d0';
+  ctx.fillRect(jx, jy, jw, jh);
+
+  // Water bath
+  const wx = jx + 15, wy = jy + 150, ww = jw - 30, wh = jh - 170;
+  const waterLevel = wy + wh * (1 - (calorimeter.waterTemp - 25) / (calorimeter.maxTemp - 25 + 1));
+  const clampWaterLevel = Math.max(wy + 10, Math.min(wy + wh - 5, waterLevel));
+  ctx.fillStyle = 'rgba(0,150,255,0.35)';
+  ctx.fillRect(wx, clampWaterLevel, ww, wy + wh - clampWaterLevel);
+
+  // Water particles (vibration animation)
+  for (let i = 0; i < 30; i++) {
+    const px = wx + Math.random() * ww;
+    const py = clampWaterLevel + Math.random() * (wy + wh - clampWaterLevel);
+    const vib = (calorimeter.state === 'heating' || calorimeter.state === 'done') ? 2 : 0.5;
+    ctx.beginPath();
+    ctx.arc(px + (Math.random()-0.5)*vib, py + (Math.random()-0.5)*vib, 1.5, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(0,100,255,${0.2 + Math.random() * 0.4})`;
+    ctx.fill();
+  }
+
+  // Bomb vessel
+  const bx = jx + 80, by = jy + 20, bw = 220, bh = 180;
+  ctx.fillStyle = '#888';
+  ctx.strokeStyle = '#555'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.ellipse(bx + bw/2, by + bh, bw/2, 20, 0, 0, Math.PI);
+  ctx.lineTo(bx, by);
+  ctx.lineTo(bx + bw, by);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  // Bomb lid
+  ctx.fillStyle = '#777';
+  ctx.fillRect(bx + bw/2 - 20, by - 16, 40, 16);
+  ctx.fillStyle = '#666';
+  ctx.fillRect(bx + bw/2 - 10, by - 22, 20, 8);
+
+  // Sample cup
+  ctx.fillStyle = '#999';
+  ctx.fillRect(bx + bw/2 - 20, by + bh - 30, 40, 20);
+  ctx.fillStyle = '#a0522d';
+  ctx.fillRect(bx + bw/2 - 15, by + bh - 28, 30, 14);
+
+  // Ignition coil (wire)
+  ctx.strokeStyle = '#c0392b'; ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(bx + bw/2 - 25, by + 20);
+  for (let i = 0; i < 5; i++) {
+    ctx.lineTo(bx + bw/2 - 25 + i * 12, by + 20 + (i % 2 ? 10 : -5));
+  }
+  ctx.stroke();
+
+  // Spark animation
+  if (calorimeter.state === 'sparking') {
+    ctx.strokeStyle = '#ff0'; ctx.lineWidth = 2;
+    const phase = calorimeter.sparkPhase;
+    for (let i = 0; i < 5; i++) {
+      const sx = bx + bw/2 - 15 + Math.random() * 30;
+      const sy = by + 20 + Math.random() * 20;
+      ctx.beginPath();
+      ctx.moveTo(sx, sy);
+      ctx.lineTo(sx + (Math.random()-0.5)*20, sy + (Math.random()-0.5)*20);
+      ctx.stroke();
+    }
+  }
+
+  // Heat waves (combustion)
+  if (calorimeter.state === 'heating' || calorimeter.state === 'done') {
+    calorimeter.waves.forEach((w, idx) => {
+      w.r += 1.5;
+      w.alpha -= 0.015;
+      if (w.alpha > 0) {
+        ctx.beginPath();
+        ctx.arc(bx + bw/2, by + bh/2, w.r, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(255,150,0,${w.alpha})`;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+    });
+    // Keep last 20 waves
+    if (calorimeter.waves.length > 20) calorimeter.waves.shift();
+  }
+
+  // Thermometer
+  const tx = jx + jw + 20, ty = jy + 20, tw = 20, th = 320;
+  ctx.strokeStyle = '#333'; ctx.lineWidth = 2;
+  ctx.strokeRect(tx, ty, tw, th);
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(tx + 1, ty + 1, tw - 2, th - 2);
+
+  // Thermometer mercury column
+  const tempFrac = (calorimeter.waterTemp - 25) / (calorimeter.maxTemp - 25 + 1);
+  const mercH = (th - 20) * Math.min(1, tempFrac);
+  ctx.fillStyle = '#e63946';
+  ctx.fillRect(tx + 4, ty + th - 10 - mercH, tw - 8, mercH);
+
+  // Thermometer bulb
+  ctx.fillStyle = '#e63946';
+  ctx.beginPath();
+  ctx.arc(tx + tw/2, ty + th + 10, 12, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Thermometer scale
+  ctx.fillStyle = '#333'; ctx.font = '9px sans-serif';
+  for (let t = 25; t <= 35; t += 1) {
+    const frac = (t - 25) / (calorimeter.maxTemp - 25 + 1);
+    const yy = ty + th - 10 - frac * (th - 20);
+    ctx.fillText(t + '°', tx + tw + 4, yy + 3);
+    ctx.strokeStyle = '#ccc'; ctx.lineWidth = 0.5;
+    ctx.beginPath(); ctx.moveTo(tx + tw, yy); ctx.lineTo(tx + tw - 4, yy); ctx.stroke();
+  }
+
+  // Labels
+  ctx.fillStyle = '#333'; ctx.font = '12px sans-serif';
+  ctx.fillText('Bomb Calorimeter Cross-Section', 30, 14);
+  ctx.fillStyle = '#555'; ctx.font = '11px sans-serif';
+  ctx.fillText('Water bath', wx + 10, wy + 20);
+  ctx.fillText('Sample cup', bx + bw/2 - 30, by + bh - 10);
+  ctx.fillText('Insulated jacket', jx + 5, jy + jh - 5);
+
+  // Temperature readout on thermometer
+  ctx.fillStyle = '#333'; ctx.font = 'bold 13px sans-serif';
+  ctx.fillText(calorimeter.waterTemp.toFixed(1) + '°C', tx - 5, ty + th + 40);
+}
+
+function updateCalReadout() {
+  document.getElementById('calDT').textContent = calorimeter.DT.toFixed(2);
+  document.getElementById('calQw').textContent = calorimeter.qWater.toFixed(0);
+  document.getElementById('calQcal').textContent = calorimeter.qCal.toFixed(0);
+  document.getElementById('calDU').textContent = calorimeter.dU ? calorimeter.dU.toFixed(1) : '—';
+}
+
+function runCalReaction() {
+  const fuel = calorimeter.currentFuel;
+  const data = calorimeter.fuelData[fuel];
+  const mass = calorimeter.fuelMass;
+  const mWater = calorimeter.waterMass;
+  const moles = mass / data.M;
+  const energyReleased = Math.abs(data.DU) * moles; // in kJ
+
+  // Calculate theoretical ΔT
+  // Total heat absorbed = Ccal * ΔT + m_water * 4.184 * ΔT / 1000 (in kJ)
+  const cWater = 4.184; // J/gK
+  // Energy released = (mWater * cWater * DT + Ccal * 1000 * DT) / 1000 = (mWater * cWater + Ccal*1000) * DT / 1000
+  const DT = energyReleased * 1000 / (mWater * cWater + calorimeter.Ccal * 1000);
+  calorimeter.DT = DT;
+  calorimeter.qWater = mWater * cWater * DT;
+  calorimeter.qCal = calorimeter.Ccal * 1000 * DT;
+  calorimeter.dU = data.DU;
+
+  // Show steps
+  const stepsDiv = document.getElementById('calSteps');
+  stepsDiv.innerHTML =
+    '<strong>Step-by-Step Calculation:</strong><br>' +
+    '<span class="step">① Fuel: ' + data.name + '</span><br>' +
+    '<span class="step">② Moles = ' + mass + ' g / ' + data.M + ' g mol⁻¹ = ' + moles.toFixed(4) + ' mol</span><br>' +
+    '<span class="step">③ Energy released = ' + Math.abs(data.DU) + ' × ' + moles.toFixed(4) + ' = ' + energyReleased.toFixed(2) + ' kJ</span><br>' +
+    '<span class="step">④ ΔT = E / (m·c + C<sub>cal</sub>) = ' + DT.toFixed(2) + ' K</span><br>' +
+    '<span class="step">⑤ q<sub>water</sub> = m·c·ΔT = ' + calorimeter.qWater.toFixed(0) + ' J</span><br>' +
+    '<span class="step">⑥ q<sub>cal</sub> = C<sub>cal</sub>·ΔT = ' + calorimeter.qCal.toFixed(0) + ' J</span><br>' +
+    '<span class="step">⑦ ΔU = ' + data.DU + ' kJ mol⁻¹ (by definition)</span><br>' +
+    '<span><strong>Reaction:</strong> ' + data.formula + '</span>';
+
+  // Animate
+  calorimeter.state = 'sparking';
+  calorimeter.sparkPhase = 0;
+  const targetTemp = Math.min(calorimeter.maxTemp, 25 + DT);
+  const startTemp = 25;
+
+  const sparkDuration = 15;
+  let sparkCount = 0;
+
+  function sparkLoop() {
+    if (sparkCount < sparkDuration) {
+      calorimeter.sparkPhase = sparkCount / sparkDuration;
+      drawCal();
+      sparkCount++;
+      setTimeout(sparkLoop, 60);
+    } else {
+      calorimeter.state = 'heating';
+      calorimeter.heatPhase = 0;
+      const heatSteps = 40;
+      function heatLoop() {
+        if (calorimeter.heatPhase < heatSteps) {
+          const frac = calorimeter.heatPhase / heatSteps;
+          calorimeter.waterTemp = startTemp + (targetTemp - startTemp) * frac;
+          calorimeter.waves.push({ r: 10, alpha: 0.8 });
+          drawCal();
+          calorimeter.heatPhase++;
+          setTimeout(heatLoop, 60);
+        } else {
+          calorimeter.waterTemp = targetTemp;
+          calorimeter.state = 'done';
+          drawCal();
+          updateCalReadout();
+        }
+      }
+      heatLoop();
+    }
+  }
+  sparkLoop();
+}
+
+// Calorimeter event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(initCal, 300);
+
+  const fuelSel = document.getElementById('calFuel');
+  const massInp = document.getElementById('calMass');
+  const wmInp = document.getElementById('calWaterMass');
+
+  if (fuelSel) fuelSel.addEventListener('change', function() {
+    calorimeter.currentFuel = this.value;
+    if (calorimeter.state === 'done' || calorimeter.state === 'idle') initCal();
+  });
+
+  if (massInp) massInp.addEventListener('change', function() {
+    calorimeter.fuelMass = parseFloat(this.value) || 0.5;
+  });
+
+  if (wmInp) wmInp.addEventListener('change', function() {
+    calorimeter.waterMass = parseFloat(this.value) || 200;
+  });
+
+  document.getElementById('calIgniteBtn').addEventListener('click', function() {
+    if (calorimeter.state === 'idle' || calorimeter.state === 'done') {
+      calorimeter.fuelMass = parseFloat(document.getElementById('calMass').value) || 0.5;
+      calorimeter.waterMass = parseFloat(document.getElementById('calWaterMass').value) || 200;
+      runCalReaction();
+    }
+  });
+
+  document.getElementById('calResetBtn').addEventListener('click', function() {
+    initCal();
+  });
+});
+
+// Ensure KaTeX re-renders after DOM full load
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '\\[', right: '\\]', display: true},
+          {left: '\\(', right: '\\)', display: false}
+        ]
+      });
+    }
+  }, 500);
+});
+</script>
+</body>
+</html>

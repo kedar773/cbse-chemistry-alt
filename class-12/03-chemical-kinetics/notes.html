@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chemical Kinetics — Class 12 Master Notes (NCERT)</title>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/merriweather@5.0.0/index.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.0/index.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.0/index.css" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#f7f8fc; --card:#ffffff; --ink:#1a1f36; --muted:#5a607f;
+    --accent:#4f46e5; --accent2:#0ea5e9; --warn:#f59e0b; --ok:#10b981; --danger:#ef4444;
+    --line:#e5e7eb; --soft:#eef2ff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter','Segoe UI',system-ui,sans-serif;line-height:1.65;}
+  header{
+    background:linear-gradient(135deg,#4f46e5 0%,#0ea5e9 100%);
+    color:white;padding:36px 24px;text-align:center;position:relative;overflow:hidden;
+  }
+  header::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%, rgba(255,255,255,0.25), transparent 60%);}
+  header h1{font-family:'Merriweather',serif;margin:0;font-size:2.1rem;letter-spacing:0.3px;}
+  header p{margin:8px 0 0;opacity:0.95;font-size:1.02rem;}
+  .chip{display:inline-block;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);padding:3px 10px;border-radius:999px;font-size:0.78rem;margin:4px 4px 0 0;}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:24px;}
+
+  /* Tabs */
+  .tabs{display:flex;flex-wrap:wrap;gap:6px;background:var(--card);padding:8px;border-radius:14px;box-shadow:0 6px 24px rgba(15,23,42,0.06);margin:0 0 22px;position:sticky;top:8px;z-index:10;}
+  .tab-btn{flex:1 1 220px;background:transparent;border:none;padding:12px 14px;border-radius:10px;cursor:pointer;font-weight:600;color:var(--muted);font-size:0.95rem;transition:all 0.25s;}
+  .tab-btn:hover{background:var(--soft);color:var(--accent);}
+  .tab-btn.active{background:linear-gradient(135deg,#4f46e5,#0ea5e9);color:white;box-shadow:0 6px 14px rgba(79,70,229,0.35);}
+  .tab-content{display:none;animation:fade 0.35s ease;}
+  .tab-content.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(15,23,42,0.04);}
+  .card h2{font-family:'Merriweather',serif;color:var(--accent);margin:0 0 14px;font-size:1.55rem;border-bottom:2px solid var(--soft);padding-bottom:8px;}
+  .card h3{color:#3730a3;margin:18px 0 8px;font-size:1.15rem;}
+  .card h4{color:#0f766e;margin:12px 0 6px;font-size:1.02rem;}
+
+  /* Equation boxes */
+  .eq{
+    background:linear-gradient(135deg,#eef2ff 0%,#e0f2fe 100%);
+    border-left:4px solid var(--accent);
+    padding:12px 16px;border-radius:8px;margin:10px 0;
+    font-family:'JetBrains Mono',monospace;font-size:1.02rem;
+    overflow-x:auto;
+  }
+  .eq .label{display:inline-block;background:var(--accent);color:white;font-size:0.7rem;padding:2px 8px;border-radius:4px;margin-right:8px;font-family:'Inter',sans-serif;letter-spacing:0.5px;}
+  .eq.key{border-left-color:var(--warn);background:linear-gradient(135deg,#fff7ed,#fef3c7);}
+  .eq.final{border-left-color:var(--ok);background:linear-gradient(135deg,#ecfdf5,#d1fae5);}
+
+  /* Derivation steps */
+  .derive{background:#fafbff;border:1px dashed #c7d2fe;border-radius:10px;padding:14px 16px;margin:12px 0;}
+  .derive .step{margin:6px 0;padding-left:28px;position:relative;}
+  .derive .step::before{content:"→";position:absolute;left:6px;color:var(--accent);font-weight:700;}
+  .derive .head{font-weight:700;color:#4338ca;margin-bottom:6px;}
+
+  /* Tables */
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.95rem;}
+  th,td{padding:10px 12px;border:1px solid var(--line);text-align:left;vertical-align:top;}
+  th{background:linear-gradient(135deg,#4f46e5,#0ea5e9);color:white;font-weight:600;}
+  tbody tr:nth-child(even){background:#f9fafb;}
+  tbody tr:hover{background:#eef2ff;}
+  .math-cell{font-family:'JetBrains Mono',monospace;font-size:0.9rem;}
+
+  /* Badges */
+  .badge{display:inline-block;font-size:0.72rem;font-weight:700;padding:3px 9px;border-radius:999px;vertical-align:middle;margin:0 4px;letter-spacing:0.3px;}
+  .badge.pyq{background:#fef3c7;color:#92400e;border:1px solid #f59e0b;}
+  .badge.hot{background:#fee2e2;color:#991b1b;border:1px solid #ef4444;}
+  .badge.tip{background:#d1fae5;color:#065f46;border:1px solid #10b981;}
+  .badge.ref{background:#dbeafe;color:#1e40af;border:1px solid #3b82f6;font-size:0.72rem;}
+  .badge.new{background:#fce7f3;color:#9d174d;border:1px solid #ec4899;}
+
+  /* Images */
+  .fig{text-align:center;margin:18px 0;}
+  .fig img{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(15,23,42,0.08);}
+  .fig .cap{font-size:0.85rem;color:var(--muted);margin-top:6px;font-style:italic;}
+
+  /* Q&A (details/summary) */
+  details{background:#fafbff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:10px 0;transition:all 0.2s;}
+  details[open]{background:#ffffff;border-color:#c7d2fe;box-shadow:0 4px 14px rgba(79,70,229,0.08);}
+  summary{cursor:pointer;font-weight:600;color:#3730a3;list-style:none;padding:4px 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  summary::-webkit-details-marker{display:none;}
+  summary::before{content:"▶";font-size:0.7rem;color:var(--accent);transition:transform 0.25s;}
+  details[open] summary::before{transform:rotate(90deg);}
+  .q-body{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);}
+
+  .note{background:#fffbeb;border-left:4px solid #f59e0b;padding:10px 14px;border-radius:6px;margin:10px 0;font-size:0.93rem;}
+  .warn{background:#fef2f2;border-left:4px solid #ef4444;padding:10px 14px;border-radius:6px;margin:10px 0;font-size:0.93rem;}
+
+  .key-term{background:#fef3c7;padding:1px 6px;border-radius:4px;font-weight:600;}
+
+  sup,sub{font-size:0.75em;}
+  .frac{display:inline-block;text-align:center;vertical-align:middle;margin:0 2px;font-family:'JetBrains Mono',monospace;}
+  .frac .num{display:block;border-bottom:1.5px solid currentColor;padding:0 4px 2px;}
+  .frac .den{display:block;padding:2px 4px 0;}
+
+  footer{text-align:center;padding:30px 20px;color:var(--muted);font-size:0.85rem;}
+
+  @media (max-width:680px){
+    header h1{font-size:1.5rem;}
+    .card{padding:16px;}
+    .tab-btn{font-size:0.85rem;padding:10px;}
+  }
+
+  /* PRINT STYLES */
+  @media print{
+    body{background:white;}
+    .tabs{display:none;}
+    .tab-content{display:block !important;page-break-inside:avoid;}
+    .card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid;}
+    details{break-inside:avoid;}
+    details[open],details{background:white !important;border:1px solid #aaa;}
+    details > summary::before{content:"■";transform:none !important;}
+    header{background:#222 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .eq,.derive,.note,.warn{background:#f5f5f5 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    img{max-width:100% !important;page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+<header>
+<h1>⚗️ Chemical Kinetics — Master Study Notes</h1>
+<p>Class 12 Chemistry · Chapter 4 · NCERT · CBSE Board Exam Ready</p>
+<div>
+<span class="chip">📖 NCERT Strict</span>
+<span class="chip">🧮 Full Derivations</span>
+<span class="chip">📈 Graphical Analysis</span>
+<span class="chip">🎯 PYQ Focused</span>
+</div>
+</header>
+<div class="wrap">
+<!-- TAB NAVIGATION -->
+<nav class="tabs" id="tabNav">
+<button class="tab-btn active" data-tab="1">1 · Rate Laws, Order &amp; Integrated Equations</button>
+<button class="tab-btn" data-tab="2">2 · Temperature Dependence &amp; Collision Theory</button>
+<button class="tab-btn" data-tab="3">3 · NCERT Solved Q&amp;A</button>
+</nav>
+<!-- ============================== TAB 1 ============================== -->
+<section class="tab-content active" id="tab1">
+<div class="card">
+<h2>1.1 Rate of a Chemical Reaction</h2>
+<p>The <span class="key-term">rate of reaction</span> is the change in concentration of a reactant (or product) per unit time. For a general reaction:</p>
+<div class="eq"><span class="label">REACTION</span> aA + bB → cC + dD</div>
+<div class="eq"><span class="label">AVG RATE</span>
+        Rate<sub>av</sub> = − <span class="frac"><span class="num">1</span><span class="den">a</span></span> <span class="frac"><span class="num">Δ[A]</span><span class="den">Δt</span></span> = − <span class="frac"><span class="num">1</span><span class="den">b</span></span> <span class="frac"><span class="num">Δ[B]</span><span class="den">Δt</span></span> = + <span class="frac"><span class="num">1</span><span class="den">c</span></span> <span class="frac"><span class="num">Δ[C]</span><span class="den">Δt</span></span> = + <span class="frac"><span class="num">1</span><span class="den">d</span></span> <span class="frac"><span class="num">Δ[D]</span><span class="den">Δt</span></span>
+</div>
+<div class="eq"><span class="label">INSTANTANEOUS</span>
+        Rate = − <span class="frac"><span class="num">1</span><span class="den">a</span></span> <span class="frac"><span class="num">d[A]</span><span class="den">dt</span></span> = + <span class="frac"><span class="num">1</span><span class="den">c</span></span> <span class="frac"><span class="num">d[C]</span><span class="den">dt</span></span>
+</div>
+<p>Units of rate: <b>mol L<sup>−1</sup> s<sup>−1</sup></b> (or atm s<sup>−1</sup> for gases).</p>
+</div>
+<div class="card">
+<h2>1.2 Rate Law, Order &amp; Molecularity <span class="badge pyq">⚡ CBSE PYQ</span></h2>
+<h3>Rate Law (Rate Equation)</h3>
+<div class="eq"><span class="label">RATE LAW</span> Rate = k [A]<sup>x</sup> [B]<sup>y</sup></div>
+<p>where <b>k</b> = rate constant (specific reaction rate), and <b>x, y</b> are the <i>orders</i> w.r.t. A and B (determined <u>experimentally</u>, NOT from stoichiometry).</p>
+<h3>Order of Reaction</h3>
+<div class="eq"><span class="label">ORDER</span> n = x + y (sum of powers of concentrations in rate law)</div>
+<ul>
+<li>Order can be <b>0, 1, 2, 3</b> or <b>fractional</b>; it may be negative w.r.t. one species.</li>
+<li>Order is <u>experimentally determined</u> — cannot be predicted from balanced equation.</li>
+</ul>
+<h3>Molecularity</h3>
+<ul>
+<li>Molecularity is the number of reacting species (atoms/ions/molecules) that must <b>simultaneously collide</b> in an <u>elementary step</u>.</li>
+<li>Values: <b>unimolecular (1)</b>, <b>bimolecular (2)</b>, <b>termolecular (3)</b>. Molecularity &gt; 3 is extremely rare.</li>
+<li>Molecularity is a <b>theoretical concept</b>, applies only to elementary reactions. For a complex reaction, we speak of the molecularity of the <u>slowest (rate-determining) step</u>.</li>
+</ul>
+<div class="note">
+<b>⚠️ Key Exam Distinction:</b><br/>
+<b>Order</b> → experimental, can be 0/fractional, applies to overall reaction.<br/>
+<b>Molecularity</b> → theoretical, always a whole number ≥1, applies only to elementary steps.
+      </div>
+<h3>Units of Rate Constant k (by order)</h3>
+<table>
+<thead>
+<tr><th>Order</th><th>Rate Law</th><th>Units of k</th><th>Example</th></tr>
+</thead>
+<tbody>
+<tr><td>Zero (0)</td><td class="math-cell">Rate = k</td><td class="math-cell">mol L<sup>−1</sup> s<sup>−1</sup></td><td>Decomposition of NH<sub>3</sub> on Pt at high pressure</td></tr>
+<tr><td>First (1)</td><td class="math-cell">Rate = k[A]</td><td class="math-cell">s<sup>−1</sup> (or min<sup>−1</sup>)</td><td>N<sub>2</sub>O<sub>5</sub> → 2NO<sub>2</sub> + ½O<sub>2</sub></td></tr>
+<tr><td>Second (2)</td><td class="math-cell">Rate = k[A]<sup>2</sup></td><td class="math-cell">L mol<sup>−1</sup> s<sup>−1</sup></td><td>2NO<sub>2</sub> → 2NO + O<sub>2</sub></td></tr>
+<tr><td>Third (3)</td><td class="math-cell">Rate = k[A]<sup>3</sup></td><td class="math-cell">L<sup>2</sup> mol<sup>−2</sup> s<sup>−1</sup></td><td>2NO + O<sub>2</sub> → 2NO<sub>2</sub></td></tr>
+<tr><td>n<sup>th</sup></td><td class="math-cell">Rate = k[A]<sup>n</sup></td><td class="math-cell">(mol L<sup>−1</sup>)<sup>1−n</sup> s<sup>−1</sup></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+<!-- FORMULA CHEAT SHEET -->
+<div class="card" style="border:2px solid var(--accent);">
+<h2>🧾 Formula Cheat-Sheet — Order Comparison Table <span class="badge hot">🔥 MUST MEMORIZE</span></h2>
+<table>
+<thead>
+<tr><th>Property</th><th>Zero-Order</th><th>First-Order</th><th>Second-Order</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Differential rate law</b></td>
+<td class="math-cell">−d[A]/dt = k</td>
+<td class="math-cell">−d[A]/dt = k[A]</td>
+<td class="math-cell">−d[A]/dt = k[A]<sup>2</sup></td>
+</tr>
+<tr>
+<td><b>Integrated rate law</b></td>
+<td class="math-cell">[A] = [A]<sub>0</sub> − kt</td>
+<td class="math-cell">[A] = [A]<sub>0</sub> e<sup>−kt</sup></td>
+<td class="math-cell">1/[A] = 1/[A]<sub>0</sub> + kt</td>
+</tr>
+<tr>
+<td><b>Log form</b></td>
+<td class="math-cell">—</td>
+<td class="math-cell">k = (2.303/t) log([A]<sub>0</sub>/[A])</td>
+<td class="math-cell">—</td>
+</tr>
+<tr>
+<td><b>Plot giving straight line</b></td>
+<td class="math-cell">[A] vs t</td>
+<td class="math-cell">ln[A] vs t (or log[A] vs t)</td>
+<td class="math-cell">1/[A] vs t</td>
+</tr>
+<tr>
+<td><b>Slope / Intercept</b></td>
+<td class="math-cell">slope = −k, y-int = [A]<sub>0</sub></td>
+<td class="math-cell">slope = −k (ln) or −k/2.303 (log)</td>
+<td class="math-cell">slope = +k, y-int = 1/[A]<sub>0</sub></td>
+</tr>
+<tr>
+<td><b>Half-life t<sub>1/2</sub></b></td>
+<td class="math-cell">[A]<sub>0</sub> / 2k</td>
+<td class="math-cell">0.693 / k</td>
+<td class="math-cell">1 / (k[A]<sub>0</sub>)</td>
+</tr>
+<tr>
+<td><b>t<sub>1/2</sub> dependence on [A]<sub>0</sub></b></td>
+<td>∝ [A]<sub>0</sub></td>
+<td>Independent of [A]<sub>0</sub></td>
+<td>∝ 1/[A]<sub>0</sub></td>
+</tr>
+<tr>
+<td><b>Units of k</b></td>
+<td class="math-cell">mol L<sup>−1</sup> s<sup>−1</sup></td>
+<td class="math-cell">s<sup>−1</sup></td>
+<td class="math-cell">L mol<sup>−1</sup> s<sup>−1</sup></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- ZERO ORDER DERIVATION -->
+<div class="card">
+<h2>1.3 Zero-Order Reaction — Full Derivation <span class="badge pyq">⚡ CBSE PYQ</span></h2>
+<p><b>Definition:</b> A reaction whose rate is <u>independent</u> of the concentration of the reactant.</p>
+<div class="eq"><span class="label">RATE LAW</span> Rate = k [A]<sup>0</sup> = k</div>
+<div class="derive">
+<div class="head">📘 Derivation of Integrated Rate Equation (Zero-Order)</div>
+<div class="step">Consider: R → Products, with rate = k</div>
+<div class="step">By definition: −d[R]/dt = k</div>
+<div class="step">Rearranging: d[R] = −k · dt</div>
+<div class="step">Integrate both sides: ∫ d[R] = −k ∫ dt</div>
+<div class="step">⇒ [R] = −kt + I    (where I = constant of integration)</div>
+<div class="step">At t = 0, [R] = [R]<sub>0</sub>  ⇒  [R]<sub>0</sub> = −k(0) + I ⇒ I = [R]<sub>0</sub></div>
+<div class="step">Substituting I:</div>
+</div>
+<div class="eq final"><span class="label">ZERO-ORDER INTEGRATED</span> [R] = [R]<sub>0</sub> − kt    ⇔    k = <span class="frac"><span class="num">[R]<sub>0</sub> − [R]</span><span class="den">t</span></span></div>
+<h4>Half-Life Derivation (Zero-Order) <span class="badge pyq">⚡ CBSE PYQ</span></h4>
+<div class="derive">
+<div class="step">At t = t<sub>1/2</sub>, [R] = [R]<sub>0</sub>/2</div>
+<div class="step">Substitute into integrated equation: [R]<sub>0</sub>/2 = [R]<sub>0</sub> − k · t<sub>1/2</sub></div>
+<div class="step">⇒ k · t<sub>1/2</sub> = [R]<sub>0</sub> − [R]<sub>0</sub>/2 = [R]<sub>0</sub>/2</div>
+</div>
+<div class="eq final"><span class="label">ZERO-ORDER HALF-LIFE</span> t<sub>1/2</sub> = <span class="frac"><span class="num">[R]<sub>0</sub></span><span class="den">2k</span></span>    ∝ [R]<sub>0</sub></div>
+<div class="fig">
+<img alt="Concentration vs Time for Zero and First Order Reactions" src="https://image.qwenlm.ai/public_source/a4ecfb3b-e2dc-4fda-ae5d-c83b665b9af2/1a46599fe-d2f2-4ac2-bb80-f043d55051bf.png"/>
+<div class="cap">Fig. 1.1 — [A] vs time: Zero-order (linear decrease) and First-order (exponential decay).</div>
+</div>
+<div class="fig">
+<img alt="Integrated rate law plots" src="https://image.qwenlm.ai/public_source/a4ecfb3b-e2dc-4fda-ae5d-c83b665b9af2/16c0e4475-1720-41b8-948a-962d77d67cf6.png"/>
+<div class="cap">Fig. 1.2 — Integrated rate plots: Zero-order [A] vs t, First-order ln[A] vs t, and Second-order 1/[A] vs t with slope and intercept annotations.</div>
+</div>
+</div>
+<!-- FIRST ORDER DERIVATION -->
+<div class="card">
+<h2>1.4 First-Order Reaction — Full Derivation <span class="badge hot">🔥 MOST TESTED</span></h2>
+<div class="eq"><span class="label">RATE LAW</span> Rate = k [R]<sup>1</sup></div>
+<div class="derive">
+<div class="head">📘 Derivation of Integrated Rate Equation (First-Order)</div>
+<div class="step">Consider: R → Products, with −d[R]/dt = k[R]</div>
+<div class="step">Separate variables: d[R]/[R] = −k · dt</div>
+<div class="step">Integrate: ∫ d[R]/[R] = −k ∫ dt</div>
+<div class="step">⇒ ln[R] = −kt + I</div>
+<div class="step">At t = 0, [R] = [R]<sub>0</sub> ⇒ ln[R]<sub>0</sub> = I</div>
+<div class="step">∴ ln[R] = −kt + ln[R]<sub>0</sub></div>
+<div class="step">Rearranging: ln([R]/[R]<sub>0</sub>) = −kt   ⇒   [R] = [R]<sub>0</sub> · e<sup>−kt</sup></div>
+</div>
+<div class="eq final"><span class="label">FIRST-ORDER INTEGRATED</span> k = <span class="frac"><span class="num">2.303</span><span class="den">t</span></span> log<sub>10</sub> <span class="frac"><span class="num">[R]<sub>0</sub></span><span class="den">[R]</span></span></div>
+<h4>Half-Life Derivation (First-Order) <span class="badge pyq">⚡ CBSE PYQ</span></h4>
+<div class="derive">
+<div class="step">At t = t<sub>1/2</sub>, [R] = [R]<sub>0</sub>/2</div>
+<div class="step">Substitute: k = (2.303 / t<sub>1/2</sub>) log([R]<sub>0</sub> / ([R]<sub>0</sub>/2))</div>
+<div class="step">⇒ k = (2.303 / t<sub>1/2</sub>) log(2)</div>
+<div class="step">Since log(2) = 0.3010, we get k = 2.303 × 0.3010 / t<sub>1/2</sub> = 0.693 / t<sub>1/2</sub></div>
+</div>
+<div class="eq final"><span class="label">FIRST-ORDER HALF-LIFE</span> t<sub>1/2</sub> = <span class="frac"><span class="num">0.693</span><span class="den">k</span></span>    (independent of [R]<sub>0</sub>)</div>
+<div class="warn">
+<b>📌 Exam Tip:</b> For a first-order reaction, <b>t<sub>99.9%</sub> = 10 × t<sub>1/2</sub></b> (since 2<sup>10</sup> ≈ 1000 ⇒ 10 half-lives reduces [R] to 0.1%).
+        <span class="badge ref">📌 See Solved Q 4.10</span>
+</div>
+<h3>Proof: t<sub>99.9%</sub> = 10 × t<sub>50%</sub> for First-Order <span class="badge pyq">⚡ CBSE PYQ — Expected</span></h3>
+<div class="derive">
+<div class="step">For t<sub>99.9%</sub>, [R] = [R]<sub>0</sub> − 0.999[R]<sub>0</sub> = 0.001 [R]<sub>0</sub></div>
+<div class="step">k = (2.303 / t<sub>99.9%</sub>) log([R]<sub>0</sub> / 0.001[R]<sub>0</sub>) = (2.303 / t<sub>99.9%</sub>) log(1000)</div>
+<div class="step">Since log(1000) = 3:   k = (2.303 × 3) / t<sub>99.9%</sub> = 6.909 / t<sub>99.9%</sub>   …(i)</div>
+<div class="step">Also, k = 0.693 / t<sub>1/2</sub>   …(ii)</div>
+<div class="step">Equating (i) and (ii): 6.909 / t<sub>99.9%</sub> = 0.693 / t<sub>1/2</sub></div>
+<div class="step">∴ t<sub>99.9%</sub> = (6.909 / 0.693) · t<sub>1/2</sub> ≈ <b>10 · t<sub>1/2</sub></b>   ∎</div>
+</div>
+<h3>Proof: t<sub>99%</sub> = 2 × t<sub>90%</sub> for First-Order <span class="badge pyq">⚡ CBSE PYQ</span></h3>
+<div class="derive">
+<div class="step">For t<sub>90%</sub>: [R] = 0.1[R]<sub>0</sub> ⇒ k = (2.303/t<sub>90%</sub>) log(10) = 2.303 / t<sub>90%</sub></div>
+<div class="step">For t<sub>99%</sub>: [R] = 0.01[R]<sub>0</sub> ⇒ k = (2.303/t<sub>99%</sub>) log(100) = 4.606 / t<sub>99%</sub></div>
+<div class="step">Equating: 2.303 / t<sub>90%</sub> = 4.606 / t<sub>99%</sub></div>
+<div class="step">∴ t<sub>99%</sub> = 2 · t<sub>90%</sub>   ∎</div>
+</div>
+</div>
+<!-- SECOND ORDER -->
+<div class="card">
+<h2>1.5 Second-Order Reaction (Brief)</h2>
+<div class="eq"><span class="label">RATE LAW</span> Rate = k [A]<sup>2</sup>  (or k[A][B])</div>
+<div class="derive">
+<div class="head">Derivation</div>
+<div class="step">−d[A]/dt = k[A]<sup>2</sup> ⇒ d[A]/[A]<sup>2</sup> = −k dt</div>
+<div class="step">∫ d[A]/[A]<sup>2</sup> = −k ∫ dt ⇒ −1/[A] = −kt + I</div>
+<div class="step">At t=0: −1/[A]<sub>0</sub> = I</div>
+</div>
+<div class="eq final"><span class="label">SECOND-ORDER INTEGRATED</span> <span class="frac"><span class="num">1</span><span class="den">[A]</span></span> − <span class="frac"><span class="num">1</span><span class="den">[A]<sub>0</sub></span></span> = kt   ⇒   t<sub>1/2</sub> = <span class="frac"><span class="num">1</span><span class="den">k[A]<sub>0</sub></span></span></div>
+</div>
+<div class="card">
+<h2>1.6 Pseudo-First-Order Reactions <span class="badge pyq">⚡ CBSE PYQ</span></h2>
+<p>A reaction that is <b>not truly first-order</b> but behaves as first-order under specific conditions (usually when one reactant is in large excess, so its concentration remains practically constant).</p>
+<div class="eq"><span class="label">EXAMPLE</span> Hydrolysis of ethyl acetate: CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub> + H<sub>2</sub>O → CH<sub>3</sub>COOH + C<sub>2</sub>H<sub>5</sub>OH</div>
+<p>Actual rate = k[CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub>][H<sub>2</sub>O]. Since water is in large excess, [H<sub>2</sub>O] ≈ constant = k', so:</p>
+<div class="eq"><span class="label">PSEUDO</span> Rate = k'[CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub>]   where k' = k[H<sub>2</sub>O]</div>
+<p>Another classic example: <b>Inversion of cane sugar</b> (sucrose + H<sub>2</sub>O → glucose + fructose) catalyzed by H<sup>+</sup>.</p>
+<span class="badge ref">📌 See Solved Q 4.3</span>
+</div>
+<div class="card">
+<h2>1.7 Method to Determine Order</h2>
+<ol>
+<li><b>Initial Rate Method (Ostwald's Isolation):</b> Vary one reactant at a time while keeping others constant; find ratio of rates to get order.</li>
+<li><b>Integrated Rate Law Method (Hit-and-Trial):</b> Substitute [A], t into zero, first, second-order integrated equations. The equation giving a constant k identifies the order.</li>
+<li><b>Graphical Method:</b> Plot [A] vs t, ln[A] vs t, 1/[A] vs t. The one yielding a straight line determines the order.</li>
+<li><b>Half-Life Method:</b> If t<sub>1/2</sub> ∝ a<sup>1−n</sup>, compare half-lives at different initial concentrations.</li>
+</ol>
+<div class="eq"><span class="label">HALF-LIFE METHOD</span> <span class="frac"><span class="num">t<sub>1/2</sub>(1)</span><span class="den">t<sub>1/2</sub>(2)</span></span> = <span class="frac"><span class="num">[A]<sub>0</sub>(2)</span><span class="den">[A]<sub>0</sub>(1)</span></span><sup>n−1</sup></div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============================== TAB 2 ============================== -->
+<section class="tab-content" id="tab2">
+<div class="card">
+<h2>2.1 Effect of Temperature on Rate — Arrhenius Equation <span class="badge hot">🔥 CORE</span></h2>
+<p>An increase of <b>10 °C (or 10 K)</b> in temperature typically <b>doubles</b> the rate of a reaction (temperature coefficient ≈ 2).</p>
+<div class="eq"><span class="label">TEMP COEFF</span> μ = <span class="frac"><span class="num">k<sub>(T+10)</sub></span><span class="den">k<sub>T</sub></span></span> ≈ 2 to 3</div>
+<h3>Arrhenius Equation <span class="badge pyq">⚡ CBSE PYQ</span></h3>
+<div class="eq key"><span class="label">ARRHENIUS</span> k = A · e<sup>−E<sub>a</sub> / RT</sup></div>
+<p>where <b>A</b> = frequency factor (pre-exponential factor), <b>E<sub>a</sub></b> = activation energy (J mol<sup>−1</sup>), <b>R</b> = 8.314 J K<sup>−1</sup> mol<sup>−1</sup>, <b>T</b> = temperature (K).</p>
+<div class="derive">
+<div class="head">Logarithmic form</div>
+<div class="step">Take ln: ln k = ln A − E<sub>a</sub>/(RT)</div>
+<div class="step">Convert to log<sub>10</sub>: log k = log A − E<sub>a</sub>/(2.303 RT)</div>
+</div>
+<div class="eq final"><span class="label">ARRHENIUS LOG FORM</span> log k = log A − <span class="frac"><span class="num">E<sub>a</sub></span><span class="den">2.303 RT</span></span></div>
+<p>A plot of <b>log k vs 1/T</b> gives a straight line with <b>slope = −E<sub>a</sub>/(2.303R)</b> and <b>intercept = log A</b>.</p>
+<h3>Two-Temperature Form <span class="badge pyq">⚡ CBSE PYQ — Expected</span></h3>
+<div class="derive">
+<div class="step">At T<sub>1</sub>: log k<sub>1</sub> = log A − E<sub>a</sub>/(2.303 R T<sub>1</sub>) …(i)</div>
+<div class="step">At T<sub>2</sub>: log k<sub>2</sub> = log A − E<sub>a</sub>/(2.303 R T<sub>2</sub>) …(ii)</div>
+<div class="step">Subtract (i) from (ii):</div>
+</div>
+<div class="eq final"><span class="label">TWO-TEMP FORM</span> log <span class="frac"><span class="num">k<sub>2</sub></span><span class="den">k<sub>1</sub></span></span> = <span class="frac"><span class="num">E<sub>a</sub></span><span class="den">2.303 R</span></span> · <span class="frac"><span class="num">T<sub>2</sub> − T<sub>1</sub></span><span class="den">T<sub>1</sub>T<sub>2</sub></span></span></div>
+<p>This is the <b>single most tested numerical formula</b> in CBSE board exams. <span class="badge ref">📌 See Solved Q 4.17, 4.18, 4.20</span></p>
+</div>
+<div class="card">
+<h2>2.2 Activation Energy &amp; Energy Profile <span class="badge pyq">⚡ CBSE PYQ</span></h2>
+<p><b>Activation energy (E<sub>a</sub>)</b> is the <u>minimum extra energy</u> required by a reacting molecule to get converted into product. It equals the difference between the <b>threshold energy</b> and the <b>average energy</b> of the reactants:</p>
+<div class="eq"><span class="label">DEFINITION</span> E<sub>a</sub> = Threshold Energy − Average Energy of Reactants</div>
+<div class="fig">
+<img alt="Energy Profile Diagram" src="https://image.qwenlm.ai/public_source/a4ecfb3b-e2dc-4fda-ae5d-c83b665b9af2/1158dfb69-99f2-4ddd-b147-de2d9272fc74.png"/>
+<div class="cap">Fig. 2.1 — Energy profile showing E<sub>a</sub>, threshold energy, and catalyzed (dashed red) path.</div>
+</div>
+<ul>
+<li><b>Catalyst effect:</b> Provides an alternate pathway of <u>lower activation energy</u> E<sub>a(cat)</sub> &lt; E<sub>a</sub>, thereby increasing the rate. It does NOT change ΔH or the equilibrium constant.</li>
+<li>A <b>10 K rise in T</b> nearly doubles the rate mainly because it <u>doubles the fraction of molecules</u> with energy ≥ E<sub>a</sub> (see Maxwell-Boltzmann).</li>
+</ul>
+</div>
+<div class="card">
+<h2>2.3 Maxwell-Boltzmann Distribution <span class="badge pyq">⚡ CBSE PYQ</span></h2>
+<p>The distribution of kinetic energies among gas molecules is given by the Maxwell-Boltzmann distribution. Only molecules with energy ≥ E<sub>a</sub> (threshold) can react.</p>
+<div class="fig">
+<img alt="Maxwell-Boltzmann Distribution" src="https://image.qwenlm.ai/public_source/a4ecfb3b-e2dc-4fda-ae5d-c83b665b9af2/1f7ed460d-fb72-42ed-bd9a-820b6e5d98da.png"/>
+<div class="cap">Fig. 2.2 — At T+10 K, the peak shifts right &amp; flattens; the shaded area (fraction with E ≥ E<sub>a</sub>) approximately doubles, doubling the rate.</div>
+</div>
+<div class="note">
+<b>Key conclusions from the graph:</b>
+<ul>
+<li>Most probable kinetic energy increases with temperature.</li>
+<li>Fraction of molecules with E ≥ E<sub>a</sub> (shaded region) increases sharply with T.</li>
+<li>A catalyst lowers E<sub>a</sub> (shifts the vertical line left), increasing the shaded fraction.</li>
+</ul>
+</div>
+</div>
+<div class="card">
+<h2>2.4 Collision Theory <span class="badge pyq">⚡ CBSE PYQ</span></h2>
+<p>Based on the kinetic theory of gases, a reaction occurs when molecules <b>collide</b> with sufficient <b>energy</b> and proper <b>orientation</b>.</p>
+<div class="eq"><span class="label">RATE</span> Rate = P · Z<sub>AB</sub> · e<sup>−E<sub>a</sub>/RT</sup></div>
+<ul>
+<li><b>Z<sub>AB</sub></b> = collision frequency (number of collisions per second per unit volume between A and B)</li>
+<li><b>e<sup>−E<sub>a</sub>/RT</sup></b> = fraction of molecules with energy ≥ E<sub>a</sub></li>
+<li><b>P</b> = steric (probability/orientation) factor</li>
+<li><b>P · Z<sub>AB</sub> = A</b> (frequency factor of Arrhenius equation)</li>
+</ul>
+<p>Hence: <b>Rate = A · e<sup>−E<sub>a</sub>/RT</sup></b></p>
+<h3>Conditions for effective collision:</h3>
+<ol>
+<li>Molecules must have <b>energy ≥ E<sub>a</sub></b> (threshold energy).</li>
+<li>Molecules must have <b>proper orientation</b> at the moment of collision.</li>
+</ol>
+</div>
+<div class="card">
+<h2>2.5 Summary — Factors Affecting Rate</h2>
+<table>
+<thead><tr><th>Factor</th><th>Effect on Rate</th><th>Why?</th></tr></thead>
+<tbody>
+<tr><td>Concentration ↑</td><td>Rate ↑</td><td>More collisions per unit time</td></tr>
+<tr><td>Temperature ↑</td><td>Rate ↑↑</td><td>Higher fraction of molecules with E ≥ E<sub>a</sub></td></tr>
+<tr><td>Catalyst added</td><td>Rate ↑↑</td><td>Lowers E<sub>a</sub> (alternate pathway)</td></tr>
+<tr><td>Surface area ↑ (powder)</td><td>Rate ↑</td><td>More exposed reacting sites</td></tr>
+<tr><td>Pressure ↑ (gases)</td><td>Rate ↑</td><td>Effective ↑ in concentration</td></tr>
+<tr><td>Light (photochemical)</td><td>Rate ↑</td><td>Supplies activation energy</td></tr>
+</tbody>
+</table>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============================== TAB 3 ============================== -->
+<section class="tab-content" id="tab3">
+<div class="card">
+<h2>📘 NCERT In-Text Questions — Solved</h2>
+<details>
+<summary>Q 4.1 (In-Text) — For the reaction R → P, concentration of R changes from 0.03 M to 0.02 M in 25 min. Calculate average rate using units of (i) min, (ii) s. <span class="badge tip">✓ Easy</span></summary>
+<div class="q-body">
+<p><b>Given:</b> [R]<sub>1</sub> = 0.03 M, [R]<sub>2</sub> = 0.02 M, Δt = 25 min</p>
+<p><b>Formula:</b> Rate<sub>av</sub> = −Δ[R]/Δt</p>
+<p>Δ[R] = 0.02 − 0.03 = −0.01 M</p>
+<p>(i) Rate = −(−0.01) / 25 = <b>4 × 10<sup>−4</sup> M min<sup>−1</sup></b></p>
+<p>(ii) Δt = 25 × 60 = 1500 s ⇒ Rate = 0.01 / 1500 = <b>6.67 × 10<sup>−6</sup> M s<sup>−1</sup></b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.2 — In reaction 2A → Products, [A] decreases from 0.5 to 0.4 mol L<sup>−1</sup> in 10 min. Calculate rate during this interval. <span class="badge tip">✓ Easy</span></summary>
+<div class="q-body">
+<p>Rate = −(1/2)·Δ[A]/Δt = −(1/2)·(0.4 − 0.5)/10 = (1/2)·(0.1/10) = <b>5 × 10<sup>−3</sup> mol L<sup>−1</sup> min<sup>−1</sup></b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.3 — For reaction X<sub>2</sub> + 2Y<sub>2</sub> + 2Z → XY<sub>2</sub>Z<sub>2</sub>, doubling [Y<sub>2</sub>] quadruples rate; changing [X<sub>2</sub>] or [Z] has no effect. (i) Write rate law. (ii) Find rate if [X<sub>2</sub>] doubled and [Y<sub>2</sub>] tripled. <span class="badge pyq">⚡ CBSE PYQ</span></summary>
+<div class="q-body">
+<p>(i) Doubling [Y<sub>2</sub>] ⇒ rate × 4, so order w.r.t. Y<sub>2</sub> = 2 (since 2<sup>2</sup> = 4).</p>
+<p>Changing [X<sub>2</sub>] or [Z] has no effect ⇒ order w.r.t. both = 0.</p>
+<p><b>Rate law:</b> Rate = k[Y<sub>2</sub>]<sup>2</sup></p>
+<p>(ii) If [Y<sub>2</sub>] tripled, new rate = k(3[Y<sub>2</sub>])<sup>2</sup> = <b>9 × original rate</b>. (Doubling [X<sub>2</sub>] has no effect.)</p>
+</div>
+</details>
+<details>
+<summary>Q 4.4 — Conversion of cyclopropane to propene is first order, k = 2.714 × 10<sup>−5</sup> s<sup>−1</sup>, [cyclopropane]<sub>0</sub> = 0.290 M. Find [cyclopropane] after 100 s.</summary>
+<div class="q-body">
+<p>k = (2.303/t) log(a/(a−x))</p>
+<p>2.714 × 10<sup>−5</sup> = (2.303/100) log(0.290/[A])</p>
+<p>log(0.290/[A]) = 2.714 × 10<sup>−5</sup> × 100 / 2.303 = 1.178 × 10<sup>−3</sup></p>
+<p>0.290/[A] = 10<sup>0.001178</sup> = 1.00272</p>
+<p>[A] = <b>0.289 M</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.5 — Decomposition of N<sub>2</sub>O<sub>5</sub>: 2N<sub>2</sub>O<sub>5</sub> → 4NO<sub>2</sub> + O<sub>2</sub> is first order with k = 6.2 × 10<sup>−4</sup> min<sup>−1</sup>. Calculate t<sub>1/2</sub>.</summary>
+<div class="q-body">
+<p>t<sub>1/2</sub> = 0.693/k = 0.693 / (6.2 × 10<sup>−4</sup>) = <b>1117.7 min ≈ 18.63 hours</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.6 — Rate constant for first order reaction is 60 s<sup>−1</sup>. How much time to reduce 1 g to 1/16th? <span class="badge pyq">⚡ CBSE PYQ</span></summary>
+<div class="q-body">
+<p>t = (2.303/k) log([R]<sub>0</sub>/[R]) = (2.303/60) log(16)</p>
+<p>= (2.303/60) × 1.2041 = <b>0.0462 s = 4.62 × 10<sup>−2</sup> s</b></p>
+<p><b>Alternate:</b> 16 = 2<sup>4</sup>, so 4 half-lives. t<sub>1/2</sub> = 0.693/60 = 0.01155 s. Total = 4 × 0.01155 = 0.0462 s ✓</p>
+</div>
+</details>
+<details>
+<summary>Q 4.7 — Rate quadruples when [A] increases by 10 times. Find order.</summary>
+<div class="q-body">
+<p>Rate ∝ [A]<sup>n</sup>. 4 = 10<sup>n</sup> ⇒ n = log(4)/log(10) = 0.602/1 ≈ <b>0.6</b> (≈ 3/5)</p>
+</div>
+</details>
+<details>
+<summary>Q 4.8 — E<sub>a</sub> = 104.4 kJ mol<sup>−1</sup>, A = 6.0 × 10<sup>14</sup> s<sup>−1</sup> at 25 °C. Find k.</summary>
+<div class="q-body">
+<p>k = A · e<sup>−E<sub>a</sub>/RT</sup></p>
+<p>E<sub>a</sub>/RT = 104400 / (8.314 × 298) = 42.14</p>
+<p>e<sup>−42.14</sup> = 5.01 × 10<sup>−19</sup></p>
+<p>k = 6.0 × 10<sup>14</sup> × 5.01 × 10<sup>−19</sup> = <b>3.0 × 10<sup>−4</sup> s<sup>−1</sup></b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.9 — A first-order reaction has k = 1.15 × 10<sup>−3</sup> s<sup>−1</sup>. How long will 5 g take to become 3 g?</summary>
+<div class="q-body">
+<p>t = (2.303/k) log([R]<sub>0</sub>/[R]) = (2.303/1.15×10<sup>−3</sup>) log(5/3)</p>
+<p>= 2002.6 × 0.2218 = <b>444 s ≈ 7.4 min</b></p>
+</div>
+</details>
+</div>
+<div class="card">
+<h2>📗 NCERT Examples — Selected Solutions</h2>
+<details>
+<summary>Example 4.4 — In a pseudo-first-order hydrolysis of ester, data: t = 30, 60, 90 s; [ester] = 0.31, 0.17, 0.085 M. Show it is first order and find average k.</summary>
+<div class="q-body">
+<p>Use k = (2.303/t) log(a/(a−x)) with a = 0.55 M (initial).</p>
+<p>At t=30: k = (2.303/30) log(0.55/0.31) = 0.0767 × 0.2484 = 1.907 × 10<sup>−2</sup> s<sup>−1</sup></p>
+<p>At t=60: k = (2.303/60) log(0.55/0.17) = 0.0384 × 0.5098 = 1.957 × 10<sup>−2</sup> s<sup>−1</sup></p>
+<p>At t=90: k = (2.303/90) log(0.55/0.085) = 0.02559 × 0.8108 = 2.074 × 10<sup>−2</sup> s<sup>−1</sup></p>
+<p>Since k values are nearly constant, reaction is <b>first order</b>.</p>
+<p>k<sub>av</sub> = (1.907 + 1.957 + 2.074) × 10<sup>−2</sup> / 3 = <b>1.98 × 10<sup>−2</sup> s<sup>−1</sup></b></p>
+</div>
+</details>
+<details>
+<summary>Example 4.5 — t<sub>1/2</sub> = 5 × 10<sup>4</sup> s. What % of N<sub>2</sub>O<sub>5</sub> reacts in 2 hrs?</summary>
+<div class="q-body">
+<p>k = 0.693 / (5×10<sup>4</sup>) = 1.386 × 10<sup>−5</sup> s<sup>−1</sup></p>
+<p>t = 2 hr = 7200 s</p>
+<p>k = (2.303/t) log([R]<sub>0</sub>/[R]) ⇒ 1.386×10<sup>−5</sup> = (2.303/7200) log([R]<sub>0</sub>/[R])</p>
+<p>log([R]<sub>0</sub>/[R]) = 0.04337 ⇒ [R]<sub>0</sub>/[R] = 1.105 ⇒ [R]/[R]<sub>0</sub> = 0.905</p>
+<p>∴ % reacted = (1 − 0.905) × 100 = <b>9.5%</b></p>
+</div>
+</details>
+<details>
+<summary>Example 4.8 — First-order t<sub>1/2</sub> = 60 min. What % remains after 240 min?</summary>
+<div class="q-body">
+<p>Number of half-lives n = 240/60 = 4</p>
+<p>[A] = [A]<sub>0</sub>/2<sup>4</sup> = [A]<sub>0</sub>/16 = 0.0625 [A]<sub>0</sub></p>
+<p>∴ % remaining = <b>6.25%</b></p>
+</div>
+</details>
+<details>
+<summary>Example 4.10 — Show that t<sub>99.9%</sub> = 10 × t<sub>1/2</sub> for first-order. <span class="badge hot">🔥 Board Favorite</span></summary>
+<div class="q-body">
+<p>For 99.9% completion: [A] = 0.001 [A]<sub>0</sub></p>
+<p>t<sub>99.9%</sub> = (2.303/k) log([A]<sub>0</sub>/0.001[A]<sub>0</sub>) = (2.303/k) log(1000) = (2.303 × 3)/k = 6.909/k</p>
+<p>t<sub>1/2</sub> = 0.693/k</p>
+<p>t<sub>99.9%</sub> / t<sub>1/2</sub> = 6.909 / 0.693 = <b>10</b> ∎</p>
+</div>
+</details>
+</div>
+<div class="card">
+<h2>📕 NCERT Exercises — Solved</h2>
+<details>
+<summary>Q 4.1 — Reaction rate doubles when temperature rises from 298 K to 308 K. Find E<sub>a</sub>. <span class="badge pyq">⚡ CBSE PYQ — Expected</span></summary>
+<div class="q-body">
+<p>k<sub>2</sub>/k<sub>1</sub> = 2, T<sub>1</sub> = 298 K, T<sub>2</sub> = 308 K</p>
+<p>log(k<sub>2</sub>/k<sub>1</sub>) = (E<sub>a</sub>/2.303R) · (T<sub>2</sub>−T<sub>1</sub>)/(T<sub>1</sub>T<sub>2</sub>)</p>
+<p>log 2 = (E<sub>a</sub> / (2.303 × 8.314)) · (10 / (298 × 308))</p>
+<p>0.3010 = (E<sub>a</sub> / 19.147) × 1.089 × 10<sup>−4</sup></p>
+<p>E<sub>a</sub> = 0.3010 × 19.147 / 1.089 × 10<sup>−4</sup> = <b>52,898 J mol<sup>−1</sup> ≈ 52.9 kJ mol<sup>−1</sup></b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.2 — For 2N<sub>2</sub>O<sub>5</sub> → 4NO<sub>2</sub> + O<sub>2</sub>, rate = 4.2 × 10<sup>−7</sup> M s<sup>−1</sup>. Find rate of appearance of NO<sub>2</sub> and O<sub>2</sub>.</summary>
+<div class="q-body">
+<p>Rate = −(1/2) d[N<sub>2</sub>O<sub>5</sub>]/dt = +(1/4) d[NO<sub>2</sub>]/dt = +d[O<sub>2</sub>]/dt = 4.2 × 10<sup>−7</sup></p>
+<p>d[NO<sub>2</sub>]/dt = 4 × 4.2 × 10<sup>−7</sup> = <b>1.68 × 10<sup>−6</sup> M s<sup>−1</sup></b></p>
+<p>d[O<sub>2</sub>]/dt = <b>4.2 × 10<sup>−7</sup> M s<sup>−1</sup></b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.3 — First-order, k = 5.5 × 10<sup>−14</sup> s<sup>−1</sup>. Find t<sub>1/2</sub>.</summary>
+<div class="q-body">
+<p>t<sub>1/2</sub> = 0.693 / (5.5 × 10<sup>−14</sup>) = <b>1.26 × 10<sup>13</sup> s ≈ 3.99 × 10<sup>5</sup> years</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.4 — For first order, k = 6.93 × 10<sup>−3</sup> min<sup>−1</sup>. Time for 50% and 75% completion?</summary>
+<div class="q-body">
+<p>t<sub>50%</sub> = 0.693 / 6.93 × 10<sup>−3</sup> = <b>100 min</b></p>
+<p>t<sub>75%</sub> = (2.303/k) log(100/25) = (2.303/6.93×10<sup>−3</sup>) log 4 = 332.4 × 0.602 = <b>200 min</b></p>
+<p>✓ Note: t<sub>75%</sub> = 2 × t<sub>50%</sub> (proof for first order).</p>
+</div>
+</details>
+<details>
+<summary>Q 4.5 — If k = 2.54 × 10<sup>−3</sup> s<sup>−1</sup>, calculate 3/4th life.</summary>
+<div class="q-body">
+<p>t<sub>3/4</sub> = (2.303/k) log(100/25) = (2.303/2.54×10<sup>−3</sup>) × 0.602 = <b>546 s</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.6 — First order, 30% decomposition in 40 min. Find t<sub>1/2</sub>.</summary>
+<div class="q-body">
+<p>k = (2.303/40) log(100/70) = 0.0576 × 0.1549 = 8.91 × 10<sup>−3</sup> min<sup>−1</sup></p>
+<p>t<sub>1/2</sub> = 0.693 / 8.91 × 10<sup>−3</sup> = <b>77.7 min</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.17 — k = 4.5 × 10<sup>3</sup> s<sup>−1</sup> at 10°C, E<sub>a</sub> = 60 kJ/mol. Find k at 25°C. <span class="badge pyq">⚡ CBSE PYQ</span></summary>
+<div class="q-body">
+<p>T<sub>1</sub> = 283 K, T<sub>2</sub> = 298 K, E<sub>a</sub> = 60000 J/mol</p>
+<p>log(k<sub>2</sub>/k<sub>1</sub>) = (E<sub>a</sub>/2.303R) · (T<sub>2</sub>−T<sub>1</sub>)/(T<sub>1</sub>T<sub>2</sub>)</p>
+<p>= (60000 / 19.147) × 15/(283 × 298) = 3133.5 × 1.773 × 10<sup>−4</sup> = 0.5556</p>
+<p>k<sub>2</sub>/k<sub>1</sub> = 10<sup>0.5556</sup> = 3.595</p>
+<p>k<sub>2</sub> = 4.5 × 10<sup>3</sup> × 3.595 = <b>1.62 × 10<sup>4</sup> s<sup>−1</sup></b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.18 — First-order: 10% completion at 298 K equals 25% completion at 308 K. Find E<sub>a</sub>. <span class="badge pyq">⚡ CBSE PYQ — Expected</span></summary>
+<div class="q-body">
+<p>At 298 K: k<sub>1</sub> = (2.303/t<sub>1</sub>) log(100/90) = 0.1054/t<sub>1</sub></p>
+<p>At 308 K: k<sub>2</sub> = (2.303/t<sub>2</sub>) log(100/75) = 0.2877/t<sub>2</sub></p>
+<p>Since times are equal (t<sub>1</sub> = t<sub>2</sub>): k<sub>2</sub>/k<sub>1</sub> = 0.2877/0.1054 = 2.7296</p>
+<p>log(2.7296) = (E<sub>a</sub>/19.147) × 10/(298 × 308)</p>
+<p>0.4362 = E<sub>a</sub> × 1.089 × 10<sup>−4</sup> / 19.147</p>
+<p>E<sub>a</sub> = 0.4362 × 19.147 / 1.089 × 10<sup>−4</sup> = <b>76,646 J/mol ≈ 76.6 kJ/mol</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.19 — A reaction is first order in A and second order in B. (i) Write rate law. (ii) Effect of tripling [B]. (iii) Effect of doubling both.</summary>
+<div class="q-body">
+<p>(i) Rate = k[A][B]<sup>2</sup></p>
+<p>(ii) Tripling [B]: rate becomes k[A](3B)<sup>2</sup> = 9k[A][B]<sup>2</sup> ⇒ <b>rate × 9</b></p>
+<p>(iii) Doubling both: k(2A)(2B)<sup>2</sup> = 8k[A][B]<sup>2</sup> ⇒ <b>rate × 8</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.20 — At 380°C, t<sub>1/2</sub> of H<sub>2</sub>O<sub>2</sub> decomposition = 360 min; E<sub>a</sub> = 200 kJ/mol. Find time for 75% decomposition at 450°C.</summary>
+<div class="q-body">
+<p>k<sub>1</sub> at 653 K = 0.693/360 = 1.925 × 10<sup>−3</sup> min<sup>−1</sup></p>
+<p>log(k<sub>2</sub>/k<sub>1</sub>) = (200000/19.147) × (450−380)/((653)(723)) = 10445 × 70/472119 = 1.5475</p>
+<p>k<sub>2</sub>/k<sub>1</sub> = 35.26 ⇒ k<sub>2</sub> = 35.26 × 1.925×10<sup>−3</sup> = 0.0679 min<sup>−1</sup></p>
+<p>t<sub>75%</sub> = (2.303/0.0679) log(100/25) = 33.91 × 0.602 = <b>20.4 min</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.21 — First order, 20% decomposition in 10 min. Time for 80% completion?</summary>
+<div class="q-body">
+<p>k = (2.303/10) log(100/80) = 0.2303 × 0.0969 = 0.02232 min<sup>−1</sup></p>
+<p>t<sub>80%</sub> = (2.303/0.02232) log(100/20) = 103.2 × 0.699 = <b>72.14 min</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.22 — First-order decomposition: A → B + C. Initial pressure of A = P<sub>i</sub>, total pressure at time t = P<sub>t</sub>. Derive k in terms of P<sub>i</sub> and P<sub>t</sub>. <span class="badge pyq">⚡ CBSE PYQ</span></summary>
+<div class="q-body">
+<p>At t=0: P<sub>A</sub> = P<sub>i</sub>. At t=t: let x decompose.</p>
+<p>P<sub>A</sub> = P<sub>i</sub> − x, P<sub>B</sub> = x, P<sub>C</sub> = x.</p>
+<p>Total: P<sub>t</sub> = (P<sub>i</sub> − x) + x + x = P<sub>i</sub> + x ⇒ x = P<sub>t</sub> − P<sub>i</sub></p>
+<p>P<sub>A</sub> at t = P<sub>i</sub> − (P<sub>t</sub> − P<sub>i</sub>) = 2P<sub>i</sub> − P<sub>t</sub></p>
+<p><b>k = (2.303/t) log[ P<sub>i</sub> / (2P<sub>i</sub> − P<sub>t</sub>) ]</b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.23 — Define: (i) order, (ii) activation energy. State two differences between order and molecularity.</summary>
+<div class="q-body">
+<p>(i) <b>Order</b> = sum of powers of concentration terms in rate law; determined experimentally.</p>
+<p>(ii) <b>E<sub>a</sub></b> = minimum extra energy required by reactant molecules to form the activated complex.</p>
+<p><b>Differences:</b></p>
+<ul>
+<li>Order can be 0/fractional/negative; molecularity is always a positive integer ≥1.</li>
+<li>Order is experimental; molecularity is theoretical (from mechanism).</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>Q 4.24 — Explain: (i) Why rate changes with temperature? (ii) Why explosion rate is very high?</summary>
+<div class="q-body">
+<p>(i) ↑T increases the fraction of molecules having energy ≥ E<sub>a</sub> (Maxwell-Boltzmann). Hence more effective collisions per unit time → rate ↑.</p>
+<p>(ii) In an explosion, large number of activated molecules + highly exothermic reaction → rapid self-sustaining chain reaction → very high rate.</p>
+</div>
+</details>
+<details>
+<summary>Q 4.25 — For 2A + B → C + D, find rate law and k from data: [A]=0.1,[B]=0.1,rate=6×10<sup>−3</sup>; [A]=0.3,[B]=0.2,rate=7.2×10<sup>−2</sup>; [A]=0.3,[B]=0.4,rate=2.88×10<sup>−1</sup>; [A]=0.4,[B]=0.1,rate=2.4×10<sup>−2</sup>.</summary>
+<div class="q-body">
+<p>Let rate = k[A]<sup>x</sup>[B]<sup>y</sup>.</p>
+<p>Compare (ii) &amp; (iii): [A] same, [B] doubled ⇒ rate × 4 ⇒ y = 2.</p>
+<p>Compare (i) &amp; (iv): [B] same, [A] × 4 ⇒ rate × 4 ⇒ x = 1.</p>
+<p><b>Rate = k[A][B]<sup>2</sup></b> (Order = 3)</p>
+<p>k = 6×10<sup>−3</sup> / (0.1 × 0.1<sup>2</sup>) = 6×10<sup>−3</sup> / 10<sup>−3</sup> = <b>6.0 L<sup>2</sup> mol<sup>−2</sup> min<sup>−1</sup></b></p>
+</div>
+</details>
+<details>
+<summary>Q 4.26 — Show that for a first-order reaction, time required for 99% completion is twice the time required for 90% completion. <span class="badge hot">🔥 Board Favorite</span></summary>
+<div class="q-body">
+<p>t<sub>90%</sub> = (2.303/k) log(100/10) = (2.303/k) × 1 = 2.303/k</p>
+<p>t<sub>99%</sub> = (2.303/k) log(100/1) = (2.303/k) × 2 = 4.606/k</p>
+<p>∴ t<sub>99%</sub> / t<sub>90%</sub> = 4.606/2.303 = <b>2</b> ∎</p>
+</div>
+</details>
+<details>
+<summary>Q 4.27 — First-order reaction: 99.9% completion in 100 min. Find k and t<sub>1/2</sub>.</summary>
+<div class="q-body">
+<p>k = (2.303/100) log(100/0.1) = 0.02303 × 3 = 0.06909 min<sup>−1</sup></p>
+<p>t<sub>1/2</sub> = 0.693 / 0.06909 = <b>10.03 min</b>   (Note: 100/10 ≈ 10 ✓)</p>
+</div>
+</details>
+</div>
+<div class="card">
+<h2>🎯 High-Yield PYQ Patterns (Quick-Review)</h2>
+<table>
+<thead><tr><th>Pattern</th><th>Formula</th><th>Frequency</th></tr></thead>
+<tbody>
+<tr><td>Find t<sub>1/2</sub> from k (first order)</td><td class="math-cell">t<sub>1/2</sub> = 0.693/k</td><td><span class="badge hot">★★★★★</span></td></tr>
+<tr><td>Find k from two temperatures</td><td class="math-cell">log(k<sub>2</sub>/k<sub>1</sub>) = (E<sub>a</sub>/2.303R)(T<sub>2</sub>−T<sub>1</sub>)/(T<sub>1</sub>T<sub>2</sub>)</td><td><span class="badge hot">★★★★★</span></td></tr>
+<tr><td>Prove t<sub>99%</sub> = 2t<sub>90%</sub></td><td class="math-cell">Derivation</td><td><span class="badge pyq">★★★★☆</span></td></tr>
+<tr><td>Prove t<sub>99.9%</sub> = 10t<sub>1/2</sub></td><td class="math-cell">Derivation</td><td><span class="badge pyq">★★★★☆</span></td></tr>
+<tr><td>Order from concentration-rate data</td><td class="math-cell">Rate ∝ [A]<sup>n</sup></td><td><span class="badge pyq">★★★★☆</span></td></tr>
+<tr><td>Units of k for given order</td><td class="math-cell">(mol/L)<sup>1−n</sup> s<sup>−1</sup></td><td><span class="badge tip">★★★☆☆</span></td></tr>
+<tr><td>Graph of log[A] vs t (slope/intercept)</td><td class="math-cell">slope = −k/2.303</td><td><span class="badge tip">★★★☆☆</span></td></tr>
+</tbody>
+</table>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+</div>
+<footer>
+  📘 Chemical Kinetics Master Notes — Class 12 CBSE · Based on NCERT Chapter 4 · For Educational Use Only
+</footer>
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-content');
+  tabs.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id = btn.dataset.tab;
+      tabs.forEach(b=>b.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab'+id).classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Master Study Notes - Structure of Atom | Class 11 Chemistry</title>
+<style>
+:root {
+  --primary: #0d1b3e; --primary-light: #1a3a6b; --accent: #f0b429;
+  --bg: #f0f4f8; --card: #ffffff; --text: #1a1a2e; --text-light: #555;
+  --border: #d0d7e0; --highlight: #ff6b35; --formula-bg: #fffde7;
+  --formula-border: #f9a825; --badge-bg: #ffeb3b; --badge-text: #333;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+header { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; padding: 24px 30px; text-align: center; border-bottom: 4px solid var(--accent); }
+header h1 { font-size: 1.6rem; font-weight: 700; }
+header p { font-size: 0.9rem; opacity: 0.85; margin-top: 4px; }
+.tab-nav { display: flex; background: var(--primary); position: sticky; top: 0; z-index: 100; }
+.tab-nav button { flex: 1; padding: 14px 8px; border: none; background: transparent; color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 600; cursor: pointer; border-bottom: 3px solid transparent; }
+.tab-nav button:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.tab-nav button.active { color: #fff; border-bottom-color: var(--accent); }
+.tab-content { display: none; padding: 24px 30px; max-width: 1100px; margin: 0 auto; }
+.tab-content.active { display: block; }
+.card { background: var(--card); border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 1px solid var(--border); }
+.card h2 { font-size: 1.25rem; color: var(--primary); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+.card h3 { font-size: 1.05rem; color: var(--primary-light); margin: 16px 0 8px; }
+.card p, .card li { margin-bottom: 8px; }
+.formula-box { background: var(--formula-bg); border-left: 5px solid var(--formula-border); padding: 14px 18px; margin: 12px 0; border-radius: 0 8px 8px 0; overflow-x: auto; }
+.formula-box strong { color: #c62828; }
+.formula-box.high-impact { background: #fff3e0; border-left-color: var(--highlight); }
+.formula-box.high-impact strong { color: var(--highlight); }
+.math { font-family: 'Cambria', 'Georgia', serif; font-style: italic; }
+sub, sup { font-size: 0.75em; }
+.badge { display: inline-block; background: var(--badge-bg); color: var(--badge-text); font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 20px; margin-left: 6px; white-space: nowrap; vertical-align: middle; }
+.ncert-q { margin-bottom: 10px; }
+.ncert-q details { background: var(--card); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; }
+.ncert-q details summary { padding: 12px 16px; cursor: pointer; font-weight: 600; color: var(--primary); background: #f8f9fc; }
+.ncert-q details summary:hover { background: #eef1f7; }
+.ncert-q details .solution { padding: 14px 18px; border-top: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+th, td { padding: 10px 12px; border: 1px solid var(--border); }
+th { background: var(--primary); color: #fff; font-weight: 600; }
+tr:nth-child(even) { background: #f8f9fc; }
+@media print {
+  .tab-nav { display: none !important; }
+  .tab-content { display: block !important; padding: 12px; }
+  body { background: #fff; color: #000; font-size: 11px; }
+  .card { border: 1px solid #ccc; break-inside: avoid; }
+  .badge { background: #eee !important; color: #000 !important; }
+  .ncert-q details { display: block !important; }
+  .ncert-q details .solution { display: block !important; }
+}
+@media (max-width: 768px) {
+  .tab-nav button { font-size: 0.7rem; padding: 10px 4px; }
+  .tab-content { padding: 14px; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Master Study Notes — Class 11 Chemistry</h1>
+<p>Chapter 2: Structure of Atom  |  NCERT Curriculum • CBSE Board Focus</p>
+</header>
+<nav class="tab-nav">
+<button class="active" onclick="switchTab(0)">Classical Models &amp; Bohr</button>
+<button onclick="switchTab(1)">Quantum Mechanical Model</button>
+<button onclick="switchTab(2)">NCERT Solutions</button>
+</nav>
+<!-- ===== TAB 1 ===== -->
+<section class="tab-content active" id="tab-0">
+<div class="card">
+<h2>1.1 Subatomic Particles</h2>
+<p>Atoms are made of three fundamental particles. Think of an atom like a tiny stadium — a heavy nucleus at the centre with electrons whizzing around it in empty space.</p>
+<table>
+<tr><th>Particle</th><th>Symbol</th><th>Charge (C)</th><th>Mass (kg)</th><th>Location</th></tr>
+<tr><td>Electron</td><td>e<sup>−</sup></td><td>−1.602 × 10<sup>−19</sup></td><td>9.109 × 10<sup>−31</sup></td><td>Outside nucleus</td></tr>
+<tr><td>Proton</td><td>p</td><td>+1.602 × 10<sup>−19</sup></td><td>1.673 × 10<sup>−27</sup></td><td>Inside nucleus</td></tr>
+<tr><td>Neutron</td><td>n</td><td>0</td><td>1.675 × 10<sup>−27</sup></td><td>Inside nucleus</td></tr>
+</table>
+<p><strong>Real-life example:</strong> If an atom were the size of a football stadium, the nucleus would be like a pea at the centre — almost all the space is empty!</p>
+<div class="formula-box">
+<strong>Mass of electron:</strong> 9.109 × 10<sup>−31</sup> kg  |  <strong>Charge:</strong> 1.602 × 10<sup>−19</sup> C  |  <strong>Specific charge (e/m):</strong> 1.76 × 10<sup>11</sup> C/kg
+  </div>
+</div>
+<div class="card">
+<h2>1.2 Thomson's Plum Pudding Model <span class="badge">CBSE Basic</span></h2>
+<p>J.J. Thomson (1898) discovered the electron using cathode ray tubes. He proposed that an atom is a sphere of positive charge with electrons embedded in it — like raisins in a pudding or seeds in a watermelon. This model failed to explain α-particle scattering.</p>
+</div>
+<div class="card">
+<h2>1.3 Rutherford's Gold Foil Experiment <span class="badge">⚡ CBSE Expected</span></h2>
+<p>Ernest Rutherford (1911) bombarded gold foil with α-particles:</p>
+<ul>
+<li><strong>Most passed straight through</strong> → atom is mostly empty space</li>
+<li><strong>Some deflected</strong> by small angles → positive charge is concentrated</li>
+<li><strong>Very few (1 in 20,000) bounced back</strong> → a tiny, dense nucleus exists</li>
+</ul>
+<p><strong>Limitation:</strong> Could not explain why electrons don't spiral into the nucleus.</p>
+</div>
+<div class="card">
+<h2>1.4 Bohr's Model of the Hydrogen Atom <span class="badge">⚡ High Yield</span></h2>
+<p>Niels Bohr (1913) fixed Rutherford's problem by adding quantum rules.</p>
+<h3>Three Postulates:</h3>
+<ol>
+<li>Electrons revolve in <strong>permitted circular orbits</strong> (stationary states) without radiating energy.</li>
+<li>Angular momentum is quantized: <span class="math">m<sub>e</sub>vr = nℏ</span> (n = 1, 2, 3...)</li>
+<li>Energy jumps: <span class="math">E<sub>2</sub> − E<sub>1</sub> = hν</span></li>
+</ol>
+<div class="formula-box high-impact">
+<strong>Bohr's Radius:</strong> r<sub>n</sub> = n<sup>2</sup> × 52.9 pm   📌 [See Solved Q 2.17]
+  </div>
+<div class="formula-box high-impact">
+<strong>Energy:</strong> E<sub>n</sub> = −13.6/n<sup>2</sup> eV = −2.18×10<sup>−18</sup>/n<sup>2</sup> J
+  </div>
+<div class="formula-box high-impact">
+<strong>Velocity:</strong> v<sub>n</sub> = 2.188×10<sup>6</sup> × (Z/n) m/s
+  </div>
+</div>
+<div class="card">
+<h2>1.5 Hydrogen Emission Spectrum <span class="badge">⚡ High Yield</span></h2>
+<p>Excited hydrogen emits photons of specific wavelengths — a <strong>line spectrum</strong>.</p>
+<div class="formula-box high-impact">
+<strong>Rydberg Formula:</strong> 1/λ = R<sub>H</sub> (1/n<sub>1</sub><sup>2</sup> − 1/n<sub>2</sub><sup>2</sup>)   R<sub>H</sub> = 1.097×10<sup>7</sup> m<sup>−1</sup>   📌 [See Solved Q 2.18]
+  </div>
+<table>
+<tr><th>Series</th><th>n<sub>1</sub></th><th>n<sub>2</sub></th><th>Region</th></tr>
+<tr><td>Lyman</td><td>1</td><td>2,3,4...</td><td>UV</td></tr>
+<tr><td>Balmer</td><td>2</td><td>3,4,5,6</td><td>Visible</td></tr>
+<tr><td>Paschen</td><td>3</td><td>4,5,6...</td><td>IR</td></tr>
+<tr><td>Brackett</td><td>4</td><td>5,6,7...</td><td>IR</td></tr>
+<tr><td>Pfund</td><td>5</td><td>6,7,8...</td><td>IR</td></tr>
+</table>
+</div>
+<div class="card">
+<h2>1.6 Limitations of Bohr's Model <span class="badge">CBSE Expected</span></h2>
+<ul>
+<li>Works only for hydrogen-like species (He<sup>+</sup>, Li<sup>2+</sup>)</li>
+<li>Fails for multi-electron atoms</li>
+<li>Cannot explain fine structure (splitting in magnetic fields)</li>
+<li>Violates Heisenberg's Uncertainty Principle</li>
+</ul>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ===== TAB 2 ===== -->
+<section class="tab-content" id="tab-1">
+<div class="card">
+<h2>2.1 Dual Nature of Matter <span class="badge">⚡ High Yield</span></h2>
+<p>Louis de Broglie (1924) proposed that <strong>matter has dual nature</strong> — every moving particle has a wavelength.</p>
+<div class="formula-box high-impact">
+<strong>De Broglie Wavelength:</strong> λ = h/mv = h/p   📌 [See Solved Q 2.24]
+  </div>
+<div class="formula-box">
+<strong>For accelerated electron:</strong> λ = h/√(2meV) = 1.226/√V nm
+  </div>
+<p><strong>Real-life:</strong> A cricket ball at 30 m/s has λ ≈ 10<sup>−34</sup> m (undetectable). An electron at 10<sup>6</sup> m/s has λ ≈ 0.7 nm (measurable).</p>
+</div>
+<div class="card">
+<h2>2.2 Heisenberg's Uncertainty Principle <span class="badge">⚡ High Yield</span></h2>
+<p>We <strong>cannot</strong> simultaneously know both the exact position and momentum of a particle.</p>
+<div class="formula-box high-impact">
+<strong>Δx · Δp ≥ h/(4π)</strong>   or   <strong>ΔE · Δt ≥ h/(4π)</strong>   📌 [See Solved Q 2.27]
+  </div>
+<p><strong>Analogy:</strong> Photographing a speeding car — sharp photo (good position, no speed) vs blurred (speed visible, poor position).</p>
+</div>
+<div class="card">
+<h2>2.3 Quantum Numbers Cheat-Sheet</h2>
+<p>Every electron is uniquely identified by <strong>four quantum numbers</strong>.</p>
+<table>
+<tr><th>Name</th><th>Symbol</th><th>Values</th><th>Physical Meaning</th></tr>
+<tr><td>Principal</td><td>n</td><td>1, 2, 3, 4...</td><td>Shell / Energy level (size)</td></tr>
+<tr><td>Azimuthal</td><td>l</td><td>0 to (n−1)</td><td>Subshell / Shape (s,p,d,f)</td></tr>
+<tr><td>Magnetic</td><td>m<sub>l</sub></td><td>−l to +l (2l+1 values)</td><td>Orientation in space</td></tr>
+<tr><td>Spin</td><td>m<sub>s</sub></td><td>+½ or −½</td><td>Spin direction</td></tr>
+</table>
+<div class="formula-box high-impact">
+    Orbitals in shell = n<sup>2</sup>  |  Electrons in shell = 2n<sup>2</sup>  |  Orbitals per subshell = 2l+1
+  </div>
+</div>
+<div class="card">
+<h2>2.4 Orbital Shapes and Nodes <span class="badge">⚡ High Yield</span></h2>
+<ul>
+<li><strong>s-orbital (l=0):</strong> Spherical. 0 angular nodes.</li>
+<li><strong>p-orbital (l=1):</strong> Dumbbell (2 lobes). 1 angular node.</li>
+<li><strong>d-orbital (l=2):</strong> Cloverleaf (4 lobes). 2 angular nodes.</li>
+</ul>
+<div class="formula-box high-impact">
+<strong>Angular = l</strong>  |  <strong>Radial = n−l−1</strong>  |  <strong>Total = n−1</strong><br/>
+<span class="badge">⚡ Board Exam Favourite!</span> 📌 [See Solved Q 2.38]
+  </div>
+<p><strong>Example:</strong> 3p (n=3,l=1): Angular=1, Radial=1, Total=2.</p>
+</div>
+<div class="card">
+<h2>2.5 Electronic Configuration &amp; Aufbau Principle</h2>
+<div class="formula-box">
+<strong>Order:</strong> 1s→2s→2p→3s→3p→4s→3d→4p→5s→4d→5p→6s→4f→5d→6p→7s→5f→6d→7p
+  </div>
+<h3>Three Rules:</h3>
+<ol>
+<li><strong>Aufbau:</strong> Fill lowest energy orbitals first.</li>
+<li><strong>Pauli's Exclusion:</strong> Max 2 e<sup>−</sup> per orbital, opposite spins.</li>
+<li><strong>Hund's Rule:</strong> Fill all singly with parallel spins before pairing.</li>
+</ol>
+<div class="formula-box high-impact" style="background:#fff8e1;border-left-color:#ff8f00;">
+<strong>⚠️ Anomalous Configurations:</strong><br/>
+<strong>Cr (Z=24):</strong> [Ar] 3d<sup>5</sup> <u>4s<sup>1</sup></u> (half-filled d stability) <span class="badge">⚡ CBSE Expected</span><br/>
+<strong>Cu (Z=29):</strong> [Ar] 3d<sup>10</sup> <u>4s<sup>1</sup></u> (fully-filled d stability) <span class="badge">⚡ CBSE Expected</span>
+</div>
+</div>
+<div class="card">
+<h2>2.6 Photoelectric Effect <span class="badge">⚡ High Yield</span></h2>
+<div class="formula-box high-impact">
+<strong>Einstein's Equation:</strong> hν = hν<sub>0</sub> + ½mv<sup>2</sup>   or   KE<sub>max</sub> = hν − φ   📌 [See Solved Q 2.9]
+  </div>
+<p><strong>Applications:</strong> Solar panels, automatic doors, burglar alarms, digital cameras.</p>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ===== TAB 3 ===== -->
+<section class="tab-content" id="tab-2">
+<div class="card">
+<h2>NCERT Solutions — Structure of Atom <span class="badge">67 Questions</span></h2>
+<p>Click a question to reveal its step-by-step solution.</p>
+<div class="ncert-q"><details><summary>Q 2.1: (i) Electrons weighing 1 g. (ii) Mass &amp; charge of 1 mole of electrons.</summary>
+<div class="solution"><p><b>(i)</b> Mass of 1 e = 9.109×10<sup>−31</sup> kg = 9.109×10<sup>−28</sup> g. Number = 1/(9.109×10<sup>−28</sup>) = <b>1.098×10<sup>27</sup></b></p><p><b>(ii)</b> Mass = 9.109×10<sup>−31</sup>×6.022×10<sup>23</sup> = <b>5.486×10<sup>−7</sup> kg</b>. Charge = 1.602×10<sup>−19</sup>×6.022×10<sup>23</sup> = <b>9.647×10<sup>4</sup> C</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.2: Mass of one <sup>12</sup>C and one oxygen atom in grams.</summary>
+<div class="solution"><p><sup>12</sup>C: 12/(6.022×10<sup>23</sup>) = <b>1.993×10<sup>−23</sup> g</b>. O: 16/(6.022×10<sup>23</sup>) = <b>2.657×10<sup>−23</sup> g</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.3: Protons, neutrons, electrons in <sup>199</sup>Hg, <sup>12</sup>C, <sup>24</sup>Mg, <sup>56</sup>Fe, <sup>88</sup>Sr?</summary>
+<div class="solution"><table style="font-size:0.85rem;"><tr><th>Isotope</th><th>p</th><th>n</th><th>e</th></tr><tr><td><sup>199</sup>Hg</td><td>80</td><td>119</td><td>80</td></tr><tr><td><sup>12</sup>C</td><td>6</td><td>6</td><td>6</td></tr><tr><td><sup>24</sup>Mg</td><td>12</td><td>12</td><td>12</td></tr><tr><td><sup>56</sup>Fe</td><td>26</td><td>30</td><td>26</td></tr><tr><td><sup>88</sup>Sr</td><td>38</td><td>50</td><td>38</td></tr></table></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.4: Symbol for: (i) 17p,20n (ii) 92p,146n (iii) Z=4,A=9</summary>
+<div class="solution"><p>(i) <sup>37</sup>Cl (ii) <sup>238</sup>U (iii) <sup>9</sup>Be</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.5: Yellow light (580 nm). Frequency and wavenumber.</summary>
+<div class="solution"><p>ν = c/λ = 3×10<sup>8</sup>/(580×10<sup>−9</sup>) = <b>5.17×10<sup>14</sup> Hz</b>. Wavenumber = 1/λ = <b>1.724×10<sup>6</sup> m<sup>−1</sup></b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.6: Wavenumber and frequency for 5800 Å.</summary>
+<div class="solution"><p>λ = 5.8×10<sup>−7</sup> m. ˱ = <b>1.724×10<sup>6</sup> m<sup>−1</sup></b>. ν = <b>5.172×10<sup>14</sup> Hz</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.7: Photon energy for 589 nm (J and kJ/mol).</summary>
+<div class="solution"><p>E = hc/λ = <b>3.38×10<sup>−19</sup> J</b>. Per mole = 3.38×10<sup>−19</sup>×6.022×10<sup>23</sup> = <b>203.5 kJ/mol</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.8: Arrange red, blue, green, yellow by λ and ν.</summary>
+<div class="solution"><p><b>λ:</b> Blue &lt; Green &lt; Yellow &lt; Red. <b>ν:</b> Red &lt; Yellow &lt; Green &lt; Blue</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.9: Ag threshold 3800 Å. KE for λ = 2600 Å. <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p>φ = hc/λ<sub>0</sub> = 5.23×10<sup>−19</sup> J. E = hc/λ = 7.65×10<sup>−19</sup> J. KE<sub>max</sub> = 7.65×10<sup>−19</sup>−5.23×10<sup>−19</sup> = <b>2.42×10<sup>−19</sup> J</b> = <b>1.51 eV</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.10: Photon λ=4×10<sup>−7</sup> m, φ=2.13 eV. Find KE.</summary>
+<div class="solution"><p>E = 4.97×10<sup>−19</sup> J = 3.10 eV. KE = 3.10−2.13 = <b>0.97 eV</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.11: Max speed 6×10<sup>5</sup> m/s, threshold 3.3×10<sup>14</sup> Hz. Find incident ν.</summary>
+<div class="solution"><p>KE = ½mv<sup>2</sup> = 1.64×10<sup>−19</sup> J, φ = hν<sub>0</sub> = 2.19×10<sup>−19</sup> J. hν = 1.64+2.19 = 3.83×10<sup>−19</sup> J. ν = <b>5.78×10<sup>14</sup> Hz</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.12: λ of e moving at 1/10th speed of light.</summary>
+<div class="solution"><p>λ = h/mv = 6.626×10<sup>−34</sup>/(9.109×10<sup>−31</sup>×3×10<sup>7</sup>) = <b>2.425×10<sup>−11</sup> m</b> = 0.02425 nm</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.13: Accelerating potential for λ = 1 Å?</summary>
+<div class="solution"><p>V = h<sup>2</sup>/(2meλ<sup>2</sup>) = <b>150.6 V</b>. (Shortcut: V = (1.226/0.1)<sup>2</sup> ≈ 150 V)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.14: Higher energy: 4000 Å or 6000 Å?</summary>
+<div class="solution"><p>E ∝ 1/λ. <b>4000 Å has higher energy</b> (1.5 times). Shorter λ = higher E.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.15: H-atom transition for 487 nm (Balmer). <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p>1/(4.87×10<sup>−7</sup>) = 1.097×10<sup>7</sup>(1/4−1/n<sub>2</sub><sup>2</sup>). n<sub>2</sub> = 4. <b>Transition: n=4→n=2</b> (H<sub>β</sub> line)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.16: Ionization energy of H. Wavelength of first Lyman line.</summary>
+<div class="solution"><p>IE = <b>13.6 eV</b> = <b>2.18×10<sup>−18</sup> J</b>. First Lyman: λ = <b>121.5 nm</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.17: Radius of 3rd orbit of He<sup>+</sup>. <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p>r = (52.9×n<sup>2</sup>/Z) pm = 52.9×9/2 = <b>238.05 pm</b> = 2.38 Å</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.18: λ of 3rd Balmer and 1st Lyman line. <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p><b>3rd Balmer</b> (5→2): λ = <b>434.1 nm</b> (blue, H<sub>γ</sub>). <b>1st Lyman</b> (2→1): λ = <b>121.5 nm</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.19: Radii of 2nd and 3rd Bohr orbits (in a<sub>0</sub>).</summary>
+<div class="solution"><p>r<sub>n</sub> = n<sup>2</sup>a<sub>0</sub> → r<sub>2</sub> = <b>4a<sub>0</sub></b>, r<sub>3</sub> = <b>9a<sub>0</sub></b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.20: Which wavelength does ozone absorb?</summary>
+<div class="solution"><p>Ozone absorbs <b>UV</b> (200–320 nm), protecting Earth from harmful UV radiation.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.21: Max emission lines when e drops from n=5?</summary>
+<div class="solution"><p>Number = n(n−1)/2 = 5(4)/2 = <b>10</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.22: IE of He<sup>+</sup> and Li<sup>2+</sup> (H IE = 13.6 eV).</summary>
+<div class="solution"><p>IE = 13.6 × Z<sup>2</sup>. He<sup>+</sup>: <b>54.4 eV</b>, Li<sup>2+</sup>: <b>122.4 eV</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.23: C atom diameter 0.15 nm. Atoms in 20 cm line?</summary>
+<div class="solution"><p>Number = 0.2/(1.5×10<sup>−10</sup>) = <b>1.33×10<sup>9</sup></b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.24: E and photon both have λ=1 nm. Momenta and energies. <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p>p = h/λ = <b>6.626×10<sup>−25</sup> kg m/s</b> (same). E<sub>photon</sub> = hc/λ = <b>1.99×10<sup>−16</sup> J</b>. E<sub>e</sub> = p<sup>2</sup>/2m = <b>2.41×10<sup>−19</sup> J</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.25: De Broglie λ of N<sub>2</sub> at 300 K.</summary>
+<div class="solution"><p>m = 4.648×10<sup>−26</sup> kg. v = 517 m/s. λ = h/mv = <b>2.75×10<sup>−11</sup> m</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.26: Temperature for λ of He = 0.5 m?</summary>
+<div class="solution"><p>T = h<sup>2</sup>/(3mk<sub>B</sub>λ<sup>2</sup>) = <b>3.19×10<sup>−21</sup> K</b> (extremely cold!)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.27: Δx for Δv=0.1% for e and He at 300 m/s.</summary>
+<div class="solution"><p>Δx<sub>e</sub> = <b>1.93×10<sup>−4</sup> m</b>, Δx<sub>He</sub> = <b>2.65×10<sup>−8</sup> m</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.28: Golf ball (40 g, 54 m/s, 2% uncertainty). Find Δx.</summary>
+<div class="solution"><p>Δx = <b>1.22×10<sup>−33</sup> m</b> (negligible for macroscopic objects)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.29: Δx of e with Δv = 5.7×10<sup>5</sup> m/s.</summary>
+<div class="solution"><p>Δx = <b>1.02×10<sup>−10</sup> m</b> ≈ 1 Å (atomic size!)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.30: Q.N. of 19th e in K (Z=19).</summary>
+<div class="solution"><p>K: [Ar] 4s<sup>1</sup>. n=<b>4</b>, l=<b>0</b>, m<sub>l</sub>=<b>0</b>, m<sub>s</sub>=<b>+½</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.31: Total orbitals for n=4? Q.N. for 4s e.</summary>
+<div class="solution"><p>Total = n<sup>2</sup> = <b>16</b>. 4s: n=4, l=0, m<sub>l</sub>=0, m<sub>s</sub>=+½</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.32: (a) Subshells for n=4? (b) e in n=3? (c) Orbitals for l=3?</summary>
+<div class="solution"><p>(a) <b>4</b> (b) 2n<sup>2</sup> = <b>18</b> (c) 2l+1 = <b>7</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.33: Subshell notations: n=1,l=0; n=3,l=1; n=4,l=2; n=4,l=3.</summary>
+<div class="solution"><p><b>1s</b>, <b>3p</b>, <b>4d</b>, <b>4f</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.34: Config of N, Cl, Ar, Cr, Cu. <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p><b>N:</b> 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>3</sup> <b>Cl:</b> [Ne] 3s<sup>2</sup> 3p<sup>5</sup> <b>Ar:</b> [Ne] 3s<sup>2</sup> 3p<sup>6</sup></p><p><b>Cr:</b> [Ar] <u>3d<sup>5</sup> 4s<sup>1</sup></u> ⚡ <b>Cu:</b> [Ar] <u>3d<sup>10</sup> 4s<sup>1</sup></u> ⚡</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.35: Higher energy? 2p/2s and 3d/4s.</summary>
+<div class="solution"><p>(a) <b>2p</b> (higher l). (b) <b>3d</b> ((n+l)=5 vs 4). 4s fills first but 3d has higher energy.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.36: Possible Q.N. sets? <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p><b>Not possible:</b> n=1,l=1 (l≥n), n=2,l=2 (l≥n), n=3,l=2,m=−3 (|m|&gt;l)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.37: e with: n=4; n=3,l=0; n=3,l=1,m=−1; n=3,l=1; n=4,l=2.</summary>
+<div class="solution"><p><b>32, 2, 2, 6, 10</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.38: Nodes in 3p orbital. <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p>Angular=l=<b>1</b>, Radial=n−l−1=<b>1</b>, Total=n−1=<b>2</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.39: Nodes for 2p, 3d, 4f, 1s.</summary>
+<div class="solution"><p>2p: A=1,R=0,T=1   3d: A=2,R=0,T=2   4f: A=3,R=0,T=3   1s: A=0,R=0,T=0</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.40: More unpaired e: Fe<sup>2+</sup> or Fe<sup>3+</sup>? <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p>Fe<sup>2+</sup>: 3d<sup>6</sup> (4 unpaired). Fe<sup>3+</sup>: 3d<sup>5</sup> (<b>5 unpaired</b>, half-filled).</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.41: Wavenumber and λ of first Balmer line of He<sup>+</sup>.</summary>
+<div class="solution"><p>R = 4.388×10<sup>7</sup>. ˱ = <b>6.095×10<sup>6</sup> m<sup>−1</sup></b>. λ = <b>164.1 nm</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.42: Element Z=32? Full config.</summary>
+<div class="solution"><p>Z=32 = <b>Germanium</b>. [Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>2</sup></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.43: Config of Cu<sup>2+</sup> (Z=29).</summary>
+<div class="solution"><p>Cu: [Ar] 3d<sup>10</sup> 4s<sup>1</sup>. Cu<sup>2+</sup>: [Ar] <b>3d<sup>9</sup></b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.44: Elements in 3rd period? Why?</summary>
+<div class="solution"><p><b>8 elements</b>. 3s (2e) + 3p (6e) fill in period 3. 3d fills in period 4.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.45: Config of Lu (Z=71).</summary>
+<div class="solution"><p>Lu: [Xe] 4f<sup>14</sup> 5d<sup>1</sup> 6s<sup>2</sup> (last lanthanide)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.46: Total spin of Mn<sup>2+</sup> (Z=25)?</summary>
+<div class="solution"><p>Mn<sup>2+</sup>: 3d<sup>5</sup> (5 unpaired). Total spin = <b>+5/2</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.47: Nodal plane in p<sub>z</sub> orbital.</summary>
+<div class="solution"><p>The <b>xy-plane</b> is the nodal plane (zero probability for e in p<sub>z</sub>).</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.48: Which orbital is non-directional?</summary>
+<div class="solution"><p><b>s-orbital</b> is spherically symmetrical, hence non-directional.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.49: Why are p-orbitals directional?</summary>
+<div class="solution"><p>Dumbbell shape along specific axes. Probability concentrated along axis, zero at nodal plane.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.50: Is 2p<sup>4</sup> with △▽ △ △ valid?</summary>
+<div class="solution"><p>Yes. Each orbital gets one △ before pairing follows Hund's rule.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.51: Unpaired e in S (Z=16)?</summary>
+<div class="solution"><p>S: [Ne] 3s<sup>2</sup> 3p<sup>4</sup> → <b>2 unpaired</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.52: Explain Pauli, Hund, Aufbau. <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p><b>Pauli:</b> No two e share all four Q.N. Max 2/orbital, opposite spins. <b>Hund:</b> Fill singly, parallel spins first. <b>Aufbau:</b> Lowest energy first.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.53: Abbreviated config: Ti(22), V(23), Co(27), Ni(28), Zn(30).</summary>
+<div class="solution"><p>Ti: [Ar]3d<sup>2</sup>4s<sup>2</sup>, V: [Ar]3d<sup>3</sup>4s<sup>2</sup>, Co: [Ar]3d<sup>7</sup>4s<sup>2</sup>, Ni: [Ar]3d<sup>8</sup>4s<sup>2</sup>, Zn: [Ar]3d<sup>10</sup>4s<sup>2</sup></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.54: Significance of (n+l) rule?</summary>
+<div class="solution"><p>Lower (n+l) = lower energy. If same (n+l), lower n fills first. Explains 4s before 3d.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.55: Arrange 1s,2s,2p,3s,3p,3d,4s by increasing energy.</summary>
+<div class="solution"><p><b>1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.56: Four Q.N. for last e of Na (Z=11).</summary>
+<div class="solution"><p>Na: [Ne] 3s<sup>1</sup>. n=<b>3</b>, l=<b>0</b>, m<sub>l</sub>=<b>0</b>, m<sub>s</sub>=<b>+½</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.57: Electrons with n+l=3?</summary>
+<div class="solution"><p>3s (2) + 2p (6) = <b>8 electrons</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.58: Max electrons in subshell with l=2?</summary>
+<div class="solution"><p>l=2 → d-subshell → 5 orbitals → <b>10 electrons</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.59: Shortest λ? 6→2, 2→1, 4→1, 3→2</summary>
+<div class="solution"><p><b>4→1</b> gives highest ΔE → shortest λ</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.60: Max energy? 6→2, 3→2, 4→1, 5→1</summary>
+<div class="solution"><p><b>5→1</b> gives maximum energy (ΔE = 0.96 R<sub>H</sub>)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.61: λ for e falling n=5 to n=2 in H.</summary>
+<div class="solution"><p>λ = <b>434 nm</b> (Balmer series, H<sub>γ</sub>)</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.62: De Broglie λ of He at −173°C.</summary>
+<div class="solution"><p>T = 100 K. λ = <b>1.26×10<sup>−10</sup> m</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.63: De Broglie λ of neutron at 27°C.</summary>
+<div class="solution"><p>λ = <b>1.45×10<sup>−10</sup> m</b></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.64: Difference between orbit and orbital. <span class="badge">⚡ Important</span></summary>
+<div class="solution"><p><b>Orbit:</b> Fixed 2D path (Bohr), violates uncertainty. <b>Orbital:</b> 3D probability region (QM), consistent with uncertainty.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.65: Orbitals for n=5? 5d,5f,5g?</summary>
+<div class="solution"><p>Total = n<sup>2</sup> = <b>25</b>. 5d:5, 5f:7, 5g:9 orbitals.</p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.66: Config of Ce(58) and Lu(71).</summary>
+<div class="solution"><p><b>Ce:</b> [Xe] 4f<sup>1</sup> 5d<sup>1</sup> 6s<sup>2</sup> <b>Lu:</b> [Xe] 4f<sup>14</sup> 5d<sup>1</sup> 6s<sup>2</sup></p></div></details></div>
+<div class="ncert-q"><details><summary>Q 2.67: Significance of four Q.N.</summary>
+<div class="solution"><p><b>n:</b> size/energy, <b>l:</b> shape, <b>m<sub>l</sub>:</b> orientation, <b>m<sub>s</sub>:</b> spin. Uniquely identify every e.</p></div></details></div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<script>
+function switchTab(idx) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+  const tabs = document.querySelectorAll('.tab-content');
+  const btns = document.querySelectorAll('.tab-nav button');
+  if (tabs[idx]) tabs[idx].classList.add('active');
+  if (btns[idx]) btns[idx].classList.add('active');
+}
+</script>
+</body>
+</html>

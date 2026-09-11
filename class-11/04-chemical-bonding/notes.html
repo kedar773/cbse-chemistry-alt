@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Master Study Notes — Chemical Bonding &amp; Molecular Structure (Class 11)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<style>
+    /* ============== BASE ============== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6
+    }
+
+    body {
+      padding: 0 0 80px
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      padding: 34px 24px 24px;
+      border-bottom: 1px solid #1e293b
+    }
+
+    header.hero h1 {
+      font-size: 2rem;
+      color: #f1f5f9;
+      letter-spacing: .4px
+    }
+
+    header.hero p {
+      color: #94a3b8;
+      margin-top: 6px;
+      font-size: .98rem
+    }
+
+    header.hero .meta {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .chip {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: .78rem
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px
+    }
+
+    /* ============== TABS ============== */
+    .tabbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: #0b1220;
+      padding: 8px;
+      border-radius: 12px 12px 0 0;
+      border: 1px solid #1e293b;
+      border-bottom: none
+    }
+
+    .tabbar button {
+      flex: 1 1 200px;
+      background: transparent;
+      color: #94a3b8;
+      border: none;
+      padding: 14px 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: .95rem;
+      border-radius: 8px;
+      transition: all .25s
+    }
+
+    .tabbar button:hover {
+      color: #e2e8f0;
+      background: #1e293b
+    }
+
+    .tabbar button.active {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, .4)
+    }
+
+    .tabpanel {
+      display: none;
+      background: #0b1220;
+      border: 1px solid #1e293b;
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 26px
+    }
+
+    .tabpanel.active {
+      display: block;
+      animation: fade .35s ease
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(6px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    /* ============== TYPOGRAPHY ============== */
+    h2 {
+      color: #f8fafc;
+      font-size: 1.45rem;
+      margin: 18px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed #334155
+    }
+
+    h3 {
+      color: #c4b5fd;
+      font-size: 1.15rem;
+      margin: 14px 0 8px
+    }
+
+    h4 {
+      color: #93c5fd;
+      font-size: 1rem;
+      margin: 12px 0 6px
+    }
+
+    p,
+    li {
+      color: #cbd5e1;
+      font-size: .97rem
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+      margin: 6px 0 12px
+    }
+
+    li {
+      margin: 4px 0
+    }
+
+    code,
+    .mono {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      background: #1e293b;
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: #fbbf24;
+      font-size: .92em
+    }
+
+    .formula {
+      background: #1e293b;
+      border-left: 3px solid #8b5cf6;
+      padding: 8px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+      font-family: "Cambria Math", serif;
+      font-size: 1.02rem;
+      color: #fef3c7
+    }
+
+    .card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 12px 0
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px
+    }
+
+    @media(max-width:780px) {
+
+      .grid2,
+      .grid3 {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* ============== BADGES ============== */
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      font-size: .72rem;
+      padding: 2px 9px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: middle;
+      font-weight: 700;
+      letter-spacing: .3px
+    }
+
+    .badge.green {
+      background: linear-gradient(135deg, #10b981, #059669)
+    }
+
+    .badge.blue {
+      background: linear-gradient(135deg, #3b82f6, #6366f1)
+    }
+
+    .xref {
+      display: inline-block;
+      background: #1e3a8a;
+      color: #bfdbfe;
+      font-size: .72rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-left: 4px
+    }
+
+    /* ============== DETAILS ============== */
+    details {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 8px 0;
+      transition: border-color .2s
+    }
+
+    details[open] {
+      border-color: #6366f1
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #e0e7ff;
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px
+    }
+
+    summary::before {
+      content: "▸";
+      color: #8b5cf6;
+      transition: transform .2s;
+      display: inline-block;
+      margin-top: 2px
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg)
+    }
+
+    summary::-webkit-details-marker {
+      display: none
+    }
+
+    details>div {
+      padding-top: 10px;
+      color: #cbd5e1
+    }
+
+    /* ============== TAB 4 INTERACTIVES ============== */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 18px;
+      align-items: start
+    }
+
+    @media(max-width:980px) {
+      .lab-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .lab-panel {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 16px
+    }
+
+    .lab-panel h3 {
+      margin-top: 0;
+      color: #a5f3fc
+    }
+
+    select,
+    button.btn {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: .9rem;
+      width: 100%;
+      margin: 4px 0
+    }
+
+    button.btn {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border: none;
+      font-weight: 600
+    }
+
+    button.btn:hover {
+      filter: brightness(1.1)
+    }
+
+    button.btn.sub {
+      background: #334155
+    }
+
+    button.btn.alt {
+      background: linear-gradient(135deg, #10b981, #059669)
+    }
+
+    button.btn.danger {
+      background: linear-gradient(135deg, #ef4444, #dc2626)
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 10px
+    }
+
+    .stat {
+      background: #0b1220;
+      padding: 8px;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #1e293b
+    }
+
+    .stat .v {
+      font-size: 1.3rem;
+      color: #fbbf24;
+      font-weight: 700
+    }
+
+    .stat .l {
+      font-size: .72rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    canvas {
+      background: #020617;
+      border-radius: 10px;
+      display: block;
+      width: 100%;
+      border: 1px solid #1e293b
+    }
+
+    .subtool {
+      display: none
+    }
+
+    .subtool.active {
+      display: block;
+      animation: fade .3s
+    }
+
+    .callout {
+      background: #1e1b4b;
+      border-left: 4px solid #a78bfa;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-size: .92rem;
+      color: #e0e7ff
+    }
+
+    .callout strong {
+      color: #fbbf24
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 8px 0;
+      font-size: .82rem
+    }
+
+    .legend span {
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block
+    }
+
+    /* ============== TABLE ============== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: .9rem
+    }
+
+    th,
+    td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid #1e293b
+    }
+
+    th {
+      background: #1e293b;
+      color: #f1f5f9;
+      font-weight: 600
+    }
+
+    tr:hover td {
+      background: #0f172a
+    }
+
+    /* ============== PRINT ============== */
+    @media print {
+      body {
+        background: #fff;
+        color: #000
+      }
+
+      .tabbar,
+      .tabpanel#tab4,
+      #tab4,
+      #noPrint {
+        display: none !important
+      }
+
+      .tabpanel {
+        display: block !important;
+        border: none;
+        padding: 0;
+        background: #fff
+      }
+
+      header.hero {
+        background: #fff !important;
+        color: #000;
+        border-bottom: 2px solid #000
+      }
+
+      header.hero h1,
+      header.hero p,
+      header.hero .meta,
+      header.hero .chip {
+        color: #000 !important;
+        background: transparent !important;
+        border: none
+      }
+
+      h2,
+      h3,
+      h4,
+      p,
+      li,
+      td,
+      th,
+      div {
+        color: #000 !important;
+        background: transparent !important
+      }
+
+      .card,
+      .formula,
+      details,
+      .lab-panel {
+        background: #fff !important;
+        border: 1px solid #999 !important;
+        color: #000 !important
+      }
+
+      details[open]>div,
+      details>div {
+        display: block !important
+      }
+
+      details>div {
+        page-break-inside: avoid
+      }
+
+      .badge,
+      .xref {
+        background: #ddd !important;
+        color: #000 !important;
+        border: 1px solid #000
+      }
+
+      details {
+        border: 1px solid #000 !important;
+        page-break-inside: avoid;
+        margin: 6px 0
+      }
+
+      summary::before {
+        color: #000
+      }
+    }
+  </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+<header class="hero">
+<h1>🧪 Master Study Notes — Chemical Bonding &amp; Molecular Structure</h1>
+<p>Class 11 Chemistry · Strictly NCERT-aligned · Deep conceptual frameworks with interactive visualizers</p>
+<div class="meta">
+<span class="chip">📘 Chapter 4</span>
+<span class="chip">🎯 CBSE 2025–26</span>
+<span class="chip">⚛ VSEPR · VBT · MOT</span>
+<span class="chip">🧠 Anti-Summarization Mode</span>
+</div>
+</header>
+<main>
+<!-- ============== TAB BAR ============== -->
+<div class="tabbar" role="tablist">
+<button class="active" data-target="tab1">1 · Classical Theories &amp; VSEPR</button>
+<button data-target="tab2">2 · Quantum Bonding Theories</button>
+<button data-target="tab3">3 · NCERT Solutions</button>
+<button data-target="tab4">4 · Interactive Lab</button>
+</div>
+<!-- ============== TAB 1 ============== -->
+<section class="tabpanel active" id="tab1">
+<h2>1.1 · Why Bonds Form — The Electrostatic &amp; Quantum Origin</h2>
+<p>Atoms bond because the <strong>bonded state is energetically lower</strong> than the isolated-atom state. The
+        driving forces are deeply quantum mechanical, not merely "atoms wanting full shells":</p>
+<ul>
+<li><strong>Electrostatic potential energy (V = kq₁q₂/r)</strong> — when oppositely charged species (nuclei and
+          electrons) come close, attractive Coulombic terms scale as −1/r, dominating the nuclear–nuclear repulsion
+          (+1/r) at equilibrium bond length.</li>
+<li><strong>Kinetic energy lowering</strong> — in the bonded state, electrons occupy lower-energy, more
+          delocalized molecular orbitals (MO theory), reducing their kinetic energy per the <em>Virial Theorem</em>
+          (2⟨T⟩ = −⟨V⟩ for bound systems).</li>
+<li><strong>Exchange &amp; correlation energy</strong> — electrons of like spin avoid each other (Fermi hole),
+          which paradoxically reduces repulsion when bonds form.</li>
+</ul>
+<h2>1.2 · Kossel–Lewis Approach (1916)</h2>
+<div class="card">
+<h3>Foundational Postulates</h3>
+<ol>
+<li><strong>Noble gas configuration drive:</strong> Atoms achieve <em>ns² np⁶</em> (octet) by losing, gaining,
+            or sharing electrons — a heuristic, not a law (it fails for H, Be, B, expanded octets of period 3+).</li>
+<li><strong>Ionic bond = full electron transfer</strong>; <strong>covalent bond = sharing</strong> (Lewis's
+            key insight, refined by Heitler–London in 1927).</li>
+<li><strong>Lewis dot symbols</strong> represent valence electrons as dots; bonds as shared pairs (lines).
+          </li>
+</ol>
+</div>
+<h3>⚡ Octet Rule &amp; Its Exceptions <span class="badge">High Yield</span></h3>
+<table>
+<tr>
+<th>Exception Type</th>
+<th>Examples</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>Incomplete octet</td>
+<td>BeCl₂, BF₃, AlCl₃</td>
+<td>Central atom has fewer than 8 e⁻; <em>p</em>-block elements of period 2 cannot expand octet (no d-orbitals
+            accessible at that energy).</td>
+</tr>
+<tr>
+<td>Expanded octet</td>
+<td>PF₅, SF₆, IF₇, H₂SO₄</td>
+<td>Period 3+ atoms can use empty 3d orbitals; <em>not</em> actually d-orbital participation (modern view:
+            ionic 3c–4e bonds), but octet concept still useful.</td>
+</tr>
+<tr>
+<td>Odd-electron species</td>
+<td>NO, NO₂, ClO₂</td>
+<td>Cannot satisfy octet; bond order fractional.</td>
+</tr>
+<tr>
+<td>Formal charge instability</td>
+<td>CO (best Lewis with FC, not octet)</td>
+<td>Triple bond C≡O minimizes formal charges.</td>
+</tr>
+</table>
+<h3>Formal Charge — The "Best Lewis" Selector <span class="badge">High Yield</span></h3>
+<div class="formula">FC = (valence e⁻ of free atom) − (non-bonding e⁻) − ½(bonding e⁻)</div>
+<p><strong>Rule for choosing dominant resonance structure:</strong> the structure with (i) minimum formal charges,
+        (ii) negative FC on the <em>most electronegative</em> atom, and (iii) charges closest to zero wins. <span class="xref">📌 See Q 4.7</span></p>
+<h2>1.3 · Bond Parameters — The Quantitative Backbone</h2>
+<div class="grid2">
+<div class="card">
+<h4>① Bond Length (pm)</h4>
+<p>Equilibrium internuclear distance. Order:</p>
+<div class="formula">Triple &lt; Double &lt; Single<br/>H–F &lt; H–Cl &lt; H–Br &lt; H–I<br/>As bond order ↑,
+            bond length ↓</div>
+</div>
+<div class="card">
+<h4>② Bond Enthalpy (kJ mol⁻¹)</h4>
+<p>Energy to break 1 mol of bonds (gas phase, 298 K). Higher bond order ⇒ higher bond enthalpy.
+            <em>Average</em> values used for polyatomic molecules (e.g., O–H in H₂O differs in H₂O₂).
+          </p>
+</div>
+<div class="card">
+<h4>③ Bond Angle (°)</h4>
+<p>Influenced by central atom hybridization, lone pair repulsion, electronegativity of substituents. Deviation
+            from ideal is the <strong>key VSEPR diagnostic</strong>.</p>
+</div>
+<div class="card">
+<h4>④ Dipole Moment (μ, Debye) <span class="badge">High Yield</span></h4>
+<div class="formula">μ = q × d    (1 D = 3.33564 × 10⁻³⁰ C·m)</div>
+<p><strong>Vector quantity.</strong> Symmetrical molecules (BF₃, CO₂, CCl₄, SF₆) have μ = 0 even with polar
+            bonds, because bond dipoles cancel. Asymmetrical (H₂O, NH₃, CHCl₃) have net μ.</p>
+</div>
+</div>
+<h3>Resonance &amp; Resonance Energy</h3>
+<p>When no single Lewis structure adequately represents a molecule, the true structure is a <strong>resonance
+          hybrid</strong> of contributing forms. <em>Resonance energy</em> = experimental bond energy − calculated from
+        any single structure. Example: benzene, C₆H₆, has resonance energy ~150 kJ mol⁻¹ (this is why all C–C bonds are
+        equal at 139 pm, between single 154 pm and double 134 pm).</p>
+<h3>Polarity &amp; Partial Ionic Character <span class="badge green">Electronegativity</span></h3>
+<p>Pauling's electronegativity (χ) scale: F = 4.0, O = 3.5, N = 3.0, C = 2.5, H = 2.1. Δχ between bonded atoms
+        predicts bond polarity:</p>
+<ul>
+<li>Δχ &lt; 0.5 → essentially nonpolar covalent</li>
+<li>0.5 ≤ Δχ &lt; 1.7 → polar covalent (e.g., H–Cl: Δχ = 0.9)</li>
+<li>Δχ ≥ 1.7 → ionic (e.g., NaCl: Δχ = 2.1)</li>
+</ul>
+<p><em>Even "ionic" NaCl is ~80% ionic / 20% covalent in reality (Fajans' rules): small high-charge cation + large
+          polarizable anion → covalent character.</em></p>
+<h2>1.4 · VSEPR Theory — Gillespie–Nyholm (1957)</h2>
+<div class="card">
+<h3>Core Principle</h3>
+<p>The shape of a polyatomic molecule is determined by minimizing the electrostatic repulsion among
+          <strong>electron pairs (both bonding and lone)</strong> in the valence shell of the central atom. The geometry
+          is set by the <em>steric number</em> VSEPR number = (σ-bonds + lone pairs).
+        </p>
+</div>
+<h3>Ideal Geometries Reference Table</h3>
+<table>
+<tr>
+<th>Steric #</th>
+<th>BP</th>
+<th>LP</th>
+<th>Geometry</th>
+<th>Ideal Angles</th>
+<th>Examples</th>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>Linear</td>
+<td>180°</td>
+<td>BeCl₂, CO₂</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>Trigonal planar</td>
+<td>120°</td>
+<td>BF₃, SO₃</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>Bent (V-shape)</td>
+<td>&lt;120°</td>
+<td>SO₂, O₃</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>Tetrahedral</td>
+<td>109.5°</td>
+<td>CH₄, NH₄⁺</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>Trigonal pyramidal</td>
+<td>~107°</td>
+<td>NH₃</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>Bent</td>
+<td>~104.5°</td>
+<td>H₂O</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>Trigonal bipyramidal</td>
+<td>90°, 120°</td>
+<td>PCl₅</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>1</td>
+<td>See-saw</td>
+<td>—</td>
+<td>SF₄</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>2</td>
+<td>T-shaped</td>
+<td>—</td>
+<td>ClF₃</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>0</td>
+<td>Octahedral</td>
+<td>90°</td>
+<td>SF₆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>1</td>
+<td>Square pyramidal</td>
+<td>—</td>
+<td>BrF₅</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>2</td>
+<td>Square planar</td>
+<td>—</td>
+<td>XeF₄</td>
+</tr>
+</table>
+<h3>Repulsion Hierarchy (the "why" of anomalies)</h3>
+<div class="formula">lp–lp &gt; lp–bp &gt; bp–bp</div>
+<p><strong>Mechanistic reason:</strong> A lone pair is held by <em>one</em> nucleus, so its electron cloud spreads
+        out more (occupies more angular space) than a bonding pair shared between two nuclei. This extra electron
+        density pushes other pairs closer, compressing bond angles below the ideal.</p>
+<div class="callout">
+<strong>Numerical evidence:</strong>
+<ul>
+<li>CH₄: 109.5° (4 bp, 0 lp — no compression)</li>
+<li>NH₃: 107° (3 bp, 1 lp — lp–bp repulsion shrinks bp–bp angle by 2.5°)</li>
+<li>H₂O: 104.5° (2 bp, 2 lp — both lp–bp and lp–lp compress angle by 5°)</li>
+</ul>
+</div>
+<p>👉 <strong>Go to Tab 4 to interactively visualize all seven NCERRT-spec molecules and click the anomalous
+          angles to see the exact repulsion mechanics.</strong></p>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============== TAB 2 ============== -->
+<section class="tabpanel" id="tab2">
+<h2>2.1 · Valence Bond Theory (VBT) — Heitler–London (1927), Pauling (1931)</h2>
+<div class="card">
+<h3>Quantum Roots</h3>
+<p>When two H atoms approach, their 1s atomic orbitals overlap. Solving the Schrödinger equation for H₂ yields a
+          <strong>bonding MO</strong> E = −458 kJ mol⁻¹ (constructive interference of wavefunctions, in-phase) and an
+          <strong>antibonding MO</strong> E = +0.05 kJ mol⁻¹ (destructive interference, out-of-phase). The bonding state
+          is lower because electrons accumulate <em>between</em> the nuclei, where they are simultaneously attracted to
+          <em>both</em> positive charges (a Coulombic win that beats the nuclear–nuclear repulsion).
+        </p>
+</div>
+<h3>Two Covalent Bond Types</h3>
+<div class="grid2">
+<div class="card">
+<h4>σ (Sigma) Bond</h4>
+<ul>
+<li>Formed by <strong>axial (head-on) overlap</strong></li>
+<li>Cylindrically symmetric about the internuclear axis</li>
+<li>Strongest type of covalent bond</li>
+<li>Examples: s–s, s–p, p–p (head-on), all hybrid–hybrid</li>
+<li>Single bonds are always σ</li>
+</ul>
+</div>
+<div class="card">
+<h4>π (Pi) Bond</h4>
+<ul>
+<li>Formed by <strong>lateral (sideways) overlap</strong> of p-orbitals</li>
+<li>Two electron-cloud lobes above &amp; below the internuclear axis (nodal plane contains the axis)</li>
+<li>Weaker than σ (less effective overlap)</li>
+<li>Restricted rotation → cis/trans (geometric) isomerism</li>
+<li>Double bond = 1σ + 1π; Triple = 1σ + 2π</li>
+</ul>
+</div>
+</div>
+<h2>2.2 · Hybridization — Pauling's Construct</h2>
+<div class="card">
+<h3>Conceptual Framework</h3>
+<p>To explain observed equivalent bond lengths in CH₄ (all four C–H are 109 pm), Linus Pauling proposed that the
+          central atom's valence orbitals <strong>mathematically mix</strong> (linear combination) to form new,
+          equivalent <strong>hybrid orbitals</strong> oriented to maximize mutual separation. The number of hybrids =
+          number of orbitals mixed in.</p>
+<p><em>Hybridization is a model, not a physical reality</em>; it is the simplest single-determinant description
+          that reproduces molecular geometry. <strong>It depends on the observed geometry, not the other way
+            around</strong> — a common exam trap.</p>
+</div>
+<h3>Hybridization Catalogue</h3>
+<table>
+<tr>
+<th>Type</th>
+<th>Orbitals Mixed</th>
+<th>Geometry</th>
+<th>Angle</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>sp</td>
+<td>1s + 1p</td>
+<td>Linear</td>
+<td>180°</td>
+<td>BeCl₂, C₂H₂ (C atoms), CO₂</td>
+</tr>
+<tr>
+<td>sp²</td>
+<td>1s + 2p</td>
+<td>Trigonal planar</td>
+<td>120°</td>
+<td>BF₃, C₂H₄ (C atoms), SO₃</td>
+</tr>
+<tr>
+<td>sp³</td>
+<td>1s + 3p</td>
+<td>Tetrahedral</td>
+<td>109.5°</td>
+<td>CH₄, NH₃, H₂O, CCl₄</td>
+</tr>
+<tr>
+<td>sp³d</td>
+<td>1s + 3p + 1d</td>
+<td>Trigonal bipyramidal</td>
+<td>90°/120°</td>
+<td>PCl₅, SF₄, ClF₃</td>
+</tr>
+<tr>
+<td>sp³d²</td>
+<td>1s + 3p + 2d</td>
+<td>Octahedral</td>
+<td>90°</td>
+<td>SF₆, BrF₅, XeF₄</td>
+</tr>
+</table>
+<h3>Counting σ-bonds + lone pairs to find hybridization <span class="badge">High Yield</span></h3>
+<div class="formula">H = ½ × (V + M − C + A)</div>
+<p>Where V = valence e⁻ of central atom, M = monovalent atoms, C = cation charge, A = anion charge. H = 2 → sp, 3
+        → sp², 4 → sp³, 5 → sp³d, 6 → sp³d², 7 → sp³d³.</p>
+<h3>The d-orbital Debate (Modern View)</h3>
+<div class="callout">
+<strong>Important nuance for advanced study:</strong> Modern computational chemistry (Gilheany, Reed–Weinhold)
+        shows that period-3 elements like S in SF₆ use <em>not</em> 3d orbitals (which are too high in energy), but
+        rather <strong>ionic 3-center-4-electron (3c-4e) bonds</strong> — a hypervalent description without d-orbital
+        participation. <strong>For CBSE Class 11, the sp³d² explanation is still expected.</strong>
+</div>
+<h2>2.3 · Molecular Orbital Theory (MOT) — Hund, Mulliken, Herzberg</h2>
+<div class="card">
+<h3>Core Idea</h3>
+<p>In MOT, atomic orbitals of <em>all</em> atoms in a molecule combine to form <strong>molecular
+            orbitals</strong> that belong to the <em>whole molecule</em>. Each MO can hold 2 electrons (with opposite
+          spins, per Pauli). Electrons are filled following the <strong>Aufbau principle</strong>, just like in atoms.
+        </p>
+</div>
+<h3>Constructive vs. Destructive Interference (g/u Symmetry)</h3>
+<ul>
+<li><strong>g (gerade, "even"):</strong> wavefunction unchanged under inversion about the center. Bonding MOs
+          are usually g.</li>
+<li><strong>u (ungerade, "odd"):</strong> wavefunction changes sign under inversion. Antibonding MOs are usually
+          u.</li>
+<li>Rule: <strong>g × g = g; u × u = g; g × u = u</strong> (parity multiplication). A σ bond from s–s is
+          σ<sub>g</sub>; σ* is σ<sub>u</sub>*.</li>
+</ul>
+<h3>Bond Order — The Master Diagnostic</h3>
+<div class="formula">Bond Order (BO) = ½ × (N<sub>b</sub> − N<sub>a</sub>)</div>
+<p>where N<sub>b</sub> = electrons in bonding MOs, N<sub>a</sub> = electrons in antibonding MOs.</p>
+<ul>
+<li>BO = 0 → molecule doesn't exist (e.g., He₂)</li>
+<li>BO = 1 → single bond (H₂, F₂, B₂)</li>
+<li>BO = 2 → double bond (O₂, C₂)</li>
+<li>BO = 3 → triple bond (N₂, CO)</li>
+<li>BO fractional → ions like O₂⁺ (2.5), NO (2.5)</li>
+</ul>
+<h3>Magnetic Behavior</h3>
+<div class="grid2">
+<div class="card">
+<h4>Paramagnetic <span class="badge">High Yield</span></h4>
+<p>Has <strong>unpaired electrons</strong>. Attracted to a magnetic field. MO theory successfully predicts O₂
+            as paramagnetic (2 unpaired e⁻ in π*2p), which VBT could not explain!</p>
+</div>
+<div class="card">
+<h4>Diamagnetic</h4>
+<p>All electrons paired. Weakly repelled by magnetic field. Examples: N₂, CO, BF₃.</p>
+</div>
+</div>
+<h3>Energy Level Diagrams — Two Orderings</h3>
+<div class="callout">
+<strong>Critical for CBSE:</strong>
+<ul>
+<li><strong>For O₂, F₂, Ne₂ (and beyond):</strong> σ2p<sub>z</sub> &lt; π2p<sub>x</sub> = π2p<sub>y</sub> &lt;
+            π*2p<sub>x</sub> = π*2p<sub>y</sub> &lt; σ*2p<sub>z</sub></li>
+<li><strong>For B₂, C₂, N₂ (and lighter):</strong> π2p<sub>x</sub> = π2p<sub>y</sub> &lt; σ2p<sub>z</sub> &lt;
+            π*2p<sub>x</sub> = π*2p<sub>y</sub> &lt; σ*2p<sub>z</sub></li>
+</ul>
+        The reversal happens because for small atoms, p-orbital overlap is poor and s–p mixing is significant,
+        destabilizing σ2p relative to π2p.
+      </div>
+<h3>Detailed Filling for Each Homonuclear Diatomic</h3>
+<details>
+<summary><strong>B₂ (10 e⁻):</strong> Why is it paramagnetic? Click for full configuration</summary>
+<div>
+<div class="formula">σ1s² σ*1s² σ2s² σ*2s² π2p<sub>x</sub>¹ π2p<sub>y</sub>¹</div>
+<p>BO = ½(6−4) = <strong>1</strong>. Two unpaired electrons in π MOs → <strong>paramagnetic</strong>. This was
+            a stunning early triumph of MOT.</p>
+</div>
+</details>
+<details>
+<summary><strong>C₂ (12 e⁻):</strong> Why does it have a double bond but no π above σ?</summary>
+<div>
+<div class="formula">σ1s² σ*1s² σ2s² σ*2s² π2p<sub>x</sub>² π2p<sub>y</sub>²</div>
+<p>BO = ½(8−4) = <strong>2</strong>. Both electrons fill π first (because π2p &lt; σ2p for C), giving an
+            interesting <em>double π bond, no σ in 2p</em> structure. All paired → <strong>diamagnetic</strong>.</p>
+</div>
+</details>
+<details>
+<summary><strong>N₂ (14 e⁻):</strong> The strongest homonuclear bond</summary>
+<div>
+<div class="formula">σ1s² σ*1s² σ2s² σ*2s² π2p<sub>x</sub>² π2p<sub>y</sub>² σ2p<sub>z</sub>²</div>
+<p>BO = ½(10−4) = <strong>3</strong>. Bond enthalpy 941 kJ mol⁻¹, bond length 110 pm. Diamagnetic.</p>
+</div>
+</details>
+<details>
+<summary><strong>O₂ (16 e⁻):</strong> Paramagnetic despite Lewis's "double bond"</summary>
+<div>
+<div class="formula">σ1s² σ*1s² σ2s² σ*2s² σ2p<sub>z</sub>² π2p<sub>x</sub>² π2p<sub>y</sub>²
+            π*2p<sub>x</sub>¹ π*2p<sub>y</sub>¹</div>
+<p>BO = ½(10−6) = <strong>2</strong>. Hund's rule puts one electron in each π* MO → 2 unpaired →
+            <strong>paramagnetic</strong>. This explained liquid O₂'s attraction to magnets, a fact VBT couldn't.
+          </p>
+</div>
+</details>
+<details>
+<summary><strong>F₂ (18 e⁻):</strong> Weak single bond</summary>
+<div>
+<div class="formula">σ1s² σ*1s² σ2s² σ*2s² σ2p<sub>z</sub>² π2p<sub>x</sub>² π2p<sub>y</sub>²
+            π*2p<sub>x</sub>¹ π*2p<sub>y</sub>¹ π*... wait re-evaluate</div>
+<p>Correct: σ1s² σ*1s² σ2s² σ*2s² σ2p<sub>z</sub>² π2p<sub>x</sub>² π2p<sub>y</sub>² π*2p<sub>x</sub>²
+            π*2p<sub>y</sub>²</p>
+<p>BO = ½(10−8) = <strong>1</strong>. Bond enthalpy only 159 kJ mol⁻¹ (small atoms, lone pair repulsion).
+            Diamagnetic.</p>
+</div>
+</details>
+<details>
+<summary><strong>Ne₂ (20 e⁻):</strong> Doesn't exist</summary>
+<div>
+<div class="formula">σ1s² σ*1s² σ2s² σ*2s² σ2p<sub>z</sub>² π2p<sub>x</sub>² π2p<sub>y</sub>²
+            π*2p<sub>x</sub>² π*2p<sub>y</sub>² σ*2p<sub>z</sub>²</div>
+<p>BO = ½(10−10) = <strong>0</strong>. N<sub>b</sub> = N<sub>a</sub>, so no net bonding. Predicted (and
+            observed) instability.</p>
+</div>
+</details>
+<h2>2.4 · Hydrogen Bonding <span class="badge">High Yield</span></h2>
+<p>A special dipole–dipole attraction (not a true "bond" in the covalent sense) between an H atom bonded to a
+        highly electronegative atom (F, O, N) and a lone pair on another F/O/N. <strong>Conditions required:</strong>
+</p>
+<ol>
+<li>High ΔEN between H and donor atom (only F–H, O–H, N–H qualify strongly)</li>
+<li>Small size of donor atom (concentrates the partial positive on H)</li>
+<li>Lone pair on acceptor atom for directionality</li>
+</ol>
+<p><strong>Effects:</strong> abnormally high boiling points (H₂O &gt; H₂S, HF &gt; HCl), ice floats (open hexagonal
+        lattice in solid, denser in liquid), DNA base pairing, protein secondary structure.</p>
+<p>👉 <strong>Build all six homonuclear diatomics, watch electrons fill, and read live BO &amp; magnetic status in
+          Tab 4.</strong></p>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============== TAB 3 ============== -->
+<section class="tabpanel" id="tab3">
+<h2>3 · NCERT Exemplar &amp; Textbook Solutions <span class="badge blue">Full Q&amp;A</span></h2>
+<p>All major questions from NCERT Class 11 Chapter 4 with step-by-step, conceptually-rich solutions. Click any
+        question to expand.</p>
+<h3>In-text &amp; Exercise Questions</h3>
+<details>
+<summary><strong>Q 4.1 · Explain the formation of a chemical bond.</strong></summary>
+<div>
+<p>A chemical bond forms when two or more atoms come close enough for their valence electrons and nuclei to
+            interact in a way that <strong>lowers the total energy of the system</strong>. The lowering comes from:</p>
+<ol>
+<li>Electrostatic attraction between nuclei and shared/gained electrons</li>
+<li>Quantum mechanical exchange energy and delocalization</li>
+<li>Achieving a lower-energy electronic configuration (often a noble-gas configuration as a heuristic)</li>
+</ol>
+<p>Bond formation releases energy (∆H &lt; 0); breaking requires an equivalent input (bond enthalpy).</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.2 · Write the Lewis dot symbols for: P, S, Br, I, Xe, As, NO, NO⁺, NO⁻, SO₂, SO₃, H₂SO₄,
+            H₃PO₄</strong></summary>
+<div>
+<p>Lewis dot symbols show valence electrons as dots around the element symbol:</p>
+<ul>
+<li><strong>P (Group 15):</strong> ·P···· with 1 lone pair + 3 single electrons (5 total)</li>
+<li><strong>S (Group 16):</strong> ··S·· with 2 lone pairs + 2 single electrons (6 total)</li>
+<li><strong>Br, I (Group 17):</strong> 3 lone pairs + 1 single electron (7 total)</li>
+<li><strong>Xe (Group 18):</strong> 4 lone pairs (8 total)</li>
+<li><strong>As (Group 15):</strong> similar to P with 5 dots</li>
+</ul>
+<p><strong>For molecules/ions</strong> we draw the full Lewis structure with shared pairs and lone pairs; e.g.
+            <strong>NO</strong> (11 e⁻) has one unpaired e⁻ and a bond order 2.5; <strong>NO⁺</strong> is isoelectronic
+            with N₂ and has BO = 3; <strong>NO⁻</strong> is isoelectronic with O₂ and has BO = 2 with 1 unpaired e⁻
+            (paramagnetic).
+          </p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.3 · Why does H₂O have a bent structure while BeF₂ is linear?</strong></summary>
+<div>
+<p>Hybridization + VSEPR determine the geometry:</p>
+<ul>
+<li><strong>BeF₂</strong>: Be has 2 valence e⁻ + 2 from 2 F = 4 electrons around Be → steric # = 2 →
+              <strong>sp</strong> hybridization → <strong>linear (180°)</strong>. No lone pairs on Be.
+            </li>
+<li><strong>H₂O</strong>: O has 6 valence e⁻, forms 2 bonds → 2 BP + 2 LP → steric # = 4 →
+              <strong>sp³</strong> → tetrahedral electron geometry, but the <strong>2 lone pairs compress</strong> the
+              H–O–H angle to 104.5° → <strong>bent shape</strong>.
+            </li>
+</ul>
+<p>So even though both have 2 bonds, the lone pairs on O force a non-linear arrangement. The underlying
+            physics: lone pairs occupy more angular volume than bonding pairs (lp–lp &gt; lp–bp &gt; bp–bp repulsion).
+          </p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.4 · Explain why CO₂ is linear, SO₂ is bent.</strong></summary>
+<div>
+<p>Same reasoning: count lone pairs on the central atom.</p>
+<ul>
+<li><strong>CO₂</strong>: C has 4 valence e⁻, forms 2 double bonds, <strong>0 lone pairs</strong> on C → sp
+              → <strong>linear (180°)</strong>. Each O has 2 lone pairs but they're on terminal atoms.</li>
+<li><strong>SO₂</strong>: S has 6 valence e⁻, forms 2 bonds (often drawn with one double), with <strong>1
+                lone pair</strong> on S → sp² → <strong>bent (~119°)</strong>.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.5 · Why is NH₃ pyramidal while BF₃ is planar?</strong></summary>
+<div>
+<ul>
+<li><strong>BF₃</strong>: B has 3 valence e⁻, forms 3 B–F bonds, <strong>0 lone pairs</strong> → sp² →
+              <strong>trigonal planar (120°)</strong>. Boron is an incomplete-octet exception.
+            </li>
+<li><strong>NH₃</strong>: N has 5 valence e⁻, forms 3 N–H bonds, <strong>1 lone pair</strong> → sp³ →
+              tetrahedral e⁻ geometry but molecular shape is <strong>trigonal pyramidal (~107°)</strong>.</li>
+</ul>
+<p>Key insight: BF₃ has an empty p-orbital perpendicular to the molecular plane (Lewis acid character —
+            accepts a lone pair from NH₃ to form the F₃B←:NH₃ adduct).</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.6 · Compute formal charges for all atoms in O₃, CO₃²⁻, HNO₃, H₂SO₄.</strong></summary>
+<div>
+<p>Recall: <span class="mono">FC = V − N − B/2</span> where V = valence e⁻, N = nonbonding, B = bonding
+            (shared).</p>
+<strong>O₃ (ozone):</strong>
+<div class="formula">O=O⁺–O⁻ ↔ ⁻O–O⁺=O    (central O: FC = +1, terminal O in double bond: 0,
+            terminal O in single bond: −1)</div>
+          Two equivalent resonance structures; net molecule has fractional charge of −½ on each terminal O.
+          <strong>CO₃²⁻:</strong> central C: 0; one O double-bonded: 0; two O⁻ single-bonded: −1 each. Sum = −2 matches
+          ion charge. ✓
+          <strong>HNO₃:</strong> N: +1; =O: 0; –O(H): 0; –O(H): 0. Sum = +1 (matches neutral HNO₃).
+          <strong>H₂SO₄:</strong> S: 0; 2 × =O: 0; 2 × –O(H): 0. Sum = 0 ✓
+        </div>
+</details>
+<details>
+<summary><strong>Q 4.7 · The "best" Lewis structure of CO — apply formal charge rules.</strong> 📌
+          (cross-referenced from Tab 1)</summary>
+<div>
+<p>Carbon monoxide has 14 valence electrons total. Three plausible structures:</p>
+<ol>
+<li>:C=O: with lone pair on each → C has <em>incomplete octet</em></li>
+<li>:C≡O: triple bond + 1 lone pair on C and 1 on O</li>
+<li>:C⁻=O⁺: (carbenoid form)</li>
+</ol>
+<p>Compute FC for structure (ii):</p>
+<div class="formula">C: FC = 4 − 2 − 3 = −1<br/>O: FC = 6 − 2 − 3 = +1</div>
+<p>Although this places negative FC on C (less electronegative than O), it is <strong>still the dominant
+              structure</strong> because the alternative (i) violates the octet rule. The molecule is in fact slightly
+            polar with a small negative end on C (μ = 0.112 D, with C as the δ⁻ end) — this is why CO binds to metal
+            centers through C, not O.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.8 · Which has higher dipole moment: NH₃ (1.47 D) or NF₃ (0.24 D)? Explain.</strong> <span class="badge">High Yield</span></summary>
+<div>
+<p>Both are pyramidal (sp³, 1 LP). On paper, they should have similar μ. The huge difference comes from
+            <strong>direction of individual bond dipoles</strong>:
+          </p>
+<ul>
+<li><strong>NH₃:</strong> N is more electronegative than H (χ: 3.04 vs 2.20), so each N–H dipole points
+              <em>toward</em> N. Combined with the lone pair dipole (which adds), the net μ is large (1.47 D).
+            </li>
+<li><strong>NF₃:</strong> F is <em>more</em> electronegative than N (χ: 3.98 vs 3.04), so each N–F dipole
+              points <em>away from</em> N. These three dipoles point <em>opposite</em> to the lone pair dipole on N. The
+              result: partial cancellation, μ = 0.24 D only.</li>
+</ul>
+<p><strong>Key learning:</strong> In NH₃, bond dipoles and lone pair dipole reinforce; in NF₃ they oppose.
+            Both are sp³ with 1 LP, but EN of substituents flips the outcome.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.9 · Compare bond order and stability of O₂, O₂⁺, O₂⁻ (superoxide), O₂²⁻
+            (peroxide).</strong> <span class="badge">High Yield</span></summary>
+<div>
+<p>From MO filling (O₂ has 16 e⁻; add/remove e⁻ in the π*2p antibonding MOs):</p>
+<table>
+<tr>
+<th>Species</th>
+<th>Total e⁻</th>
+<th>π* e⁻</th>
+<th>BO</th>
+<th>Magnetism</th>
+</tr>
+<tr>
+<td>O₂⁺ (dioxygenyl)</td>
+<td>15</td>
+<td>1</td>
+<td>2.5</td>
+<td>Paramagnetic (1 unpaired)</td>
+</tr>
+<tr>
+<td>O₂</td>
+<td>16</td>
+<td>2</td>
+<td>2.0</td>
+<td>Paramagnetic (2 unpaired)</td>
+</tr>
+<tr>
+<td>O₂⁻ (superoxide)</td>
+<td>17</td>
+<td>3</td>
+<td>1.5</td>
+<td>Paramagnetic (1 unpaired)</td>
+</tr>
+<tr>
+<td>O₂²⁻ (peroxide)</td>
+<td>18</td>
+<td>4</td>
+<td>1.0</td>
+<td>Diamagnetic</td>
+</tr>
+</table>
+<p><strong>Stability trend:</strong> O₂⁺ &gt; O₂ &gt; O₂⁻ &gt; O₂²⁻. As electrons are added to antibonding
+            MOs, BO drops, bond length increases, and stability decreases. Peroxide O–O bond is anomalously long (~149
+            pm) and weak, matching the MO prediction.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.10 · Use MO theory to explain why He₂ does not exist, but H₂ does.</strong></summary>
+<div>
+<p>Both have 2 electrons total filling σ1s. For H₂: 2 e⁻ in σ1s, 0 in σ*1s → BO = ½(2−0) = 1. Stable.</p>
+<p>For He₂: σ1s² σ*1s² → BO = ½(2−2) = 0. The antibonding electrons exactly cancel the bonding stabilization,
+            leaving a residual van der Waals attraction (very weak). No true He₂ molecule at ordinary conditions.</p>
+<p>This is a beautiful MO prediction that VBT could not even formulate.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.11 · What is the hybridization of each C in ethyne (C₂H₂)? In ethene (C₂H₄)?</strong>
+</summary>
+<div>
+<ul>
+<li><strong>C₂H₂ (acetylene):</strong> each C forms 1 σ to H + 1 σ to other C + 2 π to other C. Steric # = 2
+              → <strong>sp</strong>. Linear geometry, 180° H–C–C.</li>
+<li><strong>C₂H₄ (ethylene):</strong> each C forms 2 σ to H + 1 σ to C + 1 π to C. Steric # = 3 →
+              <strong>sp²</strong>. Trigonal planar, 120° angles. Restricted C=C rotation → cis/trans isomerism.
+            </li>
+<li><strong>C₂H₆ (ethane):</strong> each C forms 3 σ to H + 1 σ to C. Steric # = 4 → <strong>sp³</strong>.
+              Free rotation about C–C single bond.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.12 · Why is H₂O liquid at room temperature but H₂S a gas?</strong> <span class="badge">High
+            Yield</span></summary>
+<div>
+<p>Both are Group 16 hydrides (H₂X, X = O, S, Se, Te). Their molecular masses are similar (18 vs 34 g/mol —
+            actually H₂S is heavier so should have higher BP if only mass mattered). But the boiling points are: H₂O
+            100°C, H₂S −60°C, H₂Se −41°C, H₂Te −2°C. <strong>Water is anomalously high</strong>, not H₂S anomalously
+            low.</p>
+<p>Cause: <strong>Hydrogen bonding</strong>. H₂O has the H bonded to highly electronegative, small O, so
+            molecules associate via O–H···O bridges. H₂S lacks strong H-bonding (S is large, less electronegative).
+            Extra energy (~40 kJ/mol) is needed to break H-bonds in H₂O, raising its BP dramatically.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.13 · Predict shapes of SF₄, ClF₃, BrF₅, XeF₄ using VSEPR.</strong></summary>
+<div>
+<ul>
+<li><strong>SF₄:</strong> S has 6 e⁻, 4 bonds, 1 LP → sp³d → <strong>see-saw</strong>. Two distinct F
+              environments: 2 axial (90° to LP) and 2 equatorial (120° to each other). Bond lengths: axial S–F ≈ 164 pm,
+              equatorial S–F ≈ 154 pm.</li>
+<li><strong>ClF₃:</strong> Cl has 7 e⁻, 3 bonds, 2 LPs → sp³d → <strong>T-shaped</strong>. The 2 lone pairs
+              occupy equatorial positions (to minimize lp–lp repulsion), leaving 2 equatorial and 1 axial F → T shape,
+              with ~87.5° F–Cl–F angles.</li>
+<li><strong>BrF₅:</strong> Br has 7 e⁻, 5 bonds, 1 LP → sp³d² → <strong>square pyramidal</strong>. LP
+              occupies one octahedral position; 5 F form the rest. F–Br–F angles slightly &lt; 90° due to LP
+              compression.</li>
+<li><strong>XeF₄:</strong> Xe has 8 e⁻, 4 bonds, 2 LPs → sp³d² → <strong>square planar</strong>. Both LPs
+              trans to each other (180° apart) to minimize lp–lp repulsion. All four F at 90° to LP axes. μ = 0 D
+              (perfectly symmetrical cancellation).</li>
+</ul>
+<p>👉 <strong>All four of these are interactive in Tab 4.</strong></p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.14 · Distinguish between sigma and pi bonds with examples.</strong></summary>
+<div>
+<table>
+<tr>
+<th>Feature</th>
+<th>σ Bond</th>
+<th>π Bond</th>
+</tr>
+<tr>
+<td>Formation</td>
+<td>Head-on / axial overlap</td>
+<td>Lateral / sideways overlap</td>
+</tr>
+<tr>
+<td>Symmetry</td>
+<td>Cylindrical around bond axis</td>
+<td>Nodal plane = bond axis</td>
+</tr>
+<tr>
+<td>Strength</td>
+<td>Stronger</td>
+<td>Weaker</td>
+</tr>
+<tr>
+<td>Number per single bond</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Number per double bond</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Number per triple bond</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Rotation about bond</td>
+<td>Freely allowed</td>
+<td>Restricted</td>
+</tr>
+<tr>
+<td>Hybridization of orbitals</td>
+<td>s, p, sp, sp², sp³ (head-on)</td>
+<td>Unhybridized p (or d) only</td>
+</tr>
+</table>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.15 · What is resonance? Draw resonance structures of benzene, CO₃²⁻, O₃.</strong></summary>
+<div>
+<p>Resonance describes molecules whose bonding cannot be captured by a single Lewis structure. The actual
+            structure is a <strong>weighted hybrid</strong> of all valid contributors. <em>Resonance structures are not
+              real isomers that interconvert</em> — they are a limitation of the Lewis model.</p>
+<p><strong>Benzene (C₆H₆):</strong> 5 equivalent structures (Kekulé 2 + 3 Dewar). The real structure has all
+            C–C = 139 pm (between 154 single and 134 double) and resonance energy 150 kJ/mol.</p>
+<p><strong>CO₃²⁻:</strong> 3 equivalent structures with C=O at each position. Average: each C–O is 1.33 bond
+            order, 129 pm.</p>
+<p><strong>O₃:</strong> 2 equivalent structures (O=O–O⁻ ↔ ⁻O–O=O). Average: each O–O bond is 1.5, length 128
+            pm.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.16 · Predict whether the following are diamagnetic or paramagnetic: O₂, N₂, B₂,
+            H₂.</strong></summary>
+<div>
+<ul>
+<li><strong>H₂:</strong> σ1s². All paired → <strong>diamagnetic</strong>.</li>
+<li><strong>B₂:</strong> 2 unpaired in π2p → <strong>paramagnetic</strong>.</li>
+<li><strong>N₂:</strong> all electrons paired in σ2p and π2p → <strong>diamagnetic</strong>.</li>
+<li><strong>O₂:</strong> 2 unpaired in π*2p → <strong>paramagnetic</strong>.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.17 · Why is bond angle in PH₃ (93.6°) much less than in NH₃ (107°)?</strong></summary>
+<div>
+<p>Both are sp³ with 1 LP. Why the difference?</p>
+<p>The central atom in PH₃ uses essentially <em>pure p-orbitals</em> for bonding, leaving the lone pair in a
+            nearly pure s-orbital. Pure s has spherical symmetry (no directional preference), so the bonds can collapse
+            to ~90° (the natural angle between two p-orbitals on the same atom). In NH₃, the central N is small enough
+            that the bonding pair and lone pair are more equivalent in energy, so true sp³ hybridization occurs.</p>
+<p>This is an example of <strong>Drago's rule</strong>: heavier p-block hydrides avoid hybridization, with
+            bonds formed from pure p-orbitals.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 4.18 · Explain the structure of H₃PO₄ and P₂O₅.</strong></summary>
+<div>
+<p><strong>H₃PO₄:</strong> P has 5 valence e⁻, 4 bonds to oxygen (one P=O, three P–O–H). Steric # = 4 → sp³.
+            <strong>Tetrahedral</strong> geometry around P. Note: P can have expanded octet in period 3.
+          </p>
+<p><strong>P₂O₅ (P₄O₁₀):</strong> the actual molecular form is the cage structure P₄O₁₀ with 4 P atoms at
+            corners of a tetrahedron, 10 O atoms bridging. Each P is sp³ (4 σ bonds to O). The structure has 4 terminal
+            P=O and 12 bridging P–O–P.</p>
+</div>
+</details>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============== TAB 4 ============== -->
+<section class="tabpanel" id="tab4">
+<h2>4 · Interactive Lab</h2>
+<p>Three integrated tools. Switch between them with the buttons below.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0">
+<button class="btn alt" id="tool1Btn">🧬 VSEPR Geometry Visualizer</button>
+<button class="btn" id="tool2Btn">🔄 Hybridization Engine</button>
+<button class="btn sub" id="tool3Btn">⚛ MO Diagram Builder</button>
+</div>
+<!-- ===== TOOL 1: VSEPR ===== -->
+<div class="subtool active" id="tool1">
+<div class="lab-grid">
+<div class="lab-panel">
+<h3>Molecule Selector</h3>
+<select id="moleculeSelect">
+<option value="CH4">CH₄ — Methane (4 BP, 0 LP)</option>
+<option value="NH3">NH₃ — Ammonia (3 BP, 1 LP)</option>
+<option value="H2O">H₂O — Water (2 BP, 2 LP)</option>
+<option value="SF4">SF₄ — Sulfur tetrafluoride (4 BP, 1 LP)</option>
+<option value="ClF3">ClF₃ — Chlorine trifluoride (3 BP, 2 LP)</option>
+<option value="BrF5">BrF₅ — Bromine pentafluoride (5 BP, 1 LP)</option>
+<option value="XeF4">XeF₄ — Xenon tetrafluoride (4 BP, 2 LP)</option>
+</select>
+<div class="stat-row">
+<div class="stat">
+<div class="v" id="bpCount">4</div>
+<div class="l">Bond Pairs</div>
+</div>
+<div class="stat">
+<div class="v" id="lpCount">0</div>
+<div class="l">Lone Pairs</div>
+</div>
+<div class="stat">
+<div class="v" id="geoLabel">Tetra</div>
+<div class="l">Geometry</div>
+</div>
+<div class="stat">
+<div class="v" id="hybLabel">sp³</div>
+<div class="l">Hybrid</div>
+</div>
+</div>
+<h4>📐 Click a highlighted anomalous angle to see why it deviates</h4>
+<canvas height="420" id="vseprCanvas" width="420"></canvas>
+<div class="legend">
+<span><span class="dot" style="background:#fbbf24"></span>Central atom</span>
+<span><span class="dot" style="background:#22d3ee"></span>Bonding pair (atom)</span>
+<span><span class="dot" style="background:#a78bfa"></span>Lone pair</span>
+<span><span class="dot" style="background:#ef4444"></span>Anomalous angle</span>
+</div>
+</div>
+<div class="lab-panel">
+<h3 id="moleculeName">Methane (CH₄)</h3>
+<div class="callout" id="moleculeInfo">Click a red-highlighted angle to see the deep-dive repulsion
+              analysis.</div>
+<h4>📚 Why this geometry?</h4>
+<div class="callout" id="conceptBox"></div>
+</div>
+</div>
+</div>
+<!-- ===== TOOL 2: HYBRIDIZATION ===== -->
+<div class="subtool" id="tool2">
+<div class="lab-grid">
+<div class="lab-panel">
+<h3>Hybridization Selector</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+<button class="btn sub" data-hyb="sp">sp (linear)</button>
+<button class="btn sub" data-hyb="sp2">sp² (trigonal)</button>
+<button class="btn sub" data-hyb="sp3">sp³ (tetra)</button>
+<button class="btn sub" data-hyb="sp3d">sp³d (TBP)</button>
+<button class="btn sub" data-hyb="sp3d2">sp³d² (octa)</button>
+</div>
+<canvas height="420" id="hybCanvas" width="420"></canvas>
+<h4>Sigma vs Pi Bond Formation</h4>
+<button class="btn" id="sigmaBtn">➕ Form σ bond (axial)</button>
+<button class="btn alt" id="piBtn">➕ Form π bond (lateral)</button>
+<button class="btn danger" id="resetHyb">↺ Reset</button>
+</div>
+<div class="lab-panel">
+<h3>Hybridization Concept</h3>
+<div class="callout" id="hybText">Select a hybridization scheme to begin. The animation will show pure
+              atomic orbitals mixing to form equivalent hybrids.</div>
+<h4>Bond Formation Mechanics</h4>
+<div class="callout" id="bondText">σ: head-on overlap, cylindrically symmetric. π: lateral overlap of
+              unhybridized p-orbitals, nodal plane along bond axis.</div>
+</div>
+</div>
+</div>
+<!-- ===== TOOL 3: MO DIAGRAM ===== -->
+<div class="subtool" id="tool3">
+<div class="lab-grid">
+<div class="lab-panel">
+<h3>Homonuclear Diatomic Selector</h3>
+<select id="moSelect">
+<option value="B2">B₂ (10 e⁻)</option>
+<option value="C2">C₂ (12 e⁻)</option>
+<option value="N2">N₂ (14 e⁻)</option>
+<option selected="" value="O2">O₂ (16 e⁻)</option>
+<option value="F2">F₂ (18 e⁻)</option>
+<option value="Ne2">Ne₂ (20 e⁻)</option>
+</select>
+<canvas height="600" id="moCanvas" width="480"></canvas>
+</div>
+<div class="lab-panel">
+<h3>Live Readings</h3>
+<div class="stat-row">
+<div class="stat">
+<div class="v" id="totalE">16</div>
+<div class="l">Total e⁻</div>
+</div>
+<div class="stat">
+<div class="v" id="bondE">10</div>
+<div class="l">Bonding (N<sub>b</sub>)</div>
+</div>
+<div class="stat">
+<div class="v" id="antiE">6</div>
+<div class="l">Antibonding (N<sub>a</sub>)</div>
+</div>
+<div class="stat">
+<div class="v" id="boVal">2.0</div>
+<div class="l">Bond Order</div>
+</div>
+</div>
+<div class="stat-row" style="grid-template-columns:1fr">
+<div class="stat">
+<div class="v" id="magStatus" style="font-size:1rem">Paramagnetic</div>
+<div class="l">Magnetic Behavior</div>
+</div>
+</div>
+<h4>📋 MO Electron Configuration</h4>
+<div class="formula" id="moConfig">σ1s² σ*1s² σ2s² σ*2s² σ2p<sub>z</sub>² π2p<sub>x</sub>² π2p<sub>y</sub>²
+              π*2p<sub>x</sub>¹ π*2p<sub>y</sub>¹</div>
+<h4>🔬 Why?</h4>
+<div class="callout" id="moExplain">O₂ has 16 electrons. Filling the MOs in order with Hund's rule, the last
+              two electrons go one each into the degenerate π*2p<sub>x</sub> and π*2p<sub>y</sub>. This gives 2 unpaired
+              electrons → paramagnetic, and BO = ½(10−6) = 2.0.</div>
+</div>
+</div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+</main>
+<!-- ============== JAVASCRIPT ============== -->
+<script>
+    /* ===== TAB SWITCHING ===== */
+    document.querySelectorAll('.tabbar button').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.tabbar button').forEach(x => x.classList.remove('active'));
+        document.querySelectorAll('.tabpanel').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        document.getElementById(b.dataset.target).classList.add('active');
+        window.dispatchEvent(new Event('resize'));
+      });
+    });
+
+    /* ===== TOOL SWITCHING ===== */
+    ['tool1Btn', 'tool2Btn', 'tool3Btn'].forEach((id, i) => {
+      document.getElementById(id).addEventListener('click', () => {
+        document.querySelectorAll('.subtool').forEach(s => s.classList.remove('active'));
+        document.getElementById('tool' + (i + 1)).classList.add('active');
+        window.dispatchEvent(new Event('resize'));
+      });
+    });
+
+    /* =================================================================
+       TOOL 1: VSEPR VISUALIZER
+       ================================================================= */
+    const molData = {
+      CH4: {
+        name: "Methane (CH₄)", bp: 4, lp: 0, geo: "Tetrahedral", hyb: "sp³", ideal: 109.5, anomalies: [], centralColor: "#fbbf24", ligColor: "#22d3ee",
+        info: "Perfect tetrahedral symmetry. All four C–H bonds are equivalent at 109.5°. No lone pairs to perturb the geometry. Methane is nonpolar (μ=0).",
+        concept: "VSEPR for steric #4 with 0 LP gives ideal tetrahedral. No repulsion asymmetry means no deviation. Bond dipoles point along C–H and cancel by symmetry. MO picture: C is sp³, four σ C–H bonds formed by H 1s overlapping with C sp³ hybrids."
+      },
+      NH3: {
+        name: "Ammonia (NH₃)", bp: 3, lp: 1, geo: "Trigonal pyramidal", hyb: "sp³", ideal: 109.5, anomalies: [{ idx: [1, 2], val: 107, label: "H–N–H" }],
+        centralColor: "#fbbf24", ligColor: "#22d3ee",
+        info: "<strong>Anomaly: 107° (not 109.5°)</strong><br>Click the red angle to see the deep dive.",
+        concept: "Sp³ on N with 1 lone pair. The lone pair occupies more angular volume than a bond pair, compressing the H–N–H angle from 109.5° to 107° by ~2.5°. The lp–bp repulsion is greater than bp–bp. Ammonia is polar (μ = 1.47 D); the lone pair dipole reinforces the bond dipoles."
+      },
+      H2O: {
+        name: "Water (H₂O)", bp: 2, lp: 2, geo: "Bent (V-shape)", hyb: "sp³", ideal: 109.5, anomalies: [{ idx: [2, 3], val: 104.5, label: "H–O–H" }],
+        centralColor: "#fbbf24", ligColor: "#22d3ee",
+        info: "<strong>Anomaly: 104.5° (not 109.5°)</strong><br>Click the red angle to see the deep dive.",
+        concept: "Sp³ on O with 2 lone pairs. Both lp–lp and lp–bp repulsions operate. Total compression is ~5°, larger than NH₃. Water is highly polar (μ = 1.85 D). The bent geometry is essential to life: if H₂O were linear, it would be nonpolar and a gas at room temperature."
+      },
+      SF4: {
+        name: "Sulfur tetrafluoride (SF₄)", bp: 4, lp: 1, geo: "See-saw", hyb: "sp³d", ideal: ["90°/120°"], anomalies: [{ idx: [2, 3], val: 101.6, label: "F–S–F (eq)" }],
+        centralColor: "#a78bfa", ligColor: "#22d3ee",
+        info: "<strong>See-saw shape</strong>: 2 axial F + 2 equatorial F + 1 equatorial LP. The equatorial F–S–F angle is compressed from 120° to ~101.6° by the equatorial lone pair. Two distinct F environments: axial and equatorial.",
+        concept: "Trigonal bipyramidal e⁻ geometry (sp³d). The LP sits equatorial to minimize its 90° repulsions with two axial BPs (only 2 lp–bp at 90°), rather than axial which would give 3 lp–bp at 90°. The result: see-saw molecular shape with two different S–F bond lengths."
+      },
+      ClF3: {
+        name: "Chlorine trifluoride (ClF₃)", bp: 3, lp: 2, geo: "T-shaped", hyb: "sp³d", ideal: ["90°/180°"], anomalies: [{ idx: [0, 2], val: 87.5, label: "F–Cl–F (axial)" }],
+        centralColor: "#a78bfa", ligColor: "#22d3ee",
+        info: "<strong>T-shape</strong>: 2 axial F + 1 equatorial F + 2 equatorial LPs. The 2 lone pairs sit equatorial to minimize lp–lp repulsion. F–Cl–F angle is 87.5° (slightly less than 90°).",
+        concept: "TBP electron geometry. Both LPs in equatorial plane (separated by 120°) to minimize their mutual repulsion. The remaining 2 axial and 1 equatorial F form a T. Slight angle compression from 90° to 87.5° due to axial F repulsion against the lone pair-rich equatorial region."
+      },
+      BrF5: {
+        name: "Bromine pentafluoride (BrF₅)", bp: 5, lp: 1, geo: "Square pyramidal", hyb: "sp³d²", ideal: ["90°"], anomalies: [{ idx: [0, 2], val: 84.5, label: "F–Br–F (apex)" }],
+        centralColor: "#a78bfa", ligColor: "#22d3ee",
+        info: "<strong>Square pyramidal</strong>: 4 basal F + 1 apical F + 1 LP trans to apical. F–Br–F angles ~84.5° (slightly less than 90°).",
+        concept: "Octahedral electron geometry. The LP occupies one vertex; the five F form a square base + apex. All F atoms equivalent except the lone-pair-distorted geometry. BrF₅ is polar (μ ≠ 0) because the LP breaks the perfect octahedral symmetry."
+      },
+      XeF4: {
+        name: "Xenon tetrafluoride (XeF₄)", bp: 4, lp: 2, geo: "Square planar", hyb: "sp³d²", ideal: ["90°"], anomalies: [],
+        centralColor: "#a78bfa", ligColor: "#22d3ee",
+        info: "<strong>Square planar</strong>: 4 F at corners of a square, 2 LPs trans to each other (above &amp; below the plane). All 90° F–Xe–F angles. <strong>μ = 0 (nonpolar)</strong> due to perfect D<sub>4h</sub> symmetry — one of NCERT's favorite 'trick' molecules.",
+        concept: "The 2 LPs go to the axial positions of an octahedron, 180° apart, to minimize lp–lp repulsion. The 4 F atoms are all in the equatorial plane, square planar. Despite having 2 LPs, the molecule is nonpolar because the symmetry cancels both LPs and all bond dipoles."
+      }
+    };
+
+    /* repulsion deep-dive content for clickable angles */
+    const repulsionDeepDive = {
+      "H2O": "<strong>Deep dive: 104.5° in H₂O</strong><br><br>Mechanistically, the O has 2 LP and 2 BP. The lp–lp pair occupies the largest angular region, then each lp–bp pair, then bp–bp. By VSEPR:<br>• <strong>lp–lp &gt; lp–bp &gt; bp–bp</strong><br>• 2 lone pairs are 'splayed' on O, demanding more than their tetrahedral share<br>• 2 bp–bp repulsions try to close the H–O–H angle<br>• Equilibrium: balance point at <strong>104.5°</strong><br><br>Quantitative: bent geometry → dipole moments add to 1.85 D. The 2 LPs' dipoles also point roughly along the bisector, <em>adding</em> to the H–O–H dipoles. Maximum polarity for any H<sub>2</sub>X molecule.",
+      "NH3": "<strong>Deep dive: 107° in NH₃</strong><br><br>N has 1 LP, 3 BP. Only lp–bp compression operates (no lp–lp).<br>• The 1 lone pair pushes the 3 bonds together<br>• Compresses 109.5° → <strong>107°</strong> (only 2.5° reduction)<br>• The lone pair's dipole is along the C₃ axis, <em>adding</em> to the 3 N–H bond dipoles' net projection → μ = 1.47 D<br><br>Note: NH₃'s angle (107°) is closer to ideal than H₂O's (104.5°) because NH₃ has only one lone pair driving the compression.",
+      "SF4": "<strong>Deep dive: 101.6° equatorial in SF₄</strong><br><br>See-saw geometry arises from the choice of LP position:<br>• LP prefers an <em>equatorial</em> position (vs. axial)<br>• In equatorial: lp–bp at 90° with only 2 axial F<br>• In axial: lp–bp at 90° with 3 equatorial F (worse)<br>• Equatorial LP at 120° from 2 other BPs, but pushes them closer to each other: <strong>F–S–F(equatorial) = 101.6°</strong> (compressed from 120°)<br><br>Net: distorted trigonal bipyramidal with one vertex replaced by a lone pair.",
+      "ClF3": "<strong>Deep dive: 87.5° in ClF₃</strong><br><br>ClF₃ is T-shaped because both lone pairs go equatorial:<br>• 2 LPs at 120° (equatorial) minimize lp–lp repulsion<br>• 2 axial F + 1 equatorial F remain as the visible molecular shape<br>• F(axial)–Cl–F(axial) angle = 180° (slightly bent by repulsion)<br>• F(axial)–Cl–F(equatorial) compressed from 90° to <strong>87.5°</strong><br><br>ClF₃ is highly reactive (used in fluorination of UF₆ for uranium enrichment).",
+      "BrF5": "<strong>Deep dive: 84.5° in BrF₅</strong><br><br>Square pyramidal with LP on the bottom:<br>• 4 basal F at 90° to the central axis, 1 apical F at top<br>• The LP pushes the apical F slightly down and the basal F slightly up<br>• Net: F(apical)–Br–F(basal) angle = <strong>84.5°</strong> (compressed from 90°)<br>• F(basal)–Br–F(basal) angle opens slightly to compensate (~88°)<br><br>BrF₅ is polar (μ = 1.51 D) because the LP breaks the ideal octahedral symmetry."
+    };
+
+    let currentMol = "CH4";
+    let activeAnglePopup = null;
+    let vseprScene, vseprCamera, vseprRenderer, vseprControls;
+    let hybScene, hybCamera, hybRenderer, hybControls, hybGroup;
+    let moScene, moCamera, moRenderer, moControls, moGroup;
+
+    const PI = Math.PI;
+
+    // ==========================================
+    // TOOL 1: VSEPR Visualizer (3D)
+    // ==========================================
+    function initVSEPR() {
+      const cv = document.getElementById('vseprCanvas');
+      vseprRenderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true });
+      vseprRenderer.setPixelRatio(window.devicePixelRatio || 1);
+      const W = cv.clientWidth || 420, H = cv.clientHeight || 420;
+      vseprRenderer.setSize(W, H, false);
+
+      vseprScene = new THREE.Scene();
+      vseprCamera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
+      vseprCamera.position.set(0, 0, 15);
+
+      vseprControls = new THREE.OrbitControls(vseprCamera, vseprRenderer.domElement);
+      vseprControls.enableDamping = true;
+      vseprControls.dampingFactor = 0.05;
+      vseprControls.enablePan = false;
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      vseprScene.add(ambientLight);
+      const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(5, 10, 7);
+      vseprScene.add(dirLight);
+
+      // setup click handler for anomalous angles
+      cv.addEventListener('click', onVSEPRClick);
+    }
+
+    function drawVSEPR() {
+      if (!vseprScene) initVSEPR();
+
+      // Clear scene
+      while (vseprScene.children.length > 2) {
+        vseprScene.remove(vseprScene.children[2]);
+      }
+
+      const d = molData[currentMol];
+      const centralMat = new THREE.MeshPhongMaterial({ color: d.centralColor, shininess: 80 });
+      const ligMat = new THREE.MeshPhongMaterial({ color: d.ligColor, shininess: 80 });
+      const lpMat = new THREE.MeshPhongMaterial({ color: 0xa78bfa, transparent: true, opacity: 0.5, shininess: 10 });
+      const bondMat = new THREE.MeshPhongMaterial({ color: 0x64748b });
+
+      const central = new THREE.Mesh(new THREE.SphereGeometry(1.2, 32, 32), centralMat);
+      vseprScene.add(central);
+
+      const r = 3.5;
+      let pos = [];
+
+      // 3D coordinates (x, y, z)
+      if (currentMol === "CH4") {
+        const a = r / Math.sqrt(3);
+        pos = [
+          { x: a, y: a, z: a, isLP: false },
+          { x: -a, y: -a, z: a, isLP: false },
+          { x: -a, y: a, z: -a, isLP: false },
+          { x: a, y: -a, z: -a, isLP: false }
+        ];
+      } else if (currentMol === "NH3") {
+        const ang = 107 * PI / 180;
+        const h = r * Math.cos(ang / 2 + 0.1);
+        // approximated trigonal pyramidal
+        pos = [
+          { x: 0, y: r * 0.8, z: 0, isLP: true },
+          { x: 0, y: -h, z: r * Math.sin(ang / 2 + 0.1), isLP: false },
+          { x: r * Math.sin(ang / 2 + 0.1) * 0.866, y: -h, z: -r * Math.sin(ang / 2 + 0.1) * 0.5, isLP: false },
+          { x: -r * Math.sin(ang / 2 + 0.1) * 0.866, y: -h, z: -r * Math.sin(ang / 2 + 0.1) * 0.5, isLP: false }
+        ];
+      } else if (currentMol === "H2O") {
+        const ang = 104.5 * PI / 180;
+        pos = [
+          { x: r * Math.sin(ang / 2), y: -r * Math.cos(ang / 2), z: 0, isLP: false },
+          { x: -r * Math.sin(ang / 2), y: -r * Math.cos(ang / 2), z: 0, isLP: false },
+          { x: 0, y: r * Math.cos(ang / 2), z: r * Math.sin(ang / 2), isLP: true },
+          { x: 0, y: r * Math.cos(ang / 2), z: -r * Math.sin(ang / 2), isLP: true }
+        ];
+      } else if (currentMol === "SF4") {
+        pos = [
+          { x: 0, y: r, z: 0, isLP: false },
+          { x: 0, y: -r, z: 0, isLP: false },
+          { x: r * Math.cos(19 * PI / 180), y: 0, z: r * Math.sin(19 * PI / 180), isLP: false },
+          { x: -r * Math.cos(19 * PI / 180), y: 0, z: r * Math.sin(19 * PI / 180), isLP: false },
+          { x: 0, y: 0, z: -r, isLP: true }
+        ];
+      } else if (currentMol === "ClF3") {
+        pos = [
+          { x: 0, y: r, z: 0, isLP: false },
+          { x: 0, y: -r, z: 0, isLP: false },
+          { x: r, y: 0, z: 0, isLP: false },
+          { x: -r * 0.5, y: 0, z: r * 0.866, isLP: true },
+          { x: -r * 0.5, y: 0, z: -r * 0.866, isLP: true }
+        ];
+      } else if (currentMol === "BrF5") {
+        pos = [
+          { x: 0, y: r, z: 0, isLP: false },
+          { x: r, y: -r * 0.1, z: 0, isLP: false },
+          { x: -r, y: -r * 0.1, z: 0, isLP: false },
+          { x: 0, y: -r * 0.1, z: r, isLP: false },
+          { x: 0, y: -r * 0.1, z: -r, isLP: false },
+          { x: 0, y: -r, z: 0, isLP: true }
+        ];
+      } else if (currentMol === "XeF4") {
+        pos = [
+          { x: r, y: 0, z: 0, isLP: false },
+          { x: -r, y: 0, z: 0, isLP: false },
+          { x: 0, y: 0, z: r, isLP: false },
+          { x: 0, y: 0, z: -r, isLP: false },
+          { x: 0, y: r, z: 0, isLP: true },
+          { x: 0, y: -r, z: 0, isLP: true }
+        ];
+      }
+
+      pos.forEach((p, i) => {
+        p.vec = new THREE.Vector3(p.x, p.y, p.z);
+
+        // Draw bond
+        const distance = p.vec.length();
+        const bond = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, distance, 16), bondMat);
+        bond.position.copy(p.vec).multiplyScalar(0.5);
+        bond.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), p.vec.clone().normalize());
+        vseprScene.add(bond);
+
+        if (p.isLP) {
+          // Lone pair
+          const lpMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.8, 1.5, 16), lpMat);
+          lpMesh.position.copy(p.vec).multiplyScalar(0.6);
+          lpMesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), p.vec.clone().normalize());
+          vseprScene.add(lpMesh);
+        } else {
+          // Atom
+          const atom = new THREE.Mesh(new THREE.SphereGeometry(0.8, 32, 32), ligMat);
+          atom.position.copy(p.vec);
+          vseprScene.add(atom);
+        }
+      });
+
+      // Highlight anomalies
+      vseprScene.anomalies = [];
+      if (d.anomalies) {
+        d.anomalies.forEach(a => {
+          const p1 = pos[a.idx[0]].vec;
+          const p2 = pos[a.idx[1]].vec;
+
+          // Create a curved tube for the angle
+          const curve = new THREE.QuadraticBezierCurve3(
+            p1.clone().multiplyScalar(0.5),
+            p1.clone().add(p2).multiplyScalar(0.3),
+            p2.clone().multiplyScalar(0.5)
+          );
+          const tubeGeo = new THREE.TubeGeometry(curve, 20, 0.15, 8, false);
+          const tubeMat = new THREE.MeshPhongMaterial({ color: 0xef4444, emissive: 0xef4444, emissiveIntensity: 0.5 });
+          const tube = new THREE.Mesh(tubeGeo, tubeMat);
+          tube.userData = { isAnomaly: true, val: a.val };
+          vseprScene.add(tube);
+          vseprScene.anomalies.push(tube);
+        });
+      }
+
+      // update side panel
+      document.getElementById('bpCount').textContent = d.bp;
+      document.getElementById('lpCount').textContent = d.lp;
+      document.getElementById('geoLabel').textContent = d.geo;
+      document.getElementById('hybLabel').textContent = d.hyb;
+      document.getElementById('moleculeName').textContent = d.name;
+      document.getElementById('moleculeInfo').innerHTML = d.info;
+      document.getElementById('conceptBox').innerHTML = "<strong>Why this shape?</strong><br>" + d.concept;
+    }
+
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    function onVSEPRClick(e) {
+      const cv = document.getElementById('vseprCanvas');
+      const rect = cv.getBoundingClientRect();
+      mouse.x = ((e.clientX - rect.left) / cv.clientWidth) * 2 - 1;
+      mouse.y = -((e.clientY - rect.top) / cv.clientHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, vseprCamera);
+      if (!vseprScene.anomalies) return;
+      const intersects = raycaster.intersectObjects(vseprScene.anomalies);
+
+      if (intersects.length > 0) {
+        showAnglePopup(currentMol, intersects[0].object.userData.val);
+      }
+    }
+
+    // ==========================================
+    // TOOL 2: Hybridization Engine (3D)
+    // ==========================================
+    function initHyb() {
+      const cv = document.getElementById('hybCanvas');
+      hybRenderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true });
+      hybRenderer.setPixelRatio(window.devicePixelRatio || 1);
+      const W = cv.clientWidth || 420, H = cv.clientHeight || 420;
+      hybRenderer.setSize(W, H, false);
+
+      hybScene = new THREE.Scene();
+      hybCamera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
+      hybCamera.position.set(0, 0, 20);
+
+      hybControls = new THREE.OrbitControls(hybCamera, hybRenderer.domElement);
+      hybControls.enableDamping = true;
+      hybControls.dampingFactor = 0.05;
+      hybControls.enablePan = false;
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      hybScene.add(ambientLight);
+      const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(5, 10, 7);
+      hybScene.add(dirLight);
+
+      hybGroup = new THREE.Group();
+      hybScene.add(hybGroup);
+    }
+
+    function drawHyb() {
+      if (!hybScene) initHyb();
+
+      while (hybGroup.children.length > 0) {
+        hybGroup.remove(hybGroup.children[0]);
+      }
+
+      if (!currentHyb) return;
+
+      const n = { sp: 2, sp2: 3, sp3: 4, sp3d: 5, sp3d2: 6 }[currentHyb];
+      const central = new THREE.Mesh(
+        new THREE.SphereGeometry(1.0, 32, 32),
+        new THREE.MeshPhongMaterial({ color: 0xa78bfa })
+      );
+      hybGroup.add(central);
+
+      const isHybridized = hybProgress > 0.6;
+      const pureMat = new THREE.MeshPhongMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.6 });
+      const hybMat = new THREE.MeshPhongMaterial({ color: 0x6366f1, transparent: true, opacity: 0.8 });
+      const backMat = new THREE.MeshPhongMaterial({ color: 0x6366f1, transparent: true, opacity: 0.3 });
+
+      // Determine positions using VSEPR-like geometries
+      let dirs = [];
+      if (n === 2) dirs = [new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0, 0)];
+      else if (n === 3) dirs = [new THREE.Vector3(0, 1, 0), new THREE.Vector3(0.866, -0.5, 0), new THREE.Vector3(-0.866, -0.5, 0)];
+      else if (n === 4) dirs = [
+        new THREE.Vector3(1, 1, 1).normalize(), new THREE.Vector3(-1, -1, 1).normalize(),
+        new THREE.Vector3(-1, 1, -1).normalize(), new THREE.Vector3(1, -1, -1).normalize()
+      ];
+      else if (n === 5) dirs = [
+        new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -1, 0),
+        new THREE.Vector3(1, 0, 0), new THREE.Vector3(-0.5, 0, 0.866), new THREE.Vector3(-0.5, 0, -0.866)
+      ];
+      else if (n === 6) dirs = [
+        new THREE.Vector3(1, 0, 0), new THREE.Vector3(-1, 0, 0),
+        new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -1, 0),
+        new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 0, -1)
+      ];
+
+      dirs.forEach(dir => {
+        const group = new THREE.Group();
+        group.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+
+        if (isHybridized) {
+          // Big lobe
+          const frontLobe = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.8, 1.8, 16), hybMat);
+          frontLobe.position.set(0, 1.5, 0);
+          group.add(frontLobe);
+          // Small back lobe
+          const backLobe = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.5, 16), backMat);
+          backLobe.position.set(0, -0.6, 0);
+          group.add(backLobe);
+        } else {
+          // Sphere expanding outward
+          const scale = 0.5 + hybProgress;
+          const pureLobe = new THREE.Mesh(new THREE.SphereGeometry(1.2 * scale, 32, 32), pureMat);
+          pureLobe.position.set(0, 2 * hybProgress, 0);
+          group.add(pureLobe);
+        }
+        hybGroup.add(group);
+      });
+    }
+
+
+    // ==========================================
+    // TOOL 3: MO Diagram (3D Overlay)
+    // ==========================================
+    const moData = {
+      B2: {
+        e: 10, order: "light", bonding: 6, antibonding: 4, paired: false, unpaired: 2,
+        config: "σ1s² σ*1s² σ2s² σ*2s² π2p<sub>x</sub>¹ π2p<sub>y</sub>¹",
+        explain: "<strong>B₂ (10 e⁻):</strong> B has small atoms with poor p-overlap, so s-p mixing pushes π2p below σ2p. The last 2 e⁻ go one each into the degenerate π2p MOs (Hund's rule). <strong>2 unpaired → paramagnetic</strong>. BO = ½(6−4) = 1. This was a stunning MO prediction — VBT couldn't account for paramagnetism of B₂."
+      },
+      C2: {
+        e: 12, order: "light", bonding: 8, antibonding: 4, paired: true, unpaired: 0,
+        config: "σ1s² σ*1s² σ2s² σ*2s² π2p<sub>x</sub>² π2p<sub>y</sub>²",
+        explain: "<strong>C₂ (12 e⁻):</strong> Still in the 'light' regime where π2p &lt; σ2p. After π MOs are filled, the σ2p stays empty. <strong>All paired → diamagnetic</strong>. BO = ½(8−4) = 2. Note: the bonding is from 2 π bonds (lateral p-p overlap), not the usual σ+π — a peculiarity of C₂."
+      },
+      N2: {
+        e: 14, order: "light", bonding: 10, antibonding: 4, paired: true, unpaired: 0,
+        config: "σ1s² σ*1s² σ2s² σ*2s² π2p<sub>x</sub>² π2p<sub>y</sub>² σ2p<sub>z</sub>²",
+        explain: "<strong>N₂ (14 e⁻):</strong> The boundary case — last 2 e⁻ fill σ2p. Triple bond (1σ + 2π), bond enthalpy 941 kJ/mol (strongest homonuclear bond), bond length 110 pm. <strong>Diamagnetic</strong>. BO = ½(10−4) = 3. This is why N₂ is so inert kinetically (high bond energy) despite being thermodynamically reactive."
+      },
+      O2: {
+        e: 16, order: "heavy", bonding: 10, antibonding: 6, paired: false, unpaired: 2,
+        config: "σ1s² σ*1s² σ2s² σ*2s² σ2p<sub>z</sub>² π2p<sub>x</sub>² π2p<sub>y</sub>² π*2p<sub>x</sub>¹ π*2p<sub>y</sub>¹",
+        explain: "<strong>O₂ (16 e⁻):</strong> In the 'heavy' regime, σ2p &lt; π2p. The last 2 e⁻ go into the <em>antibonding</em> π* MOs, one each (Hund). <strong>2 unpaired → paramagnetic</strong> — explains why liquid O₂ sticks to magnets! BO = ½(10−6) = 2. This is the most famous MO triumph."
+      },
+      F2: {
+        e: 18, order: "heavy", bonding: 10, antibonding: 8, paired: true, unpaired: 0,
+        config: "σ1s² σ*1s² σ2s² σ*2s² σ2p<sub>z</sub>² π2p<sub>x</sub>² π2p<sub>y</sub>² π*2p<sub>x</sub>² π*2p<sub>y</sub>²",
+        explain: "<strong>F₂ (18 e⁻):</strong> All MOs through π* are now filled. <strong>All paired → diamagnetic</strong>. BO = ½(10−8) = 1. Bond enthalpy only 159 kJ/mol — anomalously weak for a single bond, because the small F atoms have lone-pair–lone-pair repulsion across the short F–F distance."
+      },
+      Ne2: {
+        e: 20, order: "heavy", bonding: 10, antibonding: 10, paired: true, unpaired: 0,
+        config: "σ1s² σ*1s² σ2s² σ*2s² σ2p<sub>z</sub>² π2p<sub>x</sub>² π2p<sub>y</sub>² π*2p<sub>x</sub>² π*2p<sub>y</sub>² σ*2p<sub>z</sub>²",
+        explain: "<strong>Ne₂ (20 e⁻):</strong> The σ*2p is filled last, perfectly cancelling all bonding. <strong>BO = ½(10−10) = 0</strong>. Predicted (and observed) instability — there is no true Ne₂ molecule at ordinary conditions, only very weak van der Waals attraction."
+      }
+    };
+    function initMO() {
+      const cv = document.getElementById('moCanvas');
+      moRenderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true });
+      moRenderer.setPixelRatio(window.devicePixelRatio || 1);
+      const W = cv.clientWidth || 420, H = cv.clientHeight || 420;
+      moRenderer.setSize(W, H, false);
+
+      moScene = new THREE.Scene();
+      moCamera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
+      moCamera.position.set(0, 0, 25);
+
+      moControls = new THREE.OrbitControls(moCamera, moRenderer.domElement);
+      moControls.enableDamping = true;
+      moControls.dampingFactor = 0.05;
+      moControls.enablePan = false;
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      moScene.add(ambientLight);
+      const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(5, 10, 7);
+      moScene.add(dirLight);
+
+      moGroup = new THREE.Group();
+      moScene.add(moGroup);
+    }
+
+    function drawMO() {
+      if (!moScene) initMO();
+
+      while (moGroup.children.length > 0) {
+        moGroup.remove(moGroup.children[0]);
+      }
+
+      const d = moData[document.getElementById('moSelect').value];
+
+      // Update stats first
+      document.getElementById('totalE').textContent = d.e;
+      document.getElementById('bondE').textContent = d.bonding;
+      document.getElementById('antiE').textContent = d.antibonding;
+      const bo = (d.bonding - d.antibonding) / 2;
+      document.getElementById('boVal').textContent = bo.toFixed(1);
+      document.getElementById('moConfig').innerHTML = d.config;
+      document.getElementById('moExplain').innerHTML = d.explain;
+      const mag = d.unpaired > 0 ? `Paramagnetic (${d.unpaired} unpaired)` : "Diamagnetic";
+      document.getElementById('magStatus').textContent = mag;
+      document.getElementById('magStatus').style.color = d.unpaired > 0 ? "#f87171" : "#34d399";
+
+      // Create 3D representation of HOMO
+      // For simplicity, we show a generic molecule framework with orbital overlay
+      const atomMat = new THREE.MeshPhongMaterial({ color: 0x94a3b8 });
+      const atom1 = new THREE.Mesh(new THREE.SphereGeometry(1.2, 32, 32), atomMat);
+      atom1.position.set(-2.5, 0, 0);
+      const atom2 = new THREE.Mesh(new THREE.SphereGeometry(1.2, 32, 32), atomMat);
+      atom2.position.set(2.5, 0, 0);
+      moGroup.add(atom1, atom2);
+
+      // We visualize the Highest Occupied MO based on BO
+      const bondMat = new THREE.MeshPhongMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.6 });
+      const antiMat = new THREE.MeshPhongMaterial({ color: 0xf87171, transparent: true, opacity: 0.6 });
+
+      if (d.e <= 14) {
+        // Sigma bonding HOMO (e.g., N2) or Pi (C2)
+        // Draw sigma bond
+        const sigma = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 3.0, 16), bondMat);
+        sigma.rotation.z = PI / 2;
+        moGroup.add(sigma);
+
+        if (d.e >= 12) {
+          // Draw pi bonds (torus or lobes)
+          const pi1 = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.8, 3.0, 16), bondMat);
+          pi1.position.set(0, 1.8, 0);
+          pi1.rotation.z = PI / 2;
+          const pi2 = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.8, 3.0, 16), bondMat);
+          pi2.position.set(0, -1.8, 0);
+          pi2.rotation.z = PI / 2;
+          moGroup.add(pi1, pi2);
+        }
+      } else {
+        // O2, F2 -> Pi* antibonding is HOMO
+        const sigma = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.2, 3.0, 16), bondMat);
+        sigma.rotation.z = PI / 2;
+        moGroup.add(sigma);
+
+        // Pi* antibonding (out of phase)
+        const lobeGeo = new THREE.CylinderGeometry(0.8, 0.8, 1.2, 16);
+        const p1 = new THREE.Mesh(lobeGeo, antiMat); p1.position.set(-2, 1.8, 0); p1.rotation.z = PI / 4;
+        const p2 = new THREE.Mesh(lobeGeo, antiMat); p2.position.set(2, -1.8, 0); p2.rotation.z = PI / 4;
+        const p3 = new THREE.Mesh(lobeGeo, bondMat); p3.position.set(2, 1.8, 0); p3.rotation.z = -PI / 4;
+        const p4 = new THREE.Mesh(lobeGeo, bondMat); p4.position.set(-2, -1.8, 0); p4.rotation.z = -PI / 4;
+        moGroup.add(p1, p2, p3, p4);
+      }
+    }
+
+    // ==========================================
+    // Global Animation Loop
+    // ==========================================
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Only render visible canvases
+      if (vseprRenderer && document.getElementById('tool1').classList.contains('active')) {
+        vseprControls.update();
+        vseprRenderer.render(vseprScene, vseprCamera);
+      }
+      if (hybRenderer && document.getElementById('tool2').classList.contains('active')) {
+        hybControls.update();
+        hybRenderer.render(hybScene, hybCamera);
+      }
+      if (moRenderer && document.getElementById('tool3').classList.contains('active')) {
+        moGroup.rotation.y += 0.01;
+        moControls.update();
+        moRenderer.render(moScene, moCamera);
+      }
+    }
+
+    // Hook into existing events
+    document.getElementById('moleculeSelect').addEventListener('change', e => {
+      currentMol = e.target.value;
+      drawVSEPR();
+    });
+
+    window.addEventListener('resize', () => {
+      if (vseprRenderer) {
+        const W = vseprRenderer.domElement.clientWidth, H = vseprRenderer.domElement.clientHeight;
+        vseprRenderer.setSize(W, H, false); vseprCamera.aspect = W / H; vseprCamera.updateProjectionMatrix();
+      }
+      if (hybRenderer) {
+        const W = hybRenderer.domElement.clientWidth, H = hybRenderer.domElement.clientHeight;
+        hybRenderer.setSize(W, H, false); hybCamera.aspect = W / H; hybCamera.updateProjectionMatrix();
+      }
+      if (moRenderer) {
+        const W = moRenderer.domElement.clientWidth, H = moRenderer.domElement.clientHeight;
+        moRenderer.setSize(W, H, false); moCamera.aspect = W / H; moCamera.updateProjectionMatrix();
+      }
+    });
+
+    // Initialize on load
+    drawVSEPR();
+    animate();
+
+
+    // Hook into existing events for MO Diagram
+    document.getElementById('moSelect').addEventListener('change', drawMO);
+
+    // Hybridization UI Events
+    let currentHyb = null, hybProgress = 0, sigmaCount = 0, piCount = 0;
+
+    function animateHyb() {
+      if (!currentHyb) return;
+      hybProgress = 0;
+      let start = performance.now();
+      function step(t) {
+        const dt = (t - start) / 1500;
+        hybProgress = Math.min(1, dt);
+        drawHyb();
+        if (hybProgress < 1 && currentHyb) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    document.querySelectorAll('[data-hyb]').forEach(b => {
+      b.addEventListener('click', () => {
+        currentHyb = b.dataset.hyb;
+        sigmaCount = 0; piCount = 0;
+        document.getElementById('hybText').innerHTML = "<strong>" + currentHyb.toUpperCase() + "</strong> — " + {
+          sp: "One s + one p mix → 2 equivalent sp hybrids at 180°. Linear geometry. Each hybrid has 50% s, 50% p character. Example: Be in BeCl₂, C in C₂H₂.",
+          sp2: "One s + two p mix → 3 equivalent sp² hybrids at 120°. Trigonal planar. Each hybrid has 33% s, 67% p character. One unhybridized p remains perpendicular for π bonding. Example: B in BF₃, C in C₂H₄.",
+          sp3: "One s + three p mix → 4 equivalent sp³ hybrids at 109.5°. Tetrahedral. 25% s, 75% p. Example: C in CH₄, N in NH₃, O in H₂O.",
+          sp3d: "One s + three p + one d mix → 5 equivalent sp³d hybrids. Trigonal bipyramidal with 3 equatorial at 120° and 2 axial at 90°. Example: P in PCl₅, S in SF₄, Cl in ClF₃.",
+          sp3d2: "One s + three p + two d mix → 6 equivalent sp³d² hybrids. Octahedral at 90°. Example: S in SF₆, Xe in XeF₄."
+        }[currentHyb];
+        animateHyb();
+      });
+    });
+
+    document.getElementById('sigmaBtn').addEventListener('click', () => {
+      if (!currentHyb) return;
+      sigmaCount++;
+      document.getElementById('bondText').innerHTML = "<strong>σ (sigma) bond — bond #" + sigmaCount + "</strong><br>Formed by head-on (axial) overlap of hybrid orbitals (or s-s, s-p, p-p head-on). Cylindrically symmetric around the bond axis. <strong>Strongest type</strong> of covalent bond. Always present in single, double, and triple bonds (1 per connection).";
+    });
+    document.getElementById('piBtn').addEventListener('click', () => {
+      if (!currentHyb) return;
+      if (currentHyb === 'sp' || currentHyb === 'sp2') { piCount++; }
+      document.getElementById('bondText').innerHTML = "<strong>π (pi) bond — bond #" + piCount + "</strong><br>Formed by lateral (sideways) overlap of <em>unhybridized p-orbitals</em>. Two electron-cloud lobes: one above and one below the internuclear axis, with a nodal plane containing the axis. <strong>Weaker than σ</strong> due to less effective overlap. Restricts rotation → cis/trans isomerism in alkenes. Possible only when unhybridized p orbitals exist (sp and sp² can have π; sp³ cannot).";
+    });
+    document.getElementById('resetHyb').addEventListener('click', () => {
+      currentHyb = null; sigmaCount = 0; piCount = 0; hybProgress = 0;
+      document.getElementById('hybText').innerHTML = "Select a hybridization scheme to begin.";
+      document.getElementById('bondText').innerHTML = "σ: head-on overlap, cylindrically symmetric. π: lateral overlap of unhybridized p-orbitals, nodal plane along bond axis.";
+      drawHyb();
+    });
+    drawHyb();
+    drawMO();
+
+    // Remove old canvas resize logic to avoid conflict
+
+
+
+    /* =================================================================
+       PRINT HOOK
+       ================================================================= */
+    window.addEventListener('beforeprint', () => {
+      document.querySelectorAll('details').forEach(d => d.open = true);
+    });
+  </script>
+</body>
+</html>

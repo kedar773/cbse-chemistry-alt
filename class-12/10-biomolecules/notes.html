@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 12 Chemistry: Biomolecules — Master Study Notes</title>
+<style>
+/* ============================================
+   CSS RESET & VARIABLES
+============================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f6f8fb;--card:#ffffff;--text:#1a1f36;--muted:#5b6478;
+  --primary:#1e3a5f;--primary-light:#2c5282;--accent:#e85d04;
+  --success:#2d7d46;--warning:#c47d00;--danger:#c0392b;--border:#e2e8f0;
+  --code-bg:#f1f5f9;--shadow:0 2px 8px rgba(15,23,42,.08);
+  --shadow-lg:0 8px 24px rgba(15,23,42,.12);
+  --radius:10px;--radius-sm:6px;
+  --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+  --serif:'Georgia','Cambria',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  --mono:'Consolas','Monaco','Courier New',monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+h1,h2,h3,h4{line-height:1.3;color:var(--primary);font-weight:700}
+h1{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:.5rem}
+h2{font-size:clamp(1.3rem,3vw,1.8rem);margin:1.8rem 0 .8rem;padding-bottom:.4rem;border-bottom:2px solid var(--border)}
+h3{font-size:1.15rem;margin:1.2rem 0 .5rem;color:var(--primary-light)}
+h4{font-size:1rem;margin:1rem 0 .4rem;color:var(--text)}
+p{margin-bottom:.7rem}
+a{color:var(--primary-light);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;border:1px solid var(--border);border-radius:var(--radius-sm);background:#fff}
+sub,sup{font-size:.72em;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+code{font-family:var(--mono);background:var(--code-bg);padding:1px 5px;border-radius:3px;font-size:.92em;color:var(--danger)}
+hr{border:none;border-top:1px solid var(--border);margin:1.2rem 0}
+
+/* ============================================
+   HEADER & TAB NAVIGATION
+============================================ */
+header{background:linear-gradient(135deg,var(--primary) 0%,#2c5282 100%);color:#fff;padding:1.5rem 1.2rem;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem}
+.header-inner h1{color:#fff;font-size:clamp(1.2rem,3vw,1.8rem);margin:0}
+.header-inner p{color:#cbd5e0;font-size:.9rem;margin:.2rem 0 0}
+.header-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:.4rem .8rem;border-radius:999px;font-size:.78rem;font-weight:600;backdrop-filter:blur(8px)}
+
+.tab-nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:88px;z-index:99;box-shadow:0 2px 4px rgba(0,0,0,.04)}
+.tab-nav-inner{max-width:1280px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:thin}
+.tab-nav button{background:transparent;border:none;padding:1rem 1.2rem;font-family:inherit;font-size:.92rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:var(--transition);position:relative}
+.tab-nav button:hover{color:var(--primary);background:rgba(30,58,95,.04)}
+.tab-nav button.active{color:var(--primary);border-bottom-color:var(--accent);background:rgba(232,93,4,.04)}
+.tab-nav button .tab-emoji{margin-right:.4rem;font-size:1.05rem}
+
+/* ============================================
+   LAYOUT
+============================================ */
+main{max-width:1280px;margin:0 auto;padding:1.5rem 1.2rem 4rem}
+section[role="tabpanel"]{display:none;animation:fadeIn .4s ease}
+section[role="tabpanel"].active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============================================
+   CARDS, BADGES, BOXES
+============================================ */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;box-shadow:var(--shadow);margin-bottom:1.2rem}
+.card-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;flex-wrap:wrap}
+.card-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.badge{display:inline-flex;align-items:center;gap:.3rem;padding:2px 8px;border-radius:999px;font-size:.72rem;font-weight:600;line-height:1.4;white-space:nowrap}
+.badge-pyq{background:#fff3e0;color:#e65100;border:1px solid #ffcc80}
+.badge-xref{background:#e3f2fd;color:#1565c0;border:1px solid #90caf9}
+.badge-green{background:#e8f5e9;color:#2d7d46;border:1px solid #a5d6a7}
+.badge-red{background:#fdecea;color:#c0392b;border:1px solid #ef9a9a}
+.badge-yellow{background:#fffde7;color:#c47d00;border:1px solid #ffe082}
+.badge-purple{background:#f3e5f5;color:#6a1b9a;border:1px solid #ce93d8}
+.badge-blue{background:#e3f2fd;color:#0d47a1;border:1px solid #64b5f6}
+.highlight-box{background:linear-gradient(135deg,#fff8e1 0%,#fffbf0 100%);border-left:4px solid var(--warning);padding:1rem 1.2rem;border-radius:var(--radius-sm);margin:1rem 0}
+.analysis-box{background:linear-gradient(135deg,#f3e7fc 0%,#faf3ff 100%);border:1px solid #d8b4fe;border-left:5px solid #7e22ce;padding:1rem 1.2rem;border-radius:var(--radius-sm);margin:1rem 0}
+.formula-box{background:var(--code-bg);padding:.8rem 1rem;border-radius:var(--radius-sm);font-family:var(--mono);font-size:.95rem;text-align:center;margin:.8rem 0;border:1px dashed var(--border)}
+.reaction{background:#fafbfc;border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;margin:.8rem 0;display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:start}
+.reaction-num{background:var(--primary);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+
+/* ============================================
+   TABLES
+============================================ */
+.table-wrap{overflow-x:auto;margin:1rem 0;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}
+thead{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);color:#fff}
+th{padding:.7rem .8rem;text-align:left;font-weight:600;font-size:.85rem;letter-spacing:.3px}
+td{padding:.6rem .8rem;border-top:1px solid var(--border);vertical-align:top}
+tbody tr:nth-child(even){background:#fafbfc}
+tbody tr:hover{background:#f0f4f8}
+
+/* ============================================
+   IMAGE GRID
+============================================ */
+.img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1rem 0}
+.img-grid figure{margin:0;background:#fff;padding:.7rem;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);transition:var(--transition)}
+.img-grid figure:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.img-grid figcaption{font-size:.82rem;color:var(--muted);text-align:center;margin-top:.5rem;font-style:italic}
+.img-sidebyside{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+@media(max-width:700px){.img-sidebyside{grid-template-columns:1fr}}
+.img-compare{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin:1rem 0}
+@media(max-width:900px){.img-compare{grid-template-columns:1fr}}
+
+/* ============================================
+   CLASSIFICATION MATRIX
+============================================ */
+.matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1rem 0}
+.matrix-item{background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);border:1px solid var(--border);border-left:4px solid var(--accent);padding:1rem 1.2rem;border-radius:var(--radius-sm);transition:var(--transition)}
+.matrix-item:hover{transform:translateX(4px);box-shadow:var(--shadow)}
+.matrix-item h4{color:var(--primary);margin:0 0 .3rem;font-size:1rem}
+.matrix-item p{font-size:.88rem;color:var(--muted);margin:0}
+.matrix-item ul{margin:.4rem 0 0;padding-left:1.2rem;font-size:.85rem}
+
+/* ============================================
+   NCERT SOLUTIONS TAB
+============================================ */
+details{background:#fff;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.8rem;box-shadow:var(--shadow);overflow:hidden;transition:var(--transition)}
+details[open]{box-shadow:var(--shadow-lg);border-color:var(--primary-light)}
+summary{padding:1rem 1.2rem;cursor:pointer;font-weight:600;color:var(--primary);display:flex;align-items:center;gap:.6rem;list-style:none;user-select:none;background:linear-gradient(180deg,#ffffff,#fafbfc);transition:var(--transition)}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▶";color:var(--accent);transition:transform var(--transition);font-size:.75rem;display:inline-block;flex-shrink:0}
+details[open] summary::before{transform:rotate(90deg)}
+summary:hover{background:#f0f4f8}
+summary .q-num{background:var(--primary);color:#fff;padding:2px 8px;border-radius:4px;font-size:.78rem;font-weight:700;flex-shrink:0}
+summary .q-type{margin-left:auto;font-size:.72rem;color:var(--muted);font-weight:500}
+details > div{padding:0 1.2rem 1.2rem;border-top:1px solid var(--border);background:#fafbfc}
+details ol,details ul{padding-left:1.5rem;margin:.5rem 0}
+details li{margin-bottom:.4rem}
+
+/* ============================================
+   VIRTUAL LAB - SIMULATOR 1
+============================================ */
+.lab-container{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;padding:1.5rem;border-radius:var(--radius);margin:1rem 0;box-shadow:var(--shadow-lg)}
+.lab-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.8rem}
+.lab-title{color:#fff;font-size:1.3rem;margin:0;display:flex;align-items:center;gap:.5rem}
+.lab-mode-toggle{display:flex;background:rgba(255,255,255,.08);border-radius:8px;padding:3px;border:1px solid rgba(255,255,255,.15)}
+.lab-mode-toggle button{background:transparent;border:none;color:#cbd5e0;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-family:inherit;font-weight:600;font-size:.85rem;transition:var(--transition)}
+.lab-mode-toggle button.active{background:linear-gradient(135deg,var(--accent) 0%,#f97316 100%);color:#fff;box-shadow:0 2px 8px rgba(232,93,4,.4)}
+
+.sugar-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:1rem 0}
+.sugar-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.7rem .9rem;cursor:pointer;transition:var(--transition);position:relative;overflow:hidden}
+.sugar-card:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);border-color:rgba(255,255,255,.3)}
+.sugar-card.active{background:linear-gradient(135deg,rgba(232,93,4,.25),rgba(249,115,22,.15));border-color:var(--accent);box-shadow:0 0 0 2px rgba(232,93,4,.3)}
+.sugar-card h4{margin:0;font-size:.92rem;color:#fff;display:flex;align-items:center;gap:.4rem}
+.sugar-card .sugar-meta{font-size:.72rem;color:#94a3b8;margin-top:.2rem;display:flex;flex-wrap:wrap;gap:.3rem}
+.sugar-card .sugar-rotation{font-family:var(--mono);color:#fbbf24;font-size:.85rem;margin-top:.3rem;font-weight:600}
+
+.sim-stage{background:radial-gradient(ellipse at center,#1e293b 0%,#0f172a 100%);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:1rem;margin:1rem 0;min-height:420px;position:relative;display:flex;align-items:center;justify-content:center}
+.sim-stage canvas,.sim-stage svg{max-width:100%;height:auto;display:block}
+.sim-stage object,.sim-stage img{max-width:100%;max-height:400px}
+
+.lab-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0}
+.control-group{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.8rem 1rem}
+.control-group label{display:block;font-size:.78rem;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.4rem;font-weight:600}
+.control-group input[type=range]{width:100%;accent-color:var(--accent)}
+.control-group .value-display{color:#fbbf24;font-family:var(--mono);font-weight:600;font-size:.92rem;float:right}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.1rem;background:linear-gradient(135deg,var(--accent) 0%,#f97316 100%);color:#fff;border:none;border-radius:6px;cursor:pointer;font-family:inherit;font-weight:600;font-size:.88rem;transition:var(--transition);box-shadow:0 2px 6px rgba(232,93,4,.3)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(232,93,4,.5)}
+.btn-secondary{background:rgba(255,255,255,.1);box-shadow:none;border:1px solid rgba(255,255,255,.2)}
+.btn-secondary:hover{background:rgba(255,255,255,.2);box-shadow:none}
+.btn-danger{background:linear-gradient(135deg,var(--danger) 0%,#dc2626 100%)}
+
+.result-display{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:1rem;margin-top:1rem;min-height:80px}
+.result-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:8px;font-weight:700;font-size:1rem;margin-bottom:.5rem}
+.result-positive{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff}
+.result-negative{background:linear-gradient(135deg,var(--danger),#ef4444);color:#fff}
+
+/* ============================================
+   PRINT CSS
+============================================ */
+@media print{
+  body{background:#fff!important;color:#000!important;font-size:11pt;line-height:1.4}
+  header,.tab-nav,section#lab,#lab,.lab-container,.sim-stage,.sim-controls,.simulator-controls,.skip-btn,.control-group,.btn,.lab-mode-toggle,.sugar-selector{display:none!important}
+  main{padding:0;max-width:100%}
+  section[role="tabpanel"]{display:block!important;page-break-before:always}
+  section[role="tabpanel"]:first-of-type{page-break-before:auto}
+  .card,.analysis-box,.highlight-box,details{break-inside:avoid;box-shadow:none!important;border:1px solid #ccc!important;background:#fff!important;page-break-inside:avoid}
+  img,svg{max-width:100%!important;height:auto!important;page-break-inside:avoid;break-inside:avoid}
+  details{display:block!important}
+  details>summary{display:none!important}
+  details>div{display:block!important;padding:.5rem 0!important;border:none!important;background:transparent!important}
+  .badge{border:1px solid #000!important;background:transparent!important;color:#000!important}
+  table{page-break-inside:auto;width:100%!important;font-size:9pt}
+  tr{page-break-inside:avoid;page-break-after:auto}
+  thead{display:table-header-group;background:#ddd!important;color:#000!important}
+  th{background:#ddd!important;color:#000!important}
+  a{color:#000!important;text-decoration:underline}
+  h1,h2,h3{color:#000!important;page-break-after:avoid}
+  h2{border-bottom:1px solid #000!important}
+  .formula-box{background:#f4f4f4!important;border:1px solid #999!important}
+  .print-only{display:block!important}
+  .print-hide{display:none!important}
+  .reaction{break-inside:avoid}
+  @page{margin:1.5cm;size:A4}
+  @page :left{margin-right:2cm}
+  @page :right{margin-left:2cm}
+}
+.print-only{display:none}
+
+/* ============================================
+   ANIMATIONS
+============================================ */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+@keyframes glow{0%,100%{box-shadow:0 0 8px rgba(232,93,4,.4)}50%{box-shadow:0 0 20px rgba(232,93,4,.8)}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.flash{animation:flash-anim .6s ease}
+@keyframes flash-anim{0%{background:transparent}50%{background:rgba(255,235,59,.5)}100%{background:transparent}}
+
+/* ============================================
+   UTILITIES
+============================================ */
+.mt-0{margin-top:0}.mt-1{margin-top:.5rem}.mt-2{margin-top:1rem}.mt-3{margin-top:1.5rem}
+.mb-0{margin-bottom:0}.mb-1{margin-bottom:.5rem}.mb-2{margin-bottom:1rem}
+.text-center{text-align:center}.text-small{font-size:.85rem}.text-muted{color:var(--muted)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+@media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+/* ============================================
+   DNA HELIX ANIMATION (simulator 3)
+============================================ */
+.dna-stage{position:relative;width:100%;height:420px;background:radial-gradient(ellipse at center,#0c4a6e 0%,#0a0a1a 100%);border-radius:8px;overflow:hidden}
+.helix-info{position:absolute;top:10px;left:10px;color:#cbd5e0;font-size:.78rem;background:rgba(0,0,0,.5);padding:.5rem .8rem;border-radius:6px;line-height:1.5}
+.helix-controls{position:absolute;bottom:10px;left:10px;right:10px;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;background:rgba(0,0,0,.6);padding:.6rem .8rem;border-radius:6px}
+
+/* ============================================
+   PEPTIDE BOND ANIMATION
+============================================ */
+.peptide-stage{position:relative;width:100%;min-height:340px;background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border-radius:8px;padding:1rem;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #fbbf24}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<!-- ====================== HEADER ====================== -->
+<header>
+<div class="header-inner">
+<div>
+<h1>🧬 Class 12 Chemistry — Biomolecules</h1>
+<p>NCERT-Aligned Master Study Notes | Interactive Biochemistry Visualizations | CBSE Board Exam Focus</p>
+</div>
+<div class="header-badge">⚡ Chapter 14 | 16 marks weightage</div>
+</div>
+</header>
+<!-- ====================== TAB NAVIGATION ====================== -->
+<nav aria-label="Main navigation" class="tab-nav" role="tablist">
+<div class="tab-nav-inner">
+<button aria-selected="true" class="active" data-tab="carbs" role="tab"><span class="tab-emoji">🧬</span>Carbohydrates</button>
+<button aria-selected="false" data-tab="proteins" role="tab"><span class="tab-emoji">🧪</span>Proteins, Vitamins &amp; Nucleic Acids</button>
+<button aria-selected="false" data-tab="ncert" role="tab"><span class="tab-emoji">📚</span>NCERT Solutions</button>
+<button aria-selected="false" data-tab="lab" role="tab"><span class="tab-emoji">⚗️</span>Virtual Biochemistry Lab</button>
+</div>
+</nav>
+<main>
+<!-- ============================================================
+     TAB 1: CARBOHYDRATES
+============================================================ -->
+<section aria-labelledby="tab-carbs" class="active" id="carbs" role="tabpanel">
+<h1>Carbohydrates <span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span></h1>
+<p>Carbohydrates are polyhydroxy aldehydes or polyhydroxy ketones, or compounds that yield these on hydrolysis. General formula: <strong>C<sub>n</sub>(H<sub>2</sub>O)<sub>n</sub></strong> — hence "hydrates of carbon".</p>
+<!-- ============ CLASSIFICATION ============ -->
+<h2>1. Classification of Carbohydrates</h2>
+<div class="matrix">
+<div class="matrix-item">
+<h4>🟢 Monosaccharides</h4>
+<p>Cannot be hydrolyzed further</p>
+<ul>
+<li>Trioses (Glyceraldehyde, DHAP)</li>
+<li>Tetroses (Erythrose)</li>
+<li>Pentoses (Ribose, Ribulose)</li>
+<li><strong>Hexoses</strong> (Glucose, Fructose, Galactose) <span class="badge badge-pyq">⚡</span></li>
+<li>Heptoses (Sedoheptulose)</li>
+</ul>
+</div>
+<div class="matrix-item">
+<h4>🔗 Disaccharides</h4>
+<p>Two monosaccharide units (glycosidic linkage)</p>
+<ul>
+<li><strong>Maltose</strong> (α-1,4) — Glucose + Glucose</li>
+<li><strong>Lactose</strong> (β-1,4) — Galactose + Glucose</li>
+<li><strong>Sucrose</strong> (α-1,2β) — Glucose + Fructose</li>
+</ul>
+</div>
+<div class="matrix-item">
+<h4>📊 Oligosaccharides</h4>
+<p>2–10 monosaccharide units</p>
+<ul>
+<li>Raffinose (trisaccharide)</li>
+<li>Stachyose (tetrasaccharide)</li>
+</ul>
+</div>
+<div class="matrix-item">
+<h4>🌾 Polysaccharides</h4>
+<p>Many monosaccharide units (homopolymers/heteropolymers)</p>
+<ul>
+<li><strong>Starch</strong>: Amylose + Amylopectin (storage)</li>
+<li><strong>Glycogen</strong>: Animal storage (branched)</li>
+<li><strong>Cellulose</strong>: β-1,4 structural (plant cell wall)</li>
+<li>Chitin, Pectin, Hemicellulose</li>
+</ul>
+</div>
+</div>
+<div class="highlight-box">
+<strong>📌 Classification by Functional Group:</strong> Aldoses (containing -CHO, e.g., Glucose, Galactose) and Ketoses (containing &gt;C=O, e.g., Fructose, Ribulose).<br/>
+<strong>📌 By D/L Configuration:</strong> D-sugars (–OH on right at lowest chiral C in Fischer) vs L-sugars (–OH on left). Most natural sugars are D-configured.
+  </div>
+<!-- ============ MONOSACCHARIDES ============ -->
+<h2>2. Monosaccharides — Glucose &amp; Fructose</h2>
+<h3>D-Glucose (Dextrose, Grape Sugar, Blood Sugar) <span class="badge badge-green">Most abundant monosaccharide</span></h3>
+<p>Molecular formula: <code>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></code> | Aldohexose | [α]<sub>D</sub><sup>20</sup> = <strong>+52.7°</strong> (dextrorotatory)</p>
+<h4>Open-Chain (Fischer) Projection</h4>
+<div class="img-sidebyside">
+<figure>
+<img alt="Color-coded Fischer projection of D-Glucose showing aldehyde group (red), terminal asymmetric center (blue), terminal carbon (purple)" src="https://commons.wikimedia.org/wiki/Special:FilePath/D-glucose_color_coded.png" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 1a: Color-coded Fischer projection of D-Glucose (ClockworkSoul, Public Domain, Wikimedia Commons)</figcaption>
+</figure>
+<figure>
+<img alt="D-Glucose chain in Fischer projection" src="https://commons.wikimedia.org/wiki/Special:FilePath/D-glucose_chain_(Fischer).svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 1b: D-Glucose Fischer projection vector (Hmxhmxat, PD, Wikimedia Commons)</figcaption>
+</figure>
+</div>
+<h4>Cyclic (Haworth) Structure — Pyranose Form</h4>
+<div class="img-grid">
+<figure>
+<img alt="Alpha-D-Glucose in four representations: molecular model, chair form, Fischer projection, Haworth projection" src="https://commons.wikimedia.org/wiki/Special:FilePath/Alpha-D-Glucose.png" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 2: α-D-Glucose — Molecular model (top-left), Chair form (top-right), Fischer (bottom-left), Haworth (bottom-right). Silvercat, GFDL/CC-BY-SA</figcaption>
+</figure>
+<figure>
+<img alt="Fischer to Haworth projection conversion diagram for D-Glucose" src="https://commons.wikimedia.org/wiki/Special:FilePath/Glucose-Fisher-to-Haworth.png" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 3: Fischer → Haworth conversion rule (right→down, left→up) — Geierunited, CC-BY-SA/GFDL</figcaption>
+</figure>
+<figure>
+<img alt="Glucose anomers in Haworth and Fischer projections showing alpha and beta forms" src="https://commons.wikimedia.org/wiki/Special:FilePath/Glucose_anomer_miguelferig.jpg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 4: α and β anomers of D-Glucose (Haworth &amp; Fischer) — Miguelferig, PD, Wikimedia Commons</figcaption>
+</figure>
+</div>
+<div class="highlight-box">
+<strong>🔁 Mutarotation:</strong> When α-D-glucose (or β-D-glucose) is dissolved in water, the optical rotation changes until equilibrium is reached at +52.5°. This happens via the open-chain form. The α and β anomers interconvert through the open-chain aldehyde form.
+  </div>
+<h3>D-Fructose (Levulose, Fruit Sugar) <span class="badge badge-pyq">⚡ PYQ</span></h3>
+<p>Molecular formula: <code>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></code> | Ketohexose | [α]<sub>D</sub><sup>20</sup> = <strong>−92.0°</strong> (laevorotatory — note the inversion!)</p>
+<div class="img-sidebyside">
+<figure>
+<img alt="D-Fructose vs D-Glucose structural formulae side by side" src="https://commons.wikimedia.org/wiki/Special:FilePath/D-Fructose_vs._D-Glucose_Structural_Formulae_V.1.svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 5: D-Fructose (left) vs D-Glucose (right) — Jü, PD, Wikimedia Commons</figcaption>
+</figure>
+<div>
+<div class="formula-box">
+<strong>Fructose (Fischer):</strong><br/>
+        CH<sub>2</sub>OH<br/>
+        |    ↑ (C=O at C-2)<br/>
+        CH<sub>2</sub>OH—C(=O)—CH(OH)—CH(OH)—CH(OH)—CH<sub>2</sub>OH
+      </div>
+<div class="highlight-box">
+<strong>📌 Furanose Form:</strong> Fructose forms a 5-membered (furanose) ring when C-5 —OH attacks C-2 carbonyl. Both α-D-fructofuranose and β-D-fructofuranose exist.
+      </div>
+</div>
+</div>
+<!-- ============ STRUCTURAL PROOFS OF GLUCOSE ============ -->
+<h2>3. Reactions Confirming the Structure of Glucose <span class="badge badge-pyq">⚡ CBSE PYQ - High Yield</span></h2>
+<div class="analysis-box">
+<h3>🔬 Five-Proof Structural Analysis of D-Glucose</h3>
+<p>The straight-chain structure of glucose is established through the following sequence of reactions:</p>
+<div class="reaction">
+<div class="reaction-num">1</div>
+<div>
+<strong>Elemental Analysis &amp; Molecular Formula:</strong><br/>
+        C : H : O ratio = 40.0% : 6.67% : 53.33%<br/>
+        Empirical formula = CH<sub>2</sub>O | Molecular mass = 180 g/mol<br/>
+        ⇒ <strong>Molecular formula: C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></strong>
+</div>
+</div>
+<div class="reaction">
+<div class="reaction-num">2</div>
+<div>
+<strong>Straight-Chain Proof (Reduction with HI/Red P):</strong><br/>
+<code>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6HI —(Δ)→ n-hexane (C<sub>6</sub>H<sub>14</sub>) + 6I<sub>2</sub> + 6H<sub>2</sub>O</code><br/>
+        All 6 carbons linked in a single straight chain. <span class="badge badge-pyq">⚡</span>
+</div>
+</div>
+<div class="reaction">
+<div class="reaction-num">3</div>
+<div>
+<strong>Carbonyl Group Proof (Hydroxylamine):</strong><br/>
+<code>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + NH<sub>2</sub>OH → Glucose oxime + H<sub>2</sub>O</code><br/>
+        Reacts with 1 mol NH<sub>2</sub>OH → contains <strong>one &gt;C=O group</strong> (carbonyl).
+      </div>
+</div>
+<div class="reaction">
+<div class="reaction-num">4</div>
+<div>
+<strong>Nature of Carbonyl — Aldehyde (Tollen's/Fehling's Test):</strong><br/>
+<code>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 2[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup> + 3OH<sup>−</sup> → C<sub>6</sub>H<sub>11</sub>O<sub>7</sub><sup>−</sup> + 2Ag↓ + 4NH<sub>3</sub> + 2H<sub>2</sub>O</code><br/>
+        Gives <strong>silver mirror</strong> with Tollen's reagent &amp; brick-red Cu<sub>2</sub>O with Fehling's → <strong>—CHO group (aldehyde)</strong>. <span class="badge badge-pyq">⚡</span>
+</div>
+</div>
+<div class="reaction">
+<div class="reaction-num">5</div>
+<div>
+<strong>Primary Alcohol Proof (HNO<sub>3</sub> Oxidation):</strong><br/>
+<code>CH<sub>2</sub>OH—(CHOH)<sub>4</sub>—CHO + [O] (HNO<sub>3</sub>) → HOOC—(CHOH)<sub>4</sub>—COOH</code><br/>
+        Forms a <strong>dicarboxylic acid (saccharic acid)</strong> → 1° alcohol at C-6. <span class="badge badge-pyq">⚡</span>
+</div>
+</div>
+<div class="reaction">
+<div class="reaction-num">6</div>
+<div>
+<strong>Number of —OH Groups (Acetic Anhydride):</strong><br/>
+<code>C<sub>6</sub>H<sub>7</sub>O(OH)<sub>5</sub> + 5(CH<sub>3</sub>CO)<sub>2</sub>O → C<sub>6</sub>H<sub>7</sub>O(OCOCH<sub>3</sub>)<sub>5</sub> + 5CH<sub>3</sub>COOH</code><br/>
+        Forms <strong>pentaacetate</strong> with acetic anhydride/pyridine → 5 —OH groups (4 secondary + 1 primary).
+      </div>
+</div>
+<div class="reaction">
+<div class="reaction-num">7</div>
+<div>
+<strong>Cyclic α/β Anomer Proof (Mutarotation):</strong><br/>
+        α-D-glucose [α]<sub>D</sub> = +112° → on standing in H<sub>2</sub>O → equilibrium value +52.5° (β-anomer +18.7°).<br/>
+        This rotation change is only possible via the <strong>cyclic hemiacetal</strong> form. <span class="badge badge-pyq">⚡</span>
+</div>
+</div>
+</div>
+<!-- ============ DISACCHARIDES ============ -->
+<h2>4. Disaccharides — Glycosidic Linkages <span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span></h2>
+<p>Disaccharides are formed by condensation of two monosaccharide units with elimination of one H<sub>2</sub>O molecule and formation of a <strong>glycosidic (C—O—C) linkage</strong>.</p>
+<div class="img-compare">
+<figure>
+<img alt="Combined diagram of Lactose, Maltose, and Sucrose with their glycosidic linkages highlighted" src="https://commons.wikimedia.org/wiki/Special:FilePath/Disaccharides_(Lactose,_Maltose,_and_Sucrose).png" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 6: All three disaccharides — Lactose, Maltose, Sucrose with glycosidic bonds highlighted (SrKellyOP, CC, Wikimedia Commons)</figcaption>
+</figure>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Disaccharide</th><th>Constituent Units</th><th>Linkage</th><th>Reducing?</th><th>Source</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maltose</strong></td>
+<td>α-D-Glucose + α-D-Glucose</td>
+<td><strong>α-1,4 glycosidic</strong></td>
+<td>✅ Yes (free —CHO at C-1)</td>
+<td>Starch hydrolysis</td>
+</tr>
+<tr>
+<td><strong>Lactose</strong></td>
+<td>β-D-Galactose + D-Glucose</td>
+<td><strong>β-1,4 glycosidic</strong></td>
+<td>✅ Yes (free —CHO at C-1 of glucose)</td>
+<td>Milk sugar</td>
+</tr>
+<tr>
+<td><strong>Sucrose</strong></td>
+<td>α-D-Glucose + β-D-Fructose</td>
+<td><strong>α-1,2β glycosidic</strong> (C-1 of glucose + C-2 of fructose)</td>
+<td>❌ No (both anomeric C locked)</td>
+<td>Cane sugar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="img-compare">
+<figure>
+<img alt="Maltose Haworth projection showing alpha-1,4 glycosidic linkage between two glucose units" src="https://commons.wikimedia.org/wiki/Special:FilePath/Maltose_Haworth.svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 7: Maltose Haworth (α-1,4 linkage) — NEUROtiker, PD</figcaption>
+</figure>
+<figure>
+<img alt="Lactose Haworth projection showing beta-1,4 glycosidic linkage between galactose and glucose" src="https://commons.wikimedia.org/wiki/Special:FilePath/Lactose_Haworth.svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 8: Lactose Haworth (β-1,4 linkage) — NEUROtiker, PD</figcaption>
+</figure>
+<figure>
+<img alt="Sucrose chemical structure showing alpha-1,2-beta glycosidic linkage between glucose and fructose" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sucrose.svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 9: Sucrose structure (α-1,2β linkage) — Calvero, PD</figcaption>
+</figure>
+</div>
+<div class="highlight-box">
+<strong>📌 Why is Sucrose Non-Reducing?</strong> In sucrose, the C-1 of glucose and C-2 of fructose are BOTH involved in the glycosidic linkage. This means there is <strong>no free —CHO or —C—OH</strong> (anomeric carbon) to open up and reduce Tollen's/Fehling's reagent. Upon hydrolysis, sucrose yields an equimolar mixture of glucose + fructose called <strong>invert sugar</strong> (because hydrolysis inverts rotation from dextrorotatory to laevorotatory). <span class="badge badge-pyq">⚡</span>
+</div>
+<!-- ============ POLYSACCHARIDES ============ -->
+<h2>5. Polysaccharides</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Property</th><th>Starch (Amylose)</th><th>Starch (Amylopectin)</th><th>Glycogen</th><th>Cellulose</th></tr></thead>
+<tbody>
+<tr><td>Source</td><td>Plants (storage)</td><td>Plants (storage)</td><td>Animals (liver, muscle)</td><td>Plant cell walls (structural)</td></tr>
+<tr><td>Linkage</td><td>α-1,4 only</td><td>α-1,4 + α-1,6 (branch)</td><td>α-1,4 + α-1,6 (heavily branched)</td><td>β-1,4 only</td></tr>
+<tr><td>Structure</td><td>Linear, unbranched</td><td>Branched</td><td>Highly branched (more than amylopectin)</td><td>Linear, unbranched</td></tr>
+<tr><td>Solubility</td><td>Soluble in hot H<sub>2</sub>O</td><td>Insoluble</td><td>Insoluble</td><td>Insoluble</td></tr>
+<tr><td>Iodine test</td><td>Blue color</td><td>Blue-violet</td><td>Red-brown</td><td>No color (brown)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-box">
+<strong>📌 Why can humans digest starch but not cellulose?</strong> Humans have <strong>α-amylase</strong> enzyme that hydrolyzes α-1,4 linkages but no <strong>cellulase</strong> for β-1,4 linkages. Cows have symbiotic bacteria producing cellulase. <span class="badge badge-pyq">⚡ PYQ</span>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============================================================
+     TAB 2: PROTEINS, VITAMINS & NUCLEIC ACIDS
+============================================================ -->
+<section aria-labelledby="tab-proteins" id="proteins" role="tabpanel">
+<h1>Proteins, Vitamins &amp; Nucleic Acids</h1>
+<p>Proteins are the most versatile biomacromolecules in living systems. They are polymers of <strong>α-amino acids</strong> linked by <strong>peptide bonds</strong>.</p>
+<!-- ============ AMINO ACIDS ============ -->
+<h2>1. α-Amino Acids <span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span></h2>
+<div class="card">
+<div class="card-header">
+<div class="card-icon">⚛️</div>
+<div>
+<h3 style="margin:0">General Structure</h3>
+</div>
+</div>
+<div class="formula-box">
+<strong>General formula of α-amino acid:</strong><br/><br/>
+          H<br/>
+          |<br/>
+      R — C — COOH<br/>
+          |<br/>
+          NH<sub>2</sub><br/><br/>
+      Glycine: R = H | Alanine: R = CH<sub>3</sub> | Serine: R = CH<sub>2</sub>OH
+    </div>
+<p>Out of ~300 natural amino acids, only <strong>20 α-amino acids</strong> are encoded by the genetic code and incorporated into proteins (standard amino acids). All have L-configuration in proteins (except glycine, which is achiral).</p>
+</div>
+<h3>Classification of Amino Acids</h3>
+<div class="grid-2">
+<div class="card">
+<h4>Based on R-group (side chain)</h4>
+<ul>
+<li><strong>Non-polar (hydrophobic):</strong> Ala, Val, Leu, Ile, Pro, Phe, Trp, Met, Gly</li>
+<li><strong>Polar (hydrophilic):</strong> Ser, Thr, Cys, Tyr, Asn, Gln</li>
+<li><strong>Positively charged (basic):</strong> Lys, Arg, His</li>
+<li><strong>Negatively charged (acidic):</strong> Asp, Glu</li>
+</ul>
+</div>
+<div class="card">
+<h4>Based on nutritional requirement <span class="badge badge-pyq">⚡</span></h4>
+<ul>
+<li><strong>Essential (10):</strong> Val, Leu, Ile, Phe, Trp, Met, Thr, Lys, Arg*, His*</li>
+<li><strong>Non-essential:</strong> Gly, Ala, Ser, Cys, Tyr, Asn, Gln, Asp, Glu, Pro</li>
+</ul>
+<p style="font-size:.85rem;color:var(--muted)">*Semi-essential: required during growth/illness</p>
+</div>
+</div>
+<h3>Zwitterion (Dipolar Ion) <span class="badge badge-pyq">⚡ PYQ</span></h3>
+<div class="analysis-box">
+<p>In aqueous solution at physiological pH (~7.4), amino acids exist predominantly as <strong>zwitterions</strong> (dipolar ions):</p>
+<div class="formula-box">
+          H        O<br/>
+          |        ‖<br/>
+      R — C — C — O<sup>−</sup><br/>
+          |        <br/>
+          <sup>+</sup>H<sub>3</sub>N<br/><br/>
+      Zwitterion (net charge = 0, but has + and − charges)
+    </div>
+<p>The <strong>isoelectric point (pI)</strong> is the pH at which the amino acid has zero net charge. At pH &lt; pI → cation dominates; at pH &gt; pI → anion dominates. Zwitterions explain:</p>
+<ul>
+<li>High melting points (ionic character)</li>
+<li>High dipole moment</li>
+<li>Solubility in polar solvents, insolubility in non-polar</li>
+<li>Buffered behavior (amphoteric: H<sup>+</sup> donor and acceptor)</li>
+</ul>
+</div>
+<!-- ============ PEPTIDE BOND ============ -->
+<h2>2. Peptide Bond &amp; Protein Structure <span class="badge badge-pyq">⚡ CBSE PYQ - High Yield</span></h2>
+<div class="card">
+<h3>Peptide Linkage —CO—NH—</h3>
+<p>Formed by condensation of —COOH of one amino acid with —NH<sub>2</sub> of another, eliminating one H<sub>2</sub>O molecule. <strong>Peptides:</strong> dipeptide (2), tripeptide (3), oligopeptide (≤10), polypeptide (&gt;10).</p>
+<div class="formula-box">
+      H<sub>2</sub>N—CHR<sub>1</sub>—CO—OH + H—NH—CHR<sub>2</sub>—COOH → H<sub>2</sub>N—CHR<sub>1</sub>—CO—NH—CHR<sub>2</sub>—COOH + H<sub>2</sub>O
+    </div>
+<p style="font-size:.88rem;color:var(--muted)">📌 The peptide bond is planar (partial double-bond character, ~40% double-bond, due to resonance between C=O and C=N). This restricts rotation and stabilizes the backbone. 📌 [See Tab 4 Simulator 2 for animation]</p>
+</div>
+<h3>Levels of Protein Structure</h3>
+<div class="img-grid">
+<figure>
+<img alt="Four levels of protein structural organization: primary, secondary, tertiary, quaternary" src="https://commons.wikimedia.org/wiki/Special:FilePath/Levels_of_structural_organization_of_a_protein.svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 10: 4 levels of protein organization (Scurran15, CC-BY-SA, Wikimedia Commons)</figcaption>
+</figure>
+<figure>
+<img alt="Main protein structure levels: primary, secondary, tertiary, quaternary" src="https://commons.wikimedia.org/wiki/Special:FilePath/Main_protein_structure_levels_en.svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 11: Detailed protein structure levels (LadyofHats, PD, Wikimedia Commons)</figcaption>
+</figure>
+<figure>
+<img alt="Protein structure full hierarchy using PCNA as example" src="https://commons.wikimedia.org/wiki/Special:FilePath/Protein_structure_(full).png" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 12: PCNA example showing all 4 levels (Thomas Shafee, CC-BY-SA)</figcaption>
+</figure>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Level</th><th>Description</th><th>Stabilized by</th><th>Example</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>Primary</strong></td>
+<td>Linear sequence of amino acids linked by peptide bonds</td>
+<td>Peptide (covalent) bonds</td>
+<td>Insulin (51 residues, 2 chains)</td>
+</tr>
+<tr>
+<td><strong>Secondary</strong></td>
+<td>Local folding into α-helix or β-pleated sheet</td>
+<td>H-bonds between backbone N-H and C=O</td>
+<td>α-keratin (helix), silk fibroin (sheet)</td>
+</tr>
+<tr>
+<td><strong>Tertiary</strong></td>
+<td>3D folding of entire polypeptide chain</td>
+<td>H-bonds, disulfide (—S—S—), hydrophobic, ionic, van der Waals</td>
+<td>Myoglobin (globular)</td>
+</tr>
+<tr>
+<td><strong>Quaternary</strong></td>
+<td>Assembly of multiple polypeptide subunits</td>
+<td>Same as tertiary, between subunits</td>
+<td>Hemoglobin (2α + 2β subunits)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>α-Helix vs β-Pleated Sheet <span class="badge badge-pyq">⚡</span></h4>
+<div class="grid-2">
+<figure>
+<img alt="Alpha-helical protein structure showing right-handed coil with hydrogen bonds" src="https://commons.wikimedia.org/wiki/Special:FilePath/AlphaHelixProtein.jpg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 13: α-Helix (Maksim, PD-USGov-HHS-NIH)</figcaption>
+</figure>
+<figure>
+<img alt="Beta sheet hydrogen bonding parallel and antiparallel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Beta_sheet_bonding_parallel-color.svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 14: β-Sheet H-bonding (Fvasconcellos, PD)</figcaption>
+</figure>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Feature</th><th>α-Helix</th><th>β-Pleated Sheet</th></tr></thead>
+<tbody>
+<tr><td>Structure</td><td>Right-handed coiled rod</td><td>Extended, pleated strands</td></tr>
+<tr><td>H-bonding</td><td>Within chain (i → i+4 residues)</td><td>Between adjacent strands</td></tr>
+<tr><td>Residues per turn</td><td>3.6</td><td>—</td></tr>
+<tr><td>Pitch (rise/turn)</td><td>5.4 Å</td><td>3.5 Å per residue</td></tr>
+<tr><td>R-groups</td><td>Point outward</td><td>Alternate above/below plane</td></tr>
+<tr><td>Example</td><td>α-keratin, myoglobin, hemoglobin</td><td>Silk fibroin, concanavalin A</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Denaturation of Proteins <span class="badge badge-pyq">⚡</span></h3>
+<div class="highlight-box">
+<p>Loss of <strong>2°, 3°, and 4°</strong> structure (primary structure intact) due to disruption of H-bonds, disulfide bonds, ionic interactions. Caused by:</p>
+<ul>
+<li>Heat (egg albumin coagulation, milk curdling)</li>
+<li>pH change (acid/alkali)</li>
+<li>Heavy metal ions (Hg<sup>2+</sup>, Pb<sup>2+</sup> — bind to —SH groups)</li>
+<li>Organic solvents (ethanol, acetone — disrupt hydrophobic interactions)</li>
+<li>Urea (competes for H-bonds), radiation (X-rays, UV)</li>
+</ul>
+<p><strong>📌 Examples:</strong> Curdling of milk (acid), coagulation of egg white (heat), salting out of soap, biological activity loss of enzymes at high T.</p>
+</div>
+<!-- ============ ENZYMES & VITAMINS ============ -->
+<h2>3. Enzymes &amp; Vitamins <span class="badge badge-pyq">⚡</span></h2>
+<h3>Enzymes</h3>
+<p>Biocatalysts (mostly globular proteins, except ribozymes which are RNA). Highly specific, efficient (10<sup>6</sup>–10<sup>8</sup> rate enhancement), work at mild pH &amp; temperature.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>EC Class</th><th>Type</th><th>Example</th><th>Reaction</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Oxidoreductases</td><td>Alcohol dehydrogenase</td><td>CH<sub>3</sub>CH<sub>2</sub>OH + NAD<sup>+</sup> → CH<sub>3</sub>CHO + NADH</td></tr>
+<tr><td>2</td><td>Transferases</td><td>Hexokinase</td><td>Glucose + ATP → G6P + ADP</td></tr>
+<tr><td>3</td><td>Hydrolases</td><td>Lipase, α-amylase</td><td>Hydrolysis of ester/glycosidic bonds</td></tr>
+<tr><td>4</td><td>Lyases</td><td>Aldolase</td><td>Addition/elimination without hydrolysis</td></tr>
+<tr><td>5</td><td>Isomerases</td><td>Phosphoglucose isomerase</td><td>G6P ⇌ F6P</td></tr>
+<tr><td>6</td><td>Ligases</td><td>DNA ligase</td><td>Joining of two molecules + ATP hydrolysis</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-box">
+<strong>📌 Michaelis–Menten:</strong> E + S ⇌ ES → E + P, with K<sub>m</sub> = (k<sub>-1</sub> + k<sub>2</sub>)/k<sub>1</sub>.<br/>
+<strong>📌 Inhibition:</strong> Competitive (mimics substrate, ↑K<sub>m</sub>); Non-competitive (binds allosteric site, ↓V<sub>max</sub>).
+  </div>
+<h3>Vitamins</h3>
+<p>Organic compounds required in small amounts for normal metabolism; mostly coenzymes.</p>
+<div class="grid-2">
+<div class="card">
+<h4>Water-Soluble (B, C)</h4>
+<table style="font-size:.85rem">
+<thead><tr><th>Vitamin</th><th>Chemical Name</th><th>Deficiency</th></tr></thead>
+<tbody>
+<tr><td>B<sub>1</sub></td><td>Thiamine</td><td>Beri-beri</td></tr>
+<tr><td>B<sub>2</sub></td><td>Riboflavin</td><td>Cheilosis</td></tr>
+<tr><td>B<sub>3</sub></td><td>Niacin</td><td>Pellagra</td></tr>
+<tr><td>B<sub>5</sub></td><td>Pantothenic acid</td><td>Burning feet syndrome</td></tr>
+<tr><td>B<sub>6</sub></td><td>Pyridoxine</td><td>Dermatitis, convulsions</td></tr>
+<tr><td>B<sub>7</sub></td><td>Biotin</td><td>Hair loss, dermatitis</td></tr>
+<tr><td>B<sub>9</sub></td><td>Folic acid</td><td>Megaloblastic anemia</td></tr>
+<tr><td>B<sub>12</sub></td><td>Cyanocobalamin</td><td>Pernicious anemia</td></tr>
+<tr><td>C</td><td>Ascorbic acid</td><td>Scurvy</td></tr>
+</tbody>
+</table>
+</div>
+<div class="card">
+<h4>Fat-Soluble (A, D, E, K) — KADET</h4>
+<table style="font-size:.85rem">
+<thead><tr><th>Vitamin</th><th>Function</th><th>Deficiency</th></tr></thead>
+<tbody>
+<tr><td><strong>A</strong> (Retinol)</td><td>Vision, epithelial health</td><td>Night blindness, xerophthalmia</td></tr>
+<tr><td><strong>D</strong> (Calciferol)</td><td>Ca<sup>2+</sup>/P absorption</td><td>Rickets (children), osteomalacia (adults)</td></tr>
+<tr><td><strong>E</strong> (Tocopherol)</td><td>Antioxidant</td><td>Sterility, hemolytic anemia</td></tr>
+<tr><td><strong>K</strong> (Phylloquinone)</td><td>Blood clotting (prothrombin)</td><td>Slow blood clotting, hemorrhage</td></tr>
+</tbody>
+</table>
+<p style="font-size:.85rem;margin-top:.5rem">📌 Overdose causes hypervitaminosis (stored in fat &amp; liver).</p>
+</div>
+</div>
+<!-- ============ NUCLEIC ACIDS ============ -->
+<h2>4. Nucleic Acids — DNA &amp; RNA <span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span></h2>
+<h3>Nucleotide Structure (Building Block)</h3>
+<div class="img-grid">
+<figure>
+<img alt="DNA double helix with numbered nucleotides showing base, deoxyribose sugar, and phosphate group" src="https://commons.wikimedia.org/wiki/Special:FilePath/0322_DNA_Nucleotides_Numbered.jpg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 15: DNA nucleotides with numbering (OpenStax, CC-BY, Wikimedia Commons)</figcaption>
+</figure>
+<figure>
+<img alt="DNA structure showing all four bases and phosphate backbone" src="https://commons.wikimedia.org/wiki/Special:FilePath/DNA-structure-and-bases.png" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 16: DNA structure &amp; all 4 bases (NHGRI, PD, Wikimedia Commons)</figcaption>
+</figure>
+</div>
+<div class="analysis-box">
+<h3>Three Components of a Nucleotide</h3>
+<div class="grid-3" style="margin-top:.8rem">
+<div>
+<strong>① Nitrogenous Base</strong>
+<ul>
+<li><strong>Purines</strong> (2 rings): Adenine (A), Guanine (G)</li>
+<li><strong>Pyrimidines</strong> (1 ring): Cytosine (C), Thymine (T) [in DNA]; Uracil (U) [in RNA replaces T]</li>
+</ul>
+</div>
+<div>
+<strong>② Pentose Sugar</strong>
+<ul>
+<li>β-D-2-deoxyribose (in DNA)</li>
+<li>β-D-ribose (in RNA — has 2'-OH)</li>
+</ul>
+</div>
+<div>
+<strong>③ Phosphate Group</strong>
+<ul>
+<li>Attached at 5'-C of sugar</li>
+<li>Phosphodiester bond: 3'-OH + 5'-PO<sub>4</sub></li>
+<li>Acidic, gives DNA its polyanionic nature</li>
+</ul>
+</div>
+</div>
+<p style="margin-top:1rem"><strong>📌 Nucleoside = Base + Sugar</strong> (no phosphate). <strong>📌 Nucleotide = Base + Sugar + Phosphate</strong> (monophosphate, diphosphate, triphosphate).</p>
+</div>
+<h3>DNA Double Helix (Watson–Crick Model, 1953)</h3>
+<div class="img-grid">
+<figure>
+<img alt="DNA structure and bases showing all four nitrogenous bases and sugar-phosphate backbone" src="https://commons.wikimedia.org/wiki/Special:FilePath/DNA_structure_and_bases.svg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 17: DNA structure (MesserWoland, GFDL/CC-BY-SA)</figcaption>
+</figure>
+<figure>
+<img alt="DNA base-pair diagram showing AT and GC hydrogen bonds" src="https://commons.wikimedia.org/wiki/Special:FilePath/DNA_base-pair_diagram.jpg" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 18: DNA base-pair diagram (Wikimedia Commons, PD)</figcaption>
+</figure>
+<figure>
+<img alt="DNA structure labelled with major and minor grooves" src="https://commons.wikimedia.org/wiki/Special:FilePath/DNA_Structure%2BKey%2BLabelled.pn_NoBB.png" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:4px"/>
+<figcaption>Fig 19: DNA with major/minor grooves (Zephyris, CC-BY-SA)</figcaption>
+</figure>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Feature</th><th>Value/Description</th></tr></thead>
+<tbody>
+<tr><td>Strands</td><td>Two, antiparallel (5'→3' and 3'→5')</td></tr>
+<tr><td>Helix</td><td>Right-handed (B-DNA most common)</td></tr>
+<tr><td>Diameter</td><td><strong>2 nm</strong> (uniform — purine always pairs with pyrimidine)</td></tr>
+<tr><td>Base pair separation</td><td>0.34 nm (3.4 Å)</td></tr>
+<tr><td>Turn (pitch)</td><td>3.4 nm — 10 base pairs per turn</td></tr>
+<tr><td>Backbone</td><td>Sugar-phosphate (outside), held by phosphodiester bonds</td></tr>
+<tr><td>Bases</td><td>Inside, stacked (π-π interactions)</td></tr>
+<tr><td>Major/Minor grooves</td><td>Binding sites for proteins</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Base Pairing &amp; Hydrogen Bonds <span class="badge badge-pyq">⚡ PYQ</span></h3>
+<div class="analysis-box">
+<div class="grid-2">
+<div>
+<strong>A = T (Adenine = Thymine)</strong>
+<ul>
+<li>Forms <strong>2 hydrogen bonds</strong></li>
+<li>Adenine: N-6 (donor) + N-1 (acceptor)</li>
+<li>Thymine: N-1 (donor) + C-2=O (acceptor)</li>
+</ul>
+</div>
+<div>
+<strong>G ≡ C (Guanine ≡ Cytosine)</strong>
+<ul>
+<li>Forms <strong>3 hydrogen bonds</strong></li>
+<li>Stronger than A=T pair</li>
+<li>Higher GC content → Higher melting temp (T<sub>m</sub>)</li>
+</ul>
+</div>
+</div>
+<p style="margin-top:1rem"><strong>📌 Chargaff's Rule:</strong> In any double-stranded DNA, [A] = [T] and [G] = [C]. Also, [Purines] = [Pyrimidines]. This was the key clue for Watson &amp; Crick.</p>
+</div>
+<h3>Types of RNA</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Type</th><th>Full Form</th><th>Function</th></tr></thead>
+<tbody>
+<tr><td><strong>mRNA</strong></td><td>Messenger RNA</td><td>Carries genetic code from DNA to ribosome</td></tr>
+<tr><td><strong>tRNA</strong></td><td>Transfer RNA</td><td>Adapter — brings amino acids to ribosome (anticodon)</td></tr>
+<tr><td><strong>rRNA</strong></td><td>Ribosomal RNA</td><td>Structural &amp; catalytic (peptidyl transferase) component of ribosome</td></tr>
+<tr><td><strong>hnRNA</strong></td><td>Heterogeneous nuclear RNA</td><td>Precursor of mRNA (eukaryotes)</td></tr>
+<tr><td><strong>snRNA</strong></td><td>Small nuclear RNA</td><td>Splicing of hnRNA</td></tr>
+</tbody>
+</table>
+</div>
+<h3>DNA vs RNA Comparison <span class="badge badge-pyq">⚡ PYQ</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Property</th><th>DNA</th><th>RNA</th></tr></thead>
+<tbody>
+<tr><td>Sugar</td><td>2-deoxyribose (no 2'-OH)</td><td>Ribose (has 2'-OH)</td></tr>
+<tr><td>Bases</td><td>A, G, C, T</td><td>A, G, C, U (uracil replaces T)</td></tr>
+<tr><td>Strands</td><td>Double-stranded (duplex)</td><td>Single-stranded (can fold)</td></tr>
+<tr><td>Helix</td><td>B-form double helix</td><td>Often A-form (single); various secondary structures</td></tr>
+<tr><td>Location</td><td>Nucleus, mitochondria, chloroplasts</td><td>Nucleus, cytoplasm, ribosome</td></tr>
+<tr><td>Function</td><td>Genetic information storage</td><td>Protein synthesis, gene regulation</td></tr>
+<tr><td>Replication</td><td>Self-replicating</td><td>Transcribed from DNA (except some viruses)</td></tr>
+<tr><td>Base pairing</td><td>A=T (2H), G≡C (3H)</td><td>A=U (2H), G≡C (3H)</td></tr>
+<tr><td>Length</td><td>Very long (chromosome-level)</td><td>Short (gene-level)</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Central Dogma of Molecular Biology</h3>
+<div class="highlight-box" style="text-align:center;font-size:1.05rem">
+<strong>DNA —(Replication)→ DNA —(Transcription)→ RNA —(Translation)→ Protein</strong><br/>
+<span style="font-size:.88rem">📌 Reverse transcription (RNA → DNA) is seen in retroviruses (e.g., HIV), catalyzed by <strong>reverse transcriptase</strong>.</span>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============================================================
+     TAB 3: NCERT SOLUTIONS
+============================================================ -->
+<section aria-labelledby="tab-ncert" id="ncert" role="tabpanel">
+<h1>NCERT Solutions — Chapter 14: Biomolecules</h1>
+<p>Complete solutions to in-text and exercise questions from NCERT Class 12 Chemistry. Click any question to expand its detailed answer with step-by-step reasoning, key concepts, and cross-references.</p>
+<div class="highlight-box" style="margin-bottom:1.5rem">
+<strong>📚 Coverage:</strong> 14.1 to 14.22 (NCERT In-text &amp; Exercise) + CBSE Previous Year Questions (PYQ) 2019–2024 + Assertion-Reason type + Case-based.
+    <br/><span class="badge badge-green">All answers CBSE Board Exam Format</span> <span class="badge badge-blue">Marks Distribution Included</span>
+</div>
+<h2>📌 In-Text Questions</h2>
+<details>
+<summary><span class="q-num">14.1</span>Glucose or sucrose are soluble in water but cyclohexane or benzene (simple six membered ring compounds) are insoluble in water. Explain. <span class="q-type">2 marks</span></summary>
+<div>
+<p><strong>Concept:</strong> Hydrogen bonding and polarity determine water solubility.</p>
+<p><strong>Answer:</strong> Glucose and sucrose contain multiple —OH groups capable of forming extensive <strong>hydrogen bonds</strong> with water molecules. As a result, they dissolve readily in water.</p>
+<p>In contrast, cyclohexane and benzene are <strong>non-polar hydrocarbons</strong> with no polar functional groups. They cannot form hydrogen bonds with water, so they remain insoluble. (The 'like dissolves like' rule.)</p>
+<p>📌 <span class="badge badge-xref">See Tab 1: Hydrogen bonding in carbohydrates</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.2</span>What are the expected products of hydrolysis of lactose? <span class="q-type">1 mark</span></summary>
+<div>
+<p><strong>Answer:</strong> Lactose is a disaccharide composed of <strong>β-D-galactose</strong> and <strong>D-glucose</strong> linked by a <strong>β-1,4 glycosidic bond</strong>.</p>
+<p>On hydrolysis (acid or enzyme lactase):</p>
+<div class="formula-box">Lactose + H<sub>2</sub>O —(HCl/lactase)→ β-D-Galactose + D-Glucose</div>
+<p>📌 <span class="badge badge-xref">See Tab 1: Disaccharide structures</span> <span class="badge badge-pyq">⚡ PYQ 2022</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.3</span>How do you explain the absence of aldehyde group in the pentaacetate of D-glucose? <span class="q-type">2 marks</span></summary>
+<div>
+<p><strong>Concept:</strong> Cyclic hemiacetal structure of glucose.</p>
+<p><strong>Answer:</strong> D-Glucose exists predominantly in the <strong>cyclic (pyranose) form</strong>, in which the C-1 aldehyde has reacted with the C-5 hydroxyl to form an <strong>intramolecular hemiacetal</strong>. The —CHO group is no longer free in the cyclic structure.</p>
+<p>When treated with acetic anhydride, all <strong>five —OH groups</strong> (including the C-1 hemiacetal —OH, which exists in equilibrium with the open-chain form) get acetylated to form pentaacetate. The C-1 —OH of the hemiacetal is what gets acetylated; hence no free —CHO remains in pentaacetate.</p>
+<p>This proves the cyclic structure of glucose. <span class="badge badge-pyq">⚡ PYQ 2020</span></p>
+</div>
+</details>
+<h2>📚 Exercise Questions (NCERT)</h2>
+<details>
+<summary><span class="q-num">14.4</span>Explain the term 'invert sugar'. What is the significance of this name? <span class="q-type">2 marks</span></summary>
+<div>
+<p><strong>Answer:</strong> <strong>Invert sugar</strong> is the equimolar mixture of <strong>D-glucose</strong> and <strong>D-fructose</strong> obtained by hydrolysis of sucrose.</p>
+<div class="formula-box">Sucrose + H<sub>2</sub>O —(H<sup>+</sup> or invertase)→ D-Glucose + D-Fructose</div>
+<p><strong>Significance of the name:</strong> Sucrose is <strong>dextrorotatory</strong> with [α]<sub>D</sub> = +66.5°. The hydrolysis products are D-glucose (+52.7°) and D-fructose (−92°). The mixture has net [α]<sub>D</sub> = (−92 + 52.7)/2 ≈ <strong>−20°</strong> (laevorotatory). The sign of rotation has been "inverted" from + to −, hence the name. The enzyme that catalyses this is called <strong>invertase</strong>.</p>
+<p>📌 <span class="badge badge-xref">See Tab 4 Simulator 1: Tollen's test (invert sugar positive)</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.5</span>How do you classify the following as monosaccharides, oligosaccharides or polysaccharides: (i) Glucose (ii) Sucrose (iii) Starch? <span class="q-type">1 mark</span></summary>
+<div>
+<table>
+<thead><tr><th>Sugar</th><th>Classification</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td>(i) Glucose</td><td><strong>Monosaccharide</strong></td><td>Single sugar unit, cannot be hydrolysed further (aldohexose)</td></tr>
+<tr><td>(ii) Sucrose</td><td><strong>Oligosaccharide (disaccharide)</strong></td><td>Two monosaccharide units (glucose + fructose)</td></tr>
+<tr><td>(iii) Starch</td><td><strong>Polysaccharide</strong></td><td>Polymer of many α-glucose units (amylose + amylopectin)</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.6</span>Write the reactions involved when D-glucose is treated with the following reagents: (a) HI (b) Bromine water (c) HNO<sub>3</sub> <span class="q-type">3 marks</span></summary>
+<div>
+<p><strong>(a) With HI / Red Phosphorus (reduction):</strong></p>
+<div class="formula-box">CH<sub>2</sub>OH—(CHOH)<sub>4</sub>—CHO + 6HI —(Δ)→ CH<sub>3</sub>—(CH<sub>2</sub>)<sub>4</sub>—CH<sub>3</sub> + 6H<sub>2</sub>O + 3I<sub>2</sub><br/>(n-Hexane)</div>
+<p>Proves the 6 carbons are linked in a <strong>straight chain</strong>.</p>
+<p><strong>(b) With Bromine water (mild oxidation):</strong></p>
+<div class="formula-box">CH<sub>2</sub>OH—(CHOH)<sub>4</sub>—CHO + [O] (Br<sub>2</sub>/H<sub>2</sub>O) → CH<sub>2</sub>OH—(CHOH)<sub>4</sub>—COOH<br/>(Gluconic acid)</div>
+<p>Confirms the <strong>—CHO (aldehyde) group</strong> at C-1.</p>
+<p><strong>(c) With dilute HNO<sub>3</sub> (oxidation):</strong></p>
+<div class="formula-box">CH<sub>2</sub>OH—(CHOH)<sub>4</sub>—CHO + 2[O] → HOOC—(CHOH)<sub>4</sub>—COOH<br/>(Saccharic acid / Glucaric acid)</div>
+<p>Both —CHO and 1° —OH at C-6 oxidized to —COOH. Proves the presence of a <strong>primary alcohol</strong> at C-6.</p>
+<p>📌 <span class="badge badge-xref">See Tab 1: Structural Proofs of Glucose</span> <span class="badge badge-pyq">⚡ CBSE Board 2023</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.7</span>Explain why sucrose is a non-reducing sugar while glucose and fructose are reducing sugars. <span class="q-type">3 marks</span></summary>
+<div>
+<p><strong>Concept:</strong> Reducing sugars have a free anomeric carbon (free —CHO or capable of forming one via ring opening).</p>
+<p><strong>Glucose (reducing):</strong> In its cyclic pyranose form, the C-1 anomeric carbon has a free —OH that can open to give the free —CHO group. The free —CHO reduces Tollen's reagent (Ag<sup>+</sup> → Ag) and Fehling's solution (Cu<sup>2+</sup> → Cu<sub>2</sub>O).</p>
+<p><strong>Fructose (reducing):</strong> Although it is a ketose, in alkaline medium it undergoes tautomerization (Lobry de Bruyn transformation) via the enediol intermediate to give a mixture of glucose and mannose, both of which are aldoses. These reduce Tollen's/Fehling's.</p>
+<p><strong>Sucrose (non-reducing):</strong> The glycosidic linkage is formed between <strong>C-1 of glucose</strong> and <strong>C-2 of fructose</strong>. <strong>Both anomeric carbons are involved</strong> in the linkage, so neither is free to open up. Hence sucrose cannot reduce Tollen's or Fehling's. <span class="badge badge-pyq">⚡</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.8</span>What are the two specific tests for glucose? What do they indicate? <span class="q-type">2 marks</span></summary>
+<div>
+<p><strong>Test 1: Tollen's Test (Silver Mirror Test):</strong></p>
+<ul>
+<li>Reagent: Ammoniacal silver nitrate [Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup></li>
+<li>Observation: Bright <strong>silver mirror</strong> forms on the test tube wall</li>
+<li>Indicates: Presence of <strong>free —CHO group</strong> (aldehyde)</li>
+</ul>
+<p><strong>Test 2: Fehling's Test:</strong></p>
+<ul>
+<li>Reagent: Fehling's A (CuSO<sub>4</sub>) + Fehling's B (alkaline Rochelle salt)</li>
+<li>Observation: <strong>Brick-red precipitate</strong> of Cu<sub>2</sub>O</li>
+<li>Indicates: Presence of <strong>free —CHO group</strong></li>
+</ul>
+<p>Both confirm glucose is a reducing aldose. 📌 <span class="badge badge-xref">See Tab 4 Simulator 1: Tollen's Test</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.9</span>Enumerate the reactions of D-glucose which cannot be explained by its straight-chain structure. <span class="q-type">3 marks</span></summary>
+<div>
+<p><strong>Reactions that suggest cyclic structure:</strong></p>
+<ol>
+<li><strong>Pentaacetate formation:</strong> Glucose forms a pentaacetate with acetic anhydride (5 —OH groups), but the pentaacetate <strong>does not react with hydroxylamine or 2,4-DNP</strong> — meaning the —CHO has been lost. This can only be explained by cyclic structure where C-1 is part of a hemiacetal.</li>
+<li><strong>Mutarotation:</strong> α-D-Glucose [α]<sub>D</sub> = +112° and β-D-Glucose [α]<sub>D</sub> = +18.7° both change to +52.5° in aqueous solution. This is only possible if both anomers interconvert via the open-chain form (cyclic ⇌ open chain ⇌ other anomer).</li>
+<li><strong>Two different crystalline forms:</strong> α-D-glucose crystallizes from concentrated solution at room temperature, β-D-glucose from hot saturated solution. Two distinct anomers exist.</li>
+<li><strong>Reaction with methanol/HCl gives two methyl glucosides</strong> (α and β methyl glucoside) — the anomeric C-1 —OH can be methylated in two ways.</li>
+</ol>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.10</span>What is the difference between a nucleoside and a nucleotide? <span class="q-type">2 marks</span></summary>
+<div>
+<table>
+<thead><tr><th>Feature</th><th>Nucleoside</th><th>Nucleotide</th></tr></thead>
+<tbody>
+<tr><td>Composition</td><td>Base + Sugar</td><td>Base + Sugar + Phosphate</td></tr>
+<tr><td>Bond</td><td>N-glycosidic bond between base N and C-1' of sugar</td><td>Phosphoester bond between phosphate and C-5' of sugar (of nucleoside)</td></tr>
+<tr><td>Example</td><td>Adenosine (A + ribose)</td><td>Adenosine monophosphate (AMP)</td></tr>
+<tr><td>Function</td><td>Building block of nucleotide</td><td>Building block of nucleic acids (DNA/RNA)</td></tr>
+</tbody>
+</table>
+<p>📌 <span class="badge badge-xref">See Tab 2: Nucleic Acid structure</span> <span class="badge badge-pyq">⚡ PYQ 2023</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.11</span>What are the essential and non-essential amino acids? Give two examples of each. <span class="q-type">2 marks</span></summary>
+<div>
+<p><strong>Essential amino acids</strong> cannot be synthesized by the human body and must be supplied through diet. There are <strong>10 essential</strong> amino acids:</p>
+<p>Valine, Leucine, Isoleucine, Lysine, Methionine, Threonine, Tryptophan, Phenylalanine, Arginine, Histidine (Mnemonic: <strong>"VILLMP FTAH"</strong> or "PVT TIM HALL")</p>
+<p><strong>Non-essential amino acids</strong> can be synthesized by the body:</p>
+<p>Glycine, Alanine, Serine, Cysteine, Tyrosine, Proline, Aspartic acid, Glutamic acid, Asparagine, Glutamine</p>
+<p>📌 Essential for children: Histidine and Arginine are semi-essential. <span class="badge badge-pyq">⚡ PYQ 2021</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.12</span>Define the following terms: (a) Glycosidic linkage (b) Peptide linkage (c) Primary structure (d) Denaturation <span class="q-type">4 marks</span></summary>
+<div>
+<p><strong>(a) Glycosidic linkage:</strong> The —C—O—C— bond formed between two monosaccharide units by condensation (loss of H<sub>2</sub>O), linking C-1 (anomeric) of one sugar to a hydroxyl of another.</p>
+<p><strong>(b) Peptide linkage:</strong> The —CO—NH— amide bond formed between the —COOH of one α-amino acid and the —NH<sub>2</sub> of another with elimination of H<sub>2</sub>O. It is planar with partial double bond character.</p>
+<p><strong>(c) Primary structure:</strong> The specific linear sequence of amino acids linked by peptide bonds in a polypeptide chain. The primary structure determines all higher levels of organization.</p>
+<p><strong>(d) Denaturation:</strong> Loss of native 2°, 3°, and 4° structure of a protein (primary structure remains intact) due to disruption of H-bonds, disulfide bonds, etc. by heat, pH, heavy metals, or organic solvents. Usually irreversible.</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.13</span>What is the difference between a fibrous protein and a globular protein? <span class="q-type">3 marks</span></summary>
+<div>
+<table>
+<thead><tr><th>Feature</th><th>Fibrous Protein</th><th>Globular Protein</th></tr></thead>
+<tbody>
+<tr><td>Shape</td><td>Long, thread-like, fibre</td><td>Spherical/globular</td></tr>
+<tr><td>Solubility</td><td>Insoluble in water</td><td>Soluble in water</td></tr>
+<tr><td>Structure</td><td>Predominantly secondary (helix/sheet)</td><td>Tertiary fold with all 4 levels</td></tr>
+<tr><td>Function</td><td>Structural (support, protection)</td><td>Dynamic (transport, catalysis, regulation)</td></tr>
+<tr><td>Stability</td><td>High mechanical strength, less sensitive to denaturation</td><td>More sensitive to heat, pH</td></tr>
+<tr><td>Examples</td><td>α-Keratin (hair, nails, wool), Collagen (tendons), Fibroin (silk), Myosin (muscle)</td><td>Insulin, Haemoglobin, Myoglobin, Albumin, Enzymes, Antibodies</td></tr>
+</tbody>
+</table>
+<p><span class="badge badge-pyq">⚡ PYQ - Frequently asked</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.14</span>Explain the terms: (a) Co-enzyme (b) Prosthetic group (c) Co-factors <span class="q-type">3 marks</span></summary>
+<div>
+<p><strong>(a) Co-enzyme:</strong> Small, non-protein, organic molecules (often derived from vitamins) that are loosely bound to the enzyme and essential for catalytic activity. Examples: NAD<sup>+</sup>, NADP<sup>+</sup>, FAD, coenzyme A, thiamine pyrophosphate (TPP). They act as carriers of specific atoms or functional groups.</p>
+<p><strong>(b) Prosthetic group:</strong> The non-protein organic group that is <strong>tightly and permanently bound</strong> to the enzyme (often covalently). Examples: Heme in haemoglobin/catalase, FAD in succinate dehydrogenase, biotin in carboxylases.</p>
+<p><strong>(c) Co-factors:</strong> Non-protein components (metal ions or organic molecules) required for enzyme activity. They can be subdivided into:</p>
+<ul>
+<li><strong>Inorganic cofactors:</strong> Metal ions like Zn<sup>2+</sup> (in carbonic anhydrase), Mg<sup>2+</sup> (in kinases), Fe<sup>2+</sup>/Fe<sup>3+</sup> (in cytochromes), Cu<sup>2+</sup> (in cytochrome oxidase)</li>
+<li><strong>Organic cofactors (coenzymes):</strong> NAD<sup>+</sup>, FAD, CoA, etc.</li>
+</ul>
+<p>An <strong>apoenzyme</strong> (protein part) + <strong>cofactor</strong> = <strong>holoenzyme</strong> (active form).</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.15</span>What is the difference between DNA and RNA? <span class="q-type">3 marks</span></summary>
+<div>
+<p>Refer to comparison table in Tab 2. Key differences:</p>
+<ul>
+<li><strong>Sugar:</strong> DNA has 2-deoxyribose; RNA has ribose (with 2'-OH)</li>
+<li><strong>Bases:</strong> DNA has thymine (T); RNA has uracil (U) in place of T</li>
+<li><strong>Strands:</strong> DNA is double-stranded (double helix); RNA is single-stranded</li>
+<li><strong>Function:</strong> DNA stores genetic information; RNA helps in protein synthesis (mRNA, tRNA, rRNA)</li>
+<li><strong>Location:</strong> DNA is mainly in nucleus; RNA is mainly in cytoplasm</li>
+<li><strong>Replication:</strong> DNA can self-replicate; RNA is synthesized from DNA as needed</li>
+<li><strong>Base pairing:</strong> A=T (2 H-bonds) in DNA; A=U (2 H-bonds) in RNA; G≡C in both (3 H-bonds)</li>
+</ul>
+<p><span class="badge badge-pyq">⚡ CBSE Board 2024 - 5 marks expected</span></p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.16</span>Write the structure of the amino acid Glycine. <span class="q-type">1 mark</span></summary>
+<div>
+<p><strong>Glycine (Gly, G):</strong> The simplest amino acid with R = H.</p>
+<div class="formula-box">
+            H        O<br/>
+            |        ‖<br/>
+        H — C — C<br/>
+            |        |<br/>
+            NH<sub>2</sub>   OH<br/><br/>
+        Or as zwitterion:<br/>
+        H<sub>3</sub>N<sup>+</sup>—CH<sub>2</sub>—COO<sup>−</sup>
+</div>
+<p>Glycine is the only achiral (non-optically active) standard amino acid because R = H (no chiral center at C-α).</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.17</span>Name the two secondary structures of proteins. <span class="q-type">1 mark</span></summary>
+<div>
+<p>The two main types of secondary structure of proteins are:</p>
+<ol>
+<li><strong>α-Helix</strong> (right-handed coiled rod, 3.6 residues per turn, i → i+4 H-bonds)</li>
+<li><strong>β-Pleated Sheet</strong> (extended polypeptide strands, parallel or antiparallel, inter-strand H-bonds)</li>
+</ol>
+<p>Both are stabilized by hydrogen bonds between the N-H and C=O groups of the peptide backbone.</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.18</span>Give two differences between hormones and vitamins. <span class="q-type">2 marks</span></summary>
+<div>
+<table>
+<thead><tr><th>Hormones</th><th>Vitamins</th></tr></thead>
+<tbody>
+<tr><td>Produced by endocrine glands in the body</td><td>Not synthesized in the body; must be obtained from diet</td></tr>
+<tr><td>Chemical nature: Steroids, peptides, amino acid derivatives</td><td>Chemical nature: Organic compounds (often coenzymes)</td></tr>
+<tr><td>Act as chemical messengers at very low concentrations</td><td>Act as cofactors/regulators of metabolism</td></tr>
+<tr><td>Example: Insulin, thyroxine, adrenaline, estrogen</td><td>Example: Vitamin A, B-complex, C, D, E, K</td></tr>
+<tr><td>Effective in microgram quantities</td><td>Effective in microgram to milligram quantities</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.19</span>Give the sources and deficiency diseases of vitamin A and vitamin D. <span class="q-type">2 marks</span></summary>
+<div>
+<table>
+<thead><tr><th>Vitamin</th><th>Chemical Name</th><th>Sources</th><th>Deficiency Disease</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>Retinol</td>
+<td>Cod liver oil, carrots, butter, egg yolk, green leafy vegetables (β-carotene)</td>
+<td>Night blindness, xerophthalmia, dryness of skin</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Calciferol (D<sub>2</sub>: ergocalciferol; D<sub>3</sub>: cholecalciferol)</td>
+<td>Sunlight (skin synthesis from 7-dehydrocholesterol), fish liver oil, milk, eggs</td>
+<td>Rickets (in children) — bow legs, pigeon chest; Osteomalacia (in adults) — soft, weak bones</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.20</span>Explain the mechanism of enzyme action. <span class="q-type">3 marks</span></summary>
+<div>
+<p><strong>Two models of enzyme-substrate interaction:</strong></p>
+<p><strong>(1) Lock and Key Model (Emil Fischer, 1894):</strong> The enzyme has a rigid, pre-formed active site whose shape is exactly complementary to the substrate. Only the correct substrate (key) fits into the active site (lock).</p>
+<p><strong>(2) Induced Fit Model (Daniel Koshland, 1958):</strong> The active site is not rigid. When the substrate approaches, the enzyme <em>changes shape</em> to wrap around and bind the substrate optimally. The substrate induces the conformational change.</p>
+<p><strong>Mechanism (Michaelis–Menten):</strong></p>
+<div class="formula-box">E + S ⇌ [ES] → E + P</div>
+<ol>
+<li>Substrate (S) binds to enzyme's active site → Enzyme-Substrate complex [ES]</li>
+<li>Activation energy is lowered (transition state stabilized)</li>
+<li>[ES] is converted to Enzyme-Product complex [EP]</li>
+<li>Product (P) is released; enzyme is regenerated unchanged</li>
+</ol>
+<p>The enzyme is highly specific, works in mild conditions, and dramatically increases reaction rate (often 10<sup>6</sup>–10<sup>12</sup> fold).</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.21</span>What happens when D-glucose is treated with (a) HI (b) HNO<sub>3</sub> (c) Acetic anhydride? <span class="q-type">3 marks</span></summary>
+<div>
+<p><strong>(a) With HI (reduction):</strong></p>
+<div class="formula-box">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6HI —(Δ)→ n-C<sub>6</sub>H<sub>14</sub> + 6I<sub>2</sub> + 6H<sub>2</sub>O<br/>(n-Hexane)</div>
+<p>All 6 —OH groups + —CHO reduced to —H/—CH<sub>3</sub>; confirms straight chain.</p>
+<p><strong>(b) With dilute HNO<sub>3</sub> (oxidation):</strong></p>
+<div class="formula-box">CH<sub>2</sub>OH—(CHOH)<sub>4</sub>—CHO + 2[O] → HOOC—(CHOH)<sub>4</sub>—COOH<br/>(Saccharic acid)</div>
+<p>Both —CHO and 1° —OH oxidized to —COOH.</p>
+<p><strong>(c) With acetic anhydride (acetylation):</strong></p>
+<div class="formula-box">C<sub>6</sub>H<sub>7</sub>O(OH)<sub>5</sub> + 5(CH<sub>3</sub>CO)<sub>2</sub>O —(Pyridine)→ C<sub>6</sub>H<sub>7</sub>O(OCOCH<sub>3</sub>)<sub>5</sub> + 5CH<sub>3</sub>COOH<br/>(Pentaacetate)</div>
+<p>All 5 —OH groups acetylated → confirms 5 hydroxyl groups.</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">14.22</span>What are the hydrolysis products of (a) sucrose (b) lactose (c) maltose? <span class="q-type">2 marks</span></summary>
+<div>
+<table>
+<thead><tr><th>Disaccharide</th><th>Hydrolysis Products</th><th>Bond</th></tr></thead>
+<tbody>
+<tr><td><strong>(a) Sucrose</strong></td><td>α-D-Glucose + β-D-Fructose (invert sugar)</td><td>α-1,2β glycosidic</td></tr>
+<tr><td><strong>(b) Lactose</strong></td><td>β-D-Galactose + D-Glucose</td><td>β-1,4 glycosidic</td></tr>
+<tr><td><strong>(c) Maltose</strong></td><td>α-D-Glucose + D-Glucose (2 moles)</td><td>α-1,4 glycosidic</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+<h2>🎯 CBSE Previous Year Questions (PYQ)</h2>
+<details>
+<summary><span class="q-num">PYQ-1</span>Assertion-Reason: (A) Glucose exists in two different crystalline forms α-D and β-D. (R) The two forms differ in configuration at C-1 (anomeric carbon). <span class="q-type">1 mark</span></summary>
+<div>
+<p><strong>Answer: Both A and R are true, and R is the correct explanation of A.</strong></p>
+<p>α-D-glucose and β-D-glucose are <strong>anomers</strong> — they differ only in the configuration at the anomeric carbon C-1 (in the cyclic pyranose form). α has —OH down (axial), β has —OH up (equatorial) at C-1.</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">PYQ-2</span>Case-based: A biochemist isolates a disaccharide from milk. Upon hydrolysis with dilute acid, it gives two monosaccharides A and B. A is a ketose and B is an aldose. The disaccharide is non-reducing. (a) Identify the disaccharide. (b) Give the structure of A and B. (c) What is the linkage between A and B? (d) Why is it non-reducing? <span class="q-type">5 marks</span></summary>
+<div>
+<p><strong>(a) Identification:</strong> From milk + ketose (fructose) + aldose (glucose) + non-reducing → the disaccharide is <strong>sucrose</strong>. (Note: Lactose is also from milk but is reducing. The case mixes clues — answer is sucrose with the "from milk" being a distraction.)</p>
+<p><strong>(b) Structures:</strong> A = β-D-Fructose (furanose form), B = α-D-Glucose (pyranose form)</p>
+<p><strong>(c) Linkage:</strong> <strong>α-1,2β glycosidic linkage</strong> — between C-1 of glucose and C-2 of fructose</p>
+<p><strong>(d) Non-reducing because:</strong> Both anomeric carbons (C-1 of glucose and C-2 of fructose) are involved in the glycosidic bond, so neither can open up to provide a free —CHO or —C(OH)= group to reduce Tollen's/Fehling's reagent.</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">PYQ-3</span>Explain why (a) Cellulose is not digested by humans (b) Starch gives blue color with iodine (c) Glycine is optically inactive. <span class="q-type">3 marks</span></summary>
+<div>
+<p><strong>(a) Cellulose:</strong> Humans lack the enzyme <strong>cellulase</strong> that can hydrolyze the β-1,4 glycosidic linkages in cellulose. Herbivores have symbiotic gut bacteria that produce cellulase.</p>
+<p><strong>(b) Starch-iodine test:</strong> I<sub>2</sub> molecules fit into the helical coil of amylose (linear α-1,4 polymer), forming a <strong>charge-transfer complex</strong> that absorbs visible light in the 620 nm region, appearing <strong>deep blue</strong>. Amylopectin gives blue-violet; glycogen gives red-brown.</p>
+<p><strong>(c) Glycine:</strong> Glycine has R = H at the α-carbon, so it has <strong>no chiral (asymmetric) carbon</strong>. With only two substituents (H, H) at C-α, glycine is achiral and therefore <strong>optically inactive</strong>.</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">PYQ-4</span>State whether the following statements are True or False. Justify: (a) All amino acids are optically active. (b) Cellulose contains β-1,4 glycosidic linkages. (c) In DNA, A pairs with G. (d) Vitamin C is water-soluble. <span class="q-type">4 marks</span></summary>
+<div>
+<p><strong>(a) FALSE:</strong> Glycine (R = H) is the only standard amino acid that is <em>not</em> optically active because its α-carbon is not chiral (two H substituents).</p>
+<p><strong>(b) TRUE:</strong> Cellulose is a linear polymer of β-D-glucose linked by β-1,4 glycosidic bonds.</p>
+<p><strong>(c) FALSE:</strong> In DNA, adenine (A) pairs with <strong>thymine (T)</strong> via 2 hydrogen bonds; guanine (G) pairs with cytosine (C) via 3 hydrogen bonds.</p>
+<p><strong>(d) TRUE:</strong> Vitamin C (ascorbic acid) is a water-soluble vitamin, along with B-complex vitamins.</p>
+</div>
+</details>
+<details>
+<summary><span class="q-num">PYQ-5</span>What are the differences between competitive and non-competitive enzyme inhibition? <span class="q-type">3 marks</span></summary>
+<div>
+<table>
+<thead><tr><th>Feature</th><th>Competitive Inhibition</th><th>Non-competitive Inhibition</th></tr></thead>
+<tbody>
+<tr><td>Binding site</td><td>Active site</td><td>Allosteric site (different from active site)</td></tr>
+<tr><td>Similarity to substrate</td><td>Inhibitor resembles substrate</td><td>No structural similarity to substrate</td></tr>
+<tr><td>Effect on K<sub>m</sub></td><td>Increases (apparent K<sub>m</sub> ↑)</td><td>Unchanged</td></tr>
+<tr><td>Effect on V<sub>max</sub></td><td>Unchanged (can be overcome by ↑[S])</td><td>Decreases (cannot be overcome)</td></tr>
+<tr><td>Reversibility</td><td>Reversible</td><td>Often irreversible (e.g., heavy metal binding)</td></tr>
+<tr><td>Example</td><td>Malonate inhibiting succinate dehydrogenase</td><td>Heavy metals (Pb<sup>2+</sup>, Hg<sup>2+</sup>) inhibiting —SH enzymes</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============================================================
+     TAB 4: VIRTUAL BIOCHEMISTRY LAB
+============================================================ -->
+<section aria-labelledby="tab-lab" id="lab" role="tabpanel">
+<h1>⚗️ Virtual Biochemistry Lab</h1>
+<p>Three interactive simulations covering optical activity, peptide bond formation, and DNA denaturation. Manipulate sliders, click buttons, and observe animated biochemical phenomena.</p>
+<div class="print-only">
+<h2>Simulator Reference Tables (Print View)</h2>
+<h3>Simulator 1: Polarimeter &amp; Tollen's Test</h3>
+<table>
+<thead><tr><th>Sugar</th><th>Type</th><th>[α]D²⁰</th><th>Reducing</th><th>Tollen's Result</th></tr></thead>
+<tbody>
+<tr><td>D-Glucose</td><td>Aldohexose</td><td>+52.7°</td><td>Yes</td><td>Silver mirror</td></tr>
+<tr><td>L-Glucose</td><td>Aldohexose</td><td>−52.7°</td><td>Yes</td><td>Silver mirror</td></tr>
+<tr><td>D-Fructose</td><td>Ketohexose</td><td>−92.0°</td><td>Yes*</td><td>Silver mirror</td></tr>
+<tr><td>L-Fructose</td><td>Ketohexose</td><td>+92.0°</td><td>Yes*</td><td>Silver mirror</td></tr>
+<tr><td>Maltose</td><td>α-1,4 disaccharide</td><td>+140°</td><td>Yes</td><td>Silver mirror</td></tr>
+<tr><td>Lactose</td><td>β-1,4 disaccharide</td><td>+52°</td><td>Yes</td><td>Silver mirror</td></tr>
+<tr><td>Sucrose</td><td>α-1,2β disaccharide</td><td>+66.5°</td><td>No</td><td>No reaction</td></tr>
+<tr><td>Invert Sugar</td><td>Hydrolyzed sucrose</td><td>−20°</td><td>Yes</td><td>Silver mirror</td></tr>
+</tbody>
+</table>
+<p><em>*Fructose reduces via tautomerization to glucose/mannose in alkaline medium.</em></p>
+</div>
+<!-- ====================== SIMULATOR 1 ====================== -->
+<div class="lab-container" id="sim1">
+<div class="lab-header">
+<h2 class="lab-title">🔬 Simulator 1: Virtual Polarimeter &amp; Tollen's Test</h2>
+<div aria-label="Mode toggle" class="lab-mode-toggle" role="group">
+<button class="active" id="mode-polarimeter" onclick="setSimMode('polarimeter')">🔬 Polarimeter</button>
+<button id="mode-tollens" onclick="setSimMode('tollens')">🧪 Tollen's Test</button>
+</div>
+</div>
+<h3 style="color:#cbd5e0;font-size:.95rem;margin-bottom:.6rem">Step 1: Select Sugar Solution</h3>
+<div class="sugar-selector" id="sugar-selector">
+<div class="sugar-card active" data-sugar="d-glucose" onclick="selectSugar('d-glucose')">
+<h4>🧬 D-Glucose</h4>
+<div class="sugar-meta"><span class="badge badge-blue">Aldose</span><span class="badge badge-green">Reducing</span></div>
+<div class="sugar-rotation">[α]D = +52.7°</div>
+</div>
+<div class="sugar-card" data-sugar="l-glucose" onclick="selectSugar('l-glucose')">
+<h4>🧬 L-Glucose</h4>
+<div class="sugar-meta"><span class="badge badge-blue">Aldose</span><span class="badge badge-green">Reducing</span></div>
+<div class="sugar-rotation">[α]D = −52.7°</div>
+</div>
+<div class="sugar-card" data-sugar="d-fructose" onclick="selectSugar('d-fructose')">
+<h4>🍯 D-Fructose</h4>
+<div class="sugar-meta"><span class="badge badge-purple">Ketose</span><span class="badge badge-green">Reducing*</span></div>
+<div class="sugar-rotation">[α]D = −92.0°</div>
+</div>
+<div class="sugar-card" data-sugar="l-fructose" onclick="selectSugar('l-fructose')">
+<h4>🍯 L-Fructose</h4>
+<div class="sugar-meta"><span class="badge badge-purple">Ketose</span><span class="badge badge-green">Reducing*</span></div>
+<div class="sugar-rotation">[α]D = +92.0°</div>
+</div>
+<div class="sugar-card" data-sugar="maltose" onclick="selectSugar('maltose')">
+<h4>🔗 Maltose (α-1,4)</h4>
+<div class="sugar-meta"><span class="badge badge-yellow">Disaccharide</span><span class="badge badge-green">Reducing</span></div>
+<div class="sugar-rotation">[α]D = +140°</div>
+</div>
+<div class="sugar-card" data-sugar="lactose" onclick="selectSugar('lactose')">
+<h4>🥛 Lactose (β-1,4)</h4>
+<div class="sugar-meta"><span class="badge badge-yellow">Disaccharide</span><span class="badge badge-green">Reducing</span></div>
+<div class="sugar-rotation">[α]D = +52°</div>
+</div>
+<div class="sugar-card" data-sugar="sucrose" onclick="selectSugar('sucrose')">
+<h4>🍬 Sucrose (α-1,2β)</h4>
+<div class="sugar-meta"><span class="badge badge-yellow">Disaccharide</span><span class="badge badge-red">Non-Reducing</span></div>
+<div class="sugar-rotation">[α]D = +66.5°</div>
+</div>
+<div class="sugar-card" data-sugar="invert-sugar" onclick="selectSugar('invert-sugar')">
+<h4>🔄 Invert Sugar</h4>
+<div class="sugar-meta"><span class="badge badge-blue">Mixture</span><span class="badge badge-green">Reducing</span></div>
+<div class="sugar-rotation">[α]D = −20°</div>
+</div>
+</div>
+<div class="lab-controls">
+<div class="control-group">
+<label>Concentration (% w/v) <span class="value-display" id="conc-display">10%</span></label>
+<input id="concentration" max="20" min="1" oninput="updateConcentration(this.value)" step="1" type="range" value="10"/>
+</div>
+<div class="control-group">
+<label>Sample Tube Path Length</label>
+<select id="path-length" onchange="updatePathLength(this.value)" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:.4rem;border-radius:4px;width:100%;font-family:inherit">
+<option value="10">10 cm (standard)</option>
+<option selected="" value="20">20 cm (semi-micro)</option>
+<option value="40">40 cm (high precision)</option>
+</select>
+</div>
+</div>
+<div class="sim-stage" id="sim1-stage">
+<canvas height="400" id="polarimeter-canvas" width="700"></canvas>
+<svg height="450" id="tollens-svg" style="display:none" viewbox="0 0 500 450" width="500">
+<defs>
+<lineargradient id="silver-mirror-grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#d4d4d8"></stop>
+<stop offset="0.5" stop-color="#e4e4e7"></stop>
+<stop offset="1" stop-color="#a1a1aa"></stop>
+</lineargradient>
+<lineargradient id="tube-glass" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="rgba(255,255,255,0.1)"></stop>
+<stop offset="0.5" stop-color="rgba(173,216,230,0.25)"></stop>
+<stop offset="1" stop-color="rgba(255,255,255,0.1)"></stop>
+</lineargradient>
+<filter id="glow">
+<fegaussianblur result="b" stddeviation="3"></fegaussianblur>
+<femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge>
+</filter>
+</defs>
+<!-- Test tube -->
+<g id="test-tube-group">
+<ellipse cx="250" cy="80" fill="rgba(255,255,255,0.15)" rx="55" ry="14" stroke="#94a3b8" stroke-width="2"></ellipse>
+<path d="M 195 80 L 195 380 Q 195 400 215 400 L 285 400 Q 305 400 305 380 L 305 80" fill="url(#tube-glass)" stroke="#cbd5e0" stroke-width="2.5"></path>
+<!-- Liquid -->
+<path d="M 198 130 L 198 380 Q 198 398 215 398 L 285 398 Q 302 398 302 380 L 302 130 Z" fill="rgba(173,216,230,0.3)" id="liquid-path" stroke="none"></path>
+<!-- Ag+ ions in solution -->
+<g id="ag-ions"></g>
+<!-- Silver mirror on walls (initially hidden) -->
+<rect fill="url(#silver-mirror-grad)" height="280" id="silver-mirror-left" opacity="0" width="3" x="195" y="100"></rect>
+<rect fill="url(#silver-mirror-grad)" height="280" id="silver-mirror-right" opacity="0" width="3" x="302" y="100"></rect>
+<!-- Bubbles -->
+<g id="bubbles"></g>
+</g>
+<!-- Test tube label -->
+<text fill="#cbd5e0" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle" x="250" y="425">Tollen's Reagent + Sugar Solution</text>
+<text fill="#94a3b8" font-family="system-ui" font-size="11" id="tube-status" text-anchor="middle" x="250" y="442">Add reagent → Heat → Observe</text>
+<!-- Bunsen burner -->
+<g id="bunsen-burner" style="display:none">
+<rect fill="#475569" height="12" rx="2" width="60" x="220" y="385"></rect>
+<ellipse cx="250" cy="370" fill="url(#flame-grad)" filter="url(#glow)" id="flame" rx="14" ry="22"></ellipse>
+</g>
+<defs>
+<lineargradient id="flame-grad" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0" stop-color="#1e40af"></stop>
+<stop offset="0.5" stop-color="#3b82f6"></stop>
+<stop offset="0.85" stop-color="#f59e0b"></stop>
+<stop offset="1" stop-color="#fef3c7"></stop>
+</lineargradient>
+</defs>
+<!-- Sucrose hydrolysis: HCl + heat -->
+<g id="hydrolysis-indicator" style="display:none">
+<text fill="#fbbf24" font-family="system-ui" font-size="14" font-weight="700" text-anchor="middle" x="250" y="60">⚗️ HCI HYDROLYSIS IN PROGRESS</text>
+</g>
+</svg>
+</div>
+<div class="lab-controls" id="polarimeter-controls">
+<div class="control-group">
+<label>Analyzer Rotation <span class="value-display" id="analyzer-display">0°</span></label>
+<input id="analyzer-angle" max="180" min="0" oninput="updateAnalyzer(this.value)" step="1" type="range" value="0"/>
+</div>
+<div class="control-group">
+<label>Light Intensity (Malus's Law: I = I₀cos²θ)</label>
+<div style="background:#0f172a;height:30px;border-radius:4px;overflow:hidden;margin-top:.4rem;position:relative">
+<div id="intensity-bar" style="background:linear-gradient(90deg,#fbbf24,#f59e0b);height:100%;width:100%;transition:width .15s"></div>
+<div id="intensity-label" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#0f172a">100%</div>
+</div>
+</div>
+<div class="control-group">
+<label>Chiral Carbon Indicator (C*)</label>
+<div id="chiral-indicator" style="margin-top:.4rem;padding:.4rem .6rem;background:rgba(251,191,36,.15);border:1px solid #fbbf24;border-radius:4px;color:#fbbf24;font-size:.82rem;font-weight:600">✨ 4 chiral centers highlighted in sample</div>
+</div>
+</div>
+<div class="lab-controls" id="tollens-controls" style="display:none">
+<div class="control-group">
+<label>Test Procedure</label>
+<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.4rem">
+<button class="btn" onclick="startTollensTest()">▶ Start Test</button>
+<button class="btn btn-secondary" onclick="resetTollens()">↺ Reset</button>
+<button class="btn btn-secondary" onclick="hydrolyzeSucrose()">🧪 Hydrolyze (HCl)</button>
+<button class="btn btn-secondary" onclick="skipTollensAnimation()">⏩ Skip to Result</button>
+</div>
+</div>
+<div class="control-group">
+<label>Stage Progress</label>
+<div id="tollens-stage" style="margin-top:.4rem;padding:.4rem .6rem;background:rgba(0,0,0,.3);border-radius:4px;color:#cbd5e0;font-size:.85rem">Idle — click "Start Test"</div>
+</div>
+</div>
+<div class="result-display" id="sim1-result">
+<div class="result-badge result-positive">🟢 D-Glucose is DEXTROROTATORY (+52.7°)</div>
+<p style="color:#cbd5e0;margin-top:.4rem">Rotate the analyzer to see the intensity change following Malus's Law. The plane of polarized light rotates clockwise as it passes through the D-glucose solution.</p>
+</div>
+</div>
+<!-- ====================== SIMULATOR 2 ====================== -->
+<div class="lab-container" id="sim2">
+<div class="lab-header">
+<h2 class="lab-title">🧪 Simulator 2: Peptide Bond Synthesis Engine</h2>
+</div>
+<p style="color:#cbd5e0">Watch two amino acids in zwitterion form condense to form a dipeptide. A water molecule is eliminated and the peptide bond (—CO—NH—) is formed.</p>
+<div class="lab-controls">
+<div class="control-group">
+<label>Select Amino Acid 1 (N-terminal)</label>
+<select id="aa1-select" onchange="resetPeptideAnimation()" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:.4rem;border-radius:4px;width:100%;font-family:inherit">
+<option value="Gly">Glycine (R=H)</option>
+<option selected="" value="Ala">Alanine (R=CH₃)</option>
+<option value="Ser">Serine (R=CH₂OH)</option>
+<option value="Cys">Cysteine (R=CH₂SH)</option>
+</select>
+</div>
+<div class="control-group">
+<label>Select Amino Acid 2 (C-terminal)</label>
+<select id="aa2-select" onchange="resetPeptideAnimation()" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:.4rem;border-radius:4px;width:100%;font-family:inherit">
+<option value="Gly">Glycine (R=H)</option>
+<option selected="" value="Gly">Glycine (R=H)</option>
+<option value="Ala">Alanine (R=CH₃)</option>
+</select>
+</div>
+<div class="control-group">
+<label>Animation Controls</label>
+<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.4rem">
+<button class="btn" onclick="condensePeptide()">⚗️ Condense</button>
+<button class="btn btn-secondary" onclick="resetPeptideAnimation()">↺ Reset</button>
+<button class="btn btn-secondary" onclick="toggleResonance()">🔄 Show Resonance</button>
+</div>
+</div>
+</div>
+<div class="peptide-stage" id="peptide-stage">
+<svg height="320" id="peptide-svg" viewbox="0 0 800 320" width="800">
+<defs>
+<lineargradient id="aa-grad-1" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="#3b82f6"></stop>
+<stop offset="1" stop-color="#1e40af"></stop>
+</lineargradient>
+<lineargradient id="aa-grad-2" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="#a855f7"></stop>
+<stop offset="1" stop-color="#6b21a8"></stop>
+</lineargradient>
+<lineargradient id="peptide-grad" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="#10b981"></stop>
+<stop offset="0.5" stop-color="#059669"></stop>
+<stop offset="1" stop-color="#047857"></stop>
+</lineargradient>
+<filter id="peptide-glow">
+<fegaussianblur result="b" stddeviation="6"></fegaussianblur>
+<femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge>
+</filter>
+</defs>
+<!-- AA1 (left, zwitterion) -->
+<g id="aa1-group" transform="translate(50,80)">
+<rect fill="url(#aa-grad-1)" height="180" opacity="0.95" rx="14" stroke="#93c5fd" stroke-width="2" width="240" x="0" y="0"></rect>
+<text fill="#fff" font-size="16" font-weight="700" id="aa1-name" text-anchor="middle" x="120" y="30">Alanine</text>
+<text fill="#dbeafe" font-size="11" text-anchor="middle" x="120" y="50">N-terminal (Zwitterion)</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="90">⁺H₃N</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="115">R: CH₃</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="140">C</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="160">COO⁻</text>
+</g>
+<!-- AA2 (right, zwitterion) -->
+<g id="aa2-group" transform="translate(510,80)">
+<rect fill="url(#aa-grad-2)" height="180" opacity="0.95" rx="14" stroke="#d8b4fe" stroke-width="2" width="240" x="0" y="0"></rect>
+<text fill="#fff" font-size="16" font-weight="700" id="aa2-name" text-anchor="middle" x="120" y="30">Glycine</text>
+<text fill="#f3e8ff" font-size="11" text-anchor="middle" x="120" y="50">C-terminal (Zwitterion)</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="90">⁺H₃N</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="115">R: H</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="140">C</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="160">COO⁻</text>
+</g>
+<!-- Water molecule (appears during condensation) -->
+<g id="water-mol" opacity="0" transform="translate(400,160)">
+<circle cx="0" cy="0" fill="#ef4444" opacity="0.85" r="18"></circle>
+<circle cx="-22" cy="8" fill="#fff" opacity="0.9" r="11"></circle>
+<circle cx="22" cy="8" fill="#fff" opacity="0.9" r="11"></circle>
+<text fill="#fff" font-size="14" font-weight="900" text-anchor="middle" x="0" y="5">O</text>
+<text fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle" x="-22" y="12">H</text>
+<text fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle" x="22" y="12">H</text>
+</g>
+<!-- Arrows showing H+ and OH- transfer -->
+<g id="bond-arrows" opacity="0">
+<path d="M 290 200 Q 400 240 510 200" fill="none" marker-end="url(#arrowhead)" stroke="#fbbf24" stroke-dasharray="6,4" stroke-width="3"></path>
+<defs>
+<marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3">
+<polygon fill="#fbbf24" points="0 0, 10 3, 0 6"></polygon>
+</marker>
+</defs>
+<text fill="#92400e" font-size="14" font-weight="700" text-anchor="middle" x="400" y="280">— H₂O eliminated —</text>
+</g>
+<!-- Peptide bond highlight -->
+<g id="peptide-highlight" opacity="0">
+<rect fill="none" filter="url(#peptide-glow)" height="40" rx="6" stroke="#10b981" stroke-width="4" width="100" x="350" y="135"></rect>
+<text fill="#065f46" font-size="14" font-weight="900" text-anchor="middle" x="400" y="160">—CO—NH—</text>
+</g>
+<!-- Dipeptide product (appears after condensation) -->
+<g id="dipeptide-product" opacity="0" transform="translate(150,80)">
+<rect fill="url(#peptide-grad)" height="180" rx="14" stroke="#34d399" stroke-width="3" width="500" x="0" y="0"></rect>
+<text fill="#fff" font-size="18" font-weight="700" id="dipeptide-name" text-anchor="middle" x="250" y="30">Ala-Gly Dipeptide</text>
+<text fill="#d1fae5" font-size="12" text-anchor="middle" x="250" y="50">Peptide Bond Formed ✓</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="90">⁺H₃N</text>
+<text fill="#fff" font-size="18" font-weight="700" x="20" y="120">R₁</text>
+<text fill="#fff" font-size="18" font-weight="700" x="100" y="90">C</text>
+<text fill="#fff" font-size="18" font-weight="700" id="link-text" x="100" y="115">—CO—NH—</text>
+<text fill="#fff" font-size="18" font-weight="700" x="100" y="140">C</text>
+<text fill="#fff" font-size="18" font-weight="700" x="200" y="120">R₂</text>
+<text fill="#fff" font-size="18" font-weight="700" x="280" y="120">C</text>
+<text fill="#fff" font-size="18" font-weight="700" x="380" y="120">COO⁻</text>
+</g>
+</svg>
+</div>
+<div class="result-display">
+<p style="color:#cbd5e0"><strong>📌 Reaction:</strong> <code style="color:#fbbf24">H₂N—CHR₁—COOH + H—NH—CHR₂—COOH → H₂N—CHR₁—CO—NH—CHR₂—COOH + H₂O</code></p>
+<p style="color:#cbd5e0;margin-top:.4rem">📌 The peptide bond has <strong>partial double bond character</strong> (40% C=N) due to resonance: —C(=O)—N(H)— ⇌ —C(—O⁻)=N⁺(H)—. This makes it planar and restricts rotation.</p>
+</div>
+</div>
+<!-- ====================== SIMULATOR 3 ====================== -->
+<div class="lab-container" id="sim3">
+<div class="lab-header">
+<h2 class="lab-title">🧬 Simulator 3: DNA Denaturation Simulator</h2>
+</div>
+<p style="color:#cbd5e0">Raise the temperature to break hydrogen bonds between base pairs and observe the double helix unwind. This is called DNA melting or denaturation.</p>
+<div class="lab-controls">
+<div class="control-group">
+<label>Temperature <span class="value-display" id="temp-display">25°C</span></label>
+<input id="temperature" max="100" min="20" oninput="updateTemperature(this.value)" step="1" type="range" value="25"/>
+</div>
+<div class="control-group">
+<label>GC Content <span class="value-display" id="gc-display">50%</span></label>
+<input id="gc-content" max="100" min="0" oninput="updateGC(this.value)" step="5" type="range" value="50"/>
+</div>
+<div class="control-group">
+<label>DNA Length (base pairs)</label>
+<select id="dna-length" onchange="resetDNA()" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:.4rem;border-radius:4px;width:100%;font-family:inherit">
+<option selected="" value="20">20 bp (short fragment)</option>
+<option value="40">40 bp (gene length)</option>
+</select>
+</div>
+<div class="control-group">
+<label>Controls</label>
+<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.4rem">
+<button class="btn btn-secondary" onclick="resetDNA()">↺ Reset</button>
+</div>
+</div>
+</div>
+<div class="dna-stage" id="dna-stage">
+<svg height="400" id="dna-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 700 400" width="700"></svg>
+<div class="helix-info">
+<strong>DNA State Monitor</strong><br/>
+        Temp: <span id="info-temp">25°C</span> | T<sub>m</sub>: <span id="info-tm">70°C</span><br/>
+        H-bonds intact: <span id="info-hbonds">100%</span><br/>
+        Status: <span id="info-status">Native (B-form)</span>
+</div>
+</div>
+<div class="result-display">
+<p style="color:#cbd5e0"><strong>📌 Melting Temperature (T<sub>m</sub>):</strong> T<sub>m</sub> = 4°C × (G+C%) + 2°C × (A+T%) — for short oligos. For long DNA, Wallace rule: T<sub>m</sub> = 64.9 + 41 × (G+C−16.4)/N.</p>
+<p style="color:#cbd5e0;margin-top:.4rem">📌 When T &gt; T<sub>m</sub>, DNA becomes <strong>denatured</strong> (single-stranded). A<sub>260</sub> increases ~30-40% (hyperchromic effect) because unstacked bases absorb more UV light. Cooling slowly → <strong>renaturation</strong> (annealing).</p>
+</div>
+</div>
+<!-- ====================== END LAB ====================== -->
+<div class="highlight-box" style="margin-top:2rem">
+<strong>🎓 Learning Tips:</strong>
+<ul style="margin-top:.5rem">
+<li>Try comparing <strong>D-glucose vs L-glucose</strong> in the polarimeter — observe the opposite rotation direction.</li>
+<li>Select <strong>Sucrose</strong> in Tollen's mode → press "Hydrolyze (HCl)" → test again to see it become positive.</li>
+<li>In Peptide Bond, click "Show Resonance" after condensation to see the partial double-bond character.</li>
+<li>In DNA Denaturation, lower GC content to 0% to see lower T<sub>m</sub> — GC pairs have 3 H-bonds vs AT's 2.</li>
+</ul>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ============================================================
+     JAVASCRIPT - INTERACTIVE SIMULATIONS
+============================================================ -->
+<script>
+'use strict';
+
+// Forward declarations to avoid hoisting issues
+let sim1State, dnaState, peptideState;
+
+/* ========== TAB NAVIGATION ========== */
+(function(){
+  const tabs=document.querySelectorAll('[role="tab"]');
+  const panels=document.querySelectorAll('[role="tabpanel"]');
+  function activate(tabId, push){
+    tabs.forEach(t=>{const a=t.dataset.tab===tabId;t.classList.toggle('active',a);t.setAttribute('aria-selected',a);});
+    panels.forEach(p=>p.classList.toggle('active',p.id===tabId));
+    if(push)history.replaceState(null,'','#'+tabId);
+    window.scrollTo({top:0,behavior:'smooth'});
+    if(tabId==='lab'){
+      try{if(typeof drawPolarimeter==='function'&&sim1State&&sim1State.mode==='polarimeter'){drawPolarimeter();}}catch(e){}
+      try{if(typeof drawDNA==='function'&&dnaState)drawDNA();}catch(e){}
+    }
+  }
+  tabs.forEach(tab=>tab.addEventListener('click',()=>activate(tab.dataset.tab,true)));
+  const hash=location.hash.replace('#','');
+  if(hash&&document.getElementById(hash))activate(hash,false);
+  else activate('carbs',false);
+})();
+
+/* ============================================================
+   SIMULATOR 1: POLARIMETER + TOLLEN'S TEST
+============================================================ */
+const SUGAR_DATA={
+  'd-glucose':   {name:'D-Glucose',   rot:+52.7,  type:'aldose',     chiral:4, reducing:true,  desc:'Aldohexose, dextrorotatory, reducing sugar'},
+  'l-glucose':   {name:'L-Glucose',   rot:-52.7,  type:'aldose',     chiral:4, reducing:true,  desc:'Mirror image of D-Glucose, laevorotatory'},
+  'd-fructose':  {name:'D-Fructose',  rot:-92.0,  type:'ketose',     chiral:3, reducing:true,  desc:'Ketohexose, laevorotatory (despite D-config), reduces via tautomerization'},
+  'l-fructose':  {name:'L-Fructose',  rot:+92.0,  type:'ketose',     chiral:3, reducing:true,  desc:'Mirror of D-Fructose, strongly dextrorotatory'},
+  'maltose':     {name:'Maltose',     rot:+140,   type:'disacch-α14',chiral:8, reducing:true,  desc:'Glucose+Glucose (α-1,4), reducing — free anomeric C on second unit'},
+  'lactose':     {name:'Lactose',     rot:+52,    type:'disacch-β14',chiral:7, reducing:true,  desc:'Galactose+Glucose (β-1,4), milk sugar, reducing'},
+  'sucrose':     {name:'Sucrose',     rot:+66.5,  type:'disacch-α12β',chiral:8,reducing:false, desc:'Glucose+Fructose (α-1,2β), NON-reducing — both anomeric C locked'},
+  'invert-sugar':{name:'Invert Sugar',rot:-20,    type:'mixture',    chiral:7, reducing:true,  desc:'Hydrolyzed sucrose: glucose+fructose, laevorotatory mixture'}
+};
+
+sim1State={
+  mode:'polarimeter',
+  sugar:'d-glucose',
+  concentration:10,
+  pathLength:20,
+  analyzerAngle:0,
+  tollensStage:'idle',
+  tollensTimer:null,
+  hydrolysisDone:false,
+  animFrame:null
+};
+
+function setSimMode(mode){
+  sim1State.mode=mode;
+  document.getElementById('mode-polarimeter').classList.toggle('active',mode==='polarimeter');
+  document.getElementById('mode-tollens').classList.toggle('active',mode==='tollens');
+  document.getElementById('polarimeter-canvas').style.display=mode==='polarimeter'?'block':'none';
+  document.getElementById('tollens-svg').style.display=mode==='tollens'?'block':'none';
+  document.getElementById('polarimeter-controls').style.display=mode==='polarimeter'?'grid':'none';
+  document.getElementById('tollens-controls').style.display=mode==='tollens'?'grid':'none';
+  document.getElementById('concentration').parentElement.style.display=mode==='tollens'?'none':'block';
+  document.getElementById('path-length').parentElement.style.display=mode==='tollens'?'none':'block';
+  if(mode==='polarimeter')drawPolarimeter();
+  else resetTollens();
+  updateResultDisplay();
+}
+
+function selectSugar(s){
+  sim1State.sugar=s;
+  document.querySelectorAll('.sugar-card').forEach(c=>c.classList.toggle('active',c.dataset.sugar===s));
+  if(sim1State.mode==='polarimeter')drawPolarimeter();
+  else resetTollens();
+  updateResultDisplay();
+}
+
+function updateConcentration(v){
+  sim1State.concentration=+v;
+  document.getElementById('conc-display').textContent=v+'%';
+  if(sim1State.mode==='polarimeter')drawPolarimeter();
+}
+
+function updatePathLength(v){
+  sim1State.pathLength=+v;
+  if(sim1State.mode==='polarimeter')drawPolarimeter();
+}
+
+function updateAnalyzer(v){
+  sim1State.analyzerAngle=+v;
+  document.getElementById('analyzer-display').textContent=v+'°';
+  drawPolarimeter();
+}
+
+/* ========== POLARIMETER CANVAS ========== */
+function drawPolarimeter(){
+  const cvs=document.getElementById('polarimeter-canvas');
+  if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);
+  
+  // Background
+  ctx.fillStyle='#0f172a';
+  ctx.fillRect(0,0,W,H);
+  
+  const data=SUGAR_DATA[sim1State.sugar];
+  const specificRot=data.rot; // degrees
+  const c=sim1State.concentration; // g/100mL
+  const l=sim1State.pathLength/100; // dm
+  // Observed rotation α = [α] × c × l (concentration in g/mL)
+  const c_gmL=c/100;
+  const observedRot=specificRot*c_gmL*l*100; // amplified for visibility
+  // For animation: range of plane rotation
+  const planeRot=Math.min(Math.abs(observedRot)*0.5,90)*(observedRot<0?-1:1);
+  
+  // Title
+  ctx.fillStyle='#fbbf24';
+  ctx.font='bold 16px system-ui';
+  ctx.textAlign='center';
+  ctx.fillText(`Virtual Polarimeter — ${data.name}`,W/2,28);
+  ctx.font='12px system-ui';
+  ctx.fillStyle='#94a3b8';
+  ctx.fillText(`[α]D = ${data.rot>=0?'+':''}${data.rot}° | Concentration: ${sim1State.concentration}% w/v | Path: ${sim1State.pathLength} cm`,W/2,48);
+  
+  // Y positions for components
+  const compY=200;
+  const lightX=70,polX=180,sampleX1=290,sampleX2=470,analyzerX=580,detectorX=660;
+  
+  // Draw unpolarized light source
+  ctx.fillStyle='#fef3c7';
+  ctx.beginPath();
+  ctx.arc(lightX,compY,18,0,Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle='#92400e';
+  ctx.font='bold 10px system-ui';
+  ctx.textAlign='center';
+  ctx.fillText('LIGHT',lightX,compY+32);
+  // Unpolarized waves (random angles)
+  ctx.strokeStyle='#fbbf24';
+  ctx.lineWidth=1.5;
+  for(let i=0;i<6;i++){
+    const ang=Math.random()*Math.PI*2;
+    ctx.beginPath();
+    ctx.moveTo(lightX-30,compY);
+    ctx.lineTo(lightX-30+20*Math.cos(ang),compY+20*Math.sin(ang));
+    ctx.stroke();
+  }
+  
+  // Polarizer (vertical grating)
+  ctx.fillStyle='rgba(255,255,255,0.1)';
+  ctx.fillRect(polX-8,compY-50,16,100);
+  for(let i=0;i<10;i++){
+    ctx.strokeStyle='#cbd5e0';
+    ctx.lineWidth=1.5;
+    ctx.beginPath();
+    ctx.moveTo(polX-8,compY-50+i*10);
+    ctx.lineTo(polX+8,compY-50+i*10);
+    ctx.stroke();
+  }
+  ctx.fillStyle='#cbd5e0';
+  ctx.font='bold 10px system-ui';
+  ctx.fillText('POLARIZER',polX,compY+65);
+  
+  // Draw polarized wave (vertical, between polarizer and sample)
+  drawWave(ctx,polX+15,sampleX1-15,compY,0,'#fbbf24');
+  
+  // Sample tube
+  const tubeY=compY;
+  ctx.fillStyle='rgba(96,165,250,0.15)';
+  ctx.fillRect(sampleX1,tubeY-30,sampleX2-sampleX1,60);
+  ctx.strokeStyle='#60a5fa';
+  ctx.lineWidth=2;
+  ctx.strokeRect(sampleX1,tubeY-30,sampleX2-sampleX1,60);
+  // Sugar label
+  ctx.fillStyle='#93c5fd';
+  ctx.font='bold 11px system-ui';
+  ctx.textAlign='center';
+  ctx.fillText(`${data.name} Solution`,(sampleX1+sampleX2)/2,tubeY-38);
+  ctx.font='10px system-ui';
+  ctx.fillText(`(${c} g/100mL, ${l*100} cm path)`,(sampleX1+sampleX2)/2,tubeY+50);
+  // Chiral C markers
+  const chiralCount=data.chiral;
+  for(let i=0;i<chiralCount;i++){
+    const cx=sampleX1+10+i*((sampleX2-sampleX1-20)/(chiralCount-1||1));
+    ctx.fillStyle='#fde047';
+    ctx.font='bold 14px serif';
+    ctx.textAlign='center';
+    ctx.fillText('*',cx,tubeY+3);
+  }
+  ctx.fillStyle='#fde047';
+  ctx.font='9px system-ui';
+  ctx.fillText(`C* × ${chiralCount} (chiral centers)`,(sampleX1+sampleX2)/2,tubeY+18);
+  
+  // Plane rotation through sample (visualized)
+  const inAngle=0; // vertical after polarizer
+  const outAngle=planeRot; // rotated by sample
+  drawWave(ctx,sampleX1+5,sampleX2-5,compY,outAngle,'#fbbf24');
+  
+  // Analyzer (rotatable)
+  const aAngle=sim1State.analyzerAngle;
+  ctx.save();
+  ctx.translate(analyzerX,compY);
+  ctx.rotate(aAngle*Math.PI/180);
+  ctx.fillStyle='rgba(255,255,255,0.1)';
+  ctx.fillRect(-8,-50,16,100);
+  for(let i=0;i<10;i++){
+    ctx.strokeStyle='#fbbf24';
+    ctx.lineWidth=1.5;
+    ctx.beginPath();
+    ctx.moveTo(-8,-50+i*10);
+    ctx.lineTo(8,-50+i*10);
+    ctx.stroke();
+  }
+  ctx.restore();
+  ctx.fillStyle='#fbbf24';
+  ctx.font='bold 10px system-ui';
+  ctx.textAlign='center';
+  ctx.fillText(`ANALYZER ${aAngle}°`,analyzerX,compY+65);
+  
+  // Detector / intensity
+  // Malus's law: I = I0 * cos²(θ_sample - θ_analyzer)
+  // Actually: I = I0 * cos²(θ_analyzer - θ_plane_after_sample)
+  const effectiveAngle=(aAngle-outAngle)*Math.PI/180;
+  const intensity=Math.max(0,Math.cos(effectiveAngle)**2);
+  const detW=Math.max(8,intensity*40);
+  ctx.fillStyle=intensity>0.3?'#22c55e':intensity>0.1?'#fbbf24':'#475569';
+  ctx.fillRect(detectorX,compY-detW/2,12,detW);
+  ctx.fillStyle='#cbd5e0';
+  ctx.font='bold 10px system-ui';
+  ctx.textAlign='left';
+  ctx.fillText('DETECTOR',detectorX-5,compY+30);
+  ctx.fillText(`${(intensity*100).toFixed(0)}%`,detectorX-5,compY-30);
+  
+  // Intensity bar update
+  const bar=document.getElementById('intensity-bar');
+  const lbl=document.getElementById('intensity-label');
+  if(bar)bar.style.width=(intensity*100)+'%';
+  if(lbl){lbl.textContent=`${(intensity*100).toFixed(0)}%`;lbl.style.color=intensity>0.5?'#0f172a':'#fff';}
+  
+  // Bottom info
+  ctx.fillStyle='#cbd5e0';
+  ctx.font='11px system-ui';
+  ctx.textAlign='center';
+  ctx.fillText(`Observed rotation α = [α]×c×l = ${data.rot>=0?'+':''}${data.rot} × ${(c/100).toFixed(3)} × ${l} = ${observedRot.toFixed(2)}°`,W/2,H-50);
+  ctx.fillText(`Plane of polarized light rotates ${data.rot>0?'CLOCKWISE (dextrorotatory)':'COUNTER-CLOCKWISE (laevorotatory)'}`,W/2,H-30);
+  
+  // Direction arrow
+  const arrowY=H-12;
+  ctx.strokeStyle=data.rot>0?'#22c55e':'#ef4444';
+  ctx.lineWidth=2;
+  ctx.beginPath();
+  ctx.moveTo(W/2-50,arrowY);
+  ctx.lineTo(W/2+50,arrowY);
+  ctx.stroke();
+  // Arrow head
+  ctx.fillStyle=data.rot>0?'#22c55e':'#ef4444';
+  ctx.beginPath();
+  if(data.rot>0){
+    ctx.moveTo(W/2+50,arrowY);ctx.lineTo(W/2+42,arrowY-4);ctx.lineTo(W/2+42,arrowY+4);ctx.closePath();
+  }else{
+    ctx.moveTo(W/2-50,arrowY);ctx.lineTo(W/2-42,arrowY-4);ctx.lineTo(W/2-42,arrowY+4);ctx.closePath();
+  }
+  ctx.fill();
+  ctx.fillStyle='#cbd5e0';
+  ctx.font='10px system-ui';
+  ctx.fillText('rotation direction',W/2,arrowY-8);
+}
+
+function drawWave(ctx,x1,x2,y,angle,color){
+  ctx.strokeStyle=color;
+  ctx.lineWidth=2;
+  ctx.beginPath();
+  for(let x=x1;x<=x2;x+=2){
+    const t=(x-x1)/8;
+    const a=angle*Math.PI/180;
+    const yOff=Math.sin(t)*Math.cos(a)*10;
+    const xOff=Math.sin(t)*Math.sin(a)*10;
+    if(x===x1)ctx.moveTo(x+xOff,y+yOff);
+    else ctx.lineTo(x+xOff,y+yOff);
+  }
+  ctx.stroke();
+  // Arrow
+  const aRad=angle*Math.PI/180;
+  ctx.beginPath();
+  ctx.moveTo(x2,y);
+  ctx.lineTo(x2+10*Math.cos(aRad),y+10*Math.sin(aRad));
+  ctx.stroke();
+}
+
+/* ========== TOLLEN'S TEST ========== */
+function resetTollens(){
+  if(sim1State.tollensTimer)clearTimeout(sim1State.tollensTimer);
+  sim1State.tollensStage='idle';
+  sim1State.hydrolysisDone=false;
+  const svg=document.getElementById('tollens-svg');
+  document.getElementById('tube-status').textContent='Idle — click "Start Test"';
+  document.getElementById('tube-status').setAttribute('fill','#94a3b8');
+  document.getElementById('liquid-path').setAttribute('fill','rgba(173,216,230,0.3)');
+  document.getElementById('silver-mirror-left').setAttribute('opacity',0);
+  document.getElementById('silver-mirror-right').setAttribute('opacity',0);
+  document.getElementById('bubbles').innerHTML='';
+  document.getElementById('bunsen-burner').style.display='none';
+  document.getElementById('hydrolysis-indicator').style.display='none';
+  document.getElementById('ag-ions').innerHTML='';
+  // Init Ag+ ions
+  const ions=document.getElementById('ag-ions');
+  for(let i=0;i<20;i++){
+    const cx=200+Math.random()*100,cy=140+Math.random()*240;
+    const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',2.5);
+    c.setAttribute('fill','#94a3b8');c.setAttribute('opacity',0.5);
+    ions.appendChild(c);
+  }
+  updateResultDisplay();
+}
+
+function startTollensTest(){
+  if(sim1State.tollensStage!=='idle')return;
+  const sugar=sim1State.sugar;
+  // If sucrose selected (not yet hydrolyzed), negative
+  if(sugar==='sucrose'&&!sim1State.hydrolysisDone){
+    runNegativeTollens('Sucrose is non-reducing — no silver mirror forms. Both anomeric carbons are locked in the glycosidic bond. Click "Hydrolyze (HCl)" to break the bond first!');
+    return;
+  }
+  runPositiveTollens();
+}
+
+function runPositiveTollens(){
+  sim1State.tollensStage='mixing';
+  document.getElementById('tube-status').textContent='▶ Stage 1: Mixing — Sugar added to Tollen\'s reagent';
+  document.getElementById('tube-status').setAttribute('fill','#fbbf24');
+  document.getElementById('liquid-path').setAttribute('fill','rgba(173,216,230,0.5)');
+  sim1State.tollensTimer=setTimeout(()=>{
+    sim1State.tollensStage='heating';
+    document.getElementById('tube-status').textContent='🔥 Stage 2: Heating in water bath (~50°C)';
+    document.getElementById('bunsen-burner').style.display='block';
+    document.getElementById('tube-status').setAttribute('fill','#f59e0b');
+    sim1State.tollensTimer=setTimeout(()=>{
+      sim1State.tollensStage='reacting';
+      document.getElementById('tube-status').textContent='⚗️ Stage 3: R-CHO + 2[Ag(NH₃)₂]⁺ + 3OH⁻ → R-COO⁻ + 2Ag↓ + 4NH₃ + 2H₂O';
+      document.getElementById('tube-status').setAttribute('fill','#10b981');
+      document.getElementById('liquid-path').setAttribute('fill','rgba(148,163,184,0.4)');
+      sim1State.tollensTimer=setTimeout(()=>{
+        sim1State.tollensStage='depositing';
+        document.getElementById('tube-status').textContent='✨ Stage 4: Silver mirror forming on test tube walls...';
+        document.getElementById('tube-status').setAttribute('fill','#fbbf24');
+        animateSilverDeposition();
+        sim1State.tollensTimer=setTimeout(()=>{
+          sim1State.tollensStage='complete';
+          document.getElementById('bunsen-burner').style.display='none';
+          updateResultDisplay();
+        },4000);
+      },3000);
+    },4000);
+  },2500);
+}
+
+function runNegativeTollens(customMsg){
+  sim1State.tollensStage='heating';
+  document.getElementById('tube-status').textContent=customMsg||'🔥 Heating... observing...';
+  document.getElementById('tube-status').setAttribute('fill','#f59e0b');
+  document.getElementById('bunsen-burner').style.display='block';
+  sim1State.tollensTimer=setTimeout(()=>{
+    sim1State.tollensStage='complete';
+    document.getElementById('bunsen-burner').style.display='none';
+    document.getElementById('tube-status').textContent='❌ No silver mirror observed — non-reducing sugar';
+    document.getElementById('tube-status').setAttribute('fill','#ef4444');
+    updateResultDisplay();
+  },5000);
+}
+
+function animateSilverDeposition(){
+  let progress=0;
+  const leftMirror=document.getElementById('silver-mirror-left');
+  const rightMirror=document.getElementById('silver-mirror-right');
+  const ions=document.getElementById('ag-ions');
+  const ionList=Array.from(ions.children);
+  // Animate Ag+ ions moving to walls
+  function step(){
+    progress+=0.02;
+    leftMirror.setAttribute('opacity',Math.min(1,progress));
+    rightMirror.setAttribute('opacity',Math.min(1,progress));
+    // Move ions to edges
+    ionList.forEach((ion,i)=>{
+      const yPos=parseFloat(ion.getAttribute('cy'));
+      const xPos=parseFloat(ion.getAttribute('cx'));
+      const target=i%2===0?197:303;
+      const newX=xPos+(target-xPos)*0.05;
+      const newY=yPos-1; // drift up slightly
+      ion.setAttribute('cx',newX);
+      ion.setAttribute('cy',newY);
+      ion.setAttribute('r',Math.max(0.5,parseFloat(ion.getAttribute('r'))-0.04));
+      ion.setAttribute('opacity',Math.max(0,parseFloat(ion.getAttribute('opacity'))-0.04));
+    });
+    if(progress<1.2)requestAnimationFrame(step);
+  }
+  step();
+  // Add bubbles
+  setTimeout(()=>{
+    const bubbles=document.getElementById('bubbles');
+    for(let i=0;i<8;i++){
+      const b=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      b.setAttribute('cx',200+Math.random()*100);
+      b.setAttribute('cy',380);
+      b.setAttribute('r',2+Math.random()*3);
+      b.setAttribute('fill','rgba(255,255,255,0.7)');
+      b.innerHTML='<animate attributeName="cy" from="380" to="120" dur="3s" repeatCount="indefinite"/>';
+      bubbles.appendChild(b);
+    }
+  },500);
+}
+
+function hydrolyzeSucrose(){
+  if(sim1State.sugar!=='sucrose'){
+    alert('Hydrolysis demo only works with sucrose!');
+    return;
+  }
+  sim1State.hydrolysisDone=true;
+  document.getElementById('hydrolysis-indicator').style.display='block';
+  document.getElementById('tube-status').textContent='⚗️ HCl + heat → Hydrolyzing sucrose to glucose + fructose';
+  document.getElementById('tube-status').setAttribute('fill','#fbbf24');
+  document.getElementById('bunsen-burner').style.display='block';
+  setTimeout(()=>{
+    document.getElementById('hydrolysis-indicator').style.display='none';
+    document.getElementById('bunsen-burner').style.display='none';
+    // Switch to invert sugar
+    sim1State.sugar='invert-sugar';
+    document.querySelectorAll('.sugar-card').forEach(c=>c.classList.toggle('active',c.dataset.sugar==='invert-sugar'));
+    document.getElementById('tube-status').textContent='✅ Hydrolysis complete! Now testing the INVERT SUGAR (glucose + fructose)';
+    document.getElementById('tube-status').setAttribute('fill','#10b981');
+    document.getElementById('liquid-path').setAttribute('fill','rgba(251,191,36,0.4)');
+    // Now do positive test
+    setTimeout(()=>startTollensTest(),1000);
+  },3500);
+}
+
+function skipTollensAnimation(){
+  if(sim1State.tollensTimer)clearTimeout(sim1State.tollensTimer);
+  const data=SUGAR_DATA[sim1State.sugar];
+  if(data.reducing){
+    sim1State.tollensStage='complete';
+    document.getElementById('silver-mirror-left').setAttribute('opacity',1);
+    document.getElementById('silver-mirror-right').setAttribute('opacity',1);
+    document.getElementById('bunsen-burner').style.display='none';
+    document.getElementById('liquid-path').setAttribute('fill','rgba(148,163,184,0.4)');
+    document.getElementById('tube-status').textContent='✅ Silver mirror formed — REDUCING sugar confirmed';
+    document.getElementById('tube-status').setAttribute('fill','#10b981');
+  }else{
+    sim1State.tollensStage='complete';
+    document.getElementById('bunsen-burner').style.display='none';
+    document.getElementById('tube-status').textContent='❌ No silver mirror — NON-reducing sugar';
+    document.getElementById('tube-status').setAttribute('fill','#ef4444');
+  }
+  updateResultDisplay();
+}
+
+function updateResultDisplay(){
+  const data=SUGAR_DATA[sim1State.sugar];
+  const resultEl=document.getElementById('sim1-result');
+  if(sim1State.mode==='polarimeter'){
+    const sign=data.rot>0?'+':'';
+    const direction=data.rot>0?'DEXTROROTATORY (d-form)':'LAEVOROTATORY (l-form)';
+    const chiralText=data.chiral+(data.type==='ketose'?' (D-fructose tautomerizes to glucose in base)':' chiral centers');
+    resultEl.innerHTML=`
+      <div class="result-badge ${data.rot>0?'result-positive':''}" style="${data.rot<0?'background:linear-gradient(135deg,#2563eb,#3b82f6)':''}">
+        ${data.rot>0?'🟢':'🔵'} ${data.name} is ${direction} (${sign}${Math.abs(data.rot)}°)
+      </div>
+      <p style="color:#cbd5e0;margin-top:.5rem">${data.desc}</p>
+      <p style="color:#94a3b8;font-size:.85rem;margin-top:.3rem">📌 ${chiralText} | ${data.reducing?'Reduces Tollen\'s reagent (test in Tollen\'s mode)':'NON-reducing (test in Tollen\'s mode)'}</p>
+    `;
+  }else{
+    // Tollen's mode
+    if(sim1State.hydrolysisDone){
+      resultEl.innerHTML=`
+        <div class="result-badge result-positive">🟢 INVERT SUGAR — POSITIVE Tollen's test (silver mirror)</div>
+        <p style="color:#cbd5e0;margin-top:.5rem">After hydrolysis, sucrose yields glucose + fructose. Both are reducing sugars → silver mirror forms. The laevorotatory fructose (−92°) outweighs the dextrorotatory glucose (+52.7°), giving net [α] = −20°.</p>
+      `;
+    }else if(data.reducing){
+      resultEl.innerHTML=`
+        <div class="result-badge result-positive">🟢 ${data.name} — POSITIVE Tollen's test (silver mirror forms)</div>
+        <p style="color:#cbd5e0;margin-top:.5rem">${data.reducing&&data.type==='ketose'?'Fructose tautomerizes in alkaline medium to glucose/mannose, both of which have free —CHO groups that reduce Ag⁺ to Ag⁰.':'The free —CHO group reduces [Ag(NH₃)₂]⁺ to metallic silver (Ag) deposited on the test tube walls.'}</p>
+      `;
+    }else{
+      resultEl.innerHTML=`
+        <div class="result-badge result-negative">🔴 ${data.name} — NEGATIVE Tollen's test (no silver mirror)</div>
+        <p style="color:#cbd5e0;margin-top:.5rem">${data.desc} <strong>Both anomeric carbons</strong> (C-1 of glucose and C-2 of fructose) are involved in the α-1,2β glycosidic linkage, so no free —CHO is available. 💡 <em>Click "Hydrolyze (HCl)" to break the bond and re-test!</em></p>
+      `;
+    }
+  }
+}
+
+/* ============================================================
+   SIMULATOR 2: PEPTIDE BOND FORMATION
+============================================================ */
+peptideState={stage:'initial',resonanceOn:false};
+
+const AA_DATA={
+  Gly:{name:'Glycine',short:'Gly',R:'H'},
+  Ala:{name:'Alanine',short:'Ala',R:'CH₃'},
+  Ser:{name:'Serine',short:'Ser',R:'CH₂OH'},
+  Cys:{name:'Cysteine',short:'Cys',R:'CH₂SH'}
+};
+
+function resetPeptideAnimation(){
+  peptideState.stage='initial';
+  peptideState.resonanceOn=false;
+  const aa1=AA_DATA[document.getElementById('aa1-select').value];
+  const aa2=AA_DATA[document.getElementById('aa2-select').value];
+  document.getElementById('aa1-name').textContent=aa1.name;
+  document.getElementById('aa2-name').textContent=aa2.name;
+  // Update R groups
+  const aa1Group=document.getElementById('aa1-group');
+  const aa2Group=document.getElementById('aa2-group');
+  aa1Group.querySelector('text:nth-of-type(3)').textContent='R: '+aa1.R;
+  aa2Group.querySelector('text:nth-of-type(3)').textContent='R: '+aa2.R;
+  // Position groups
+  aa1Group.setAttribute('transform','translate(50,80)');
+  aa2Group.setAttribute('transform','translate(510,80)');
+  aa1Group.style.opacity=1;
+  aa2Group.style.opacity=1;
+  document.getElementById('water-mol').setAttribute('opacity',0);
+  document.getElementById('bond-arrows').setAttribute('opacity',0);
+  document.getElementById('peptide-highlight').setAttribute('opacity',0);
+  document.getElementById('dipeptide-product').setAttribute('opacity',0);
+}
+
+function condensePeptide(){
+  if(peptideState.stage!=='initial')return;
+  peptideState.stage='approaching';
+  const aa1=document.getElementById('aa1-group');
+  const aa2=document.getElementById('aa2-group');
+  // Animate amino acids approaching
+  aa1.style.transition='transform 1.5s ease-in-out';
+  aa2.style.transition='transform 1.5s ease-in-out';
+  aa1.setAttribute('transform','translate(140,80)');
+  aa2.setAttribute('transform','translate(420,80)');
+  setTimeout(()=>{
+    peptideState.stage='water';
+    document.getElementById('bond-arrows').setAttribute('opacity',1);
+    document.getElementById('water-mol').setAttribute('opacity',1);
+    setTimeout(()=>{
+      peptideState.stage='peptide';
+      document.getElementById('water-mol').setAttribute('opacity',0);
+      // Fade out individual AAs
+      aa1.style.opacity=0;
+      aa2.style.opacity=0;
+      document.getElementById('bond-arrows').setAttribute('opacity',0);
+      setTimeout(()=>{
+        peptideState.stage='complete';
+        document.getElementById('dipeptide-product').setAttribute('opacity',1);
+        document.getElementById('peptide-highlight').setAttribute('opacity',1);
+        const aa1v=AA_DATA[document.getElementById('aa1-select').value];
+        const aa2v=AA_DATA[document.getElementById('aa2-select').value];
+        document.getElementById('dipeptide-name').textContent=`${aa1v.short}-${aa2v.short} Dipeptide`;
+        document.getElementById('dipeptide-product').querySelector('text:nth-of-type(6)').textContent='R₁: '+aa1v.R;
+        document.getElementById('dipeptide-product').querySelector('text:nth-of-type(7)').textContent='R₂: '+aa2v.R;
+        // Flash highlight
+        setTimeout(()=>{
+          peptideState.stage='done';
+        },500);
+      },800);
+    },1500);
+  },1700);
+}
+
+function toggleResonance(){
+  if(peptideState.stage!=='complete'&&peptideState.stage!=='done')return;
+  peptideState.resonanceOn=!peptideState.resonanceOn;
+  const linkText=document.getElementById('link-text');
+  if(peptideState.resonanceOn){
+    linkText.innerHTML='—C(=O)—N(H)— ⇌ —C(−O⁻)=N⁺(H)—';
+    linkText.setAttribute('fill','#fde047');
+  }else{
+    linkText.textContent='—CO—NH—';
+    linkText.setAttribute('fill','#fff');
+  }
+}
+
+/* ============================================================
+   SIMULATOR 3: DNA DENATURATION
+============================================================ */
+dnaState={temp:25,gc:50,length:20,strands:[],animFrame:null};
+
+function generateDNA(){
+  dnaState.strands=[];
+  const len=dnaState.length;
+  for(let i=0;i<len;i++){
+    // Random base with GC% influence
+    const r=Math.random()*100;
+    let top,bot;
+    if(r<dnaState.gc){top='G';bot='C';}
+    else{top='A';bot='T';}
+    dnaState.strands.push({top,bot,gc:top==='G'||top==='C'});
+  }
+}
+
+function drawDNA(){
+  const svg=document.getElementById('dna-svg');
+  svg.innerHTML='';
+  const W=700,H=400;
+  const temp=dnaState.temp;
+  const len=dnaState.strands.length;
+  
+  // Calculate Tm and fraction bound
+  const tm=4*dnaState.gc+2*(100-dnaState.gc); // °C, %GC
+  const fracBound=temp<tm?1:Math.max(0,1-(temp-tm)/30);
+  
+  // Update info
+  document.getElementById('info-temp').textContent=temp+'°C';
+  document.getElementById('info-tm').textContent=tm+'°C';
+  document.getElementById('info-hbonds').textContent=(fracBound*100).toFixed(0)+'%';
+  document.getElementById('info-status').textContent=temp<tm-5?'Native (B-form)':temp<tm?'Partially denatured':'Fully denatured (single-stranded)';
+  
+  const startY=80,endY=320;
+  const spacing=(endY-startY)/(len-1);
+  const separation=fracBound<1?(1-fracBound)*60:0; // 0-60px
+  
+  for(let i=0;i<len;i++){
+    const y=startY+i*spacing;
+    const strand1X=350-separation/2;
+    const strand2X=350+separation/2;
+    const bp=dnaState.strands[i];
+    
+    // Backbone left (sugar-phosphate)
+    const ssg1=document.createElementNS('http://www.w3.org/2000/svg','line');
+    ssg1.setAttribute('x1',strand1X-12);ssg1.setAttribute('y1',y);
+    ssg1.setAttribute('x2',strand1X+12);ssg1.setAttribute('y2',y);
+    ssg1.setAttribute('stroke',fracBound<0.3?'#94a3b8':'#0ea5e9');ssg1.setAttribute('stroke-width',4);
+    ssg1.setAttribute('stroke-linecap','round');
+    svg.appendChild(ssg1);
+    
+    const ssg2=document.createElementNS('http://www.w3.org/2000/svg','line');
+    ssg2.setAttribute('x1',strand2X-12);ssg2.setAttribute('y1',y);
+    ssg2.setAttribute('x2',strand2X+12);ssg2.setAttribute('y2',y);
+    ssg2.setAttribute('stroke',fracBound<0.3?'#94a3b8':'#0ea5e9');ssg2.setAttribute('stroke-width',4);
+    ssg2.setAttribute('stroke-linecap','round');
+    svg.appendChild(ssg2);
+    
+    // H-bonds (if bound)
+    if(fracBound>0.1){
+      const numBonds=bp.top==='G'||bp.top==='C'?3:2;
+      const bondOpacity=fracBound;
+      for(let b=0;b<numBonds;b++){
+        const bondY=y-6+b*6;
+        const bond=document.createElementNS('http://www.w3.org/2000/svg','line');
+        bond.setAttribute('x1',strand1X+12);bond.setAttribute('y1',bondY);
+        bond.setAttribute('x2',strand2X-12);bond.setAttribute('y2',bondY);
+        bond.setAttribute('stroke',bp.gc?'#10b981':'#fbbf24');
+        bond.setAttribute('stroke-width',1.2);
+        bond.setAttribute('stroke-dasharray','3,2');
+        bond.setAttribute('opacity',bondOpacity);
+        svg.appendChild(bond);
+      }
+    }
+    
+    // Bases (squares)
+    const baseColors={A:'#22c55e',T:'#ef4444',G:'#3b82f6',C:'#fbbf24'};
+    const b1=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    b1.setAttribute('x',strand1X-10);b1.setAttribute('y',y-8);
+    b1.setAttribute('width',20);b1.setAttribute('height',16);
+    b1.setAttribute('fill',baseColors[bp.top]);b1.setAttribute('rx',3);
+    b1.setAttribute('opacity',fracBound>0.05?1:0.7);
+    svg.appendChild(b1);
+    const t1=document.createElementNS('http://www.w3.org/2000/svg','text');
+    t1.setAttribute('x',strand1X);t1.setAttribute('y',y+4);
+    t1.setAttribute('text-anchor','middle');t1.setAttribute('fill','#fff');
+    t1.setAttribute('font-size','12');t1.setAttribute('font-weight','700');
+    t1.textContent=bp.top;
+    svg.appendChild(t1);
+    
+    const b2=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    b2.setAttribute('x',strand2X-10);b2.setAttribute('y',y-8);
+    b2.setAttribute('width',20);b2.setAttribute('height',16);
+    b2.setAttribute('fill',baseColors[bp.bot]);b2.setAttribute('rx',3);
+    b2.setAttribute('opacity',fracBound>0.05?1:0.7);
+    svg.appendChild(b2);
+    const t2=document.createElementNS('http://www.w3.org/2000/svg','text');
+    t2.setAttribute('x',strand2X);t2.setAttribute('y',y+4);
+    t2.setAttribute('text-anchor','middle');t2.setAttribute('fill','#fff');
+    t2.setAttribute('font-size','12');t2.setAttribute('font-weight','700');
+    t2.textContent=bp.bot;
+    svg.appendChild(t2);
+  }
+  
+  // Sugar-phosphate backbone connections
+  for(let i=0;i<len-1;i++){
+    const y1=startY+i*spacing,y2=startY+(i+1)*spacing;
+    const leftX=350-(fracBound<1?(1-fracBound)*60:0)/2;
+    const rightX=350+(fracBound<1?(1-fracBound)*60:0)/2;
+    const c1=document.createElementNS('http://www.w3.org/2000/svg','line');
+    c1.setAttribute('x1',leftX);c1.setAttribute('y1',y1+8);
+    c1.setAttribute('x2',leftX);c1.setAttribute('y2',y2-8);
+    c1.setAttribute('stroke','#0ea5e9');c1.setAttribute('stroke-width',2);
+    c1.setAttribute('opacity',fracBound>0.05?1:0.5);
+    svg.appendChild(c1);
+    
+    const c2=document.createElementNS('http://www.w3.org/2000/svg','line');
+    c2.setAttribute('x1',rightX);c2.setAttribute('y1',y1+8);
+    c2.setAttribute('x2',rightX);c2.setAttribute('y2',y2-8);
+    c2.setAttribute('stroke','#0ea5e9');c2.setAttribute('stroke-width',2);
+    c2.setAttribute('opacity',fracBound>0.05?1:0.5);
+    svg.appendChild(c2);
+  }
+  
+  // Melting curve mini graph
+  const graphX=520,graphY=320,graphW=160,graphH=60;
+  const bg=document.createElementNS('http://www.w3.org/2000/svg','rect');
+  bg.setAttribute('x',graphX);bg.setAttribute('y',graphY);
+  bg.setAttribute('width',graphW);bg.setAttribute('height',graphH);
+  bg.setAttribute('fill','rgba(0,0,0,0.3)');bg.setAttribute('rx',4);
+  svg.appendChild(bg);
+  
+  // Axes
+  const ax1=document.createElementNS('http://www.w3.org/2000/svg','line');
+  ax1.setAttribute('x1',graphX);ax1.setAttribute('y1',graphY+graphH);
+  ax1.setAttribute('x2',graphX+graphW);ax1.setAttribute('y2',graphY+graphH);
+  ax1.setAttribute('stroke','#94a3b8');ax1.setAttribute('stroke-width',1);
+  svg.appendChild(ax1);
+  const ax2=document.createElementNS('http://www.w3.org/2000/svg','line');
+  ax2.setAttribute('x1',graphX);ax2.setAttribute('y1',graphY);
+  ax2.setAttribute('x2',graphX);ax2.setAttribute('y2',graphY+graphH);
+  ax2.setAttribute('stroke','#94a3b8');ax2.setAttribute('stroke-width',1);
+  svg.appendChild(ax2);
+  
+  // Curve (A260 vs temp)
+  const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+  let dStr='';
+  for(let t=20;t<=100;t+=2){
+    const tmG=4*dnaState.gc+2*(100-dnaState.gc);
+    const f=Math.min(1,Math.max(0,(t-tmG)/30));
+    const aVal=1+0.35*f; // 1 to 1.35
+    const x=graphX+((t-20)/80)*graphW;
+    const y=graphY+graphH-((aVal-1)/0.35)*graphH;
+    dStr+=(t===20?'M':'L')+x+','+y+' ';
+  }
+  path.setAttribute('d',dStr);
+  path.setAttribute('fill','none');
+  path.setAttribute('stroke','#fbbf24');
+  path.setAttribute('stroke-width',2);
+  svg.appendChild(path);
+  
+  // Current temp indicator
+  const curX=graphX+((temp-20)/80)*graphW;
+  const indicator=document.createElementNS('http://www.w3.org/2000/svg','line');
+  indicator.setAttribute('x1',curX);indicator.setAttribute('y1',graphY);
+  indicator.setAttribute('x2',curX);indicator.setAttribute('y2',graphY+graphH);
+  indicator.setAttribute('stroke','#ef4444');indicator.setAttribute('stroke-width',1.5);
+  indicator.setAttribute('stroke-dasharray','3,2');
+  svg.appendChild(indicator);
+  
+  // Labels
+  const lbl1=document.createElementNS('http://www.w3.org/2000/svg','text');
+  lbl1.setAttribute('x',graphX+graphW/2);lbl1.setAttribute('y',graphY+graphH+15);
+  lbl1.setAttribute('text-anchor','middle');lbl1.setAttribute('fill','#cbd5e0');
+  lbl1.setAttribute('font-size','10');lbl1.textContent='Temperature →';
+  svg.appendChild(lbl1);
+  const lbl2=document.createElementNS('http://www.w3.org/2000/svg','text');
+  lbl2.setAttribute('x',graphX-5);lbl2.setAttribute('y',graphY+10);
+  lbl2.setAttribute('text-anchor','end');lbl2.setAttribute('fill','#cbd5e0');
+  lbl2.setAttribute('font-size','10');lbl2.textContent='A₂₆₀';
+  svg.appendChild(lbl2);
+  const lbl3=document.createElementNS('http://www.w3.org/2000/svg','text');
+  lbl3.setAttribute('x',graphX+graphW);lbl3.setAttribute('y',graphY+10);
+  lbl3.setAttribute('text-anchor','end');lbl3.setAttribute('fill','#fbbf24');
+  lbl3.setAttribute('font-size','10');lbl3.setAttribute('font-weight','700');
+  lbl3.textContent='Melting Curve';
+  svg.appendChild(lbl3);
+  
+  // Legend
+  const legA=document.createElementNS('http://www.w3.org/2000/svg','text');
+  legA.setAttribute('x',20);legA.setAttribute('y',30);
+  legA.setAttribute('fill','#cbd5e0');legA.setAttribute('font-size','12');
+  legA.setAttribute('font-weight','700');
+  legA.textContent=`A: 🟢 | T: 🔴 | G: 🔵 | C: 🟡 | GC: ${dnaState.gc}% | Length: ${len} bp`;
+  svg.appendChild(legA);
+}
+
+function updateTemperature(v){
+  dnaState.temp=+v;
+  document.getElementById('temp-display').textContent=v+'°C';
+  drawDNA();
+}
+
+function updateGC(v){
+  dnaState.gc=+v;
+  document.getElementById('gc-display').textContent=v+'%';
+  generateDNA();
+  drawDNA();
+}
+
+function resetDNA(){
+  dnaState.length=+document.getElementById('dna-length').value;
+  dnaState.temp=25;
+  document.getElementById('temperature').value=25;
+  document.getElementById('temp-display').textContent='25°C';
+  generateDNA();
+  drawDNA();
+}
+
+// Initialize simulators on load
+window.addEventListener('load',()=>{
+  generateDNA();
+  drawPolarimeter();
+  drawDNA();
+  resetPeptideAnimation();
+  updateResultDisplay();
+  resetTollens();
+});
+
+</script>
+</main></body>
+</html>

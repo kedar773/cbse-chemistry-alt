@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 11 Chemistry · Equilibrium — Master Study Notes</title>
+<link href="../../assets/vendor/katex/katex.min.css" rel="stylesheet"/>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px; line-height: 1.7; color: #1a1a2e; background: #f0f4f8;
+}
+/* ===== COLOR TOKENS ===== */
+:root {
+  --navy: #0d1b3e; --deepblue: #1a3a6b; --teal: #00b4d8;
+  --amber: #ffb703; --coral: #e63946; --green: #2ec4b6;
+  --lightbg: #f0f4f8; --cardbg: #ffffff; --text: #1a1a2e;
+  --textlight: #555; --border: #dde3ed;
+}
+/* ===== TAB CONTAINER ===== */
+.tab-container { max-width: 1200px; margin: 0 auto; padding: 0; }
+.tab-nav {
+  display: flex; background: var(--navy); position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(13,27,62,0.3); overflow-x: auto;
+}
+.tab-nav button {
+  flex: 1; min-width: 160px; padding: 16px 20px; background: transparent; color: rgba(255,255,255,0.65);
+  border: none; border-bottom: 3px solid transparent; cursor: pointer;
+  font-size: 14.5px; font-weight: 600; transition: all 0.25s; white-space: nowrap;
+  font-family: inherit; text-align: center;
+}
+.tab-nav button:hover { color: rgba(255,255,255,0.95); background: rgba(255,255,255,0.06); }
+.tab-nav button.active { color: #fff; border-bottom-color: var(--teal); background: rgba(255,255,255,0.08); }
+.tab-content { display: none; padding: 32px 24px; background: var(--lightbg); min-height: 70vh; }
+.tab-content.active { display: block; }
+/* ===== CARDS ===== */
+.card {
+  background: var(--cardbg); border-radius: 12px; padding: 28px 32px; margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid var(--border);
+}
+.card h2 { font-size: 22px; color: var(--navy); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--teal); }
+.card h3 { font-size: 18px; color: var(--deepblue); margin: 22px 0 10px; }
+.card h4 { font-size: 16px; color: var(--deepblue); margin: 14px 0 8px; }
+.card p { margin-bottom: 12px; color: var(--text); }
+.card ul, .card ol { margin: 8px 0 14px 24px; }
+.card li { margin-bottom: 6px; }
+/* ===== BADGES ===== */
+.exam-badge {
+  display: inline-block; background: var(--coral); color: #fff; font-size: 12px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px; margin-left: 8px; white-space: nowrap;
+  vertical-align: middle; letter-spacing: 0.3px;
+}
+.exam-badge.vhy { background: #9b2226; }
+.freq-badge {
+  display: inline-block; background: #e85d04; color: #fff; font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 4px; margin: 4px 4px 4px 0; white-space: nowrap;
+}
+/* ===== DERIVATION PANELS ===== */
+.derivation-btn {
+  display: inline-block; background: #fef3cd; color: #856404; border: 1px solid #ffc107;
+  border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: 0.2s; margin: 8px 0; user-select: none;
+}
+.derivation-btn:hover { background: #ffe69c; transform: translateY(-1px); }
+.derivation-btn.active { background: #ffc107; color: #533f03; }
+.derivation-panel {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease;
+  background: #fdfcf0; border: 1px solid #ffe69c; border-radius: 8px; margin: 4px 0 16px;
+}
+.derivation-panel.open { max-height: 2500px; padding: 20px 24px; }
+.derivation-panel h4 { color: #856404; margin-bottom: 8px; font-size: 15px; }
+.derivation-panel .step { margin: 8px 0; padding-left: 14px; border-left: 3px solid var(--amber); }
+/* ===== FORMULA BOX ===== */
+.formula-box {
+  background: #e8f4fd; border-left: 4px solid var(--teal); border-radius: 6px;
+  padding: 14px 18px; margin: 14px 0;
+}
+.formula-box .label { font-size: 12px; color: var(--textlight); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; margin-bottom: 4px; }
+/* ===== TABLES ===== */
+.content-table {
+  width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px;
+}
+.content-table th { background: var(--deepblue); color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; }
+.content-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); }
+.content-table tr:nth-child(even) { background: #f8fafc; }
+.content-table tr:hover { background: #eef5ff; }
+/* ===== DETAILS/NCERT SOLVED ===== */
+details.ncert {
+  background: #fafbfc; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; overflow: hidden;
+}
+details.ncert summary {
+  padding: 14px 18px; cursor: pointer; font-weight: 600; color: var(--deepblue);
+  background: #f0f4f8; transition: 0.2s; display: flex; align-items: center; gap: 8px;
+}
+details.ncert summary::before { content: '▸'; font-size: 18px; transition: transform 0.25s; color: var(--teal); }
+details.ncert[open] summary::before { transform: rotate(90deg); }
+details.ncert summary:hover { background: #e4eaf3; }
+details.ncert .solution { padding: 16px 20px; }
+details.ncert .solution p { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<div class="tab-container">
+  <!-- Top Navigation Bar -->
+  <nav class="tab-nav">
+    <button class="active" onclick="switchTab(0)">1. Chemical Equilibrium &amp; Law of Mass Action</button>
+    <button onclick="switchTab(1)">2. Le Chatelier's Principle &amp; Applications</button>
+    <button onclick="switchTab(2)">3. Ionic Equilibrium &amp; pH Scale</button>
+    <button onclick="switchTab(3)">4. Buffers, Salt Hydrolysis &amp; Ksp</button>
+    <button onclick="switchTab(4)">5. NCERT Solved Examples &amp; Exercises</button>
+  </nav>
+
+  <!-- ===================================================================
+       TAB 1: CHEMICAL EQUILIBRIUM & LAW OF MASS ACTION
+       =================================================================== -->
+  <section class="tab-content active" id="tab0">
+    <div class="card">
+      <h2>1. The Concept of Dynamic Equilibrium <span class="exam-badge">NCERT Core</span></h2>
+      <p>Equilibrium represents a state in a reversible reaction where the <strong>rate of the forward reaction equals the rate of the backward reaction</strong> ($r_f = r_b$).</p>
+      
+      <div class="formula-box">
+        <div class="label">Dynamic Nature of Equilibrium</div>
+        $$\text{At Equilibrium: } r_{\text{forward}} = r_{\text{backward}} \quad (\Delta G = 0)$$
+        <p style="margin-top: 6px; font-size: 13.5px; color: var(--textlight);">Macroscopic properties (concentrations, pressure, temperature, density, color) remain constant over time, yet both opposing processes continue at equal rates.</p>
+      </div>
+
+      <h3>Characteristics of Chemical Equilibrium</h3>
+      <ul>
+        <li><strong>Attainable from either direction:</strong> Equilibrium can be achieved starting from reactants or from products in a closed system.</li>
+        <li><strong>Dynamic in nature:</strong> Reaction does not stop; dynamic exchange of molecules persists indefinitely.</li>
+        <li><strong>Closed system requirement:</strong> Essential so that volatile matter or energy is not permanently lost to surroundings.</li>
+        <li><strong>Thermodynamic condition:</strong> $\Delta G = 0$ at equilibrium, where Gibbs free energy reaches an absolute minimum.</li>
+        <li><strong>Catalyst effect:</strong> A catalyst speeds up forward and backward rates equally by lowering the activation energy barrier; it does <em>not</em> alter the position or numerical value of $K_c$.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2. Law of Mass Action &amp; Equilibrium Constants ($K_c$ and $K_p$) <span class="exam-badge vhy">High Yield</span></h2>
+      <p>Proposed by Guldberg and Waage (1864): <em>At a given temperature, the rate of a chemical reaction is directly proportional to the product of active masses (molar concentrations) of the reacting species raised to powers equal to their stoichiometric coefficients.</em></p>
+
+      <p>For a general homogeneous gaseous equilibrium:</p>
+      $$a\text{A}(g) + b\text{B}(g) \rightleftharpoons c\text{C}(g) + d\text{D}(g)$$
+
+      <div class="formula-box">
+        <div class="label">Equilibrium Expressions</div>
+        $$K_c = \frac{[\text{C}]^c [\text{D}]^d}{[\text{A}]^a [\text{B}]^b} \quad\text{(in terms of molar concentrations)}$$
+        $$K_p = \frac{(P_{\text{C}})^c (P_{\text{D}})^d}{(P_{\text{A}})^a (P_{\text{B}})^b} \quad\text{(in terms of partial pressures in bar or atm)}$$
+      </div>
+
+      <div class="derivation-btn" onclick="toggleDeriv('deriv1')">Derivation: Relation Between Kp and Kc ▼</div>
+      <div class="derivation-panel" id="deriv1">
+        <h4>Step-by-Step Proof of $K_p = K_c(RT)^{\Delta n_g}$</h4>
+        <div class="step">
+          <strong>Step 1: Ideal Gas Equation:</strong><br/>
+          For an ideal gas, $PV = nRT \implies P = \left(\frac{n}{V}\right)RT = cRT$.<br/>
+          Thus, for any gas $i$: $P_i = [i]RT$.
+        </div>
+        <div class="step">
+          <strong>Step 2: Substitute into $K_p$:</strong><br/>
+          $$K_p = \frac{([\text{C}]RT)^c ([\text{D}]RT)^d}{([\text{A}]RT)^a ([\text{B}]RT)^b} = \frac{[\text{C}]^c [\text{D}]^d}{[\text{A}]^a [\text{B}]^b} \cdot \frac{(RT)^{c+d}}{(RT)^{a+b}}$$
+        </div>
+        <div class="step">
+          <strong>Step 3: Define $\Delta n_g$:</strong><br/>
+          $\Delta n_g = (c+d) - (a+b) = \sum n_{g(\text{products})} - \sum n_{g(\text{reactants})}$.<br/>
+          $$\mathbf{K_p = K_c (RT)^{\Delta n_g}}$$
+        </div>
+        <p style="margin-top: 8px; font-size: 13px;"><em>Note: Use $R = 0.0831 \text{ L}\cdot\text{bar}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}$ if pressure is in bar, or $R = 0.0821 \text{ L}\cdot\text{atm}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}$ if pressure is in atm.</em></p>
+      </div>
+
+      <h3>Three Critical Cases of $\Delta n_g$</h3>
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Relationship</th>
+            <th>Example Reaction</th>
+            <th>Pressure Effect on Yield</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>$\Delta n_g = 0$</strong></td>
+            <td>$K_p = K_c$ (Dimensionless)</td>
+            <td>$\text{H}_2(g) + \text{I}_2(g) \rightleftharpoons 2\text{HI}(g)$</td>
+            <td>Pressure changes have <strong>no effect</strong> on equilibrium composition.</td>
+          </tr>
+          <tr>
+            <td><strong>$\Delta n_g > 0$</strong></td>
+            <td>$K_p > K_c$ (at $T > 12.2\text{ K}$)</td>
+            <td>$\text{PCl}_5(g) \rightleftharpoons \text{PCl}_3(g) + \text{Cl}_2(g)$</td>
+            <td>Higher pressure shifts reaction <strong>backward</strong> (towards fewer gas moles).</td>
+          </tr>
+          <tr>
+            <td><strong>$\Delta n_g < 0$</strong></td>
+            <td>$K_p < K_c$ (at $T > 12.2\text{ K}$)</td>
+            <td>$\text{N}_2(g) + 3\text{H}_2(g) \rightleftharpoons 2\text{NH}_3(g)$</td>
+            <td>Higher pressure shifts reaction <strong>forward</strong> (favors products).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>3. Reaction Quotient ($Q$) &amp; Predicting Reaction Direction</h2>
+      <p>The Reaction Quotient ($Q_c$ or $Q_p$) has the same algebraic form as the equilibrium constant, but is evaluated using <em>non-equilibrium (instantaneous) concentrations or partial pressures</em>.</p>
+      
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Thermodynamic Meaning</th>
+            <th>Reaction Direction</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>$Q_c < K_c$</strong></td>
+            <td>Reactants are in excess; system must form more products.</td>
+            <td>Shifts <strong>Forward</strong> ($\rightarrow$)</td>
+          </tr>
+          <tr>
+            <td><strong>$Q_c = K_c$</strong></td>
+            <td>Dynamic equilibrium achieved; rate of forward = rate of backward.</td>
+            <td><strong>At Equilibrium</strong> ($\rightleftharpoons$)</td>
+          </tr>
+          <tr>
+            <td><strong>$Q_c > K_c$</strong></td>
+            <td>Products are in excess; products consume to form reactants.</td>
+            <td>Shifts <strong>Backward</strong> ($\leftarrow$)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Thermodynamics of Equilibrium ($\Delta G^\circ$ and $K$)</h3>
+      <div class="formula-box">
+        $$\Delta G = \Delta G^\circ + RT \ln Q$$
+        $$\text{At equilibrium, } \Delta G = 0 \text{ and } Q = K \implies \mathbf{\Delta G^\circ = -RT \ln K = -2.303 RT \log_{10} K}$$
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       TAB 2: LE CHATELIER'S PRINCIPLE & APPLICATIONS
+       =================================================================== -->
+  <section class="tab-content" id="tab1">
+    <div class="card">
+      <h2>1. Le Chatelier's Principle <span class="exam-badge vhy">CBSE Mandatory 3/5 Marks</span></h2>
+      <p style="font-style: italic; font-size: 17px; color: var(--deepblue); background: #f0f7ff; padding: 14px 18px; border-left: 4px solid var(--deepblue); border-radius: 4px; margin-bottom: 16px;">
+        "If a system at equilibrium is subjected to a change in concentration, pressure, volume, or temperature, the equilibrium shifts in such a direction as to undo or minimize the effect of the applied change."
+      </p>
+
+      <h3>1. Effect of Concentration</h3>
+      <ul>
+        <li><strong>Adding a reactant or removing a product:</strong> Shifts equilibrium in the <strong>forward direction</strong>.</li>
+        <li><strong>Adding a product or removing a reactant:</strong> Shifts equilibrium in the <strong>backward direction</strong>.</li>
+        <li><em>Note: Equilibrium constant $K_c$ remains completely unchanged!</em></li>
+      </ul>
+
+      <h3>2. Effect of Pressure / Volume</h3>
+      <ul>
+        <li>An increase in total external pressure (or decrease in volume) shifts equilibrium towards the side with <strong>fewer moles of gas</strong>.</li>
+        <li>A decrease in pressure shifts equilibrium towards the side with <strong>more moles of gas</strong>.</li>
+        <li>If $\Delta n_g = 0$, pressure change has <strong>no effect</strong> on the equilibrium state.</li>
+      </ul>
+
+      <h3>3. Effect of Temperature (Alters $K_{eq}$!)</h3>
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Reaction Nature</th>
+            <th>$\Delta H$</th>
+            <th>Effect of Increasing Temperature</th>
+            <th>Effect on Equilibrium Constant ($K$)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Exothermic</strong></td>
+            <td>$\Delta H < 0$ (Heat released)</td>
+            <td>Shifts <strong>Backward</strong> ($\leftarrow$)</td>
+            <td><strong>$K$ decreases</strong> as $T$ increases</td>
+          </tr>
+          <tr>
+            <td><strong>Endothermic</strong></td>
+            <td>$\Delta H > 0$ (Heat absorbed)</td>
+            <td>Shifts <strong>Forward</strong> ($\rightarrow$)</td>
+            <td><strong>$K$ increases</strong> as $T$ increases</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="formula-box">
+        <div class="label">Van 't Hoff Equation</div>
+        $$\log_{10}\left(\frac{K_2}{K_1}\right) = \frac{\Delta H^\circ}{2.303 R} \left[\frac{T_2 - T_1}{T_1 T_2}\right]$$
+      </div>
+
+      <h3>4. Effect of Inert Gas Addition</h3>
+      <ul>
+        <li><strong>At Constant Volume:</strong> Inert gas increases total pressure, but partial pressures and concentrations of reacting gases remain unchanged. <strong>$\implies$ No shift in equilibrium!</strong></li>
+        <li><strong>At Constant Pressure:</strong> Adding inert gas increases system volume, decreasing partial pressures of all gases. Equilibrium shifts towards the side with <strong>larger number of gaseous moles</strong> ($\Delta n_g$).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2. High-Yield Industrial Applications</h2>
+      <h3>A. Haber's Process for Ammonia Synthesis</h3>
+      $$\text{N}_2(g) + 3\text{H}_2(g) \rightleftharpoons 2\text{NH}_3(g) \quad \Delta H = -92.4 \text{ kJ/mol} \quad (\Delta n_g = -2)$$
+      <ul>
+        <li><strong>High Pressure (~200 atm):</strong> Favors forward reaction because $\Delta n_g = 2 - 4 = -2 < 0$.</li>
+        <li><strong>Optimum Temperature (~700 K):</strong> Low temperature favors exothermic forward yield, but temperature must be moderate for acceptable reaction rate.</li>
+        <li><strong>Catalyst:</strong> Finely divided Iron ($\text{Fe}$) with Molybdenum ($\text{Mo}$) or $\text{K}_2\text{O}/\text{Al}_2\text{O}_3$ promoter.</li>
+        <li><strong>Continuous removal of $\text{NH}_3$:</strong> Liquefying and removing $\text{NH}_3$ continuously drives forward conversion.</li>
+      </ul>
+
+      <h3>B. Contact Process for $\text{SO}_3$ Synthesis</h3>
+      $$2\text{SO}_2(g) + \text{O}_2(g) \rightleftharpoons 2\text{SO}_3(g) \quad \Delta H = -196 \text{ kJ/mol}$$
+      <p>Favored by high pressure (1–2 bar sufficient), optimum temperature (~720 K), and $\text{V}_2\text{O}_5$ catalyst.</p>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       TAB 3: IONIC EQUILIBRIUM & PH SCALE
+       =================================================================== -->
+  <section class="tab-content" id="tab2">
+    <div class="card">
+      <h2>1. Acid-Base Concepts &amp; Autoionization of Water <span class="exam-badge vhy">High Yield</span></h2>
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Theory</th>
+            <th>Acid Definition</th>
+            <th>Base Definition</th>
+            <th>Limitation / Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Arrhenius</strong></td>
+            <td>Substance giving $\text{H}^+$ (or $\text{H}_3\text{O}^+$) in water</td>
+            <td>Substance giving $\text{OH}^-$ in water</td>
+            <td>Restricted to aqueous solutions only; cannot explain basicity of $\text{NH}_3$.</td>
+          </tr>
+          <tr>
+            <td><strong>Brønsted-Lowry</strong></td>
+            <td><strong>Proton ($\text{H}^+$) donor</strong></td>
+            <td><strong>Proton ($\text{H}^+$) acceptor</strong></td>
+            <td>Forms conjugate acid-base pairs: $\text{NH}_3 + \text{H}_2\text{O} \rightleftharpoons \text{NH}_4^+ + \text{OH}^-$.</td>
+          </tr>
+          <tr>
+            <td><strong>Lewis</strong></td>
+            <td><strong>Electron pair acceptor</strong> (electrophile)</td>
+            <td><strong>Electron pair donor</strong> (nucleophile)</td>
+            <td>Broadest concept: $\text{BF}_3, \text{AlCl}_3$ are Lewis acids; $\text{NH}_3, \text{H}_2\text{O}$ are Lewis bases.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Conjugate Acid-Base Pairs</h3>
+      <p>A pair of substances that differ by only <strong>one proton ($\text{H}^+$)</strong>.</p>
+      <ul>
+        <li>$\text{Conjugate Acid} = \text{Base} + \text{H}^+$ (e.g. Conjugate acid of $\text{NH}_3$ is $\text{NH}_4^+$)</li>
+        <li>$\text{Conjugate Base} = \text{Acid} - \text{H}^+$ (e.g. Conjugate base of $\text{HSO}_4^-$ is $\text{SO}_4^{2-}$)</li>
+        <li><strong>Golden Rule:</strong> <em>Strong acid has a weak conjugate base; weak acid has a strong conjugate base.</em></li>
+      </ul>
+
+      <h3>Ionic Product of Water ($K_w$)</h3>
+      <p>Water undergoes auto-protolysis: $2\text{H}_2\text{O}(l) \rightleftharpoons \text{H}_3\text{O}^+(aq) + \text{OH}^-(aq)$</p>
+      <div class="formula-box">
+        <div class="label">Auto-Ionization Constant</div>
+        $$K_w = [\text{H}^+][\text{OH}^-] = 1.0 \times 10^{-14} \text{ at } 25^\circ\text{C } (298\text{ K})$$
+        $$\text{Since auto-ionization is endothermic, } K_w \text{ increases with temperature! (At } 90^\circ\text{C, } K_w \approx 10^{-12} \implies \text{neutral pH} = 6\text{)}$$
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>2. The pH Scale &amp; Weak Electrolyte Dissociation</h2>
+      <div class="formula-box">
+        <div class="label">Logarithmic Definitions</div>
+        $$\text{pH} = -\log_{10}[\text{H}^+] \qquad \text{pOH} = -\log_{10}[\text{OH}^-]$$
+        $$\mathbf{\text{pH} + \text{pOH} = \text{pK}_w = 14.0 \quad (\text{at } 25^\circ\text{C})}$$
+      </div>
+
+      <h3>Ostwald's Dilution Law (For Weak Monoprotic Acids)</h3>
+      <p>For a weak acid $\text{HA} \rightleftharpoons \text{H}^+ + \text{A}^-$ with initial concentration $C$ and degree of dissociation $\alpha$:</p>
+      
+      <div class="derivation-btn" onclick="toggleDeriv('deriv2')">Derivation: Ostwald's Dilution Law ▼</div>
+      <div class="derivation-panel" id="deriv2">
+        <h4>Step-by-Step Proof</h4>
+        <div class="step">
+          Initial: $[\text{HA}] = C, [\text{H}^+] = 0, [\text{A}^-] = 0$<br/>
+          Equilibrium: $[\text{HA}] = C(1-\alpha), [\text{H}^+] = C\alpha, [\text{A}^-] = C\alpha$
+        </div>
+        <div class="step">
+          $$K_a = \frac{[\text{H}^+][\text{A}^-]}{[\text{HA}]} = \frac{(C\alpha)(C\alpha)}{C(1-\alpha)} = \frac{C\alpha^2}{1-\alpha}$$
+        </div>
+        <div class="step">
+          For weak electrolytes, $\alpha \ll 1 \implies 1-\alpha \approx 1$:<br/>
+          $$K_a \approx C\alpha^2 \implies \mathbf{\alpha = \sqrt{\frac{K_a}{C}}}$$
+          $$[\text{H}^+] = C\alpha = C\sqrt{\frac{K_a}{C}} = \mathbf{\sqrt{K_a \cdot C}}$$
+          $$\mathbf{\text{pH} = \frac{1}{2}[\text{p}K_a - \log_{10} C]}$$
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       TAB 4: BUFFERS, SALT HYDROLYSIS & KSP
+       =================================================================== -->
+  <section class="tab-content" id="tab3">
+    <div class="card">
+      <h2>1. Common Ion Effect &amp; Buffer Solutions <span class="exam-badge vhy">High Yield</span></h2>
+      <p><strong>Common Ion Effect:</strong> The suppression of the degree of dissociation of a weak electrolyte by the addition of a strong electrolyte containing a common ion. (e.g. Adding $\text{CH}_3\text{COONa}$ suppresses ionization of $\text{CH}_3\text{COOH}$).</p>
+
+      <h3>Buffer Solutions</h3>
+      <p>A solution that resists change in its pH upon the addition of small amounts of strong acid, strong base, or upon dilution.</p>
+      
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Buffer Type</th>
+            <th>Composition</th>
+            <th>Henderson-Hasselbalch Equation</th>
+            <th>Effective Range</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Acidic Buffer</strong></td>
+            <td>Weak Acid + its Salt with Strong Base<br/>(e.g., $\text{CH}_3\text{COOH} + \text{CH}_3\text{COONa}$)</td>
+            <td>$$\mathbf{\text{pH} = \text{p}K_a + \log_{10}\left(\frac{[\text{Salt}]}{[\text{Acid}]}\right)}$$</td>
+            <td>$\text{pH} = \text{p}K_a \pm 1$</td>
+          </tr>
+          <tr>
+            <td><strong>Basic Buffer</strong></td>
+            <td>Weak Base + its Salt with Strong Acid<br/>(e.g., $\text{NH}_4\text{OH} + \text{NH}_4\text{Cl}$)</td>
+            <td>$$\mathbf{\text{pOH} = \text{p}K_b + \log_{10}\left(\frac{[\text{Salt}]}{[\text{Base}]}\right)}$$<br/>$\text{pH} = 14 - \text{pOH}$</td>
+            <td>$\text{pOH} = \text{p}K_b \pm 1$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>2. Salt Hydrolysis &amp; pH Formulas <span class="exam-badge">NCERT Formula Bank</span></h2>
+      <p>Hydrolysis is the interaction of cations and/or anions of a salt with water to produce acidity or basicity.</p>
+
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Salt Type</th>
+            <th>Example</th>
+            <th>Hydrolysis Type</th>
+            <th>Nature of Solution</th>
+            <th>pH Formula ($25^\circ\text{C}$)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Strong Acid + Strong Base</strong></td>
+            <td>$\text{NaCl}, \text{KNO}_3$</td>
+            <td>No Hydrolysis</td>
+            <td>Neutral ($\text{pH} = 7$)</td>
+            <td>$\text{pH} = 7.0$</td>
+          </tr>
+          <tr>
+            <td><strong>Weak Acid + Strong Base</strong></td>
+            <td>$\text{CH}_3\text{COONa}$</td>
+            <td>Anionic Hydrolysis</td>
+            <td>Basic ($\text{pH} > 7$)</td>
+            <td>$$\mathbf{\text{pH} = 7 + \frac{1}{2}\text{p}K_a + \frac{1}{2}\log C}$$</td>
+          </tr>
+          <tr>
+            <td><strong>Strong Acid + Weak Base</strong></td>
+            <td>$\text{NH}_4\text{Cl}$</td>
+            <td>Cationic Hydrolysis</td>
+            <td>Acidic ($\text{pH} < 7$)</td>
+            <td>$$\mathbf{\text{pH} = 7 - \frac{1}{2}\text{p}K_b - \frac{1}{2}\log C}$$</td>
+          </tr>
+          <tr>
+            <td><strong>Weak Acid + Weak Base</strong></td>
+            <td>$\text{CH}_3\text{COONH}_4$</td>
+            <td>Both Cationic &amp; Anionic</td>
+            <td>Depends on $K_a$ vs $K_b$</td>
+            <td>$$\mathbf{\text{pH} = 7 + \frac{1}{2}\text{p}K_a - \frac{1}{2}\text{p}K_b}$$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>3. Solubility Product Constant ($K_{sp}$) &amp; Precipitation Criteria</h2>
+      <p>For a sparingly soluble salt $\text{A}_x\text{B}_y(s) \rightleftharpoons x\text{A}^{y+}(aq) + y\text{B}^{x-}(aq)$ with molar solubility $S$ (mol/L):</p>
+      
+      <div class="formula-box">
+        <div class="label">General Solubility Product Expression</div>
+        $$K_{sp} = [\text{A}^{y+}]^x [\text{B}^{x-}]^y = (xS)^x (yS)^y = \mathbf{x^x y^y S^{x+y}}$$
+      </div>
+
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Salt Stoichiometry</th>
+            <th>Example</th>
+            <th>Dissociation</th>
+            <th>$K_{sp}$ in terms of $S$</th>
+            <th>Solubility ($S$)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>$1:1$ Type (AB)</strong></td>
+            <td>$\text{AgCl}, \text{BaSO}_4$</td>
+            <td>$\text{AB} \rightleftharpoons \text{A}^+ + \text{B}^-$</td>
+            <td>$K_{sp} = S^2$</td>
+            <td>$S = \sqrt{K_{sp}}$</td>
+          </tr>
+          <tr>
+            <td><strong>$1:2$ Type ($\text{AB}_2$)</strong></td>
+            <td>$\text{PbCl}_2, \text{CaF}_2$</td>
+            <td>$\text{AB}_2 \rightleftharpoons \text{A}^{2+} + 2\text{B}^-$</td>
+            <td>$K_{sp} = (S)(2S)^2 = 4S^3$</td>
+            <td>$S = \left(\frac{K_{sp}}{4}\right)^{1/3}$</td>
+          </tr>
+          <tr>
+            <td><strong>$1:3$ Type ($\text{AB}_3$)</strong></td>
+            <td>$\text{Al(OH)}_3, \text{Fe(OH)}_3$</td>
+            <td>$\text{AB}_3 \rightleftharpoons \text{A}^{3+} + 3\text{B}^-$</td>
+            <td>$K_{sp} = (S)(3S)^3 = 27S^4$</td>
+            <td>$S = \left(\frac{K_{sp}}{27}\right)^{1/4}$</td>
+          </tr>
+          <tr>
+            <td><strong>$2:3$ Type ($\text{A}_2\text{B}_3$)</strong></td>
+            <td>$\text{As}_2\text{S}_3, \text{Bi}_2\text{S}_3$</td>
+            <td>$\text{A}_2\text{B}_3 \rightleftharpoons 2\text{A}^{3+} + 3\text{B}^{2-}$</td>
+            <td>$K_{sp} = (2S)^2(3S)^3 = 108S^5$</td>
+            <td>$S = \left(\frac{K_{sp}}{108}\right)^{1/5}$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Condition for Precipitation: Ionic Product ($Q_{sp}$) vs $K_{sp}$</h3>
+      <ul>
+        <li><strong>$Q_{sp} < K_{sp}$ (Unsaturated solution):</strong> No precipitate forms; more solute can dissolve.</li>
+        <li><strong>$Q_{sp} = K_{sp}$ (Saturated solution):</strong> Dynamic equilibrium between precipitate and dissolved ions.</li>
+        <li><strong>$Q_{sp} > K_{sp}$ (Super-saturated solution):</strong> <strong>Precipitation occurs!</strong> Solid precipitates out until $Q_{sp} = K_{sp}$.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       TAB 5: NCERT EXAMPLES & EXERCISE SOLUTIONS
+       =================================================================== -->
+  <section class="tab-content" id="tab4">
+    <div class="card">
+      <h2>NCERT In-Text Examples &amp; Exercise Solutions <span class="exam-badge vhy">CBSE Board &amp; JEE</span></h2>
+      <p>Comprehensive step-by-step solutions to official NCERT textbook examples, in-text questions, and end-of-chapter exercises for Chapter 6: Equilibrium.</p>
+
+      <!-- Sub-filter Pills -->
+      <div style="display: flex; gap: 8px; margin: 16px 0 24px; flex-wrap: wrap;">
+        <button class="derivation-btn active" style="margin: 0;" onclick="filterProblems('all', this)">All Problems (12)</button>
+        <button class="derivation-btn" style="margin: 0;" onclick="filterProblems('chem', this)">Chemical Equilibrium (1–5)</button>
+        <button class="derivation-btn" style="margin: 0;" onclick="filterProblems('ionic', this)">Ionic Equilibrium (6–12)</button>
+      </div>
+
+      <!-- ==================== PART A: CHEMICAL EQUILIBRIUM ==================== -->
+      <h3 style="margin-top: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--teal);">Part A: Chemical Equilibrium Solutions</h3>
+
+      <!-- Problem 1 -->
+      <details class="ncert prob-item" data-type="chem" open>
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Example 6.1</span>
+          Calculation of Equilibrium Constant (Kc) from Equilibrium Concentrations
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> The following concentrations were obtained for the formation of $\text{NH}_3$ from $\text{N}_2$ and $\text{H}_2$ at equilibrium at $500\text{ K}$: $[\text{N}_2] = 1.5 \times 10^{-2}\text{ M}$, $[\text{H}_2] = 3.0 \times 10^{-2}\text{ M}$, and $[\text{NH}_3] = 1.2 \times 10^{-2}\text{ M}$. Calculate the equilibrium constant $K_c$.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Balanced Equation:</strong> $\text{N}_2(g) + 3\text{H}_2(g) \rightleftharpoons 2\text{NH}_3(g)$<br/>
+            <strong>Equilibrium Law Expression:</strong>
+            $$K_c = \frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Substitution:</strong>
+            $$K_c = \frac{(1.2 \times 10^{-2})^2}{(1.5 \times 10^{-2})(3.0 \times 10^{-2})^3} = \frac{1.44 \times 10^{-4}}{(1.5 \times 10^{-2})(2.7 \times 10^{-5})} = \frac{1.44 \times 10^{-4}}{4.05 \times 10^{-7}} \approx 355.55\text{ M}^{-2}$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> $K_c = 3.56 \times 10^2 \text{ L}^2\cdot\text{mol}^{-2}$ (or $356\text{ M}^{-2}$)
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 2 -->
+      <details class="ncert prob-item" data-type="chem">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Example 6.2</span>
+          Conversion Between Kc and Kp ($K_p = K_c(RT)^{\Delta n_g}$)
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> At $450\text{ K}$, $K_p = 2.0 \times 10^{10}\text{ bar}^{-1}$ for the reaction: $2\text{SO}_2(g) + \text{O}_2(g) \rightleftharpoons 2\text{SO}_3(g)$. What is $K_c$ at this temperature?</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Calculate $\Delta n_g$:</strong>
+            $$\Delta n_g = n_{\text{products}(g)} - n_{\text{reactants}(g)} = 2 - (2 + 1) = 2 - 3 = -1$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Relate $K_p$ and $K_c$:</strong>
+            $$K_p = K_c(RT)^{\Delta n_g} \implies K_c = K_p(RT)^{-\Delta n_g} = K_p(RT)^1$$
+            Using $R = 0.0831 \text{ L}\cdot\text{bar}\cdot\text{K}^{-1}\cdot\text{mol}^{-1}$ and $T = 450\text{ K}$:
+            $$K_c = (2.0 \times 10^{10} \text{ bar}^{-1}) \times (0.0831 \times 450 \text{ bar}\cdot\text{M}^{-1}) = 2.0 \times 10^{10} \times 37.395 \approx 7.48 \times 10^{11} \text{ M}^{-1}$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> $K_c = 7.48 \times 10^{11} \text{ L}\cdot\text{mol}^{-1}$
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 3 -->
+      <details class="ncert prob-item" data-type="chem">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT In-Text 6.3</span>
+          Predicting Reaction Direction Using Reaction Quotient ($Q_c$)
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> The value of $K_c$ for the reaction $2\text{A} \rightleftharpoons \text{B} + \text{C}$ is $2 \times 10^{-3}$ at a given temperature. At a given time, the composition of the reaction mixture is $[\text{A}] = [\text{B}] = [\text{C}] = 3 \times 10^{-4}\text{ M}$. In which direction will the reaction proceed?</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Write the Reaction Quotient ($Q_c$) Expression:</strong>
+            $$Q_c = \frac{[\text{B}][\text{C}]}{[\text{A}]^2}$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Calculate $Q_c$:</strong>
+            $$Q_c = \frac{(3 \times 10^{-4}) \times (3 \times 10^{-4})}{(3 \times 10^{-4})^2} = \frac{9 \times 10^{-8}}{9 \times 10^{-8}} = 1.0$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Comparison with $K_c$:</strong><br/>
+            Here, $Q_c = 1.0$ and $K_c = 2 \times 10^{-3} = 0.002$.<br/>
+            Since $\mathbf{Q_c > K_c}$, products are in excess relative to equilibrium proportions.
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> The reaction will proceed in the <strong>backward (reverse) direction</strong> to reach equilibrium.
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 4 -->
+      <details class="ncert prob-item" data-type="chem">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Exercise 6.8</span>
+          ICE Table &amp; Degree of Dissociation ($lpha$) of $\text{PCl}_5$
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> $13.8\text{ g}$ of $\text{N}_2\text{O}_4$ was placed in a $1.0\text{ L}$ reaction vessel at $400\text{ K}$ and allowed to attain equilibrium: $\text{N}_2\text{O}_4(g) \rightleftharpoons 2\text{NO}_2(g)$. The total pressure at equilibrium was found to be $9.15\text{ bar}$. Calculate $K_c$, $K_p$, and partial pressures at equilibrium.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Initial Moles &amp; Initial Pressure:</strong><br/>
+            Molar mass of $\text{N}_2\text{O}_4 = 2(14) + 4(16) = 92 \text{ g/mol}$.<br/>
+            Initial moles $n_0 = \frac{13.8}{92} = 0.15 \text{ mol}$ in $V = 1.0\text{ L}$.<br/>
+            Initial pressure $P_0 = \frac{nRT}{V} = \frac{0.15 \times 0.0831 \times 400}{1.0} = 4.986 \approx 4.98\text{ bar}$.
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>ICE Pressure Analysis:</strong><br/>
+            $\text{N}_2\text{O}_4(g) \rightleftharpoons 2\text{NO}_2(g)$<br/>
+            Initial: $P_{\text{N}_2\text{O}_4} = P_0$, $P_{\text{NO}_2} = 0$<br/>
+            Equilibrium: $P_{\text{N}_2\text{O}_4} = P_0 - p$, $P_{\text{NO}_2} = 2p$<br/>
+            Total Pressure: $P_{\text{total}} = (P_0 - p) + 2p = P_0 + p = 9.15\text{ bar}$<br/>
+            $$p = 9.15 - P_0 = 9.15 - 4.98 = 4.17\text{ bar}$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Equilibrium Partial Pressures &amp; $K_p$:</strong><br/>
+            $$P_{\text{N}_2\text{O}_4} = 4.98 - 4.17 = 0.81\text{ bar}$$
+            $$P_{\text{NO}_2} = 2(4.17) = 8.34\text{ bar}$$
+            $$K_p = \frac{(P_{\text{NO}_2})^2}{P_{\text{N}_2\text{O}_4}} = \frac{(8.34)^2}{0.81} = \frac{69.56}{0.81} = 85.87\text{ bar}$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> $P_{\text{N}_2\text{O}_4} = 0.81\text{ bar}$, $P_{\text{NO}_2} = 8.34\text{ bar}$, $K_p = 85.9\text{ bar}$, $K_c = \frac{K_p}{RT} = \frac{85.87}{0.0831 \times 400} = 2.58\text{ mol/L}$.
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 5 -->
+      <details class="ncert prob-item" data-type="chem">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Exercise 6.12</span>
+          Standard Gibbs Free Energy Change ($\Delta G^\circ$) and $K$
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> Calculate $\Delta G^\circ$ for conversion of oxygen to ozone, $3\text{O}_2(g) \rightleftharpoons 2\text{O}_3(g)$ at $298\text{ K}$, if $K_p$ for this conversion is $2.47 \times 10^{-29}$.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Formula:</strong>
+            $$\Delta G^\circ = -2.303 RT \log_{10} K_p$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Calculation:</strong><br/>
+            $R = 8.314 \text{ J}\cdot\text{K}^{-1}\cdot\text{mol}^{-1}$, $T = 298\text{ K}$, $K_p = 2.47 \times 10^{-29}$<br/>
+            $$\log_{10}(2.47 \times 10^{-29}) = \log_{10}(2.47) - 29 = 0.3927 - 29 = -28.6073$$
+            $$\Delta G^\circ = -2.303 \times 8.314 \times 298 \times (-28.6073) = +163,228 \text{ J/mol}$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> $\Delta G^\circ = +163.2 \text{ kJ/mol}$ (A large positive $\Delta G^\circ$ confirms that the equilibrium lies almost completely on the reactant side).
+          </div>
+        </div>
+      </details>
+
+      <!-- ==================== PART B: IONIC EQUILIBRIUM ==================== -->
+      <h3 style="margin-top: 28px; padding-bottom: 6px; border-bottom: 2px solid var(--teal);">Part B: Ionic Equilibrium Solutions</h3>
+
+      <!-- Problem 6 -->
+      <details class="ncert prob-item" data-type="ionic" open>
+        <summary>
+          <span style="background: var(--coral); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Classic Trap</span>
+          pH of Ultra-Dilute Strong Acid ($10^{-8}\text{ M HCl}$)
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> Calculate the pH of a $1.0 \times 10^{-8}\text{ M } \text{HCl}$ aqueous solution at $25^\circ\text{C}$.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--coral);">
+            <strong>Common Error to Avoid:</strong> Directly calculating $\text{pH} = -\log(10^{-8}) = 8$ is <em>completely incorrect</em>! An acid solution can NEVER have a basic pH ($> 7$).<br/>
+            Because the acid is extremely dilute ($[\text{H}^+] \le 10^{-6}\text{ M}$), autoionization of water ($10^{-7}\text{ M}$) MUST be taken into account.
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Equilibrium Setup:</strong><br/>
+            Let $[\text{H}^+]$ from $\text{H}_2\text{O} = x$.<br/>
+            Total $[\text{H}^+] = [\text{H}^+]_{\text{HCl}} + [\text{H}^+]_{\text{H}_2\text{O}} = (10^{-8} + x)\text{ M}$.<br/>
+            Total $[\text{OH}^-] = x\text{ M}$.<br/>
+            $$K_w = [\text{H}^+][\text{OH}^-] = (10^{-8} + x)(x) = 1.0 \times 10^{-14}$$
+            $$x^2 + 10^{-8}x - 10^{-14} = 0$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Solving Quadratic Equation:</strong><br/>
+            $$x = \frac{-10^{-8} + \sqrt{(10^{-8})^2 - 4(1)(-10^{-14})}}{2} = \frac{-10^{-8} + \sqrt{10^{-16} + 4 \times 10^{-14}}}{2} \approx \frac{-0.01 \times 10^{-6} + 2.00025 \times 10^{-7}}{2} = 9.51 \times 10^{-8}\text{ M}$$
+            $$[\text{H}^+]_{\text{total}} = 10^{-8} + 9.51 \times 10^{-8} = 1.051 \times 10^{-7}\text{ M}$$
+            $$\text{pH} = -\log_{10}(1.051 \times 10^{-7}) = 7 - \log_{10}(1.051) = 7 - 0.0216 \approx 6.98$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> $\text{pH} = 6.98$ (Slightly acidic, as physically expected for dilute acid).
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 7 -->
+      <details class="ncert prob-item" data-type="ionic">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Example 6.11</span>
+          Ostwald's Dilution Law &amp; Ionization of Weak Acid ($	ext{HF}$)
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> The ionization constant of $\text{HF}$ is $3.2 \times 10^{-4}$ at $298\text{ K}$. Calculate the degree of dissociation ($\alpha$) of $\text{HF}$ in its $0.02\text{ M}$ solution. Also calculate the concentration of all species ($[\text{H}_3\text{O}^+]$, $[\text{F}^-]$, and $[\text{HF}]$) at equilibrium, and its pH.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Equilibrium Expression:</strong> $\text{HF} + \text{H}_2\text{O} \rightleftharpoons \text{H}_3\text{O}^+ + \text{F}^-$<br/>
+            $$K_a = \frac{C\alpha^2}{1-\alpha}$$
+            Check approximate $\alpha = \sqrt{\frac{K_a}{C}} = \sqrt{\frac{3.2 \times 10^{-4}}{0.02}} = \sqrt{0.016} = 0.126 = 12.6\%$.<br/>
+            <em>Since $\alpha > 5\%$, the approximation $1-\alpha \approx 1$ is invalid; we must solve the exact quadratic equation:</em>
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            $$0.02\alpha^2 + 3.2 \times 10^{-4}\alpha - 3.2 \times 10^{-4} = 0$$
+            $$\alpha^2 + 0.016\alpha - 0.016 = 0 \implies \alpha = \frac{-0.016 + \sqrt{(0.016)^2 + 4(0.016)}}{2} = \frac{-0.016 + 0.2535}{2} = 0.1187$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Equilibrium Concentrations &amp; pH:</strong><br/>
+            $$[\text{H}_3\text{O}^+] = [\text{F}^-] = C\alpha = 0.02 \times 0.1187 = 2.37 \times 10^{-3}\text{ M}$$
+            $$[\text{HF}] = C(1-\alpha) = 0.02(1 - 0.1187) = 1.76 \times 10^{-2}\text{ M}$$
+            $$\text{pH} = -\log(2.37 \times 10^{-3}) = 3 - \log(2.37) = 3 - 0.375 = 2.625 \approx 2.63$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> $\alpha = 0.119$ ($11.9\%$), $[\text{H}_3\text{O}^+] = 2.37 \times 10^{-3}\text{ M}$, $[\text{HF}] = 1.76 \times 10^{-2}\text{ M}$, $\text{pH} = 2.63$.
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 8 -->
+      <details class="ncert prob-item" data-type="ionic">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Example 6.14</span>
+          Common Ion Effect on Weak Base ($	ext{NH}_4	ext{OH} + 	ext{NH}_4	ext{Cl}$)
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> Calculate the $[\text{OH}^-]$ and pH of a solution containing $0.10\text{ M } \text{NH}_4\text{OH}$ and $0.10\text{ M } \text{NH}_4\text{Cl}$. Given $K_b(\text{NH}_4\text{OH}) = 1.8 \times 10^{-5}$. Compare the $[\text{OH}^-]$ with that in $0.10\text{ M } \text{NH}_4\text{OH}$ alone.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Case 1: $0.10\text{ M } \text{NH}_4\text{OH}$ alone:</strong><br/>
+            $$[\text{OH}^-] = \sqrt{K_b \cdot C} = \sqrt{1.8 \times 10^{-5} \times 0.10} = \sqrt{1.8 \times 10^{-6}} = 1.34 \times 10^{-3}\text{ M}$$
+            $$\text{pOH} = 2.87 \implies \text{pH} = 14 - 2.87 = 11.13$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Case 2: In presence of common ion $\text{NH}_4^+$ from $0.10\text{ M } \text{NH}_4\text{Cl}$:</strong><br/>
+            $\text{NH}_4\text{Cl}$ dissociates completely: $[\text{NH}_4^+] \approx 0.10\text{ M}$.<br/>
+            $$K_b = \frac{[\text{NH}_4^+][\text{OH}^-]}{[\text{NH}_4\text{OH}]} \implies [\text{OH}^-] = K_b \times \frac{[\text{NH}_4\text{OH}]}{[\text{NH}_4^+]}$$
+            $$[\text{OH}^-] = 1.8 \times 10^{-5} \times \left(\frac{0.10}{0.10}\right) = 1.8 \times 10^{-5}\text{ M}$$
+            $$\text{pOH} = -\log(1.8 \times 10^{-5}) = 5 - 0.255 = 4.745 \implies \mathbf{\text{pH} = 14 - 4.75 = 9.25}$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> Addition of $\text{NH}_4\text{Cl}$ suppresses $[\text{OH}^-]$ by nearly 100-fold (from $1.34 \times 10^{-3}\text{ M}$ to $1.8 \times 10^{-5}\text{ M}$) due to the <strong>common ion effect</strong>, lowering pH from $11.13$ to $9.25$.
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 9 -->
+      <details class="ncert prob-item" data-type="ionic">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Exercise 6.22</span>
+          Buffer Solution pH via Henderson-Hasselbalch Equation
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> Calculate the pH of a buffer solution prepared by mixing $50\text{ mL}$ of $0.2\text{ M } \text{CH}_3\text{COOH}$ with $50\text{ mL}$ of $0.1\text{ M } \text{CH}_3\text{COONa}$. Given $\text{p}K_a(\text{CH}_3\text{COOH}) = 4.74$.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Molar Concentrations in Final Mixed Volume ($V = 100\text{ mL}$):</strong><br/>
+            $$[\text{Acid}] = \frac{M_1 V_1}{V_{\text{total}}} = \frac{0.2 \times 50}{100} = 0.10\text{ M}$$
+            $$[\text{Salt}] = \frac{M_2 V_2}{V_{\text{total}}} = \frac{0.1 \times 50}{100} = 0.05\text{ M}$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Apply Henderson-Hasselbalch Equation:</strong>
+            $$\text{pH} = \text{p}K_a + \log_{10}\left(\frac{[\text{Salt}]}{[\text{Acid}]}\right)$$
+            $$\text{pH} = 4.74 + \log_{10}\left(\frac{0.05}{0.10}\right) = 4.74 + \log_{10}(0.5) = 4.74 + (-0.3010) = 4.439$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> $\text{pH} = 4.44$
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 10 -->
+      <details class="ncert prob-item" data-type="ionic">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Example 6.18</span>
+          Salt Hydrolysis: pH and Degree of Hydrolysis ($h$) of $	ext{CH}_3	ext{COONa}$
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> Calculate the degree of hydrolysis ($h$) and the pH of a $0.05\text{ M}$ sodium acetate ($\text{CH}_3\text{COONa}$) solution at $25^\circ\text{C}$. Given $K_a(\text{CH}_3\text{COOH}) = 1.8 \times 10^{-5}$ and $K_w = 1.0 \times 10^{-14}$.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Salt Nature:</strong> Salt of weak acid ($\text{CH}_3\text{COOH}$) and strong base ($\text{NaOH}$) $\implies$ <strong>Anionic Hydrolysis</strong>.<br/>
+            $$\text{CH}_3\text{COO}^- + \text{H}_2\text{O} \rightleftharpoons \text{CH}_3\text{COOH} + \text{OH}^-$$
+            $$K_h = \frac{K_w}{K_a} = \frac{1.0 \times 10^{-14}}{1.8 \times 10^{-5}} = 5.56 \times 10^{-10}$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Degree of Hydrolysis ($h$):</strong>
+            $$h = \sqrt{\frac{K_h}{C}} = \sqrt{\frac{5.56 \times 10^{-10}}{0.05}} = \sqrt{1.112 \times 10^{-8}} = 1.054 \times 10^{-4} \approx 0.0105\%$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>pH of Weak Acid + Strong Base Salt:</strong>
+            $$\text{pH} = 7 + \frac{1}{2}\text{p}K_a + \frac{1}{2}\log_{10} C$$
+            $$\text{p}K_a = -\log(1.8 \times 10^{-5}) = 4.74$$
+            $$\log_{10} C = \log_{10}(0.05) = \log_{10}(5 \times 10^{-2}) = 0.699 - 2 = -1.301$$
+            $$\text{pH} = 7 + \frac{1}{2}(4.74) + \frac{1}{2}(-1.301) = 7 + 2.37 - 0.6505 = 8.7195 \approx 8.72$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> $h = 1.05 \times 10^{-4}$ ($0.0105\%$), $\text{pH} = 8.72$ (Basic, $\text{pH} > 7$).
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 11 -->
+      <details class="ncert prob-item" data-type="ionic">
+        <summary>
+          <span style="background: var(--deepblue); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT In-Text 6.14</span>
+          Solubility Product ($K_{sp}$) in Pure Water vs. Common Ion Solution
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> The solubility product of $\text{AgCl}$ is $1.8 \times 10^{-10}$ at $298\text{ K}$.<br/>
+          (a) Calculate the solubility of $\text{AgCl}$ in pure water.<br/>
+          (b) Calculate its solubility in $0.10\text{ M } \text{NaCl}$ aqueous solution.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Part (a): In Pure Water (AB type salt):</strong><br/>
+            $$\text{AgCl}(s) \rightleftharpoons \text{Ag}^+(aq) + \text{Cl}^-(aq)$$
+            $$K_{sp} = S^2 \implies S = \sqrt{K_{sp}} = \sqrt{1.8 \times 10^{-10}} = 1.34 \times 10^{-5} \text{ mol/L}$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Part (b): In $0.10\text{ M } \text{NaCl}$:</strong><br/>
+            $\text{NaCl}$ fully dissociates: $[\text{Cl}^-] = 0.10\text{ M} + S' \approx 0.10\text{ M}$ (since $S' \ll 0.10$).<br/>
+            $$K_{sp} = [\text{Ag}^+][\text{Cl}^-] = (S')(0.10) = 1.8 \times 10^{-10}$$
+            $$S' = \frac{1.8 \times 10^{-10}}{0.10} = 1.8 \times 10^{-9} \text{ mol/L}$$
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong><br/>
+            (a) Solubility in pure water: $1.34 \times 10^{-5}\text{ mol/L}$<br/>
+            (b) Solubility in $0.10\text{ M } \text{NaCl}$: $1.8 \times 10^{-9}\text{ mol/L}$ (decreased by ~7,400 times due to common ion effect!).
+          </div>
+        </div>
+      </details>
+
+      <!-- Problem 12 -->
+      <details class="ncert prob-item" data-type="ionic">
+        <summary>
+          <span style="background: var(--coral); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-right: 6px;">NCERT Exercise 6.28</span>
+          Precipitation Condition: Comparing $Q_{sp}$ with $K_{sp}$
+        </summary>
+        <div class="solution">
+          <p><strong>Problem:</strong> Will precipitation occur if equal volumes of $0.002\text{ M } \text{AgNO}_3$ and $0.002\text{ M } \text{NaCl}$ are mixed? Given $K_{sp}(\text{AgCl}) = 1.8 \times 10^{-10}$.</p>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Effect of Mixing Equal Volumes:</strong><br/>
+            When equal volumes ($V_1 = V_2$) are mixed, the total volume doubles ($V_{\text{total}} = 2V$), so all concentrations are halved:<br/>
+            $$[\text{Ag}^+] = \frac{0.002}{2} = 0.001\text{ M} = 1.0 \times 10^{-3}\text{ M}$$
+            $$[\text{Cl}^-] = \frac{0.002}{2} = 0.001\text{ M} = 1.0 \times 10^{-3}\text{ M}$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Calculate Ionic Product ($Q_{sp}$):</strong>
+            $$Q_{sp} = [\text{Ag}^+][\text{Cl}^-] = (1.0 \times 10^{-3}) \times (1.0 \times 10^{-3}) = 1.0 \times 10^{-6}$$
+          </div>
+          <div class="step" style="margin: 10px 0; padding-left: 14px; border-left: 3px solid var(--teal);">
+            <strong>Comparison with $K_{sp}$:</strong><br/>
+            $$Q_{sp} = 1.0 \times 10^{-6} \quad \text{vs} \quad K_{sp} = 1.8 \times 10^{-10}$$
+            Since $\mathbf{Q_{sp} > K_{sp}}$, the solution is super-saturated with respect to $\text{AgCl}$.
+          </div>
+          <div class="formula-box" style="margin: 8px 0; background: #eef9f5; border-left-color: #2ec4b6;">
+            <strong>Final Answer:</strong> <strong>Yes, precipitation of $\text{AgCl}$ will occur</strong> immediately upon mixing.
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+function switchTab(index) {
+  const tabs = document.querySelectorAll('.tab-nav button');
+  const panels = document.querySelectorAll('.tab-content');
+  tabs.forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+    panels[i].classList.toggle('active', i === index);
+  });
+  renderMathInElement(document.body, {
+    delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '$', right: '$', display: false }
+    ],
+    throwOnError: false
+  });
+}
+
+function toggleDeriv(id) {
+  const panel = document.getElementById(id);
+  const btn = panel.previousElementSibling;
+  panel.classList.toggle('open');
+  btn.classList.toggle('active');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof renderMathInElement === 'function') {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false }
+      ],
+      throwOnError: false
+    });
+  }
+});
+</script>
+</body>
+</html>

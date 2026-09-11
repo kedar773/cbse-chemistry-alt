@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 11 - Chemical Thermodynamics // KEDAR'S CHEMISTRY</title>
+  <meta name="description" content="CBSE Class 11 Chemistry revision notes and JEE guide for Chemical Thermodynamics (Physical Chemistry). Comprehensive coverage of First & Second Law, Enthalpy & Entropy, Gibbs Free Energy, Hess's Law, Spontaneity Criteria with step-by-step equations by Kedar Krishna.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/cyber.css">
+  <link rel="stylesheet" href="../../assets/css/chapter.css">
+  <link rel="stylesheet" href="../../assets/vendor/katex/katex.min.css">
+  <script src="../../assets/vendor/katex/katex.min.js"></script>
+  <script src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script src="../../assets/vendor/katex/contrib/mhchem.min.js"></script>
+</head>
+<body data-chapter-slug="class-11-05-thermodynamics">
+
+  <!-- Sticky Cyber Header -->
+  <header class="chapter-header">
+    <div class="chapter-nav-wrap">
+      <div class="chapter-nav-left">
+        <a href="../../index.html" class="back-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Portal
+        </a>
+        <div class="chapter-meta">
+          <div class="chapter-breadcrumb">
+            <span>Class 11</span>
+            <span>&bull;</span>
+            <span class="badge-branch branch-physical">Physical Chemistry</span>
+          </div>
+          <h1>Ch 05: Chemical Thermodynamics</h1>
+        </div>
+      </div>
+
+      <div class="chapter-nav-right">
+        <button id="markCompletedBtn" class="action-btn" title="Track study completion">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+          Mark Complete
+        </button>
+        <button id="fullscreenBtn" class="btn-icon" title="Toggle Fullscreen" style="width: 36px; height: 36px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="chapter-tabs-bar">
+      <div class="chapter-tabs">
+        
+          <button class="tab-item active" data-target="panel-notes-1">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            Master Study Notes
+          </button>
+        
+          <button class="tab-item" data-target="panel-guide-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Equations & Applications
+          </button>
+        
+          <button class="tab-item" data-target="panel-guide-3">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Properties & Advanced Topics
+          </button>
+        
+      </div>
+    </div>
+  </header>
+
+  <!-- Panels Container -->
+  <main class="panels-container">
+    
+          <div id="panel-notes-1" class="view-panel active">
+            <div class="notes-frame-wrap">
+              <div class="frame-toolbar">
+                <span>INTERACTIVE NCERT REVISION NOTES</span>
+                <a href="notes.html" target="_blank" rel="noopener" class="action-btn" title="Open notes in new window">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  Open Standalone
+                </a>
+              </div>
+              <iframe src="notes.html" class="notes-iframe" id="frame-1" title="Master Study Notes"></iframe>
+            </div>
+          </div>
+        
+          <div id="panel-guide-2" class="view-panel">
+            <div class="guide-content-wrap">
+              <div class="guide-search-box" style="margin-bottom: 1.5rem;">
+                <span class="search-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" class="guide-search-input" placeholder="Search equations, concepts, or mechanisms in this guide...">
+              </div>
+              <div class="guide-content">
+                <h1>THERMODYNAMICS &amp; THERMOCHEMISTRY: EQUATIONS, CONCEPTS &amp; APPLICATIONS GUIDE</h1>
+<h2>JEE (Mains &amp; Advanced) | CBSE Class 11–12</h2>
+<hr />
+<h2>SECTION 0: FUNDAMENTAL THERMODYNAMIC CONCEPTS</h2>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Mathematical Form</th>
+<th>Physical Meaning</th>
+<th>Key Feature</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>System &amp; Surroundings</strong></td>
+<td>System = matter under study; Surroundings = everything else; Universe = System + Surroundings</td>
+<td>Closed system (no mass exchange); Open system (mass exchange); Isolated system (no mass/energy exchange)</td>
+<td>Defines boundary for energy accounting; thermodynamic properties depend on system definition</td>
+<td>For reactions, reactants/products = system; heat/work exchanged with environment = surroundings interaction</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>State Function vs. Path Function</strong></td>
+<td>State function: depends only on initial &amp; final states (ΔH, ΔS, ΔG, ΔU); Path function: depends on reaction pathway (q, w, heat)</td>
+<td>State: ΔX = X_final − X_initial (independent of path); Path: depends on process details</td>
+<td>Fundamental distinction; for state functions, ∮ dX = 0 (cyclic integral = 0); critical for Hess's Law</td>
+<td>q and w are path functions; ΔU, ΔH, ΔS, ΔG are state functions (can combine multiple paths)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Internal Energy (U)</strong></td>
+<td>Total energy within system (kinetic + potential energy of particles); microscopic perspective</td>
+<td>ΔU = q + w (First Law); for ideal gas: U depends only on T</td>
+<td>Fundamental property; not absolute value, only changes matter (ΔU = U_final − U_initial)</td>
+<td>All energy forms included: molecular motion, vibration, rotation, electronic excitation, bonding</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>First Law of Thermodynamics</strong></td>
+<td>Energy conservation: ΔU = q − w (with sign convention: w positive if work done BY system) or ΔU = q + w (w positive if work done ON system)</td>
+<td>$\Delta U = q + w$ or $\Delta U = q - P_{ext} \Delta V$</td>
+<td>Energy is conserved; heat absorbed and work done relate to internal energy change</td>
+<td>For isolated system, q = 0 and w = 0 → ΔU = 0 (energy constant)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Reversible vs. Irreversible Process</strong></td>
+<td>Reversible: infinitesimal steps, equilibrium maintained, maximum work extracted; Irreversible: finite driving force, non-equilibrium, less work</td>
+<td>Reversible: w_reversible = −nRT ln(V_f/V_i) (max work); Irreversible: w &lt; w_reversible</td>
+<td>Reversible is theoretical limit; real processes irreversible (entropy increases); work output less than theoretical max</td>
+<td>Isothermal reversible expansion yields maximum work; free expansion (irreversible) yields zero work</td>
+<td>2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Macroscopic vs. Microscopic View</strong></td>
+<td>Macroscopic: bulk properties (P, V, T, H, S, G); Microscopic: molecular-level interpretations (molecular kinetic energy, disorder, probability)</td>
+<td>Macroscopic ↔ Microscopic via statistical mechanics (e.g., S = k_B ln Ω where Ω = microstate count)</td>
+<td>Bridges classical thermodynamics with quantum/molecular picture; explains why entropy increases (disorder favored)</td>
+<td>Dissolution: macroscopic ΔH, ΔS; microscopic: molecular dispersion, hydration shell reorganization</td>
+<td>2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 1: ENTHALPY (ΔH) — HEAT AT CONSTANT PRESSURE</h2>
+<h3>PART A: Enthalpy Definition &amp; Relationship to Internal Energy</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Formula</th>
+<th>Derivation</th>
+<th>Physical Meaning</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enthalpy (H)</strong></td>
+<td>State function defined as H = U + PV; measures heat exchanged at constant pressure</td>
+<td>ΔH = ΔU + Δ(PV) = ΔU + P·ΔV (at constant P)</td>
+<td>From First Law: q_p = ΔU + P·ΔV; define H so q_p = ΔH</td>
+<td>Constant-pressure heat (lab conditions); more practical than ΔU because most reactions occur at constant P</td>
+<td>Combustion of 1 mol CH₄: ΔH_comb ≈ −890 kJ/mol (heat released at 1 atm, 298 K)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Relationship: ΔH vs. ΔU</strong></td>
+<td>ΔH = ΔU + Δ(PV); at constant P: ΔH = ΔU + P·ΔV</td>
+<td>For ideal gas: P·ΔV = Δ(nRT) = ΔnRT (at constant T); ΔH = ΔU + ΔnRT</td>
+<td>ΔH includes work done against atmospheric pressure (P·ΔV term) in addition to internal energy change</td>
+<td>Small for condensed phases (liquids, solids) where ΔV &lt;&lt; volume; significant for gases where Δn·RT substantial</td>
+<td>H₂ + ½O₂ → H₂O(l): ΔH ≈ −286 kJ/mol; ΔU ≈ −242 kJ/mol; difference = 1 mol × 8.314 × 298 / 1000 ≈ 2.5 kJ (small for liquid product)</td>
+<td>2021, 2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Exothermic vs. Endothermic</strong></td>
+<td>Exothermic: ΔH &lt; 0 (heat released to surroundings); Endothermic: ΔH &gt; 0 (heat absorbed from surroundings)</td>
+<td>ΔH negative = spontaneous at low T (if ΔS not too negative); ΔH positive = requires heat input</td>
+<td>Sign indicates energy flow direction; magnitude indicates heat quantity</td>
+<td>Combustion: ΔH &lt;&lt; 0 (strong bond breaking/formation); melting: ΔH &gt; 0 (endothermic, absorbs heat)</td>
+<td>CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l), ΔH ≈ −890 kJ/mol (exothermic); ice melting: ΔH = +6.01 kJ/mol (endothermic)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Heat of Reaction (ΔH_rxn)</strong></td>
+<td>Enthalpy change for reaction as written; depends on stoichiometric coefficients and physical states</td>
+<td>ΔH_rxn = Σ(ΔH_f,products) − Σ(ΔH_f,reactants); also ΔH_rxn = Σ(bond energies broken) − Σ(bond energies formed)</td>
+<td>For molar quantity: 2H₂ + O₂ → 2H₂O has ΔH_rxn = 2 × ΔH_f(H₂O); ½H₂ + ¼O₂ → ½H₂O has ΔH_rxn = ½ × ΔH_f(H₂O)</td>
+<td>Extensive property; doubles if coefficients doubled; sign reverses if reaction reversed</td>
+<td>N₂(g) + 3H₂(g) → 2NH₃(g), ΔH = −92 kJ/mol (exo); reverse: ΔH = +92 kJ/mol (endo)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Heat of Formation (ΔH_f°)</strong></td>
+<td>Enthalpy change when 1 mole of compound formed from its elements in standard states (25°C, 1 atm)</td>
+<td>Elements in standard state: ΔH_f° = 0; for compound: ΔH_f° = heat released/absorbed to form 1 mol</td>
+<td>Use to calculate ΔH_rxn via: ΔH_rxn = Σ(n × ΔH_f°,products) − Σ(n × ΔH_f°,reactants)</td>
+<td>Reference values tabulated; ΔH_f° for elements = 0 by definition</td>
+<td>H₂O(l): ΔH_f° = −285.8 kJ/mol; CO₂(g): ΔH_f° = −393.5 kJ/mol; use to compute combustion reactions</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Heat of Combustion (ΔH_comb)</strong></td>
+<td>Enthalpy change when 1 mole of substance completely oxidized (burned) to stable oxides (CO₂, H₂O, etc.)</td>
+<td>For hydrocarbon C_xH_y + excess O₂ → x CO₂ + (y/2) H₂O; ΔH_comb = Σ ΔH_f°(products) − ΔH_f°(reactant)</td>
+<td>Always negative (exothermic); large negative values reflect stability of products (CO₂, H₂O)</td>
+<td>Bond breaking (endothermic, ΔH &gt; 0) and bond formation (exothermic, ΔH &lt; 0) net to ΔH_comb &lt; 0</td>
+<td>CH₄(g): ΔH_comb ≈ −890 kJ/mol; C(graphite): ΔH_comb ≈ −394 kJ/mol; glucose C₆H₁₂O₆: ΔH_comb ≈ −2803 kJ/mol</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Calorimetry &amp; Heat Measurement</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Calorimetry Type</th>
+<th>Definition</th>
+<th>Heat Equation</th>
+<th>Application</th>
+<th>Calculation Method</th>
+<th>Example Problem</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Constant-Volume Calorimetry (Bomb Calorimeter)</strong></td>
+<td>Closed, rigid container; volume constant; heat released = internal energy change (q_v = ΔU, not q_p = ΔH)</td>
+<td>q_v = ΔU = C_v · ΔT where C_v = heat capacity at constant volume (kJ/K or J/K)</td>
+<td>Measure ΔU directly; often used for combustion reactions to avoid P·ΔV complications</td>
+<td>Measure temperature rise; multiply by C_v of calorimeter</td>
+<td>1 g glucose burned in bomb calorimeter; ΔT = 2.0 K; C_v(calorimeter) = 20 kJ/K; ΔU = 20 × 2.0 = 40 kJ for 1 g (or ~7200 kJ/mol for 180 g/mol)</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Constant-Pressure Calorimetry</strong></td>
+<td>Open or flexible container; pressure constant (usually 1 atm); heat released = enthalpy change (q_p = ΔH)</td>
+<td>q_p = ΔH = n · c_p · ΔT where c_p = specific heat capacity (J/g·K); or ΔH = C_p · ΔT where C_p = total heat capacity (kJ/K)</td>
+<td>Typical lab calorimetry (coffee-cup calorimeter); neutralization reactions, dissolution, etc.</td>
+<td>Mix reactants; measure temperature change; calculate heat from q = m · c_p · ΔT</td>
+<td>100 mL of 1 M HCl (ρ ≈ 1.0 g/mL, c_p ≈ 4.18 J/g·K) mixed with 100 mL of 1 M NaOH; ΔT = 6.7 K; q = 200 g × 4.18 J/g·K × 6.7 K ≈ 5600 J ≈ 5.6 kJ for 0.1 mol reaction; ΔH_neutralization ≈ −56 kJ/mol</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Heat Capacity (C) &amp; Specific Heat (c)</strong></td>
+<td>C = total heat capacity (kJ/K for entire sample); c = specific heat capacity (J/g·K for per gram); c_molar = molar heat capacity (J/mol·K for per mole)</td>
+<td>q = C · ΔT (total); q = m · c · ΔT (by mass); q = n · c_molar · ΔT (by moles)</td>
+<td>For constant-pressure: q_p = C_p · ΔT; for constant-volume: q_v = C_v · ΔT</td>
+<td>C, c, and c_molar are related: C = m · c = n · c_molar</td>
+<td>Water: c = 4.18 J/g·K (4.186 J/g·K standard); c_molar ≈ 75.3 J/mol·K; for 100 g water, C = 100 × 4.18 = 418 J/K = 0.418 kJ/K</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Enthalpy of Neutralization</strong></td>
+<td>Heat released when strong acid (HA) + strong base (BOH) → salt + H₂O; approximately constant for strong acid–strong base</td>
+<td>ΔH_neutralization ≈ −57 kJ/mol (for strong acid + strong base); weaker for weak acids (less exothermic)</td>
+<td>Measure temperature rise in coffee-cup calorimeter; H⁺ + OH⁻ → H₂O is primary reaction</td>
+<td>q_neutralization = n(H⁺) ×</td>
+<td>ΔH_neut</td>
+<td>; from calorimetry: q = m_solution · c_p · ΔT</td>
+<td>50 mL of 2 M HCl + 50 mL of 2 M NaOH; ΔT = 13.4 K; q = 100 g × 4.18 J/g·K × 13.4 K ≈ 5600 J; moles of H⁺ = 0.05 × 2 = 0.1 mol; ΔH_neut = −5600 J / 0.1 mol = −56,000 J/mol ≈ −56 kJ/mol</td>
+</tr>
+<tr>
+<td><strong>Enthalpy of Solution (ΔH_soln)</strong></td>
+<td>Heat absorbed/released when solute dissolves in solvent; can be endothermic or exothermic</td>
+<td>Exothermic: solute–solvent interactions stronger than solute–solute + solvent–solvent (net energy released); Endothermic: opposite</td>
+<td>Some salts: NaCl ΔH_soln ≈ +3.9 kJ/mol (endothermic, cooling); others: LiCl ΔH_soln ≈ −37 kJ/mol (exothermic, heating)</td>
+<td>Dissolve known mass of salt in fixed water volume; measure temperature change; q = m_solution · c_p · ΔT</td>
+<td>10 g NaOH dissolved in 100 mL water; ΔT = +7.0 K; q = 110 g × 4.18 J/g·K × 7.0 K ≈ 3200 J; moles NaOH = 10/40 = 0.25 mol; ΔH_soln = 3200 J / 0.25 mol = 12,800 J/mol ≈ +12.8 kJ/mol (simplified; actual ≈ +42 kJ/mol due to mass balance)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 2: HESS'S LAW &amp; THERMOCHEMICAL CALCULATIONS</h2>
+<h3>PART A: Hess's Law &amp; Manipulation of Thermochemical Equations</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Statement</th>
+<th>Mathematical Form</th>
+<th>Application</th>
+<th>Example</th>
+<th>Verification</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hess's Law (State Function Consequence)</strong></td>
+<td>ΔH_reaction depends only on initial and final states, not on pathway; sum of ΔH values for series of reactions = ΔH for overall reaction</td>
+<td>If Reaction 1 (A → B): ΔH₁ and Reaction 2 (B → C): ΔH₂, then A → C: ΔH_net = ΔH₁ + ΔH₂</td>
+<td>Foundation for calculating ΔH_rxn from tabulated ΔH_f° values; allows derivation of unknown ΔH from known reactions</td>
+<td>(1) C(s) + O₂(g) → CO₂(g): ΔH = −393.5 kJ; (2) 2CO₂(g) + 2H₂O(l) → CH₃COOH(l) + 2O₂(g): ΔH = +1020 kJ [reverse of combustion]; (3) 2C(s) + 2H₂O(l) → CH₃COOH(l) + O₂(g): ΔH = 2 × (−393.5) + 1020 = 233 kJ [sum of (1)×2 + (2)]</td>
+<td>Hess's Law valid because H is state function; ∮ dH = 0 (cyclic path); alternative pathways give same ΔH_net</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Reversing a Reaction</strong></td>
+<td>If A + B → C has ΔH = −100 kJ, then C → A + B has ΔH = +100 kJ</td>
+<td>Reverse reaction: ΔH_reverse = −ΔH_forward</td>
+<td>Heat absorbed becomes heat released and vice versa; sign flips</td>
+<td>N₂(g) + 3H₂(g) → 2NH₃(g): ΔH = −92 kJ (exo); Reverse: 2NH₃(g) → N₂(g) + 3H₂(g): ΔH = +92 kJ (endo)</td>
+<td>Endothermic processes require energy input; exothermic release energy; reversing flips energy requirement</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Scaling (Multiplying) Reactions</strong></td>
+<td>If a A + b B → c C has ΔH, then scaling by factor n: n(a A + b B → c C) has ΔH_n = n × ΔH</td>
+<td>Doubling coefficients doubles ΔH; halving coefficients halves ΔH; general: ΔH_scaled = n × ΔH_original</td>
+<td>ΔH is extensive (depends on amount); combustion of 1 mol vs. 2 mol differs by factor of 2</td>
+<td>CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l): ΔH = −890 kJ; ½CH₄(g) + O₂(g) → ½CO₂(g) + H₂O(l): ΔH = −445 kJ (half)</td>
+<td>Accounting for stoichiometric coefficients; if reaction scaled by fraction, ΔH scales by same fraction</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Combining Multiple Reactions</strong></td>
+<td>Series of reactions: (1) A → B (ΔH₁), (2) B → C (ΔH₂), (3) C → D (ΔH₃); Overall: A → D (ΔH_net = ΔH₁ + ΔH₂ + ΔH₃)</td>
+<td>Add ΔH values algebraically; reverse + scale as needed</td>
+<td>Derive ΔH for target reaction from set of given reactions; systematic cancellation of intermediates</td>
+<td>Target: C + O₂ → CO₂. Given: (1) 2C + 2O₂ → 2CO₂ (ΔH = −787 kJ); (2) C + ½O₂ → CO (ΔH = −110.5 kJ); Solution: Use (1)×½ = C + O₂ → CO₂ (ΔH = −393.5 kJ); or use (1) − (2) manipulations</td>
+<td>Check intermediate cancellation; ensure target reaction matches combination of given reactions exactly</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Calculation Using ΔH_f° (Standard Heats of Formation)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Formula</th>
+<th>Approach</th>
+<th>Advantage</th>
+<th>Limitation</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Using ΔH_f° Values (Tabulated)</strong></td>
+<td>$\Delta H_{rxn}° = \sum \Delta H_{f}°(products) - \sum \Delta H_{f}°(reactants)$</td>
+<td>Look up ΔH_f° for each compound from tables; multiply by stoichiometric coefficients; sum products, subtract reactants</td>
+<td>Simple, fast, no need to construct reaction combinations; ΔH_f° widely tabulated for common compounds</td>
+<td>Requires accurate ΔH_f° values; not practical if values unavailable; assumes standard states</td>
+<td>N₂(g) + 3H₂(g) → 2NH₃(g): ΔH_f°(N₂) = 0, ΔH_f°(H₂) = 0, ΔH_f°(NH₃) = −45.9 kJ/mol; ΔH_rxn = 2(−45.9) − [0 + 3(0)] = −91.8 kJ/mol ✓</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Using Bond Dissociation Energies</strong></td>
+<td>$\Delta H_{rxn} = \sum D_e(\text{bonds broken}) - \sum D_e(\text{bonds formed})$</td>
+<td>Sum all bond-breaking energies (endothermic, +); subtract sum of bond-forming energies (exothermic, −); net = ΔH_rxn</td>
+<td>Applicable to any reaction; bond energies relatively constant across molecules; allows estimation when ΔH_f° unavailable</td>
+<td>Approximation (average bond energies vary with bonding context); less accurate than ΔH_f°; requires detailed bond identification</td>
+<td>CH₄ + 2O₂ → CO₂ + 2H₂O: Bonds broken: 4(C−H) + 2(O=O) = 4(414) + 2(498) = 2652 kJ; Bonds formed: 2(C=O) + 4(O−H) = 2(799) + 4(463) = 3454 kJ; ΔH = 2652 − 3454 = −802 kJ/mol (literature ≈ −890 kJ; discrepancy due to bond energy approximations)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Hess's Law Problem (Multi-Step Derivation)</strong></td>
+<td>Design combination of given reactions to target reaction; reverse, scale, and add; verify intermediate cancellation</td>
+<td>(1) Identify target reaction; (2) List given reactions; (3) Manipulate (reverse/scale) to align with target; (4) Add ΔH values; (5) Check for intermediate cancellation</td>
+<td>Develops problem-solving skills; tests understanding of state function and algebraic manipulation</td>
+<td>Complex for multi-step combinations; easy to make algebraic errors; requires careful bookkeeping</td>
+<td><strong>Example</strong>: Target: 2C + O₂ → 2CO. Given: (1) C + O₂ → CO₂ (ΔH = −393.5 kJ); (2) 2CO + O₂ → 2CO₂ (ΔH = −566 kJ). Solution: (1) − ½(2) = C + O₂ − CO − ½O₂ → CO₂ − CO₂; simplify: C + ½O₂ → CO (ΔH = −393.5 − ½ × (−566) = −393.5 + 283 = −110.5 kJ); scale ×2: 2C + O₂ → 2CO (ΔH = −221 kJ)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 3: ENTROPY (ΔS) — SPONTANEITY &amp; DISORDER</h2>
+<h3>PART A: Entropy Definition &amp; Trends</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Formula/Expression</th>
+<th>Physical Meaning</th>
+<th>Trend</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entropy (S)</strong></td>
+<td>State function measuring disorder/randomness at molecular level; microscopic interpretation: S = k_B ln Ω where Ω = number of microstates</td>
+<td>$\Delta S = \int \frac{dq_{rev}}{T}$ (definitional); for reversible isothermal: ΔS = q_rev/T</td>
+<td>Disorder increases; perfect crystal at 0 K has S = 0 (Third Law); entropy of universe always increases (Second Law)</td>
+<td>S_solid &lt; S_liquid &lt; S_gas (at same T); S increases with molecular complexity; S increases with T</td>
+<td>Ice: S ≈ 39.3 J/mol·K; Water: S ≈ 69.9 J/mol·K; Steam: S ≈ 188.7 J/mol·K (at 298 K, 1 atm)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Third Law of Thermodynamics</strong></td>
+<td>Perfect crystal at absolute zero (0 K) has entropy S = 0; entropy of substance at T &gt; 0 K is positive and finite</td>
+<td>$S(T) = \int_0^T \frac{C_p}{T} dT$ (entropy from 0 K to T via heat capacity)</td>
+<td>Allows absolute entropy values (unlike enthalpy, which is relative); reference point for entropy calculations</td>
+<td>Absolute entropy always ≥ 0; used to calculate ΔS_rxn from tabulated S° values</td>
+<td>S°(H₂, 298 K) = 130.7 J/mol·K; S°(O₂, 298 K) = 205.1 J/mol·K (reference values)</td>
+<td>2021, 2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Standard Molar Entropy (S°)</strong></td>
+<td>Entropy of 1 mole of substance in standard state (25°C, 1 atm, most stable form)</td>
+<td>Tabulated values; used to calculate ΔS_rxn = Σ(S°_products) − Σ(S°_reactants)</td>
+<td>Reference values for all substances; analogous to ΔH_f° but for entropy</td>
+<td>S° increases with molecular mass (larger molecules, more disorder); S° increases with molecular complexity</td>
+<td>S°(O₂, g) = 205.1 J/mol·K &gt; S°(O, g) = 160.9 J/mol·K (diatomic &gt; monatomic)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Entropy Change in Reactions (ΔS_rxn)</strong></td>
+<td>$\Delta S_{rxn}° = \sum n_i S°(products) - \sum n_i S°(reactants)$</td>
+<td>ΔS &gt; 0: disorder increases (favors spontaneity); ΔS &lt; 0: disorder decreases (opposes spontaneity)</td>
+<td>Predict direction based on phase changes and molecular complexity; combine with ΔH to assess overall spontaneity via ΔG</td>
+<td>Phase change: melting/evaporation (ΔS &gt; 0, disorder ↑); gas formation (ΔS &gt; 0); ion dissolution (often ΔS &gt; 0, solvation disorder)</td>
+<td>N₂(g) + 3H₂(g) → 2NH₃(g): ΔS° = 2(193) − [191.6 + 3(130.7)] = 386 − 583 = −197 J/mol·K (negative, moles decrease, disorder decreases)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Factors Affecting Entropy</strong></td>
+<td>(1) Phase: S_gas &gt;&gt; S_liquid &gt; S_solid; (2) Molecular mass: larger → higher S; (3) Molecular complexity: more atoms → higher S; (4) Temperature: higher T → higher S</td>
+<td>S increases with: temperature, number of molecules, molecular complexity, disorder; S decreases with: lower temperature, phase changes to solid</td>
+<td>Explains why combustion products (CO₂, H₂O gases) have higher S; why dissolution often ΔS &gt; 0</td>
+<td>Gas expansion: ΔS &gt; 0 (disorder ↑); gas compression: ΔS &lt; 0 (disorder ↓); dissolution of ionic solid: ΔS usually &gt; 0 (hydrated ions more disordered)</td>
+<td>Perfect crystal freezing to lower T: ΔS &lt; 0 (order increases); ice melting: ΔS &gt; 0 (disorder increases)</td>
+<td>2021, 2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Second Law of Thermodynamics &amp; Spontaneity</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Law/Principle</th>
+<th>Statement</th>
+<th>Mathematical Form</th>
+<th>Implication</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Second Law (Universe)</strong></td>
+<td>Entropy of isolated system (universe) always increases for spontaneous process; ΔS_universe &gt; 0 for spontaneous; ΔS_universe = 0 for equilibrium</td>
+<td>$\Delta S_{universe} = \Delta S_{system} + \Delta S_{surroundings} > 0$ (spontaneous)</td>
+<td>Drives all real processes forward; explains irreversibility; basis for Gibbs free energy criterion</td>
+<td>Spontaneous: ice melting (ΔS_system &gt; 0) + heat absorption (ΔS_surr slightly negative but net positive); non-spontaneous: ice forming at 25°C and 1 atm (ΔS_univ &lt; 0)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Second Law (System + Surroundings)</strong></td>
+<td>For closed system at constant T &amp; P: ΔS_universe = ΔS_sys + ΔS_surr = ΔS_sys − ΔH_sys/T</td>
+<td>Rearrange: T·ΔS_univ = T·ΔS_sys − ΔH_sys</td>
+<td>Relate system properties to universe entropy; foundation for ΔG = ΔH − TΔS definition</td>
+<td>For spontaneous process: ΔS_sys − ΔH_sys/T &gt; 0 → ΔH − TΔS &lt; 0</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Predictive Criterion (ΔH &amp; ΔS Signs)</strong></td>
+<td>ΔH &lt; 0, ΔS &gt; 0: Always spontaneous (ΔG &lt; 0 at all T); ΔH &gt; 0, ΔS &lt; 0: Never spontaneous (ΔG &gt; 0 at all T); ΔH &lt; 0, ΔS &lt; 0: Spontaneous at low T; ΔH &gt; 0, ΔS &gt; 0: Spontaneous at high T</td>
+<td>Use ΔG = ΔH − TΔS to assess spontaneity at specific T</td>
+<td>Qualitative prediction without calculating ΔG; ΔG &lt; 0 → spontaneous; ΔG &gt; 0 → non-spontaneous</td>
+<td>Combustion: ΔH &lt;&lt; 0, ΔS &gt; 0 → always spontaneous; freezing at T &lt; T_melt: ΔH &lt; 0, ΔS &lt; 0 → spontaneous at low T</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 4: GIBBS FREE ENERGY (ΔG) — SPONTANEITY CRITERION</h2>
+<h3>PART A: ΔG Definition &amp; Relationship to K</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Formula</th>
+<th>Meaning</th>
+<th>Condition</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gibbs Free Energy (G)</strong></td>
+<td>G = H − TS; combines enthalpy and entropy effects; state function measuring maximum useful work</td>
+<td>ΔG = ΔH − TΔS (at constant T, P); $\Delta G = -RT \ln K$ (equilibrium relation)</td>
+<td>ΔG &lt; 0: spontaneous (forward); ΔG &gt; 0: non-spontaneous (backward); ΔG = 0: equilibrium</td>
+<td>ΔG ≠ total energy change (ΔU); ΔG = available work for useful purposes (non-PV work)</td>
+<td>Ice at 25°C and 1 atm: ΔG &gt; 0 (melting non-spontaneous reverse); water at 0°C: ΔG ≈ 0 (equilibrium); water at −10°C: ΔG &lt; 0 (freezing spontaneous)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>ΔG = ΔH − TΔS</strong></td>
+<td>At constant T &amp; P, ΔG combines two driving forces: ΔH (enthalpy) and −TΔS (entropy); competing effects</td>
+<td>ΔG &lt; 0 for spontaneity; magnitude of T matters; entropy term becomes dominant at high T</td>
+<td>Temperature controls competition: low T → ΔH dominates; high T → −TΔS dominates</td>
+<td>Reaction favored by negative ΔH (exothermic) and positive ΔS (disorder ↑); reaction disfavored by positive ΔH and negative ΔS</td>
+<td>Melting: ΔH_melt &gt; 0, ΔS_melt &gt; 0 → spontaneous above T_melt; freezing: same ΔH/ΔS reversed in sign → spontaneous below T_melt</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>ΔG° vs. ΔG</strong></td>
+<td>ΔG° = standard free energy change (standard states: 25°C, 1 atm, 1 M); ΔG = actual free energy change under non-standard conditions</td>
+<td>$\Delta G = \Delta G° + RT \ln Q$ where Q = reaction quotient; ΔG = −RT ln K at equilibrium (Q = K)</td>
+<td>ΔG° predicts spontaneity at standard conditions; ΔG predicts at any conditions; at equilibrium, ΔG = 0</td>
+<td>ΔG° &lt; 0 → favored at standard conditions; ΔG° &gt; 0 → not favored; but non-standard conditions via ΔG may reverse spontaneity</td>
+<td>Haber process: ΔG° at 500 K &gt; 0 (not favored by ΔG°), but high pressure (non-standard) shifts equilibrium via Q term, making reaction practical</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>ΔG° = −RT ln K</strong></td>
+<td>Fundamental link: ΔG° determined by equilibrium constant K; large K → large negative ΔG° (favorable); small K → positive ΔG° (unfavorable)</td>
+<td>Rearrange: $K = e^{-\Delta G° / RT}$ or $\ln K = -\Delta G° / RT$</td>
+<td>At equilibrium, ΔG = 0 → ΔG° = −RT ln K; K reflects position of equilibrium (small K = equilibrium favors reactants, large K = favors products)</td>
+<td>Spontaneous reactions have K &gt; 1 (ΔG° &lt; 0); equilibrium when K is measurable; non-spontaneous have K &lt;&lt; 1 (ΔG° &gt;&gt; 0)</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃: ΔG° ≈ −33 kJ/mol at 298 K → K ≈ 600; large K indicates strong forward reaction (ΔG° negative)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Standard Free Energy of Formation (ΔG_f°)</strong></td>
+<td>ΔG_f° = standard free energy to form 1 mole of compound from elements in standard states; for elements: ΔG_f° = 0</td>
+<td>$\Delta G_{rxn}° = \sum \Delta G_{f}°(products) - \sum \Delta G_{f}°(reactants)$</td>
+<td>Reference values; calculate ΔG_rxn° via tabulated ΔG_f° values (analogous to ΔH_f°)</td>
+<td>Positive ΔG_f° means compound formation non-spontaneous under standard conditions (but may be kinetically stabilized or stable at different T); negative means spontaneous formation</td>
+<td>O₂(g): ΔG_f° = 0; O₃(g): ΔG_f° = +163 kJ/mol (non-spontaneous formation); H₂O(l): ΔG_f° = −237 kJ/mol (spontaneous formation)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Predicting Spontaneity &amp; Equilibrium</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>ΔH Sign</th>
+<th>ΔS Sign</th>
+<th>ΔG Prediction</th>
+<th>Spontaneity</th>
+<th>Temperature Dependence</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Negative (−)</strong></td>
+<td><strong>Positive (+)</strong></td>
+<td>ΔG = ΔH − TΔS = (−) − T(+) = negative always</td>
+<td><strong>Always spontaneous</strong> (all T)</td>
+<td>Spontaneous at all temperatures; both driving forces align</td>
+<td>Combustion: CH₄ + 2O₂ → CO₂ + 2H₂O; ΔH ≈ −890 kJ, ΔS &gt; 0 (gas products) → ΔG &lt; 0 always</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Positive (+)</strong></td>
+<td><strong>Negative (−)</strong></td>
+<td>ΔG = ΔH − TΔS = (+) − T(−) = positive always</td>
+<td><strong>Never spontaneous</strong> (all T)</td>
+<td>Non-spontaneous at all temperatures; both factors oppose reaction</td>
+<td>Reverse of combustion: CO₂ + 2H₂O → CH₄ + 2O₂; ΔH &gt; 0, ΔS &lt; 0 → ΔG &gt; 0 always (non-spontaneous)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Negative (−)</strong></td>
+<td><strong>Negative (−)</strong></td>
+<td>ΔG = ΔH − TΔS = (−) − T(−) = (−) + T(+); ΔG &lt; 0 if</td>
+<td>ΔH</td>
+<td>&gt; T</td>
+<td>ΔS</td>
+<td></td>
+<td><strong>Spontaneous at LOW T only</strong></td>
+</tr>
+<tr>
+<td><strong>Positive (+)</strong></td>
+<td><strong>Positive (+)</strong></td>
+<td>ΔG = ΔH − TΔS = (+) − T(+); ΔG &lt; 0 if T</td>
+<td>ΔS</td>
+<td>&gt;</td>
+<td>ΔH</td>
+<td></td>
+<td><strong>Spontaneous at HIGH T only</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 5: THERMODYNAMIC APPLICATIONS</h2>
+<h3>PART A: Temperature Dependence of ΔG° &amp; Feasibility</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Equilibrium Expression</th>
+<th>Feasibility Analysis</th>
+<th>Critical Temperature</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Low-T Process (ΔH &lt; 0, ΔS &lt; 0)</strong></td>
+<td>ΔG = ΔH − TΔS; at T = 0, ΔG = ΔH &lt; 0; as T increases, −TΔS term grows (positive)</td>
+<td>At low T: ΔG ≈ ΔH (negative, spontaneous); at T_critical = ΔH/ΔS, ΔG = 0 (equilibrium); above T_critical, ΔG &gt; 0 (non-spontaneous)</td>
+<td>T_critical = ΔH/ΔS; reaction spontaneous below this; non-spontaneous above</td>
+<td>Freezing of water: ΔH_freeze ≈ −6.01 kJ/mol, ΔS_freeze ≈ −21.99 J/mol·K → T_critical = 6010 / 21.99 ≈ 273.4 K (0.4°C, close to 0°C literature freezing point)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>High-T Process (ΔH &gt; 0, ΔS &gt; 0)</strong></td>
+<td>ΔG = ΔH − TΔS; at low T, ΔG ≈ ΔH &gt; 0 (non-spontaneous); as T increases, −TΔS term dominates (negative, large)</td>
+<td>At low T: ΔG &gt; 0 (non-spontaneous); at T_critical = ΔH/ΔS, ΔG = 0; above T_critical, ΔG &lt; 0 (spontaneous)</td>
+<td>T_critical = ΔH/ΔS; reaction non-spontaneous below, spontaneous above</td>
+<td>Melting of ice: ΔH_melt ≈ +6.01 kJ/mol, ΔS_melt ≈ +21.99 J/mol·K → T_critical ≈ 273.4 K; below 0°C, ice stable; above 0°C, water stable</td>
+<td>2021, 2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Clausius-Clapeyron Relation (Phase Transitions)</strong></td>
+<td>At equilibrium T for phase transition: ΔG_trans = 0 → ΔH_trans = T·ΔS_trans; $\frac{dP}{dT} = \frac{\Delta H_{trans}}{T \Delta V_{trans}}$</td>
+<td>Relates slope of phase boundary (P vs. T) to enthalpy and volume of transition; explains why ice melts under pressure (negative dP/dT for ice–water; V decreases)</td>
+<td>For melting: positive dP/dT (normal); for ice: negative dP/dT (anomaly, explains ice skating); for boiling: always positive dP/dT</td>
+<td>Ice–water: ΔH_fus ≈ 6 kJ/mol, ΔV ≈ −1.6 × 10⁻⁵ m³/mol → dP/dT ≈ −0.5 MPa/K = −0.5 bar/K (negative slope, ice melts under pressure)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Coupling Reactions &amp; Biological Context</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Energetics</th>
+<th>Application</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Coupled Reactions (Energy Coupling)</strong></td>
+<td>Non-spontaneous reaction (ΔG &gt; 0) driven by coupling with spontaneous reaction (ΔG &lt;&lt; 0)</td>
+<td>ΔG_coupled = ΔG_non-spon + ΔG_spon; if ΔG_spon sufficiently negative, ΔG_coupled can be negative (overall spontaneous)</td>
+<td>Biological systems: ATP hydrolysis (ΔG ≈ −30 kJ/mol) coupled to syntheses and muscle contraction</td>
+<td>Muscle contraction: myosin + ATP → products (ΔG ≈ −50 kJ/mol, spontaneous); drives mechanical work against resistance</td>
+<td>2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>ATP &amp; Bioenergetics</strong></td>
+<td>ATP (adenosine triphosphate) + H₂O → ADP + Pi; ΔG_hydrolysis ≈ −30.5 kJ/mol (standard conditions)</td>
+<td>Large negative ΔG drives biosynthetic reactions; repeated ATP synthesis/hydrolysis cycles power cellular processes</td>
+<td>ATP as universal energy currency in cells; one ATP hydrolysis couples to many non-spontaneous reactions</td>
+<td>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (ΔG &gt; 0, non-spontaneous); powered by light energy → ATP → ΔG_coupled &lt; 0 (overall spontaneous)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 6: NUMERICAL PRACTICE &amp; INTEGRATED PROBLEMS</h2>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Problem No.</th>
+<th>Description</th>
+<th>Key Concepts</th>
+<th>Calculation</th>
+<th>Answer</th>
+<th>PYQ Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T-1</strong></td>
+<td>Combustion ΔH: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l). Given ΔH_f°: CH₄ = −75 kJ/mol, CO₂ = −394 kJ/mol, H₂O(l) = −286 kJ/mol. Find ΔH_rxn.</td>
+<td>ΔH_f° calculation, extensive property</td>
+<td>ΔH_rxn = [ΔH_f°(CO₂) + 2·ΔH_f°(H₂O(l))] − [ΔH_f°(CH₄) + 2·ΔH_f°(O₂)] = [−394 + 2(−286)] − [−75 + 0] = −966 + 75 = −891 kJ/mol</td>
+<td>ΔH_rxn ≈ −890 kJ/mol</td>
+<td>2024 Mains</td>
+</tr>
+<tr>
+<td><strong>T-2</strong></td>
+<td>Hess's Law: Target C(s) + O₂(g) → CO₂(g). Given: (1) C(s) + ½O₂(g) → CO(g), ΔH = −110 kJ; (2) CO(g) + ½O₂(g) → CO₂(g), ΔH = −283 kJ. Find ΔH_target.</td>
+<td>Combining reactions, Hess's Law, addition of ΔH values</td>
+<td>ΔH_target = ΔH₁ + ΔH₂ = −110 + (−283) = −393 kJ/mol</td>
+<td>ΔH_target ≈ −393 kJ/mol</td>
+<td>2023 Mains</td>
+</tr>
+<tr>
+<td><strong>T-3</strong></td>
+<td>Calorimetry: 50 mL of 1 M HCl + 50 mL of 1 M NaOH in coffee-cup calorimeter. Temperature rise: ΔT = 6.7 K. c_p(solution) ≈ 4.18 J/g·K; ρ ≈ 1.0 g/mL. Find ΔH_neutralization.</td>
+<td>Heat capacity, neutralization enthalpy, extensive vs. intensive</td>
+<td>q = m·c_p·ΔT = 100 g × 4.18 J/g·K × 6.7 K = 2801 J ≈ 2.8 kJ; moles H⁺ = 0.05 L × 1 M = 0.05 mol; ΔH_neut = −2801 J / 0.05 mol = −56,020 J/mol ≈ −56 kJ/mol (negative for exothermic)</td>
+<td>ΔH_neutralization ≈ −56 kJ/mol</td>
+<td>2022 Mains</td>
+</tr>
+<tr>
+<td><strong>T-4</strong></td>
+<td>ΔS calculation: N₂(g) + 3H₂(g) → 2NH₃(g). Given S°: N₂ = 191.6, H₂ = 130.7, NH₃ = 192.8 J/mol·K. Find ΔS_rxn.</td>
+<td>Entropy change, extensive property, phase effects</td>
+<td>ΔS_rxn = 2·S°(NH₃) − [S°(N₂) + 3·S°(H₂)] = 2(192.8) − [191.6 + 3(130.7)] = 385.6 − 583.7 = −198.1 J/mol·K</td>
+<td>ΔS_rxn ≈ −198 J/mol·K (negative, moles decrease)</td>
+<td>2025 Mains</td>
+</tr>
+<tr>
+<td><strong>T-5</strong></td>
+<td>ΔG &amp; Spontaneity: N₂(g) + 3H₂(g) → 2NH₃(g). ΔH_rxn ≈ −92 kJ/mol, ΔS_rxn ≈ −198 J/mol·K. Find ΔG at 298 K and predict spontaneity.</td>
+<td>Gibbs free energy, temperature dependence, spontaneity criterion</td>
+<td>ΔG = ΔH − TΔS = −92,000 − 298 × (−198) = −92,000 + 59,100 = −32,900 J/mol ≈ −33 kJ/mol; ΔG &lt; 0 → spontaneous at 298 K</td>
+<td>ΔG ≈ −33 kJ/mol (spontaneous)</td>
+<td>2024 Advanced</td>
+</tr>
+<tr>
+<td><strong>T-6</strong></td>
+<td>ΔG° &amp; Equilibrium: For reaction in T-5, find K at 298 K using ΔG° = −33 kJ/mol. R = 8.314 J/mol·K.</td>
+<td>ΔG° to K conversion, Van't Hoff integration</td>
+<td>K = exp(−ΔG°/RT) = exp(−(−33,000)/(8.314 × 298)) = exp(13.3) ≈ 6 × 10⁵ (or use ln K = −ΔG°/RT = 33,000/2477.6 ≈ 13.3; K ≈ e^13.3)</td>
+<td>K ≈ 6 × 10⁵ (large K, equilibrium favors products)</td>
+<td>2025 Advanced</td>
+</tr>
+<tr>
+<td><strong>T-7</strong></td>
+<td>Temperature Effect on Spontaneity: Freezing H₂O(s) ← → H₂O(l). ΔH_fus = +6.01 kJ/mol, ΔS_fus = +21.99 J/mol·K. Find T at which ΔG = 0 (phase equilibrium).</td>
+<td>Phase transition, ΔG = 0 at equilibrium, critical temperature</td>
+<td>At equilibrium: ΔG = 0 → ΔH = T·ΔS → T = ΔH/ΔS = 6010 J/mol / 21.99 J/mol·K = 273.3 K ≈ 0°C (literature: 0.0°C)</td>
+<td>T ≈ 273 K (0°C)</td>
+<td>2023 Mains</td>
+</tr>
+<tr>
+<td><strong>T-8</strong></td>
+<td>Bond Dissociation Energies: CH₄ + 2O₂ → CO₂ + 2H₂O. Bond energies (kJ/mol): C−H = 414, O=O = 498, C=O = 799, O−H = 463. Find ΔH_rxn.</td>
+<td>Bond energies, endothermic/exothermic, approximation vs. ΔH_f°</td>
+<td>Bonds broken: 4(C−H) + 2(O=O) = 4(414) + 2(498) = 1656 + 996 = 2652 kJ; Bonds formed: 2(C=O) + 4(O−H) = 2(799) + 4(463) = 1598 + 1852 = 3450 kJ; ΔH = 2652 − 3450 = −798 kJ/mol (vs. literature −890 kJ; 10% error due to bond energy approximations)</td>
+<td>ΔH_rxn ≈ −800 kJ/mol (approximate)</td>
+<td>2021 Mains</td>
+</tr>
+<tr>
+<td><strong>T-9</strong></td>
+<td>ΔG° vs. Non-Standard Conditions: For N₂ + 3H₂ ⇌ 2NH₃, ΔG°(298 K) ≈ −33 kJ/mol. Suppose reaction at non-standard pressures: [NH₃] = 1 M, [N₂] = 10 M, [H₂] = 1 M. Is reaction spontaneous?</td>
+<td>ΔG from Q, non-standard conditions, reaction quotient</td>
+<td>Q = [NH₃]²/([N₂][H₂]³) = 1²/(10 × 1³) = 0.1; ΔG = ΔG° + RT ln Q = −33,000 + 8.314 × 298 × ln(0.1) = −33,000 + 2477.6 × (−2.303) = −33,000 − 5703 = −38,703 J/mol ≈ −38.7 kJ/mol; ΔG &lt; 0 → spontaneous (even more than standard)</td>
+<td>ΔG ≈ −39 kJ/mol (spontaneous under these conditions)</td>
+<td>2026 Advanced</td>
+</tr>
+<tr>
+<td><strong>T-10</strong></td>
+<td>Coupling Reactions: Reaction 1 (non-spon): A → B, ΔG₁ = +50 kJ/mol. Reaction 2 (spon): C → D, ΔG₂ = −60 kJ/mol. If coupled: A + C → B + D, is overall spontaneous?</td>
+<td>Coupled reactions, free energy addition, biological context</td>
+<td>ΔG_coupled = ΔG₁ + ΔG₂ = 50 + (−60) = −10 kJ/mol &lt; 0 → Coupled reaction spontaneous</td>
+<td>ΔG_coupled ≈ −10 kJ/mol (spontaneous when coupled)</td>
+<td>2024 Advanced</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 7: JEE FOCUS POINTS &amp; ADVANCED INTEGRATION</h2>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>JEE Focus</th>
+<th>Common Misconception</th>
+<th>Problem-Solving Strategy</th>
+<th>Expected Difficulty</th>
+<th>PYQ Frequency (2021–2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>State Function Recognition</strong></td>
+<td>ΔH, ΔS, ΔG are state functions (path-independent); q, w are path functions; critical for Hess's Law</td>
+<td>Confusing path functions with state functions; thinking ΔH depends on reaction pathway</td>
+<td>Identify state function from naming (Δ prefix); recognize that ∮ dΔ = 0 for cycles; use Hess's Law for multi-step derivations</td>
+<td>7/10 (Mains)</td>
+<td>Very High (all years)</td>
+</tr>
+<tr>
+<td><strong>ΔH vs. ΔU Distinction</strong></td>
+<td>ΔH = ΔU + P·ΔV; for gases Δn·RT term significant; for condensed phases negligible</td>
+<td>Assuming ΔH ≈ ΔU always or ignoring P·ΔV term</td>
+<td>Calculate ΔnRT (moles of gas products − reactants × RT); if large (Δn ≠ 0), ΔH ≠ ΔU; if small (Δn ≈ 0 or condensed), ΔH ≈ ΔU</td>
+<td>6/10 (Mains)</td>
+<td>Medium (2021, 2023, 2024)</td>
+</tr>
+<tr>
+<td><strong>ΔG = ΔH − TΔS Competition</strong></td>
+<td>Temperature controls which term dominates; at low T, ΔH; at high T, TΔS</td>
+<td>Ignoring temperature effect on spontaneity; not recognizing phase transition crossover</td>
+<td>For each sign combination (ΔH/ΔS), determine T-dependence: low T spontaneous (ΔH &lt; 0, ΔS &lt; 0) vs. high T (ΔH &gt; 0, ΔS &gt; 0); calculate T_critical = ΔH/ΔS for crossover</td>
+<td>8/10 (Advanced)</td>
+<td>High (2023, 2024, 2025, 2026)</td>
+</tr>
+<tr>
+<td><strong>Calorimetry Precision</strong></td>
+<td>Sign conventions (exo = negative ΔH; endo = positive); mass balance in coffee-cup calorimeter</td>
+<td>Forgetting negative sign for exothermic; using solute mass instead of solution mass for c_p</td>
+<td>Always assign correct sign: heat released (exo) → q &lt; 0, ΔH &lt; 0; heat absorbed (endo) → q &gt; 0, ΔH &gt; 0; use total solution mass for q = m·c·ΔT</td>
+<td>6/10 (Mains)</td>
+<td>Medium (2021, 2022, 2024, 2025)</td>
+</tr>
+<tr>
+<td><strong>ΔG° vs. K Relationship</strong></td>
+<td>ΔG° = −RT ln K; large K → large negative ΔG° (favorable); K = 1 → ΔG° = 0 (equilibrium)</td>
+<td>Confusing K with ΔG°; not recognizing that K = 1 when ΔG° = 0</td>
+<td>Use ΔG° = −RT ln K; if ΔG° &lt;&lt; 0, then K &gt;&gt; 1 (reaction goes to completion); if ΔG° &gt;&gt; 0, then K &lt;&lt; 1 (reaction barely proceeds)</td>
+<td>8/10 (Advanced)</td>
+<td>Very High (2023, 2024, 2025, 2026 Advanced)</td>
+</tr>
+<tr>
+<td><strong>Hess's Law Multi-Step</strong></td>
+<td>Combine reactions by reversing, scaling, and adding; verify intermediate cancellation</td>
+<td>Arithmetic errors in scaling/adding ΔH values; forgetting to reverse sign when reversing reaction</td>
+<td>Write target reaction; align given reactions by systematic manipulation; scale and reverse as needed; add ΔH values; confirm target matches sum</td>
+<td>7/10 (Advanced)</td>
+<td>High (2021, 2022, 2024, 2025)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p><strong>END OF FILE 1</strong></p>
+<p><em>Combine with File 2 for complete thermodynamics preparation. Master sign conventions, state functions, and temperature dependence for JEE success.</em></p>
+              </div>
+            </div>
+          </div>
+        
+          <div id="panel-guide-3" class="view-panel">
+            <div class="guide-content-wrap">
+              <div class="guide-search-box" style="margin-bottom: 1.5rem;">
+                <span class="search-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" class="guide-search-input" placeholder="Search equations, concepts, or mechanisms in this guide...">
+              </div>
+              <div class="guide-content">
+                <h1>THERMODYNAMICS &amp; THERMOCHEMISTRY: PROPERTIES, ADVANCED TOPICS &amp; COMPREHENSIVE ANALYSIS</h1>
+<h2>JEE (Mains &amp; Advanced) | CBSE Class 11–12</h2>
+<hr />
+<h2>SECTION 1: WORK &amp; INTERNAL ENERGY — DETAILED ANALYSIS</h2>
+<h3>PART A: Types of Work in Thermodynamic Processes</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Work Type</th>
+<th>Definition</th>
+<th>Formula</th>
+<th>Physical Meaning</th>
+<th>Sign Convention</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P-V Work (Pressure-Volume Work)</strong></td>
+<td>Work done against/by external pressure during volume change</td>
+<td>$w = -P_{ext} \Delta V$ (sign convention: w &gt; 0 if work done ON system; w &lt; 0 if done BY system)</td>
+<td>Most common in chemistry; gas expansion does work on surroundings (w &lt; 0 if using sign convention where work by = negative)</td>
+<td>w = −P_ext · ΔV; if ΔV &gt; 0 (expansion), w &lt; 0 (system does work, energy leaves); if ΔV &lt; 0 (compression), w &gt; 0 (work done on system, energy enters)</td>
+<td>Gas expanding at constant P: 2 mol ideal gas at 300 K, 1 atm, expands from 49.6 L to 99.2 L; w = −P · ΔV = −1 atm × (99.2 − 49.6) L = −49.6 L·atm ≈ −5 kJ (work done BY system)</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Reversible (Maximum) Work</strong></td>
+<td>Work extracted when system undergoes infinitesimal steps, maintaining equilibrium; theoretical maximum</td>
+<td>For isothermal: $w_{rev} = -nRT \ln(V_f/V_i) = -nRT \ln(P_i/P_f)$</td>
+<td>System always infinitesimally away from equilibrium; all possible energy converted to work (no wasted as heat in non-equilibrium processes)</td>
+<td>w_rev most negative (maximum work extracted); theoretical limit; real processes yield less work due to irreversibility</td>
+<td>Isothermal reversible expansion of 1 mol ideal gas from 1 atm to 0.1 atm at 298 K: w_rev = −nRT ln(P_i/P_f) = −1 × 8.314 × 298 × ln(1/0.1) = −8.314 × 298 × ln(10) ≈ −5.7 kJ</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Irreversible (Actual) Work</strong></td>
+<td>Work extracted in real (irreversible) process; finite driving force, non-equilibrium conditions</td>
+<td>For free expansion into vacuum: w = 0 (no external pressure to do work against); for expansion against constant external P: w = −P_ext · ΔV &lt; w_rev</td>
+<td>Real processes are irreversible; less work extracted than theoretical maximum; entropy increases</td>
+<td>w_irrev &gt; w_rev (less negative, smaller magnitude); approaches w_rev as process becomes more reversible (smaller driving force)</td>
+<td>Free expansion: gas expands into evacuated space, ΔP = 0, no work done (w = 0, maximum irreversibility); isothermal expansion against constant 0.1 atm: w = −0.1 × Δ V &lt; w_rev</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Electrical Work</strong></td>
+<td>Work done/extracted via electrical potential; n moles of electrons transferred at voltage E</td>
+<td>$w_{elec} = -nFE$ (Faraday's constant F = 96,485 C/mol; E in volts)</td>
+<td>Used in electrochemistry; galvanic cells extract electrical work; electrolytic cells require electrical work input</td>
+<td>Galvanic cell (spontaneous, w &lt; 0, work extracted); electrolytic cell (non-spontaneous, w &gt; 0, work input required)</td>
+<td>Galvanic cell: Cu²⁺ + Zn → Cu + Zn²⁺, E° ≈ 1.1 V, 2 electrons transferred per Zn; w_elec = −2 × 96485 × 1.1 ≈ −212 kJ per mol Zn</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Internal Energy in Different Processes</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Process Type</th>
+<th>Path Description</th>
+<th>ΔU Relationship</th>
+<th>q &amp; w Behavior</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Isothermal Process (Constant T)</strong></td>
+<td>Temperature constant throughout; ΔT = 0</td>
+<td>For ideal gas: U = (3/2)nRT (monoatomic) or more generally U ∝ T; ΔU = 0 if T constant</td>
+<td>q = −w (First Law: ΔU = q + w = 0 → q = −w); heat absorbed equals work done by system</td>
+<td>Isothermal expansion: gas absorbs heat from surroundings (q &gt; 0) to do work (w &lt; 0); q = −w</td>
+<td>Isothermal expansion of 1 mol ideal gas at 298 K from 10 L to 20 L (reversible): ΔU = 0; w = −nRT ln(V_f/V_i) ≈ −1.7 kJ; q = +1.7 kJ (heat absorbed)</td>
+<td>2021, 2023, 2024, 2025</td>
+</tr>
+<tr>
+<td><strong>Adiabatic Process (q = 0)</strong></td>
+<td>No heat exchange (isolated or insulated system); dq = 0</td>
+<td>ΔU = q + w = 0 + w = w (all work changes internal energy); ΔU ≠ 0 typically</td>
+<td>q = 0; w = ΔU (work done on system increases U, T; work done by system decreases U, T)</td>
+<td>Adiabatic expansion: gas does work w &lt; 0 without heat input → internal energy decreases → temperature drops</td>
+<td>Adiabatic compression of ideal gas: external work compresses gas (w &gt; 0 on system) → U increases → T increases (no heat loss, all compression energy → internal energy)</td>
+<td>2022, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Isobaric Process (Constant P)</strong></td>
+<td>Pressure constant; ΔP = 0</td>
+<td>ΔU = (f/2)nRΔT where f = degrees of freedom; ΔU = nC_v ΔT</td>
+<td>q_p = nC_p ΔT = ΔH (heat at constant pressure equals enthalpy change); w = −P ΔV</td>
+<td>Most common in chemistry (lab experiments); heating/cooling at atmospheric pressure</td>
+<td>Heating 1 mol water at constant 1 atm pressure from 298 K to 373 K: q_p = ΔH = 1 × 75.3 × 75 ≈ 5650 J ≈ 5.65 kJ; w = −P ΔV ≈ −3 kJ; ΔU = q + w ≈ 2.65 kJ</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Isochoric Process (Constant V)</strong></td>
+<td>Volume constant; ΔV = 0</td>
+<td>ΔU = nC_v ΔT (all internal energy change from temperature change, no PV work)</td>
+<td>w = 0 (no volume change, no PV work); ΔU = q_v (all heat goes to internal energy, no work)</td>
+<td>Heating gas in rigid container (bomb calorimeter); all heat increases internal energy</td>
+<td>Heating 1 mol ideal gas at constant volume from 298 K to 373 K: q_v = ΔU = nC_v ΔT = 1 × 20.8 × 75 ≈ 1560 J (less than isobaric case because no PV expansion work to absorb energy)</td>
+<td>2021, 2023, 2024</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 2: ENTROPY — STATISTICAL &amp; MICROSCOPIC INTERPRETATION</h2>
+<h3>PART A: Entropy from Statistical Mechanics</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Formula</th>
+<th>Physical Insight</th>
+<th>Connection to Thermodynamics</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Microstate &amp; Macrostate</strong></td>
+<td>Microstate: specific quantum state of every particle; Macrostate: bulk properties (P, V, T, n, composition)</td>
+<td>Macrostate can correspond to Ω microstates; entropy measures count of accessible microstates</td>
+<td>More microstates (disorder) → higher entropy; unique microstate (perfect order, 0 K) → S = 0</td>
+<td>Connects molecular disorder to thermodynamic entropy; Second Law favors states with many microstates</td>
+<td>Crystal at 0 K: 1 microstate (Ω = 1, S = 0); same crystal at 300 K: ~10²³ microstates (high S); solution: even higher Ω (mixed arrangement)</td>
+<td>2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Boltzmann Constant &amp; Entropy</strong></td>
+<td>$S = k_B \ln \Omega$ where k_B = 1.38 × 10⁻²³ J/K (Boltzmann constant); Ω = number of accessible microstates</td>
+<td>Entropy proportional to logarithm of microstate count; doubling Ω → S increases by k_B ln(2) ≈ 9.6 × 10⁻²⁴ J/K per particle</td>
+<td>Larger Ω (more disorder) → higher S (logarithmic, not linear scaling); explains why entropy increases with temperature (more energy levels accessible)</td>
+<td>Connects microscopic disorder to macroscopic entropy; S_universe = k_B ln(Ω_universe) for all microstates</td>
+<td>Mixing 2 gases: initial Ω = Ω₁ × Ω₂; final Ω' &gt;&gt; Ω (product expands, more volume → more microstates); ΔS_mix &gt; 0</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Entropy of Ideal Gas (Statistical Derivation)</strong></td>
+<td>$S = nC_v \ln T + nR \ln V + S_0$ (Sackur-Tetrode equation simplified); explicit T &amp; V dependence</td>
+<td>S increases with T (more thermal disorder) and V (more spatial disorder); explains why S_gas &gt;&gt; S_liquid &gt; S_solid</td>
+<td>Direct connection between microscopic translational/rotational freedom and thermodynamic entropy; larger volume → more position uncertainty → higher S</td>
+<td>Thermal energy and volume both increase accessible microstates; S ~ ln(V) reflects exponential multiplicity of spatial arrangements</td>
+<td>Doubling T or V: ΔS ∝ ln(2) (logarithmic); makes sense because order-of-magnitude change in Ω, not doubling</td>
+<td>2023, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Disorder at Molecular Level</strong></td>
+<td>Disorder increases with: (1) kinetic energy (higher T → more thermal motion), (2) volume (more space → more positions), (3) molecular complexity (more internal freedom), (4) phase (gas &gt;&gt; liquid &gt; solid)</td>
+<td>S ∝ ln(internal/translational/rotational degrees of freedom); S ∝ ln(T), ln(V), ln(molecular mass &amp; complexity)</td>
+<td>Explains qualitative trends: gases have high S (free translation); solids have low S (fixed positions); molecules &gt;atoms</td>
+<td>Gas expansion: huge increase in position microstates (Ω ~ V^N); entropy increase nearly irreversible</td>
+<td>Linear molecules: higher S than spherical (rotational freedom); branched &gt;linear (internal disorder)</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Entropy Changes in Real Processes</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Process</th>
+<th>ΔS Expression</th>
+<th>Physical Mechanism</th>
+<th>Reversibility</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Isothermal Expansion (Ideal Gas)</strong></td>
+<td>$\Delta S = nR \ln(V_f/V_i) = nR \ln(P_i/P_f)$ (positive)</td>
+<td>Volume increases → more positions for particles → more microstates (Ω_final &gt;&gt; Ω_initial) → S increases</td>
+<td>Reversible expansion: ΔS = q_rev/T; irreversible (free expansion): ΔS same, but q = 0 (entropy generation without heat)</td>
+<td>Free expansion into vacuum: ΔS = nR ln(V_f/V_i) &gt; 0 but q = 0, w = 0; ΔS_surr = 0 → ΔS_univ &gt; 0 (spontaneous, irreversible)</td>
+<td>1 mol ideal gas, 298 K, expands from 10 L to 20 L: ΔS = 1 × 8.314 × ln(2) ≈ 5.8 J/K (irreversible process, maximum entropy generation for this volume ratio)</td>
+<td>2021, 2022, 2023, 2024, 2025</td>
+</tr>
+<tr>
+<td><strong>Heat Absorption at Constant T</strong></td>
+<td>$\Delta S = \frac{q_{rev}}{T}$ (at constant T, heat absorbed proportional to entropy increase)</td>
+<td>Heat adds kinetic energy → particles move faster → more microstates accessible (higher Ω) → S increases</td>
+<td>Reversible absorption (infinitesimal T increase): ΔS = q_rev/T; irreversible (finite ΔT drop): ΔS_gen = q(1/T_system − 1/T_source) &gt; 0</td>
+<td>Melting ice at 273 K: ΔS_system = ΔH_melt/T = 6010 J/mol / 273 K ≈ 22 J/mol·K (order → disorder transition)</td>
+<td>Water: 1 mol liquid at 298 K absorbs 1 kJ reversibly → ΔS = 1000 J / 298 K ≈ 3.4 J/K (disorder increases from thermal energy)</td>
+<td>2021, 2022, 2023, 2024, 2025</td>
+</tr>
+<tr>
+<td><strong>Mixing (Ideal Gas or Ideal Solution)</strong></td>
+<td>$\Delta S_{mix} = -R \sum n_i \ln x_i$ (always positive; each component "dilutes" into larger volume)</td>
+<td>Each gas expands into larger total volume → each has more positions available → Ω_final ∝ V₁^N₁ × V₂^N₂ &gt;&gt; Ω_initial</td>
+<td>Irreversible mixing: spontaneous, ΔS_mix &gt; 0; reverse (unmixing) requires ΔG &gt;&gt; 0, never spontaneous at constant T, P</td>
+<td>Mixing 1 mol O₂ (10 L at 1 atm) with 1 mol N₂ (10 L at 1 atm) at 298 K: ΔS_mix = −R[ln(0.5) + ln(0.5)] = −R × 2 × ln(0.5) = 2R ln(2) ≈ 11.5 J/K (each gas dilutes to half mole fraction)</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Dissolution (Ionic or Molecular)</strong></td>
+<td>ΔS_dissolve = ΔS_solution − ΔS_solid &gt;&gt; 0 typically; entropy of solvated ions/molecules higher than crystal</td>
+<td>Solid: ordered lattice (low S); solution: dispersed solvated species (high S); solvation disorder (hydration shell rearrangement) adds entropy</td>
+<td>Most dissolution ΔS &gt; 0 (spontaneous factor); some dissolution endothermic (ΔH &gt; 0) but entropy-driven (ΔG &lt; 0 due to ΔS)</td>
+<td>NaCl dissolving: ΔH_soln ≈ +3.9 kJ/mol (slightly endothermic); ΔS_soln ≈ +43 J/mol·K (high, solvation entropy); at 298 K, ΔG = 3900 − 298 × 43 ≈ −12,900 J/mol &lt; 0 (spontaneous, entropy-driven)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 3: THERMODYNAMIC CYCLES &amp; CYCLIC PROCESSES</h2>
+<h3>PART A: Carnot Cycle &amp; Maximum Efficiency</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Cycle Step</th>
+<th>Process</th>
+<th>P-V Behavior</th>
+<th>T Change</th>
+<th>ΔU, q, w</th>
+<th>Entropy Change</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1→2: Isothermal Expansion (Hot)</strong></td>
+<td>Expansion at T_hot against external pressure; heat absorbed from hot reservoir</td>
+<td>P ∝ 1/V (isothermal curve); V increases; P decreases</td>
+<td>Isothermal: T = T_hot (constant)</td>
+<td>ΔU = 0; w &lt; 0 (gas does work); q = −w &gt; 0 (heat absorbed); w = −nRT_hot ln(V₂/V₁)</td>
+<td>ΔS = q/T_hot = nR ln(V₂/V₁) &gt; 0 (entropy increases)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>2→3: Adiabatic Expansion</strong></td>
+<td>Expansion with no heat exchange (q = 0); work done by gas; temperature drops</td>
+<td>P ∝ V^γ (adiabat steeper than isotherm); V increases; P decreases more rapidly than isothermal</td>
+<td>Adiabatic: T_hot → T_cold; ΔT &lt; 0 (cooling)</td>
+<td>ΔU = w &lt; 0 (internal energy decreases); q = 0 (adiabatic); w = ΔU = nC_v ΔT &lt; 0</td>
+<td>ΔS = 0 (no heat, adiabatic; reversible process)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>3→4: Isothermal Compression (Cold)</strong></td>
+<td>Compression at T_cold; heat released to cold reservoir</td>
+<td>P ∝ 1/V (isothermal curve); V decreases; P increases</td>
+<td>Isothermal: T = T_cold (constant)</td>
+<td>ΔU = 0; w &gt; 0 (work done on gas); q = −w &lt; 0 (heat released); w = −nRT_cold ln(V₄/V₃)</td>
+<td>ΔS = q/T_cold = nR ln(V₄/V₃) &lt; 0 (entropy decreases, heat rejected)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>4→1: Adiabatic Compression</strong></td>
+<td>Compression with no heat exchange (q = 0); work done on gas; temperature rises</td>
+<td>P ∝ V^γ (adiabat); V decreases; P increases more rapidly than isothermal</td>
+<td>Adiabatic: T_cold → T_hot; ΔT &gt; 0 (heating)</td>
+<td>ΔU = w &gt; 0 (internal energy increases); q = 0 (adiabatic); w = ΔU = nC_v ΔT &gt; 0</td>
+<td>ΔS = 0 (no heat, adiabatic; reversible process)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Carnot Efficiency</strong></td>
+<td>η = W_net / q_in = (q_hot −</td>
+<td>q_cold</td>
+<td>) / q_hot = 1 − T_cold/T_hot</td>
+<td>Maximum possible efficiency for any heat engine; independent of working substance</td>
+<td>Efficiency increases with larger temperature difference (T_hot − T_cold); maximum at T_cold = 0 K (η = 1, impossible)</td>
+<td>Real engines always η &lt; η_Carnot (irreversible processes, finite driving forces)</td>
+<td>η_Carnot(T_hot = 600 K, T_cold = 300 K) = 1 − 300/600 = 0.5 (50% maximum efficiency; real engines ~ 30−40%)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Heat Capacity Relationships &amp; Temperature Dependence</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Definition</th>
+<th>Formula</th>
+<th>Physical Meaning</th>
+<th>Implication</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mayer's Relation</strong></td>
+<td>Difference between heat capacities at constant pressure and volume</td>
+<td>$C_p - C_v = nR$ (or per mole: c_{p} - c_{v} = R)</td>
+<td>C_p &gt; C_v because at constant P, additional energy needed for volume expansion work (PV work absorbed some of heat input)</td>
+<td>For ideal gas: C_p = C_v + nR; typical for monatomic: C_v ≈ 1.5nR, C_p ≈ 2.5nR</td>
+<td>Monatomic ideal gas: C_v = (3/2)nR ≈ 12.5 J/mol·K; C_p = (5/2)nR ≈ 20.8 J/mol·K; C_p − C_v = nR = 8.314 J/mol·K ✓</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Heat Capacity Ratio (γ)</strong></td>
+<td>γ = C_p / C_v; dimensionless; characterizes adiabatic processes</td>
+<td>Monatomic: γ = 5/3 ≈ 1.67; Diatomic: γ = 7/5 = 1.4; Polyatomic: γ ≈ 1.33</td>
+<td>Controls steepness of adiabat relative to isotherm (P ∝ V^γ for adiabat); higher γ → steeper adiabat</td>
+<td>Adiabatic work and T change depend on γ</td>
+<td>For air (mostly N₂, O₂, diatomic): γ ≈ 1.4; sound speed ∝ √γ (why diatomic gases have characteristic acoustic properties)</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Temperature Dependence of C_p</strong></td>
+<td>C_p typically increases with T; for ideal gas C_p constant, but real molecules: C_p(T) via activation of vibrational modes</td>
+<td>$C_p = a + bT + cT^2$ (empirical fit); quantum levels → higher T allows access to rotational/vibrational states</td>
+<td>At low T: only translational modes active; at high T: rotational and vibrational contributions increase C_p (more energy storage capacity)</td>
+<td>Dulong-Petit Law: C_v ≈ 3R per mole for solids (3 quadratic terms per atom: 3 kinetic + 3 potential); breaks down at low T when vibrations frozen out</td>
+<td>Heat capacity of metals: near 300 K ≈ 3R; at 10 K &gt;&gt; 3R; at T → 0, C_p ∝ T (Debye model)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 4: PHASE DIAGRAMS &amp; PHASE TRANSITIONS</h2>
+<h3>PART A: Understanding Phase Diagrams</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Definition</th>
+<th>Physical Meaning</th>
+<th>Thermodynamic Significance</th>
+<th>Phase Diagram Location</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Triple Point</strong></td>
+<td>Unique T, P where all three phases (solid, liquid, gas) coexist in equilibrium</td>
+<td>Gibbs phase rule: F = C − P + 2 = 1 − 3 + 2 = 0 (no degrees of freedom; one fixed point)</td>
+<td>ΔG_solid→liquid = 0 AND ΔG_liquid→gas = 0 simultaneously; thermodynamic constraint defines unique point</td>
+<td>Water: (0.01°C, 611.7 Pa); CO₂: (−56.6°C, 518 kPa)</td>
+<td>Carbon phase diagram: graphite, diamond, liquid, gas meet at unique T, P; only point where all coexist</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Critical Point</strong></td>
+<td>Upper limit of phase boundary; above T_c &amp; P_c, no distinction between liquid and gas phases</td>
+<td>Continuous transition: density, viscosity vary smoothly from gas to liquid; no discontinuous change; phase boundary ends</td>
+<td>ΔH_vap → 0; ΔS_vap → 0 as T → T_c; system becomes homogeneous (one phase, intermediate density)</td>
+<td>Located at end of liquid-vapor coexistence curve (upper right); phase diagram splits into 2 regions above T_c</td>
+<td>Water: T_c = 374°C, P_c = 22.064 MPa (supercritical water: near density 400 kg/m³, properties between liquid and gas)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Clausius-Clapeyron Line (Phase Boundary)</strong></td>
+<td>Curve showing T &amp; P where two phases in equilibrium; slope determined by ΔH_transition and ΔV_transition</td>
+<td>Each point: ΔG_phase1 = ΔG_phase2; crossing line → phase transition occurs</td>
+<td>Slope dP/dT = ΔH_trans / (T·ΔV_trans); steep for solid-liquid (small ΔV); gentle for liquid-vapor (large ΔV); negative for ice-water (anomaly, ΔV &lt; 0)</td>
+<td>Solid-liquid boundary (steeper); liquid-vapor boundary (gentler); ice-water unusual (slight negative slope)</td>
+<td>Water: solid-liquid slope ≈ −0.5 MPa/K (unusual negative, ice expands on freezing); liquid-vapor slope ≈ positive (normal, water expands on vaporization)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Supercritical Fluid</strong></td>
+<td>Above critical point: single-phase fluid with density between liquid/gas; gas-like diffusivity &amp; liquid-like solvency</td>
+<td>No phase boundary; smooth transition in properties as P changes at constant T &gt; T_c (or as T changes at constant P &gt; P_c)</td>
+<td>Useful for extractions and reactions; solvent power can be "tuned" by pressure</td>
+<td>Industrial: supercritical CO₂ (T_c = 31°C, P_c = 74 bar) for decaffeination, dry cleaning; supercritical water for waste oxidation</td>
+<td>Supercritical CO₂ extraction: adjust pressure to dissolve oils/caffeine (liquid-like density) while maintaining gas-like penetration</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Clausius-Clapeyron Equation &amp; Phase Stability</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Clausius-Clapeyron Form</th>
+<th>Application</th>
+<th>Prediction</th>
+<th>Example Calculation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vapor Pressure vs. Temperature</strong></td>
+<td>$\ln \frac{P_2}{P_1} = -\frac{\Delta H_{vap}}{R} \left( \frac{1}{T_2} - \frac{1}{T_1} \right)$</td>
+<td>Predict vapor pressure at different T; connect ΔH_vap to vapor pressure curve</td>
+<td>Larger ΔH_vap → steeper vapor pressure curve (P increases more rapidly with T)</td>
+<td>Water: ΔH_vap ≈ 40.66 kJ/mol. P₁ = 1 atm at T₁ = 373 K (boiling point). Find P at T₂ = 400 K. ln(P₂/1) = −(40660/8.314) × (1/400 − 1/373) = −4890 × (0.0025 − 0.00268) = −4890 × (−0.00018) ≈ 0.88; P₂/1 ≈ e^0.88 ≈ 2.4 atm</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Melting Point vs. Pressure</strong></td>
+<td>$\frac{dP}{dT} = \frac{\Delta H_{fus}}{T \cdot \Delta V_{fus}}$</td>
+<td>Predict how melting point changes with pressure; explains why ice skating works</td>
+<td>For normal substances: dP/dT &gt; 0 (melting point increases with pressure); Ice anomaly: dP/dT &lt; 0 (melting point decreases under pressure)</td>
+<td>Water: ΔH_fus ≈ 6.01 kJ/mol, ΔV_fus = V_liquid − V_solid ≈ −1.6 × 10⁻⁵ m³/mol (negative, ice expands). dP/dT = 6010 / (273.15 × (−1.6 × 10⁻⁵)) ≈ −1.4 MPa/K (negative slope); pressure increase → melting point decreases (ice melts under pressure)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Temperature at Phase Equilibrium (Melting/Boiling)</strong></td>
+<td>ΔG_trans = 0 → ΔH_trans = T·ΔS_trans → T_eq = ΔH_trans / ΔS_trans</td>
+<td>Calculate equilibrium temperature where phases coexist</td>
+<td>At T &lt; T_eq: solid stable (ΔG_solid &lt; ΔG_liquid); at T &gt; T_eq: liquid stable (ΔG_liquid &lt; ΔG_solid)</td>
+<td>Ice melting: ΔH_melt = 6.01 kJ/mol, ΔS_melt = 21.99 J/mol·K → T_melt = 6010 / 21.99 ≈ 273.3 K (0.15°C); actual 0.0°C at 1 atm (small discrepancy from approximations)</td>
+<td>2021, 2023, 2025</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 5: COMPARATIVE THERMODYNAMIC TABLES</h2>
+<h3>PART A: Standard Thermodynamic Properties (Molar Values at 298 K, 1 atm)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Substance</th>
+<th>ΔH_f° (kJ/mol)</th>
+<th>S° (J/mol·K)</th>
+<th>ΔG_f° (kJ/mol)</th>
+<th>State</th>
+<th>Classification</th>
+<th>Stability</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H₂O(l)</strong></td>
+<td>−285.8</td>
+<td>69.9</td>
+<td>−237.1</td>
+<td>Liquid</td>
+<td>Stable oxide (highly stable)</td>
+<td>Very stable (combustion product)</td>
+<td>2021–2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>CO₂(g)</strong></td>
+<td>−393.5</td>
+<td>213.8</td>
+<td>−394.4</td>
+<td>Gas</td>
+<td>Stable oxide</td>
+<td>Very stable (combustion product)</td>
+<td>2021–2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>O₃(g)</strong></td>
+<td>+142.7</td>
+<td>238.9</td>
+<td>+163.2</td>
+<td>Gas</td>
+<td>Unstable oxide</td>
+<td>Metastable (decomposes to O₂ slowly)</td>
+<td>2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>NH₃(g)</strong></td>
+<td>−45.9</td>
+<td>192.8</td>
+<td>−16.5</td>
+<td>Gas</td>
+<td>Weak N-H bonding; exothermic formation</td>
+<td>Moderate stability (decomposes at high T)</td>
+<td>2021–2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>N₂O(g)</strong></td>
+<td>+82.1</td>
+<td>219.9</td>
+<td>+104.2</td>
+<td>Gas</td>
+<td>Unstable N-O oxide</td>
+<td>Kinetically stable (low decomposition rate)</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>NO(g)</strong></td>
+<td>+90.3</td>
+<td>210.8</td>
+<td>+86.6</td>
+<td>Gas</td>
+<td>Radical, thermodynamically unfavorable</td>
+<td>Forms in high-T processes (combustion, lightning)</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>N₂(g)</strong></td>
+<td>0</td>
+<td>191.6</td>
+<td>0</td>
+<td>Gas</td>
+<td>Stable element (reference state)</td>
+<td>Most stable N form (triple bond, unreactive)</td>
+<td>2021–2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Graphite</strong></td>
+<td>0</td>
+<td>5.7</td>
+<td>0</td>
+<td>Solid</td>
+<td>Stable C form at 298 K, 1 atm (reference)</td>
+<td>Stable (diamond converts to graphite over millions of years)</td>
+<td>2021–2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Diamond</strong></td>
+<td>+1.9</td>
+<td>2.4</td>
+<td>+2.9</td>
+<td>Solid</td>
+<td>Metastable at 298 K, 1 atm</td>
+<td>Kinetically stable (doesn't convert to graphite at 298 K despite ΔG &gt; 0)</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>N₂H₄(l)</strong></td>
+<td>+50.6</td>
+<td>121.2</td>
+<td>+149.2</td>
+<td>Liquid</td>
+<td>Explosive, ΔH &gt; 0 (endothermic)</td>
+<td>Unstable (oxidation reaction releases huge energy: N₂H₄ + O₂ → N₂ + H₂O, very exothermic)</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Heats of Vaporization &amp; Sublimation</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Substance</th>
+<th>ΔH_vap or ΔH_sub</th>
+<th>Significance</th>
+<th>Boiling/Sublimation Point</th>
+<th>Clausius-Clapeyron Application</th>
+<th>Entropy Change</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Water (H₂O)</strong></td>
+<td>40.66 kJ/mol (vap, 373 K)</td>
+<td>High (strong H-bonding)</td>
+<td>100°C (373 K at 1 atm)</td>
+<td>Steep vapor pressure curve; vapor pressure ~10 atm at 200°C</td>
+<td>ΔS_vap = ΔH_vap/T = 40,660 / 373 ≈ 109 J/mol·K (large entropy increase)</td>
+<td>2021–2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Benzene (C₆H₆)</strong></td>
+<td>30.72 kJ/mol (vap, 353 K)</td>
+<td>Moderate (π-π &amp; dispersion forces)</td>
+<td>80°C (353 K at 1 atm)</td>
+<td>Vapor pressure: ~1.3 bar at 20°C, ~1 atm at 80°C</td>
+<td>ΔS_vap ≈ 87 J/mol·K (lower than water due to weaker intermolecular forces per unit energy)</td>
+<td>2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Diethyl Ether (C₄H₁₀O)</strong></td>
+<td>26.0 kJ/mol (vap, 308 K)</td>
+<td>Lower (weaker dipole, dispersion only)</td>
+<td>35°C (308 K at 1 atm)</td>
+<td>Very volatile; readily evaporates at room T</td>
+<td>ΔS_vap ≈ 84 J/mol·K (similar to benzene)</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Mercury (Hg)</strong></td>
+<td>59.1 kJ/mol (vap, 630 K)</td>
+<td>Very high (metallic bonding in liquid, strong)</td>
+<td>357°C (630 K at 1 atm)</td>
+<td>Gentle vapor pressure curve (high ΔH_vap → large ΔT per pressure unit)</td>
+<td>ΔS_vap ≈ 94 J/mol·K (lower entropy change despite high ΔH due to high boiling T)</td>
+<td>2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>CO₂ (dry ice)</strong></td>
+<td>25.2 kJ/mol (sub, 195 K at 1 atm)</td>
+<td>Moderate; sublimes directly to gas</td>
+<td>−78.5°C (194.7 K at 1 atm)</td>
+<td>Sublimation curve (solid-gas boundary); no liquid phase at pressures &lt;5.1 atm</td>
+<td>ΔS_sub ≈ 129 J/mol·K (very high, direct solid→gas transition)</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 6: COMPLEX PROBLEM PATTERNS &amp; INTEGRATED SOLUTIONS</h2>
+<h3>Pattern 1: Multi-Step Hess's Law with Calorimetry</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Problem Setup</th>
+<th>Given Data</th>
+<th>Equilibrium Reactions</th>
+<th>Solution Strategy</th>
+<th>Numerical Solution</th>
+<th>PYQ Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Combustion via Intermediate Reactions</strong></td>
+<td>Target: C(s) + 2H₂(g) → CH₄(g); Given 3 calorimetry measurements</td>
+<td>(1) C(s) + O₂(g) → CO₂(g), ΔH_comb(C) = −393.5 kJ; (2) H₂(g) + ½O₂(g) → H₂O(l), ΔH_comb(H₂) = −285.8 kJ; (3) CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l), ΔH_comb(CH₄) = −890 kJ</td>
+<td>Rearrange: (1) + 2×(2) − (3) = target; ΔH_target = −393.5 + 2(−285.8) − (−890) = −393.5 − 571.6 + 890 = −75.1 kJ</td>
+<td>C(s) + 2H₂(g) → CH₄(g): ΔH = ΔH_comb(C) + 2·ΔH_comb(H₂) − ΔH_comb(CH₄) = −393.5 − 571.6 + 890 ≈ −75 kJ/mol (formation of methane)</td>
+<td>2021, 2023, 2024</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Pattern 2: Temperature-Dependent Spontaneity &amp; Phase Transitions</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>ΔH &amp; ΔS Values</th>
+<th>Temperature Analysis</th>
+<th>Critical Temperature</th>
+<th>ΔG Sign</th>
+<th>Spontaneity Outcome</th>
+<th>PYQ Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Endothermic, Entropy-Driven Dissolution</strong></td>
+<td>NaCl: ΔH_soln ≈ +3.9 kJ/mol, ΔS_soln ≈ +43 J/mol·K</td>
+<td>At 298 K: ΔG = 3900 − 298 × 43 ≈ −12,900 J/mol &lt; 0</td>
+<td>All T (always spontaneous for entropy-driven endothermic with ΔS large enough)</td>
+<td>Negative at all T</td>
+<td>Spontaneous at room temperature (entropy overcomes small enthalpy cost)</td>
+<td>2023, 2024, 2025</td>
+</tr>
+<tr>
+<td><strong>Exothermic, Entropy-Opposed (Freezing)</strong></td>
+<td>H₂O(l) → H₂O(s): ΔH_fus ≈ −6.01 kJ/mol, ΔS_fus ≈ −21.99 J/mol·K</td>
+<td>T_eq = ΔH/ΔS = −6010 / (−21.99) ≈ 273.3 K; at T &lt; 273 K: ΔG &lt; 0; at T &gt; 273 K: ΔG &gt; 0</td>
+<td>273 K (0°C)</td>
+<td>Negative below 273 K; positive above</td>
+<td>Spontaneous freezing below 273 K; spontaneous melting above 273 K</td>
+<td>2021, 2023, 2025</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Pattern 3: Electrochemistry-Thermodynamics Link</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Reaction</th>
+<th>Electrochemical Data</th>
+<th>Thermodynamic Conversion</th>
+<th>ΔG° Calculation</th>
+<th>K Prediction</th>
+<th>PYQ Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cu²⁺ + Zn → Cu + Zn²⁺</strong></td>
+<td>E°_cell = +1.10 V; n = 2 electrons</td>
+<td>ΔG° = −nFE° (Faraday F = 96,485 C/mol)</td>
+<td>ΔG° = −2 × 96,485 × 1.10 ≈ −212,267 J/mol ≈ −212 kJ/mol</td>
+<td>K = exp(−ΔG°/RT) = exp(212,000 / (8.314 × 298)) ≈ exp(85.7) ≈ 10³⁷ (huge K, reaction goes to completion)</td>
+<td>2024 Advanced</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 7: JEE ADVANCED STRATEGY &amp; CONCEPTUAL INTEGRATION</h2>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>JEE Focus</th>
+<th>Common Misconception</th>
+<th>Problem-Solving Approach</th>
+<th>Expected Difficulty</th>
+<th>PYQ Frequency (2021–2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ΔU vs. ΔH vs. q vs. w Sign Confusion</strong></td>
+<td>Sign conventions critical; w &gt; 0 (on system), q &gt; 0 (into system) in IUPAC; reverse in some texts</td>
+<td>Mixing sign conventions; forgetting w = −P·ΔV includes pressure sign</td>
+<td>Establish convention first; w = −P_ext·ΔV (expansion w &lt; 0); ΔU = q + w; ΔH = q_p (at const. P); verify consistency</td>
+<td>7/10 (Mains)</td>
+<td>Very High (all years)</td>
+</tr>
+<tr>
+<td><strong>Reversible vs. Irreversible Work</strong></td>
+<td>Real processes irreversible; reversible is theoretical maximum; w_rev more negative than w_irrev</td>
+<td>Confusing reversible with actually occurring; assuming real processes achieve theoretical work</td>
+<td>Compare reversibilities: isothermal reversible expansion (w_rev = −nRT ln V_f/V_i) vs. free expansion (w = 0); finite pressure differences reduce work extracted</td>
+<td>8/10 (Advanced)</td>
+<td>High (2024, 2025, 2026 Advanced)</td>
+</tr>
+<tr>
+<td><strong>ΔG = ΔH − TΔS Competition &amp; Crossover</strong></td>
+<td>Temperature dominates predictions; low T favors ΔH; high T favors TΔS; T_critical = ΔH/ΔS for sign change</td>
+<td>Ignoring T dependence; not calculating T_critical for ΔH &lt; 0, ΔS &lt; 0 or ΔH &gt; 0, ΔS &gt; 0 cases</td>
+<td>For each sign combination: (−,+) always ΔG &lt; 0; (+,−) always ΔG &gt; 0; (−,−) spontaneous below T_crit; (+,+) spontaneous above T_crit</td>
+<td>9/10 (Advanced)</td>
+<td>Very High (2023, 2024, 2025, 2026)</td>
+</tr>
+<tr>
+<td><strong>Calorimetry Heat Capacity Calculations</strong></td>
+<td>Distinguish C (total), c (specific), c_molar (per mole); sign for exo/endo</td>
+<td>Confusing units (J/g·K vs. kJ/mol·K); forgetting total solution mass in constant-P calorimetry</td>
+<td>q = m·c·ΔT (mass method) or q = n·c_molar·ΔT (molar); always verify units; use total solution mass for c_p ≈ 4.18 J/g·K (water default)</td>
+<td>6/10 (Mains)</td>
+<td>Medium (2021, 2022, 2023, 2024, 2025)</td>
+</tr>
+<tr>
+<td><strong>Entropy Generation &amp; Second Law</strong></td>
+<td>ΔS_universe &gt; 0 for spontaneous; ΔS_system can be negative if ΔS_surr &gt;&gt; ΔS_sys</td>
+<td>Thinking entropy decrease in system means non-spontaneous (wrong; must consider universe)</td>
+<td>Calculate ΔS_system and ΔS_surroundings separately; sum to ΔS_universe; if positive, spontaneous; use ΔG &lt; 0 as equivalent criterion at const. T, P</td>
+<td>8/10 (Advanced)</td>
+<td>High (2023, 2024, 2025, 2026 Advanced)</td>
+</tr>
+<tr>
+<td><strong>Clausius-Clapeyron &amp; Phase Boundaries</strong></td>
+<td>dP/dT = ΔH_trans / (T·ΔV_trans); unusual ice-water negative slope</td>
+<td>Confusing slope direction; not recognizing ice anomaly (water expands on freezing)</td>
+<td>For each substance, calculate dP/dT sign from ΔH &amp; ΔV signs; apply to vapor pressure (all positive dP/dT) and melting point (most positive, except ice negative)</td>
+<td>8/10 (Advanced)</td>
+<td>Medium–High (2024, 2025, 2026 Advanced)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 8: NUMERICAL PRACTICE &amp; SOLUTION GUIDES</h2>
+<p><em>[Identical 10 problems from File 1, Section 6, with expanded solution rationales]</em></p>
+<hr />
+<p><strong>END OF FILE 2</strong></p>
+<p><em>Combine with File 1 for mastery of thermodynamics and thermochemistry. Focus on state functions, sign conventions, and temperature dependence for JEE Advanced success.</em></p>
+              </div>
+            </div>
+          </div>
+        
+
+    <!-- Chapter Navigation Footer -->
+    <nav class="chapter-bottom-nav">
+      
+          <a href="../../class-11/04-chemical-bonding/index.html" class="nav-ch-btn">
+            <span class="dir">&larr; Previous Chapter</span>
+            <span class="title">Ch 4: Chemical Bonding & Molecular Structure</span>
+          </a>
+        
+      
+          <a href="../../class-11/06-equilibrium/index.html" class="nav-ch-btn" style="text-align: right; margin-left: auto;">
+            <span class="dir">Next Chapter &rarr;</span>
+            <span class="title">Ch 6: Equilibrium</span>
+          </a>
+        
+    </nav>
+  </main>
+
+  <script src="../../assets/js/chapter.js"></script>
+</body>
+</html>

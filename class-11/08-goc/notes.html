@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Master Study Notes — Class 11 Organic Chemistry</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="../../assets/vendor/katex/katex.min.css" rel="stylesheet"/>
+<script crossorigin="anonymous" src="../../assets/vendor/katex/katex.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/mhchem.min.js"></script>
+<script crossorigin="anonymous" src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-blur: blur(16px);
+  --bg-gradient: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+  --primary: #7c5cbf;
+  --primary-light: #a78bfa;
+  --accent: #f59e0b;
+  --accent2: #10b981;
+  --text: #e2e8f0;
+  --text-dim: #94a3b8;
+  --text-dark: #1e293b;
+  --card-bg: rgba(255,255,255,0.06);
+  --card-hover: rgba(255,255,255,0.10);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --tab-bar-height: 64px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--bg-gradient);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.6;
+  overflow-x:hidden;
+  background-attachment:fixed;
+}
+::selection{background:var(--primary-light);color:#000}
+a{color:var(--primary-light);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* =========== SCROLLBAR =========== */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:rgba(0,0,0,0.2)}
+::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px}
+
+/* =========== GLASS ORB DECORATIONS =========== */
+.orb{
+  position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;
+  animation:orbFloat 20s ease-in-out infinite alternate;
+}
+.orb-1{width:500px;height:500px;background:rgba(124,92,191,0.15);top:-10%;left:-10%}
+.orb-2{width:400px;height:400px;background:rgba(245,158,11,0.10);bottom:-5%;right:-5%;animation-delay:-7s}
+.orb-3{width:300px;height:300px;background:rgba(16,185,129,0.08);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-14s}
+@keyframes orbFloat{
+  0%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(30px,-20px) scale(1.05)}
+  66%{transform:translate(-20px,30px) scale(0.95)}
+  100%{transform:translate(10px,-10px) scale(1)}
+}
+
+/* =========== APP SHELL =========== */
+.app-wrapper{
+  position:relative;z-index:1;
+  max-width:1400px;margin:0 auto;padding:20px 24px 60px;
+}
+
+/* =========== PAGE HEADER =========== */
+.page-header{
+  display:flex;align-items:center;gap:16px;
+  background:var(--glass-bg);backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  padding:20px 24px;margin-bottom:20px;
+  box-shadow:var(--glass-shadow);
+}
+.page-header .header-icon{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;color:#fff;flex-shrink:0;
+  box-shadow:0 0 20px rgba(124,92,191,0.3);
+}
+.page-header .header-text{flex:1}
+.page-header .header-text h1{
+  font-size:1.6rem;font-weight:800;color:#fff;
+  letter-spacing:-0.03em;margin:0;line-height:1.2;
+}
+.page-header .header-text p{
+  font-size:0.82rem;color:var(--text-dim);margin:2px 0 0;
+}
+.page-header .header-badges{
+  display:flex;gap:6px;flex-shrink:0;
+}
+@media(max-width:600px){
+  .page-header{flex-wrap:wrap}
+  .page-header .header-text{min-width:100%;order:3;margin-top:4px}
+  .page-header .header-text h1{font-size:1.2rem}
+}
+
+/* =========== TAB NAV BAR =========== */
+.tab-bar{
+  display:flex;gap:4px;
+  background:var(--glass-bg);backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  padding:6px;
+  margin-bottom:28px;
+  box-shadow:var(--glass-shadow);
+  overflow-x:auto;
+}
+.tab-btn{
+  flex:1;min-width:120px;
+  padding:12px 16px;
+  border:none;border-radius:var(--radius-sm);
+  background:transparent;
+  color:var(--text-dim);font-family:var(--font);font-size:0.85rem;font-weight:500;
+  cursor:pointer;transition:all 0.3s ease;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  white-space:nowrap;
+}
+.tab-btn i{font-size:0.95rem}
+.tab-btn:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+.tab-btn.active{
+  background:rgba(124,92,191,0.35);
+  color:#fff;box-shadow:0 0 20px rgba(124,92,191,0.2);
+}
+.tab-content{display:none;animation:fadeIn 0.45s ease}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* =========== GLASS CARD =========== */
+.glass-card{
+  background:var(--card-bg);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  padding:24px;
+  margin-bottom:20px;
+  box-shadow:var(--glass-shadow);
+  transition:all 0.3s ease;
+}
+.glass-card:hover{background:var(--card-hover)}
+.glass-card h2{font-size:1.35rem;font-weight:700;margin-bottom:12px;color:#fff;letter-spacing:-0.02em}
+.glass-card h3{font-size:1.1rem;font-weight:600;margin:16px 0 8px;color:var(--primary-light)}
+.glass-card h4{font-size:0.95rem;font-weight:600;margin:12px 0 6px;color:var(--accent)}
+.glass-card p,.glass-card li{color:var(--text);font-size:0.92rem;line-height:1.7}
+.glass-card ul,.glass-card ol{padding-left:20px;margin:8px 0}
+.glass-card li{margin:4px 0}
+.glass-card table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.88rem}
+.glass-card th,.glass-card td{
+  border:1px solid rgba(255,255,255,0.1);
+  padding:8px 12px;text-align:left;
+}
+.glass-card th{background:rgba(124,92,191,0.2);color:var(--primary-light);font-weight:600}
+.glass-card td{color:var(--text)}
+.glass-card tr:nth-child(even) td{background:rgba(255,255,255,0.03)}
+.glass-card code{background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;font-size:0.85em}
+
+/* =========== BADGES =========== */
+.badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 10px;border-radius:20px;
+  font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;
+}
+.badge-pyq{background:rgba(245,158,11,0.2);color:var(--accent);border:1px solid rgba(245,158,11,0.3)}
+.badge-hots{background:rgba(16,185,129,0.2);color:var(--accent2);border:1px solid rgba(16,185,129,0.3)}
+.badge-hy{background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.3)}
+
+/* =========== HOTS BUBBLE =========== */
+.hots-bubble{
+  margin:12px 0 0;
+  border:1px solid rgba(16,185,129,0.25);
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+  transition:all 0.3s ease;
+}
+.hots-bubble summary{
+  cursor:pointer;
+  padding:10px 14px;
+  background:rgba(16,185,129,0.08);
+  font-size:0.85rem;font-weight:600;color:var(--accent2);
+  display:flex;align-items:center;gap:8px;
+  user-select:none;
+}
+.hots-bubble summary::-webkit-details-marker{display:none}
+.hots-bubble summary::before{content:'\f0a6';font-family:'Font Awesome 6 Free';font-weight:900;font-size:0.8rem}
+.hots-bubble[open] summary::before{content:'\f0a6'}
+.hots-bubble .bubble-body{padding:12px 16px}
+.hots-bubble .bubble-body ul{list-style:disc;padding-left:18px}
+.hots-bubble .bubble-body li{margin:6px 0;font-size:0.87rem;color:var(--text-dim)}
+
+/* =========== DETAILS / NCERT VAULT =========== */
+.ncert-q{
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius-sm);
+  margin-bottom:10px;
+  overflow:hidden;
+  transition:all 0.2s ease;
+}
+.ncert-q summary{
+  cursor:pointer;
+  padding:12px 16px;
+  font-size:0.9rem;font-weight:500;
+  display:flex;align-items:center;gap:8px;
+  user-select:none;
+  transition:background 0.2s;
+}
+.ncert-q summary:hover{background:rgba(255,255,255,0.04)}
+.ncert-q summary::-webkit-details-marker{display:none}
+.ncert-q summary .q-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--primary);color:#fff;
+  font-size:0.75rem;font-weight:700;flex-shrink:0;
+}
+.ncert-q summary .q-text{flex:1}
+.ncert-q summary .q-tags{display:flex;gap:4px;flex-wrap:wrap}
+.ncert-q .q-answer{padding:12px 20px 16px;border-top:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.15)}
+
+/* =========== TIMELINE =========== */
+.timeline{
+  position:relative;
+  padding-left:40px;
+  margin:20px 0;
+}
+.timeline::before{
+  content:'';
+  position:absolute;left:14px;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(to bottom, var(--primary), var(--accent), var(--accent2));
+  border-radius:2px;
+}
+.tl-node{
+  position:relative;
+  margin-bottom:28px;
+  padding:16px 20px;
+  background:var(--card-bg);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius-sm);
+  transition:all 0.3s ease;
+}
+.tl-node:hover{background:var(--card-hover);transform:translateX(4px)}
+.tl-node::before{
+  content:'';
+  position:absolute;left:-30px;top:20px;
+  width:16px;height:16px;
+  border-radius:50%;
+  background:var(--primary);
+  border:3px solid rgba(255,255,255,0.2);
+  box-shadow:0 0 0 4px rgba(124,92,191,0.3);
+}
+.tl-node .tl-year{
+  font-size:0.75rem;font-weight:700;color:var(--accent);
+  text-transform:uppercase;letter-spacing:0.05em;
+}
+.tl-node .tl-title{font-size:1rem;font-weight:700;color:#fff;margin:2px 0}
+.tl-node .tl-desc{font-size:0.87rem;color:var(--text-dim);margin:4px 0 0}
+
+/* =========== LAB SIMULATORS =========== */
+.lab-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:20px;
+}
+.lab-module{
+  background:var(--card-bg);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.lab-module .lab-header{
+  padding:14px 18px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  background:rgba(0,0,0,0.15);
+}
+.lab-module .lab-header h3{font-size:0.95rem;font-weight:600;color:#fff;margin:0}
+.lab-module .lab-canvas-wrap{
+  position:relative;
+  width:100%;
+  background:rgba(0,0,0,0.25);
+}
+.lab-module canvas{display:block;width:100%;height:auto;background:transparent}
+.lab-module .lab-controls{
+  padding:12px 16px;
+  display:flex;flex-wrap:wrap;gap:8px;
+  align-items:center;
+}
+.lab-module .lab-btn{
+  padding:7px 16px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:8px;
+  background:rgba(124,92,191,0.2);
+  color:var(--text);
+  font-family:var(--font);font-size:0.8rem;font-weight:500;
+  cursor:pointer;
+  transition:all 0.2s ease;
+  display:flex;align-items:center;gap:6px;
+}
+.lab-module .lab-btn:hover{background:rgba(124,92,191,0.35);border-color:var(--primary)}
+.lab-module .lab-btn:active{transform:scale(0.97)}
+.lab-module .lab-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.lab-module .lab-btn.primary:hover{background:var(--primary-light)}
+.lab-module select.lab-select{
+  padding:7px 28px 7px 12px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:8px;
+  background:rgba(0,0,0,0.3);
+  color:var(--text);
+  font-family:var(--font);font-size:0.8rem;
+  cursor:pointer;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;
+}
+.lab-module .lab-info{
+  padding:10px 16px 14px;
+  font-size:0.82rem;color:var(--text-dim);
+  border-top:1px solid rgba(255,255,255,0.04);
+}
+.lab-module .lab-info .lab-result{
+  color:var(--accent);font-weight:600;
+}
+.lab-module input[type="range"]{
+  width:100%;height:4px;
+  -webkit-appearance:none;
+  appearance:none;
+  background:rgba(255,255,255,0.15);
+  border-radius:2px;outline:none;
+}
+.lab-module input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:16px;height:16px;
+  border-radius:50%;
+  background:var(--primary);
+  cursor:pointer;
+  box-shadow:0 0 8px rgba(124,92,191,0.4);
+}
+.lab-module .lab-value{
+  font-size:0.85rem;font-weight:600;color:var(--primary-light);
+  min-width:40px;text-align:center;
+}
+
+/* =========== PUSH-ARROW CANVAS =========== */
+.pa-controls{
+  display:flex;flex-wrap:wrap;gap:8px;
+  padding:12px 16px;
+}
+.pa-btn{
+  padding:6px 14px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:8px;
+  background:rgba(0,0,0,0.2);
+  color:var(--text-dim);
+  font-family:var(--font);font-size:0.78rem;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.pa-btn:hover,.pa-btn.active{
+  background:rgba(124,92,191,0.3);
+  color:#fff;
+  border-color:var(--primary);
+}
+
+/* =========== RESPONSIVE =========== */
+@media(max-width:900px){
+  .app-wrapper{padding:16px}
+  .tab-bar{flex-wrap:wrap}
+  .tab-btn{flex:1 1 auto;min-width:80px;padding:10px 12px;font-size:0.75rem}
+  .tab-btn span.label{display:none}
+  .lab-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .timeline{padding-left:32px}
+  .tl-node::before{left:-24px;width:12px;height:12px}
+  .glass-card{padding:16px}
+  .tab-btn{min-width:60px;padding:8px 10px;font-size:0.7rem}
+}
+
+/* =========== PRINT =========== */
+@media print{
+  body{background:#fff !important;color:#000 !important}
+  .orb,.tab-bar,.lab-module,.lab-grid{display:none !important}
+  .tab-content{display:block !important;animation:none !important}
+  .tab-content:not(.active){display:block !important}
+  .glass-card{background:#f8f9fa !important;border:1px solid #dee2e6 !important;backdrop-filter:none !important;
+    break-inside:avoid;padding:16px !important;box-shadow:none !important}
+  .glass-card,.glass-card p,.glass-card li,.glass-card td{color:#000 !important}
+  .glass-card th{background:#e9ecef !important;color:#000 !important}
+  .glass-card h2{color:#000 !important}
+  .ncert-q{border:1px solid #ccc !important}
+  .ncert-q .q-answer{background:#f5f5f5 !important}
+  .hots-bubble{border:1px solid #aaa !important}
+  .hots-bubble summary{background:#e8f5e9 !important;color:#000 !important}
+  .badge-pyq{border:1px solid #f59e0b !important;color:#92400e !important;background:#fef3c7 !important}
+  .badge-hots{border:1px solid #10b981 !important;color:#065f46 !important;background:#d1fae5 !important}
+  .tl-node{background:#f8f9fa !important;border:1px solid #ddd !important}
+  .tl-node .tl-title{color:#000 !important}
+  .tl-node .tl-desc{color:#333 !important}
+  .ncert-q summary .q-num{background:#333 !important}
+  details.ncdef{display:block !important}
+  details.ncdef summary{display:block !important}
+  details.ncdef .q-answer{display:block !important}
+  .hots-bubble[open]{display:block !important}
+  .hots-bubble:not([open]){display:block !important}
+  .hots-bubble:not([open]) .bubble-body{display:block !important}
+  .hots-bubble summary::before{display:none !important}
+  .app-wrapper{column-count:2;column-gap:32px;max-width:100%}
+  .glass-card{break-inside:avoid}
+  .timeline::before{background:#333 !important}
+  .tl-node::before{border-color:#333 !important;box-shadow:none !important}
+}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="app-wrapper">
+<!-- PAGE HEADER -->
+<header class="page-header">
+<div class="header-icon"><i class="fas fa-flask"></i></div>
+<div class="header-text">
+<h1>Organic Chemistry Basics</h1>
+<p>Class 11 · NCERT · Some Basic Principles &amp; Techniques</p>
+</div>
+<div class="header-badges">
+<span class="badge badge-hots"><i class="fas fa-lightbulb"></i> HOTS</span>
+<span class="badge badge-pyq"><i class="fas fa-star"></i> PYQ</span>
+</div>
+</header>
+<!-- TAB NAV -->
+<nav class="tab-bar" role="tablist">
+<button aria-selected="true" class="tab-btn active" data-tab="tab1" role="tab">
+<i class="fas fa-flask"></i> <span class="label">History &amp; IUPAC</span>
+</button>
+<button class="tab-btn" data-tab="tab2" role="tab">
+<i class="fas fa-bolt"></i> <span class="label">Electronic Effects</span>
+</button>
+<button class="tab-btn" data-tab="tab3" role="tab">
+<i class="fas fa-book-open"></i> <span class="label">NCERT Vault</span>
+</button>
+<button class="tab-btn" data-tab="tab4" role="tab">
+<i class="fas fa-microscope"></i> <span class="label">Virtual Lab</span>
+</button>
+</nav>
+<!-- ===================== TAB 1 ===================== -->
+<section class="tab-content active" id="tab1">
+<div class="glass-card">
+<h2><i class="fas fa-clock-rotate" style="margin-right:10px;color:var(--primary-light)"></i> Chronology of Organic Chemistry</h2>
+<p style="margin-bottom:16px;color:var(--text-dim);font-size:0.9rem">
+        From mysticism to molecular science — the evolution of organic chemistry.
+      </p>
+<div class="timeline">
+<div class="tl-node">
+<div class="tl-year">1780 – 1828</div>
+<div class="tl-title">Berzelius &amp; Vital Force Theory</div>
+<div class="tl-desc">Jöns Jacob Berzelius proposed that organic compounds required a “vital force” (vis vitalis) found only in living organisms. This implied organic molecules <em>could not</em> be synthesized in the laboratory from inorganic precursors.</div>
+<details class="hots-bubble">
+<summary>HOTS: Why was Vital Force Theory accepted for 50 years?</summary>
+<div class="bubble-body">
+<ul>
+<li>Pre-1828, all known organic substances (sugar, urea, oils) were indeed isolated from living sources.</li>
+<li>Inorganic-organic boundary seemed absolute — no one had successfully crossed it.</li>
+<li>Berzelius's authority as a leading chemist made the theory widely accepted.</li>
+<li>Lack of experimental tools (thermometers, precise balances) hindered attempts at synthesis.</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="tl-node">
+<div class="tl-year">1828</div>
+<div class="tl-title">Friedrich Wöhler — Synthesis of Urea</div>
+<div class="tl-desc"><strong>The turning point.</strong> Wöhler heated ammonium cyanate ($\ce{NH4CNO}$, an inorganic salt) and obtained urea ($\ce{(NH2)2CO}$, an organic compound found in urine). This was identical to natural urea.</div>
+<details class="hots-bubble">
+<summary>HOTS: Why is Wöhler's synthesis considered chemistry's most important experiment?</summary>
+<div class="bubble-body">
+<ul>
+<li>It <strong>disproved</strong> Vital Force Theory in a single, reproducible experiment.</li>
+<li>Demonstrated that organic compounds obey the same physical/chemical laws as inorganic ones.</li>
+<li>Opened the floodgates for synthetic organic chemistry — today we synthesize drugs, polymers, dyes.</li>
+<li>It was an <em>accidental</em> discovery (Wöhler was trying to make ammonium cyanate crystals), highlighting the role of serendipity in science.</li>
+<li>⚡ <strong>PYQ:</strong> Frequently asked: “Explain why Wöhler's synthesis is a landmark event.”</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="tl-node">
+<div class="tl-year">1845</div>
+<div class="tl-title">Hermann Kolbe — Synthesis of Acetic Acid</div>
+<div class="tl-desc">Kolbe synthesized acetic acid ($\ce{CH3COOH}$) from carbon disulfide ($\ce{CS2}$) via chlorine and catalytic oxidation. This was the first multi-step total synthesis of a complex organic compound.</div>
+<details class="hots-bubble">
+<summary>HOTS: Why was Kolbe's synthesis significant beyond Wöhler's?</summary>
+<div class="bubble-body">
+<ul>
+<li>Wöhler's urea synthesis was a single rearrangement; Kolbe's was a <strong>multi-step total synthesis</strong>.</li>
+<li>Demonstrated that even complex organic molecules could be built from elemental carbon sources.</li>
+<li>Laid the foundation for industrial organic synthesis — acetic acid is now produced at ~15 million tons/year.</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="tl-node">
+<div class="tl-year">1856</div>
+<div class="tl-title">Berthelot — Synthesis of Methane</div>
+<div class="tl-desc">Marcellin Berthelot synthesized methane ($\ce{CH4}$) by passing a mixture of $\ce{H2S}$ and $\ce{CS2}$ over red-hot copper. He later synthesized acetylene ($\ce{C2H2}$), benzene ($\ce{C6H6}$), and many hydrocarbons, coining the term “synthesis” in chemistry.</div>
+<details class="hots-bubble">
+<summary>HOTS: Berthelot's “synthèse” vs “analyse”</summary>
+<div class="bubble-body">
+<ul>
+<li>Berthelot systematically published <em>Synthèse</em> series (1856–1890s), proving organic compounds follow predictable synthetic pathways.</li>
+<li>He showed that heat + catalysts could drive inorganic-&gt;organic transformations.</li>
+<li>His work enabled the coal-tar dye industry — the first major chemical industry.</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="tl-node">
+<div class="tl-year">1860s – Present</div>
+<div class="tl-title">Modern Structural Theory</div>
+<div class="tl-desc">Kekulé (1858) proposed tetravalent carbon; Couper and Butlerov independently developed structural theory. In 1865, Kekulé proposed the cyclic structure of benzene. Today, organic chemistry is governed by quantum mechanics, stereoelectronics, and computational prediction.</div>
+<details class="hots-bubble">
+<summary>HOTS: How does structural theory explain isomerism?</summary>
+<div class="bubble-body">
+<ul>
+<li>Different connectivity of the same atoms → different compounds (structural isomers).</li>
+<li>Same connectivity, different 3D arrangement → stereoisomers.</li>
+<li>Kekulé's benzene structure initially failed to explain all isomers → led to resonance theory (Pauling, 1930s).</li>
+</ul>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div class="glass-card">
+<h2><i class="fas fa-pen-ruler" style="margin-right:10px;color:var(--accent)"></i> IUPAC Nomenclature of Organic Compounds</h2>
+<p style="margin-bottom:12px;color:var(--text-dim);font-size:0.9rem">
+        Systematic naming rules from the International Union of Pure and Applied Chemistry.
+      </p>
+<h3>Priority Order of Principal Functional Groups</h3>
+<p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:8px">Groups higher on the table get the suffix (lower priority groups are prefixes).</p>
+<table>
+<thead>
+<tr><th>Class</th><th>Functional Group</th><th>Formula</th><th>Suffix</th><th>Prefix</th></tr>
+</thead>
+<tbody>
+<tr><td>Carboxylic acid</td><td>$- \ce{COOH}$</td><td>$-\ce{COOH}$</td><td><strong>-oic acid</strong></td><td>carboxy-</td></tr>
+<tr><td>Sulphonic acid</td><td>$- \ce{SO3H}$</td><td>$-\ce{SO3H}$</td><td><strong>-sulphonic acid</strong></td><td>sulpho-</td></tr>
+<tr><td>Esters</td><td>$- \ce{COOR}$</td><td>$-\ce{COOR}$</td><td><strong>-oate</strong></td><td>alkoxycarbonyl-</td></tr>
+<tr><td>Acid halides</td><td>$- \ce{COX}$</td><td>$-\ce{COCl}$</td><td><strong>-oyl chloride</strong></td><td>haloformyl-</td></tr>
+<tr><td>Amides</td><td>$- \ce{CONH2}$</td><td>$-\ce{CONH2}$</td><td><strong>-amide</strong></td><td>carbamoyl-</td></tr>
+<tr><td>Nitriles</td><td>$- \ce{C#N}$</td><td>$-\ce{C#N}$</td><td><strong>-nitrile</strong></td><td>cyano-</td></tr>
+<tr><td>Aldehydes</td><td>$- \ce{CHO}$</td><td>$-\ce{CHO}$</td><td><strong>-al</strong></td><td>formyl- / oxo-</td></tr>
+<tr><td>Ketones</td><td>$\ce{&gt;C=O}$</td><td>$-\ce{CO -}$</td><td><strong>-one</strong></td><td>oxo-</td></tr>
+<tr><td>Alcohols</td><td>$- \ce{OH}$</td><td>$-\ce{OH}$</td><td><strong>-ol</strong></td><td>hydroxy-</td></tr>
+<tr><td>Thiols</td><td>$- \ce{SH}$</td><td>$-\ce{SH}$</td><td><strong>-thiol</strong></td><td>mercapto-</td></tr>
+<tr><td>Amines</td><td>$- \ce{NH2}$</td><td>$-\ce{NH2}$</td><td><strong>-amine</strong></td><td>amino-</td></tr>
+<tr><td>Alkenes</td><td>$\ce{&gt;C=C&lt;}$</td><td>$\ce{C=C}$</td><td><strong>-ene</strong></td><td></td></tr>
+<tr><td>Alkynes</td><td>$- \ce{C#C -}$</td><td>$\ce{C#C}$</td><td><strong>-yne</strong></td><td></td></tr>
+<tr><td>Alkanes</td><td>$- \ce{-}$</td><td>$\ce{C-C}$</td><td><strong>-ane</strong></td><td></td></tr>
+<tr><td>Ethers</td><td>$- \ce{OR}$</td><td>$-\ce{O -}$</td><td>ether (common)</td><td>alkoxy-</td></tr>
+<tr><td>Halogen</td><td>$- \ce{X}$</td><td>$-\ce{Cl}, -\ce{Br}$</td><td>halide (common)</td><td>chloro-, bromo-</td></tr>
+<tr><td>Nitro</td><td>$- \ce{NO2}$</td><td>$-\ce{NO2}$</td><td></td><td>nitro-</td></tr>
+</tbody>
+</table>
+<h3>Naming Steps (IUPAC Algorithm)</h3>
+<ol style="margin-top:8px">
+<li><strong>Find the longest carbon chain</strong> containing the principal functional group — this is the parent chain.</li>
+<li><strong>Number the chain</strong> so that the principal functional group gets the <em>lowest possible locant</em>.</li>
+<li><strong>Identify and number substituents</strong> (alkyl groups, halogens, etc.) with their locants.</li>
+<li><strong>Combine in order:</strong> Locants + prefixes (alphabetical) + parent chain name + suffix.</li>
+<li><strong>Use multiplicative prefixes</strong> (di-, tri-, tetra-) for identical substituents. Ignore them when alphabetizing.</li>
+</ol>
+<h3>Examples with KaTeX</h3>
+<ul style="margin:8px 0">
+<li>$\ce{CH3-CH2-CH2-CH2-OH}$ → Butan-1-ol (not butan-4-ol — lower locant wins)</li>
+<li>$\ce{CH3-CH(CH3)-CH2-COOH}$ → 3-Methylbutanoic acid</li>
+<li>$\ce{CH3-CH(OH)-CH2-CHO}$ → 3-Hydroxybutanal (aldehyde gets suffix priority over alcohol)</li>
+<li>$\ce{CH#C-CH2-CH2-CH=CH2}$ → Hex-1-en-5-yne (lower locant for ene-yne tie goes to ene)</li>
+<li>$\ce{Br-CH2-CH=CH-CH2-Cl}$ → 1-Bromo-4-chlorobut-2-ene</li>
+</ul>
+<details class="hots-bubble">
+<summary>HOTS: Why does the suffix suffix take priority over unsaturation in naming?</summary>
+<div class="bubble-body">
+<ul>
+<li>The principal functional group defines the <strong>chemical identity</strong> of the compound (acid, alcohol, etc.).</li>
+<li>Unsaturation ($\ce{C=C}$, $\ce{C#C}$) affects reactivity but does <em>not</em> define the compound's class.</li>
+<li>NCERT rule: Infixes (<em>-ane, -ene, -yne</em>) come <em>before</em> the suffix in the name.</li>
+</ul>
+</div>
+</details>
+<span class="badge badge-pyq" style="margin-top:6px"><i class="fas fa-star"></i> PYQ: IUPAC naming appears every year in CBSE Board exams (2–3 marks)</span>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ===================== TAB 2 ===================== -->
+<section class="tab-content" id="tab2">
+<div class="glass-card">
+<h2><i class="fas fa-bolt" style="margin-right:10px;color:var(--accent)"></i> Electronic Effects in Organic Molecules</h2>
+<p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:16px">
+        Understanding how electrons distribute within molecules explains reactivity, acidity/basicity, and reaction mechanisms.
+      </p>
+<h3>1. Inductive Effect ($I$)</h3>
+<p>The polarization of $\sigma$ bonds due to electronegativity differences. It is a <strong>permanent</strong>, distance-dependent effect that <em>decreases</em> along a carbon chain.</p>
+<table>
+<tr><th>Type</th><th>Direction</th><th>Groups</th><th>Example</th></tr>
+<tr><td><strong>$-I$</strong> (electron-withdrawing)</td><td>Pulls $e^-$ <em>away</em> from the chain</td><td>$-\ce{NO2}, -\ce{CN}, -\ce{COOH}, -\ce{CHO}, -\ce{OH}, -\ce{NH2}, -\ce{X}$</td><td>$\ce{Cl-CH2-COOH}$ is stronger acid than $\ce{CH3COOH}$</td></tr>
+<tr><td><strong>$+I$</strong> (electron-donating)</td><td>Pushes $e^-$ <em>toward</em> the chain</td><td>$-\ce{CH3}, -\ce{C2H5}, -\ce{CH(CH3)2}, -\ce{C(CH3)3}$, $\ce{O-}$</td><td>$\ce{CH3-CH2-COOH}$ is weaker acid than $\ce{HCOOH}$</td></tr>
+</table>
+<p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px">
+<strong>Order of $-I$:</strong> $-\ce{NO2} &gt; -\ce{CN} &gt; -\ce{COOH} &gt; -\ce{CHO} &gt; -\ce{OH} &gt; -\ce{NH2} &gt; -\ce{F} &gt; -\ce{Cl} &gt; -\ce{Br} &gt; -\ce{I}$
+      </p>
+<details class="hots-bubble">
+<summary>HOTS: Why is $\ce{Cl-CH2-COOH}$ ($pK_a$ 2.86) a stronger acid than $\ce{CH3COOH}$ ($pK_a$ 4.76)?</summary>
+<div class="bubble-body">
+<ul>
+<li>Cl is electronegative ($-I$) → pulls electron density away from the $\ce{O-H}$ bond.</li>
+<li>This weakens the $\ce{O-H}$ bond and stabilizes the conjugate base ($\ce{Cl-CH2-COO-}$) by delocalizing the negative charge.</li>
+<li>The effect diminishes with distance: $\ce{Cl-CH2-COOH}$ is stronger than $\ce{CH3-CHCl-COOH}$.</li>
+<li>⚡ <strong>PYQ:</strong> “Arrange acetic, chloroacetic, trichloroacetic acids in increasing acidity” is a classic 2-mark question.</li>
+</ul>
+</div>
+</details>
+<span class="badge badge-pyq"><i class="fas fa-star"></i> PYQ: Inductive effect &amp; acidity trends</span>
+<h3>2. Resonance Effect ($R$ or $M$)</h3>
+<p>Delocalization of $\pi$ electrons or lone pairs through conjugation. Also called mesomeric effect ($M$). It is a <strong>permanent</strong> effect transmitted through $\pi$ bonds.</p>
+<table>
+<tr><th>Type</th><th>Direction</th><th>Groups</th><th>Effect</th></tr>
+<tr><td><strong>$+R$</strong> ($+M$)</td><td>Donates $e^-$ into the conjugated system</td><td>$-\ce{OH}, -\ce{NH2}, -\ce{OR}, -\ce{Cl}, -\ce{Br}, -\ce{O-}$</td><td>Activates benzene ring toward electrophilic substitution</td></tr>
+<tr><td><strong>$-R$</strong> ($-M$)</td><td>Withdraws $e^-$ from the conjugated system</td><td>$-\ce{NO2}, -\ce{CN}, -\ce{COOH}, -\ce{CHO}, -\ce{COOR}$</td><td>Deactivates benzene ring; directs meta</td></tr>
+</table>
+<details class="hots-bubble">
+<summary>HOTS: Why is $-\ce{NH2}$ strongly activating for benzene even though N is electronegative?</summary>
+<div class="bubble-body">
+<ul>
+<li>N has a lone pair that can be donated into the $\pi$ system of the ring ($+R$ effect).</li>
+<li>This $+R$ effect <strong>dominates</strong> over the $-I$ effect of N.</li>
+<li>The resulting resonance structures place negative charge at ortho and para positions → those positions are activated.</li>
+<li>⚡ <strong>PYQ:</strong> “Why is aniline ortho/para-directing but deactivating?” trick question — it's <em>activating</em>!</li>
+</ul>
+</div>
+</details>
+<h3>3. Electromeric Effect ($E$)</h3>
+<p>A <strong>temporary</strong> effect seen in the presence of an attacking reagent. Complete transfer of a $\pi$ electron pair to one of the atoms.</p>
+<ul>
+<li><strong>$+E$ effect:</strong> $\pi$ electrons shift toward the attacking reagent (e.g., $\ce{C=C}$ attacked by $\ce{H+}$).</li>
+<li><strong>$-E$ effect:</strong> $\pi$ electrons shift away from the attacking reagent (e.g., $\ce{C=O}$ attacked by a nucleophile).</li>
+<li>The effect vanishes as soon as the attacking species is removed.</li>
+</ul>
+<h3>4. Hyperconjugation (Baker-Nathan Effect)</h3>
+<p>Delocalization via $\sigma \to \pi^*$ overlap — interaction of $\ce{C-H}$ $\sigma$ bonding electrons with an adjacent empty or partially filled $p$ orbital or $\pi^*$ orbital.</p>
+<ul>
+<li><strong>Number of $\alpha$-H atoms directly correlates with stability</strong> of carbocations and alkenes.</li>
+<li>Stability order: $(\ce{CH3})_3\ce{C+} &gt; (\ce{CH3})_2\ce{CH+} &gt; \ce{CH3CH2+} &gt; \ce{CH3+}$ (tertiary &gt; secondary &gt; primary &gt; methyl).</li>
+<li>Hyperconjugation also explains why propene ($\ce{CH3-CH=CH2}$) is more stable than ethene.</li>
+</ul>
+<details class="hots-bubble">
+<summary>HOTS: Why does increasing $\alpha$-H count increase carbocation stability?</summary>
+<div class="bubble-body">
+<ul>
+<li>Each $\ce{C-H}$ bond at the $\alpha$-carbon can overlap with the empty $p$ orbital of the carbocation.</li>
+<li>This overlap delocalizes the positive charge over more atoms, reducing charge density.</li>
+<li>More $\alpha$-H atoms = more hyperconjugative structures = greater stabilization.</li>
+<li>⚡ <strong>PYQ:</strong> “Explain the order of stability of carbocations” is a staple 3-mark question.</li>
+</ul>
+</div>
+</details>
+<span class="badge badge-pyq"><i class="fas fa-star"></i> PYQ: Carbocation stability &amp; hyperconjugation</span>
+</div>
+<div class="glass-card">
+<h2><i class="fas fa-scissors" style="margin-right:10px;color:var(--accent2)"></i> Bond Cleavage &amp; Reaction Intermediates</h2>
+<h3>Homolytic Fission</h3>
+<p>Each atom gets <em>one</em> electron from the covalent bond. Produces <strong>free radicals</strong> (species with unpaired electrons). Requires UV light or high temperature. Denoted by <span style="color:#f87171;">half-headed arrows ($\curvearrowright$)</span>.</p>
+<p style="margin:6px 0;font-family:monospace;font-size:0.9rem">$\ce{Cl-Cl} \xrightarrow{h\nu} \ce{Cl.} + \ce{.Cl}$</p>
+<h3>Heterolytic Fission</h3>
+<p>Both electrons go to the more electronegative atom. Produces <strong>carbocations</strong> ($\ce{R3C+}$) and <strong>carbanions</strong> ($\ce{R3C-}$). Denoted by full-headed arrows ($\rightarrow$). Favored in polar solvents.</p>
+<p style="margin:6px 0;font-family:monospace;font-size:0.9rem">$\ce{(CH3)3C-Br} \xrightarrow{H2O} \ce{(CH3)3C+} + \ce{Br-}$</p>
+<h3>Stability of Intermediates</h3>
+<table>
+<tr><th>Intermediate</th><th>Stability Order</th><th>Reason</th></tr>
+<tr><td>Carbocation</td><td>$3^\circ &gt; 2^\circ &gt; 1^\circ &gt; \ce{CH3+}$</td><td>Hyperconjugation + inductive effect of alkyl groups</td></tr>
+<tr><td>Carbanion</td><td>$1^\circ &gt; 2^\circ &gt; 3^\circ$</td><td>Alkyl groups ($+I$) destabilize the negative charge</td></tr>
+<tr><td>Free Radical</td><td>$3^\circ &gt; 2^\circ &gt; 1^\circ &gt; \ce{CH3.}$</td><td>Hyperconjugation stabilizes the unpaired electron</td></tr>
+<tr><td>Alkene stability</td><td>tetrasubstituted &gt; trisubstituted &gt; disubstituted &gt; monosubstituted</td><td>Hyperconjugation of $\alpha$-C-H bonds with $\pi^*$</td></tr>
+</table>
+<details class="hots-bubble">
+<summary>HOTS: Why does carbocation stability follow a different trend than carbanion stability?</summary>
+<div class="bubble-body">
+<ul>
+<li>Carbocations are electron-deficient → electron-donating alkyl groups ($+I$, hyperconjugation) <strong>stabilize</strong> them.</li>
+<li>Carbanions are electron-rich → electron-donating alkyl groups intensify the negative charge, <strong>destabilizing</strong> them.</li>
+<li>More substituted carbanions are less stable because charge repulsion dominates.</li>
+<li>⚡ <strong>PYQ:</strong> Board frequently asks to compare stability of carbocation vs carbanion.</li>
+</ul>
+</div>
+</details>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ===================== TAB 3 ===================== -->
+<section class="tab-content" id="tab3">
+<div class="glass-card">
+<h2><i class="fas fa-book-open" style="margin-right:10px;color:var(--primary-light)"></i> NCERT Solutions Vault</h2>
+<p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:4px">
+        Complete solutions for NCERT Class 11, Chapter 12: Organic Chemistry — Some Basic Principles and Techniques.
+      </p>
+<div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+<span class="badge badge-hots"><i class="fas fa-lightbulb"></i> HOTS</span>
+<span class="badge badge-pyq"><i class="fas fa-star"></i> PYQ</span>
+<span style="font-size:0.8rem;color:var(--text-dim)">Click each question to reveal the answer.</span>
+</div>
+<!-- INTEXT QUESTIONS -->
+<h3 style="margin-bottom:12px"><i class="fas fa-pen-to-square" style="margin-right:8px"></i> In-Text Questions</h3>
+<details class="ncert-q">
+<summary><span class="q-num">1</span><span class="q-text">Write bond-line formulas for: (i) $\ce{(CH3)2CHCH2CH3}$ (ii) $\ce{CH3CH=CH(CH3)2}$</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<p>(i) $\ce{(CH3)2CHCH2CH3}$ is isopentane (2-methylbutane). Bond-line: zigzag of 4 C atoms with a branch at C2.</p>
+<p style="font-family:monospace;font-size:0.9rem">
+               /<br/>
+            ————<br/>
+               \
+          </p>
+<p>(ii) $\ce{CH3CH=CH(CH3)2}$ is 2-methylbut-2-ene. Bond-line: 4-carbon chain with double bond between C2=C3 and a methyl at C2.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">2</span><span class="q-text">Give the IUPAC names of the following compounds:</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> (Common IUPAC naming examples)</p>
+<ul>
+<li>$\ce{CH3CH2CH2CH3}$ → Butane</li>
+<li>$\ce{CH3CH2CH=CH2}$ → But-1-ene</li>
+<li>$\ce{CH#CCH2CH3}$ → But-1-yne</li>
+<li>$\ce{CH3CH(OH)CH3}$ → Propan-2-ol</li>
+<li>$\ce{CH3CH2CHO}$ → Propanal</li>
+<li>$\ce{CH3COCH3}$ → Propan-2-one</li>
+<li>$\ce{CH3CH2COOH}$ → Propanoic acid</li>
+<li>$\ce{CH3CHClCH2Br}$ → 2-Chloro-1-bromopropane</li>
+</ul>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">3</span><span class="q-text">Classify the following compounds based on the pattern of carbon chain: $\ce{C6H6}$, $\ce{C4H10}$, $\ce{C2H4}$, $\ce{C4H6}$, $\ce{C6H12}$</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<ul>
+<li>$\ce{C4H10}$ → Saturated (alkane, all single bonds)</li>
+<li>$\ce{C2H4}$ → Unsaturated (alkene, $\ce{C=C}$)</li>
+<li>$\ce{C4H6}$ → Unsaturated (alkyne or diene, $\ce{C#C}$ or $\ce{C=C-C=C}$)</li>
+<li>$\ce{C6H12}$ → Cycloalkane or alkene (satisfies $\ce{C_nH_{2n}}$)</li>
+<li>$\ce{C6H6}$ → Aromatic (benzene ring)</li>
+</ul>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">4</span><span class="q-text">Which has a higher boiling point: (a) $\ce{CH3OH}$ or $\ce{CH3CH2OH}$? (b) $\ce{C2H5OH}$ or $\ce{C2H5Cl}$?</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<p>(a) $\ce{CH3CH2OH}$ (ethanol) has higher boiling point than $\ce{CH3OH}$ (methanol) because van der Waals forces increase with chain length.</p>
+<p>(b) $\ce{C2H5OH}$ has higher boiling point than $\ce{C2H5Cl}$ because of strong hydrogen bonding in alcohols (ethanol: 78.4°C vs chloroethane: 12.3°C).</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">5</span><span class="q-text">Identify the functional group in: (i) $\ce{CH3COCH2CH3}$ (ii) $\ce{CH3CH2CH=CH2}$ (iii) $\ce{CH3CH2C#N}$</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<ul>
+<li>(i) $\ce{CH3COCH2CH3}$ — Ketone ($\ce{C=O}$ group, butan-2-one)</li>
+<li>(ii) $\ce{CH3CH2CH=CH2}$ — Alkene (double bond, but-1-ene)</li>
+<li>(iii) $\ce{CH3CH2C#N}$ — Nitrile ($\ce{-C#N}$, propanenitrile)</li>
+</ul>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">6</span><span class="q-text">Write the resonance structures of benzene. Which is more stable?</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Benzene ($\ce{C6H6}$) has two equivalent Kekulé structures:</p>
+<p style="font-family:monospace;font-size:0.9rem;text-align:center;padding:8px">
+                /\           /\<br/>
+            —  —     —  —<br/>
+             |  |          |  |<br/>
+            —  —     —  —<br/>
+                \/           \/
+          </p>
+<p>Neither structure alone is correct. The actual benzene is a <strong>resonance hybrid</strong> with equal bond order (1.5) for all C-C bonds. The hybrid is <strong>more stable</strong> than either canonical form by ~150 kJ/mol (resonance energy).</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">7</span><span class="q-text">Explain why $\ce{CCl4}$ does not give precipitate with $\ce{AgNO3}$ but $\ce{CH3CH2Cl}$ does.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> In $\ce{CCl4}$, all four Cl atoms are bonded to the same C atom. There is no $\ce{H}$ on the C bearing Cl, so $\ce{SN1}$/$\ce{SN2}$ displacement is extremely difficult. $\ce{CCl4}$ is inert toward nucleophiles.</p>
+<p>In $\ce{CH3CH2Cl}$, the $\ce{C-Cl}$ bond can undergo nucleophilic substitution (especially in presence of $\ce{AgNO3}$ in ethanol), liberating $\ce{Cl-}$ which gives $\ce{AgCl}$ (white precipitate).</p>
+<p>$$\ce{CH3CH2Cl + AgNO3 -&gt; CH3CH2ONO2 + AgCl \downarrow}$$</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">8</span><span class="q-text">Identify primary, secondary, tertiary carbons in $\ce{CH3CH(CH3)CH2CH3}$.</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> $\ce{CH3-CH(CH3)-CH2-CH3}$ (2-methylbutane):</p>
+<ul>
+<li>1° (primary): $\ce{C1}$ ($\ce{-CH3}$), $\ce{C4}$ ($\ce{-CH3}$), the branch $\ce{-CH3}$ → 3 primary carbons</li>
+<li>2° (secondary): $\ce{C3}$ ($\ce{-CH2-}$) → 1 secondary carbon</li>
+<li>3° (tertiary): $\ce{C2}$ ($\ce{&gt;CH-}$) → 1 tertiary carbon</li>
+</ul>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">9</span><span class="q-text">Write the structures of: (i) 2-Chloro-3-methylpentane (ii) 1-Bromo-4-chlorobut-2-ene</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<p>(i) 2-Chloro-3-methylpentane: $\ce{CH3-CHCl-CH(CH3)-CH2-CH3}$</p>
+<p>(ii) 1-Bromo-4-chlorobut-2-ene: $\ce{Br-CH2-CH=CH-CH2-Cl}$</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">10</span><span class="q-text">Explain the terms: (a) Electrophile (b) Nucleophile (c) Homolytic fission (d) Heterolytic fission</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<ul>
+<li><strong>Electrophile</strong> (electron-loving): A species that accepts an electron pair (e.g., $\ce{H+}$, $\ce{Br+}$, $\ce{NO2+}$, $\ce{AlCl3}$). They are electron-deficient.</li>
+<li><strong>Nucleophile</strong> (nucleus-loving): A species that donates an electron pair (e.g., $\ce{OH-}$, $\ce{CN-}$, $\ce{NH3}$, $\ce{H2O}$). They are electron-rich.</li>
+<li><strong>Homolytic fission:</strong> Symmetrical bond cleavage — each atom gets one electron. Produces free radicals.</li>
+<li><strong>Heterolytic fission:</strong> Unsymmetrical bond cleavage — the more electronegative atom gets both electrons. Produces ions.</li>
+</ul>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">11</span><span class="q-text">Draw the resonance structures of $\ce{CH3COO-}$ (acetate ion).</span><span class="q-tags"><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Acetate ion ($\ce{CH3COO-}$) has two equivalent resonance structures:</p>
+<p style="font-family:monospace;font-size:0.9rem;text-align:center;padding:8px">
+            $\ce{CH3-C(=O)-O-}$   ↔   $\ce{CH3-C(-O-)=O}$
+          </p>
+<p>Both structures contribute equally. The negative charge is delocalized over both O atoms, making the acetate ion strongly stabilized (resonance energy ~80 kJ/mol). This explains why acetic acid is a weak acid ($pK_a$ 4.76) — the conjugate base is stabilized by resonance.</p>
+</div>
+</details>
+<h3 style="margin:24px 0 12px"><i class="fas fa-list-check" style="margin-right:8px"></i> Exercise Questions (Selected)</h3>
+<details class="ncert-q">
+<summary><span class="q-num">E1</span><span class="q-text">How do you account for the formation of ethane during chlorination of methane?</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Chlorination of methane proceeds via free radical mechanism:</p>
+<p><strong>Initiation:</strong> $$\ce{Cl2 -&gt;[h\nu] 2Cl.}$$</p>
+<p><strong>Propagation:</strong> $$\ce{Cl. + CH4 -&gt; .CH3 + HCl}$$ $$\ce{.CH3 + Cl2 -&gt; CH3Cl + Cl.}$$</p>
+<p><strong>Termination:</strong> $$\ce{.CH3 + .CH3 -&gt; CH3-CH3 (ethane)}$$</p>
+<p>When two methyl radicals combine, ethane is formed as a byproduct. The yield of ethane is low because the concentration of $\ce{.CH3}$ radicals is very small.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E2</span><span class="q-text">Arrange the following in increasing order of acidity: $\ce{C6H5OH}$, $\ce{CH3OH}$, $\ce{CH3COOH}$, $\ce{HCOOH}$, $\ce{Cl3CCOOH}$</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Acidity depends on the stability of the conjugate base. $pK_a$ values:</p>
+<p>$$\ce{CH3OH}\; (15.5) &lt; \ce{C6H5OH}\; (10.0) &lt; \ce{CH3COOH}\; (4.76) &lt; \ce{HCOOH}\; (3.75) &lt; \ce{Cl3CCOOH}\; (0.65)$$</p>
+<p><strong>Increasing acidity:</strong> Methanol &lt; Phenol &lt; Acetic acid &lt; Formic acid &lt; Trichloroacetic acid</p>
+<p><em>Why?</em> $\ce{Cl3C-COOH}$ has three strongly $-I$ Cl atoms, hugely stabilizing the conjugate base. $\ce{HCOOH}$ has no +I alkyl group unlike $\ce{CH3COOH}$, making HCOOH stronger.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E3</span><span class="q-text">Identify the compounds (A), (B), and (C) in the following reactions:</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<p>$$\ce{CH3COOH + SOCl2 -&gt; (A) + SO2 + HCl}$$</p>
+<p>(A) is $\ce{CH3COCl}$ (Acetyl chloride) — thionyl chloride replaces $\ce{-OH}$ with $\ce{-Cl}$.</p>
+<p>$$\ce{CH3COCl + NH3 -&gt; (B) + NH4Cl}$$</p>
+<p>(B) is $\ce{CH3CONH2}$ (Acetamide).</p>
+<p>$$\ce{CH3CONH2 -&gt;[Br2/NaOH] (C)}$$</p>
+<p>(C) is $\ce{CH3NH2}$ (Methylamine, Hoffmann bromamide degradation).</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E4</span><span class="q-text">Explain the principle of paper chromatography.</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Paper chromatography is based on the <strong>differential partitioning</strong> of compounds between a stationary phase (water adsorbed on cellulose fibers of paper) and a mobile phase (solvent).</p>
+<p>Components move at different rates ($R_f$ values) based on their solubility in the mobile phase and affinity for the stationary phase. More polar compounds move slower; less polar compounds move faster.</p>
+<p>The $R_f$ (Retardation factor) is: $$R_f = \frac{\text{distance traveled by component}}{\text{distance traveled by solvent front}}$$</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E5</span><span class="q-text">A sample of 0.50 g of an organic compound gave 0.82 g of $\ce{BaSO4}$. Calculate the percentage of sulfur.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Molar mass of $\ce{BaSO4} = 137.3 + 32 + 64 = 233.3\ \text{g mol}^{-1}$</p>
+<p>Mass of S in 0.82 g $\ce{BaSO4}$: $$\frac{32}{233.3} \times 0.82 = 0.1124\ \text{g}$$</p>
+<p>% S = $$\frac{0.1124}{0.50} \times 100 = 22.48\%$$</p>
+<p><strong>Formula:</strong> $$\%\ce{S} = \frac{32}{233} \times \frac{\text{mass of }\ce{BaSO4}}{\text{mass of sample}} \times 100$$</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E6</span><span class="q-text">0.25 g of an organic compound containing nitrogen was digested by Kjeldahl's method. The ammonia evolved was absorbed in 50 mL of 0.1 M $\ce{H2SO4}$. The excess acid required 30 mL of 0.1 M $\ce{NaOH}$. Find the % of N.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<p>Step 1: Calculate acid consumed:</p>
+<p>Initial $\ce{H2SO4} = 50\ \text{mL} \times 0.1\ \text{M} = 5\ \text{mmol}$</p>
+<p>$\ce{NaOH}$ used for back-titration = $30\ \text{mL} \times 0.1\ \text{M} = 3\ \text{mmol}$</p>
+<p>Since $\ce{2NaOH + H2SO4 -&gt; Na2SO4 + 2H2O}$, 3 mmol $\ce{NaOH}$ reacts with 1.5 mmol $\ce{H2SO4}$</p>
+<p>$\ce{H2SO4}$ consumed by $\ce{NH3} = 5 - 1.5 = 3.5\ \text{mmol}$</p>
+<p>$\ce{2NH3 + H2SO4 -&gt; (NH4)2SO4}$, so $\ce{NH3} = 2 \times 3.5 = 7\ \text{mmol} = 0.007\ \text{mol}$</p>
+<p>Mass of N = $0.007 \times 14 = 0.098\ \text{g}$</p>
+<p>$$\%\ce{N} = \frac{0.098}{0.25} \times 100 = 39.2\%$$</p>
+<p>Alternatively, using formula: $$\%\ce{N} = \frac{1.4 \times M \times (V_2 - V_1)}{W}$$ where $M$ is molarity, $V_2$ = vol of acid (mL), $V_1$ = vol of NaOH (mL) for same $M$, $W$ = sample mass.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E7</span><span class="q-text">Explain why $\ce{CCl4}$ is not a conductor of electricity but $\ce{NaCl}$ solution is.</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> $\ce{NaCl}$ in water dissociates into $\ce{Na+}$ and $\ce{Cl-}$ ions (electrolyte), which carry electric current.</p>
+<p>$\ce{CCl4}$ is a <strong>covalent</strong> compound. It does not dissociate into ions in any solvent. Hence it cannot conduct electricity.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E8</span><span class="q-text">What is the difference between distillation, fractional distillation, and steam distillation?</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<table>
+<tr><th>Method</th><th>Principle</th><th>Use</th></tr>
+<tr><td>Simple distillation</td><td>Vaporization + condensation</td><td>Separate liquids with large $bp$ difference ($&gt;40$°C)</td></tr>
+<tr><td>Fractional distillation</td><td>Repeated condensation-evaporation using a fractionating column</td><td>Separate liquids with close $bp$ (e.g., crude oil, acetone-methanol)</td></tr>
+<tr><td>Steam distillation</td><td>Co-distillation with steam at $&lt;100$°C</td><td>Separate steam-volatile compounds (e.g., aniline, essential oils) from non-volatile impurities</td></tr>
+</table>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E9</span><span class="q-text">Why does Lassaigne's test fail for diazonium salts?</span><span class="q-tags"><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> In Lassaigne's test, the organic compound is fused with Na metal to convert N into $\ce{NaCN}$. However, diazonium salts ($\ce{C6H5N2+X-}$) decompose on heating with Na, and the $\ce{N2}$ gas escapes before forming $\ce{NaCN}$. The nitrogen is lost as $\ce{N2}$ gas rather than being fixed as $\ce{CN-}$.</p>
+<p>Thus, diazonium salts give a <strong>negative</strong> Lassaigne's test for nitrogen even though they contain N.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E10</span><span class="q-text">0.24 g of an organic compound containing phosphorus gave 0.45 g of $\ce{Mg2P2O7}$. Calculate % of P.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Molar mass of $\ce{Mg2P2O7} = 2(24.3) + 2(31) + 7(16) = 48.6 + 62 + 112 = 222.6\ \text{g mol}^{-1}$</p>
+<p>Mass of P in 0.45 g $\ce{Mg2P2O7}$: $$\frac{2 \times 31}{222.6} \times 0.45 = \frac{62}{222.6} \times 0.45 = 0.1253\ \text{g}$$</p>
+<p>$$\%\ce{P} = \frac{0.1253}{0.24} \times 100 = 52.21\%$$</p>
+<p><strong>Formula:</strong> $$\%\ce{P} = \frac{62}{222} \times \frac{\text{mass of }\ce{Mg2P2O7}}{\text{mass of sample}} \times 100$$</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E11</span><span class="q-text">Explain the Dumas method for estimation of nitrogen. Why is it more universal than Kjeldahl?</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> <strong>Dumas Method:</strong> A known mass of the organic compound is heated with $\ce{CuO}$ in a combustion furnace:</p>
+<p>$$\ce{C_xH_yN_z + (2x + y/2)CuO -&gt; xCO2 + (y/2)H2O + (z/2)N2 + (2x + y/2)Cu}$$</p>
+<p>The $\ce{N2}$ gas is collected over a solution of KOH in a Schiff's nitrometer. Volume of $\ce{N2}$ at STP is measured.</p>
+<p>$$\%\ce{N} = \frac{28 \times V \times 100}{22400 \times W}$$ where $V$ = volume of $\ce{N2}$ (mL at STP), $W$ = sample mass.</p>
+<p><strong>Why Dumas is more universal:</strong></p>
+<ul>
+<li>Kjeldahl works only for compounds where N is in $-3$ oxidation state (amines, amides).</li>
+<li>Dumas works for <strong>all</strong> N-containing compounds including nitro, azo, heterocycles, etc.</li>
+<li>Dumas does not require conversion of N to $\ce{NH3}$, avoiding issues with incomplete digestion.</li>
+</ul>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E12</span><span class="q-text">An organic compound contains 49.3% C, 9.6% H, and rest N. Find its empirical formula. If molecular mass is 146 g/mol, find molecular formula.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<p>%N = $100 - (49.3 + 9.6) = 41.1\%$</p>
+<table>
+<tr><th>Element</th><th>%</th><th>Moles</th><th>Ratio</th><th>Simple ratio</th></tr>
+<tr><td>C</td><td>49.3</td><td>49.3/12 = 4.108</td><td>4.108/2.936 = 1.4</td><td>$\times 5 = 7$</td></tr>
+<tr><td>H</td><td>9.6</td><td>9.6/1 = 9.6</td><td>9.6/2.936 = 3.27</td><td>$\times 5 = 16.35 \approx 16$</td></tr>
+<tr><td>N</td><td>41.1</td><td>41.1/14 = 2.936</td><td>2.936/2.936 = 1</td><td>$\times 5 = 5$</td></tr>
+</table>
+<p>Empirical formula = $\ce{C7H16N5}$ (Empirical mass = $84 + 16 + 70 = 170$)</p>
+<p>$n = \frac{146}{170} \approx 1$ → Molecular formula = $\ce{C7H16N5}$</p>
+<p><em>Note: The empirical mass (170) is close to the molecular mass (146) considering experimental error. The molecular formula is likely the same as the empirical formula.</em></p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E13</span><span class="q-text">Explain the mechanism of $\ce{SN1}$ and $\ce{SN2}$ reactions with examples.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<p><strong>$\ce{SN1}$ (Substitution Nucleophilic Unimolecular):</strong></p>
+<p>Two steps: (1) Slow: $\ce{R-X -&gt; R+ + X-}$ (carbocation formation, rate-determining). (2) Fast: $\ce{R+ + Nu- -&gt; R-Nu}$.</p>
+<p>Example: $\ce{(CH3)3C-Br -&gt;[H2O] (CH3)3C-OH}$ (tertiary halide).</p>
+<p>Features: First-order kinetics, racemization, favored by tertiary substrates and polar protic solvents.</p>
+<p><strong>$\ce{SN2}$ (Substitution Nucleophilic Bimolecular):</strong></p>
+<p>Single step: $\ce{Nu- + R-X -&gt; [Nu---R---X]^# -&gt; R-Nu + X-}$ (backside attack, Walden inversion).</p>
+<p>Example: $\ce{CH3-Br + OH- -&gt; CH3-OH + Br-}$ (methyl halide).</p>
+<p>Features: Second-order kinetics, inversion of configuration, favored by primary substrates and polar aprotic solvents.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E14</span><span class="q-text">What are the different methods of purification of organic compounds? Explain column chromatography.</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Methods of purification:</p>
+<ol>
+<li><strong>Sublimation</strong> — for volatile solids (e.g., naphthalene, camphor).</li>
+<li><strong>Crystallization</strong> — based on solubility difference.</li>
+<li><strong>Distillation</strong> — based on boiling point difference (simple, fractional, steam, vacuum, azeotropic).</li>
+<li><strong>Differential extraction</strong> — based on partition between two immiscible solvents.</li>
+<li><strong>Chromatography</strong> — based on differential adsorption/partition.</li>
+</ol>
+<p><strong>Column Chromatography:</strong> Stationary phase (alumina/silica gel) packed in a glass column. The mixture is loaded at the top, and the mobile phase (solvent) is passed through. Components travel at different speeds based on their adsorption affinity → collected separately.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E15</span><span class="q-text">In Lassaigne's test, the sodium fusion extract is boiled with $\ce{FeSO4}$ and then $\ce{FeCl3}$ is added. What is the product formed and why is it called Prussian Blue?</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> The reactions involved in Lassaigne's test for nitrogen:</p>
+<p>$$\ce{Na + C + N -&gt;[fusion] NaCN}$$</p>
+<p>$$\ce{FeSO4 + 6NaCN -&gt; Na4[Fe(CN)6] + Na2SO4}$$<br/>
+          (Sodium hexacyanoferrate(II), sodium ferrocyanide)</p>
+<p>$$\ce{3Na4[Fe(CN)6] + 4FeCl3 -&gt; Fe4[Fe(CN)6]3 + 12NaCl}$$<br/>
+          (Ferric ferrocyanide — Prussian Blue)</p>
+<p>It's called <strong>Prussian Blue</strong> because of its deep blue color, named after the Prussian military uniform dye. The pigment is a coordination polymer of $\ce{Fe^{3+}}$ and $\ce{[Fe^{II}(CN)6]^{4-}}$.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E16</span><span class="q-text">What is hyperconjugation? Explain with reference to propene.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span><span class="badge badge-hots">HOTS</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> <strong>Hyperconjugation</strong> is the delocalization of $\sigma$ electrons (from $\ce{C-H}$ bond) into an adjacent $\pi$ orbital or empty p orbital.</p>
+<p>In <strong>propene</strong> ($\ce{CH3-CH=CH2}$), the three $\ce{C-H}$ bonds on the methyl group ($\alpha$ to the double bond) can overlap with the $\pi^*$ orbital of the $\ce{C=C}$, stabilizing the molecule:</p>
+<p>$$\ce{H-CH2-\!\!\overset{\pi}{C}\!H\!\!=\!\!CH2}$$</p>
+<p>The three $\alpha$-H atoms give 3 hyperconjugative structures, making propene more stable than ethene (which has no $\alpha$-H).</p>
+<p>The stability of alkenes follows: tetrasubstituted &gt; trisubstituted &gt; disubstituted &gt; monosubstituted &gt; ethene, directly correlating with the number of $\alpha$-H atoms.</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E17</span><span class="q-text">Calculate the empirical formula of a compound with composition: Na = 29.1%, S = 40.5%, O = 30.4%.</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<table>
+<tr><th>Element</th><th>%</th><th>Moles</th><th>Ratio</th><th>Simple ratio</th></tr>
+<tr><td>Na</td><td>29.1</td><td>29.1/23 = 1.265</td><td>1.265/1.265 = 1</td><td>2</td></tr>
+<tr><td>S</td><td>40.5</td><td>40.5/32 = 1.266</td><td>1.266/1.265 = 1</td><td>2</td></tr>
+<tr><td>O</td><td>30.4</td><td>30.4/16 = 1.9</td><td>1.9/1.265 = 1.5</td><td>3</td></tr>
+</table>
+<p>Empirical formula = $\ce{Na2S2O3}$ (Sodium thiosulphate).</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E18</span><span class="q-text">Write the IUPAC names of the following: (i) $\ce{CH3COCH2CH3}$ (ii) $\ce{CH3CH2CH(OH)COOH}$ (iii) $\ce{CH3CH2CH2CH2NH2}$</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<ul>
+<li>(i) $\ce{CH3COCH2CH3}$ → <strong>Butan-2-one</strong> (ketone, C=O at position 2)</li>
+<li>(ii) $\ce{CH3CH2CH(OH)COOH}$ → <strong>2-Hydroxybutanoic acid</strong> (acid suffix -oic acid, OH at C2)</li>
+<li>(iii) $\ce{CH3CH2CH2CH2NH2}$ → <strong>Butan-1-amine</strong> (primary amine, amino at C1)</li>
+</ul>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E19</span><span class="q-text">0.40 g of an organic compound containing chlorine gave 0.60 g of $\ce{AgCl}$ by Carius method. Calculate % of Cl.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> Molar mass $\ce{AgCl} = 107.9 + 35.5 = 143.4\ \text{g mol}^{-1}$</p>
+<p>Mass of Cl in 0.60 g $\ce{AgCl}$: $$\frac{35.5}{143.4} \times 0.60 = 0.1485\ \text{g}$$</p>
+<p>$$\%\ce{Cl} = \frac{0.1485}{0.40} \times 100 = 37.13\%$$</p>
+<p><strong>Formula:</strong> $$\%\ce{Cl} = \frac{35.5}{143.5} \times \frac{\text{mass of }\ce{AgCl}}{\text{mass of sample}} \times 100$$</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E20</span><span class="q-text">State the three main differences between $\ce{SN1}$ and $\ce{SN2}$ mechanisms.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<table>
+<tr><th>Feature</th><th>$\ce{SN1}$</th><th>$\ce{SN2}$</th></tr>
+<tr><td>Kinetics</td><td>First-order: Rate = $k[\ce{R-X}]$</td><td>Second-order: Rate = $k[\ce{R-X}][\ce{Nu-}]$</td></tr>
+<tr><td>Stereochemistry</td><td>Racemization (attack from both sides of planar carbocation)</td><td>Inversion (Walden inversion, backside attack)</td></tr>
+<tr><td>Substrate</td><td>Favored by $3^\circ &gt; 2^\circ$ alkyl halides</td><td>Favored by $1^\circ &gt; 2^\circ$ alkyl halides; $3^\circ$ never reacts by $\ce{SN2}$</td></tr>
+</table>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E21</span><span class="q-text">Explain the +I and -I effects. Give suitable examples.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong> <strong>Inductive effect</strong> is the polarization of $\sigma$ bonds due to electronegativity differences.</p>
+<p><strong>$-I$ (electron withdrawing):</strong> Groups that pull electron density toward themselves.</p>
+<p>Examples: $-\ce{NO2}$, $-\ce{CN}$, $-\ce{COOH}$, $-\ce{CHO}$, $-\ce{OH}$, $-\ce{NH2}$, halogens.</p>
+<p>$-I$ order: $-\ce{NO2} &gt; -\ce{CN} &gt; -\ce{COOH} &gt; -\ce{CHO} &gt; -\ce{OH} &gt; -\ce{NH2} &gt; -\ce{F} &gt; -\ce{Cl} &gt; -\ce{Br} &gt; -\ce{I}$</p>
+<p><strong>$+I$ (electron donating):</strong> Groups that push electron density toward the carbon chain.</p>
+<p>Examples: Alkyl groups ($-\ce{CH3}$, $-\ce{C2H5}$, $-\ce{CH(CH3)2}$, $-\ce{C(CH3)3}$), $\ce{O-}$.</p>
+<p>$+I$ order: $-\ce{C(CH3)3} &gt; -\ce{CH(CH3)2} &gt; -\ce{C2H5} &gt; -\ce{CH3} &gt; \ce{H}$</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E22</span><span class="q-text">A compound contains 4.07% H, 24.27% C, and 71.65% Cl. Its molecular mass is 98.96 g/mol. Determine the molecular formula.</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<table>
+<tr><th>Element</th><th>%</th><th>Moles</th><th>Ratio</th><th>Simple ratio</th></tr>
+<tr><td>C</td><td>24.27</td><td>24.27/12 = 2.023</td><td>2.023/2.023 = 1</td><td>2</td></tr>
+<tr><td>H</td><td>4.07</td><td>4.07/1 = 4.07</td><td>4.07/2.023 = 2.01</td><td>4</td></tr>
+<tr><td>Cl</td><td>71.65</td><td>71.65/35.5 = 2.018</td><td>2.018/2.023 = 1</td><td>2</td></tr>
+</table>
+<p>Empirical formula = $\ce{C2H4Cl2}$ (Empirical mass = $24 + 4 + 71 = 99$)</p>
+<p>$n = \frac{98.96}{99} \approx 1$</p>
+<p>Molecular formula = $\ce{C2H4Cl2}$ (Dichloroethane).</p>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E23</span><span class="q-text">Differentiate between electrophiles and nucleophiles. Give examples.</span><span class="q-tags"><span class="badge badge-pyq">PYQ</span></span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<table>
+<tr><th>Property</th><th>Electrophile</th><th>Nucleophile</th></tr>
+<tr><td>Meaning</td><td>Electron-loving</td><td>Nucleus-loving</td></tr>
+<tr><td>Nature</td><td>Electron-deficient (can accept $e^-$ pair)</td><td>Electron-rich (can donate $e^-$ pair)</td></tr>
+<tr><td>Charge</td><td>Neutral or positive</td><td>Neutral or negative</td></tr>
+<tr><td>Examples</td><td>$\ce{H+}$, $\ce{Cl+}$, $\ce{NO2+}$, $\ce{BF3}$, $\ce{AlCl3}$, $\ce{FeCl3}$, $\ce{C=O}$ (carbon)</td><td>$\ce{OH-}$, $\ce{CN-}$, $\ce{NH3}$, $\ce{H2O}$, $\ce{RO-}$, $\ce{X-}$, $\ce{C=C}$ ($\pi$ electrons)</td></tr>
+<tr><td>Attacked site</td><td>Attacks electron-rich centers</td><td>Attacks electron-deficient centers</td></tr>
+</table>
+</div>
+</details>
+<details class="ncert-q">
+<summary><span class="q-num">E24</span><span class="q-text">Write short notes on: (a) Crystallization (b) Sublimation (c) Steam distillation</span></summary>
+<div class="q-answer">
+<p><strong>Answer:</strong></p>
+<p><strong>(a) Crystallization:</strong> A purification technique based on the principle that a compound's solubility increases with temperature. The impure solid is dissolved in a minimum amount of hot solvent. On cooling, the pure compound crystallizes out, leaving impurities in solution. Used for purification of solids like benzoic acid, naphthalene.</p>
+<p><strong>(b) Sublimation:</strong> Some solids directly vaporize on heating without passing through the liquid phase. The vapors are then condensed back to solid on a cold surface. Used for compounds like camphor, naphthalene, $\ce{NH4Cl}$.</p>
+<p><strong>(c) Steam distillation:</strong> A mixture of steam and the organic compound is distilled. Used for compounds that are <em>volatile with steam</em> but immiscible with water. Examples: aniline, essential oils, eugenol from cloves.</p>
+</div>
+</details>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- ===================== TAB 4 ===================== -->
+<section class="tab-content" id="tab4">
+<div class="glass-card">
+<h2><i class="fas fa-microscope" style="margin-right:10px;color:var(--accent2)"></i> Interactive Virtual Lab</h2>
+<p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:16px">
+        Explore qualitative and quantitative analysis through interactive Canvas-based simulations.
+      </p>
+<div class="lab-grid">
+<!-- 4a: Lassaigne's Test -->
+<div class="lab-module">
+<div class="lab-header">
+<h3><i class="fas fa-vial" style="margin-right:6px;color:var(--primary-light)"></i> Lassaigne's Test</h3>
+<span class="badge badge-hots">Qualitative</span>
+</div>
+<div class="lab-canvas-wrap">
+<canvas height="260" id="lassaigneCanvas" width="400"></canvas>
+</div>
+<div class="lab-controls">
+<select class="lab-select" id="lassaigneSelect">
+<option value="N">Detect Nitrogen (N)</option>
+<option value="S">Detect Sulfur (S)</option>
+<option value="NS">N + S (Thiocyanate)</option>
+<option value="X">Detect Halogen (X)</option>
+</select>
+<button class="lab-btn primary" id="lassaigneBtn"><i class="fas fa-play"></i> Run Test</button>
+<button class="lab-btn" id="lassaigneReset"><i class="fas fa-rotate-left"></i> Reset</button>
+</div>
+<div class="lab-info" id="lassaigneInfo">
+            Select an element and click <strong>Run Test</strong> to observe the sodium fusion test.
+          </div>
+</div>
+<!-- 4b: Dumas Method -->
+<div class="lab-module">
+<div class="lab-header">
+<h3><i class="fas fa-fire" style="margin-right:6px;color:var(--accent)"></i> Dumas Method</h3>
+<span class="badge badge-pyq">Quantitative N</span>
+</div>
+<div class="lab-canvas-wrap">
+<canvas height="260" id="dumasCanvas" width="400"></canvas>
+</div>
+<div class="lab-controls">
+<button class="lab-btn primary" id="dumasBtn"><i class="fas fa-play"></i> Ignite</button>
+<button class="lab-btn" id="dumasReset"><i class="fas fa-rotate-left"></i> Reset</button>
+</div>
+<div class="lab-info" id="dumasInfo">
+            Click <strong>Ignite</strong> to simulate the Dumas combustion. N₂ gas bubbles rise and collect in the nitrometer.
+          </div>
+</div>
+<!-- 4c: Kjeldahl Method -->
+<div class="lab-module">
+<div class="lab-header">
+<h3><i class="fas fa-flask" style="margin-right:6px;color:var(--accent2)"></i> Kjeldahl Titration</h3>
+<span class="badge badge-pyq">Quantitative N</span>
+</div>
+<div class="lab-canvas-wrap">
+<canvas height="260" id="kjeldahlCanvas" width="400"></canvas>
+</div>
+<div class="lab-controls">
+<button class="lab-btn primary" id="kjeldahlBtn"><i class="fas fa-play"></i> Start Digestion</button>
+<button class="lab-btn" id="kjeldahlTitrate"><i class="fas fa-droplet"></i> Add Drop</button>
+<button class="lab-btn" id="kjeldahlReset"><i class="fas fa-rotate-left"></i> Reset</button>
+</div>
+<div class="lab-info" id="kjeldahlInfo">
+            Digestion → distillation → titration. Click <strong>Start Digestion</strong>, then <strong>Add Drop</strong> to titrate.
+          </div>
+</div>
+<!-- 4d: Carius Method -->
+<div class="lab-module">
+<div class="lab-header">
+<h3><i class="fas fa-weight-scale" style="margin-right:6px;color:var(--accent)"></i> Carius Method</h3>
+<span class="badge badge-hots">Halogen/Sulfur</span>
+</div>
+<div class="lab-canvas-wrap">
+<canvas height="260" id="cariusCanvas" width="400"></canvas>
+</div>
+<div class="lab-controls">
+<select class="lab-select" id="cariusSelect">
+<option value="Cl">Chlorine (White AgCl)</option>
+<option value="Br">Bromine (Pale-yellow AgBr)</option>
+<option value="I">Iodine (Yellow AgI)</option>
+</select>
+<button class="lab-btn primary" id="cariusBtn"><i class="fas fa-play"></i> Heat &amp; Precipitate</button>
+<button class="lab-btn" id="cariusReset"><i class="fas fa-rotate-left"></i> Reset</button>
+</div>
+<div class="lab-info" id="cariusInfo">
+            Select halogen and click <strong>Heat &amp; Precipitate</strong>. The precipitate weight updates below.
+          </div>
+</div>
+<!-- 4e: Push-Arrow Visualizer -->
+<div class="lab-module" style="grid-column:1/-1">
+<div class="lab-header">
+<h3><i class="fas fa-arrow-turn-up" style="margin-right:6px;color:var(--primary-light)"></i> Electronic Displacement — Push-Arrow Visualizer</h3>
+<span class="badge badge-pyq">GSAP Animation</span>
+</div>
+<div class="lab-canvas-wrap">
+<canvas height="280" id="pushArrowCanvas" width="800"></canvas>
+</div>
+<div class="pa-controls">
+<button class="pa-btn active" data-pa="hyperconj">Hyperconjugation (Propene)</button>
+<button class="pa-btn" data-pa="benzene">Resonance (Benzene)</button>
+<button class="pa-btn" data-pa="acetate">Resonance (Acetate ion)</button>
+<button class="pa-btn" data-pa="carbocation">Carbocation Stability</button>
+</div>
+<div class="lab-info" id="pushArrowInfo">
+            Select an effect to see GSAP-animated curved arrows showing electron delocalization.
+          </div>
+</div>
+</div>
+</div>
+<div class="glass-card" style="text-align:center;font-size:0.85rem;color:var(--text-dim)">
+<i class="fas fa-flask"></i> All simulations are educational approximations. Values and volumes are for conceptual understanding.
+    </div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+</div>
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // ===== TAB SWITCHING =====
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panes = {
+    tab1: document.getElementById('tab1'),
+    tab2: document.getElementById('tab2'),
+    tab3: document.getElementById('tab3'),
+    tab4: document.getElementById('tab4')
+  };
+
+  function switchTab(id) {
+    tabs.forEach(function(btn) {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-selected', 'false');
+    });
+    Object.values(panes).forEach(function(p) {
+      if (p) p.classList.remove('active');
+    });
+    var activeBtn = document.querySelector('.tab-btn[data-tab="' + id + '"]');
+    if (activeBtn) {
+      activeBtn.classList.add('active');
+      activeBtn.setAttribute('aria-selected', 'true');
+    }
+    var pane = panes[id];
+    if (pane) {
+      pane.classList.add('active');
+      // Re-render KaTeX in the active tab
+      if (window.renderMathInElement) {
+        renderMathInElement(pane, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+          ],
+          throwOnError: false,
+        });
+      }
+    }
+  }
+
+  tabs.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var id = this.getAttribute('data-tab');
+      switchTab(id);
+      if (id === 'tab4' && typeof initLabs === 'function' && !window._labsInitialized) {
+        window._labsInitialized = true;
+        setTimeout(initLabs, 100);
+      }
+    });
+  });
+
+  if (window.renderMathInElement) {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError: false
+    });
+  }
+  // Expose switchTab globally for console debugging
+  window.switchTab = switchTab;
+});
+</script>
+<script>
+// ================================================================
+// LAB SIMULATORS — Init function called when Tab 4 is first opened
+// ================================================================
+function initLabs() {
+  // ---- 4a. Lassaigne's Test Engine ----
+  (function() {
+    var canvas = document.getElementById('lassaigneCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var state = { phase: 'idle', progress: 0, element: 'N', color: null };
+
+    function drawLassaigne() {
+      ctx.clearRect(0, 0, W, H);
+      var cx = W/2;
+      // Lab bench
+      ctx.fillStyle = '#1a1a2e';
+      ctx.fillRect(0, H-50, W, 50);
+      ctx.fillStyle = '#2d2d44';
+      ctx.fillRect(0, H-50, W, 4);
+
+      // Test tube rack (3 tubes)
+      for (var i = 0; i < 3; i++) {
+        var tx = 70 + i * 130;
+        var ty = H - 90;
+        // Tube body
+        ctx.strokeStyle = 'rgba(200,200,255,0.3)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(tx-10, ty);
+        ctx.lineTo(tx-10, ty+50);
+        ctx.quadraticCurveTo(tx-10, ty+62, tx, ty+62);
+        ctx.quadraticCurveTo(tx+10, ty+62, tx+10, ty+50);
+        ctx.lineTo(tx+10, ty);
+        ctx.stroke();
+
+        // Tube content
+        if (state.phase === 'testing' && state.element === 'N' && i === 0) {
+          // Prussian blue forming
+          var b = Math.min(1, Math.max(0, (state.progress - 0.3) * 2));
+          ctx.fillStyle = 'rgba(0, 60, 120, ' + (0.2 + b * 0.6) + ')';
+          ctx.fillRect(tx-8, ty+10, 16, 40);
+          // Label
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '9px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('Prussian Blue', tx, ty+80);
+        } else if (state.phase === 'testing' && state.element === 'S' && i === 1) {
+          // Deep violet
+          var b = Math.min(1, Math.max(0, (state.progress - 0.3) * 2));
+          ctx.fillStyle = 'rgba(80, 0, 120, ' + (0.2 + b * 0.6) + ')';
+          ctx.fillRect(tx-8, ty+10, 16, 40);
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '9px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('Deep Violet', tx, ty+80);
+        } else if (state.phase === 'testing' && state.element === 'NS' && i === 2) {
+          // Blood red
+          var b = Math.min(1, Math.max(0, (state.progress - 0.3) * 2));
+          ctx.fillStyle = 'rgba(120, 0, 0, ' + (0.2 + b * 0.7) + ')';
+          ctx.fillRect(tx-8, ty+10, 16, 40);
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '9px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('Blood Red', tx, ty+80);
+        } else if (state.phase === 'testing' && state.element === 'X' && i === 2) {
+          // AgX precipitate
+          var b = Math.min(1, Math.max(0, (state.progress - 0.3) * 2));
+          ctx.fillStyle = 'rgba(200, 200, 200, ' + (0.1 + b * 0.5) + ')';
+          ctx.fillRect(tx-8, ty+10, 16, 40);
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '9px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('AgX (White/Yellow)', tx, ty+80);
+        } else {
+          ctx.fillStyle = 'rgba(255,255,255,0.05)';
+          ctx.fillRect(tx-8, ty+10, 16, 40);
+        }
+
+        // Tube labels
+        ctx.fillStyle = 'rgba(255,255,255,0.3)';
+        ctx.font = '8px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(['N-test', 'S-test', 'Halogen'][i], tx, ty-6);
+      }
+
+      // Na fusion animation (center)
+      if (state.phase === 'fusion' || state.phase === 'testing') {
+        var fp = state.phase === 'fusion' ? state.progress : 1;
+        // Fusion vessel
+        var fx = cx - 30, fy = 30;
+        ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(fx, fy);
+        ctx.lineTo(fx, fy+40);
+        ctx.lineTo(fx+60, fy+40);
+        ctx.lineTo(fx+60, fy);
+        ctx.stroke();
+
+        // Glowing Na (fusion)
+        if (fp < 0.8) {
+          var glow = Math.sin(fp * Math.PI * 4) * 0.3 + 0.5;
+          ctx.fillStyle = 'rgba(255, 200, 50, ' + glow + ')';
+          ctx.beginPath();
+          ctx.arc(fx+30, fy+20, 15 + glow*5, 0, Math.PI*2);
+          ctx.fill();
+          ctx.fillStyle = '#fff';
+          ctx.font = '9px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('Na fusion ' + Math.round(fp*100) + '%', fx+30, fy+60);
+        } else {
+          ctx.fillStyle = 'rgba(255,200,50,0.3)';
+          ctx.fillRect(fx+5, fy+5, 50, 30);
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '9px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('Fusion complete', fx+30, fy+60);
+        }
+      }
+    }
+
+    var lassaigneAnim = null;
+    function startLassaigne() {
+      if (lassaigneAnim) { cancelAnimationFrame(lassaigneAnim); lassaigneAnim = null; }
+      state.element = document.getElementById('lassaigneSelect').value;
+      state.phase = 'idle';
+      state.progress = 0;
+
+      var info = document.getElementById('lassaigneInfo');
+      var startTime = Date.now();
+
+      function step() {
+        var elapsed = (Date.now() - startTime) / 1000;
+        if (elapsed < 2) {
+          state.phase = 'fusion';
+          state.progress = elapsed / 2;
+          info.innerHTML = 'Sodium fusion in progress... <span class="lab-result">&#9679;</span>';
+        } else if (elapsed < 4) {
+          state.phase = 'testing';
+          state.progress = (elapsed - 2) / 2;
+          var elem = state.element;
+          if (elem === 'N') info.innerHTML = 'Adding FeSO<sub>4</sub> + FeCl<sub>3</sub> &rarr; <span class="lab-result">Prussian Blue color</span> for Nitrogen!';
+          else if (elem === 'S') info.innerHTML = 'Adding sodium nitroprusside &rarr; <span class="lab-result">Deep Violet color</span> for Sulfur!';
+          else if (elem === 'NS') info.innerHTML = 'Both N &amp; S present &rarr; <span class="lab-result">Blood Red</span> ferric thiocyanate!';
+          else info.innerHTML = 'Adding AgNO<sub>3</sub> &rarr; <span class="lab-result">AgX precipitate</span> (White/Yellow) for Halogen!';
+        } else {
+          state.phase = 'done';
+          drawLassaigne();
+          var elem = state.element;
+          var resultText = '';
+          if (elem === 'N') resultText = '&#10004; N detected: Prussian Blue precipitate (Fe<sub>4</sub>[Fe(CN)<sub>6</sub>]<sub>3</sub>)';
+          else if (elem === 'S') resultText = '&#10004; S detected: Violet color from Na<sub>2</sub>[Fe(CN)<sub>5</sub>NOS]';
+          else if (elem === 'NS') resultText = '&#10004; N+S detected: Blood red Fe(SCN)<sub>3</sub>';
+          else resultText = '&#10004; Halogen detected: AgX precipitate';
+          info.innerHTML = resultText + ' <span class="badge badge-hots">HOTS</span> Lassaigne\'s test fails for diazonium salts (N<sub>2</sub> escapes before NaCN forms).';
+          return;
+        }
+        drawLassaigne();
+        lassaigneAnim = requestAnimationFrame(step);
+      }
+      lassaigneAnim = requestAnimationFrame(step);
+    }
+
+    document.getElementById('lassaigneBtn').addEventListener('click', startLassaigne);
+    document.getElementById('lassaigneReset').addEventListener('click', function() {
+      if (lassaigneAnim) { cancelAnimationFrame(lassaigneAnim); lassaigneAnim = null; }
+      state.phase = 'idle'; state.progress = 0;
+      drawLassaigne();
+      document.getElementById('lassaigneInfo').innerHTML = 'Select an element and click <strong>Run Test</strong> to observe the sodium fusion test.';
+    });
+    drawLassaigne();
+  })();
+
+  // ---- 4b. Dumas Method ----
+  (function() {
+    var canvas = document.getElementById('dumasCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var state = { phase: 'idle', bubbles: [], temp: 0, n2Vol: 0 };
+    var animId = null;
+
+    function drawDumas() {
+      ctx.clearRect(0, 0, W, H);
+
+      // Furnace (left side)
+      var fx = 30, fy = 80;
+      ctx.fillStyle = '#2d2d44';
+      ctx.fillRect(fx, fy, 120, 100);
+      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(fx, fy, 120, 100);
+      // Furnace glow
+      if (state.temp > 0) {
+        var glow = Math.min(1, state.temp / 100);
+        ctx.fillStyle = 'rgba(255, 100, 30, ' + (glow * 0.4) + ')';
+        ctx.fillRect(fx+4, fy+4, 112, 92);
+        // Heating coil
+        for (var i = 0; i < 6; i++) {
+          var coilY = fy + 12 + i * 14;
+          ctx.strokeStyle = 'rgba(255, ' + (200 - glow*150) + ', 0, ' + (0.3 + glow*0.5) + ')';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(fx+10, coilY);
+          ctx.lineTo(fx+110, coilY);
+          ctx.stroke();
+        }
+      }
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '9px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('CuO + Sample', fx+60, fy-6);
+
+      // Sample holder
+      ctx.fillStyle = 'rgba(200,200,255,0.15)';
+      ctx.fillRect(fx+30, fy+20, 60, 30);
+
+      // Connecting tube
+      ctx.strokeStyle = 'rgba(200,200,255,0.3)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(fx+120, fy+50);
+      ctx.lineTo(fx+180, fy+50);
+      ctx.lineTo(fx+180, fy+120);
+      ctx.lineTo(fx+220, fy+120);
+      ctx.stroke();
+
+      // Schiff's nitrometer (right side)
+      var nx = 220, ny = 40, nw = 100, nh = 180;
+      ctx.strokeStyle = 'rgba(200,200,255,0.3)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(nx, ny, nw, nh);
+      // KOH solution
+      ctx.fillStyle = 'rgba(100, 180, 255, 0.1)';
+      ctx.fillRect(nx+1, ny+40, nw-2, nh-41);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '8px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('KOH soln.', nx+nw/2, ny+150);
+
+      // N2 bubbles rising
+      for (var b = state.bubbles.length-1; b >= 0; b--) {
+        var bubble = state.bubbles[b];
+        bubble.y -= bubble.speed;
+        if (bubble.y < ny + 10) {
+          state.bubbles.splice(b, 1);
+          state.n2Vol += 0.3;
+          continue;
+        }
+        ctx.beginPath();
+        ctx.arc(bubble.x, bubble.y, bubble.r, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(180, 220, 255, ' + (0.2 + bubble.alpha * 0.3) + ')';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(180, 220, 255, 0.2)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        bubble.alpha *= 0.98;
+      }
+
+      // N2 volume text
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 11px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('N\u2082: ' + state.n2Vol.toFixed(1) + ' mL', nx+nw/2, ny+28);
+    }
+
+    function startDumas() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      state.phase = 'running';
+      state.bubbles = [];
+      state.temp = 0;
+      state.n2Vol = 0;
+      var info = document.getElementById('dumasInfo');
+      var startTime = Date.now();
+
+      function step() {
+        var elapsed = (Date.now() - startTime) / 1000;
+        state.temp = Math.min(100, elapsed * 20);
+        if (elapsed > 2 && elapsed < 10) {
+          // Produce bubbles
+          if (Math.random() < 0.3) {
+            var nx = 200 + Math.random() * 60;
+            var ny = 210;
+            state.bubbles.push({ x: nx, y: ny, r: 3 + Math.random() * 4, speed: 0.5 + Math.random() * 1, alpha: 1 });
+          }
+          info.innerHTML = 'Combustion in progress... Collecting N<sub>2</sub> gas. <span class="lab-result">' + state.n2Vol.toFixed(1) + ' mL</span>';
+        } else if (elapsed >= 10) {
+          state.phase = 'done';
+          var vol = state.n2Vol;
+          var pct = (28 * vol) / (22400 * 0.1) * 100; // assuming 0.1g sample
+          info.innerHTML = '&#10004; Dumas complete! N<sub>2</sub> collected: <span class="lab-result">' + vol.toFixed(1) + ' mL</span> &bull; %N = ' + pct.toFixed(2) + '% (if 0.1g sample)' +
+            ' <span class="badge badge-hots">HOTS</span> Dumas works for ALL N-compounds (unlike Kjeldahl).';
+          drawDumas();
+          return;
+        }
+        drawDumas();
+        animId = requestAnimationFrame(step);
+      }
+      animId = requestAnimationFrame(step);
+    }
+
+    document.getElementById('dumasBtn').addEventListener('click', startDumas);
+    document.getElementById('dumasReset').addEventListener('click', function() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      state.phase = 'idle'; state.bubbles = []; state.temp = 0; state.n2Vol = 0;
+      drawDumas();
+      document.getElementById('dumasInfo').innerHTML = 'Click <strong>Ignite</strong> to simulate the Dumas combustion. N&#8322; gas bubbles rise and collect in the nitrometer.';
+    });
+    drawDumas();
+  })();
+
+  // ---- 4c. Kjeldahl Method ----
+  (function() {
+    var canvas = document.getElementById('kjeldahlCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var state = { phase: 'idle', progress: 0, drops: 0, color: [255, 200, 200], endPoint: false };
+    var animId = null;
+
+    function drawKjeldahl() {
+      ctx.clearRect(0, 0, W, H);
+      var cx = W/2;
+
+      // Digestion flask (left-center)
+      var fx = 50, fy = 60;
+      ctx.fillStyle = 'rgba(200,200,255,0.05)';
+      ctx.beginPath();
+      ctx.moveTo(fx, fy+100);
+      ctx.lineTo(fx+20, fy+30);
+      ctx.lineTo(fx+100, fy+30);
+      ctx.lineTo(fx+120, fy+100);
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      if (state.phase === 'digesting') {
+        var glow = Math.sin(state.progress * Math.PI * 3) * 0.3 + 0.4;
+        ctx.fillStyle = 'rgba(255, 150, 50, ' + glow + ')';
+        ctx.fillRect(fx+10, fy+40, 100, 50);
+      }
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '8px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('H\u2082SO\u2084 + Sample', fx+60, fy+120);
+      ctx.fillText('(Digestion)', fx+60, fy+132);
+
+      // Distillation -> NH3
+      ctx.strokeStyle = 'rgba(200,200,255,0.2)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(fx+120, fy+50);
+      ctx.lineTo(cx-40, fy+50);
+      ctx.lineTo(cx-40, fy+120);
+      ctx.stroke();
+
+      // Receiving flask (center-right)
+      var rx = cx + 10, ry = 60;
+      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(rx, ry, 110, 90);
+      ctx.fillStyle = 'rgba(150, 200, 255, 0.08)';
+      ctx.fillRect(rx+2, ry+2, 106, 86);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '8px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Standard H\u2082SO\u2084', rx+55, ry+100);
+
+      // Burette (above receiving flask)
+      var bx = rx + 45, by = 10;
+      ctx.strokeStyle = 'rgba(200,200,255,0.25)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(bx-6, by);
+      ctx.lineTo(bx-6, by+40);
+      ctx.lineTo(bx+6, by+40);
+      ctx.lineTo(bx+6, by);
+      ctx.stroke();
+
+      if (state.drops > 0 && !state.endPoint) {
+        // Base filling in burette
+        var fillH = Math.min(38, state.drops * 1.5);
+        ctx.fillStyle = 'rgba(180, 220, 255, 0.4)';
+        ctx.fillRect(bx-4, by+40-fillH, 8, fillH);
+      }
+
+      // Drops falling
+      if (state.phase === 'titrating') {
+        var dropY = 50 + (state.progress % 1) * 80;
+        ctx.beginPath();
+        ctx.arc(bx, dropY, 3, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(180, 220, 255, 0.6)';
+        ctx.fill();
+      }
+
+      // Color change in receiving flask
+      var r = state.color[0], g = state.color[1], b2 = state.color[2];
+      ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b2 + ',0.15)';
+      ctx.fillRect(rx+10, ry+10, 90, 70);
+    }
+
+    var kjeldahlStartTime = 0;
+    function startKjeldahl() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      state.phase = 'digesting';
+      state.progress = 0;
+      state.drops = 0;
+      state.color = [255, 200, 200];
+      state.endPoint = false;
+      kjeldahlStartTime = Date.now();
+      var info = document.getElementById('kjeldahlInfo');
+
+      function step() {
+        var elapsed = (Date.now() - kjeldahlStartTime) / 1000;
+        state.progress = Math.min(1, elapsed / 4);
+        if (elapsed < 4) {
+          info.innerHTML = 'Digesting sample in H<sub>2</sub>SO<sub>4</sub>... <span class="lab-result">' + Math.round(elapsed/4*100) + '%</span>';
+        } else if (elapsed < 5) {
+          state.phase = 'distilling';
+          info.innerHTML = 'Distilling NH<sub>3</sub> into standard acid. Click <strong>Add Drop</strong> to titrate.';
+        } else {
+          state.phase = 'ready';
+          info.innerHTML = 'Digestion &amp; distillation complete. Click <strong>Add Drop</strong> to titrate the excess acid.';
+          drawKjeldahl();
+          return;
+        }
+        drawKjeldahl();
+        animId = requestAnimationFrame(step);
+      }
+      animId = requestAnimationFrame(step);
+    }
+
+    function addKjeldahlDrop() {
+      if (state.phase === 'idle') {
+        document.getElementById('kjeldahlInfo').innerHTML = 'Click <strong>Start Digestion</strong> first!';
+        return;
+      }
+      if (state.endPoint) {
+        document.getElementById('kjeldahlInfo').innerHTML = '&#10004; Endpoint reached! <span class="lab-result">Colorless solution</span>. Calculate %N below.';
+        return;
+      }
+      state.drops++;
+      state.phase = 'titrating';
+      // Simulate pH change: color shifts from pink to colorless
+      var progress = Math.min(1, state.drops / 25);
+      state.color = [
+        Math.round(255 - progress * 200),
+        Math.round(200 + progress * 55),
+        Math.round(200 + progress * 55)
+      ];
+      if (state.drops >= 25) {
+        state.endPoint = true;
+        state.color = [255, 255, 255];
+        // %N calculation
+        var volBase = state.drops * 0.5; // mL of base equivalent
+        var M = 0.1; // molarity
+        var W = 0.25; // sample mass (g)
+        var pctN = (1.4 * M * (50 - volBase)) / W;
+        document.getElementById('kjeldahlInfo').innerHTML =
+          '&#10004; Endpoint at ' + state.drops + ' drops! <span class="lab-result">%N = ' + pctN.toFixed(2) + '%</span>' +
+          ' (V<sub>acid</sub>=50mL, V<sub>base</sub>=' + volBase.toFixed(1) + 'mL, M=0.1, W=0.25g)' +
+          ' <span class="badge badge-pyq">PYQ</span> Formula: %N = 1.4 &times; M &times; (V<sub>acid</sub>-V<sub>base</sub>) / W';
+      } else {
+        document.getElementById('kjeldahlInfo').innerHTML =
+          'Adding drop ' + state.drops + '... Color changing. ' +
+          '<span class="lab-result">' + Math.round((1 - state.drops/25)*100) + '%</span> to endpoint.';
+      }
+      drawKjeldahl();
+    }
+
+    document.getElementById('kjeldahlBtn').addEventListener('click', startKjeldahl);
+    document.getElementById('kjeldahlTitrate').addEventListener('click', addKjeldahlDrop);
+    document.getElementById('kjeldahlReset').addEventListener('click', function() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      state.phase = 'idle'; state.progress = 0; state.drops = 0;
+      state.color = [255, 200, 200]; state.endPoint = false;
+      drawKjeldahl();
+      document.getElementById('kjeldahlInfo').innerHTML = 'Digestion &rarr; distillation &rarr; titration. Click <strong>Start Digestion</strong>, then <strong>Add Drop</strong> to titrate.';
+    });
+    drawKjeldahl();
+  })();
+
+  // ---- 4d. Carius Method ----
+  (function() {
+    var canvas = document.getElementById('cariusCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var state = { phase: 'idle', progress: 0, halogen: 'Cl', precipMass: 0 };
+    var animId = null;
+
+    function drawCarius() {
+      ctx.clearRect(0, 0, W, H);
+      var cx = W/2;
+
+      // Carius tube (sealed)
+      var tx = cx - 35, ty = 20;
+      ctx.strokeStyle = 'rgba(200,200,255,0.3)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(tx, ty);
+      ctx.lineTo(tx, ty+160);
+      ctx.lineTo(tx+70, ty+160);
+      ctx.lineTo(tx+70, ty);
+      ctx.stroke();
+
+      // Seal at top
+      ctx.fillStyle = 'rgba(200,200,255,0.1)';
+      ctx.beginPath();
+      ctx.arc(tx+35, ty, 35, Math.PI, 0);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(200,200,255,0.3)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(tx+35, ty, 35, Math.PI, 0);
+      ctx.stroke();
+
+      // HNO3 + AgNO3 solution
+      ctx.fillStyle = 'rgba(150, 200, 255, 0.08)';
+      ctx.fillRect(tx+2, ty+20, 66, 138);
+
+      if (state.phase === 'heating' || state.phase === 'precipitating') {
+        var heat = state.phase === 'heating' ? Math.min(1, state.progress * 2) : 1;
+        var glow = Math.sin(Date.now() / 200) * 0.2 + 0.3;
+        ctx.fillStyle = 'rgba(255, 100, 20, ' + (heat * glow) + ')';
+        ctx.fillRect(tx+5, ty+20, 60, 60);
+
+        // Bubbles
+        for (var i = 0; i < 5; i++) {
+          var bx = tx + 15 + i * 10 + Math.sin(Date.now()/300 + i)*5;
+          var by = ty + 80 + Math.sin(Date.now()/200 + i*0.7)*10;
+          ctx.beginPath();
+          ctx.arc(bx, by, 2 + Math.sin(Date.now()/100 + i)*0.5, 0, Math.PI*2);
+          ctx.fillStyle = 'rgba(200, 200, 255, 0.15)';
+          ctx.fill();
+        }
+      }
+
+      // Precipitate at bottom
+      if (state.phase === 'precipitating' || state.phase === 'done') {
+        var p = state.phase === 'precipitating' ? state.progress : 1;
+        var pH = p * 40;
+        var colors = { Cl: '200,200,220', Br: '200,180,120', I: '200,180,80' };
+        var c = colors[state.halogen] || '200,200,200';
+        ctx.fillStyle = 'rgba(' + c + ', ' + (0.2 + p * 0.4) + ')';
+        ctx.fillRect(tx+5, ty+160-pH, 60, pH);
+      }
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '9px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Carius tube', cx, ty+180);
+
+      // Balance / scale (right)
+      var sx = cx + 80, sy = 40;
+      ctx.strokeStyle = 'rgba(200,200,255,0.2)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(sx, sy+20);
+      ctx.lineTo(sx+80, sy+20);
+      ctx.stroke();
+      // Scale markings
+      for (var i = 0; i <= 8; i++) {
+        var x = sx + i * 10;
+        ctx.strokeStyle = 'rgba(200,200,255,0.15)';
+        ctx.beginPath();
+        ctx.moveTo(x, sy+20);
+        ctx.lineTo(x, sy+25);
+        ctx.stroke();
+        if (i % 2 === 0) {
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '7px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(i * 0.1, x, sy+34);
+        }
+      }
+      // Needle
+      var needlePos = Math.min(state.precipMass * 2, 1);
+      ctx.strokeStyle = 'rgba(255,200,100,0.6)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(sx + needlePos * 80, sy+20);
+      ctx.lineTo(sx + needlePos * 80 - 5, sy+10);
+      ctx.moveTo(sx + needlePos * 80, sy+20);
+      ctx.lineTo(sx + needlePos * 80 + 5, sy+10);
+      ctx.stroke();
+
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 10px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('AgX mass: ' + state.precipMass.toFixed(3) + ' g', sx+40, sy+60);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '8px Inter, sans-serif';
+      ctx.fillText('(interactive scale)', sx+40, sy+74);
+    }
+
+    function startCarius() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      state.halogen = document.getElementById('cariusSelect').value;
+      state.phase = 'heating';
+      state.progress = 0;
+      state.precipMass = 0;
+      var info = document.getElementById('cariusInfo');
+      var startTime = Date.now();
+      var maxPrecip = { Cl: 0.45, Br: 0.52, I: 0.60 }[state.halogen] || 0.45;
+
+      function step() {
+        var elapsed = (Date.now() - startTime) / 1000;
+        if (elapsed < 3) {
+          state.phase = 'heating';
+          state.progress = elapsed / 3;
+          info.innerHTML = 'Heating Carius tube with fuming HNO<sub>3</sub> + AgNO<sub>3</sub>...';
+        } else if (elapsed < 6) {
+          state.phase = 'precipitating';
+          state.progress = (elapsed - 3) / 3;
+          state.precipMass = state.progress * maxPrecip;
+          var names = { Cl: 'White AgCl', Br: 'Pale-yellow AgBr', I: 'Yellow AgI' };
+          info.innerHTML = 'Precipitate forming: <span class="lab-result">' + names[state.halogen] + '</span> ' + state.precipMass.toFixed(3) + ' g';
+        } else {
+          state.phase = 'done';
+          state.precipMass = maxPrecip;
+          drawCarius();
+          var names = { Cl: 'White AgCl', Br: 'Pale-yellow AgBr', I: 'Yellow AgI' };
+          var molMass = { Cl: 143.5, Br: 188, I: 235 }[state.halogen];
+          var atMass = { Cl: 35.5, Br: 80, I: 127 }[state.halogen];
+          var pct = (atMass / molMass) * (maxPrecip / 0.15) * 100;
+          info.innerHTML = '&#10004; Carius complete! <span class="lab-result">' + names[state.halogen] + '</span> ' +
+            state.precipMass.toFixed(3) + ' g &bull; %' + state.halogen + ' = ' + pct.toFixed(2) + '% (if 0.15g sample)' +
+            ' <span class="badge badge-hots">HOTS</span> Formula: %X = (At.mass/molar mass AgX) &times; (mass AgX/mass sample) &times; 100';
+          return;
+        }
+        drawCarius();
+        animId = requestAnimationFrame(step);
+      }
+      animId = requestAnimationFrame(step);
+    }
+
+    document.getElementById('cariusBtn').addEventListener('click', startCarius);
+    document.getElementById('cariusReset').addEventListener('click', function() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      state.phase = 'idle'; state.progress = 0; state.precipMass = 0;
+      drawCarius();
+      document.getElementById('cariusInfo').innerHTML = 'Select halogen and click <strong>Heat &amp; Precipitate</strong>. The precipitate weight updates below.';
+    });
+    drawCarius();
+  })();
+
+  // ---- 4e. Push-Arrow Visualizer (GSAP) ----
+  (function() {
+    var canvas = document.getElementById('pushArrowCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var currentMode = 'hyperconj';
+    var activeTweens = [];
+
+    // Base structures drawn via canvas
+    function drawStructure(mode) {
+      ctx.clearRect(0, 0, W, H);
+
+      // Draw labeled areas
+      ctx.fillStyle = 'rgba(255,255,255,0.06)';
+      ctx.fillRect(10, 10, W-20, H-20);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '11px Inter, sans-serif';
+      ctx.textAlign = 'center';
+
+      if (mode === 'hyperconj') {
+        // Propene structure
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 16px Inter, sans-serif';
+        ctx.fillText('H\u2083C\u2013CH=CH\u2082', W/2, 50);
+        ctx.fillStyle = '#a78bfa';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('Propene: Hyperconjugation of \u03B1-C\u2013H bonds with \u03C0* of C=C', W/2, 80);
+
+        // Draw the H atoms on CH3
+        ctx.fillStyle = '#f59e0b';
+        ctx.font = '14px Inter, sans-serif';
+        ctx.fillText('3 \u03B1-H atoms', 120, 130);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '10px Inter, sans-serif';
+        ctx.fillText('Each C-H bond can overlap', 120, 150);
+        ctx.fillText('with the empty p orbital', 120, 165);
+
+        ctx.fillStyle = '#10b981';
+        ctx.font = '14px Inter, sans-serif';
+        ctx.fillText('\u2192 Stabilized alkene', W/2, 200);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '10px Inter, sans-serif';
+        ctx.fillText('More \u03B1-H = more hyperconjugation = more stable', W/2, 220);
+
+        ctx.fillStyle = '#f87171';
+        ctx.font = '11px Inter, sans-serif';
+        ctx.fillText('H\u2013CH\u2082\u2013CH=CH\u2082  \u2190\u2192  H\u2082C=CH\u2013CH\u2083  (allyl shift via hyperconjugation)', W/2, 255);
+
+      } else if (mode === 'benzene') {
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 16px Inter, sans-serif';
+        ctx.fillText('Benzene Resonance', W/2, 50);
+        ctx.fillStyle = '#a78bfa';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('Two equivalent Kekul\u00E9 structures \u2192 resonance hybrid', W/2, 80);
+
+        // Draw hexagons
+        var drawHex = function(x, y, r, alt) {
+          ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          for (var i = 0; i < 6; i++) {
+            var angle = Math.PI/2 + i * Math.PI/3 + (alt ? Math.PI/6 : 0);
+            var px = x + r * Math.cos(angle);
+            var py = y + r * Math.sin(angle);
+            if (i === 0) ctx.moveTo(px, py);
+            else ctx.lineTo(px, py);
+          }
+          ctx.closePath();
+          ctx.stroke();
+
+          // Double bonds
+          ctx.strokeStyle = '#a78bfa';
+          ctx.lineWidth = 2;
+          for (var i = 0; i < 3; i++) {
+            var a1 = Math.PI/2 + (i*2) * Math.PI/3 + (alt ? Math.PI/6 : 0);
+            var a2 = Math.PI/2 + (i*2+1) * Math.PI/3 + (alt ? Math.PI/6 : 0);
+            var x1 = x + r * Math.cos(a1);
+            var y1 = y + r * Math.sin(a1);
+            var x2 = x + r * Math.cos(a2);
+            var y2 = y + r * Math.sin(a2);
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+          }
+        };
+
+        drawHex(W/2 - 100, 160, 45, false);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '18px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('\u2194', W/2, 168);
+        drawHex(W/2 + 100, 160, 45, true);
+
+        ctx.fillStyle = '#10b981';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('Resonance hybrid: All C-C bonds equal (bond order 1.5)', W/2, 240);
+        ctx.fillStyle = '#f87171';
+        ctx.font = '11px Inter, sans-serif';
+        ctx.fillText('\u0394H_resonance = 150 kJ/mol \u2192 Extra stability', W/2, 260);
+
+      } else if (mode === 'acetate') {
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 16px Inter, sans-serif';
+        ctx.fillText('Acetate Ion Resonance', W/2, 50);
+        ctx.fillStyle = '#a78bfa';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('CH\u2083COO\u207B  \u2192  Two equivalent structures', W/2, 80);
+
+        ctx.font = '18px Inter, sans-serif';
+        ctx.fillStyle = '#fff';
+        ctx.fillText('CH\u2083\u2013C(=O)\u2013O\u207B', W/2 - 100, 140);
+        ctx.fillStyle = '#94a3b8';
+        ctx.fillText('\u2194', W/2, 143);
+        ctx.fillStyle = '#fff';
+        ctx.fillText('CH\u2083\u2013C(O\u207B)=O', W/2 + 100, 140);
+
+        ctx.fillStyle = '#10b981';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('Negative charge is delocalized over both O atoms', W/2, 185);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '11px Inter, sans-serif';
+        ctx.fillText('This stabilization explains why CH\u2083COOH is a weak acid (pK\u2090 = 4.76)', W/2, 210);
+        ctx.fillStyle = '#f87171';
+        ctx.font = '11px Inter, sans-serif';
+        ctx.fillText('Resonance energy ~80 kJ/mol', W/2, 235);
+
+      } else if (mode === 'carbocation') {
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 16px Inter, sans-serif';
+        ctx.fillText('Carbocation Stability via Hyperconjugation', W/2, 50);
+        ctx.fillStyle = '#a78bfa';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('3\u00B0 (tertiary) > 2\u00B0 (secondary) > 1\u00B0 (primary) > CH\u2083\u207A', W/2, 80);
+
+        ctx.fillStyle = '#f59e0b';
+        ctx.font = '14px Inter, sans-serif';
+        ctx.fillText('(CH\u2083)\u2083C\u207A', W/2 - 140, 140);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('3\u00B0 - 9 \u03B1-H', W/2 - 140, 165);
+
+        ctx.fillStyle = '#fff';
+        ctx.font = '14px Inter, sans-serif';
+        ctx.fillText('>', W/2 - 60, 145);
+
+        ctx.fillStyle = '#f59e0b';
+        ctx.font = '14px Inter, sans-serif';
+        ctx.fillText('(CH\u2083)\u2082CH\u207A', W/2, 140);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('2\u00B0 - 6 \u03B1-H', W/2, 165);
+
+        ctx.fillStyle = '#fff';
+        ctx.font = '14px Inter, sans-serif';
+        ctx.fillText('>', W/2 + 75, 145);
+
+        ctx.fillStyle = '#f59e0b';
+        ctx.font = '14px Inter, sans-serif';
+        ctx.fillText('CH\u2083CH\u2082\u207A', W/2 + 140, 140);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillText('1\u00B0 - 3 \u03B1-H', W/2 + 140, 165);
+
+        ctx.fillStyle = '#10b981';
+        ctx.font = '11px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('More \u03B1-H bonds = more hyperconjugative structures = greater charge delocalization = more stable carbocation', W/2, 210);
+        ctx.fillStyle = '#f87171';
+        ctx.font = '11px Inter, sans-serif';
+        ctx.fillText('This is why S_N1 reactions favor tertiary alkyl halides', W/2, 240);
+      }
+    }
+
+    function animatePushArrows(mode) {
+      // Kill all previous tweens
+      activeTweens.forEach(function(t) { t.kill(); });
+      activeTweens = [];
+      drawStructure(mode);
+
+      // GSAP arrow animations based on mode
+      if (mode === 'hyperconj') {
+        // Create 3 arrows for alpha C-H -> pi*
+        for (var i = 0; i < 3; i++) {
+          var arrow = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          arrow.setAttribute('width', '100');
+          arrow.setAttribute('height', '60');
+          arrow.style.position = 'absolute';
+          arrow.style.left = (80 + i * 70) + 'px';
+          arrow.style.top = '140px';
+          arrow.style.overflow = 'visible';
+          arrow.style.pointerEvents = 'none';
+          arrow.innerHTML = '<path d="M 10,50 Q 30,10 60,20 Q 80,30 90,10" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="12,6" stroke-dashoffset="0" marker-end="url(#arrowHead)"/>';
+          canvas.parentNode.style.position = 'relative';
+          canvas.parentNode.appendChild(arrow);
+          activeTweens.push(
+            gsap.fromTo(arrow.querySelector('path'),
+              { attr: { 'stroke-dashoffset': 0 } },
+              { attr: { 'stroke-dashoffset': -72 }, duration: 1.2 + i * 0.15, repeat: -1, yoyo: true, ease: 'none' }
+            )
+          );
+        }
+      } else if (mode === 'benzene') {
+        // Arrow between Kekule structures
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', '60');
+        svg.setAttribute('height', '40');
+        svg.style.position = 'absolute';
+        svg.style.left = '370px';
+        svg.style.top = '200px';
+        svg.style.overflow = 'visible';
+        svg.style.pointerEvents = 'none';
+        svg.innerHTML = '<path d="M 5,20 L 55,20" fill="none" stroke="#10b981" stroke-width="4" marker-end="url(#arrowHeadGreen)"/>';
+        canvas.parentNode.appendChild(svg);
+      } else if (mode === 'acetate') {
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', '60');
+        svg.setAttribute('height', '40');
+        svg.style.position = 'absolute';
+        svg.style.left = '370px';
+        svg.style.top = '160px';
+        svg.style.overflow = 'visible';
+        svg.style.pointerEvents = 'none';
+        svg.innerHTML = '<path d="M 5,20 L 55,20" fill="none" stroke="#10b981" stroke-width="4" marker-end="url(#arrowHeadGreen)"/>';
+        canvas.parentNode.appendChild(svg);
+      }
+    }
+
+    // Add SVG marker defs
+    function addArrowDefs() {
+      if (document.getElementById('paArrowDefs')) return;
+      var svgNS = 'http://www.w3.org/2000/svg';
+      var defs = document.createElementNS(svgNS, 'svg');
+      defs.setAttribute('id', 'paArrowDefs');
+      defs.setAttribute('width', '0');
+      defs.setAttribute('height', '0');
+      defs.style.position = 'absolute';
+      defs.innerHTML =
+        '<defs>' +
+        '<marker id="arrowHead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#f59e0b"/></marker>' +
+        '<marker id="arrowHeadGreen" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#10b981"/></marker>' +
+        '</defs>';
+      document.body.appendChild(defs);
+    }
+
+    // Switch mode
+    document.querySelectorAll('.pa-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.pa-btn').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        currentMode = this.getAttribute('data-pa');
+        // Remove old arrows
+        canvas.parentNode.querySelectorAll('svg').forEach(function(s) { s.remove(); });
+        animatePushArrows(currentMode);
+        document.getElementById('pushArrowInfo').innerHTML = 'Showing: <strong>' + this.textContent.trim() + '</strong> animation.';
+      });
+    });
+
+    addArrowDefs();
+    drawStructure('hyperconj');
+    setTimeout(function() { animatePushArrows('hyperconj'); }, 200);
+  })();
+
+  console.log('Lab simulators initialized.');
+}
+</script>
+</body>
+</html>

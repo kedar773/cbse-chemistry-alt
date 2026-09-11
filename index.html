@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KEDAR'S CHEMISTRY // Cyber Dark Mode CBSE &amp; JEE Academic Architecture</title>
+  <meta name="description" content="KEDAR'S CHEMISTRY - High-yield CBSE Classes 11 &amp; 12 Chemistry and JEE Main/Advanced study portal by Kedar Krishna. 3D visual modules, offline notes, equations, and problem-solving guides.">
+  <meta name="keywords" content="KEDAR'S CHEMISTRY, CBSE Chemistry, CBSE Class 11 Chemistry, CBSE Class 12 Chemistry, JEE Chemistry Notes, Kedar Krishna, Physical Chemistry, Inorganic Chemistry, Organic Chemistry">
+  <meta name="author" content="Kedar Krishna">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cyber.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+</head>
+<body>
+
+  <!-- Background 3D Flowing Mesh Canvas -->
+  <canvas id="flowingMeshCanvas"></canvas>
+
+  <!-- 1px Vertical Guide Lines -->
+  <div class="vertical-guide guide-left"></div>
+  <div class="vertical-guide guide-center"></div>
+  <div class="vertical-guide guide-right"></div>
+
+  <!-- Announcement Ticker -->
+  <aside class="top-ticker">
+    <div class="pulse-dot"></div>
+    <span>KEDAR'S CHEMISTRY ENGINE // <span class="ticker-highlight">100% EXAM READY</span> // CBSE AND JEE PREPARATION ARCHITECTURE</span>
+  </aside>
+
+  <!-- Sticky Cyber Navigation -->
+  <nav class="cyber-nav">
+    <div class="nav-left">
+      <div class="brand-logo-wrap">
+        <a href="index.html" class="brand-logo">
+          <!-- 3D Miniature Atom Emblem with Orbiting Electrons -->
+          <div class="brand-emblem" id="brandAtomEmblem" title="Hover for Atom Definition">
+            <div class="mini-atom">
+              <!-- Dense Central Nucleus -->
+              <div class="atom-nucleus"></div>
+
+              <!-- Orbit 1 (Electric Cyan) -->
+              <div class="atom-orbit orbit-cyan">
+                <div class="atom-electron electron-cyan"></div>
+              </div>
+
+              <!-- Orbit 2 (Cyber Gold) -->
+              <div class="atom-orbit orbit-gold">
+                <div class="atom-electron electron-gold"></div>
+              </div>
+
+              <!-- Orbit 3 (Emerald Neon) -->
+              <div class="atom-orbit orbit-emerald">
+                <div class="atom-electron electron-emerald"></div>
+              </div>
+            </div>
+
+            <!-- Definition of the Atom Pop-up on Cursor Hover -->
+            <div class="atom-definition-popup">
+              <div class="popup-notch"></div>
+              <div class="popup-head">
+                <div class="popup-title-row">
+                  <span class="popup-term">&#9883; ATOM [Z]</span>
+                  <span class="popup-tag">CBSE &bull; JEE CORE</span>
+                </div>
+                <span class="popup-sub">Fundamental Unit of Chemical Elements</span>
+              </div>
+              <p class="popup-def">
+                The basic building block of all matter and smallest unit of an element retaining chemical properties. Consists of a dense, positively charged nucleus surrounded by electrons revolving in quantized 3D energy orbitals.
+              </p>
+              <div class="popup-props">
+                <div class="prop-row">
+                  <span class="prop-name">NUCLEUS:</span>
+                  <span class="prop-val">Protons (p⁺) + Neutrons (n⁰) // Mass &approx; 99.94%</span>
+                </div>
+                <div class="prop-row">
+                  <span class="prop-name">ELECTRON CLOUD:</span>
+                  <span class="prop-val">e⁻ Orbitals // Charge = -1.602&times;10⁻¹⁹ C</span>
+                </div>
+                <div class="prop-row">
+                  <span class="prop-name">ATOMIC RADIUS:</span>
+                  <span class="prop-val">r &approx; 10⁻¹⁰ m (1 &Aring; = 100 pm)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="brand-title-group">
+            <h1>KEDAR'S CHEMISTRY</h1>
+            <span>ACADEMIC ARCHITECTURE</span>
+          </div>
+        </a>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#scrollyShowcase">Chemistry Alignment</a></li>
+        <li><a href="#chapters">Chapter Directory</a></li>
+        <li><a href="#centers">Teaching Centers</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-right">
+      <button id="contactModalToggle" class="btn-cyber-outline">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        Doubt / Contact
+      </button>
+      <a href="#chapters" class="btn-cyber-primary">
+        Browse 19 Chapters &rarr;
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="cyber-hero">
+    <div class="hero-tag-badge">
+      <span>&#9733; CBSE CLASS 11 &amp; 12 // JEE MAIN &amp; ADVANCED REVISION</span>
+    </div>
+
+    <h1 class="hero-headline">
+      Master Chemistry With <br>
+      <span class="highlight-gradient">Kedar's Chemistry Engine</span>
+    </h1>
+
+    <p class="hero-subtext">
+      Ultra-fast, unified offline study portal for Classes 11 and 12 curated by Kedar Krishna. Featuring interactive 3D spatial models, rigorous reaction mechanisms, mathematical derivations, and 37 JEE advanced preparation guides.
+    </p>
+
+    <div class="hero-cta-group">
+      <a href="#scrollyShowcase" class="btn-cyber-primary" style="padding: 0.8rem 1.8rem; font-size: 0.88rem;">
+        Explore Chemistry Alignment &darr;
+      </a>
+      <a href="#chapters" class="btn-cyber-outline" style="padding: 0.8rem 1.8rem; font-size: 0.88rem;">
+        View 19 Complete Chapters &darr;
+      </a>
+    </div>
+
+    <!-- Stats HUD -->
+    <div class="hero-stats-bar">
+      <div class="stat-box">
+        <div class="stat-num" style="color: var(--neon-cyan);">19</div>
+        <div class="stat-label">Complete Chapters</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="color: var(--neon-gold);">37</div>
+        <div class="stat-label">JEE Master Guides</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="color: var(--neon-emerald);">100%</div>
+        <div class="stat-label">Exam Ready</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="color: #FFFFFF;">0.12ms</div>
+        <div class="stat-label">Local KaTeX Engine</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SCROLLYTELLING 3D PRODUCT SHOWCASE SECTION
+       Dynamic Morphing 3D Centerpiece // 6 Discrete Thresholds
+       ========================================================= -->
+  <section class="scrolly-outer-container" id="scrollyShowcase">
+
+    <div class="scrolly-sticky-stage">
+      <!-- Ambient Spotlight Aura behind 3D Canvas -->
+      <div class="scrolly-stage-glow" id="stageGlow"></div>
+
+      <!-- LEFT COLUMN: Active Class & Branch Descriptions -->
+      <div class="scrolly-left-col">
+
+        <!-- Step 0: Class 11 Physical -->
+        <div class="feature-text-block active" data-step="0" style="--feature-accent: #00F0FF;">
+          <div class="feature-index-row">
+            <span class="index-num">01</span>
+            <span>/ CLASS 11</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>PHYSICAL CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Atomic Structure &amp; Thermodynamics</h2>
+          <p class="feature-desc">
+            Foundational quantum orbital quantization, first and second laws of thermodynamics, enthalpy cycles, Le Chatelier ionic equilibria, and redox ion-electron balancing for CBSE &amp; JEE Main numerical precision.
+          </p>
+          <a href="class-11/05-thermodynamics/index.html" class="feature-cta-btn">
+            <span>VIEW CLASS 11 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 1: Class 11 Inorganic -->
+        <div class="feature-text-block" data-step="1" style="--feature-accent: #FFB703;">
+          <div class="feature-index-row">
+            <span class="index-num">02</span>
+            <span>/ CLASS 11</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>INORGANIC CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Periodicity &amp; Chemical Bonding</h2>
+          <p class="feature-desc">
+            3D VSEPR spatial molecular geometries, valence bond hybridization (sp to sp³d²), Molecular Orbital Theory (MOT) paramagnetic bond orders, and foundational Group 13/14 p-block anomalies.
+          </p>
+          <a href="class-11/04-chemical-bonding/index.html" class="feature-cta-btn">
+            <span>VIEW CLASS 11 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 2: Class 11 Organic -->
+        <div class="feature-text-block" data-step="2" style="--feature-accent: #10B981;">
+          <div class="feature-index-row">
+            <span class="index-num">03</span>
+            <span>/ CLASS 11</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>ORGANIC CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">General Organic &amp; Hydrocarbons</h2>
+          <p class="feature-desc">
+            Electronic displacement fundamentals (inductive, resonance, hyperconjugation), reactive carbocation stability, electrophilic additions, Markovnikov orientations, and Hückel 4n+2 aromaticity.
+          </p>
+          <a href="class-11/09-hydrocarbons/index.html" class="feature-cta-btn">
+            <span>VIEW CLASS 11 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 3: Class 12 Physical -->
+        <div class="feature-text-block" data-step="3" style="--feature-accent: #00F0FF;">
+          <div class="feature-index-row">
+            <span class="index-num">04</span>
+            <span>/ CLASS 12</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>PHYSICAL CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Electrochemistry, Solutions &amp; Kinetics</h2>
+          <p class="feature-desc">
+            Advanced electrochemical cell potentials, Nernst non-standard EMF calculations, Kohlrausch ionic conductivity, colligative Van 't Hoff factors, and integrated chemical rate laws with Arrhenius activation.
+          </p>
+          <a href="class-12/02-electrochemistry/index.html" class="feature-cta-btn">
+            <span>VIEW CLASS 12 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 4: Class 12 Inorganic -->
+        <div class="feature-text-block" data-step="4" style="--feature-accent: #FFB703;">
+          <div class="feature-index-row">
+            <span class="index-num">05</span>
+            <span>/ CLASS 12</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>INORGANIC CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Coordination &amp; d/f-Block Transition</h2>
+          <p class="feature-desc">
+            3D octahedral and tetrahedral Crystal Field Splitting (CFT/CFSE), Werner coordination theory, IUPAC complex naming, optical/geometric isomerism, and 3d-series magnetic moments alongside lanthanoid contraction.
+          </p>
+          <a href="class-12/05-coordination-compounds/index.html" class="feature-cta-btn">
+            <span>VIEW CLASS 12 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 5: Class 12 Organic -->
+        <div class="feature-text-block" data-step="5" style="--feature-accent: #10B981;">
+          <div class="feature-index-row">
+            <span class="index-num">06</span>
+            <span>/ CLASS 12</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>ORGANIC CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Reaction Mechanisms &amp; Biomolecules</h2>
+          <p class="feature-desc">
+            Rigorous multi-step synthesis pathways: SN1/SN2 Walden inversion, Aldol condensation, Cannizzaro hydrides, diazonium coupling conversions, and biomolecular protein/DNA helical structures.
+          </p>
+          <a href="class-12/08-aldehydes-ketones-carboxylic-acids/index.html" class="feature-cta-btn">
+            <span>VIEW CLASS 12 NOTES &rarr;</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- CENTER COLUMN: High-Performance 3D Morphing Viewport -->
+      <div class="scrolly-center-col">
+        <canvas id="web3CubeCanvas" width="520" height="520" title="Interactive 3D Modular Centerpiece // Drag to tumble"></canvas>
+      </div>
+
+      <!-- RIGHT COLUMN: Key Chapters List with Active Glowing Pills -->
+      <div class="scrolly-right-col">
+
+        <!-- Chapters 0: Class 11 Physical -->
+        <div class="chapters-card-block active" data-step="0" style="--feature-accent: #00F0FF;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 11 // PHYSICAL</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Chemical Thermodynamics</span>
+                  <span class="chapter-sub-text">Hess Law &bull; Enthalpy &bull; Entropy Flux</span>
+                </div>
+                <span class="chapter-glow-pill">&Delta;G = &Delta;H - T&Delta;S</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Chemical &amp; Ionic Equilibrium</span>
+                  <span class="chapter-sub-text">Le Chatelier &bull; Buffer pH &bull; Solubility Ksp</span>
+                </div>
+                <span class="chapter-glow-pill">pH = -log[H⁺]</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Structure of Atom</span>
+                  <span class="chapter-sub-text">Bohr Model &bull; Quantum Numbers &bull; Nodes</span>
+                </div>
+                <span class="chapter-glow-pill">&lambda; = h / mv</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Redox Reactions</span>
+                  <span class="chapter-sub-text">Ion-Electron Method &bull; Balancing</span>
+                </div>
+                <span class="chapter-glow-pill">Oxidation States</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">KINETIC ENERGY WAVES</span>
+              <span class="concept-tag-chip active-chip">LATTICE ENTHALPY</span>
+              <span class="concept-tag-chip">PV = nRT</span>
+              <span class="concept-tag-chip">BOHR RADIUS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 1: Class 11 Inorganic -->
+        <div class="chapters-card-block" data-step="1" style="--feature-accent: #FFB703;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 11 // INORGANIC</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Chemical Bonding &amp; Geometry</span>
+                  <span class="chapter-sub-text">VSEPR 3D Shapes &bull; sp³d² &bull; MOT</span>
+                </div>
+                <span class="chapter-glow-pill">Bond Order MOT</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Periodic Classification</span>
+                  <span class="chapter-sub-text">Ionization Enthalpy &bull; Electron Gain</span>
+                </div>
+                <span class="chapter-glow-pill">&Delta;iH Trends</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">p-Block Elements (Gr 13 &amp; 14)</span>
+                  <span class="chapter-sub-text">Inert Pair Effect &bull; Diborane B₂H₆</span>
+                </div>
+                <span class="chapter-glow-pill">Banana Bonds</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">OCTAHEDRAL PRISM</span>
+              <span class="concept-tag-chip active-chip">ORBITAL RINGS</span>
+              <span class="concept-tag-chip">HYBRIDIZATION</span>
+              <span class="concept-tag-chip">METALLIC LATTICE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 2: Class 11 Organic -->
+        <div class="chapters-card-block" data-step="2" style="--feature-accent: #10B981;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 11 // ORGANIC</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">General Organic Chemistry (GOC)</span>
+                  <span class="chapter-sub-text">Inductive &bull; Resonance (+M/-M) &bull; Hyperconjugation</span>
+                </div>
+                <span class="chapter-glow-pill">Carbocation R⁺</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Hydrocarbons &amp; Arenes</span>
+                  <span class="chapter-sub-text">Markovnikov Rule &bull; Ozonolysis &bull; Benzene</span>
+                </div>
+                <span class="chapter-glow-pill">4n + 2 H&uuml;ckel</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Organic Qualitative Analysis</span>
+                  <span class="chapter-sub-text">Lassaigne Test &bull; Kjeldahl Nitrogen</span>
+                </div>
+                <span class="chapter-glow-pill">Chromatography Rf</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">BENZENE PI-RING</span>
+              <span class="concept-tag-chip active-chip">TETRAHEDRAL CLUSTER</span>
+              <span class="concept-tag-chip">ANTI-MARKOVNIKOV</span>
+              <span class="concept-tag-chip">FREE RADICALS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 3: Class 12 Physical -->
+        <div class="chapters-card-block" data-step="3" style="--feature-accent: #00F0FF;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 12 // PHYSICAL</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Electrochemistry</span>
+                  <span class="chapter-sub-text">Nernst Potential &bull; Kohlrausch &bull; Fuel Cells</span>
+                </div>
+                <span class="chapter-glow-pill">E = E&deg; - (0.059/n)logQ</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Solutions</span>
+                  <span class="chapter-sub-text">Raoult Law &bull; Colligative &bull; Van 't Hoff</span>
+                </div>
+                <span class="chapter-glow-pill">&Delta;Tb = i &times; Kb &times; m</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Chemical Kinetics</span>
+                  <span class="chapter-sub-text">Integrated Rate Laws &bull; Arrhenius Activation</span>
+                </div>
+                <span class="chapter-glow-pill">k = A &times; e^(-Ea/RT)</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">ENERGY MATRIX</span>
+              <span class="concept-tag-chip active-chip">CONDUCTOMETRY</span>
+              <span class="concept-tag-chip">FIRST ORDER t&frac12;</span>
+              <span class="concept-tag-chip">BATTERIES</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 4: Class 12 Inorganic -->
+        <div class="chapters-card-block" data-step="4" style="--feature-accent: #FFB703;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 12 // INORGANIC</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Coordination Compounds</span>
+                  <span class="chapter-sub-text">Crystal Field CFT &bull; CFSE &bull; Isomerism</span>
+                </div>
+                <span class="chapter-glow-pill">&Delta;o Octahedral CFSE</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">d- and f-Block Elements</span>
+                  <span class="chapter-sub-text">Lanthanoid Contraction &bull; KMnO₄ / K₂Cr₂O₇</span>
+                </div>
+                <span class="chapter-glow-pill">&mu; = &radic;[n(n+2)] BM</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">COORDINATION PRISM</span>
+              <span class="concept-tag-chip active-chip">ELECTRON ORBITALS</span>
+              <span class="concept-tag-chip">WERNER THEORY</span>
+              <span class="concept-tag-chip">SPECTROCHEMICAL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 5: Class 12 Organic -->
+        <div class="chapters-card-block" data-step="5" style="--feature-accent: #10B981;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 12 // ORGANIC</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Aldehydes, Ketones &amp; Acids</span>
+                  <span class="chapter-sub-text">Aldol &bull; Cannizzaro &bull; Nucleophilic Addition</span>
+                </div>
+                <span class="chapter-glow-pill">Crossed Aldol</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Haloalkanes &amp; Haloarenes</span>
+                  <span class="chapter-sub-text">SN1 vs SN2 Mechanism &bull; Walden Inversion</span>
+                </div>
+                <span class="chapter-glow-pill">SN2 Backside Attack</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Amines &amp; Diazonium Salts</span>
+                  <span class="chapter-sub-text">Sandmeyer Reaction &bull; Hoffmann Bromamide</span>
+                </div>
+                <span class="chapter-glow-pill">Ar-N₂⁺Cl⁻ Coupling</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Biomolecules</span>
+                  <span class="chapter-sub-text">Glucose Anomers &bull; Peptide Linkage &bull; DNA</span>
+                </div>
+                <span class="chapter-glow-pill">Peptide -CONH-</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">MOLECULAR HELIX</span>
+              <span class="concept-tag-chip active-chip">RESONANCE CLOUD</span>
+              <span class="concept-tag-chip">REIMER-TIEMANN</span>
+              <span class="concept-tag-chip">GRIGNARD RMgX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PINNED VERTICAL STEP INDICATOR DOTS & PROGRESS BAR (FAR RIGHT) -->
+      <div class="scrolly-progress-nav">
+        <div class="progress-track-line"></div>
+        <div class="progress-fill-line" id="progressFillLine"></div>
+
+        <div class="scrolly-step-dot active" data-step="0" title="Step 01: Class 11 Physical">01</div>
+        <div class="scrolly-step-dot" data-step="1" title="Step 02: Class 11 Inorganic">02</div>
+        <div class="scrolly-step-dot" data-step="2" title="Step 03: Class 11 Organic">03</div>
+        <div class="scrolly-step-dot" data-step="3" title="Step 04: Class 12 Physical">04</div>
+        <div class="scrolly-step-dot" data-step="4" title="Step 05: Class 12 Inorganic">05</div>
+        <div class="scrolly-step-dot" data-step="5" title="Step 06: Class 12 Organic">06</div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================================
+       INFINITE FLOWING 3D CHEMISTRY TAG TICKER
+       ========================================================= -->
+  <section class="flowing-tags-section">
+    <!-- Stream 1: Moving Left -->
+    <div class="tags-track track-left">
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>NERNST EQUATION // EMF</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>CRYSTAL FIELD THEORY // CFSE</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-emerald);"><span class="chip-dot"></span>ALDOL CONDENSATION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>BOHR MODEL // RYDBERG</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-purple);"><span class="chip-dot"></span>LE CHATELIER PRINCIPLE</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>VSEPR GEOMETRY // HYBRIDIZATION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-coral);"><span class="chip-dot"></span>SN1 vs SN2 MECHANISM</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-purple);"><span class="chip-dot"></span>GIBBS FREE ENERGY // SPONTANEITY</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>NERNST EQUATION // EMF</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>CRYSTAL FIELD THEORY // CFSE</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-emerald);"><span class="chip-dot"></span>ALDOL CONDENSATION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>BOHR MODEL // RYDBERG</div>
+    </div>
+
+    <!-- Stream 2: Moving Right -->
+    <div class="tags-track track-right">
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>KOHLRAUSCH'S LAW</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>LANTHANOID CONTRACTION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-emerald);"><span class="chip-dot"></span>CANNIZZARO REACTION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>FARADAY LAWS OF ELECTROLYSIS</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>OCTAHEDRAL COMPLEX [Co(NH3)6]³⁺</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-coral);"><span class="chip-dot"></span>MARKOVNIKOV ADDITION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>RAOULT'S LAW // COLLIGATIVE</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-purple);"><span class="chip-dot"></span>HÜCKEL'S 4n+2 RULE</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>KOHLRAUSCH'S LAW</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>LANTHANOID CONTRACTION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-emerald);"><span class="chip-dot"></span>CANNIZZARO REACTION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>FARADAY LAWS OF ELECTROLYSIS</div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHAPTER DIRECTORY & FILTER MATRIX
+       ========================================================= -->
+  <section class="chapters-section" id="chapters">
+    <div class="section-header-hud">
+      <div class="section-top-row">
+        <div class="section-title-wrap">
+          <h2>Complete Chapter Directory</h2>
+          <p>Explore all 19 CBSE Class 11 &amp; 12 modules with NCERT notes, formulas, and JEE preparation guides.</p>
+        </div>
+
+        <!-- Mastery Progress Card -->
+        <div class="mastery-progress-card">
+          <div class="progress-stat-col">
+            <span class="progress-stat-label">LOCAL STUDY MASTERY</span>
+            <span class="progress-stat-val" id="masteryCount">0 / 19 (0%)</span>
+          </div>
+          <div class="mastery-meter-track">
+            <div class="mastery-meter-fill" id="masteryMeterFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Tabs & Live Search -->
+      <div class="filter-controls-row">
+        <div class="filter-tabs-group">
+          <button class="filter-tab-btn active" data-filter="all">All (19)</button>
+          <button class="filter-tab-btn" data-filter="11">Class 11 (9)</button>
+          <button class="filter-tab-btn" data-filter="12">Class 12 (10)</button>
+          <button class="filter-tab-btn" data-filter="physical">Physical (8)</button>
+          <button class="filter-tab-btn" data-filter="inorganic">Inorganic (4)</button>
+          <button class="filter-tab-btn" data-filter="organic">Organic (7)</button>
+        </div>
+
+        <div class="search-box-wrap">
+          <span class="search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input type="text" id="chapterSearchInput" class="search-input" placeholder="Search chapters, topics, formulas...">
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter Grid -->
+    <div class="chapters-grid" id="chaptersGrid">
+      
+        <div class="chapter-tile-wrapper" data-slug="class-11-01-basic-concepts" data-class="11" data-category="physical chemistry" data-title="some basic concepts of chemistry" data-topics="mole concept, stoichiometry, molarity & molality, empirical formulas, limiting reagent" style="--card-accent: #00F0FF; --card-glow-radiant: rgba(0, 240, 255, 0.45); --card-glow-soft: rgba(0, 240, 255, 0.20); --card-glow-inner: rgba(0, 240, 255, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">M = (w_B × 1000) / (M_B × V)</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">LIMITING REAGENT & MOLE RATIO</span>
+          </div>
+
+          <a href="class-11/01-basic-concepts/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 01</span>
+                <span class="card-branch-tag branch-physical">Physical Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Some Basic Concepts of Chemistry</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Mole Concept</span><span class="topic-tag-chip">Stoichiometry</span><span class="topic-tag-chip">Molarity & Molality</span><span class="topic-tag-chip">Empirical Formulas</span><span class="topic-tag-chip">Limiting Reagent</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-11-02-structure-of-atom" data-class="11" data-category="physical chemistry" data-title="structure of atom" data-topics="bohr's model, quantum numbers, electronic configuration, photoelectric effect, de broglie hypothesis" style="--card-accent: #00F0FF; --card-glow-radiant: rgba(0, 240, 255, 0.45); --card-glow-soft: rgba(0, 240, 255, 0.20); --card-glow-inner: rgba(0, 240, 255, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">λ = h / mv = h / p</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">QUANTUM NUMBERS & BOHR MODEL</span>
+          </div>
+
+          <a href="class-11/02-structure-of-atom/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 02</span>
+                <span class="card-branch-tag branch-physical">Physical Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Structure of Atom</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Bohr's Model</span><span class="topic-tag-chip">Quantum Numbers</span><span class="topic-tag-chip">Electronic Configuration</span><span class="topic-tag-chip">Photoelectric Effect</span><span class="topic-tag-chip">de Broglie Hypothesis</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-11-03-periodicity" data-class="11" data-category="inorganic chemistry" data-title="classification of elements & periodicity" data-topics="periodic trends, ionization enthalpy, electron gain enthalpy, electronegativity, atomic & ionic radii" style="--card-accent: #FFB703; --card-glow-radiant: rgba(255, 183, 3, 0.45); --card-glow-soft: rgba(255, 183, 3, 0.20); --card-glow-inner: rgba(255, 183, 3, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">Z_eff = Z - σ (Slater's Rule)</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">IONIZATION ENTHALPY TRENDS</span>
+          </div>
+
+          <a href="class-11/03-periodicity/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 03</span>
+                <span class="card-branch-tag branch-inorganic">Inorganic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Classification of Elements & Periodicity</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Periodic Trends</span><span class="topic-tag-chip">Ionization Enthalpy</span><span class="topic-tag-chip">Electron Gain Enthalpy</span><span class="topic-tag-chip">Electronegativity</span><span class="topic-tag-chip">Atomic & Ionic Radii</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 1 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-11-04-chemical-bonding" data-class="11" data-category="inorganic chemistry" data-title="chemical bonding & molecular structure" data-topics="vsepr theory, hybridization, molecular orbital theory (mot), dipole moment, hydrogen bonding" style="--card-accent: #FFB703; --card-glow-radiant: rgba(255, 183, 3, 0.45); --card-glow-soft: rgba(255, 183, 3, 0.20); --card-glow-inner: rgba(255, 183, 3, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">Bond Order = (Nb - Na) / 2</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">VSEPR THEORY & sp³d² HYBRID</span>
+          </div>
+
+          <a href="class-11/04-chemical-bonding/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 04</span>
+                <span class="card-branch-tag branch-inorganic">Inorganic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Chemical Bonding & Molecular Structure</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">VSEPR Theory</span><span class="topic-tag-chip">Hybridization</span><span class="topic-tag-chip">Molecular Orbital Theory (MOT)</span><span class="topic-tag-chip">Dipole Moment</span><span class="topic-tag-chip">Hydrogen Bonding</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-11-05-thermodynamics" data-class="11" data-category="physical chemistry" data-title="chemical thermodynamics" data-topics="first & second law, enthalpy & entropy, gibbs free energy, hess's law, spontaneity criteria" style="--card-accent: #00F0FF; --card-glow-radiant: rgba(0, 240, 255, 0.45); --card-glow-soft: rgba(0, 240, 255, 0.20); --card-glow-inner: rgba(0, 240, 255, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">ΔG° = ΔH° - TΔS°</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">HESS'S LAW & SPONTANEITY</span>
+          </div>
+
+          <a href="class-11/05-thermodynamics/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 05</span>
+                <span class="card-branch-tag branch-physical">Physical Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Chemical Thermodynamics</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">First & Second Law</span><span class="topic-tag-chip">Enthalpy & Entropy</span><span class="topic-tag-chip">Gibbs Free Energy</span><span class="topic-tag-chip">Hess's Law</span><span class="topic-tag-chip">Spontaneity Criteria</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-11-06-equilibrium" data-class="11" data-category="physical chemistry" data-title="equilibrium" data-topics="le chatelier's principle, kc & kp relations, ph & buffer solutions, solubility product (ksp), acid-base theories" style="--card-accent: #00F0FF; --card-glow-radiant: rgba(0, 240, 255, 0.45); --card-glow-soft: rgba(0, 240, 255, 0.20); --card-glow-inner: rgba(0, 240, 255, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">pH = pKa + log([Salt]/[Acid])</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">LE CHATELIER & SOLUBILITY Ksp</span>
+          </div>
+
+          <a href="class-11/06-equilibrium/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 06</span>
+                <span class="card-branch-tag branch-physical">Physical Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Equilibrium</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Le Chatelier's Principle</span><span class="topic-tag-chip">Kc & Kp Relations</span><span class="topic-tag-chip">pH & Buffer Solutions</span><span class="topic-tag-chip">Solubility Product (Ksp)</span><span class="topic-tag-chip">Acid-Base Theories</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-11-07-redox" data-class="11" data-category="physical chemistry" data-title="redox reactions" data-topics="oxidation number, balancing redox reactions, ion-electron method, electrochemical series, disproportionation" style="--card-accent: #00F0FF; --card-glow-radiant: rgba(0, 240, 255, 0.45); --card-glow-soft: rgba(0, 240, 255, 0.20); --card-glow-inner: rgba(0, 240, 255, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">E°cell = E°cathode - E°anode</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">ION-ELECTRON BALANCING</span>
+          </div>
+
+          <a href="class-11/07-redox/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 07</span>
+                <span class="card-branch-tag branch-physical">Physical Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Redox Reactions</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Oxidation Number</span><span class="topic-tag-chip">Balancing Redox Reactions</span><span class="topic-tag-chip">Ion-Electron Method</span><span class="topic-tag-chip">Electrochemical Series</span><span class="topic-tag-chip">Disproportionation</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-11-08-goc" data-class="11" data-category="organic chemistry" data-title="organic chemistry - basic principles (goc)" data-topics="iupac nomenclature, inductive & resonance effects, hyperconjugation, reaction intermediates, isomerism" style="--card-accent: #10B981; --card-glow-radiant: rgba(16, 185, 129, 0.45); --card-glow-soft: rgba(16, 185, 129, 0.20); --card-glow-inner: rgba(16, 185, 129, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">Stability: 3° > 2° > 1° Carbocation</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">RESONANCE (+M) & HYPERCONJUGATION</span>
+          </div>
+
+          <a href="class-11/08-goc/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 08</span>
+                <span class="card-branch-tag branch-organic">Organic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Organic Chemistry - Basic Principles (GOC)</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">IUPAC Nomenclature</span><span class="topic-tag-chip">Inductive & Resonance Effects</span><span class="topic-tag-chip">Hyperconjugation</span><span class="topic-tag-chip">Reaction Intermediates</span><span class="topic-tag-chip">Isomerism</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-11-09-hydrocarbons" data-class="11" data-category="organic chemistry" data-title="hydrocarbons" data-topics="alkanes, alkenes & alkynes, markovnikov's rule, electrophilic addition, aromaticity (hückel's rule), benzene electrophilic substitution" style="--card-accent: #10B981; --card-glow-radiant: rgba(16, 185, 129, 0.45); --card-glow-soft: rgba(16, 185, 129, 0.20); --card-glow-inner: rgba(16, 185, 129, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">R-CH=CH₂ + HBr → R-CH(Br)-CH₃</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">MARKOVNIKOV & 4n+2 HÜCKEL RULE</span>
+          </div>
+
+          <a href="class-11/09-hydrocarbons/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 11 // CH 09</span>
+                <span class="card-branch-tag branch-organic">Organic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Hydrocarbons</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Alkanes, Alkenes & Alkynes</span><span class="topic-tag-chip">Markovnikov's Rule</span><span class="topic-tag-chip">Electrophilic Addition</span><span class="topic-tag-chip">Aromaticity (Hückel's Rule)</span><span class="topic-tag-chip">Benzene Electrophilic Substitution</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-01-solutions" data-class="12" data-category="physical chemistry" data-title="solutions" data-topics="raoult's law, colligative properties, van 't hoff factor, henry's law, ideal & non-ideal solutions" style="--card-accent: #00F0FF; --card-glow-radiant: rgba(0, 240, 255, 0.45); --card-glow-soft: rgba(0, 240, 255, 0.20); --card-glow-inner: rgba(0, 240, 255, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">ΔTb = i · Kb · m (Colligative)</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">VAN 'T HOFF FACTOR (i) & RAOULT</span>
+          </div>
+
+          <a href="class-12/01-solutions/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 01</span>
+                <span class="card-branch-tag branch-physical">Physical Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Solutions</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Raoult's Law</span><span class="topic-tag-chip">Colligative Properties</span><span class="topic-tag-chip">van 't Hoff Factor</span><span class="topic-tag-chip">Henry's Law</span><span class="topic-tag-chip">Ideal & Non-Ideal Solutions</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-02-electrochemistry" data-class="12" data-category="physical chemistry" data-title="electrochemistry" data-topics="nernst equation, kohlrausch's law, conductivity & molar conductivity, batteries & fuel cells, electrolysis & faraday's laws" style="--card-accent: #00F0FF; --card-glow-radiant: rgba(0, 240, 255, 0.45); --card-glow-soft: rgba(0, 240, 255, 0.20); --card-glow-inner: rgba(0, 240, 255, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">E = E° - (0.0591/n) log Q</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">NERNST EQUATION & KOHLRAUSCH</span>
+          </div>
+
+          <a href="class-12/02-electrochemistry/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 02</span>
+                <span class="card-branch-tag branch-physical">Physical Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Electrochemistry</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Nernst Equation</span><span class="topic-tag-chip">Kohlrausch's Law</span><span class="topic-tag-chip">Conductivity & Molar Conductivity</span><span class="topic-tag-chip">Batteries & Fuel Cells</span><span class="topic-tag-chip">Electrolysis & Faraday's Laws</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-03-chemical-kinetics" data-class="12" data-category="physical chemistry" data-title="chemical kinetics" data-topics="rate laws & order, integrated rate equations, arrhenius equation, half-life calculations, collision theory" style="--card-accent: #00F0FF; --card-glow-radiant: rgba(0, 240, 255, 0.45); --card-glow-soft: rgba(0, 240, 255, 0.20); --card-glow-inner: rgba(0, 240, 255, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">k = A · exp(-Ea / RT)</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">FIRST ORDER t½ & ARRHENIUS</span>
+          </div>
+
+          <a href="class-12/03-chemical-kinetics/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 03</span>
+                <span class="card-branch-tag branch-physical">Physical Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Chemical Kinetics</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Rate Laws & Order</span><span class="topic-tag-chip">Integrated Rate Equations</span><span class="topic-tag-chip">Arrhenius Equation</span><span class="topic-tag-chip">Half-Life Calculations</span><span class="topic-tag-chip">Collision Theory</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-04-d-and-f-block" data-class="12" data-category="inorganic chemistry" data-title="the d- and f-block elements" data-topics="transition elements trends, lanthanoid contraction, kmno4 & k2cr2o7 chemistry, magnetic properties, color & catalytic activity" style="--card-accent: #FFB703; --card-glow-radiant: rgba(255, 183, 3, 0.45); --card-glow-soft: rgba(255, 183, 3, 0.20); --card-glow-inner: rgba(255, 183, 3, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">μ = √[n(n+2)] BM (Spin-Only)</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">LANTHANOID CONTRACTION & KMnO₄</span>
+          </div>
+
+          <a href="class-12/04-d-and-f-block/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 04</span>
+                <span class="card-branch-tag branch-inorganic">Inorganic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">The d- and f-Block Elements</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Transition Elements Trends</span><span class="topic-tag-chip">Lanthanoid Contraction</span><span class="topic-tag-chip">KMnO4 & K2Cr2O7 Chemistry</span><span class="topic-tag-chip">Magnetic Properties</span><span class="topic-tag-chip">Color & Catalytic Activity</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-05-coordination-compounds" data-class="12" data-category="inorganic chemistry" data-title="coordination compounds" data-topics="werner's theory, iupac nomenclature, crystal field theory (cft), valence bond theory (vbt), isomerism & stability" style="--card-accent: #FFB703; --card-glow-radiant: rgba(255, 183, 3, 0.45); --card-glow-soft: rgba(255, 183, 3, 0.20); --card-glow-inner: rgba(255, 183, 3, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">Δo = 10 Dq (Octahedral CFSE)</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">CRYSTAL FIELD THEORY & WERNER</span>
+          </div>
+
+          <a href="class-12/05-coordination-compounds/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 05</span>
+                <span class="card-branch-tag branch-inorganic">Inorganic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Coordination Compounds</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Werner's Theory</span><span class="topic-tag-chip">IUPAC Nomenclature</span><span class="topic-tag-chip">Crystal Field Theory (CFT)</span><span class="topic-tag-chip">Valence Bond Theory (VBT)</span><span class="topic-tag-chip">Isomerism & Stability</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-06-haloalkanes-and-haloarenes" data-class="12" data-category="organic chemistry" data-title="haloalkanes and haloarenes" data-topics="sn1 vs sn2 mechanisms, stereochemistry & inversion, elimination reactions (saytzeff), electrophilic substitution in haloarenes, organometallic compounds" style="--card-accent: #10B981; --card-glow-radiant: rgba(16, 185, 129, 0.45); --card-glow-soft: rgba(16, 185, 129, 0.20); --card-glow-inner: rgba(16, 185, 129, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">R-X + OH⁻ →[SN2] R-OH + X⁻</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">SN1 vs SN2 & WALDEN INVERSION</span>
+          </div>
+
+          <a href="class-12/06-haloalkanes-and-haloarenes/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 06</span>
+                <span class="card-branch-tag branch-organic">Organic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Haloalkanes and Haloarenes</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">SN1 vs SN2 Mechanisms</span><span class="topic-tag-chip">Stereochemistry & Inversion</span><span class="topic-tag-chip">Elimination Reactions (Saytzeff)</span><span class="topic-tag-chip">Electrophilic Substitution in Haloarenes</span><span class="topic-tag-chip">Organometallic Compounds</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-07-alcohols-phenols-ethers" data-class="12" data-category="organic chemistry" data-title="alcohols, phenols and ethers" data-topics="hydroboration-oxidation, acidity of phenols, lucas test & distinction, williamson ether synthesis, reimer-tiemann & kolbe reactions" style="--card-accent: #10B981; --card-glow-radiant: rgba(16, 185, 129, 0.45); --card-glow-soft: rgba(16, 185, 129, 0.20); --card-glow-inner: rgba(16, 185, 129, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">R-ONa + R'X → R-O-R' + NaX</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">WILLIAMSON ETHER & REIMER-TIEMANN</span>
+          </div>
+
+          <a href="class-12/07-alcohols-phenols-ethers/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 07</span>
+                <span class="card-branch-tag branch-organic">Organic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Alcohols, Phenols and Ethers</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Hydroboration-Oxidation</span><span class="topic-tag-chip">Acidity of Phenols</span><span class="topic-tag-chip">Lucas Test & Distinction</span><span class="topic-tag-chip">Williamson Ether Synthesis</span><span class="topic-tag-chip">Reimer-Tiemann & Kolbe Reactions</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">3 Notes + 3 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-08-aldehydes-ketones-carboxylic-acids" data-class="12" data-category="organic chemistry" data-title="aldehydes, ketones & carboxylic acids" data-topics="nucleophilic carbonyl addition, aldol & cannizzaro reactions, tollens' & fehling's tests, acidity of carboxylic acids, hvz reaction & decarboxylation" style="--card-accent: #10B981; --card-glow-radiant: rgba(16, 185, 129, 0.45); --card-glow-soft: rgba(16, 185, 129, 0.20); --card-glow-inner: rgba(16, 185, 129, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">2CH₃CHO →[OH⁻] CH₃CH(OH)CH₂CHO</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">ALDOL CONDENSATION & CANNIZZARO</span>
+          </div>
+
+          <a href="class-12/08-aldehydes-ketones-carboxylic-acids/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 08</span>
+                <span class="card-branch-tag branch-organic">Organic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Aldehydes, Ketones & Carboxylic Acids</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Nucleophilic Carbonyl Addition</span><span class="topic-tag-chip">Aldol & Cannizzaro Reactions</span><span class="topic-tag-chip">Tollens' & Fehling's Tests</span><span class="topic-tag-chip">Acidity of Carboxylic Acids</span><span class="topic-tag-chip">HVZ Reaction & Decarboxylation</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 3 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-09-amines" data-class="12" data-category="organic chemistry" data-title="amines" data-topics="basicity of amines (gas vs aq), hoffmann bromamide degradation, gabriel phthalimide synthesis, diazonium salts & sandmeyer, hinsberg reagent test" style="--card-accent: #10B981; --card-glow-radiant: rgba(16, 185, 129, 0.45); --card-glow-soft: rgba(16, 185, 129, 0.20); --card-glow-inner: rgba(16, 185, 129, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">R-CONH₂ + Br₂ + 4KOH → R-NH₂</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">HOFFMANN BROMAMIDE & SANDMEYER</span>
+          </div>
+
+          <a href="class-12/09-amines/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 09</span>
+                <span class="card-branch-tag branch-organic">Organic Chemistry</span>
+              </div>
+              <h3 class="card-title-text">Amines</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Basicity of Amines (Gas vs Aq)</span><span class="topic-tag-chip">Hoffmann Bromamide Degradation</span><span class="topic-tag-chip">Gabriel Phthalimide Synthesis</span><span class="topic-tag-chip">Diazonium Salts & Sandmeyer</span><span class="topic-tag-chip">Hinsberg Reagent Test</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="chapter-tile-wrapper" data-slug="class-12-10-biomolecules" data-class="12" data-category="organic / biochemistry" data-title="biomolecules" data-topics="carbohydrates & haworth projections, amino acids & peptide bonds, protein structures & denaturation, nucleic acids (dna vs rna), vitamins & deficiency diseases" style="--card-accent: #10B981; --card-glow-radiant: rgba(16, 185, 129, 0.45); --card-glow-soft: rgba(16, 185, 129, 0.20); --card-glow-inner: rgba(16, 185, 129, 0.12);">
+          <!-- Pop-up Equation / Reaction Badge (Top-Right) -->
+          <div class="card-side-popup popup-top-right">
+            <span class="popup-icon">&#9889;</span>
+            <span class="popup-text">-CO-NH- (Peptide Linkage)</span>
+          </div>
+
+          <!-- Pop-up Concept / Mechanism Badge (Bottom-Left) -->
+          <div class="card-side-popup popup-bottom-left">
+            <span class="popup-icon">&#9879;</span>
+            <span class="popup-text">HAWORTH GLUCOSE & DNA HELIX</span>
+          </div>
+
+          <a href="class-12/10-biomolecules/index.html" class="chapter-hud-card">
+            <div class="card-head-section">
+              <div class="card-meta-row">
+                <span class="card-class-badge">CLASS 12 // CH 10</span>
+                <span class="card-branch-tag branch-organic">Organic / Biochemistry</span>
+              </div>
+              <h3 class="card-title-text">Biomolecules</h3>
+            </div>
+
+            <!-- Expandable Details on Hover -->
+            <div class="card-expand-details">
+              <div class="card-topics-chips">
+                <span class="topic-tag-chip">Carbohydrates & Haworth Projections</span><span class="topic-tag-chip">Amino Acids & Peptide Bonds</span><span class="topic-tag-chip">Protein Structures & Denaturation</span><span class="topic-tag-chip">Nucleic Acids (DNA vs RNA)</span><span class="topic-tag-chip">Vitamins & Deficiency Diseases</span>
+              </div>
+              <div class="card-footer-row">
+                <span class="card-content-desc">Master Notes + 2 JEE Guides</span>
+                <span class="card-study-btn">
+                  Study Chapter &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+    </div>
+
+    <div id="chaptersEmptyState" style="display: none; text-align: center; padding: 4rem 1rem; color: var(--text-dim); font-family: var(--font-mono);">
+      No chemistry chapters matched your search query. Try another keyword.
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PHYSICAL TEACHING CENTERS
+       ========================================================= -->
+  <section class="centers-section" id="centers">
+    <div class="centers-card-wrap">
+      <div class="centers-header">
+        <h3>Physical Teaching Centers // Bhubaneswar</h3>
+        <p>Direct classroom coaching, doubt clearing, and JEE Advanced problem-solving clinics with educator Kedar Krishna.</p>
+      </div>
+
+      <div class="centers-grid">
+        <div class="center-hud-card">
+          <span class="center-tag">CENTER 01 // JAGASERA</span>
+          <div class="center-name">Arundhati Vihar</div>
+          <div class="center-addr">
+            Jagasera, near Paikarapur, Bhubaneswar, Khordha &ndash; <span class="pin-badge">PIN 752054</span>
+          </div>
+        </div>
+
+        <div class="center-hud-card">
+          <span class="center-tag">CENTER 02 // FIRE STATION</span>
+          <div class="center-name">Jagannath Vihar</div>
+          <div class="center-addr">
+            Lane-1, near Fire Station, Bhubaneswar &ndash; <span class="pin-badge">PIN 751003</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTACT / DOUBT MODAL
+       ========================================================= -->
+  <div class="cyber-modal-overlay" id="contactModal">
+    <div class="cyber-modal-box">
+      <div class="cyber-modal-header">
+        <h4>Ask Doubt // Contact Kedar Krishna</h4>
+        <button class="cyber-modal-close" id="modalCloseBtn">&times;</button>
+      </div>
+      <form class="cyber-modal-body" action="mailto:chemistrykedar@gmail.com" method="GET" enctype="text/plain">
+        <div class="form-input-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+        </div>
+        <div class="form-input-group">
+          <label class="form-label">Class &amp; Chapter</label>
+          <input type="text" name="subject" class="form-input" placeholder="e.g. Class 12 - Electrochemistry" required>
+        </div>
+        <div class="form-input-group">
+          <label class="form-label">Your Query / Doubt</label>
+          <textarea name="body" class="form-input form-textarea" placeholder="Explain your question or problem derivation..." required></textarea>
+        </div>
+        <button type="submit" class="modal-submit-btn">Send Doubt to chemistrykedar@gmail.com &rarr;</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cyber Footer -->
+  <footer class="cyber-footer">
+    <div class="footer-links">
+      <a href="#scrollyShowcase">Chemistry Alignment</a>
+      <span>&bull;</span>
+      <a href="#chapters">Chapter Directory</a>
+      <span>&bull;</span>
+      <a href="mailto:chemistrykedar@gmail.com">chemistrykedar@gmail.com</a>
+    </div>
+    <p>&copy; 2026 KEDAR'S CHEMISTRY Engine. Next-Gen Academic Architecture by Kedar Krishna.</p>
+  </footer>
+
+  <!-- Three.js: Local Offline Copy -->
+  <script src="assets/vendor/three/three.min.js"></script>
+
+  <!-- Dynamic Morphing 3D Centerpiece WebGL Engine -->
+  <script src="assets/js/scrolly-three.js"></script>
+
+  <!-- Portal Interactions Script -->
+  <script src="assets/js/portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kedar Chemistry // Cyberpunk AI Learning Engine (Scrollytelling 3D Showcase)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-space: #050508;
+      --bg-surface: #0B0D14;
+      --bg-card: rgba(15, 17, 26, 0.8);
+      --bg-card-hover: rgba(22, 25, 38, 0.9);
+      --border-dim: rgba(255, 255, 255, 0.08);
+      --border-bright: rgba(255, 255, 255, 0.18);
+      --text-main: #FFFFFF;
+      --text-muted: #9497B0;
+      --text-dim: #5C5F79;
+      
+      /* ChainGPT Signature Gradient & Neon Colors */
+      --neon-purple: #724CE8;
+      --neon-cyan: #26F4D0;
+      --neon-gold: #F8CF3E;
+      --neon-coral: #FC6756;
+      
+      --gradient-chaingpt: linear-gradient(90deg, #724CE8 0%, #26F4D0 35%, #F8CF3E 70%, #FC6756 100%);
+      --gradient-border: linear-gradient(135deg, rgba(114, 76, 232, 0.5), rgba(38, 244, 208, 0.3) 50%, rgba(252, 103, 86, 0.5));
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-space);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* 3D Flowing Background Canvas */
+    #flowingMeshCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    /* 1px Vertical Guide Lines */
+    .vertical-guide {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .guide-left { left: 5vw; }
+    .guide-center { left: 50vw; }
+    .guide-right { right: 5vw; }
+
+    /* Top Announcement Ticker */
+    .top-ticker {
+      background: rgba(10, 11, 17, 0.92);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--neon-cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--neon-cyan);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.8); }
+    }
+    .ticker-highlight {
+      color: var(--neon-gold);
+      font-weight: 600;
+    }
+
+    /* Sticky Cyber Navbar */
+    .cyber-nav {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(5, 5, 8, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 0.85rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: #fff;
+    }
+    .brand-emblem {
+      width: 40px;
+      height: 40px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-bright);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(38, 244, 208, 0.15);
+    }
+    .brand-emblem::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-chaingpt);
+      opacity: 0.35;
+    }
+    .brand-emblem svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: var(--neon-cyan);
+      stroke-width: 2.2;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 0 4px var(--neon-cyan));
+    }
+    .brand-text h1 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .brand-text span {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--neon-cyan);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-dim);
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .dropdown-btn:hover {
+      border-color: var(--neon-cyan);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(38, 244, 208, 0.2);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--neon-cyan);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .btn-apk-cyber {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(38, 244, 208, 0.12), rgba(114, 76, 232, 0.18));
+      border: 1px solid rgba(38, 244, 208, 0.45);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: var(--neon-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .btn-apk-cyber:hover {
+      background: linear-gradient(135deg, rgba(38, 244, 208, 0.25), rgba(114, 76, 232, 0.35));
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 20px rgba(38, 244, 208, 0.35);
+      transform: translateY(-2px);
+    }
+    .badge-apk-tag {
+      background: var(--neon-cyan);
+      color: #050508;
+      font-size: 0.65rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-weight: 900;
+    }
+
+    /* Hero Section */
+    .hero-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem 3rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+    .hero-meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 1.1rem;
+      background: rgba(14, 15, 23, 0.75);
+      border: 1px solid var(--border-bright);
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+    .hero-meta-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan);
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      text-transform: uppercase;
+      margin-bottom: 1.3rem;
+    }
+    .gradient-text {
+      background: var(--gradient-chaingpt);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      filter: drop-shadow(0 0 25px rgba(38, 244, 208, 0.25));
+    }
+    .outline-text {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+      display: inline-block;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      line-height: 1.65;
+      margin: 0 auto 2.5rem;
+      max-width: 720px;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+    .btn-cyber-primary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--bg-surface);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.9rem 1.7rem;
+      text-decoration: none;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background-clip: padding-box;
+      box-shadow: 0 6px 25px rgba(114, 76, 232, 0.3);
+      transition: all 0.3s;
+    }
+    .btn-cyber-primary::before {
+      content: '';
+      position: absolute;
+      top: -1.5px; right: -1.5px; bottom: -1.5px; left: -1.5px;
+      z-index: -1;
+      margin: -1px;
+      border-radius: inherit;
+      background: var(--gradient-chaingpt);
+    }
+    .btn-cyber-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(38, 244, 208, 0.4);
+    }
+    .btn-cyber-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-bright);
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.9rem 1.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s;
+    }
+    .btn-cyber-secondary:hover {
+      border-color: var(--neon-cyan);
+      background: rgba(38, 244, 208, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       SCROLLYTELLING WEB3 PRODUCT SHOWCASE: DYNAMIC MORPHING 3D
+       CBSE Class 11 & 12 Chemistry Branches (Physical, Inorganic, Organic)
+       ========================================================= */
+    .scrolly-outer-container {
+      position: relative;
+      min-height: 600vh; /* 6 discrete thresholds for Class 11 & 12 branches */
+      background: radial-gradient(circle at 50% 25%, #080a14 0%, #050508 65%);
+      border-top: 1px solid var(--border-dim);
+      border-bottom: 1px solid var(--border-dim);
+      z-index: 20;
+    }
+
+    .scrolly-sticky-stage {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1.15fr;
+      align-items: center;
+      padding: 0 4vw 0 5vw;
+      gap: 2rem;
+      overflow: hidden;
+      box-sizing: border-box;
+      z-index: 25;
+    }
+
+    /* Ambient Spotlight behind 3D Canvas */
+    .scrolly-stage-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--stage-ambient, rgba(0, 240, 255, 0.22)) 0%, transparent 70%);
+      filter: blur(65px);
+      pointer-events: none;
+      z-index: 1;
+      transition: background 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Left Column: Active Class & Branch Descriptions */
+    .scrolly-left-col {
+      position: relative;
+      z-index: 10;
+      height: 440px;
+      display: flex;
+      align-items: center;
+    }
+    .feature-text-block {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .feature-text-block.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .feature-index-row {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--feature-accent, #00F0FF);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .feature-index-row .index-num {
+      font-size: 1.9rem;
+      line-height: 1;
+      background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.35) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+    }
+    .feature-branch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.24rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--feature-accent, #00F0FF);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--feature-accent, #00F0FF);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.12);
+    }
+    .feature-branch-badge .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--feature-accent, #00F0FF);
+      box-shadow: 0 0 8px var(--feature-accent, #00F0FF);
+    }
+    .feature-headline {
+      font-size: clamp(1.4rem, 1.9vw, 2.1rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.9rem;
+      color: #FFFFFF;
+    }
+    .feature-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+      margin-bottom: 1.6rem;
+    }
+    .feature-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--feature-accent, #00F0FF);
+      color: var(--feature-accent, #00F0FF);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      width: fit-content;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .feature-cta-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 20px var(--feature-accent, #00F0FF);
+      transform: translateX(4px);
+    }
+
+    /* Center Column: High-Performance 3D Canvas */
+    .scrolly-center-col {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+    #web3CubeCanvas {
+      width: 100%;
+      height: 100%;
+      max-width: 520px;
+      max-height: 520px;
+      display: block;
+      cursor: grab;
+      filter: drop-shadow(0 0 35px var(--cube-glow, rgba(0, 240, 255, 0.28)));
+      transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #web3CubeCanvas:active {
+      cursor: grabbing;
+    }
+
+    /* Right Column: Key Chapters List with Active Glowing Pills */
+    .scrolly-right-col {
+      position: relative;
+      z-index: 10;
+      height: 460px;
+      display: flex;
+      align-items: center;
+    }
+    .chapters-card-block {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .chapters-card-block.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .chapters-card-inner {
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      border-radius: 12px;
+      padding: 1.5rem 1.6rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
+      position: relative;
+      overflow: hidden;
+    }
+    .chapters-card-inner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--feature-accent, #00F0FF);
+      box-shadow: 0 0 12px var(--feature-accent, #00F0FF);
+    }
+    .chapters-card-header {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-dim);
+      padding-bottom: 0.65rem;
+    }
+    .chapters-card-header .header-branch-name {
+      color: var(--feature-accent, #00F0FF);
+      font-weight: 700;
+    }
+    .chapters-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .chapter-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.55rem 0.75rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .chapter-item-row:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateX(2px);
+    }
+    .chapter-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .chapter-name-text {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+    .chapter-sub-text {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    .chapter-glow-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--feature-accent, #00F0FF);
+      color: var(--feature-accent, #00F0FF);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.12);
+      letter-spacing: 0.02em;
+    }
+    .branch-concept-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.1rem;
+      padding-top: 0.85rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    }
+    .concept-tag-chip {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-dim);
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .concept-tag-chip.active-chip {
+      color: var(--feature-accent, #00F0FF);
+      border-color: var(--feature-accent, #00F0FF);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* Pinned Vertical Step Indicator Dots & Progress Bar (Far Right) */
+    .scrolly-progress-nav {
+      position: absolute;
+      right: 1.6vw;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.35rem;
+      z-index: 35;
+    }
+    .progress-track-line {
+      position: absolute;
+      top: 14px;
+      bottom: 14px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.07);
+      z-index: 1;
+    }
+    .progress-fill-line {
+      position: absolute;
+      top: 14px;
+      width: 2px;
+      background: var(--gradient-chaingpt);
+      z-index: 2;
+      height: 0%;
+      transition: height 0.15s ease-out;
+    }
+    .scrolly-step-dot {
+      position: relative;
+      z-index: 3;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #090B12;
+      border: 1.5px solid var(--border-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scrolly-step-dot:hover {
+      border-color: #FFFFFF;
+      color: #FFFFFF;
+      transform: scale(1.1);
+    }
+    .scrolly-step-dot.active {
+      border-color: var(--active-step-color, #00F0FF);
+      color: #FFFFFF;
+      background: #101322;
+      box-shadow: 0 0 16px var(--active-step-glow, rgba(0, 240, 255, 0.5));
+      transform: scale(1.18);
+    }
+
+    /* Infinite Flowing Tags Ribbon */
+    .flowing-tags-section {
+      margin: 4rem 0 5rem;
+      overflow: hidden;
+      position: relative;
+      padding: 1.5rem 0;
+    }
+    .flowing-tags-section::before,
+    .flowing-tags-section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 15vw;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .flowing-tags-section::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--bg-space), transparent);
+    }
+    .flowing-tags-section::after {
+      right: 0;
+      background: linear-gradient(-90deg, var(--bg-space), transparent);
+    }
+    .tags-track {
+      display: flex;
+      gap: 1rem;
+      width: max-content;
+      margin-bottom: 1rem;
+    }
+    .track-left {
+      animation: streamLeft 35s linear infinite;
+    }
+    .track-right {
+      animation: streamRight 38s linear infinite;
+    }
+    @keyframes streamLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes streamRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .cyber-tag-chip {
+      background: rgba(16, 17, 26, 0.85);
+      border: 1px solid var(--border-dim);
+      border-radius: 100px;
+      padding: 0.5rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+    .cyber-tag-chip:hover {
+      border-color: var(--neon-cyan);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(38, 244, 208, 0.25);
+      transform: scale(1.05);
+    }
+    .cyber-tag-chip .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--tag-color, var(--neon-cyan));
+    }
+
+    /* Terminal Prompt Component */
+    .cyber-terminal {
+      max-width: 980px;
+      margin: 0 auto 3.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-bright);
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(114, 76, 232, 0.15);
+      clip-path: polygon(
+        0 14px, 14px 0,
+        calc(100% - 14px) 0, 100% 14px,
+        100% calc(100% - 14px), calc(100% - 14px) 100%,
+        14px 100%, 0 calc(100% - 14px)
+      );
+      overflow: hidden;
+    }
+    .terminal-top-border {
+      height: 2.5px;
+      background: var(--gradient-chaingpt);
+      width: 100%;
+    }
+    .terminal-header {
+      padding: 0.65rem 1.4rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid var(--border-dim);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .terminal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2D3043;
+    }
+    .terminal-dot:nth-child(1) { background: #FF5F56; }
+    .terminal-dot:nth-child(2) { background: #FFBD2E; }
+    .terminal-dot:nth-child(3) { background: #27C93F; }
+
+    .terminal-body {
+      padding: 1.6rem 2rem;
+      text-align: left;
+    }
+    .terminal-prompt-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      color: #F1F5F9;
+      min-height: 54px;
+      line-height: 1.5;
+    }
+    .terminal-chevron {
+      color: var(--neon-cyan);
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .typing-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 19px;
+      background: var(--neon-cyan);
+      margin-left: 4px;
+      animation: blink 0.9s infinite;
+      vertical-align: middle;
+      box-shadow: 0 0 8px var(--neon-cyan);
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .terminal-status-bar {
+      margin-top: 1.1rem;
+      padding-top: 0.9rem;
+      border-top: 1px dashed var(--border-dim);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+    }
+    .status-chip {
+      padding: 0.22rem 0.65rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-dim);
+      color: var(--text-muted);
+    }
+    .status-chip.success {
+      color: var(--neon-cyan);
+      border-color: rgba(38, 244, 208, 0.35);
+      background: rgba(38, 244, 208, 0.06);
+    }
+    .status-chip.accent {
+      color: var(--neon-gold);
+      border-color: rgba(248, 207, 62, 0.35);
+      background: rgba(248, 207, 62, 0.06);
+    }
+
+    /* Teaching Centers Section */
+    .centers-section {
+      max-width: 1240px;
+      margin: 4.5rem auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-bright);
+      border-radius: 12px;
+      padding: 2.8rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    }
+    .centers-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: var(--gradient-chaingpt);
+    }
+    .centers-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .centers-header h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+    }
+    .centers-header p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+    .centers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+    .center-hud-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      backdrop-filter: blur(10px);
+    }
+    .center-hud-card .center-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--neon-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+    .center-hud-card .center-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+    .center-hud-card .center-addr {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .pin-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      color: var(--neon-cyan);
+    }
+
+    /* Cyber Footer */
+    .cyber-footer {
+      border-top: 1px solid var(--border-dim);
+      padding: 3rem 6vw;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      position: relative;
+      z-index: 10;
+      background: rgba(5, 5, 8, 0.9);
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--neon-cyan);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1040px) {
+      .scrolly-sticky-stage {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 320px auto;
+        padding: 1rem 4vw;
+        gap: 1rem;
+      }
+      .scrolly-left-col, .scrolly-right-col {
+        height: auto;
+        min-height: 180px;
+      }
+      .feature-text-block, .specs-card-block {
+        position: relative;
+      }
+      .feature-text-block:not(.active), .specs-card-block:not(.active) {
+        display: none;
+      }
+      .scrolly-progress-nav {
+        display: none;
+      }
+      .nav-links {
+        display: none;
+      }
+      .centers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 3D Flowing Background Wave Canvas -->
+  <canvas id="flowingMeshCanvas"></canvas>
+
+  <!-- Vertical 1px Guides -->
+  <div class="vertical-guide guide-left"></div>
+  <div class="vertical-guide guide-center"></div>
+  <div class="vertical-guide guide-right"></div>
+
+  <!-- Top Announcement Ticker -->
+  <div class="top-ticker">
+    <div class="pulse-dot"></div>
+    <span>KEDAR CHEMISTRY 3D SCROLL ENGINE // <span class="ticker-highlight">CBSE 11 &amp; 12 • JEE MAIN &amp; ADVANCED 2026</span> // BHUBANESWAR COACHING CENTERS</span>
+  </div>
+
+  <!-- Sticky Cyber Navbar -->
+  <nav class="cyber-nav">
+    <div class="nav-left">
+      <a href="#" class="brand-logo">
+        <div class="brand-emblem">
+          <svg viewBox="0 0 24 24">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Kedar Chemistry</h1>
+          <span>AI &amp; 3D Matrix</span>
+        </div>
+      </a>
+
+      <button class="dropdown-btn">
+        <span>OUR ECOSYSTEM</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#scrollyShowcase">3D Showcase</a></li>
+        <li><a href="#terminal">AI Terminal</a></li>
+        <li><a href="#centers">Bhubaneswar Centers</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://github.com/kedar773/chemistry-app/releases/download/v1.0.0/app-release.apk" class="btn-apk-cyber" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Get App</span>
+        <span class="badge-apk-tag">APK</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero-container">
+    <div class="hero-meta-badge">
+      <span class="dot"></span>
+      <span>SCROLL-LINKED 3D PRODUCT SHOWCASE // CHAINGPT INSPIRED</span>
+    </div>
+
+    <h1 class="hero-title">
+      Master CBSE &amp; JEE<br>
+      <span class="gradient-text">Chemistry</span> <span class="outline-text">Engine</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Scroll down to experience our interactive 3D centerpiece linked directly to vertical scroll progress, unveiling each core chemistry branch in real time.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#scrollyShowcase" class="btn-cyber-primary">
+        <span>EXPLORE 3D SCROLL SHOWCASE &darr;</span>
+      </a>
+      <a href="#terminal" class="btn-cyber-secondary">
+        <span>AI QUERY TERMINAL</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       SCROLLYTELLING 3D PRODUCT SHOWCASE SECTION
+       Dynamic Morphing 3D Centerpiece // 6 Discrete Thresholds
+       ========================================================= -->
+  <section class="scrolly-outer-container" id="scrollyShowcase">
+
+    <div class="scrolly-sticky-stage">
+      <!-- Ambient Spotlight Aura behind 3D Canvas -->
+      <div class="scrolly-stage-glow" id="stageGlow"></div>
+
+      <!-- LEFT COLUMN: Active Class & Branch Descriptions -->
+      <div class="scrolly-left-col">
+
+        <!-- Step 0: Class 11 Physical -->
+        <div class="feature-text-block active" data-step="0" style="--feature-accent: #00F0FF;">
+          <div class="feature-index-row">
+            <span class="index-num">01</span>
+            <span>/ CLASS 11</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>PHYSICAL CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Atomic Structure &amp; Thermodynamics</h2>
+          <p class="feature-desc">
+            Foundational quantum orbital quantization, first and second laws of thermodynamics, enthalpy cycles, Le Chatelier ionic equilibria, and redox ion-electron balancing for CBSE &amp; JEE Main numerical precision.
+          </p>
+          <a href="class-11/thermodynamics.html" class="feature-cta-btn">
+            <span>VIEW CLASS 11 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 1: Class 11 Inorganic -->
+        <div class="feature-text-block" data-step="1" style="--feature-accent: #FFB703;">
+          <div class="feature-index-row">
+            <span class="index-num">02</span>
+            <span>/ CLASS 11</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>INORGANIC CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Periodicity &amp; Chemical Bonding</h2>
+          <p class="feature-desc">
+            3D VSEPR spatial molecular geometries, valence bond hybridization (sp to sp³d²), Molecular Orbital Theory (MOT) paramagnetic bond orders, and foundational Group 13/14 p-block anomalies.
+          </p>
+          <a href="class-11/chemical-bonding.html" class="feature-cta-btn">
+            <span>VIEW CLASS 11 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 2: Class 11 Organic -->
+        <div class="feature-text-block" data-step="2" style="--feature-accent: #10B981;">
+          <div class="feature-index-row">
+            <span class="index-num">03</span>
+            <span>/ CLASS 11</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>ORGANIC CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">General Organic &amp; Hydrocarbons</h2>
+          <p class="feature-desc">
+            Electronic displacement fundamentals (inductive, resonance, hyperconjugation), reactive carbocation stability, electrophilic additions, Markovnikov orientations, and Hückel 4n+2 aromaticity.
+          </p>
+          <a href="class-11/hydrocarbons.html" class="feature-cta-btn">
+            <span>VIEW CLASS 11 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 3: Class 12 Physical -->
+        <div class="feature-text-block" data-step="3" style="--feature-accent: #00F0FF;">
+          <div class="feature-index-row">
+            <span class="index-num">04</span>
+            <span>/ CLASS 12</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>PHYSICAL CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Electrochemistry, Solutions &amp; Kinetics</h2>
+          <p class="feature-desc">
+            Advanced electrochemical cell potentials, Nernst non-standard EMF calculations, Kohlrausch ionic conductivity, colligative Van 't Hoff factors, and integrated chemical rate laws with Arrhenius activation.
+          </p>
+          <a href="class-12/electrochemistry.html" class="feature-cta-btn">
+            <span>VIEW CLASS 12 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 4: Class 12 Inorganic -->
+        <div class="feature-text-block" data-step="4" style="--feature-accent: #FFB703;">
+          <div class="feature-index-row">
+            <span class="index-num">05</span>
+            <span>/ CLASS 12</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>INORGANIC CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Coordination &amp; d/f-Block Transition</h2>
+          <p class="feature-desc">
+            3D octahedral and tetrahedral Crystal Field Splitting (CFT/CFSE), Werner coordination theory, IUPAC complex naming, optical/geometric isomerism, and 3d-series magnetic moments alongside lanthanoid contraction.
+          </p>
+          <a href="class-12/coordination-compounds.html" class="feature-cta-btn">
+            <span>VIEW CLASS 12 NOTES &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Step 5: Class 12 Organic -->
+        <div class="feature-text-block" data-step="5" style="--feature-accent: #10B981;">
+          <div class="feature-index-row">
+            <span class="index-num">06</span>
+            <span>/ CLASS 12</span>
+          </div>
+          <div class="feature-branch-badge">
+            <span class="badge-dot"></span>
+            <span>ORGANIC CHEMISTRY</span>
+          </div>
+          <h2 class="feature-headline">Reaction Mechanisms &amp; Biomolecules</h2>
+          <p class="feature-desc">
+            Rigorous multi-step synthesis pathways: SN1/SN2 Walden inversion, Aldol condensation, Cannizzaro hydrides, diazonium coupling conversions, and biomolecular protein/DNA helical structures.
+          </p>
+          <a href="class-12/aldehydes-ketones.html" class="feature-cta-btn">
+            <span>VIEW CLASS 12 NOTES &rarr;</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- CENTER COLUMN: High-Performance 3D Morphing Viewport -->
+      <div class="scrolly-center-col">
+        <canvas id="web3CubeCanvas" width="520" height="520" title="Interactive 3D Modular Centerpiece // Drag to tumble"></canvas>
+      </div>
+
+      <!-- RIGHT COLUMN: Key Chapters List with Active Glowing Pills -->
+      <div class="scrolly-right-col">
+
+        <!-- Chapters 0: Class 11 Physical -->
+        <div class="chapters-card-block active" data-step="0" style="--feature-accent: #00F0FF;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 11 // PHYSICAL</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Chemical Thermodynamics</span>
+                  <span class="chapter-sub-text">Hess Law &bull; Enthalpy &bull; Entropy Flux</span>
+                </div>
+                <span class="chapter-glow-pill">&Delta;G = &Delta;H - T&Delta;S</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Chemical &amp; Ionic Equilibrium</span>
+                  <span class="chapter-sub-text">Le Chatelier &bull; Buffer pH &bull; Solubility Ksp</span>
+                </div>
+                <span class="chapter-glow-pill">pH = -log[H⁺]</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Structure of Atom</span>
+                  <span class="chapter-sub-text">Bohr Model &bull; Quantum Numbers &bull; Nodes</span>
+                </div>
+                <span class="chapter-glow-pill">&lambda; = h / mv</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Redox Reactions</span>
+                  <span class="chapter-sub-text">Ion-Electron Method &bull; Balancing</span>
+                </div>
+                <span class="chapter-glow-pill">Oxidation States</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">KINETIC ENERGY WAVES</span>
+              <span class="concept-tag-chip active-chip">LATTICE ENTHALPY</span>
+              <span class="concept-tag-chip">PV = nRT</span>
+              <span class="concept-tag-chip">BOHR RADIUS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 1: Class 11 Inorganic -->
+        <div class="chapters-card-block" data-step="1" style="--feature-accent: #FFB703;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 11 // INORGANIC</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Chemical Bonding &amp; Geometry</span>
+                  <span class="chapter-sub-text">VSEPR 3D Shapes &bull; sp³d² &bull; MOT</span>
+                </div>
+                <span class="chapter-glow-pill">Bond Order MOT</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Periodic Classification</span>
+                  <span class="chapter-sub-text">Ionization Enthalpy &bull; Electron Gain</span>
+                </div>
+                <span class="chapter-glow-pill">&Delta;iH Trends</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">p-Block Elements (Gr 13 &amp; 14)</span>
+                  <span class="chapter-sub-text">Inert Pair Effect &bull; Diborane B₂H₆</span>
+                </div>
+                <span class="chapter-glow-pill">Banana Bonds</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">OCTAHEDRAL PRISM</span>
+              <span class="concept-tag-chip active-chip">ORBITAL RINGS</span>
+              <span class="concept-tag-chip">HYBRIDIZATION</span>
+              <span class="concept-tag-chip">METALLIC LATTICE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 2: Class 11 Organic -->
+        <div class="chapters-card-block" data-step="2" style="--feature-accent: #10B981;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 11 // ORGANIC</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">General Organic Chemistry (GOC)</span>
+                  <span class="chapter-sub-text">Inductive &bull; Resonance (+M/-M) &bull; Hyperconjugation</span>
+                </div>
+                <span class="chapter-glow-pill">Carbocation R⁺</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Hydrocarbons &amp; Arenes</span>
+                  <span class="chapter-sub-text">Markovnikov Rule &bull; Ozonolysis &bull; Benzene</span>
+                </div>
+                <span class="chapter-glow-pill">4n + 2 H&uuml;ckel</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Organic Qualitative Analysis</span>
+                  <span class="chapter-sub-text">Lassaigne Test &bull; Kjeldahl Nitrogen</span>
+                </div>
+                <span class="chapter-glow-pill">Chromatography Rf</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">BENZENE PI-RING</span>
+              <span class="concept-tag-chip active-chip">TETRAHEDRAL CLUSTER</span>
+              <span class="concept-tag-chip">ANTI-MARKOVNIKOV</span>
+              <span class="concept-tag-chip">FREE RADICALS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 3: Class 12 Physical -->
+        <div class="chapters-card-block" data-step="3" style="--feature-accent: #00F0FF;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 12 // PHYSICAL</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Electrochemistry</span>
+                  <span class="chapter-sub-text">Nernst Potential &bull; Kohlrausch &bull; Fuel Cells</span>
+                </div>
+                <span class="chapter-glow-pill">E = E&deg; - (0.059/n)logQ</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Solutions</span>
+                  <span class="chapter-sub-text">Raoult Law &bull; Colligative &bull; Van 't Hoff</span>
+                </div>
+                <span class="chapter-glow-pill">&Delta;Tb = i &times; Kb &times; m</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Chemical Kinetics</span>
+                  <span class="chapter-sub-text">Integrated Rate Laws &bull; Arrhenius Activation</span>
+                </div>
+                <span class="chapter-glow-pill">k = A &times; e^(-Ea/RT)</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">ENERGY MATRIX</span>
+              <span class="concept-tag-chip active-chip">CONDUCTOMETRY</span>
+              <span class="concept-tag-chip">FIRST ORDER t&frac12;</span>
+              <span class="concept-tag-chip">BATTERIES</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 4: Class 12 Inorganic -->
+        <div class="chapters-card-block" data-step="4" style="--feature-accent: #FFB703;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 12 // INORGANIC</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Coordination Compounds</span>
+                  <span class="chapter-sub-text">Crystal Field CFT &bull; CFSE &bull; Isomerism</span>
+                </div>
+                <span class="chapter-glow-pill">&Delta;o Octahedral CFSE</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">d- and f-Block Elements</span>
+                  <span class="chapter-sub-text">Lanthanoid Contraction &bull; KMnO₄ / K₂Cr₂O₇</span>
+                </div>
+                <span class="chapter-glow-pill">&mu; = &radic;[n(n+2)] BM</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">COORDINATION PRISM</span>
+              <span class="concept-tag-chip active-chip">ELECTRON ORBITALS</span>
+              <span class="concept-tag-chip">WERNER THEORY</span>
+              <span class="concept-tag-chip">SPECTROCHEMICAL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 5: Class 12 Organic -->
+        <div class="chapters-card-block" data-step="5" style="--feature-accent: #10B981;">
+          <div class="chapters-card-inner">
+            <div class="chapters-card-header">
+              <span>CORE SYLLABUS</span>
+              <span class="header-branch-name">CLASS 12 // ORGANIC</span>
+            </div>
+            <div class="chapters-items-list">
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Aldehydes, Ketones &amp; Acids</span>
+                  <span class="chapter-sub-text">Aldol &bull; Cannizzaro &bull; Nucleophilic Addition</span>
+                </div>
+                <span class="chapter-glow-pill">Crossed Aldol</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Haloalkanes &amp; Haloarenes</span>
+                  <span class="chapter-sub-text">SN1 vs SN2 Mechanism &bull; Walden Inversion</span>
+                </div>
+                <span class="chapter-glow-pill">SN2 Backside Attack</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Amines &amp; Diazonium Salts</span>
+                  <span class="chapter-sub-text">Sandmeyer Reaction &bull; Hoffmann Bromamide</span>
+                </div>
+                <span class="chapter-glow-pill">Ar-N₂⁺Cl⁻ Coupling</span>
+              </div>
+              <div class="chapter-item-row">
+                <div class="chapter-info-col">
+                  <span class="chapter-name-text">Biomolecules</span>
+                  <span class="chapter-sub-text">Glucose Anomers &bull; Peptide Linkage &bull; DNA</span>
+                </div>
+                <span class="chapter-glow-pill">Peptide -CONH-</span>
+              </div>
+            </div>
+            <div class="branch-concept-chips">
+              <span class="concept-tag-chip active-chip">MOLECULAR HELIX</span>
+              <span class="concept-tag-chip active-chip">RESONANCE CLOUD</span>
+              <span class="concept-tag-chip">REIMER-TIEMANN</span>
+              <span class="concept-tag-chip">GRIGNARD RMgX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PINNED VERTICAL STEP INDICATOR DOTS & PROGRESS BAR (FAR RIGHT) -->
+      <div class="scrolly-progress-nav">
+        <div class="progress-track-line"></div>
+        <div class="progress-fill-line" id="progressFillLine"></div>
+
+        <div class="scrolly-step-dot active" data-step="0" title="Step 01: Class 11 Physical">01</div>
+        <div class="scrolly-step-dot" data-step="1" title="Step 02: Class 11 Inorganic">02</div>
+        <div class="scrolly-step-dot" data-step="2" title="Step 03: Class 11 Organic">03</div>
+        <div class="scrolly-step-dot" data-step="3" title="Step 04: Class 12 Physical">04</div>
+        <div class="scrolly-step-dot" data-step="4" title="Step 05: Class 12 Inorganic">05</div>
+        <div class="scrolly-step-dot" data-step="5" title="Step 06: Class 12 Organic">06</div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================================
+       INFINITE FLOWING 3D CHEMISTRY TAG TICKER
+       ========================================================= -->
+  <section class="flowing-tags-section">
+    <!-- Stream 1: Moving Left -->
+    <div class="tags-track track-left">
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>NERNST EQUATION // EMF</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>CRYSTAL FIELD THEORY // CFSE</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-coral);"><span class="chip-dot"></span>ALDOL CONDENSATION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>BOHR MODEL // RYDBERG</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-purple);"><span class="chip-dot"></span>LE CHATELIER PRINCIPLE</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>VSEPR GEOMETRY // HYBRIDIZATION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-coral);"><span class="chip-dot"></span>SN1 vs SN2 MECHANISM</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-purple);"><span class="chip-dot"></span>GIBBS FREE ENERGY // SPONTANEITY</div>
+      <!-- Duplicate -->
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>NERNST EQUATION // EMF</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>CRYSTAL FIELD THEORY // CFSE</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-coral);"><span class="chip-dot"></span>ALDOL CONDENSATION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>BOHR MODEL // RYDBERG</div>
+    </div>
+
+    <!-- Stream 2: Moving Right -->
+    <div class="tags-track track-right">
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>KOHLRAUSCH'S LAW</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>LANTHANOID CONTRACTION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-coral);"><span class="chip-dot"></span>CANNIZZARO REACTION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>FARADAY LAWS OF ELECTROLYSIS</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>OCTAHEDRAL COMPLEX [Co(NH3)6]³⁺</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-coral);"><span class="chip-dot"></span>MARKOVNIKOV ADDITION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>RAOULT'S LAW // COLLIGATIVE</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-purple);"><span class="chip-dot"></span>HÜCKEL'S 4n+2 RULE</div>
+      <!-- Duplicate -->
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>KOHLRAUSCH'S LAW</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-gold);"><span class="chip-dot"></span>LANTHANOID CONTRACTION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-coral);"><span class="chip-dot"></span>CANNIZZARO REACTION</div>
+      <div class="cyber-tag-chip" style="--tag-color: var(--neon-cyan);"><span class="chip-dot"></span>FARADAY LAWS OF ELECTROLYSIS</div>
+    </div>
+  </section>
+
+  <!-- Interactive Terminal Section -->
+  <section id="terminal" style="padding: 0 1.5rem;">
+    <div class="cyber-terminal">
+      <div class="terminal-top-border"></div>
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+        </div>
+        <span>CHEMISTRY_AI_TERMINAL // LIVE_REVISION_SIMULATOR</span>
+        <span>ONLINE ●</span>
+      </div>
+
+      <div class="terminal-body">
+        <div class="terminal-prompt-line">
+          <span class="terminal-chevron">&gt;</span>
+          <span id="typewriterText">CALCULATE EMF OF DANIELL CELL UNDER NON-STANDARD CONDITIONS (NERNST EQUATION)</span><span class="typing-cursor"></span>
+        </div>
+
+        <div class="terminal-status-bar">
+          <span class="status-chip success">● ENGINE: 100% OFFLINE READY</span>
+          <span class="status-chip">SYLLABUS: CBSE CLASS 11 &amp; 12</span>
+          <span class="status-chip accent">JEE YIELD: 99.4%</span>
+          <span class="status-chip">LATENCY: 0.12ms</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Centers Section -->
+  <section id="centers" class="centers-section">
+    <div class="centers-header">
+      <h3>Physical Teaching Centers // Bhubaneswar</h3>
+      <p>Direct classroom mentoring, doubt sessions, and JEE problem-solving clinics by Kedar Krishna.</p>
+    </div>
+
+    <div class="centers-grid">
+      <div class="center-hud-card">
+        <span class="center-tag">CENTER 01 // JAGASERA</span>
+        <div class="center-name">Arundhati Vihar</div>
+        <div class="center-addr">
+          Jagasera, near Paikarapur, Bhubaneswar, Khordha &ndash; <span class="pin-badge">PIN 752054</span>
+        </div>
+      </div>
+
+      <div class="center-hud-card">
+        <span class="center-tag">CENTER 02 // FIRE STATION</span>
+        <div class="center-name">Jagannath Vihar</div>
+        <div class="center-addr">
+          Lane-1, near Fire Station, Bhubaneswar &ndash; <span class="pin-badge">PIN 751003</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cyber Footer -->
+  <footer class="cyber-footer">
+    <div class="footer-links">
+      <a href="#scrollyShowcase">3D Showcase</a>
+      <span>&bull;</span>
+      <a href="#terminal">AI Terminal</a>
+      <span>&bull;</span>
+      <a href="https://github.com/kedar773/cbse-chemistry" target="_blank">GitHub Repo</a>
+      <span>&bull;</span>
+      <a href="mailto:chemistrykedar@gmail.com">chemistrykedar@gmail.com</a>
+    </div>
+    <p>&copy; 2026 Kedar Chemistry Engine. Next-Gen CBSE &amp; JEE Academic Architecture.</p>
+  </footer>
+
+  <!-- Three.js: Local Offline Copy + CDN Fallback -->
+  <script src="assets/vendor/three/three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+
+  <script>
+    /* =========================================================
+       1. 3D Flowing Cyber Mesh Wave Canvas (Background)
+       ========================================================= */
+    const waveCanvas = document.getElementById('flowingMeshCanvas');
+    const waveCtx = waveCanvas.getContext('2d');
+    let width = (waveCanvas.width = window.innerWidth);
+    let height = (waveCanvas.height = window.innerHeight);
+
+    window.addEventListener('resize', () => {
+      width = waveCanvas.width = window.innerWidth;
+      height = waveCanvas.height = window.innerHeight;
+    });
+
+    let mouseX = width / 2, mouseY = height / 2;
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    let waveStep = 0;
+    function drawFlowingWave() {
+      waveCtx.clearRect(0, 0, width, height);
+
+      const lines = 16;
+      const points = 32;
+      const xSpacing = width / (points - 1);
+
+      for (let i = 0; i < lines; i++) {
+        waveCtx.beginPath();
+        const lineProgress = i / lines;
+        const yBase = height * 0.35 + i * 28;
+
+        const grad = waveCtx.createLinearGradient(0, 0, width, 0);
+        grad.addColorStop(0, 'rgba(114, 76, 232, 0.05)');
+        grad.addColorStop(0.35, 'rgba(38, 244, 208, ' + (0.12 + (1 - lineProgress) * 0.28) + ')');
+        grad.addColorStop(0.75, 'rgba(248, 207, 62, ' + (0.08 + (1 - lineProgress) * 0.2) + ')');
+        grad.addColorStop(1, 'rgba(252, 103, 86, 0.05)');
+
+        waveCtx.strokeStyle = grad;
+        waveCtx.lineWidth = 1.3;
+
+        for (let j = 0; j < points; j++) {
+          const x = j * xSpacing;
+          const waveElevation =
+            Math.sin(j * 0.25 + waveStep + i * 0.3) * 25 +
+            Math.cos(j * 0.15 - waveStep * 0.7 + i * 0.2) * 16;
+
+          const y = yBase + waveElevation;
+          if (j === 0) waveCtx.moveTo(x, y);
+          else waveCtx.lineTo(x, y);
+        }
+        waveCtx.stroke();
+      }
+      waveStep += 0.015;
+      requestAnimationFrame(drawFlowingWave);
+    }
+    drawFlowingWave();
+
+    /* =========================================================
+       2. THREE.JS 3D CENTERPIECE: DYNAMIC MORPHING MODULAR CORE
+       Transforms between Physical, Inorganic, and Organic Chemistry
+       ========================================================= */
+    const cubeCanvas = document.getElementById('web3CubeCanvas');
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000);
+    camera.position.set(0, 0, 7.8);
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas: cubeCanvas,
+      alpha: true,
+      antialias: true
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(520, 520);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.35;
+
+    // Ambient and Key Lighting
+    const ambientLight = new THREE.AmbientLight(0x0a0d18, 2.2);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1.8);
+    dirLight.position.set(4, 6, 5);
+    scene.add(dirLight);
+
+    const pointAccent = new THREE.PointLight(0x00f0ff, 3.8, 16);
+    pointAccent.position.set(-3.5, 2.5, 4);
+    scene.add(pointAccent);
+
+    const pointSecondary = new THREE.PointLight(0xffffff, 1.6, 14);
+    pointSecondary.position.set(3.5, -3, -3);
+    scene.add(pointSecondary);
+
+    // MASTER CENTERPIECE CONTAINER
+    const centerpiece = new THREE.Group();
+    scene.add(centerpiece);
+
+    // Surrounding Floating Particle Field
+    const particleGeo = new THREE.BufferGeometry();
+    const pCount = 260;
+    const pPositions = new Float32Array(pCount * 3);
+    for (let i = 0; i < pCount * 3; i += 3) {
+      pPositions[i] = (Math.random() - 0.5) * 14;
+      pPositions[i + 1] = (Math.random() - 0.5) * 14;
+      pPositions[i + 2] = (Math.random() - 0.5) * 10;
+    }
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(pPositions, 3));
+    const particleMat = new THREE.PointsMaterial({
+      size: 0.045,
+      color: 0x00f0ff,
+      transparent: true,
+      opacity: 0.55
+    });
+    const particlesMesh = new THREE.Points(particleGeo, particleMat);
+    scene.add(particlesMesh);
+
+    /* ---------------------------------------------------------
+       BRANCH 1: PHYSICAL CHEMISTRY (Crystalline Lattice & Kinetic Waves)
+       Accent: Cyan / Electric Blue #00F0FF
+       --------------------------------------------------------- */
+    const groupPhysical = new THREE.Group();
+    centerpiece.add(groupPhysical);
+
+    // 1. Crystalline Lattice Unit Cell Outer Box
+    const latticeBoxGeo = new THREE.BoxGeometry(2.5, 2.5, 2.5);
+    const latticeEdgesGeo = new THREE.EdgesGeometry(latticeBoxGeo);
+    const latticeMat = new THREE.LineBasicMaterial({
+      color: 0x00f0ff,
+      linewidth: 2.2,
+      transparent: true,
+      opacity: 0.95
+    });
+    const latticeEdgesMesh = new THREE.LineSegments(latticeEdgesGeo, latticeMat);
+    groupPhysical.add(latticeEdgesMesh);
+
+    // Inner rotated secondary lattice cage
+    const innerBoxGeo = new THREE.BoxGeometry(1.6, 1.6, 1.6);
+    const innerEdgesGeo = new THREE.EdgesGeometry(innerBoxGeo);
+    const innerMat = new THREE.LineBasicMaterial({
+      color: 0x00c4ff,
+      linewidth: 1.5,
+      transparent: true,
+      opacity: 0.55
+    });
+    const innerEdgesMesh = new THREE.LineSegments(innerEdgesGeo, innerMat);
+    groupPhysical.add(innerEdgesMesh);
+
+    // Corner Lattice Nodes (8 vertices)
+    const nodeSphGeo = new THREE.SphereGeometry(0.12, 16, 16);
+    const nodeMat = new THREE.MeshStandardMaterial({
+      color: 0x00f0ff,
+      emissive: 0x00f0ff,
+      emissiveIntensity: 0.9,
+      roughness: 0.1,
+      metalness: 0.85
+    });
+    const corners = [-1.25, 1.25];
+    corners.forEach((x) => {
+      corners.forEach((y) => {
+        corners.forEach((z) => {
+          const sp = new THREE.Mesh(nodeSphGeo, nodeMat);
+          sp.position.set(x, y, z);
+          groupPhysical.add(sp);
+        });
+      });
+    });
+
+    // Face-centered nodes (6 faces)
+    const fcGeo = new THREE.SphereGeometry(0.14, 16, 16);
+    const fcPositions = [
+      [1.25, 0, 0], [-1.25, 0, 0],
+      [0, 1.25, 0], [0, -1.25, 0],
+      [0, 0, 1.25], [0, 0, -1.25]
+    ];
+    fcPositions.forEach(([x, y, z]) => {
+      const sp = new THREE.Mesh(fcGeo, nodeMat);
+      sp.position.set(x, y, z);
+      groupPhysical.add(sp);
+    });
+
+    // Rotating kinetic energy wave rings
+    const waveRings = [];
+    const ringRadii = [1.85, 2.05, 2.25];
+    const ringTiltedMat = new THREE.MeshBasicMaterial({
+      color: 0x00f0ff,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.65
+    });
+    ringRadii.forEach((r, idx) => {
+      const ringGeo = new THREE.TorusGeometry(r, 0.022, 16, 80);
+      const ringMesh = new THREE.Mesh(ringGeo, ringTiltedMat);
+      if (idx === 1) ringMesh.rotation.x = Math.PI / 3;
+      if (idx === 2) ringMesh.rotation.y = Math.PI / 3;
+      groupPhysical.add(ringMesh);
+      waveRings.push(ringMesh);
+    });
+
+    /* ---------------------------------------------------------
+       BRANCH 2: INORGANIC CHEMISTRY (Nested Coordination Polyhedron)
+       Accent: Amber / Metallic Gold #FFB703
+       --------------------------------------------------------- */
+    const groupInorganic = new THREE.Group();
+    centerpiece.add(groupInorganic);
+
+    // Outer Octahedron with translucent metallic faces
+    const octaGeo = new THREE.OctahedronGeometry(2.35, 0);
+    const octaMat = new THREE.MeshStandardMaterial({
+      color: 0xffb703,
+      emissive: 0xff8c00,
+      emissiveIntensity: 0.12,
+      metalness: 0.9,
+      roughness: 0.18,
+      opacity: 0.32,
+      transparent: true,
+      side: THREE.DoubleSide
+    });
+    const octaMesh = new THREE.Mesh(octaGeo, octaMat);
+    groupInorganic.add(octaMesh);
+
+    // Glowing golden edges on Octahedron
+    const octaEdgesGeo = new THREE.EdgesGeometry(octaGeo);
+    const octaEdgesMat = new THREE.LineBasicMaterial({
+      color: 0xffe066,
+      linewidth: 2.5,
+      transparent: true,
+      opacity: 0.95
+    });
+    const octaEdgesMesh = new THREE.LineSegments(octaEdgesGeo, octaEdgesMat);
+    groupInorganic.add(octaEdgesMesh);
+
+    // Central Transition Metal Ion Sphere [M]n+
+    const metalCoreGeo = new THREE.SphereGeometry(0.38, 24, 24);
+    const metalCoreMat = new THREE.MeshStandardMaterial({
+      color: 0xffd700,
+      emissive: 0xffa500,
+      emissiveIntensity: 0.6,
+      metalness: 0.95,
+      roughness: 0.1
+    });
+    const metalCoreMesh = new THREE.Mesh(metalCoreGeo, metalCoreMat);
+    groupInorganic.add(metalCoreMesh);
+
+    // 6 Coordinate Covalent Bonds (connecting center to 6 octahedron vertices)
+    const ligandVertices = [
+      new THREE.Vector3(2.35, 0, 0), new THREE.Vector3(-2.35, 0, 0),
+      new THREE.Vector3(0, 2.35, 0), new THREE.Vector3(0, -2.35, 0),
+      new THREE.Vector3(0, 0, 2.35), new THREE.Vector3(0, 0, -2.35)
+    ];
+    const bondCylGeo = new THREE.CylinderGeometry(0.04, 0.04, 2.35, 16);
+    const bondMat = new THREE.MeshStandardMaterial({
+      color: 0xffb703,
+      emissive: 0xff9900,
+      emissiveIntensity: 0.4,
+      metalness: 0.85,
+      roughness: 0.2
+    });
+    const ligandGeo = new THREE.SphereGeometry(0.2, 16, 16);
+    const ligandMat = new THREE.MeshStandardMaterial({
+      color: 0xffc400,
+      emissive: 0xffb703,
+      emissiveIntensity: 0.7,
+      metalness: 0.9,
+      roughness: 0.15
+    });
+
+    ligandVertices.forEach((v) => {
+      // Ligand donor sphere
+      const lig = new THREE.Mesh(ligandGeo, ligandMat);
+      lig.position.copy(v);
+      groupInorganic.add(lig);
+
+      // Connecting bond
+      const bond = new THREE.Mesh(bondCylGeo, bondMat);
+      const mid = v.clone().multiplyScalar(0.5);
+      bond.position.copy(mid);
+      bond.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v.clone().normalize());
+      groupInorganic.add(bond);
+    });
+
+    // 2 Intersecting Orbital Rings (eg & t2g d-orbital planes)
+    const egRingGeo = new THREE.TorusGeometry(2.75, 0.032, 16, 100);
+    const orbitalRingMat = new THREE.MeshBasicMaterial({
+      color: 0xffb703,
+      transparent: true,
+      opacity: 0.75
+    });
+    const egRing = new THREE.Mesh(egRingGeo, orbitalRingMat);
+    egRing.rotation.x = Math.PI / 4;
+    groupInorganic.add(egRing);
+
+    const t2gRing = new THREE.Mesh(egRingGeo, orbitalRingMat);
+    t2gRing.rotation.y = Math.PI / 4;
+    t2gRing.rotation.z = Math.PI / 6;
+    groupInorganic.add(t2gRing);
+
+    /* ---------------------------------------------------------
+       BRANCH 3: ORGANIC CHEMISTRY (Benzene Ring & Molecular Cluster)
+       Accent: Emerald Green #10B981
+       --------------------------------------------------------- */
+    const groupOrganic = new THREE.Group();
+    centerpiece.add(groupOrganic);
+
+    // 6-Carbon Benzene Planar Hexagon
+    const hexRadius = 1.75;
+    const carbonNodes = [];
+    const carbonPositions = [];
+    const carbonGeo = new THREE.SphereGeometry(0.18, 16, 16);
+    const carbonMat = new THREE.MeshStandardMaterial({
+      color: 0x10b981,
+      emissive: 0x10b981,
+      emissiveIntensity: 0.8,
+      metalness: 0.7,
+      roughness: 0.2
+    });
+
+    for (let i = 0; i < 6; i++) {
+      const angle = (i * Math.PI) / 3;
+      const x = Math.cos(angle) * hexRadius;
+      const z = Math.sin(angle) * hexRadius;
+      const cMesh = new THREE.Mesh(carbonGeo, carbonMat);
+      cMesh.position.set(x, 0, z);
+      groupOrganic.add(cMesh);
+      carbonNodes.push(cMesh);
+      carbonPositions.push(new THREE.Vector3(x, 0, z));
+    }
+
+    // Cylindrical bond sticks between the 6 carbons
+    const ringBondGeo = new THREE.CylinderGeometry(0.048, 0.048, hexRadius, 16);
+    const ringBondMat = new THREE.MeshStandardMaterial({
+      color: 0x059669,
+      emissive: 0x10b981,
+      emissiveIntensity: 0.35,
+      roughness: 0.3,
+      metalness: 0.6
+    });
+
+    for (let i = 0; i < 6; i++) {
+      const p1 = carbonPositions[i];
+      const p2 = carbonPositions[(i + 1) % 6];
+      const dist = p1.distanceTo(p2);
+      const bond = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, dist, 16), ringBondMat);
+      const mid = p1.clone().add(p2).multiplyScalar(0.5);
+      bond.position.copy(mid);
+      const dir = p2.clone().sub(p1).normalize();
+      bond.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+      groupOrganic.add(bond);
+    }
+
+    // Delocalized Pi-Electron Cloud Toruses (hovering above and below benzene plane)
+    const piTorusGeo = new THREE.TorusGeometry(hexRadius * 0.92, 0.075, 16, 64);
+    const piMat = new THREE.MeshStandardMaterial({
+      color: 0x34d399,
+      emissive: 0x10b981,
+      emissiveIntensity: 0.45,
+      transparent: true,
+      opacity: 0.42,
+      roughness: 0.2
+    });
+    const piRingTop = new THREE.Mesh(piTorusGeo, piMat);
+    piRingTop.position.y = 0.42;
+    piRingTop.rotation.x = Math.PI / 2;
+    groupOrganic.add(piRingTop);
+
+    const piRingBottom = new THREE.Mesh(piTorusGeo, piMat);
+    piRingBottom.position.y = -0.42;
+    piRingBottom.rotation.x = Math.PI / 2;
+    groupOrganic.add(piRingBottom);
+
+    // Attached Tetrahedral Carbon Cluster (branching off Carbon 0)
+    const tetraOrigin = carbonPositions[0].clone().add(new THREE.Vector3(0.95, 0.65, 0));
+    const tetraNodeGeo = new THREE.SphereGeometry(0.22, 16, 16);
+    const tetraCenter = new THREE.Mesh(tetraNodeGeo, carbonMat);
+    tetraCenter.position.copy(tetraOrigin);
+    groupOrganic.add(tetraCenter);
+
+    // Bond connecting ring to tetrahedral carbon
+    const linkDist = carbonPositions[0].distanceTo(tetraOrigin);
+    const linkBond = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, linkDist, 16), ringBondMat);
+    linkBond.position.copy(carbonPositions[0].clone().add(tetraOrigin).multiplyScalar(0.5));
+    linkBond.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tetraOrigin.clone().sub(carbonPositions[0]).normalize());
+    groupOrganic.add(linkBond);
+
+    // 3 Radiating Tetrahedral Sub-Bonds with functional group nodes
+    const functionalColors = [0xef4444, 0x3b82f6, 0xffffff]; // Oxygen (red -OH), Nitrogen (blue -NH2), Hydrogen (white)
+    const tetraVectors = [
+      new THREE.Vector3(0.85, 0.55, 0.6),
+      new THREE.Vector3(0.85, 0.55, -0.6),
+      new THREE.Vector3(0.1, -0.9, 0.0)
+    ];
+    tetraVectors.forEach((tv, idx) => {
+      const targetPos = tetraOrigin.clone().add(tv);
+      const fNodeMat = new THREE.MeshStandardMaterial({
+        color: functionalColors[idx],
+        emissive: functionalColors[idx],
+        emissiveIntensity: 0.75,
+        roughness: 0.2
+      });
+      const fNode = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 16), fNodeMat);
+      fNode.position.copy(targetPos);
+      groupOrganic.add(fNode);
+      carbonNodes.push(fNode);
+
+      const fDist = tv.length();
+      const fBond = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, fDist, 16), ringBondMat);
+      fBond.position.copy(tetraOrigin.clone().add(targetPos).multiplyScalar(0.5));
+      fBond.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tv.clone().normalize());
+      groupOrganic.add(fBond);
+    });
+
+    /* ---------------------------------------------------------
+       HOLOGRAPHIC CORE ICON BILLBOARD SPRITE
+       Floating procedural symbol at the core of the active module
+       --------------------------------------------------------- */
+    function createHologramTexture(iconType) {
+      const cv = document.createElement('canvas');
+      cv.width = cv.height = 256;
+      const ctx = cv.getContext('2d');
+      ctx.clearRect(0, 0, 256, 256);
+
+      ctx.save();
+      ctx.translate(128, 128);
+
+      if (iconType === 'physical') {
+        // Quantum Wave & Atom Core
+        ctx.strokeStyle = '#00F0FF';
+        ctx.fillStyle = 'rgba(0, 240, 255, 0.15)';
+        ctx.shadowColor = '#00F0FF';
+        ctx.shadowBlur = 24;
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(0, 0, 80, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.font = 'bold 54px JetBrains Mono, monospace';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('&Psi;', 0, -6);
+
+        ctx.font = 'bold 18px JetBrains Mono, monospace';
+        ctx.fillStyle = '#00F0FF';
+        ctx.fillText('&Delta;G&deg;', 0, 48);
+      } else if (iconType === 'inorganic') {
+        // Coordination Octahedron Shield
+        ctx.strokeStyle = '#FFB703';
+        ctx.fillStyle = 'rgba(255, 183, 3, 0.15)';
+        ctx.shadowColor = '#FFB703';
+        ctx.shadowBlur = 24;
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        const pts = [[0, -85], [75, -28], [75, 52], [0, 85], [-75, 52], [-75, -28]];
+        pts.forEach(([px, py], i) => (i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py)));
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.font = 'bold 40px JetBrains Mono, monospace';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('[M]ⁿ⁺', 0, -6);
+
+        ctx.font = 'bold 18px JetBrains Mono, monospace';
+        ctx.fillStyle = '#FFB703';
+        ctx.fillText('d-CFT', 0, 48);
+      } else {
+        // Organic Benzene Resonance Hybrid
+        ctx.strokeStyle = '#10B981';
+        ctx.fillStyle = 'rgba(16, 185, 129, 0.15)';
+        ctx.shadowColor = '#10B981';
+        ctx.shadowBlur = 24;
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        for (let i = 0; i < 6; i++) {
+          const a = (i * Math.PI) / 3;
+          const x = Math.cos(a) * 80;
+          const y = Math.sin(a) * 80;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.font = 'bold 36px JetBrains Mono, monospace';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('C₆H₆', 0, -6);
+
+        ctx.font = 'bold 18px JetBrains Mono, monospace';
+        ctx.fillStyle = '#10B981';
+        ctx.fillText('sp³-C', 0, 48);
+      }
+      ctx.restore();
+
+      const tex = new THREE.CanvasTexture(cv);
+      tex.needsUpdate = true;
+      return tex;
+    }
+
+    const holoTextures = {
+      physical: createHologramTexture('physical'),
+      inorganic: createHologramTexture('inorganic'),
+      organic: createHologramTexture('organic')
+    };
+
+    const holoSpriteMat = new THREE.SpriteMaterial({
+      map: holoTextures.physical,
+      transparent: true,
+      opacity: 0.92,
+      blending: THREE.AdditiveBlending
+    });
+    const holoSprite = new THREE.Sprite(holoSpriteMat);
+    holoSprite.scale.set(1.65, 1.65, 1);
+    centerpiece.add(holoSprite);
+
+    // Initial Branch Scales
+    groupPhysical.scale.set(1, 1, 1);
+    groupInorganic.scale.set(0, 0, 0);
+    groupOrganic.scale.set(0, 0, 0);
+
+    // Free Drag Interaction on Canvas
+    let isDragging = false;
+    let dragStartX = 0, dragStartY = 0;
+    let manualRotOffsetX = 0, manualRotOffsetY = 0;
+
+    cubeCanvas.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      dragStartX = e.clientX;
+      dragStartY = e.clientY;
+    });
+    window.addEventListener('mouseup', () => (isDragging = false));
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const dx = e.clientX - dragStartX;
+        const dy = e.clientY - dragStartY;
+        manualRotOffsetY += dx * 0.008;
+        manualRotOffsetX += dy * 0.008;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+      }
+    });
+
+    /* =========================================================
+       3. SCROLL-LINKED MORPHING & DISCRETE STEP LOGIC
+       ========================================================= */
+    const scrollyContainer = document.getElementById('scrollyShowcase');
+    const stageGlow = document.getElementById('stageGlow');
+    const progressFill = document.getElementById('progressFillLine');
+    const stepDots = document.querySelectorAll('.scrolly-step-dot');
+    const leftBlocks = document.querySelectorAll('.feature-text-block');
+    const rightBlocks = document.querySelectorAll('.chapters-card-block');
+
+    // 6 Discrete Steps Config:
+    // Step 0: Class 11 Physical (0-16%)
+    // Step 1: Class 11 Inorganic (17-33%)
+    // Step 2: Class 11 Organic (34-50%)
+    // Step 3: Class 12 Physical (51-66%)
+    // Step 4: Class 12 Inorganic (67-83%)
+    // Step 5: Class 12 Organic (84-100%)
+    const scrollySteps = [
+      {
+        step: 0,
+        branch: 'physical',
+        classNum: 11,
+        name: 'Class 11 Physical Chemistry',
+        colorHex: 0x00f0ff,
+        colorCss: '#00F0FF',
+        glowCss: 'rgba(0, 240, 255, 0.25)',
+        rotX: 0.38,
+        rotY: 0.50
+      },
+      {
+        step: 1,
+        branch: 'inorganic',
+        classNum: 11,
+        name: 'Class 11 Inorganic Chemistry',
+        colorHex: 0xffb703,
+        colorCss: '#FFB703',
+        glowCss: 'rgba(255, 183, 3, 0.25)',
+        rotX: 0.45,
+        rotY: 1.65
+      },
+      {
+        step: 2,
+        branch: 'organic',
+        classNum: 11,
+        name: 'Class 11 Organic Chemistry',
+        colorHex: 0x10b981,
+        colorCss: '#10B981',
+        glowCss: 'rgba(16, 185, 129, 0.25)',
+        rotX: 0.65,
+        rotY: 2.75
+      },
+      {
+        step: 3,
+        branch: 'physical',
+        classNum: 12,
+        name: 'Class 12 Physical Chemistry',
+        colorHex: 0x00f0ff,
+        colorCss: '#00F0FF',
+        glowCss: 'rgba(0, 240, 255, 0.25)',
+        rotX: 0.38,
+        rotY: 3.85
+      },
+      {
+        step: 4,
+        branch: 'inorganic',
+        classNum: 12,
+        name: 'Class 12 Inorganic Chemistry',
+        colorHex: 0xffb703,
+        colorCss: '#FFB703',
+        glowCss: 'rgba(255, 183, 3, 0.25)',
+        rotX: 0.45,
+        rotY: 4.95
+      },
+      {
+        step: 5,
+        branch: 'organic',
+        classNum: 12,
+        name: 'Class 12 Organic Chemistry',
+        colorHex: 0x10b981,
+        colorCss: '#10B981',
+        glowCss: 'rgba(16, 185, 129, 0.25)',
+        rotX: 0.65,
+        rotY: 6.05
+      }
+    ];
+
+    let currentStep = 0;
+    let currentBranch = 'physical';
+    let targetCubeRotX = scrollySteps[0].rotX;
+    let targetCubeRotY = scrollySteps[0].rotY;
+
+    // Morph Scale Targets
+    let physTargetScale = 1.0;
+    let inorgTargetScale = 0.0;
+    let orgTargetScale = 0.0;
+
+    // Glitch & Dissolve variables
+    let glitchIntensity = 0.0;
+    let glitchJitterX = 0;
+    let glitchJitterY = 0;
+
+    function updateScrollytelling() {
+      if (!scrollyContainer) return;
+      const rect = scrollyContainer.getBoundingClientRect();
+      const scrollDist = rect.height - window.innerHeight;
+      let rawProgress = -rect.top / scrollDist;
+      let progress = Math.max(0, Math.min(1, rawProgress));
+
+      // Update vertical progress line
+      if (progressFill) {
+        progressFill.style.height = `${progress * 100}%`;
+      }
+
+      // 6 Discrete Thresholds:
+      // 0: 0 - 16.6%
+      // 1: 16.6% - 33.3%
+      // 2: 33.3% - 50.0%
+      // 3: 50.0% - 66.6%
+      // 4: 66.6% - 83.3%
+      // 5: 83.3% - 100%
+      let stepIndex = Math.min(5, Math.floor(progress * 6));
+      if (progress >= 0.98) stepIndex = 5;
+
+      if (stepIndex !== currentStep) {
+        const prevBranch = scrollySteps[currentStep].branch;
+        currentStep = stepIndex;
+        onStepChange(stepIndex, prevBranch);
+      }
+
+      // Smooth interpolation towards the step's isometric angle with subtle scroll momentum
+      const stepConfig = scrollySteps[stepIndex];
+      targetCubeRotX = stepConfig.rotX + Math.sin(progress * Math.PI * 6) * 0.08;
+      targetCubeRotY = stepConfig.rotY + (progress * 6 - stepIndex) * 0.45;
+    }
+
+    function onStepChange(stepIdx, prevBranch) {
+      const conf = scrollySteps[stepIdx];
+      const newBranch = conf.branch;
+
+      // Update Text Blocks (Left & Right)
+      leftBlocks.forEach((b, i) => b.classList.toggle('active', i === stepIdx));
+      rightBlocks.forEach((b, i) => b.classList.toggle('active', i === stepIdx));
+
+      // Update Step Dots
+      stepDots.forEach((d, i) => {
+        const isActive = i === stepIdx;
+        d.classList.toggle('active', isActive);
+        if (isActive) {
+          d.style.setProperty('--active-step-color', conf.colorCss);
+          d.style.setProperty('--active-step-glow', conf.glowCss);
+        }
+      });
+
+      // Update Stage Spotlight Aura & Canvas Drop Shadow
+      if (stageGlow) stageGlow.style.setProperty('--stage-ambient', conf.glowCss);
+      cubeCanvas.style.setProperty('--cube-glow', conf.glowCss);
+
+      // Shift dynamic point light color
+      pointAccent.color.setHex(conf.colorHex);
+      particleMat.color.setHex(conf.colorHex);
+
+      // Trigger Morph/Swap with Glitch Effect
+      if (newBranch !== prevBranch) {
+        glitchIntensity = 1.0; // Trigger glitch dissolve
+        currentBranch = newBranch;
+
+        // Swap target scales
+        physTargetScale = newBranch === 'physical' ? 1.0 : 0.0;
+        inorgTargetScale = newBranch === 'inorganic' ? 1.0 : 0.0;
+        orgTargetScale = newBranch === 'organic' ? 1.0 : 0.0;
+
+        // Update holographic icon sprite
+        holoSpriteMat.map = holoTextures[newBranch];
+        holoSpriteMat.needsUpdate = true;
+      } else {
+        // Class 11 -> Class 12 within same branch: trigger energetic ripple bump
+        glitchIntensity = 0.55;
+      }
+    }
+
+    // Click on progress dots to smoothly scroll
+    stepDots.forEach((dot) => {
+      dot.addEventListener('click', function () {
+        const step = parseInt(this.getAttribute('data-step'));
+        const rect = scrollyContainer.getBoundingClientRect();
+        const scrollDist = scrollyContainer.offsetHeight - window.innerHeight;
+        const targetScrollTop = window.scrollY + rect.top + ((step + 0.5) / 6) * scrollDist;
+        window.scrollTo({ top: targetScrollTop, behavior: 'smooth' });
+      });
+    });
+
+    window.addEventListener('scroll', updateScrollytelling, { passive: true });
+    window.addEventListener('resize', updateScrollytelling);
+
+    // Animation Render Loop
+    let clockTime = 0;
+    function animateThree() {
+      requestAnimationFrame(animateThree);
+      clockTime += 0.016;
+
+      // Smooth lerp rotation towards target isometric perspective
+      centerpiece.rotation.x += (targetCubeRotX + manualRotOffsetX - centerpiece.rotation.x) * 0.08;
+      centerpiece.rotation.y += (targetCubeRotY + manualRotOffsetY - centerpiece.rotation.y) * 0.08;
+
+      // Subtle continuous idle float: Math.sin() hover and slight wobble
+      centerpiece.position.y = Math.sin(clockTime * 1.8) * 0.14;
+      centerpiece.rotation.z = Math.sin(clockTime * 1.2) * 0.04;
+
+      // Morph scale interpolation with spring damping
+      groupPhysical.scale.x += (physTargetScale - groupPhysical.scale.x) * 0.12;
+      groupPhysical.scale.y += (physTargetScale - groupPhysical.scale.y) * 0.12;
+      groupPhysical.scale.z += (physTargetScale - groupPhysical.scale.z) * 0.12;
+
+      groupInorganic.scale.x += (inorgTargetScale - groupInorganic.scale.x) * 0.12;
+      groupInorganic.scale.y += (inorgTargetScale - groupInorganic.scale.y) * 0.12;
+      groupInorganic.scale.z += (inorgTargetScale - groupInorganic.scale.z) * 0.12;
+
+      groupOrganic.scale.x += (orgTargetScale - groupOrganic.scale.x) * 0.12;
+      groupOrganic.scale.y += (orgTargetScale - groupOrganic.scale.y) * 0.12;
+      groupOrganic.scale.z += (orgTargetScale - groupOrganic.scale.z) * 0.12;
+
+      // Glitch / Dissolve jitter logic
+      if (glitchIntensity > 0.01) {
+        glitchJitterX = (Math.random() - 0.5) * 0.28 * glitchIntensity;
+        glitchJitterY = (Math.random() - 0.5) * 0.28 * glitchIntensity;
+        centerpiece.position.x = glitchJitterX;
+        centerpiece.position.z = glitchJitterY;
+        holoSprite.scale.set(
+          1.65 + (Math.random() - 0.5) * 0.4 * glitchIntensity,
+          1.65 + (Math.random() - 0.5) * 0.4 * glitchIntensity,
+          1
+        );
+        glitchIntensity *= 0.88; // decay
+      } else {
+        centerpiece.position.x = 0;
+        centerpiece.position.z = 0;
+        holoSprite.scale.set(1.65 + Math.sin(clockTime * 2.5) * 0.08, 1.65 + Math.sin(clockTime * 2.5) * 0.08, 1);
+      }
+
+      // Branch-specific kinetic animations
+      // Physical: wave rings pulsing & inner cage rotating
+      innerEdgesMesh.rotation.y += 0.012;
+      innerEdgesMesh.rotation.x -= 0.008;
+      waveRings.forEach((r, idx) => {
+        const pulse = 1.0 + Math.sin(clockTime * 3.5 + idx * 1.2) * 0.08;
+        r.scale.set(pulse, pulse, pulse);
+      });
+
+      // Inorganic: orbital rings rotating on dual planes
+      egRing.rotation.z += 0.015;
+      t2gRing.rotation.x += 0.012;
+
+      // Organic: pi-rings slowly spinning & carbon nodes breathing
+      piRingTop.rotation.z += 0.008;
+      piRingBottom.rotation.z -= 0.008;
+      carbonNodes.forEach((cn, idx) => {
+        const nodePulse = 1.0 + Math.sin(clockTime * 4.0 + idx * 0.8) * 0.12;
+        cn.scale.set(nodePulse, nodePulse, nodePulse);
+      });
+
+      // Rotate surrounding particle dust
+      particlesMesh.rotation.y = clockTime * 0.04;
+      particlesMesh.rotation.x = clockTime * 0.025;
+
+      renderer.render(scene, camera);
+    }
+    animateThree();
+
+    /* =========================================================
+       4. HERO TERMINAL TYPEWRITER EFFECT
+       ========================================================= */
+    const prompts = [
+      "CALCULATE EMF OF DANIELL CELL UNDER NON-STANDARD CONDITIONS (NERNST EQUATION)",
+      "PREDICT MAJOR PRODUCT & MECHANISM: REIMER-TIEMANN REACTION OF PHENOL",
+      "FIND HYBRIDIZATION, BOND ANGLE & GEOMETRY: XeF4 & SF4 VIA VSEPR THEORY",
+      "BALANCING REDOX REACTION IN ACIDIC MEDIUM VIA ION-ELECTRON METHOD",
+      "DERIVE INTEGRATED RATE LAW & HALF-LIFE FOR FIRST-ORDER KINETICS",
+      "EXPLAIN LANTHANOID CONTRACTION AND ITS CONSEQUENCES ON 4d/5d RADII"
+    ];
+
+    let pIdx = 0, cIdx = 0, isDel = false;
+    const terminalEl = document.getElementById('typewriterText');
+
+    function typeWriter() {
+      const p = prompts[pIdx];
+      if (isDel) {
+        terminalEl.textContent = p.substring(0, cIdx - 1);
+        cIdx--;
+      } else {
+        terminalEl.textContent = p.substring(0, cIdx + 1);
+        cIdx++;
+      }
+
+      let spd = isDel ? 20 : 45;
+      if (!isDel && cIdx === p.length) {
+        spd = 2200;
+        isDel = true;
+      } else if (isDel && cIdx === 0) {
+        isDel = false;
+        pIdx = (pIdx + 1) % prompts.length;
+        spd = 400;
+      }
+      setTimeout(typeWriter, spd);
+    }
+    document.addEventListener('DOMContentLoaded', typeWriter);
+  </script>
+</body>
+</html>

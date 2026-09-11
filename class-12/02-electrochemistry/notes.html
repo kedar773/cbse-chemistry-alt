@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Master Study Notes — Electrochemistry | Class 12 CBSE Chemistry</title>
+<style>
+  /* ============================================================
+     BASE / TYPOGRAPHY
+     ============================================================ */
+  :root {
+    --bg: #0b1020;
+    --bg-soft: #131a35;
+    --panel: #1a2247;
+    --panel-2: #232c5a;
+    --ink: #e8ecff;
+    --ink-dim: #b6bedc;
+    --muted: #8a93bd;
+    --accent: #6ee7ff;
+    --accent-2: #a78bfa;
+    --good: #34d399;
+    --warn: #fbbf24;
+    --bad: #f87171;
+    --anode: #f59e0b;
+    --cathode: #38bdf8;
+    --salt: #c084fc;
+    --electron: #60a5fa;
+    --paper: #fafafa;
+    --paper-ink: #0f172a;
+    --paper-accent: #1d4ed8;
+    --border: rgba(255,255,255,0.10);
+    --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    --r: 14px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #1b2454 0%, transparent 60%),
+      radial-gradient(900px 600px at 100% 0%, #2a1b54 0%, transparent 55%),
+      var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  code, kbd { font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace; }
+
+  /* ============================================================
+     TOP BAR + TABS
+     ============================================================ */
+  header.top {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(10px);
+    background: rgba(11,16,32,0.75);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 20px 6px;
+  }
+  .logo {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: conic-gradient(from 0deg, #6ee7ff, #a78bfa, #f472b6, #6ee7ff);
+    box-shadow: 0 0 18px rgba(110,231,255,0.45);
+    position: relative;
+  }
+  .logo::after{
+    content:"⚡"; position:absolute; inset:0; display:grid; place-items:center;
+    color:#0b1020; font-size:20px; font-weight:900;
+  }
+  .brand h1{
+    margin:0; font-size: 1.15rem; letter-spacing: 0.2px;
+  }
+  .brand small{ color: var(--muted); display:block; font-size: 0.78rem; }
+
+  .tabs {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; gap: 6px; padding: 0 20px 10px;
+    overflow-x: auto; scrollbar-width: thin;
+  }
+  .tab-btn {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    background: var(--panel);
+    color: var(--ink-dim);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: all 0.2s ease;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .tab-btn:hover { color: var(--ink); transform: translateY(-1px); }
+  .tab-btn.active {
+    background: linear-gradient(135deg, #6ee7ff, #a78bfa);
+    color: #0b1020;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(110,231,255,0.30);
+  }
+  .tab-btn .num{
+    display:inline-grid; place-items:center; width:22px; height:22px;
+    background: rgba(0,0,0,0.18); color: inherit; border-radius:50%;
+    font-size:0.78rem; font-weight:800;
+  }
+
+  main { max-width: 1200px; margin: 0 auto; padding: 22px 20px 60px; }
+  .panel { display: none; }
+  .panel.active { display: block; animation: fade 0.35s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px);} to{opacity:1; transform:none;} }
+
+  /* ============================================================
+     CARDS, HEADINGS, CALLOUTS
+     ============================================================ */
+  h2.section {
+    font-size: 1.5rem; margin: 8px 0 14px;
+    display:flex; align-items:center; gap:10px;
+    letter-spacing: 0.2px;
+  }
+  h2.section::before{
+    content:""; width: 6px; height: 26px; border-radius: 3px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  }
+  h3 { margin: 22px 0 10px; font-size: 1.12rem; color: #cfd6ff;}
+  h4 { margin: 16px 0 8px; font-size: 1.0rem; color: #b9c1ee;}
+
+  .card {
+    background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 18px 20px;
+    margin: 14px 0;
+    box-shadow: var(--shadow);
+  }
+  .card.glow {
+    border-color: rgba(110,231,255,0.35);
+    box-shadow: 0 0 0 1px rgba(110,231,255,0.20), 0 12px 36px rgba(110,231,255,0.10);
+  }
+  .grid { display: grid; gap: 14px; }
+  .grid.two { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .grid.three { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+  /* Callout / comparison box */
+  .callout {
+    border-radius: var(--r);
+    padding: 18px;
+    margin: 18px 0;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(167,139,250,0.08), rgba(110,231,255,0.06));
+    position: relative;
+  }
+  .callout h3 { margin-top: 0; }
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px;
+  }
+  @media (max-width: 720px){ .compare{ grid-template-columns: 1fr; } }
+  .compare .col{
+    background: rgba(0,0,0,0.25);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .compare .col h4{ margin-top: 0;}
+  .pill {
+    display:inline-block; padding: 2px 10px; border-radius:999px; font-size:0.78rem;
+    font-weight:700; letter-spacing: 0.3px;
+  }
+  .pill.anode { background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.5);}
+  .pill.cathode { background: rgba(56,189,248,0.18); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.5);}
+  .pill.neg { background: rgba(248,113,113,0.18); color: #fca5a5; border: 1px solid rgba(248,113,113,0.5);}
+  .pill.pos { background: rgba(52,211,153,0.18); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.5);}
+
+  /* Badges */
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px; font-size: 0.74rem; font-weight: 800;
+    border-radius: 999px; letter-spacing: 0.3px;
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    color: #1a1300;
+    box-shadow: 0 0 0 1px rgba(251,191,36,0.4), 0 4px 12px rgba(249,115,22,0.25);
+    vertical-align: middle;
+  }
+  .badge.cbse::before{ content:"⚡"; }
+  .badge.deriv{ background: linear-gradient(135deg, #6ee7ff, #3b82f6); color:#04132e;}
+  .badge.deriv::before{ content:"📐"; }
+  .badge.yt { background: linear-gradient(135deg, #f472b6, #a78bfa); color: #1b0a2c;}
+  .badge.yt::before{ content:"🔥"; }
+
+  /* Cross-ref marker */
+  .xref {
+    display: inline-block;
+    background: rgba(167,139,250,0.18);
+    border: 1px dashed rgba(167,139,250,0.6);
+    color: #d6c5ff;
+    padding: 1px 8px; font-size: 0.78rem; border-radius: 8px;
+    margin-left: 6px;
+  }
+  .xref::before{ content:"📌 "; }
+
+  /* Math */
+  .math {
+    font-family: "Cambria Math", "STIX Two Math", "Latin Modern Math", "Times New Roman", serif;
+    background: rgba(0,0,0,0.30);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 0 10px 10px 0;
+    margin: 10px 0;
+    overflow-x: auto;
+    font-size: 1.02rem;
+  }
+  .math.center { text-align: center; }
+  .math sub, .math sup { font-size: 0.72em; }
+  .frac {
+    display: inline-block; vertical-align: middle; text-align: center;
+    margin: 0 3px;
+  }
+  .frac .num { display: block; border-bottom: 1.5px solid currentColor; padding: 0 4px;}
+  .frac .den { display: block; padding: 0 4px;}
+
+  /* Lists */
+  ul, ol { margin: 8px 0 8px 22px; }
+  li { margin: 4px 0; }
+  .small { color: var(--ink-dim); font-size: 0.9rem; }
+  .tiny { color: var(--muted); font-size: 0.82rem;}
+
+  /* Tables */
+  table {
+    width: 100%; border-collapse: collapse; margin: 10px 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 8px 10px; text-align: left;
+  }
+  th {
+    background: rgba(110,231,255,0.10);
+    color: var(--accent);
+  }
+  tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+  /* NCERT collapsible */
+  details.q {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0;
+    margin: 10px 0;
+    overflow: hidden;
+  }
+  details.q > summary {
+    cursor: pointer; list-style: none;
+    padding: 14px 16px;
+    font-weight: 600;
+    display: flex; align-items: center; gap: 10px;
+    background: linear-gradient(180deg, rgba(110,231,255,0.06), transparent);
+  }
+  details.q > summary::-webkit-details-marker{ display:none; }
+  details.q > summary::before{
+    content: "▸"; display:inline-block; transition: transform 0.2s ease;
+    color: var(--accent);
+  }
+  details.q[open] > summary::before{ transform: rotate(90deg); }
+  details.q > summary .qid{
+    background: rgba(110,231,255,0.18); color: var(--accent);
+    padding: 2px 8px; border-radius: 6px; font-size: 0.8rem;
+  }
+  details.q .body{ padding: 4px 16px 16px; }
+
+  /* ============================================================
+     TAB 4 — VIRTUAL LAB
+     ============================================================ */
+  .labwrap {
+    display: grid; grid-template-columns: 1fr 320px; gap: 16px;
+  }
+  @media (max-width: 980px){ .labwrap{ grid-template-columns: 1fr; } }
+  .stage {
+    background: radial-gradient(800px 400px at 50% 0%, #0e1538, #0a0f25 70%);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 12px;
+    position: relative;
+    min-height: 520px;
+  }
+  .stage canvas, .stage svg {
+    width: 100%; height: 520px; display: block;
+    border-radius: 10px;
+  }
+  .controls {
+    background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 14px;
+  }
+  .controls h3{ margin-top: 0; }
+  .ctrl-row { display: flex; align-items: center; gap: 10px; margin: 10px 0;}
+  .ctrl-row label { width: 130px; color: var(--ink-dim); font-size: 0.9rem;}
+  .ctrl-row input[type=range]{ flex: 1; }
+  .ctrl-row .val{
+    min-width: 64px; text-align: right;
+    font-family: "JetBrains Mono", monospace; color: var(--accent);
+  }
+  .btn {
+    background: linear-gradient(135deg, #6ee7ff, #a78bfa);
+    color: #0b1020; border: 0; padding: 9px 14px;
+    font-weight: 700; border-radius: 10px; cursor: pointer;
+    box-shadow: 0 6px 16px rgba(110,231,255,0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{ transform: translateY(-1px);}
+  .btn:active{ transform: translateY(0);}
+  .btn.alt{
+    background: rgba(255,255,255,0.06);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    box-shadow: none;
+  }
+  .btn.warn{
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    color: #1a1300;
+  }
+  .select {
+    background: rgba(0,0,0,0.4); color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 10px; flex: 1;
+  }
+  .pillbox { display:flex; flex-wrap: wrap; gap: 6px; }
+  .pillbtn{
+    padding: 6px 10px; font-size: 0.84rem;
+    background: rgba(255,255,255,0.05);
+    color: var(--ink-dim);
+    border: 1px solid var(--border);
+    border-radius: 999px; cursor: pointer;
+  }
+  .pillbtn.active{
+    background: linear-gradient(135deg, #6ee7ff, #a78bfa);
+    color:#0b1020; border-color: transparent; font-weight:700;
+  }
+  .legend{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 8px; font-size:0.84rem; color: var(--ink-dim);}
+  .legend i{ display:inline-block; width:10px; height:10px; border-radius:50%; margin-right: 6px; vertical-align: middle;}
+
+  /* Switch pill (Daniell) */
+  .switch {
+    width: 56px; height: 30px; border-radius: 999px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid var(--border);
+    position: relative; cursor: pointer; transition: all 0.2s ease;
+  }
+  .switch::after{
+    content:""; position:absolute; top:3px; left:3px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #f87171; box-shadow: 0 0 10px rgba(248,113,113,0.6);
+    transition: all 0.25s ease;
+  }
+  .switch.on{ background: rgba(52,211,153,0.18); border-color: rgba(52,211,153,0.5);}
+  .switch.on::after{ left: 30px; background: #34d399; box-shadow: 0 0 12px rgba(52,211,153,0.7);}
+
+  /* Bridge balance indicator */
+  .balance-bar{
+    height: 10px; background: rgba(255,255,255,0.08);
+    border-radius: 999px; position: relative; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .balance-bar .needle{
+    position:absolute; top:-3px; width: 4px; height: 16px;
+    background: var(--accent); box-shadow: 0 0 8px var(--accent);
+    left: 50%; transform: translateX(-50%);
+    transition: left 0.18s ease;
+  }
+  .balance-bar .center{
+    position:absolute; left:50%; top:0; bottom:0; width:1px;
+    background: rgba(255,255,255,0.25);
+  }
+
+  /* Footer */
+  footer{
+    text-align:center; color: var(--muted); padding: 20px;
+    font-size: 0.85rem;
+  }
+
+  /* ============================================================
+     PRINT
+     ============================================================ */
+  @media print {
+    @page { size: A4; margin: 14mm; }
+    body{
+      background: white !important;
+      color: #0f172a !important;
+    }
+    header.top, .tabs, .panel[data-tab="lab"] { display: none !important; }
+    .panel { display: block !important; }
+    .card, .callout, details.q, .controls, .stage {
+      background: white !important;
+      color: #0f172a !important;
+      box-shadow: none !important;
+      border-color: #e2e8f0 !important;
+    }
+    .pill, .badge, .xref, .qid, .pillbtn { color-adjust: exact; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    details.q > summary::before{ content: "•"; }
+    details.q[open] > summary::before{ content: "•"; }
+    .math{
+      background: #f8fafc !important;
+      color: #0f172a !important;
+      border-left-color: #1d4ed8 !important;
+    }
+    h2, h3, h4 { color: #0f172a !important; }
+    .badge.cbse{ background: #fde68a !important; color: #1f2937 !important;}
+    .badge.deriv{ background: #bae6fd !important; color: #0c4a6e !important;}
+    a { color: #1d4ed8 !important; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+<div class="brand">
+<div aria-hidden="true" class="logo"></div>
+<div>
+<h1>Master Study Notes — Electrochemistry</h1>
+<small>Class 12 CBSE · NCERT-aligned · Board-Exam Focused</small>
+</div>
+</div>
+<nav aria-label="Study Notes Tabs" class="tabs" role="tablist">
+<button class="tab-btn active" data-tab="cells" role="tab">
+<span class="num">1</span> Cells &amp; Nernst
+    </button>
+<button class="tab-btn" data-tab="conduct" role="tab">
+<span class="num">2</span> Conductance &amp; Electrolysis
+    </button>
+<button class="tab-btn" data-tab="ncert" role="tab">
+<span class="num">3</span> NCERT Solutions
+    </button>
+<button class="tab-btn" data-tab="lab" role="tab">
+<span class="num">4</span> Interactive Virtual Lab
+    </button>
+</nav>
+</header>
+<main>
+<!-- ========================================================
+       PANEL 1 — ELECTROCHEMICAL CELLS & NERNST
+       ======================================================== -->
+<section class="panel active" data-tab="cells" id="panel-cells">
+<h2 class="section">1. Electrochemical Cells &amp; Nernst Equation<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></h2>
+<div class="card glow">
+<h3>1.1 What is Electrochemistry?</h3>
+<p>Electrochemistry is the branch of chemistry that studies the <b>interconversion of chemical energy and electrical energy</b> through <b>redox reactions</b>. All processes at electrodes are governed by the transfer of electrons between a chemical system and an electrical circuit.</p>
+<ul>
+<li><b>Galvanic (Voltaic) cell</b> — spontaneous redox → electrical energy (e.g., Daniell cell, batteries).</li>
+<li><b>Electrolytic cell</b> — electrical energy → non-spontaneous chemical change (e.g., electroplating, extraction of metals).</li>
+</ul>
+</div>
+<!-- ============== SIGN & FLOW CALLOUT ============== -->
+<div class="callout">
+<h3>⚖️ Sign &amp; Flow Conventions — Galvanic vs. Electrolytic</h3>
+<p class="small">A common board trap! Memorise the sign convention carefully. The <b>anode</b> is always the site of <b>oxidation</b> and the <b>cathode</b> is always the site of <b>reduction</b> — but the <b>electrical sign</b> of each electrode <b>flips</b> between a galvanic and an electrolytic cell.</p>
+<div class="compare">
+<div class="col">
+<h4>🔋 Galvanic Cell <span class="small">(Spontaneous, ΔG &lt; 0)</span></h4>
+<p><span class="pill anode">Anode (−)</span>   Oxidation: <span class="math" style="display:inline-block;padding:2px 6px">Zn → Zn<sup>2+</sup> + 2e<sup>−</sup></span></p>
+<p><span class="pill cathode">Cathode (+)</span>   Reduction: <span class="math" style="display:inline-block;padding:2px 6px">Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu</span></p>
+<p class="small">• Electrons flow externally: <b>Anode → Cathode</b> through the wire.<br/>
+            • Conventional current flows: <b>Cathode → Anode</b> externally.<br/>
+            • Cations in solution move <b>toward the cathode</b>; anions move <b>toward the anode</b> (via salt bridge).</p>
+</div>
+<div class="col">
+<h4>⚡ Electrolytic Cell <span class="small">(Non-spontaneous, ΔG &gt; 0)</span></h4>
+<p><span class="pill anode">Anode (+)</span>   Oxidation: <span class="math" style="display:inline-block;padding:2px 6px">2Cl<sup>−</sup> → Cl<sub>2</sub>(g) + 2e<sup>−</sup></span></p>
+<p><span class="pill cathode">Cathode (−)</span>   Reduction: <span class="math" style="display:inline-block;padding:2px 6px">Na<sup>+</sup> + e<sup>−</sup> → Na</span></p>
+<p class="small">• External battery drives electrons: <b>Cathode ← Anode</b> through the wire (electrons enter at the cathode from battery).<br/>
+            • Cations move toward the <b>cathode (−)</b>; anions toward the <b>anode (+)</b> — same ion-movement rule as galvanic.<br/>
+            • <b>Sign convention flips</b>: anode is + (connected to + of battery) and cathode is − (connected to − of battery).</p>
+</div>
+</div>
+<p class="tiny" style="margin-top:8px">📌 Mnemonic: <i>“Red Cat”</i> — <b>Red</b>uction always occurs at the <b>Cat</b>hode (in both cells). The sign attached to the cathode is what changes.</p>
+</div>
+<!-- ============== DANIELL CELL ============== -->
+<div class="card">
+<h3>1.2 Daniell Cell — A Classic Galvanic Cell</h3>
+<p>Set-up: a <b>Zn rod</b> dipped in <b>1 M ZnSO<sub>4</sub></b> (left half-cell) and a <b>Cu rod</b> dipped in <b>1 M CuSO<sub>4</sub></b> (right half-cell). The two solutions are connected by a <b>salt bridge</b> (usually KCl or KNO<sub>3</sub> in agar-agar gel), and the electrodes are joined by a metal wire with a voltmeter.</p>
+<div class="grid two">
+<div>
+<h4>Half-cell reactions</h4>
+<div class="math">Zn(s) → Zn<sup>2+</sup>(aq) + 2e<sup>−</sup>   (Anode, oxidation, E° = −0.76 V)<br/>
+          Cu<sup>2+</sup>(aq) + 2e<sup>−</sup> → Cu(s)   (Cathode, reduction, E° = +0.34 V)<br/>
+          Net: Zn(s) + Cu<sup>2+</sup>(aq) → Zn<sup>2+</sup>(aq) + Cu(s)</div>
+<p class="small">E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub> = 0.34 − (−0.76) = <b>+1.10 V</b></p>
+</div>
+<div>
+<h4>Salt Bridge — why is it needed?</h4>
+<ul>
+<li>Completes the circuit by allowing ion flow without mixing the two solutions.</li>
+<li>Maintains <b>electrical neutrality</b>: K<sup>+</sup> flows into the cathode compartment (where Cu<sup>2+</sup> is being consumed), Cl<sup>−</sup> (or NO<sub>3</sub><sup>−</sup>) flows into the anode compartment (where Zn<sup>2+</sup> is being produced).</li>
+<li>Without it, charge builds up and the cell stops within seconds.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ============== CELL REPRESENTATION ============== -->
+<div class="card">
+<h3>1.3 Cell Notation (IUPAC Convention) <span class="badge cbse">CBSE PYQ – Expected</span></h3>
+<p>A cell is represented in the form:</p>
+<div class="math center">
+        Anode  |  Anode solution (conc.)  ‖  Cathode solution (conc.)  |  Cathode
+      </div>
+<ul>
+<li><b>Single vertical bar ( | )</b> → phase boundary (e.g., solid | aqueous, or | for a single electrode interface).</li>
+<li><b>Double vertical bar ( ‖ )</b> → salt bridge between the two half-cells.</li>
+<li>By convention: <b>anode is written on the LEFT</b>, cathode on the RIGHT.</li>
+<li>If a gas is involved, an <b>inert electrode</b> (usually Pt) is added.</li>
+</ul>
+<h4>Worked Examples</h4>
+<div class="math">Zn(s) | Zn<sup>2+</sup>(1 M) ‖ Cu<sup>2+</sup>(1 M) | Cu(s)   (Daniell cell)<br/>
+      Pt(s) | H<sub>2</sub>(g, 1 bar) | H<sup>+</sup>(1 M) ‖ Cu<sup>2+</sup>(1 M) | Cu(s)   (Hydrogen–Copper cell)<br/>
+      Mg(s) | Mg<sup>2+</sup>(0.001 M) ‖ Ag<sup>+</sup>(0.0001 M) | Ag(s)   (Concentration cell-like setup)</div>
+<p class="small">📌 <span class="xref">See Solved Q 3.2</span> for a board-style problem on cell notation and EMF calculation.</p>
+</div>
+<!-- ============== STANDARD ELECTRODE POTENTIAL ============== -->
+<div class="card">
+<h3>1.4 Standard Electrode Potential</h3>
+<p>The <b>standard electrode potential (E°)</b> of an electrode is its potential relative to the <b>Standard Hydrogen Electrode (SHE)</b>, measured at <b>1 M concentration, 1 bar pressure, 298 K</b>. By convention, <b>E°<sub>SHE</sub> = 0.00 V</b>.</p>
+<p>Properties:</p>
+<ul>
+<li><b>Reduction potential</b> is the standard convention. The more positive E°, the greater the tendency to get reduced.</li>
+<li>For oxidation, E°<sub>oxidation</sub> = −E°<sub>reduction</sub>.</li>
+<li>E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub>   (both as reduction potentials). <span class="badge cbse">CBSE PYQ – Expected</span></li>
+<li>If E°<sub>cell</sub> &gt; 0 → cell is spontaneous (galvanic). If E°<sub>cell</sub> &lt; 0 → non-spontaneous (electrolytic).</li>
+</ul>
+<h4>Electrochemical Series — Useful Mnemonics</h4>
+<p class="small">Top (strongest reducing agents) → Bottom (strongest oxidising agents):</p>
+<div class="math center" style="font-size:0.95rem">Li · K · Ba · Ca · Na · Mg · Al · Zn · Fe · Ni · Sn · Pb · H · Cu · Hg · Ag · Au · F<sub>2</sub></div>
+<p class="tiny">Species above H reduce H<sup>+</sup> to H<sub>2</sub>; species below H<sup>+</sup> are reduced by H<sub>2</sub>.</p>
+</div>
+<!-- ============== NERNST EQUATION ============== -->
+<div class="card glow">
+<h3>1.5 Nernst Equation <span class="badge cbse">CBSE PYQ – Expected</span> <span class="badge deriv">Derivation</span></h3>
+<p>For a general cell reaction: <span class="math" style="display:inline-block;padding:2px 6px">aA + bB ⇌ cC + dD</span></p>
+<p>The Nernst equation relates the cell EMF to concentrations:</p>
+<div class="math center">
+        E<sub>cell</sub> = E°<sub>cell</sub> −
+        <span class="frac">
+<span class="num">RT</span>
+<span class="den">nF</span>
+</span>
+        ln Q  =  E°<sub>cell</sub> −
+        <span class="frac">
+<span class="num">2.303 RT</span>
+<span class="den">nF</span>
+</span>
+        log Q
+      </div>
+<p>At <b>298 K</b>:</p>
+<div class="math center">
+        E<sub>cell</sub> = E°<sub>cell</sub> −
+        <span class="frac">
+<span class="num">0.0591</span>
+<span class="den">n</span>
+</span>
+        log
+        <span class="frac">
+<span class="num">[C]<sup>c</sup> [D]<sup>d</sup></span>
+<span class="den">[A]<sup>a</sup> [B]<sup>b</sup></span>
+</span>
+</div>
+<p>where <b>n</b> = number of electrons transferred, <b>F</b> = 96485 C mol<sup>−1</sup>, <b>Q</b> = reaction quotient.</p>
+<h4>Derivation (Gibbs Energy → EMF)</h4>
+<ol>
+<li>For a reversible cell, the maximum work is electrical: <span class="math" style="display:inline-block;padding:2px 6px">W<sub>max</sub> = nFE<sub>cell</sub></span></li>
+<li>For a non-standard reaction, change in Gibbs free energy: <span class="math" style="display:inline-block;padding:2px 6px">ΔG = ΔG° + RT ln Q</span></li>
+<li>Since <span class="math" style="display:inline-block;padding:2px 6px">ΔG = −nFE<sub>cell</sub></span> and <span class="math" style="display:inline-block;padding:2px 6px">ΔG° = −nFE°<sub>cell</sub></span></li>
+<li>Substituting: <span class="math" style="display:inline-block;padding:2px 6px">−nFE<sub>cell</sub> = −nFE°<sub>cell</sub> + RT ln Q</span></li>
+<li>Divide by −nF: <span class="math" style="display:inline-block;padding:2px 6px">E<sub>cell</sub> = E°<sub>cell</sub> − (RT/nF) ln Q</span></li>
+</ol>
+<p class="small">📌 <span class="xref">See Solved Q 3.3, 3.5</span> for board-style Nernst calculations.</p>
+</div>
+<!-- ============== GIBBS & EQ CONSTANT ============== -->
+<div class="card">
+<h3>1.6 Gibbs Energy &amp; Equilibrium Constant</h3>
+<div class="math center">
+        Δ<sub>r</sub>G° = −nFE°<sub>cell</sub>   ·   Δ<sub>r</sub>G = −nFE<sub>cell</sub>
+</div>
+<p>At equilibrium, ΔG = 0 and E<sub>cell</sub> = 0, so:</p>
+<div class="math center">
+        0 = Δ<sub>r</sub>G° + RT ln K  ⟹ 
+        ln K =
+        <span class="frac">
+<span class="num">nFE°<sub>cell</sub></span>
+<span class="den">RT</span>
+</span>
+         ⟹ 
+        log K =
+        <span class="frac">
+<span class="num">nE°<sub>cell</sub></span>
+<span class="den">0.0591</span>
+</span>
+</div>
+<ul>
+<li>Large positive E°<sub>cell</sub> → very large K → products strongly favoured.</li>
+<li>ΔG° &gt; 0 ⟺ E° &lt; 0 ⟺ K &lt; 1 ⟺ reaction non-spontaneous under standard conditions.</li>
+</ul>
+</div>
+<!-- ============== CONCENTRATION CELLS ============== -->
+<div class="card">
+<h3>1.7 Concentration Cells</h3>
+<p>A concentration cell has <b>identical electrodes</b> on both sides but with <b>different ion concentrations</b>. Since the standard potentials cancel, E°<sub>cell</sub> = 0 and the EMF is driven purely by the concentration difference.</p>
+<div class="math center">
+        E<sub>cell</sub> = −
+        <span class="frac">
+<span class="num">0.0591</span>
+<span class="den">n</span>
+</span>
+        log
+        <span class="frac">
+<span class="num">[Anode]</span>
+<span class="den">[Cathode]</span>
+</span>
+          (at 298 K)
+      </div>
+<p class="small">📌 <span class="xref">See Solved Q 3.6</span> for a concentration cell problem.</p>
+</div>
+<!-- ============== COMMERCIAL CELLS ============== -->
+<div class="card">
+<h3>1.8 Commercial Cells (Brief)</h3>
+<table>
+<tr><th>Cell</th><th>Anode</th><th>Cathode</th><th>Electrolyte</th><th>Approx. V</th></tr>
+<tr><td>Dry cell (Leclanché)</td><td>Zn</td><td>MnO<sub>2</sub></td><td>NH<sub>4</sub>Cl + ZnCl<sub>2</sub> paste</td><td>1.5 V</td></tr>
+<tr><td>Mercury cell</td><td>Zn-Hg</td><td>HgO</td><td>KOH paste</td><td>1.35 V</td></tr>
+<tr><td>Lead-acid (car battery)</td><td>Pb</td><td>PbO<sub>2</sub></td><td>H<sub>2</sub>SO<sub>4</sub> (38%)</td><td>2.0 V/cell</td></tr>
+<tr><td>Fuel cell (H<sub>2</sub>-O<sub>2</sub>)</td><td>Pt + H<sub>2</sub></td><td>Pt + O<sub>2</sub></td><td>KOH (aq)</td><td>~1.2 V</td></tr>
+</table>
+</div>
+</section>
+<!-- ========================================================
+       PANEL 2 — CONDUCTANCE & ELECTROLYTIC
+       ======================================================== -->
+<section class="panel" data-tab="conduct" id="panel-conduct">
+<h2 class="section">2. Conductance &amp; Electrolytic Cells<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></h2>
+<div class="card">
+<h3>2.1 Resistance, Conductance, Resistivity</h3>
+<p>For a conductor of uniform cross-section, Ohm's law analogously gives:</p>
+<div class="math center">R = ρ · <span class="frac"><span class="num">l</span><span class="den">A</span></span></div>
+<ul>
+<li><b>R</b> = resistance (Ω)</li>
+<li><b>ρ</b> = resistivity (Ω m) — also called <b>specific resistance</b></li>
+<li><b>l</b> = length (m), <b>A</b> = cross-sectional area (m<sup>2</sup>)</li>
+<li><b>Conductance</b> G = 1/R (S = siemens or Ω<sup>−1</sup>)</li>
+<li><b>Conductivity</b> κ (kappa) = 1/ρ (S m<sup>−1</sup>) — also called <b>specific conductance</b></li>
+<li><b>Cell constant</b> G* = l/A (m<sup>−1</sup>), measured using a standard KCl solution.</li>
+</ul>
+</div>
+<div class="card glow">
+<h3>2.2 Molar Conductivity (Λ<sub>m</sub>) <span class="badge cbse">CBSE PYQ – Expected</span></h3>
+<p>Molar conductivity is the conducting power of <b>all the ions</b> produced by <b>1 mole</b> of electrolyte in a given volume of solution.</p>
+<div class="math center">
+        Λ<sub>m</sub> =
+        <span class="frac">
+<span class="num">κ × 1000</span>
+<span class="den">c</span>
+</span>
+          (S cm<sup>2</sup> mol<sup>−1</sup>)   or  
+        Λ<sub>m</sub> =
+        <span class="frac">
+<span class="num">κ</span>
+<span class="den">c</span>
+</span>
+        (S m<sup>2</sup> mol<sup>−1</sup>)
+      </div>
+<p class="small">where <i>c</i> is concentration in mol L<sup>−1</sup> (or mol m<sup>−3</sup>).</p>
+<h4>Variation with Dilution</h4>
+<ul>
+<li>For <b>strong electrolytes</b>: Λ<sub>m</sub> increases gently with dilution and approaches a limiting value Λ°<sub>m</sub> (Kohlrausch's limiting law).</li>
+<li>For <b>weak electrolytes</b>: Λ<sub>m</sub> rises sharply on dilution (degree of dissociation α increases sharply).</li>
+</ul>
+<div class="math center">Λ<sub>m</sub> = Λ°<sub>m</sub> − A √c   (Debye–Hückel–Onsager, strong electrolytes)</div>
+</div>
+<div class="card">
+<h3>2.3 Kohlrausch's Law of Independent Migration of Ions <span class="badge cbse">CBSE PYQ – Expected</span></h3>
+<p>At infinite dilution, the molar conductivity of an electrolyte is the <b>sum of the limiting molar conductivities of its constituent ions</b>, each multiplied by the number of ions produced per formula unit:</p>
+<div class="math center">
+        Λ°<sub>m</sub>(A<sub>x</sub>B<sub>y</sub>) = x · λ°(A<sup>y+</sup>) + y · λ°(B<sup>x−</sup>)
+      </div>
+<p>Where <b>λ°</b> is the limiting molar conductivity of an individual ion.</p>
+<h4>Application 1: Degree of Dissociation (α)</h4>
+<div class="math center">
+        α =
+        <span class="frac">
+<span class="num">Λ<sub>m</sub></span>
+<span class="den">Λ°<sub>m</sub></span>
+</span>
+</div>
+<h4>Application 2: Dissociation Constant K<sub>a</sub> of a Weak Acid</h4>
+<div class="math center">
+        K<sub>a</sub> =
+        <span class="frac">
+<span class="num">c α<sup>2</sup></span>
+<span class="den">1 − α</span>
+</span>
+        =
+        <span class="frac">
+<span class="num">c Λ<sub>m</sub><sup>2</sup></span>
+<span class="den">Λ°<sub>m</sub><sup>2</sup> (Λ°<sub>m</sub> − Λ<sub>m</sub>)</span>
+</span>
+</div>
+<h4>Application 3: Λ°<sub>m</sub> of a Weak Electrolyte from Strong-Electrolyte Data</h4>
+<p>Example — Λ°<sub>m</sub>(CH<sub>3</sub>COOH):</p>
+<div class="math center">
+        Λ°<sub>m</sub>(CH<sub>3</sub>COOH) = Λ°<sub>m</sub>(CH<sub>3</sub>COONa) + Λ°<sub>m</sub>(HCl) − Λ°<sub>m</sub>(NaCl)
+      </div>
+<p class="small">📌 <span class="xref">See Solved Q 3.8</span> for a full numerical.</p>
+</div>
+<div class="card">
+<h3>2.4 Electrolytic Cells &amp; Electrolysis <span class="badge cbse">CBSE PYQ – Expected</span></h3>
+<p>An <b>electrolytic cell</b> uses external electrical energy to drive a non-spontaneous redox reaction. The key components are:</p>
+<ul>
+<li>Two <b>electrodes</b> immersed in an <b>electrolyte</b> (molten or aqueous solution of an ionic compound).</li>
+<li>An external <b>DC source (battery)</b> connected across the electrodes.</li>
+<li>On passing current, ions migrate: cations to the <b>cathode (−)</b>, anions to the <b>anode (+)</b>.</li>
+</ul>
+<h4>Preferential Discharge Theory (selectivity of electrodes)</h4>
+<p>When more than one ion is present, the ion with the <b>higher reduction potential</b> (i.e., easier to be reduced) is discharged at the cathode. Likewise, the species with the <b>higher oxidation potential</b> is discharged at the anode.</p>
+<h4>Active vs. Inert Electrodes</h4>
+<div class="compare">
+<div class="col">
+<h4>Inert Electrode (e.g., Pt, Graphite)</h4>
+<p>Does <b>not</b> participate in the reaction — only provides a surface for electron transfer.</p>
+<p class="small">E.g., electrolysis of aqueous NaCl with Pt electrodes → Cl<sub>2</sub> at anode, H<sub>2</sub> at cathode.</p>
+</div>
+<div class="col">
+<h4>Active Electrode (e.g., Cu, Ag)</h4>
+<p>Participates in the reaction — the electrode itself may dissolve or deposit.</p>
+<p class="small">E.g., electroplating of copper onto an iron spoon using a copper anode.</p>
+</div>
+</div>
+</div>
+<div class="card glow">
+<h3>2.5 Faraday's Laws of Electrolysis</h3>
+<h4>First Law <span class="badge cbse">CBSE PYQ – Expected</span></h4>
+<p>The mass of substance liberated at an electrode is directly proportional to the <b>total charge passed</b> through the electrolyte.</p>
+<div class="math center">m = Z · I · t = (E · I · t) / 96485</div>
+<p>where Z = electrochemical equivalent (g C<sup>−1</sup>) = M / (n × 96485) = E / 96485, with E = equivalent weight = M / n.</p>
+<h4>Second Law</h4>
+<p>When the <b>same quantity of charge</b> is passed through different electrolytes in series, the masses of substances liberated are proportional to their <b>equivalent weights</b>.</p>
+<div class="math center">
+<span class="frac"><span class="num">m<sub>1</sub></span><span class="den">m<sub>2</sub></span></span>
+        =
+        <span class="frac"><span class="num">E<sub>1</sub></span><span class="den">E<sub>2</sub></span></span>
+</div>
+<h4>Combined Form &amp; Constant (F)</h4>
+<div class="math center">
+        1 F = 96485 C mol<sup>−1</sup> = charge of 1 mole of electrons
+      </div>
+<div class="math center">
+        m =
+        <span class="frac">
+<span class="num">M · I · t</span>
+<span class="den">n · 96485</span>
+</span>
+</div>
+<p class="small">📌 <span class="xref">See Solved Q 3.10</span> for typical CBSE numerical on Faraday's laws.</p>
+</div>
+<div class="card">
+<h3>2.6 Products of Electrolysis (Board Favourite Table)</h3>
+<table>
+<tr><th>Electrolyte</th><th>Anode (oxidation)</th><th>Cathode (reduction)</th></tr>
+<tr><td>Molten NaCl (Pt electrodes)</td><td>Cl<sub>2</sub>(g)</td><td>Na(l)</td></tr>
+<tr><td>Aqueous NaCl (Pt, conc. NaCl)</td><td>Cl<sub>2</sub>(g)</td><td>H<sub>2</sub>(g)</td></tr>
+<tr><td>Aqueous NaCl (Pt, dilute)</td><td>O<sub>2</sub>(g)</td><td>H<sub>2</sub>(g)</td></tr>
+<tr><td>Aqueous CuSO<sub>4</sub> (Pt)</td><td>O<sub>2</sub>(g)</td><td>Cu(s)</td></tr>
+<tr><td>Aqueous CuSO<sub>4</sub> (Cu anode)</td><td>Cu dissolves → Cu<sup>2+</sup></td><td>Cu(s) deposits (refining)</td></tr>
+<tr><td>Dilute H<sub>2</sub>SO<sub>4</sub> (Pt)</td><td>O<sub>2</sub>(g)</td><td>H<sub>2</sub>(g)</td></tr>
+</table>
+<p class="small">Reasoning: at cathode, H<sub>2</sub>O is reduced in preference to Na<sup>+</sup> (because E° of H<sub>2</sub>O/H<sub>2</sub> is higher than that of Na<sup>+</sup>/Na in neutral water). At anode in dilute NaCl, water is oxidised to O<sub>2</sub> rather than Cl<sup>−</sup> being oxidised, because of overvoltage effects.</p>
+</div>
+<div class="card">
+<h3>2.7 Applications of Electrolysis</h3>
+<ul>
+<li><b>Electrorefining</b> of copper (impure Cu anode, pure Cu cathode, CuSO<sub>4</sub> electrolyte).</li>
+<li><b>Electroplating</b> (article = cathode, plating metal = anode, salt of plating metal = electrolyte).</li>
+<li><b>Electrometallurgy</b> — extraction of Na, Mg, Al from their molten salts.</li>
+<li><b>Manufacture of chemicals</b> — Cl<sub>2</sub>, NaOH (chlor-alkali process), H<sub>2</sub>, O<sub>2</sub>.</li>
+</ul>
+</div>
+</section>
+<!-- ========================================================
+       PANEL 3 — NCERT SOLUTIONS
+       ======================================================== -->
+<section class="panel" data-tab="ncert" id="panel-ncert">
+<h2 class="section">3. NCERT Solutions <span class="small">(Chapter 3 — Electrochemistry)</span><footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></h2>
+<p class="small">All questions and answers are framed in the exact NCERT pattern. Click any question to expand. <b>For PDF export, all &lt;details&gt; blocks are auto-expanded via the print stylesheet.</b></p>
+<h3 style="margin-top:18px;">Intext Questions (3.1 – 3.8)</h3>
+<details class="q">
+<summary><span class="qid">3.1</span> How would you determine the standard electrode potential of the system Mg<sup>2+</sup>/Mg?</summary>
+<div class="body">
+<p>You set up a cell in which the Mg/Mg<sup>2+</sup> half-cell is coupled with the <b>Standard Hydrogen Electrode (SHE)</b> (which is assigned E° = 0.00 V). The emf of this cell, measured using a high-impedance voltmeter, gives the standard electrode potential of the Mg<sup>2+</sup>/Mg system.</p>
+<p>Cell notation:</p>
+<div class="math">Mg(s) | Mg<sup>2+</sup>(1 M) ‖ H<sup>+</sup>(1 M) | H<sub>2</sub>(g, 1 bar) | Pt(s)<br/>
+        The measured E°<sub>cell</sub> = −2.36 V, so <b>E°(Mg<sup>2+</sup>/Mg) = −2.36 V</b>.</div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">3.2</span> Can you store copper sulphate solutions in a zinc pot? <span class="badge cbse">CBSE PYQ – Expected</span></summary>
+<div class="body">
+<p><b>No.</b> Zinc is more reactive than copper (E°(Zn<sup>2+</sup>/Zn) = −0.76 V; E°(Cu<sup>2+</sup>/Cu) = +0.34 V). Zinc will be oxidised by Cu<sup>2+</sup> ions:</p>
+<div class="math">Zn(s) + Cu<sup>2+</sup>(aq) → Zn<sup>2+</sup>(aq) + Cu(s)<br/>
+        E°<sub>cell</sub> = 0.34 − (−0.76) = <b>+1.10 V</b></div>
+<p>The reaction is spontaneous because E°<sub>cell</sub> = 0.34 − (−0.76) = +1.10 V &gt; 0. Zinc dissolves, copper deposits — the solution gets contaminated with Zn<sup>2+</sup> and loses Cu<sup>2+</sup>. (Hence copper sulphate is stored in copper or glass containers, not zinc.)</p>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">3.3</span> Calculate the potential of a Fe<sup>3+</sup>/Fe<sup>2+</sup> half-cell at 298 K when [Fe<sup>3+</sup>] = 0.01 M and [Fe<sup>2+</sup>] = 1.0 M. E° = +0.77 V. <span class="badge cbse">CBSE PYQ – Expected</span></summary>
+<div class="body">
+<div class="math">Reaction: Fe<sup>3+</sup> + e<sup>−</sup> → Fe<sup>2+</sup>   (n = 1)<br/><br/>
+        Nernst equation:<br/>
+        E = E° − (0.0591/n) log [Fe<sup>2+</sup>]/[Fe<sup>3+</sup>]<br/>
+        E = 0.77 − (0.0591/1) log(1.0 / 0.01)<br/>
+        E = 0.77 − 0.0591 × log(100)<br/>
+        E = 0.77 − 0.0591 × 2 = 0.77 − 0.1182<br/>
+<b>E = +0.652 V</b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">3.4</span> Calculate E°<sub>cell</sub> and ΔG° for the cell: Zn | Zn<sup>2+</sup>(1 M) ‖ Cu<sup>2+</sup>(1 M) | Cu.</summary>
+<div class="body">
+<div class="math">E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub> = 0.34 − (−0.76) = <b>+1.10 V</b><br/>
+        n = 2, F = 96485 C mol<sup>−1</sup><br/>
+        ΔG° = −nFE°<sub>cell</sub> = −2 × 96485 × 1.10<br/>
+<b>ΔG° = −212267 J mol<sup>−1</sup> ≈ −212.3 kJ mol<sup>−1</sup></b></div>
+<p>Negative ΔG° confirms the cell reaction is spontaneous.</p>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">3.5</span> The cell Pt, H<sub>2</sub>(1 bar) | HCl(0.5 M) ‖ H<sup>+</sup>(1 M) | H<sub>2</sub>(1 bar), Pt has E<sub>cell</sub> = 0.111 V at 298 K. Find the pH of the 0.5 M HCl solution. <span class="xref">Cross-ref Tab 1 §1.5</span></summary>
+<div class="body">
+<p>This is a <b>hydrogen concentration cell</b>. Cell reaction: H<sub>2</sub>(1 bar) + 2H<sup>+</sup>(1 M) → 2H<sup>+</sup>(0.5 M) + H<sub>2</sub>(1 bar). E°<sub>cell</sub> = 0.</p>
+<p>For a concentration cell, the Nernst form (anode = 0.5 M HCl, cathode = 1 M HCl, n = 2):</p>
+<div class="math">E<sub>cell</sub> = −<span class="frac"><span class="num">0.0591</span><span class="den">2</span></span> log [<span class="frac"><span class="num">0.5</span><span class="den">1</span></span>]<sup>2</sup></div>
+<p>But here E° ≠ 0 because of activity corrections. We use the SHE convention:</p>
+<div class="math">E = 0 − <span class="frac"><span class="num">0.0591</span><span class="den">1</span></span> log <span class="frac"><span class="num">1</span><span class="den">[H<sup>+</sup>]</span></span> = 0.0591 × pH<br/>
+        0.111 = 0.0591 × pH ⟹ <b>pH ≈ 1.88</b></div>
+<p class="small">📌 Note: NCERT answer pH = 1.88. (i.e., [H<sup>+</sup>] ≈ 0.013 M ≈ theoretical 0.5 M before activity correction).</p>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">3.6</span> For a concentration cell, write the Nernst equation. <span class="xref">Cross-ref Tab 1 §1.7</span></summary>
+<div class="body">
+<p>For a concentration cell with same electrodes, E°<sub>cell</sub> = 0:</p>
+<div class="math">E<sub>cell</sub> = −(0.0591/n) log [Anode] / [Cathode]   (at 298 K)<br/>
+        E<sub>cell</sub> = (0.0591/n) log [Cathode] / [Anode]   (equivalently)</div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">3.7</span> The conductivity of 0.20 M solution of KCl at 298 K is 0.0248 S cm<sup>−1</sup>. Calculate its molar conductivity.</summary>
+<div class="body">
+<div class="math">Λ<sub>m</sub> = (κ × 1000) / c = (0.0248 × 1000) / 0.20 = 24.8 / 0.20<br/>
+<b>Λ<sub>m</sub> = 124.0 S cm<sup>2</sup> mol<sup>−1</sup></b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">3.8</span> The resistance of a conductivity cell containing 0.001 M KCl solution at 298 K is 1500 Ω. Cell constant = 0.50 cm<sup>−1</sup>. Calculate (a) conductivity, (b) molar conductivity of the solution. <span class="badge cbse">CBSE PYQ – Expected</span> <span class="xref">Cross-ref Tab 2 §2.1, 2.2</span></summary>
+<div class="body">
+<div class="math">(a) κ = <span class="frac"><span class="num">cell constant</span><span class="den">R</span></span> = <span class="frac"><span class="num">0.50</span><span class="den">1500</span></span> = <b>3.33 × 10<sup>−4</sup> S cm<sup>−1</sup></b><br/><br/>
+        (b) Λ<sub>m</sub> = <span class="frac"><span class="num">κ × 1000</span><span class="den">c</span></span> = <span class="frac"><span class="num">3.33 × 10<sup>−4</sup> × 1000</span><span class="den">0.001</span></span> = <span class="frac"><span class="num">0.333</span><span class="den">0.001</span></span><br/>
+<b>Λ<sub>m</sub> = 333 S cm<sup>2</sup> mol<sup>−1</sup></b></div>
+</div>
+</details>
+<h3 style="margin-top:24px;">NCERT Exercise (Selected)</h3>
+<details class="q">
+<summary><span class="qid">Ex 3.1</span> Arrange the following metals in increasing order of reducing power: Ag, Mg, Cu, Fe. Justify.</summary>
+<div class="body">
+<div class="math">Reducing power ∝ tendency to lose electrons, which ∝ −(reduction potential). Standard reduction potentials:<br/><br/>
+        Ag<sup>+</sup>/Ag = +0.80 V<br/>
+        Cu<sup>2+</sup>/Cu = +0.34 V<br/>
+        Fe<sup>2+</sup>/Fe = −0.44 V<br/>
+        Mg<sup>2+</sup>/Mg = −2.36 V<br/><br/>
+        Lower (more negative) reduction potential → stronger reducing agent. So increasing reducing power:<br/>
+<b>Ag &lt; Cu &lt; Fe &lt; Mg</b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.2</span> Given the standard electrode potentials: K<sup>+</sup>/K = −2.93 V, Ag<sup>+</sup>/Ag = +0.80 V, Hg<sup>2+</sup>/Hg = +0.79 V, Mg<sup>2+</sup>/Mg = −2.37 V, Cr<sup>3+</sup>/Cr = −0.74 V. Arrange them in increasing order of reducing power.</summary>
+<div class="body">
+<p>Lower reduction potential = stronger reducing agent. Sorted in <b>increasing</b> order of reducing power (i.e., decreasing reduction potential):</p>
+<div class="math">Ag &lt; Hg &lt; Cr &lt; Mg &lt; K</div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.3</span> Depict the galvanic cell in which the reaction: Zn(s) + 2Ag<sup>+</sup>(aq) → Zn<sup>2+</sup>(aq) + 2Ag(s) takes place. Further show: (i) which electrode is negatively charged, (ii) the carriers of current in the cell, (iii) the individual reactions at each electrode.</summary>
+<div class="body">
+<p><b>Cell representation:</b></p>
+<div class="math">Zn(s) | Zn<sup>2+</sup>(aq) ‖ Ag<sup>+</sup>(aq) | Ag(s)</div>
+<p>(i) Zn is the <b>negative electrode (anode)</b> because it loses electrons.</p>
+<p>(ii) Carriers: <b>electrons</b> in the external wire (Zn → Ag); <b>ions</b> in the solution (Zn<sup>2+</sup> into solution, Ag<sup>+</sup> from solution), and <b>ions in the salt bridge</b>.</p>
+<p>(iii) Reactions at each electrode:</p>
+<div class="math">Anode (oxidation): Zn(s) → Zn<sup>2+</sup>(aq) + 2e<sup>−</sup><br/>
+        Cathode (reduction): Ag<sup>+</sup>(aq) + e<sup>−</sup> → Ag(s) (× 2)</div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.5</span> The standard electrode potential for Daniell cell is 1.1 V. Calculate the standard Gibbs energy for the reaction: Zn(s) + Cu<sup>2+</sup>(aq) → Zn<sup>2+</sup>(aq) + Cu(s).</summary>
+<div class="body">
+<div class="math">ΔG° = −nFE°<sub>cell</sub> = −2 × 96485 × 1.1<br/>
+<b>ΔG° = −212267 J mol<sup>−1</sup> ≈ −212.3 kJ mol<sup>−1</sup></b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.7</span> Why does the cell potential of a mercury cell remain constant during its entire life?</summary>
+<div class="body">
+<div class="math">Because the overall cell reaction does not involve any ion in solution whose concentration can change:<br/><br/>
+        Zn(Hg) + HgO(s) → ZnO(s) + Hg(l)<br/><br/>
+        The products and reactants are all pure solids/liquids (activity = 1), so the Nernst equation gives a constant EMF of <b>1.35 V</b> throughout the lifetime of the cell.</div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.8</span> Define molar conductivity. How is it related to conductivity?</summary>
+<div class="body">
+<div class="math">Molar conductivity (Λ<sub>m</sub>) is the conducting power of all the ions produced by <b>1 mole</b> of an electrolyte in solution. It is related to conductivity (κ) by:<br/><br/>
+        Λ<sub>m</sub> = (κ × 1000) / M   (S cm<sup>2</sup> mol<sup>−1</sup>)<br/><br/>
+        where M is molarity (mol L<sup>−1</sup>). Units: S cm<sup>2</sup> mol<sup>−1</sup>.</div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.9</span> The molar conductivity of KCl solutions at 298 K are: at 0.0001 M → 148.6; at 0.001 M → 146.9; at 0.01 M → 141.3; at 0.1 M → 128.9. Show that a plot of Λ<sub>m</sub> vs √c is linear, and find Λ°<sub>m</sub>. <span class="xref">Cross-ref Tab 2 §2.3</span></summary>
+<div class="body">
+<p>Compute √c and Λ<sub>m</sub>:</p>
+<table>
+<tr><th>c (M)</th><th>√c</th><th>Λ<sub>m</sub> (S cm<sup>2</sup> mol<sup>−1</sup>)</th></tr>
+<tr><td>0.0001</td><td>0.01</td><td>148.6</td></tr>
+<tr><td>0.001</td><td>0.0316</td><td>146.9</td></tr>
+<tr><td>0.01</td><td>0.1</td><td>141.3</td></tr>
+<tr><td>0.1</td><td>0.3162</td><td>128.9</td></tr>
+</table>
+<p>A straight line is obtained. Extrapolation back to √c = 0 gives:</p>
+<div class="math">Λ<sub>m</sub> = Λ°<sub>m</sub> − A√c<br/>
+        Λ°<sub>m</sub> ≈ <b>149.9 S cm<sup>2</sup> mol<sup>−1</sup></b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.10</span> How much charge is required for the following reductions: (i) 1 mol of Al<sup>3+</sup> to Al, (ii) 1 mol of Cu<sup>2+</sup> to Cu, (iii) 1 mol of MnO<sub>4</sub><sup>−</sup> to Mn<sup>2+</sup>?</summary>
+<div class="body">
+<p>Using Q = nF, with F = 96485 C mol<sup>−1</sup>:</p>
+<div class="math">(i) Al<sup>3+</sup> + 3e<sup>−</sup> → Al  : n = 3, Q = 3 × 96485 = <b>2.89 × 10<sup>5</sup> C</b><br/>
+        (ii) Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu  : n = 2, Q = 2 × 96485 = <b>1.93 × 10<sup>5</sup> C</b><br/>
+        (iii) MnO<sub>4</sub><sup>−</sup> + 8H<sup>+</sup> + 5e<sup>−</sup> → Mn<sup>2+</sup> + 4H<sub>2</sub>O  : n = 5, Q = 5 × 96485 = <b>4.82 × 10<sup>5</sup> C</b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.11</span> How much electricity in terms of Faraday is required to produce: (i) 20.0 g of Ca from molten CaCl<sub>2</sub>, (ii) 40.0 g of Al from molten Al<sub>2</sub>O<sub>3</sub>?</summary>
+<div class="body">
+<div class="math">Using m = <span class="frac"><span class="num">M·I·t</span><span class="den">n·F</span></span> and Q = nF, the charge required: Q = <span class="frac"><span class="num">m × n × F</span><span class="den">M</span></span><br/><br/>
+        (i) Ca: M = 40 g mol<sup>−1</sup>, n = 2, m = 20 g<br/>
+        Q = <span class="frac"><span class="num">20 × 2 × 96485</span><span class="den">40</span></span> = 96485 C = <b>1 F</b><br/><br/>
+        (ii) Al: M = 27 g mol<sup>−1</sup>, n = 3, m = 40 g<br/>
+        Q = <span class="frac"><span class="num">40 × 3 × 96485</span><span class="den">27</span></span> ≈ 428822 C = <b>≈ 4.44 F</b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.12</span> How much electricity is required to produce 2.0 g of H<sub>2</sub> from water? (Hint: 2H<sub>2</sub>O + 2e<sup>−</sup> → H<sub>2</sub> + 2OH<sup>−</sup>)</summary>
+<div class="body">
+<p>From the reaction, 1 mol H<sub>2</sub> requires 2 mol e<sup>−</sup> (n = 2).</p>
+<div class="math">Moles of H<sub>2</sub> = <span class="frac"><span class="num">2.0</span><span class="den">2</span></span> = 1.0 mol<br/><br/>
+        Q = n × F = 2 × 96485 = <b>1.93 × 10<sup>5</sup> C ≈ 2 F</b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.14</span> A solution of CuSO<sub>4</sub> is electrolysed for 10 min with a current of 1.5 A. Calculate the mass of Cu deposited at the cathode.</summary>
+<div class="body">
+<div class="math">Charge Q = I × t = 1.5 A × (10 × 60) s = 900 C<br/>
+        Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu, n = 2, M(Cu) = 63.5 g mol<sup>−1</sup><br/>
+        m = <span class="frac"><span class="num">M × I × t</span><span class="den">n × F</span></span> = <span class="frac"><span class="num">63.5 × 900</span><span class="den">2 × 96485</span></span><br/>
+        m = <span class="frac"><span class="num">57150</span><span class="den">192970</span></span> ≈ <b>0.296 g</b></div>
+</div>
+</details>
+<details class="q">
+<summary><span class="qid">Ex 3.15</span> Suggest a way to determine the value of Λ°<sub>m</sub> for CH<sub>3</sub>COOH (a weak electrolyte). <span class="badge cbse">CBSE PYQ – Expected</span> <span class="xref">Cross-ref Tab 2 §2.3</span></summary>
+<div class="body">
+<p>Measure Λ<sub>m</sub> for a series of strong electrolytes: HCl, NaOH, CH<sub>3</sub>COONa, NaCl. Use Kohlrausch's law of independent migration of ions:</p>
+<div class="math">Λ°<sub>m</sub>(CH<sub>3</sub>COOH) = λ°(H<sup>+</sup>) + λ°(CH<sub>3</sub>COO<sup>−</sup>)<br/>
+        = Λ°<sub>m</sub>(HCl) + Λ°<sub>m</sub>(CH<sub>3</sub>COONa) − Λ°<sub>m</sub>(NaCl)</div>
+<p>Or, equivalently:</p>
+<div class="math">Λ°<sub>m</sub>(CH<sub>3</sub>COOH) = Λ°<sub>m</sub>(CH<sub>3</sub>COONa) + Λ°<sub>m</sub>(HCl) − Λ°<sub>m</sub>(NaCl)</div>
+</div>
+</details>
+</section>
+<!-- ========================================================
+       PANEL 4 — VIRTUAL LAB
+       ======================================================== -->
+<section class="panel" data-tab="lab" id="panel-lab">
+<h2 class="section">4. Interactive Virtual Lab <span class="small">(live animations &amp; concept simulators)</span><footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></h2>
+<div class="labwrap">
+<div class="stage">
+<canvas aria-label="Interactive simulation canvas" height="520" id="labCanvas" width="1100"></canvas>
+<div class="legend" id="labLegend"></div>
+</div>
+<aside class="controls" id="labControls">
+<h3>Choose Simulation</h3>
+<div class="pillbox" id="simPicker">
+<button class="pillbtn active" data-sim="daniell">1. Daniell Cell</button>
+<button class="pillbtn" data-sim="bridge">2. Wheatstone Bridge</button>
+<button class="pillbtn" data-sim="electro">3. Electrolytic Cell</button>
+</div>
+<div class="sim-ctrl" id="ctrl-daniell">
+<h3 style="margin-top:18px;">Daniell Cell Controls</h3>
+<div class="ctrl-row">
+<label>External switch</label>
+<div aria-checked="false" class="switch" id="daniellSwitch" role="switch" tabindex="0"></div>
+</div>
+<div class="ctrl-row">
+<label>Salt bridge flow</label>
+<input id="saltFlow" max="100" min="0" type="range" value="60"/>
+<span class="val" id="saltFlowVal">60%</span>
+</div>
+<div class="ctrl-row">
+<label>Electron speed</label>
+<input id="elecSpeed" max="100" min="0" type="range" value="55"/>
+<span class="val" id="elecSpeedVal">55%</span>
+</div>
+<p class="tiny">Toggle the switch to start/stop the current. Anions (purple) flow into the Zn half-cell, cations (cyan) into the Cu half-cell.</p>
+</div>
+<div class="sim-ctrl" id="ctrl-bridge" style="display:none;">
+<h3 style="margin-top:18px;">Wheatstone Bridge</h3>
+<p class="small">Slide to balance the bridge. When galvanometer current <b>I<sub>g</sub> = 0</b>, the bridge is balanced and R<sub>x</sub>/R = P/Q.</p>
+<div class="ctrl-row">
+<label>P (resistor)</label>
+<input id="pSlider" max="990" min="10" type="range" value="500"/>
+<span class="val" id="pSliderVal">500 Ω</span>
+</div>
+<div class="ctrl-row">
+<label>Q (resistor)</label>
+<input id="qSlider" max="990" min="10" type="range" value="500"/>
+<span class="val" id="qSliderVal">500 Ω</span>
+</div>
+<div class="ctrl-row">
+<label>R (variable)</label>
+<input id="rSlider" max="990" min="10" type="range" value="250"/>
+<span class="val" id="rSliderVal">250 Ω</span>
+</div>
+<div class="ctrl-row">
+<label>R<sub>x</sub> (unknown)</label>
+<span class="val" id="rxVal">— Ω</span>
+</div>
+<div class="balance-bar" id="balanceBar">
+<div class="center"></div>
+<div class="needle" id="balanceNeedle"></div>
+</div>
+<p class="small" id="balanceText">Status: unbalanced</p>
+<p class="tiny">At balance: P·R = Q·R<sub>x</sub></p>
+</div>
+<div class="sim-ctrl" id="ctrl-electro" style="display:none;">
+<h3 style="margin-top:18px;">Electrolytic Cell Sandbox</h3>
+<div class="ctrl-row">
+<label>Electrolyte</label>
+<select class="select" id="electrolyte">
+<option value="moltenNaCl">Molten NaCl</option>
+<option value="aqNaCl">Aqueous NaCl</option>
+<option value="aqCuSO4">Aqueous CuSO<sub>4</sub></option>
+<option value="diluteH2SO4">Dilute H<sub>2</sub>SO<sub>4</sub></option>
+</select>
+</div>
+<div class="ctrl-row">
+<label>Anode material</label>
+<select class="select" id="anodeMat">
+<option value="Pt">Platinum (inert)</option>
+<option value="Cu">Copper (active)</option>
+</select>
+</div>
+<div class="ctrl-row">
+<label>Cathode material</label>
+<select class="select" id="cathodeMat">
+<option value="Pt">Platinum (inert)</option>
+<option value="Cu">Copper (active)</option>
+</select>
+</div>
+<div class="ctrl-row">
+<label>Voltage (V)</label>
+<input id="voltage" max="12" min="1" type="range" value="6"/>
+<span class="val" id="voltageVal">6 V</span>
+</div>
+<button class="btn" id="resetElectro">Reset Simulation</button>
+<p class="tiny" style="margin-top:8px;">Watch bubbles (gas) and deposition (metal) appear in real time. Discharge order follows E° values + overvoltage.</p>
+</div>
+</aside>
+</div>
+</section>
+</main>
+<footer>Made for Class 12 CBSE · 2025–26 syllabus · Print-friendly · Cross-references link theory to solved NCERT questions.</footer>
+<!-- ============================================================
+     JAVASCRIPT — Tab navigation + Virtual Lab simulations
+     ============================================================ -->
+<script>
+/* ------------------------------------------------------------
+   TAB NAVIGATION
+   ------------------------------------------------------------ */
+(function(){
+  const btns = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+  btns.forEach(b => {
+    b.addEventListener('click', () => {
+      btns.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const id = b.dataset.tab;
+      panels.forEach(p => p.classList.toggle('active', p.dataset.tab === id));
+      // Resize canvas when lab tab opens so dimensions are correct
+      if(id === 'lab'){
+        requestAnimationFrame(() => startLab());
+      }
+    });
+  });
+})();
+
+/* ------------------------------------------------------------
+   VIRTUAL LAB CONTROLLER
+   ------------------------------------------------------------ */
+const canvas = document.getElementById('labCanvas');
+const ctx = canvas.getContext('2d');
+let W, H, DPR = window.devicePixelRatio || 1;
+function resizeCanvas(){
+  const r = canvas.getBoundingClientRect();
+  W = r.width; H = r.height;
+  canvas.width = W * DPR; canvas.height = H * DPR;
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+}
+window.addEventListener('resize', () => { resizeCanvas(); if(sim) sim.draw(); });
+
+let sim = null;
+let currentSim = 'daniell';
+let rafId = null;
+
+function setSim(name){
+  currentSim = name;
+  document.querySelectorAll('.sim-ctrl').forEach(c => c.style.display = 'none');
+  document.getElementById('ctrl-' + (name==='daniell'?'daniell':name==='bridge'?'bridge':'electro')).style.display = 'block';
+  document.querySelectorAll('#simPicker .pillbtn').forEach(b => b.classList.toggle('active', b.dataset.sim === name));
+  document.getElementById('labLegend').innerHTML = legendFor(name);
+  if(sim) sim.stop();
+  sim = makeSim(name);
+  resizeCanvas();
+  sim.start();
+}
+document.querySelectorAll('#simPicker .pillbtn').forEach(b => {
+  b.addEventListener('click', () => setSim(b.dataset.sim));
+});
+function legendFor(name){
+  if(name==='daniell') return `
+    <i style="background:#f59e0b"></i>Zn anode (oxidation)
+    <i style="background:#38bdf8;margin-left:10px"></i>Cu cathode (reduction)
+    <i style="background:#60a5fa;margin-left:10px"></i>Electrons
+    <i style="background:#c084fc;margin-left:10px"></i>Salt-bridge ions
+    <i style="background:#34d399;margin-left:10px"></i>Conventional current`;
+  if(name==='bridge') return `
+    <i style="background:#f59e0b"></i>Cell EMF
+    <i style="background:#60a5fa;margin-left:10px"></i>Current arm
+    <i style="background:#34d399;margin-left:10px"></i>Galvanometer (I<sub>g</sub>)
+    <i style="background:#c084fc;margin-left:10px"></i>Jockey tap`;
+  return `
+    <i style="background:#f59e0b"></i>Anode (+)
+    <i style="background:#38bdf8;margin-left:10px"></i>Cathode (−)
+    <i style="background:#a7f3d0;margin-left:10px"></i>Gas bubbles
+    <i style="background:#fbbf24;margin-left:10px"></i>Metal deposition
+    <i style="background:#c084fc;margin-left:10px"></i>Ion migration`;
+}
+function startLab(){
+  if(!sim){
+    setSim('daniell');
+  }
+}
+
+/* =============================================================
+   SIM 1 — DANIELL CELL
+   ============================================================= */
+function makeSim(name){
+  if(name==='daniell') return daniellSim();
+  if(name==='bridge') return bridgeSim();
+  if(name==='electro') return electroSim();
+  return null;
+}
+
+/* ---------- DANIELL CELL ---------- */
+function daniellSim(){
+  // State
+  const state = {
+    running: false,
+    saltFlow: 0.6,
+    elecSpeed: 0.55,
+    electrons: [],     // {t, pathT}
+    ions: [],          // {x,y,vx,vy,type}
+    saltIons: [],      // {x,y,vy,kind:'anion'|'cation'}
+    sparks: 0,
+    bubbleTimer: 0,
+    beakerGlow: 0,
+  };
+
+  // Build the geometry
+  const leftBeaker = {x: 0, y: 0, w: 220, h: 280};
+  const rightBeaker = {x: 0, y: 0, w: 220, h: 280};
+  const saltBridge = {x:0, y:0, w: 70, h: 110};
+  function layout(){
+    const margin = 30;
+    const gap = 140;
+    const totalW = leftBeaker.w + gap + rightBeaker.w;
+    leftBeaker.x = (W - totalW)/2;
+    leftBeaker.y = H - leftBeaker.h - 50;
+    rightBeaker.x = leftBeaker.x + leftBeaker.w + gap;
+    rightBeaker.y = leftBeaker.y;
+    saltBridge.x = leftBeaker.x + leftBeaker.w + (gap - saltBridge.w)/2;
+    saltBridge.y = leftBeaker.y + 60;
+  }
+
+  // Initial electron paths along the external wire (arc from Zn to Cu)
+  const wirePath = []; let wireStart, wireEnd;
+  function buildWire(){
+    const zx = leftBeaker.x + 30; // Zn rod top
+    const zy = leftBeaker.y - 20;
+    const cx = rightBeaker.x + rightBeaker.w - 30;
+    const cy = rightBeaker.y - 20;
+    wireStart = {x: zx, y: zy};
+    wireEnd = {x: cx, y: cy};
+    // Sample a parabolic arc
+    const samples = 80;
+    wirePath.length = 0;
+    for(let i=0;i<=samples;i++){
+      const t = i/samples;
+      const x = zx + (cx-zx)*t;
+      const arcH = 130;
+      const y = Math.min(zy,cy) - 20 - arcH * Math.sin(Math.PI*t);
+      wirePath.push({x,y,t});
+    }
+  }
+
+  // Spawn electron
+  function spawnElectron(){
+    if(!state.running) return;
+    state.electrons.push({pathT: 0, size: 5});
+  }
+  // Spawn salt-bridge ions
+  function spawnSaltIon(){
+    if(Math.random() > state.saltFlow) return;
+    if(!state.running) return;
+    const kind = Math.random() < 0.5 ? 'cation' : 'anion'; // cation -> cathode side
+    const y = saltBridge.y + Math.random()*saltBridge.h;
+    const vx = (kind==='cation' ? 1 : -1) * (0.4 + Math.random()*0.6) * state.saltFlow;
+    const vy = (Math.random()-0.5) * 0.2;
+    state.saltIons.push({x: saltBridge.x + saltBridge.w/2, y, vx, vy, kind});
+  }
+
+  function step(dt){
+    if(!state.running) return;
+    // Electrons along the wire
+    const speed = (0.3 + state.elecSpeed*1.5) * dt;
+    for(const e of state.electrons){
+      e.pathT += speed;
+    }
+    state.electrons = state.electrons.filter(e => e.pathT < 1.0);
+    if(Math.random() < 0.04 + state.elecSpeed*0.06) spawnElectron();
+    // Bubbles
+    state.bubbleTimer += dt;
+    if(state.bubbleTimer > 0.3){
+      state.bubbleTimer = 0;
+      // Zn dissolves a bit; Cu grows a bit
+    }
+    // Salt bridge ions
+    if(Math.random() < 0.5) spawnSaltIon();
+    for(const ion of state.saltIons){
+      ion.x += ion.vx * dt * 0.6;
+      ion.y += ion.vy * dt * 0.6;
+    }
+    // Remove ions that leave the bridge region (they enter the beakers)
+    state.saltIons = state.saltIons.filter(ion => {
+      const inLeft = ion.x < leftBeaker.x + leftBeaker.w;
+      const inRight = ion.x > rightBeaker.x;
+      const inMid = ion.x >= leftBeaker.x + leftBeaker.w && ion.x <= rightBeaker.x;
+      // keep within stage horizontally and within the bridge vertical extent
+      if(ion.y < leftBeaker.y+30 || ion.y > leftBeaker.y+leftBeaker.h-10) return false;
+      return ion.x > 10 && ion.x < W-10;
+    });
+    // Glow pulse
+    state.beakerGlow = 0.5 + 0.5*Math.sin(performance.now()*0.004);
+  }
+
+  function drawBeaker(b, side){
+    // beaker glass
+    ctx.save();
+    const r = 12;
+    roundRect(ctx, b.x, b.y, b.w, b.h, r);
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'rgba(180,200,255,0.45)';
+    ctx.fillStyle = 'rgba(120,160,255,0.06)';
+    ctx.fill();
+    ctx.stroke();
+    // solution
+    const sol = roundRectPath(b.x+6, b.y+60, b.w-12, b.h-66, 8);
+    if(side==='left'){
+      ctx.fillStyle = 'rgba(180,200,255,0.20)';
+    }else{
+      ctx.fillStyle = 'rgba(56,189,248,0.20)';
+    }
+    ctx.fill();
+    // bubbles in solution
+    ctx.fillStyle = 'rgba(255,255,255,0.7)';
+    for(let i=0;i<10;i++){
+      const bx = b.x+30 + (i*37 + (performance.now()/30))%(b.w-50);
+      const by = b.y+200 + Math.sin((performance.now()/600)+i)*10;
+      ctx.beginPath(); ctx.arc(bx, by, 1.6 + (i%3), 0, Math.PI*2); ctx.fill();
+    }
+    // anode / cathode rod
+    const rodX = b.x + b.w/2;
+    const rodTopY = b.y - 30;
+    const rodBottomY = b.y + b.h - 10;
+    const isAnode = side==='left';
+    const rodColor = isAnode ? '#f59e0b' : '#38bdf8';
+    const rodGlow = isAnode ? 'rgba(245,158,11,0.5)' : 'rgba(56,189,248,0.5)';
+    ctx.fillStyle = rodColor;
+    ctx.shadowColor = rodGlow; ctx.shadowBlur = 14;
+    ctx.fillRect(rodX-7, rodTopY, 14, rodBottomY - rodTopY);
+    ctx.shadowBlur = 0;
+    // label
+    ctx.fillStyle = '#fff';
+    ctx.font = '600 14px Inter, system-ui';
+    ctx.textAlign = 'center';
+    ctx.fillText(isAnode ? 'Zn (anode −)' : 'Cu (cathode +)', rodX, rodTopY - 10);
+    // half-cell solution label
+    ctx.fillStyle = isAnode ? '#fbbf24' : '#7dd3fc';
+    ctx.font = '600 12px Inter, system-ui';
+    ctx.fillText(isAnode ? 'ZnSO₄ (aq)' : 'CuSO₄ (aq)', rodX, b.y + 80);
+    ctx.restore();
+  }
+
+  function drawWire(){
+    if(wirePath.length<2) return;
+    ctx.save();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = state.running ? '#60a5fa' : 'rgba(150,160,200,0.4)';
+    ctx.shadowColor = state.running ? 'rgba(96,165,250,0.7)' : 'transparent';
+    ctx.shadowBlur = state.running ? 10 : 0;
+    ctx.beginPath();
+    ctx.moveTo(wirePath[0].x, wirePath[0].y);
+    for(let i=1;i<wirePath.length;i++) ctx.lineTo(wirePath[i].x, wirePath[i].y);
+    ctx.stroke();
+    // voltmeter circle in the middle
+    const mid = wirePath[Math.floor(wirePath.length/2)];
+    ctx.shadowBlur = 0;
+    ctx.beginPath();
+    ctx.arc(mid.x, mid.y, 28, 0, Math.PI*2);
+    ctx.fillStyle = state.running ? '#0e1538' : '#1a2247';
+    ctx.fill();
+    ctx.lineWidth = 2; ctx.strokeStyle = '#a78bfa'; ctx.stroke();
+    ctx.fillStyle = state.running ? '#34d399' : '#f87171';
+    ctx.font = '700 13px JetBrains Mono, monospace';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(state.running ? '1.10 V' : 'OFF', mid.x, mid.y);
+    ctx.restore();
+  }
+
+  function drawElectrons(){
+    if(!state.running) return;
+    for(const e of state.electrons){
+      const idx = Math.min(wirePath.length-1, Math.floor(e.pathT * (wirePath.length-1)));
+      const p = wirePath[idx];
+      // glow
+      const grad = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,12);
+      grad.addColorStop(0,'rgba(96,165,250,1)');
+      grad.addColorStop(1,'rgba(96,165,250,0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(p.x,p.y,12,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle = '#bfdbfe';
+      ctx.beginPath(); ctx.arc(p.x,p.y,3.5,0,Math.PI*2); ctx.fill();
+      // tiny e− label
+      ctx.fillStyle = '#0b1020';
+      ctx.font='800 8px Inter';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('e', p.x, p.y);
+    }
+  }
+
+  function drawSaltBridge(){
+    ctx.save();
+    // Tube
+    roundRect(ctx, saltBridge.x, saltBridge.y, saltBridge.w, saltBridge.h, 18);
+    ctx.fillStyle = 'rgba(192,132,252,0.18)';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'rgba(192,132,252,0.7)';
+    ctx.stroke();
+    // gel label
+    ctx.fillStyle = '#d8b4fe';
+    ctx.font='600 11px Inter';
+    ctx.textAlign='center';
+    ctx.fillText('Salt Bridge', saltBridge.x + saltBridge.w/2, saltBridge.y - 8);
+    ctx.fillStyle = '#c084fc';
+    ctx.font='500 10px Inter';
+    ctx.fillText('KCl / KNO₃ gel', saltBridge.x + saltBridge.w/2, saltBridge.y + saltBridge.h + 14);
+    // ions
+    for(const ion of state.saltIons){
+      const col = ion.kind==='cation' ? '#7dd3fc' : '#fbbf24';
+      ctx.fillStyle = col;
+      ctx.beginPath();
+      ctx.arc(ion.x, ion.y, 4, 0, Math.PI*2);
+      ctx.fill();
+      ctx.fillStyle='#0b1020';
+      ctx.font='800 7px Inter';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(ion.kind==='cation' ? '+' : '−', ion.x, ion.y+0.5);
+    }
+    ctx.restore();
+  }
+
+  function drawSwitch(){
+    // switch UI rendered onto the canvas at one corner
+    const sx = W - 160, sy = 30, sw = 120, sh = 50;
+    ctx.save();
+    roundRect(ctx, sx, sy, sw, sh, 12);
+    ctx.fillStyle = 'rgba(255,255,255,0.05)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    // dot
+    ctx.fillStyle = state.running ? '#34d399' : '#f87171';
+    ctx.beginPath(); ctx.arc(sx+18, sy+sh/2, 8, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#e8ecff';
+    ctx.font='700 12px Inter';
+    ctx.textAlign='left'; ctx.textBaseline='middle';
+    ctx.fillText(state.running ? 'Circuit CLOSED' : 'Circuit OPEN', sx+34, sy+sh/2);
+    ctx.restore();
+  }
+
+  function drawTitle(){
+    ctx.save();
+    ctx.fillStyle = '#e8ecff';
+    ctx.font='800 18px Inter';
+    ctx.textAlign='left';
+    ctx.fillText('Daniell Cell — Galvanic (Zn | Zn²⁺ ∥ Cu²⁺ | Cu)', 20, 28);
+    ctx.fillStyle = '#b6bedc';
+    ctx.font='500 12px Inter';
+    ctx.fillText('Spontaneous redox:  Zn + Cu²⁺ → Zn²⁺ + Cu     E°cell = +1.10 V', 20, 48);
+    ctx.restore();
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // background grid
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+    ctx.lineWidth = 1;
+    for(let x=0;x<W;x+=30){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for(let y=0;y<H;y+=30){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    ctx.restore();
+    drawTitle();
+    drawBeaker(leftBeaker, 'left');
+    drawBeaker(rightBeaker, 'right');
+    drawSaltBridge();
+    drawWire();
+    drawElectrons();
+    drawSwitch();
+  }
+
+  let last = performance.now();
+  function loop(now){
+    const dt = Math.min(0.05, (now - last)/1000);
+    last = now;
+    step(dt);
+    draw();
+    rafId = requestAnimationFrame(loop);
+  }
+
+  function start(){
+    layout(); buildWire();
+    cancelAnimationFrame(rafId);
+    last = performance.now();
+    loop(last);
+  }
+  function stop(){ cancelAnimationFrame(rafId); }
+
+  // Bind controls
+  const sw = document.getElementById('daniellSwitch');
+  function setSwitch(on){
+    state.running = !!on;
+    sw.classList.toggle('on', state.running);
+    sw.setAttribute('aria-checked', state.running);
+  }
+  sw.addEventListener('click', () => setSwitch(!state.running));
+  sw.addEventListener('keydown', e => {
+    if(e.key===' '||e.key==='Enter'){ e.preventDefault(); setSwitch(!state.running);}
+  });
+  document.getElementById('saltFlow').addEventListener('input', e => {
+    state.saltFlow = +e.target.value/100;
+    document.getElementById('saltFlowVal').textContent = e.target.value + '%';
+  });
+  document.getElementById('elecSpeed').addEventListener('input', e => {
+    state.elecSpeed = +e.target.value/100;
+    document.getElementById('elecSpeedVal').textContent = e.target.value + '%';
+  });
+  // Default to running for visual impact
+  setSwitch(true);
+
+  return { start, stop, draw, state };
+}
+
+/* =============================================================
+   SIM 2 — WHEATSTONE BRIDGE
+   ============================================================= */
+function bridgeSim(){
+  const state = { P:500, Q:500, R:250, I_g:0, target:0, glow:0 };
+
+  function calc(){
+    // R_x = P*R / Q  (at balance I_g=0)
+    const Rx = (state.P * state.R) / state.Q;
+    // I_g proxy: deviation from P*R = Q*Rx, normalised
+    const lhs = state.P * state.R;
+    const rhs = state.Q * Rx;
+    const diff = (lhs - rhs);
+    state.I_g = diff / 50000;  // normalised -1..1 ish
+    state.target = 0;
+    state.Rx = Rx;
+  }
+  calc();
+
+  function drawResistor(x,y,val,label,rot=0){
+    ctx.save();
+    ctx.translate(x,y); ctx.rotate(rot);
+    // body
+    ctx.fillStyle = 'rgba(255,255,255,0.08)';
+    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+    ctx.lineWidth = 1.5;
+    roundRect(ctx, -34, -14, 68, 28, 6);
+    ctx.fill(); ctx.stroke();
+    // zigzag
+    ctx.beginPath();
+    ctx.strokeStyle = '#fbbf24';
+    ctx.lineWidth = 1.5;
+    for(let i=-30;i<30;i+=10){
+      const yy = (i%20===0) ? -7 : 7;
+      ctx.lineTo(i, yy);
+    }
+    ctx.stroke();
+    // label
+    ctx.fillStyle = '#e8ecff';
+    ctx.font='700 11px Inter';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(label, 0, 0);
+    ctx.fillStyle='#a78bfa';
+    ctx.font='600 10px Inter';
+    ctx.fillText(val + ' Ω', 0, 16);
+    ctx.restore();
+  }
+
+  function drawTitle(){
+    ctx.save();
+    ctx.fillStyle = '#e8ecff';
+    ctx.font='800 18px Inter';
+    ctx.textAlign='left';
+    ctx.fillText('Wheatstone Bridge — Measuring an unknown resistance Rₓ', 20, 28);
+    ctx.fillStyle = '#b6bedc';
+    ctx.font='500 12px Inter';
+    ctx.fillText('Balance condition: P·R = Q·Rₓ   ⟹   I_g = 0', 20, 48);
+    ctx.restore();
+  }
+
+  function drawBattery(x,y){
+    ctx.save();
+    ctx.translate(x,y);
+    // battery: long and short line
+    ctx.strokeStyle='#e8ecff'; ctx.lineWidth=3;
+    ctx.beginPath(); ctx.moveTo(-12,-16); ctx.lineTo(-12,16); ctx.stroke();
+    ctx.strokeStyle='#fbbf24'; ctx.lineWidth=5;
+    ctx.beginPath(); ctx.moveTo(4,-10); ctx.lineTo(4,10); ctx.stroke();
+    ctx.fillStyle='#fbbf24'; ctx.font='800 11px Inter';
+    ctx.textAlign='center';
+    ctx.fillText('+', 14, 0);
+    ctx.fillStyle='#7dd3fc'; ctx.fillText('−', -22, 0);
+    ctx.restore();
+  }
+
+  function drawGalvo(x,y,Ig){
+    ctx.save();
+    ctx.translate(x,y);
+    // dial
+    ctx.fillStyle = 'rgba(0,0,0,0.35)';
+    ctx.beginPath(); ctx.arc(0,0,34,0,Math.PI*2); ctx.fill();
+    ctx.strokeStyle = '#a78bfa'; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.arc(0,0,34,0,Math.PI*2); ctx.stroke();
+    // scale
+    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+    for(let a=-Math.PI/2; a<=Math.PI/2; a+=Math.PI/10){
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a)*28, Math.sin(a)*28);
+      ctx.lineTo(Math.cos(a)*32, Math.sin(a)*32);
+      ctx.stroke();
+    }
+    // needle
+    const ang = Ig*Math.PI/2;
+    ctx.save();
+    ctx.rotate(ang);
+    ctx.strokeStyle = Math.abs(Ig) < 0.04 ? '#34d399' : '#f87171';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(28, 0); ctx.stroke();
+    ctx.restore();
+    // center hub
+    ctx.fillStyle = '#a78bfa';
+    ctx.beginPath(); ctx.arc(0,0,4,0,Math.PI*2); ctx.fill();
+    // label
+    ctx.fillStyle = '#e8ecff';
+    ctx.font='700 11px Inter';
+    ctx.textAlign='center';
+    ctx.fillText('Galvanometer', 0, 52);
+    ctx.fillStyle = Math.abs(Ig) < 0.04 ? '#34d399' : '#f87171';
+    ctx.font='700 12px JetBrains Mono';
+    ctx.fillText('I_g = ' + (Ig*1e3).toFixed(2) + ' mA', 0, 68);
+    ctx.restore();
+  }
+
+  function drawNode(x,y,col='#a78bfa'){
+    ctx.save();
+    ctx.fillStyle = col;
+    ctx.beginPath(); ctx.arc(x,y,5,0,Math.PI*2); ctx.fill();
+    ctx.restore();
+  }
+
+  function drawWires(nodes, on){
+    if(nodes.length<2) return;
+    ctx.save();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = on ? 'rgba(96,165,250,0.7)' : 'rgba(150,160,200,0.3)';
+    ctx.shadowColor = on ? 'rgba(96,165,250,0.6)' : 'transparent';
+    ctx.shadowBlur = on ? 6 : 0;
+    for(let i=0;i<nodes.length-1;i++){
+      const a=nodes[i], b=nodes[i+1];
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    }
+    // animated flow dots
+    if(on){
+      for(let i=0;i<nodes.length-1;i++){
+        const a=nodes[i], b=nodes[i+1];
+        const t = (performance.now()/600 + i*0.3) % 1;
+        const x = a.x + (b.x-a.x)*t;
+        const y = a.y + (b.y-a.y)*t;
+        ctx.fillStyle = '#60a5fa';
+        ctx.beginPath(); ctx.arc(x,y,3,0,Math.PI*2); ctx.fill();
+      }
+    }
+    ctx.restore();
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // grid
+    ctx.save();
+    ctx.strokeStyle='rgba(255,255,255,0.04)'; ctx.lineWidth=1;
+    for(let x=0;x<W;x+=30){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for(let y=0;y<H;y+=30){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    ctx.restore();
+    drawTitle();
+    // Layout
+    const cx = W/2, top = 100, bottom = H-100;
+    const armW = 240;
+    // Nodes:
+    const A = {x: cx - armW/2, y: top};        // top-left
+    const B = {x: cx + armW/2, y: top};        // top-right
+    const C = {x: cx - armW/2, y: bottom};     // bottom-left
+    const D = {x: cx + armW/2, y: bottom};     // bottom-right
+    const M = {x: cx, y: top + 40};            // jockey / midpoint
+    const BatteryTop = {x: cx, y: top - 80};
+    const BatteryBot = {x: cx, y: bottom + 80};
+
+    // Wires & arms
+    // Left arm: P (A-C)
+    drawWires([A,C], true);
+    drawResistor((A.x+C.x)/2, (A.y+C.y)/2, state.P, 'P', -Math.PI/2);
+    // Right arm: Q (B-D)
+    drawWires([B,D], true);
+    drawResistor((B.x+D.x)/2, (B.y+D.y)/2, state.Q, 'Q', -Math.PI/2);
+    // Top arm: R (A-B) and galvo to midpoint
+    drawWires([A,B], true);
+    drawResistor((A.x+B.x)/2, (A.y+B.y)/2 - 30, state.R, 'R', 0);
+    // Bottom arm: R_x (C-D) — value calculated, not directly adjustable
+    drawWires([C,D], true);
+    drawResistor((C.x+D.x)/2, (C.y+D.y)/2 + 30, state.Rx.toFixed(1), 'Rₓ', 0);
+    // Battery vertical
+    drawWires([BatteryTop, A], true);
+    drawWires([BatteryTop, B], true);
+    drawWires([C, BatteryBot], true);
+    drawWires([D, BatteryBot], true);
+    drawWires([BatteryTop, BatteryBot], true);
+    drawBattery((BatteryTop.x+BatteryBot.x)/2, (BatteryTop.y+BatteryBot.y)/2);
+
+    // Galvo across A-B midpoint to C-D midpoint
+    drawWires([{x:(A.x+B.x)/2, y:(A.y+B.y)/2}, M], true);
+    drawWires([M, {x:(C.x+D.x)/2, y:(C.y+D.y)/2}], true);
+    drawGalvo(M.x, M.y + 10, state.I_g);
+
+    // Nodes
+    [A,B,C,D, BatteryTop, BatteryBot, M, {x:(A.x+B.x)/2, y:(A.y+B.y)/2}, {x:(C.x+D.x)/2, y:(C.y+D.y)/2}]
+      .forEach(n => drawNode(n.x, n.y));
+
+    // Jockey marker
+    ctx.save();
+    ctx.fillStyle = '#c084fc';
+    ctx.beginPath(); ctx.arc(M.x, M.y, 4, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#d8b4fe';
+    ctx.font='600 11px Inter';
+    ctx.textAlign='center';
+    ctx.fillText('Jockey', M.x+34, M.y-2);
+    ctx.restore();
+  }
+
+  function step(dt){ /* purely drawn via state changes */ }
+  function loop(now){
+    draw();
+    rafId = requestAnimationFrame(loop);
+  }
+  function start(){
+    cancelAnimationFrame(rafId);
+    loop(performance.now());
+  }
+  function stop(){ cancelAnimationFrame(rafId); }
+
+  // Bind sliders
+  const p = document.getElementById('pSlider');
+  const q = document.getElementById('qSlider');
+  const r = document.getElementById('rSlider');
+  function update(){
+    state.P = +p.value; state.Q = +q.value; state.R = +r.value;
+    calc();
+    document.getElementById('pSliderVal').textContent = state.P + ' Ω';
+    document.getElementById('qSliderVal').textContent = state.Q + ' Ω';
+    document.getElementById('rSliderVal').textContent = state.R + ' Ω';
+    document.getElementById('rxVal').textContent = state.Rx.toFixed(1) + ' Ω';
+    // Update needle
+    const pct = Math.max(-1, Math.min(1, state.I_g));
+    document.getElementById('balanceNeedle').style.left = (50 + pct*48) + '%';
+    const balText = document.getElementById('balanceText');
+    if(Math.abs(pct) < 0.04){
+      balText.textContent = 'Status: ✓ BALANCED (I_g ≈ 0)';
+      balText.style.color = '#34d399';
+    } else {
+      balText.textContent = 'Status: unbalanced — adjust sliders to balance';
+      balText.style.color = '#fbbf24';
+    }
+  }
+  [p,q,r].forEach(s => s.addEventListener('input', update));
+  update();
+
+  return { start, stop, draw };
+}
+
+/* =============================================================
+   SIM 3 — ELECTROLYTIC CELL SANDBOX
+   ============================================================= */
+function electroSim(){
+  const state = {
+    elec: 'moltenNaCl',  // moltenNaCl | aqNaCl | aqCuSO4 | diluteH2SO4
+    anode: 'Pt',
+    cathode: 'Pt',
+    voltage: 6,
+    bubbles: [],   // {x,y,vx,vy,r,life}
+    deposits: [],  // {x,y,r,life}
+    ions: [],      // {x,y,vx,vy,kind,col}
+    glow: 0,
+    reactionText: '',
+  };
+
+  function getReactions(){
+    // returns {anode: {text, gas:bool, metal:false, color:'#color'}, cathode: {text, gas:bool, metal:bool, color:'#color'}}
+    const e = state.elec, a = state.anode, c = state.cathode;
+    if(e==='moltenNaCl'){
+      return {
+        anode:{text:'2Cl⁻ → Cl₂↑ + 2e⁻', gas:true, color:'#a7f3d0'},
+        cathode:{text:'Na⁺ + e⁻ → Na(l)', metal:true, color:'#fbbf24'}
+      };
+    }
+    if(e==='aqNaCl'){
+      if(a==='Cu') return {
+        anode:{text:'Cu → Cu²⁺ + 2e⁻ (anode dissolves)', gas:false, color:'#fb7185'},
+        cathode:{text:'2H₂O + 2e⁻ → H₂↑ + 2OH⁻', gas:true, color:'#a7f3d0'}
+      };
+      return {
+        anode:{text:'2Cl⁻ → Cl₂↑ + 2e⁻', gas:true, color:'#a7f3d0'},
+        cathode:{text:'2H₂O + 2e⁻ → H₂↑ + 2OH⁻', gas:true, color:'#a7f3d0'}
+      };
+    }
+    if(e==='aqCuSO4'){
+      if(a==='Cu') return {
+        anode:{text:'Cu → Cu²⁺ + 2e⁻ (refining)', gas:false, color:'#fb7185'},
+        cathode:{text:'Cu²⁺ + 2e⁻ → Cu(s) (deposits)', metal:true, color:'#fbbf24'}
+      };
+      return {
+        anode:{text:'2H₂O → O₂↑ + 4H⁺ + 4e⁻', gas:true, color:'#a7f3d0'},
+        cathode:{text:'Cu²⁺ + 2e⁻ → Cu(s) (deposits)', metal:true, color:'#fbbf24'}
+      };
+    }
+    if(e==='diluteH2SO4'){
+      return {
+        anode:{text:'2H₂O → O₂↑ + 4H⁺ + 4e⁻', gas:true, color:'#a7f3d0'},
+        cathode:{text:'2H⁺ + 2e⁻ → H₂↑', gas:true, color:'#a7f3d0'}
+      };
+    }
+  }
+
+  function layout(){
+    state.beaker = {x: W/2 - 200, y: 90, w: 400, h: 320};
+    state.anode = {x: state.beaker.x + 70, y: state.beaker.y + state.beaker.h - 10};
+    state.cathode = {x: state.beaker.x + state.beaker.w - 70, y: state.beaker.y + state.beaker.h - 10};
+    state.topAnode = {x: state.anode.x, y: state.beaker.y - 30};
+    state.topCathode = {x: state.cathode.x, y: state.beaker.y - 30};
+  }
+
+  function spawnBubbles(){
+    const rxn = getReactions();
+    if(rxn.anode.gas && Math.random()<0.4){
+      state.bubbles.push({
+        x: state.anode.x + (Math.random()-0.5)*8,
+        y: state.anode.y - 5,
+        vx:(Math.random()-0.5)*0.3, vy:-0.8-Math.random()*0.6,
+        r: 2+Math.random()*2.5, life:1, kind:'gas', color:'#a7f3d0'
+      });
+    }
+    if(rxn.cathode.gas && Math.random()<0.4){
+      state.bubbles.push({
+        x: state.cathode.x + (Math.random()-0.5)*8,
+        y: state.cathode.y - 5,
+        vx:(Math.random()-0.5)*0.3, vy:-0.8-Math.random()*0.6,
+        r: 2+Math.random()*2.5, life:1, kind:'gas', color:'#a7f3d0'
+      });
+    }
+    if(rxn.cathode.metal && Math.random()<0.7){
+      state.deposits.push({
+        x: state.cathode.x + (Math.random()-0.5)*12,
+        y: state.cathode.y - 6 - Math.random()*8,
+        r: 1.2+Math.random()*1.8, life:1
+      });
+    }
+    if(rxn.anode.metal===false && state.elec==='aqCuSO4' && state.anode==='Cu') return;
+    // Dissolving Cu (active anode) → red particles float
+    if(state.elec==='aqCuSO4' && state.anode==='Cu' && Math.random()<0.5){
+      state.bubbles.push({
+        x: state.anode.x + (Math.random()-0.5)*8,
+        y: state.anode.y - 5,
+        vx:0.3+Math.random()*0.3, vy:-0.3-Math.random()*0.3,
+        r: 1.5+Math.random()*1.2, life:1, kind:'dissolve', color:'#fb7185'
+      });
+    }
+  }
+  function spawnIons(){
+    if(Math.random() < 0.5){
+      // cation near cathode
+      state.ions.push({
+        x: state.beaker.x + Math.random()*state.beaker.w,
+        y: state.beaker.y + 50 + Math.random()*(state.beaker.h-100),
+        vx:-0.4-Math.random()*0.4, vy:(Math.random()-0.5)*0.2,
+        kind:'cation', col:'#7dd3fc'
+      });
+    }
+    if(Math.random() < 0.5){
+      state.ions.push({
+        x: state.beaker.x + Math.random()*state.beaker.w,
+        y: state.beaker.y + 50 + Math.random()*(state.beaker.h-100),
+        vx:0.4+Math.random()*0.4, vy:(Math.random()-0.5)*0.2,
+        kind:'anion', col:'#fbbf24'
+      });
+    }
+  }
+
+  function step(dt){
+    spawnBubbles();
+    if(Math.random() < 0.7) spawnIons();
+    // Update bubbles
+    for(const b of state.bubbles){
+      b.x += b.vx * dt * 30;
+      b.y += b.vy * dt * 30;
+      b.life -= dt*0.25;
+    }
+    state.bubbles = state.bubbles.filter(b => b.life>0 && b.y > state.beaker.y+5);
+    // Update ions
+    for(const ion of state.ions){
+      ion.x += ion.vx * dt * 30;
+      ion.y += ion.vy * dt * 30;
+    }
+    state.ions = state.ions.filter(i => i.x > state.beaker.x+5 && i.x < state.beaker.x+state.beaker.w-5);
+    if(state.deposits.length > 200) state.deposits = state.deposits.slice(-150);
+    state.glow = 0.5+0.5*Math.sin(performance.now()*0.003);
+  }
+
+  function drawBeaker(){
+    const b = state.beaker;
+    ctx.save();
+    roundRect(ctx, b.x, b.y, b.w, b.h, 18);
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'rgba(180,200,255,0.55)';
+    ctx.fillStyle = 'rgba(120,160,255,0.10)';
+    ctx.fill(); ctx.stroke();
+    // Solution tint by electrolyte
+    let tint = 'rgba(120,160,255,0.18)';
+    if(state.elec==='aqCuSO4') tint = 'rgba(56,189,248,0.22)';
+    if(state.elec==='moltenNaCl') tint = 'rgba(252,211,77,0.20)';
+    if(state.elec==='diluteH2SO4') tint = 'rgba(110,231,255,0.18)';
+    ctx.fillStyle = tint;
+    ctx.fillRect(b.x+6, b.y+50, b.w-12, b.h-56);
+    // liquid level
+    ctx.strokeStyle = 'rgba(255,255,255,0.20)';
+    ctx.beginPath(); ctx.moveTo(b.x+6, b.y+50); ctx.lineTo(b.x+b.w-6, b.y+50); ctx.stroke();
+    // label
+    ctx.fillStyle = '#e8ecff';
+    ctx.font='700 12px Inter';
+    ctx.textAlign='left';
+    const eName = {moltenNaCl:'Molten NaCl', aqNaCl:'Aqueous NaCl', aqCuSO4:'Aqueous CuSO₄', diluteH2SO4:'Dilute H₂SO₄'}[state.elec];
+    ctx.fillText('Electrolyte: ' + eName, b.x+10, b.y+40);
+    ctx.restore();
+  }
+
+  function drawElectrode(x,y,topX,topY,material,signLabel, signChar){
+    ctx.save();
+    const metal = material;
+    let col='#cbd5e1';
+    if(metal==='Cu') col='#f97316';
+    if(metal==='Pt') col='#94a3b8';
+    ctx.fillStyle = col;
+    ctx.shadowColor = col; ctx.shadowBlur = 10;
+    ctx.fillRect(x-5, topY, 10, y-topY);
+    ctx.shadowBlur = 0;
+    // Cap
+    ctx.fillStyle = '#1f2937';
+    ctx.fillRect(x-12, topY-6, 24, 8);
+    // label
+    ctx.fillStyle = '#e8ecff';
+    ctx.font='700 12px Inter';
+    ctx.textAlign='center';
+    ctx.fillText(material + ' (' + signLabel + ')', x, topY-12);
+    ctx.fillStyle = signChar==='+' ? '#f87171' : '#7dd3fc';
+    ctx.font='800 14px Inter';
+    ctx.fillText(signChar, x, topY-30);
+    // Wire
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(x, topY-6); ctx.lineTo(x, topY-50); ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawBattery(){
+    const by = state.beaker.y - 110;
+    const x1 = state.beaker.x + state.beaker.w/2 - 50;
+    const x2 = state.beaker.x + state.beaker.w/2 + 50;
+    ctx.save();
+    ctx.translate(x1, by);
+    ctx.fillStyle='#fbbf24'; ctx.fillRect(-4,-10,8,20);
+    ctx.fillStyle='#cbd5e1'; ctx.fillRect(-2,-22,4,44);
+    ctx.fillStyle='#fbbf24'; ctx.font='800 11px Inter';
+    ctx.textAlign='center'; ctx.fillText('+', 18, 4);
+    ctx.restore();
+    ctx.save();
+    ctx.translate(x2, by);
+    ctx.fillStyle='#7dd3fc'; ctx.fillRect(-4,-22,4,44);
+    ctx.fillStyle='#cbd5e1'; ctx.fillRect(-2,-10,8,20);
+    ctx.fillStyle='#7dd3fc'; ctx.font='800 11px Inter';
+    ctx.textAlign='center'; ctx.fillText('−', -16, 4);
+    ctx.restore();
+    // wire to electrodes
+    ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(x1, by); ctx.lineTo(state.topAnode.x, state.topAnode.y); ctx.stroke();
+    ctx.strokeStyle = '#7dd3fc';
+    ctx.beginPath(); ctx.moveTo(x2, by); ctx.lineTo(state.topCathode.x, state.topCathode.y); ctx.stroke();
+    // voltage
+    ctx.fillStyle = state.voltage>0?'#a7f3d0':'#f87171';
+    ctx.font='800 12px JetBrains Mono';
+    ctx.textAlign='center';
+    ctx.fillText('Battery: ' + state.voltage + ' V', (x1+x2)/2, by - 30);
+  }
+
+  function drawBubbles(){
+    for(const b of state.bubbles){
+      ctx.save();
+      ctx.globalAlpha = Math.min(1, b.life*1.5);
+      ctx.fillStyle = b.color;
+      ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, Math.PI*2); ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+      ctx.lineWidth = 1; ctx.stroke();
+      ctx.restore();
+    }
+  }
+  function drawDeposits(){
+    for(const d of state.deposits){
+      ctx.save();
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+  }
+  function drawIons(){
+    for(const i of state.ions){
+      ctx.save();
+      ctx.fillStyle = i.col;
+      ctx.beginPath(); ctx.arc(i.x, i.y, 3, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle='#0b1020';
+      ctx.font='800 7px Inter';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(i.kind==='cation'?'+':'−', i.x, i.y+0.5);
+      ctx.restore();
+    }
+  }
+  function drawReactions(){
+    const rxn = getReactions();
+    const y = state.beaker.y + state.beaker.h + 18;
+    ctx.save();
+    ctx.fillStyle = '#e8ecff';
+    ctx.font='700 12px Inter';
+    ctx.textAlign='center';
+    ctx.fillText('Anode (+): ' + rxn.anode.text, W/2, y);
+    ctx.fillText('Cathode (−): ' + rxn.cathode.text, W/2, y + 18);
+    ctx.fillStyle = '#a7f3d0';
+    ctx.font='500 11px Inter';
+    ctx.fillText('Preferential discharge rule applied (E° + overvoltage).', W/2, y + 38);
+    ctx.restore();
+  }
+  function drawTitle(){
+    ctx.save();
+    ctx.fillStyle='#e8ecff';
+    ctx.font='800 18px Inter';
+    ctx.textAlign='left';
+    ctx.fillText('Electrolytic Cell Sandbox', 20, 28);
+    ctx.fillStyle='#b6bedc';
+    ctx.font='500 12px Inter';
+    ctx.fillText('Select electrolyte + electrodes. Watch gas bubbles, metal deposition, and ion migration.', 20, 48);
+    ctx.restore();
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    ctx.strokeStyle='rgba(255,255,255,0.04)'; ctx.lineWidth=1;
+    for(let x=0;x<W;x+=30){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for(let y=0;y<H;y+=30){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    ctx.restore();
+    drawTitle();
+    drawBeaker();
+    drawBattery();
+    drawElectrode(state.anode.x, state.anode.y, state.topAnode.x, state.topAnode.y, state.anode, 'anode', '+');
+    drawElectrode(state.cathode.x, state.cathode.y, state.topCathode.x, state.topCathode.y, state.cathode, 'cathode', '−');
+    drawBubbles();
+    drawDeposits();
+    drawIons();
+    drawReactions();
+  }
+  function loop(now){
+    const dt = 1/60;
+    step(dt);
+    draw();
+    rafId = requestAnimationFrame(loop);
+  }
+  function start(){
+    cancelAnimationFrame(rafId);
+    layout();
+    loop(performance.now());
+  }
+  function stop(){ cancelAnimationFrame(rafId); }
+
+  // Bind UI
+  const el = document.getElementById('electrolyte');
+  const aM = document.getElementById('anodeMat');
+  const cM = document.getElementById('cathodeMat');
+  const v  = document.getElementById('voltage');
+  function reload(){
+    state.elec = el.value;
+    state.anode = aM.value;
+    state.cathode = cM.value;
+    state.voltage = +v.value;
+    document.getElementById('voltageVal').textContent = state.voltage + ' V';
+    layout();
+  }
+  [el,aM,cM,v].forEach(s => s.addEventListener('change', reload));
+  v.addEventListener('input', ()=>{ state.voltage = +v.value; document.getElementById('voltageVal').textContent = state.voltage + ' V'; });
+  document.getElementById('resetElectro').addEventListener('click', ()=>{
+    state.bubbles = []; state.deposits = []; state.ions = [];
+  });
+  reload();
+
+  return { start, stop, draw };
+}
+
+/* ------------------------------------------------------------
+   SHARED HELPERS
+   ------------------------------------------------------------ */
+function roundRect(ctx, x, y, w, h, r){
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.arcTo(x+w, y, x+w, y+h, r);
+  ctx.arcTo(x+w, y+h, x, y+h, r);
+  ctx.arcTo(x, y+h, x, y, r);
+  ctx.arcTo(x, y, x+w, y, r);
+  ctx.closePath();
+}
+function roundRectPath(x, y, w, h, r){ return {x,y,w,h,r}; }
+
+/* ------------------------------------------------------------
+   AUTO-START: Daniell is the default and the first tab is already visible,
+   but the canvas needs an explicit start once the layout has settled.
+   ------------------------------------------------------------ */
+window.addEventListener('load', () => {
+  resizeCanvas();
+  setSim('daniell');
+});
+</script>
+</body>
+</html>

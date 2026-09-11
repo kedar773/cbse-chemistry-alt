@@ -1,0 +1,1630 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hydrocarbons - Master Study Notes | NCERT Class 11 Chemistry</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/vendor/katex/katex.min.css" rel="stylesheet"/>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #111827;
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.10);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  --accent-cyan: #06b6d4;
+  --accent-purple: #8b5cf6;
+  --accent-pink: #ec4899;
+  --accent-gold: #f59e0b;
+  --accent-green: #10b981;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --card-bg: rgba(15,23,42,0.7);
+  --danger: #ef4444;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--font-sans);
+  background:var(--bg-primary);
+  color:var(--text-primary);
+  min-height:100vh;
+  line-height:1.7;
+}
+body::before{
+  content:'';position:fixed;top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(ellipse at 20% 50%,rgba(6,182,212,0.08) 0%,transparent 50%),
+             radial-gradient(ellipse at 80% 20%,rgba(139,92,246,0.06) 0%,transparent 50%),
+             radial-gradient(ellipse at 50% 80%,rgba(236,72,153,0.04) 0%,transparent 50%);
+  z-index:-1;pointer-events:none;
+}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--text-secondary)}
+.app-container{max-width:1280px;margin:0 auto;padding:0 20px}
+.app-header{
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(24px) saturate(1.4);
+  -webkit-backdrop-filter:blur(24px) saturate(1.4);
+  background:rgba(10,14,26,0.72);
+  border-bottom:1px solid var(--glass-border);
+  padding:14px 20px;
+}
+.header-inner{
+  max-width:1280px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.header-brand{display:flex;align-items:center;gap:12px}
+.header-logo{
+  width:40px;height:40px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:18px;color:#fff;
+}
+.header-title{
+  font-size:20px;font-weight:700;
+  background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.header-subtitle{font-size:12px;color:var(--text-muted);margin-top:-2px}
+.header-badge{
+  font-size:11px;padding:3px 12px;border-radius:20px;
+  background:linear-gradient(135deg,var(--accent-gold),var(--accent-pink));
+  color:#fff;font-weight:600;letter-spacing:0.3px;
+}
+.tab-nav {
+  display:flex;gap:4px;padding:4px;
+  background:var(--glass-bg);border:1px solid var(--glass-border);
+  border-radius:var(--radius);backdrop-filter:blur(16px);
+  overflow-x:auto;flex-shrink:0;
+}
+.tab-nav::-webkit-scrollbar{height:0}
+.tab-btn{
+  flex-shrink:0;
+  padding:10px 20px;border:none;border-radius:var(--radius-sm);
+  background:transparent;color:var(--text-secondary);
+  font-family:var(--font-sans);font-size:13px;font-weight:500;
+  cursor:pointer;transition:var(--transition);
+  white-space:nowrap;position:relative;
+}
+.tab-btn:hover{color:var(--text-primary);background:rgba(255,255,255,0.05)}
+.tab-btn.active{
+  background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));
+  color:#fff;font-weight:600;box-shadow:0 4px 16px rgba(6,182,212,0.3);
+}
+.tab-btn .tab-icon{margin-right:6px}
+.tab-content{display:none;padding:28px 0 60px}
+.tab-content.active{display:block;animation:fadeSlideIn 0.4s ease}
+@keyframes fadeSlideIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.glass-card{
+  background:var(--card-bg);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  padding:24px 28px;
+  margin-bottom:20px;
+  box-shadow:var(--glass-shadow);
+}
+.glass-card h2{
+  font-size:20px;font-weight:700;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.glass-card h2 .emoji{font-size:22px}
+.glass-card h3{
+  font-size:16px;font-weight:600;margin:20px 0 10px;
+  color:var(--accent-cyan);
+}
+.glass-card h4{
+  font-size:14px;font-weight:600;margin:14px 0 8px;
+  color:var(--accent-purple);
+}
+.glass-card p{margin-bottom:10px;color:var(--text-secondary);line-height:1.8}
+.glass-card ul,.glass-card ol{padding-left:20px;margin-bottom:12px}
+.glass-card li{margin-bottom:6px;color:var(--text-secondary);line-height:1.7}
+.katex-block{margin:12px 0;overflow-x:auto;padding:8px 0}
+.katex-display{overflow-x:auto;padding:4px 0}
+code.reaction{
+  display:block;padding:14px 18px;margin:12px 0;
+  background:rgba(0,0,0,0.3);border-radius:var(--radius-sm);
+  border-left:3px solid var(--accent-cyan);
+  font-size:15px;overflow-x:auto;
+}
+.section-divider{
+  height:2px;margin:28px 0;
+  background:linear-gradient(90deg,transparent,var(--accent-cyan),var(--accent-purple),transparent);
+  border:none;opacity:0.4;
+}
+.mechanism-box{
+  background:rgba(0,0,0,0.25);border-radius:var(--radius-sm);
+  padding:18px 20px;margin:14px 0;
+  border-left:3px solid var(--accent-gold);
+}
+.mechanism-box .step{color:var(--accent-gold);font-weight:600;font-size:13px}
+.hots-bubble{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;border-radius:20px;
+  background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(236,72,153,0.15));
+  border:1px solid rgba(245,158,11,0.3);
+  color:var(--accent-gold);font-size:12px;font-weight:500;
+  cursor:pointer;transition:var(--transition);margin:4px 0;
+}
+.hots-bubble:hover{background:linear-gradient(135deg,rgba(245,158,11,0.25),rgba(236,72,153,0.25))}
+.hots-content{
+  display:none;padding:16px 20px;margin-top:10px;
+  background:rgba(0,0,0,0.3);border-radius:var(--radius-sm);
+  border:1px solid rgba(245,158,11,0.2);
+  font-size:14px;line-height:1.8;
+}
+.hots-content.open{display:block;animation:fadeSlideIn 0.3s ease}
+.hots-content p{margin-bottom:8px}
+.hots-content p:last-child{margin-bottom:0}
+.pyq-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 10px;border-radius:4px;
+  background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(245,158,11,0.15));
+  border:1px solid rgba(239,68,68,0.25);
+  color:var(--danger);font-size:11px;font-weight:600;
+  margin-left:6px;white-space:nowrap;
+}
+.cross-ref{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 10px;border-radius:4px;
+  background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);
+  color:var(--accent-green);font-size:11px;font-weight:500;
+  cursor:pointer;transition:var(--transition);margin:2px 4px;
+}
+.cross-ref:hover{background:rgba(16,185,129,0.2)}
+details.ncert-q{
+  margin-bottom:12px;border-radius:var(--radius-sm);
+  border:1px solid var(--glass-border);
+  background:rgba(0,0,0,0.15);
+  overflow:hidden;transition:var(--transition);
+}
+details.ncert-q[open]{border-color:rgba(6,182,212,0.3)}
+details.ncert-q summary{
+  padding:14px 18px;cursor:pointer;
+  font-weight:500;font-size:14px;
+  display:flex;align-items:center;gap:10px;
+  color:var(--text-primary);
+  user-select:none;
+}
+details.ncert-q summary::-webkit-details-marker{display:none}
+details.ncert-q summary .q-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));
+  color:#fff;font-size:12px;font-weight:700;flex-shrink:0;
+}
+details.ncert-q summary .q-icon{flex-shrink:0;font-size:14px}
+details.ncert-q summary .q-text{flex:1}
+details.ncert-q .q-answer{
+  padding:16px 18px 18px;
+  border-top:1px solid var(--glass-border);
+  color:var(--text-secondary);font-size:14px;line-height:1.8;
+}
+.lab-container{display:flex;flex-direction:column;gap:28px}
+.sim-card{
+  background:var(--card-bg);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--glass-shadow);
+}
+.sim-header{
+  padding:16px 24px;
+  border-bottom:1px solid var(--glass-border);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+.sim-title{font-size:16px;font-weight:600;display:flex;align-items:center;gap:8px}
+.sim-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sim-controls label{font-size:12px;color:var(--text-secondary)}
+.sim-controls select,.sim-controls input[type="range"]{
+  background:rgba(0,0,0,0.3);border:1px solid var(--glass-border);
+  color:var(--text-primary);padding:6px 12px;border-radius:var(--radius-xs);
+  font-family:var(--font-sans);font-size:13px;
+}
+.sim-controls select option{background:var(--bg-secondary)}
+.sim-controls input[type="range"]{padding:0;width:160px;accent-color:var(--accent-cyan)}
+.sim-controls .sim-btn{
+  padding:6px 16px;border:none;border-radius:var(--radius-xs);
+  background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));
+  color:#fff;font-size:12px;font-weight:600;cursor:pointer;
+  transition:var(--transition);font-family:var(--font-sans);
+}
+.sim-controls .sim-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(6,182,212,0.3)}
+.sim-controls .sim-btn:active{transform:translateY(0)}
+.sim-canvas-wrap{position:relative;background:rgba(0,0,0,0.3)}
+.sim-canvas-wrap canvas{display:block;width:100%;height:auto}
+.sim-info{
+  padding:12px 24px;
+  border-top:1px solid var(--glass-border);
+  font-size:13px;color:var(--text-secondary);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+.sim-info .sim-value{color:var(--accent-cyan);font-weight:600;font-family:var(--font-mono)}
+.sim-step-indicator{
+  display:flex;gap:8px;padding:12px 24px;
+  border-top:1px solid var(--glass-border);
+  overflow-x:auto;
+}
+.sim-step{
+  padding:6px 14px;border-radius:20px;
+  background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);
+  color:var(--text-muted);font-size:11px;font-weight:500;cursor:pointer;
+  transition:var(--transition);white-space:nowrap;flex-shrink:0;
+}
+.sim-step.active{background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));color:#fff;border-color:transparent}
+.sim-step.done{background:rgba(16,185,129,0.2);border-color:var(--accent-green);color:var(--accent-green)}
+.toggle-wrap{display:flex;align-items:center;gap:8px}
+.toggle-wrap span{font-size:12px;color:var(--text-secondary)}
+.toggle{
+  position:relative;width:42px;height:22px;
+  background:rgba(0,0,0,0.3);border-radius:11px;
+  border:1px solid var(--glass-border);cursor:pointer;
+  transition:var(--transition);
+}
+.toggle.active{background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));border-color:transparent}
+.toggle::after{
+  content:'';position:absolute;top:2px;left:2px;
+  width:16px;height:16px;border-radius:50%;
+  background:#fff;transition:var(--transition);
+}
+.toggle.active::after{left:22px}
+@media(max-width:900px){
+  .header-inner{flex-direction:column;align-items:stretch}
+  .tab-nav{justify-content:flex-start}
+  .tab-btn{padding:8px 14px;font-size:12px}
+  .glass-card{padding:16px 18px}
+  .sim-header{flex-direction:column;align-items:stretch}
+  .sim-controls{justify-content:flex-start}
+}
+@media(max-width:600px){
+  .app-container{padding:0 12px}
+  .glass-card{padding:14px 14px;border-radius:12px}
+  .glass-card h2{font-size:17px}
+  .glass-card h3{font-size:14px}
+  .tab-btn{padding:6px 10px;font-size:11px}
+  .tab-btn .tab-icon{display:none}
+  .header-title{font-size:16px}
+  .sim-controls input[type="range"]{width:100px}
+}
+@media print{
+  body{background:#fff!important;color:#111!important}
+  .app-header{position:static;backdrop-filter:none!important;background:#fff!important;border-bottom:1px solid #ddd!important}
+  .header-title{-webkit-text-fill-color:#111!important;background:none!important;color:#111!important}
+  .tab-nav,.header-badge{display:none!important}
+  .tab-content{display:block!important;padding:10px 0!important}
+  .tab-content:not(.active){display:block!important}
+  .tab-content:not(#tab-4){display:block!important}
+  #tab-4{display:none!important}
+  .glass-card{background:#fff!important;backdrop-filter:none!important;border:1px solid #ddd!important;box-shadow:none!important;break-inside:avoid}
+  .glass-card p,.glass-card li{color:#333!important}
+  .glass-card h2,.glass-card h3,.glass-card h4{color:#111!important}
+  details.ncert-q{break-inside:avoid;border:1px solid #ddd!important;background:#fafafa!important}
+  details.ncert-q summary{color:#111!important}
+  details.ncert-q[open]{border-color:#999!important}
+  details.ncert-q:not([open]){display:block!important}
+  details.ncert-q:not([open]) .q-answer{display:block!important}
+  details.ncert-q summary .q-num{background:#666!important}
+  .hots-content{display:block!important;background:#f5f5f5!important}
+  .section-divider{opacity:0.2!important}
+  code.reaction{background:#f5f5f5!important;border-left-color:#666!important}
+  .katex{color:#111!important}
+  .katex-display{overflow:visible!important}
+  .mechanism-box{border-left-color:#666!important;background:#f5f5f5!important}
+  .sim-card{display:none!important}
+  .pyq-badge{background:#f0f0f0!important;border-color:#ccc!important;color:#c00!important}
+}
+</style>
+</head>
+<body>
+<div class="app-header">
+<div class="header-inner">
+<div class="header-brand">
+<div class="header-logo">H</div>
+<div>
+<div class="header-title">Hydrocarbons</div>
+<div class="header-subtitle">NCERT Class 11 - Chapter 9 (13) - Master Study Notes</div>
+</div>
+</div>
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+<nav class="tab-nav" id="tabNav">
+<button class="tab-btn active" data-tab="tab-1"><span class="tab-icon">⬡</span> Alkanes</button>
+<button class="tab-btn" data-tab="tab-2"><span class="tab-icon">⬡</span> Alkenes-Arenes</button>
+<button class="tab-btn" data-tab="tab-3"><span class="tab-icon">⬡</span> NCERT Vault</button>
+<button class="tab-btn" data-tab="tab-4"><span class="tab-icon">⬡</span> Interactive Lab</button>
+</nav>
+<span class="header-badge">CBSE - JEE - NEET</span>
+</div>
+</div>
+</div>
+<div class="app-container">
+<!-- TAB 1: ALKANES & CONFORMATIONS -->
+<section class="tab-content active" id="tab-1">
+<div class="glass-card">
+<h2><span class="emoji">🧪</span> Alkanes (C<sub>n</sub>H<sub>2n+2</sub>)</h2>
+<p><strong>Alkanes</strong> are saturated hydrocarbons with general formula C<sub>n</sub>H<sub>2n+2</sub>. Also called <strong>paraffins</strong> (Latin: <em>parum affinis</em>). Carbon atoms are sp<sup>3</sup> hybridized with tetrahedral geometry (~109.5°).</p>
+</div>
+<div class="glass-card">
+<h2><span class="emoji">📝</span> Methods of Preparation</h2>
+<h3>1. From Unsaturated Hydrocarbons (Sabatier-Senderens)</h3>
+<code class="reaction">$$ \mathrm{CH_2{=}CH_2} + \mathrm{H_2} \xrightarrow{\mathrm{Pt/Pd/Ni}} \mathrm{CH_3{-}CH_3} $$</code>
+<code class="reaction">$$ \mathrm{CH_3{-}CH{=}CH_2} + \mathrm{H_2} \xrightarrow{\mathrm{Pt/Pd/Ni}} \mathrm{CH_3{-}CH_2{-}CH_3} $$</code>
+<div class="hots-bubble" onclick="toggleHots(this)">🔬 [Mechanism &amp; HOTS] Hydrogenation</div>
+<div class="hots-content">
+<p><strong>Mechanism:</strong> H<sub>2</sub> adsorbs onto metal catalyst surface → H–H bond weakens → <em>syn</em> addition.</p>
+<p><strong>HOTS:</strong> ① Why Pt/Pd preferred over Ni? <em>Room temp vs ~200°C.</em> ② Why syn addition? <em>Both H's from same catalyst face.</em> ③ Lindlar's catalyst gives <em>cis</em>-alkenes.</p>
+</div>
+<span class="pyq-badge">⚡ PYQ: Sabatier-Senderens, Lindlar's catalyst</span>
+<hr class="section-divider"/>
+<h3>2. From Alkyl Halides (Reduction)</h3>
+<code class="reaction">$$ \mathrm{CH_3Cl} + \mathrm{H_2} \xrightarrow{\mathrm{Zn/HCl}} \mathrm{CH_4} + \mathrm{HCl} $$</code>
+<h3>3. Wurtz Reaction</h3>
+<code class="reaction">$$ 2\mathrm{CH_3Br} + 2\mathrm{Na} \xrightarrow{\text{dry ether}} \mathrm{CH_3{-}CH_3} + 2\mathrm{NaBr} $$</code>
+<div class="hots-bubble" onclick="toggleHots(this)">🔬 [Mechanism &amp; HOTS] Wurtz Reaction</div>
+<div class="hots-content">
+<p><strong>Mechanism (Free Radical):</strong> R–X + Na → R• + NaX; R• + Na → R⁻Na⁺; R⁻Na⁺ + R–X → R–R + NaX</p>
+<p><strong>HOTS:</strong> ① Why only even-numbered alkanes? <em>Two identical alkyl fragments couple.</em> ② Two different RX? <em>Mixture of 3 products.</em> ③ Why dry ether? <em>Water reacts with Na violently.</em></p>
+<p>⚡ <strong>CBSE PYQ:</strong> Why can't Wurtz prepare methane? <em>Requires HX → gives H<sub>2</sub> gas.</em></p>
+</div>
+<span class="pyq-badge">⚡ PYQ: Wurtz limitations</span>
+<hr class="section-divider"/>
+<h3>4. Decarboxylation (Soda Lime)</h3>
+<code class="reaction">$$ \mathrm{CH_3COONa} + \mathrm{NaOH} \xrightarrow{\mathrm{CaO},\;\Delta} \mathrm{CH_4} + \mathrm{Na_2CO_3} $$</code>
+<h3>5. Kolbe's Electrolytic Method</h3>
+<code class="reaction">$$ 2\mathrm{CH_3COO^-} \xrightarrow[-2\mathrm{e}^-]{\text{Anode}} \mathrm{CH_3{-}CH_3} + 2\mathrm{CO_2} $$</code>
+<div class="hots-bubble" onclick="toggleHots(this)">🔬 [HOTS] Kolbe's Electrolysis</div>
+<div class="hots-content">
+<p><strong>Mechanism:</strong> Anode: CH<sub>3</sub>COO⁻ → CH<sub>3</sub>COO• + e⁻; 2 CH<sub>3</sub>COO• → CH<sub>3</sub>–CH<sub>3</sub> + 2CO<sub>2</sub>. Cathode: 2H<sub>2</sub>O + 2e⁻ → H<sub>2</sub> + 2OH⁻</p>
+<p><strong>HOTS:</strong> ① Why can't methane be prepared by Kolbe's? <em>HCOONa → H• → H–H.</em> ② Kolbe's gives even C alkanes (like Wurtz).</p>
+</div>
+<h3>6. From Grignard Reagent</h3>
+<code class="reaction">$$ \mathrm{RMgX} + \mathrm{H_2O} \xrightarrow{} \mathrm{R-H} + \mathrm{Mg(OH)X} $$</code>
+</div>
+<div class="glass-card">
+<h2><span class="emoji">⚗️</span> Physical Properties</h2>
+<ul>
+<li><strong>State:</strong> C<sub>1</sub>–C<sub>4</sub> (gases), C<sub>5</sub>–C<sub>17</sub> (liquids), &gt;C<sub>17</sub> (solids)</li>
+<li><strong>Solubility:</strong> Insoluble in water (non-polar), soluble in organic solvents</li>
+<li><strong>Boiling point:</strong> Increases with molecular mass; branched isomers have <em>lower</em> bp</li>
+<li><strong>Melting point:</strong> Increases irregularly; odd-even alternation effect</li>
+</ul>
+</div>
+<div class="glass-card">
+<h2><span class="emoji">🔥</span> Chemical Properties</h2>
+<h3>1. Halogenation (Free Radical Substitution)</h3>
+<code class="reaction">$$ \mathrm{CH_4} + \mathrm{Cl_2} \xrightarrow{h\nu\;\text{or}\;\Delta} \mathrm{CH_3Cl} + \mathrm{HCl} $$</code>
+<div class="hots-bubble" onclick="toggleHots(this)">🔬 [Mechanism] Free Radical Halogenation</div>
+<div class="hots-content">
+<p><strong>Mechanism:</strong></p>
+<p>① <strong>Initiation:</strong> Cl<sub>2</sub> → 2 Cl• (homolytic cleavage)</p>
+<p>② <strong>Propagation:</strong> Cl• + CH<sub>4</sub> → •CH<sub>3</sub> + HCl; •CH<sub>3</sub> + Cl<sub>2</sub> → CH<sub>3</sub>Cl + Cl•</p>
+<p>③ <strong>Termination:</strong> Cl• + Cl• → Cl<sub>2</sub>; •CH<sub>3</sub> + •CH<sub>3</sub> → CH<sub>3</sub>–CH<sub>3</sub>; •CH<sub>3</sub> + Cl• → CH<sub>3</sub>Cl</p>
+<p><strong>HOTS:</strong> ① Chlorination is not very selective (Cl• highly reactive). ② Bromination selective for 3° &gt; 2° &gt; 1° (Br• less reactive). ③ Reactivity order: F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub>.</p>
+</div>
+<span class="pyq-badge">⚡ PYQ: Bromination selectivity</span>
+<h3>2. Combustion</h3>
+<code class="reaction">$$ \mathrm{C}_n\mathrm{H}_{2n+2} + \left(\frac{3n+1}{2}\right)\mathrm{O_2} \rightarrow n\mathrm{CO_2} + (n+1)\mathrm{H_2O} + \text{energy} $$</code>
+<h3>3. Pyrolysis (Cracking)</h3>
+<code class="reaction">$$ \mathrm{C}_n\mathrm{H}_{2n+2} \xrightarrow{500-700^\circ\mathrm{C}} \text{Lower alkanes} + \text{Alkenes} + \mathrm{H_2} $$</code>
+<h3>4. Aromatization (Catalytic Reforming)</h3>
+<code class="reaction">$$ \mathrm{C_6H_{14}} \xrightarrow{\mathrm{Cr_2O_3/Al_2O_3},\;500^\circ\mathrm{C}} \mathrm{C_6H_6} + 4\mathrm{H_2} $$</code>
+<span class="pyq-badge">⚡ PYQ: Aromatization</span>
+</div>
+<div class="glass-card">
+<h2><span class="emoji">🔬</span> Conformations of Ethane</h2>
+<p>Conformations are different spatial arrangements achieved by rotation about C–C single bonds. The rotational barrier in ethane is <strong>~12.5 kJ mol⁻¹</strong>.</p>
+<h3>Newman &amp; Sawhorse Projections</h3>
+<ul>
+<li><strong>Eclipsed (θ = 0°, 360°):</strong> H atoms overlap → maximum torsional strain (~12.5 kJ mol⁻¹ above staggered). <em>Highest energy.</em></li>
+<li><strong>Staggered (θ = 60°):</strong> H atoms offset → minimum torsional strain. <em>Lowest energy, most stable.</em></li>
+<li><strong>Skew (θ = 120°):</strong> Intermediate energy between eclipsed and staggered.</li>
+</ul>
+<p>At room temperature, molecules rotate ~10¹⁰ times/sec. Population of staggered conformer ~99% at 25°C.</p>
+<div class="hots-bubble" onclick="toggleHots(this)">🔬 [HOTS] Conformational Analysis</div>
+<div class="hots-content">
+<p><strong>Why is eclipsed higher in energy?</strong> Torsional strain — repulsion between C–H bonding electron clouds on adjacent carbons. In staggered form, C–H bonds are maximally separated.</p>
+<p>⚡ <strong>CBSE PYQ:</strong> Draw Newman projections for eclipsed and staggered ethane. Which is more stable and why?</p>
+</div>
+<span class="pyq-badge">⚡ PYQ: Newman/Sawhorse projections</span>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- TAB 2: ALKENES, ALKYNES & ARENES -->
+<section class="tab-content" id="tab-2">
+<div class="glass-card">
+<h2><span class="emoji">🧪</span> Alkenes (C<sub>n</sub>H<sub>2n</sub>)</h2>
+<p><strong>Alkenes</strong> are unsaturated hydrocarbons containing C=C double bonds (sp<sup>2</sup> hybridized). They undergo <strong>electrophilic addition reactions</strong>.</p>
+<h3>Geometrical Isomerism (cis / trans)</h3>
+<p>Due to restricted rotation about C=C, cis-trans isomerism occurs when each doubly-bonded carbon has two <em>different</em> substituents.</p>
+<code class="reaction">$$ \text{cis-but-2-ene: } \underset{\mathrm{CH_3}}{\overset{\mathrm{CH_3}}{\mathrm{C}}}\!=\!\underset{\mathrm{H}}{\overset{\mathrm{H}}{\mathrm{C}}} \qquad \text{trans-but-2-ene: } \underset{\mathrm{H}}{\overset{\mathrm{CH_3}}{\mathrm{C}}}\!=\!\underset{\mathrm{CH_3}}{\overset{\mathrm{H}}{\mathrm{C}}} $$</code>
+<p>trans-isomer is more stable (less steric hindrance).</p>
+<span class="pyq-badge">⚡ PYQ: Conditions for geometrical isomerism</span>
+<h3>Preparation of Alkenes</h3>
+<h4>a) Dehydrohalogenation</h4>
+<code class="reaction">$$ \mathrm{CH_3{-}CH_2Br} + \mathrm{KOH} \xrightarrow{\mathrm{alc.},\;\Delta} \mathrm{CH_2{=}CH_2} + \mathrm{KBr} + \mathrm{H_2O} $$</code>
+<p><strong>Saytzeff's rule:</strong> More substituted alkene is major product.</p>
+<h4>b) Dehydration of Alcohols</h4>
+<code class="reaction">$$ \mathrm{CH_3{-}CH_2OH} \xrightarrow{\mathrm{H_2SO_4},\;443\;\mathrm{K}} \mathrm{CH_2{=}CH_2} + \mathrm{H_2O} $$</code>
+<h4>c) Dehalogenation of Vicinal Dihalides</h4>
+<code class="reaction">$$ \mathrm{CH_2Br{-}CH_2Br} + \mathrm{Zn} \xrightarrow{\Delta} \mathrm{CH_2{=}CH_2} + \mathrm{ZnBr_2} $$</code>
+<h4>d) Partial Hydrogenation of Alkynes</h4>
+<code class="reaction">$$ \mathrm{CH{\equiv}CH} + \mathrm{H_2} \xrightarrow{\mathrm{Lindlar's}} cis\text{-}\mathrm{CH_2{=}CH_2} $$</code>
+<code class="reaction">$$ \mathrm{CH{\equiv}CH} + 2\mathrm{H} \xrightarrow{\text{Na/liq.NH_3}} trans\text{-}\mathrm{CH_2{=}CH_2} $$</code>
+<span class="pyq-badge">⚡ PYQ: Lindlar's vs Na/NH<sub>3</sub></span>
+</div>
+<div class="glass-card">
+<h2><span class="emoji">⚡</span> Chemical Properties of Alkenes</h2>
+<h3>1. Electrophilic Addition (Markovnikov's Rule)</h3>
+<p><strong>Rule:</strong> Positive part (H) adds to carbon with more H atoms; negative part (X) to carbon with fewer H atoms.</p>
+<code class="reaction">$$ \mathrm{CH_3{-}CH{=}CH_2} + \mathrm{HBr} \rightarrow \mathrm{CH_3{-}CHBr{-}CH_3} \quad (\text{2-bromopropane}) $$</code>
+<div class="mechanism-box">
+<p class="step">Step 1: H⁺ attacks CH₂ (more H atoms) → 2° carbocation (more stable)</p>
+<code>$$ \mathrm{CH_3{-}CH{=}CH_2} + \mathrm{H^+} \rightarrow [\mathrm{CH_3{-}}\overset{+}{\mathrm{C}}\mathrm{H{-}CH_3}] $$</code>
+<p class="step">Step 2: Br⁻ attacks carbocation → 2-bromopropane</p>
+<code>$$ \mathrm{CH_3{-}}\overset{+}{\mathrm{C}}\mathrm{H{-}CH_3} + \mathrm{Br^-} \rightarrow \mathrm{CH_3{-}CHBr{-}CH_3} $$</code>
+</div>
+<h3>2. Anti-Markovnikov (Peroxide Effect / Kharasch)</h3>
+<code class="reaction">$$ \mathrm{CH_3{-}CH{=}CH_2} + \mathrm{HBr} \xrightarrow{(\mathrm{PhCO_2})_2} \mathrm{CH_3{-}CH_2{-}CH_2Br} $$</code>
+<div class="hots-bubble" onclick="toggleHots(this)">🔬 [Mechanism &amp; HOTS] Peroxide Effect</div>
+<div class="hots-content">
+<p><strong>Mechanism (Free Radical):</strong></p>
+<p>Initiation: RO–OR → 2 RO•; RO• + H–Br → ROH + Br•</p>
+<p>Propagation: Br• + CH<sub>3</sub>–CH=CH<sub>2</sub> → CH<sub>3</sub>–ĊH–CH<sub>2</sub>Br (2° radical, more stable); CH<sub>3</sub>–ĊH–CH<sub>2</sub>Br + H–Br → CH<sub>3</sub>–CH<sub>2</sub>–CH<sub>2</sub>Br + Br•</p>
+<p><strong>HOTS:</strong> ① Why only HBr? <em>HCl bond too strong (431 kJ/mol), HI bond too weak (297 kJ/mol). HBr (366 kJ/mol) is optimal.</em> ② Br• adds to less substituted carbon (CH<sub>2</sub>) to form more stable 2° radical.</p>
+<p>⚡ <strong>CBSE PYQ:</strong> Why doesn't HI show peroxide effect despite weak bond?</p>
+</div>
+<span class="pyq-badge">⚡ PYQ: Peroxide effect, why only HBr</span>
+<h3>3. Addition of Halogens</h3>
+<code class="reaction">$$ \mathrm{CH_2{=}CH_2} + \mathrm{Br_2} \xrightarrow{\mathrm{CCl_4}} \mathrm{CH_2Br{-}CH_2Br} $$</code>
+<p>Reddish-orange Br<sub>2</sub> decolorized — test for unsaturation.</p>
+<h3>4. Ozonolysis</h3>
+<code class="reaction">$$ \mathrm{R_2C{=}CR'_2} + \mathrm{O_3} \rightarrow \text{Ozonide} \xrightarrow{\mathrm{Zn/H_2O}} 2\mathrm{R_2C{=}O} $$</code>
+<span class="pyq-badge">⚡ PYQ: Product identification from ozonolysis</span>
+<h3>5. Baeyer's Test (KMnO<sub>4</sub>)</h3>
+<code class="reaction">$$ 3\mathrm{CH_2{=}CH_2} + 2\mathrm{KMnO_4} + 4\mathrm{H_2O} \rightarrow 3\mathrm{CH_2OH{-}CH_2OH} + 2\mathrm{MnO_2} + 2\mathrm{KOH} $$</code>
+</div>
+<div class="glass-card">
+<h2><span class="emoji">🧪</span> Alkynes (C<sub>n</sub>H<sub>2n-2</sub>)</h2>
+<h3>Acidity of Terminal Alkynes</h3>
+<p>H attached to triply bonded C is <strong>acidic</strong> (pK<sub>a</sub> ~25). sp C has 50% s-character → more polarized C–H bond → stable conjugate base.</p>
+<code class="reaction">$$ \mathrm{CH{\equiv}CH} + \mathrm{AgNO_3} + \mathrm{NH_4OH} \rightarrow \mathrm{CH{\equiv}C^-Ag^+}{\downarrow}\;(\text{white}) $$</code>
+<code class="reaction">$$ \mathrm{CH{\equiv}CH} + \mathrm{Cu_2Cl_2} + \mathrm{NH_4OH} \rightarrow \mathrm{CH{\equiv}C^-Cu^+}{\downarrow}\;(\text{red}) $$</code>
+<span class="pyq-badge">⚡ PYQ: Acidity trend, silver/copper acetylide test</span>
+<h3>Preparation</h3>
+<code class="reaction">$$ \mathrm{CaC_2} + 2\mathrm{H_2O} \rightarrow \mathrm{CH{\equiv}CH} + \mathrm{Ca(OH)_2} $$</code>
+<h3>Cyclic Polymerization</h3>
+<code class="reaction">$$ 3\mathrm{CH{\equiv}CH} \xrightarrow{\text{red hot Fe tube, }873\;\mathrm{K}} \mathrm{C_6H_6} $$</code>
+</div>
+<div class="glass-card">
+<h2><span class="emoji">🧪</span> Aromatic Hydrocarbons (Arenes)</h2>
+<h3>Structure of Benzene</h3>
+<p>Planar, cyclic C<sub>6</sub>H<sub>6</sub>. All C–C bonds identical (139 pm). Resonance hybrid of two Kekulé structures. Delocalization of 6 π-electrons → resonance energy ~150 kJ mol⁻¹.</p>
+<h3>Aromaticity (Hückel's Rule)</h3>
+<p>A planar, cyclic, conjugated molecule with <strong>(4n+2) π-electrons</strong> is aromatic.</p>
+<ul>
+<li>Benzene: 6π (n=1) → Aromatic</li>
+<li>Naphthalene: 10π (n=2) → Aromatic</li>
+<li>Cyclooctatetraene: 8π → Not aromatic (non-planar, anti-aromatic)</li>
+</ul>
+<span class="pyq-badge">⚡ PYQ: Hückel's rule (4n+2)</span>
+<h3>Electrophilic Substitution Reactions (EAS)</h3>
+<p>General mechanism: ① Generate E⁺ ② E⁺ attacks benzene → σ-complex (arenium ion) ③ Deprotonation → aromaticity restored.</p>
+<h4>a) Nitration</h4>
+<code class="reaction">$$ \mathrm{C_6H_6} + \mathrm{HNO_3} \xrightarrow{\mathrm{H_2SO_4},\;323-333\;\mathrm{K}} \mathrm{C_6H_5NO_2} + \mathrm{H_2O} $$</code>
+<p><strong>E⁺:</strong> NO<sub>2</sub><sup>+</sup> (nitronium ion, from HNO<sub>3</sub> + 2H<sub>2</sub>SO<sub>4</sub>)</p>
+<h4>b) Halogenation</h4>
+<code class="reaction">$$ \mathrm{C_6H_6} + \mathrm{Cl_2} \xrightarrow{\mathrm{FeCl_3},\;\Delta} \mathrm{C_6H_5Cl} + \mathrm{HCl} $$</code>
+<h4>c) Sulphonation</h4>
+<code class="reaction">$$ \mathrm{C_6H_6} + \mathrm{H_2SO_4} \xrightarrow{\Delta} \mathrm{C_6H_5SO_3H} + \mathrm{H_2O} $$</code>
+<h4>d) Friedel-Crafts Alkylation</h4>
+<code class="reaction">$$ \mathrm{C_6H_6} + \mathrm{CH_3Cl} \xrightarrow{\mathrm{AlCl_3},\;\Delta} \mathrm{C_6H_5CH_3} + \mathrm{HCl} $$</code>
+<h4>e) Friedel-Crafts Acylation</h4>
+<code class="reaction">$$ \mathrm{C_6H_6} + \mathrm{CH_3COCl} \xrightarrow{\mathrm{AlCl_3},\;\Delta} \mathrm{C_6H_5COCH_3} + \mathrm{HCl} $$</code>
+<div class="hots-bubble" onclick="toggleHots(this)">🔬 [Mechanism &amp; HOTS] EAS</div>
+<div class="hots-content">
+<p><strong>Why substitution not addition?</strong> Addition would destroy aromaticity (~150 kJ/mol loss). Substitution preserves the aromatic ring.</p>
+<p><strong>σ-complex (arenium ion):</strong> 4 π-electrons delocalized over ring (NOT aromatic). Positive charge at ortho/para positions.</p>
+<p><strong>Directive influence:</strong></p>
+<p>① <strong>Activating, o/p-directing:</strong> –NH<sub>2</sub>, –OH, –OCH<sub>3</sub>, –CH<sub>3</sub> (electron-donating)</p>
+<p>② <strong>Deactivating, m-directing:</strong> –NO<sub>2</sub>, –CN, –CHO, –COOH (electron-withdrawing)</p>
+<p>③ Halogens: o/p-directing but deactivating (unique case)</p>
+<p>⚡ <strong>CBSE PYQ:</strong> Why is –NH<sub>2</sub> activating but –NO<sub>2</sub> deactivating?</p>
+</div>
+<span class="pyq-badge">⚡ PYQ: EAS mechanism, directive effects</span>
+<h3>Carcinogenicity of Polynuclear Hydrocarbons</h3>
+<p>PAHs like <strong>benzopyrene</strong> (cigarette smoke, coal tar) are potent carcinogens. Formed during incomplete combustion.</p>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- TAB 3: NCERT SOLUTIONS VAULT -->
+<section class="tab-content" id="tab-3">
+<div class="glass-card">
+<h2><span class="emoji">📚</span> NCERT Solutions Vault</h2>
+<p style="margin-bottom:16px">All chapter-end exercises from NCERT Class 11 Chemistry — Hydrocarbons, with detailed solutions.</p>
+<div style="margin-bottom:16px">
+<input id="ncertSearch" placeholder="🔍 Search questions..." style="width:100%;max-width:400px;padding:10px 16px;background:rgba(0,0,0,0.3);border:1px solid var(--glass-border);border-radius:var(--radius-sm);color:var(--text-primary);font-family:var(--font-sans);font-size:14px;" type="text"/>
+</div>
+<details class="ncert-q" data-q="1">
+<summary><span class="q-num">1</span><span class="q-text">What are the products of ozonolysis of propene?</span></summary>
+<div class="q-answer">
+<code>$$ \mathrm{CH_3{-}CH{=}CH_2} + \mathrm{O_3} \xrightarrow{\mathrm{Zn/H_2O}} \mathrm{CH_3CHO} + \mathrm{HCHO} $$</code>
+<p>Products: Acetaldehyde (CH<sub>3</sub>CHO) and Formaldehyde (HCHO).</p>
+</div>
+</details>
+<details class="ncert-q" data-q="2">
+<summary><span class="q-num">2</span><span class="q-text">How can you distinguish between ethene and ethyne?</span></summary>
+<div class="q-answer">
+<p><strong>Silver mirror test:</strong> Ethyne gives white precipitate of Ag-acetylide with ammoniacal AgNO<sub>3</sub>. Ethene does not react.</p>
+<code>$$ \mathrm{CH{\equiv}CH} + 2\mathrm{AgNO_3} + 2\mathrm{NH_4OH} \rightarrow \mathrm{AgC{\equiv}CAg}{\downarrow} + 2\mathrm{NH_4NO_3} + 2\mathrm{H_2O} $$</code>
+</div>
+</details>
+<details class="ncert-q" data-q="3">
+<summary><span class="q-num">3</span><span class="q-text">Arrange in decreasing order of boiling points: n-butane, 2-methylbutane, n-pentane, 2,2-dimethylpropane.</span></summary>
+<div class="q-answer">
+<p><strong>Order:</strong> n-pentane (309 K) &gt; 2-methylbutane (301 K) &gt; 2,2-dimethylpropane (282.5 K) &gt; n-butane (272.5 K)</p>
+<p><strong>Reason:</strong> Boiling point depends on molecular mass and branching. More branching → more compact → lower surface area → weaker van der Waals forces.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="4">
+<summary><span class="q-num">4</span><span class="q-text">Arrange F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub> in order of increasing reactivity with alkanes.</span></summary>
+<div class="q-answer">
+<p><strong>Increasing reactivity:</strong> I<sub>2</sub> &lt; Br<sub>2</sub> &lt; Cl<sub>2</sub> &lt; F<sub>2</sub></p>
+<p><strong>Reason:</strong> Reactivity depends on bond dissociation energy. F–F is weakest (158 kJ/mol) → most reactive. I–I bond is weakest but reaction is reversible and negligible.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="5">
+<summary><span class="q-num">5</span><span class="q-text">Increasing order of reduction of alkyl halides with Zn/dil HCl?</span></summary>
+<div class="q-answer">
+<p>Bond dissociation energy: C–Cl (351) &gt; C–Br (293) &gt; C–I (234) kJ/mol</p>
+<p><strong>Order:</strong> R–Cl &lt; R–Br &lt; R–I. Option (ii) is correct.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="6">
+<summary><span class="q-num">6</span><span class="q-text">Correct IUPAC name: 3,6-Diethyl-2-methyloctane / 5-Isopropyl-3-ethyloctane / 3-Ethyl-5-isopropyloctane / 3-Isopropyl-6-ethyloctane?</span></summary>
+<div class="q-answer">
+<p>Draw each structure. The longest chain has 8 carbons. The correct name is <strong>3-Ethyl-5-isopropyloctane</strong>.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="7">
+<summary><span class="q-num">7</span><span class="q-text">Addition of HBr to 1-butene gives mixture of A (1-bromobutane), B (2-bromobutane), C (1-bromo-2-methylpropane). Which is major?</span></summary>
+<div class="q-answer">
+<p><strong>B (2-bromobutane) is major</strong> — Markovnikov product via 2° carbocation.</p>
+<p>C involves hydride shift (rearrangement) — minor.</p>
+<p>A is anti-Markovnikov product — minor without peroxide.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="8">
+<summary><span class="q-num">8</span><span class="q-text">Which compound will NOT show geometrical isomerism?</span></summary>
+<div class="q-answer">
+<p>Geometrical isomerism requires <strong>two different substituents on each doubly bonded carbon</strong>. Compounds where one C has two identical groups (e.g., CH<sub>2</sub>=CHCl) show no geometrical isomerism.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="9">
+<summary><span class="q-num">9</span><span class="q-text">Arrange HCl, HBr, HI in decreasing reactivity with propene.</span></summary>
+<div class="q-answer">
+<p>Bond strength: H–Cl (431) &gt; H–Br (366) &gt; H–I (297) kJ/mol</p>
+<p>Weaker bond → more reactive. <strong>Order: HI &gt; HBr &gt; HCl</strong></p>
+</div>
+</details>
+<details class="ncert-q" data-q="10">
+<summary><span class="q-num">10</span><span class="q-text">Arrange carbanions in decreasing stability: (A) H<sub>3</sub>C–C≡C⁻ (B) H–C≡C⁻ (C) CH<sub>3</sub>–CH<sub>2</sub>⁻</span></summary>
+<div class="q-answer">
+<p>Stability depends on s-character of carbon bearing charge. sp (50%) &gt; sp² (33%) &gt; sp³ (25%).</p>
+<p><strong>B &gt; A &gt; C</strong> (Option ii). Both A and B are sp hybridized, but CH<sub>3</sub> group in A destabilizes slightly by hyperconjugation.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="11">
+<summary><span class="q-num">11</span><span class="q-text">Decreasing order of rate of β-elimination with alc. KOH?</span></summary>
+<div class="q-answer">
+<p>The rate depends on stability of the alkene formed (Saytzeff). More substituted alkene → faster elimination.</p>
+<p>3° &gt; 2° &gt; 1° alkyl halides for elimination.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="12">
+<summary><span class="q-num">12</span><span class="q-text">Which reaction of methane is incomplete combustion?</span></summary>
+<div class="q-answer">
+<p>Option <strong>(iii) CH<sub>4</sub> + O<sub>2</sub> → C + 2H<sub>2</sub>O</strong> is incomplete combustion (soot formation).</p>
+<p>Option (iv) is complete combustion. Options (i) and (ii) are controlled oxidation.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="13">
+<summary><span class="q-num">13</span><span class="q-text">Which methane oxidations are controlled oxidations?</span></summary>
+<div class="q-answer">
+<p>Controlled oxidation uses specific catalysts for partial oxidation:</p>
+<p>(iii) CH<sub>4</sub> + O<sub>2</sub> → HCHO + H<sub>2</sub>O (MoO<sub>3</sub> catalyst) — <strong>controlled oxidation</strong></p>
+<p>(i) Complete combustion; (ii) Incomplete combustion — not controlled.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="14">
+<summary><span class="q-num">14</span><span class="q-text">Which conformer of ethane is most stable? Explain.</span></summary>
+<div class="q-answer">
+<p>The <strong>staggered conformer</strong> (θ = 60°) is most stable. C–H bonds are 60° apart → minimum torsional strain.</p>
+<p>The <strong>eclipsed conformer</strong> (θ = 0°) is ~12.5 kJ mol⁻¹ higher in energy due to C–H bond electron cloud repulsion.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="15">
+<summary><span class="q-num">15</span><span class="q-text">Write Newman projections for eclipsed and staggered ethane.</span></summary>
+<div class="q-answer">
+<p><strong>Staggered:</strong> Front H at 60° offset from back H. <strong>Eclipsed:</strong> Front H exactly overlap back H.</p>
+<p>In Newman projection: front C = dot (•), back C = circle (○). Bonds from front C drawn to edge of circle; bonds from back C drawn to circle circumference.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="16">
+<summary><span class="q-num">16</span><span class="q-text">Which has highest bp: n-butane, isobutane, n-pentane?</span></summary>
+<div class="q-answer">
+<p><strong>n-Pentane</strong> (bp 309 K) — highest molecular mass (5 C atoms).</p>
+<p>n-Butane (272.5 K), isobutane (261 K) — only 4 C atoms.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="17">
+<summary><span class="q-num">17</span><span class="q-text">Products of ozonolysis of 1-butene and 2-butene?</span></summary>
+<div class="q-answer">
+<p><strong>1-butene:</strong> CH<sub>3</sub>CH<sub>2</sub>CH=CH<sub>2</sub> → CH<sub>3</sub>CH<sub>2</sub>CHO (propanal) + HCHO (formaldehyde)</p>
+<p><strong>2-butene:</strong> CH<sub>3</sub>CH=CHCH<sub>3</sub> → 2 CH<sub>3</sub>CHO (acetaldehyde)</p>
+</div>
+</details>
+<details class="ncert-q" data-q="18">
+<summary><span class="q-num">18</span><span class="q-text">Why is benzene extraordinarily stable despite high unsaturation?</span></summary>
+<div class="q-answer">
+<p>① <strong>Resonance stabilization</strong> (~150 kJ mol⁻¹) — 6 π-electrons delocalized over ring.</p>
+<p>② <strong>Hückel's rule</strong> (4n+2, n=1) — aromatic.</p>
+<p>③ Addition would destroy aromaticity; substitution preserves it.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="19">
+<summary><span class="q-num">19</span><span class="q-text">Convert ethanoic acid into benzene.</span></summary>
+<div class="q-answer">
+<p>CH<sub>3</sub>COOH → Decarboxylation → CH<sub>4</sub> → Chlorination → CH<sub>3</sub>Cl → Wurtz → C<sub>2</sub>H<sub>6</sub> → Dehydrogenation → C<sub>2</sub>H<sub>4</sub> → C<sub>2</sub>H<sub>2</sub> → Cyclic polymerization (873 K, Fe tube) → C<sub>6</sub>H<sub>6</sub></p>
+<code>$$ 3\mathrm{CH{\equiv}CH} \xrightarrow{\text{red hot Fe, }873\;\mathrm{K}} \mathrm{C_6H_6} $$</code>
+</div>
+</details>
+<details class="ncert-q" data-q="20">
+<summary><span class="q-num">20</span><span class="q-text">Write mechanism of free radical chlorination of methane.</span></summary>
+<div class="q-answer">
+<p><strong>Initiation:</strong> Cl<sub>2</sub> → 2 Cl•</p>
+<p><strong>Propagation:</strong> Cl• + CH<sub>4</sub> → •CH<sub>3</sub> + HCl; •CH<sub>3</sub> + Cl<sub>2</sub> → CH<sub>3</sub>Cl + Cl•</p>
+<p><strong>Termination:</strong> Cl• + Cl• → Cl<sub>2</sub>; •CH<sub>3</sub> + •CH<sub>3</sub> → CH<sub>3</sub>–CH<sub>3</sub>; •CH<sub>3</sub> + Cl• → CH<sub>3</sub>Cl</p>
+</div>
+</details>
+<details class="ncert-q" data-q="21">
+<summary><span class="q-num">21</span><span class="q-text">What happens when benzene is treated with CH<sub>3</sub>Cl in presence of AlCl<sub>3</sub>? Write mechanism.</span></summary>
+<div class="q-answer">
+<p><strong>Friedel-Crafts alkylation:</strong> C<sub>6</sub>H<sub>6</sub> + CH<sub>3</sub>Cl → C<sub>6</sub>H<sub>5</sub>CH<sub>3</sub> (toluene) + HCl</p>
+<p>Step 1: CH<sub>3</sub>Cl + AlCl<sub>3</sub> → CH<sub>3</sub>⁺ + AlCl<sub>4</sub>⁻</p>
+<p>Step 2: C<sub>6</sub>H<sub>6</sub> + CH<sub>3</sub>⁺ → [C<sub>6</sub>H<sub>6</sub>–CH<sub>3</sub>]⁺ (arenium ion)</p>
+<p>Step 3: [C<sub>6</sub>H<sub>6</sub>–CH<sub>3</sub>]⁺ + AlCl<sub>4</sub>⁻ → C<sub>6</sub>H<sub>5</sub>CH<sub>3</sub> + AlCl<sub>3</sub> + HCl</p>
+</div>
+</details>
+<details class="ncert-q" data-q="22">
+<summary><span class="q-num">22</span><span class="q-text">Distinguish between n-propyl bromide and isopropyl bromide.</span></summary>
+<div class="q-answer">
+<p>Both give propene on dehydrohalogenation (same product). Alternative: <strong>Wurtz reaction</strong> — n-propyl bromide gives n-hexane; isopropyl bromide gives 2,3-dimethylbutane.</p>
+<p>Or: React with Na/dry ether and compare products by GC or boiling point.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="23">
+<summary><span class="q-num">23</span><span class="q-text">What happens when but-2-ene is treated with alkaline KMnO<sub>4</sub>?</span></summary>
+<div class="q-answer">
+<p>Cold, dilute alkaline KMnO<sub>4</sub> (Baeyer's reagent) oxidizes but-2-ene to vicinal diol (butane-2,3-diol).</p>
+<p>Purple color fades, brown MnO<sub>2</sub> precipitates — test for unsaturation.</p>
+<p>Hot concentrated KMnO<sub>4</sub> → oxidative cleavage to carboxylic acids.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="24">
+<summary><span class="q-num">24</span><span class="q-text">Products of Friedel-Crafts acylation of benzene with CH<sub>3</sub>COCl?</span></summary>
+<div class="q-answer">
+<p><strong>Acetophenone</strong> (methyl phenyl ketone, C<sub>6</sub>H<sub>5</sub>COCH<sub>3</sub>)</p>
+<p>CH<sub>3</sub>COCl + AlCl<sub>3</sub> → CH<sub>3</sub>CO⁺ (acylium ion, resonance stabilized) + AlCl<sub>4</sub>⁻</p>
+</div>
+</details>
+<details class="ncert-q" data-q="25">
+<summary><span class="q-num">25</span><span class="q-text">Effect of branching on melting point of alkanes?</span></summary>
+<div class="q-answer">
+<p>Branched alkanes have <strong>higher</strong> melting points than straight-chain isomers (opposite to boiling point).</p>
+<p><strong>Reason:</strong> More symmetrical, compact molecules pack better in crystal lattice → stronger intermolecular forces.</p>
+<p>Example: n-pentane (mp 143 K) vs 2,2-dimethylpropane (mp 257 K).</p>
+</div>
+</details>
+<details class="ncert-q" data-q="26">
+<summary><span class="q-num">26</span><span class="q-text">Why does propanol have higher boiling point than butane?</span></summary>
+<div class="q-answer">
+<p>Propanol (CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH, bp 370 K) has –OH group capable of <strong>intermolecular hydrogen bonding</strong>.</p>
+<p>Butane (C<sub>4</sub>H<sub>10</sub>, bp 272.5 K) is non-polar — only weak van der Waals forces.</p>
+<p>This shows functional groups can dominate boiling point trends over molecular size.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="27">
+<summary><span class="q-num">27</span><span class="q-text">Convert ethyne to benzene.</span></summary>
+<div class="q-answer">
+<p>Pass ethyne through red hot iron tube at 873 K. 3 molecules trimerize to form benzene.</p>
+<code>$$ 3\mathrm{CH{\equiv}CH} \xrightarrow{\text{red hot Fe, }873\;\mathrm{K}} \mathrm{C_6H_6} $$</code>
+</div>
+</details>
+<details class="ncert-q" data-q="28">
+<summary><span class="q-num">28</span><span class="q-text">What is the peroxide effect? Explain with example.</span></summary>
+<div class="q-answer">
+<p><strong>Peroxide effect (Kharasch):</strong> In presence of organic peroxides, HBr adds to unsymmetrical alkenes in <strong>anti-Markovnikov</strong> manner.</p>
+<p>Propene + HBr + benzoyl peroxide → 1-bromopropane</p>
+<p>Mechanism: free radical chain (Br• adds to CH<sub>2</sub> → 2° radical intermediate).</p>
+<p><strong>Only with HBr</strong> — HCl bond too strong, HI bond too weak.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="29">
+<summary><span class="q-num">29</span><span class="q-text">What is soda lime? Its role in decarboxylation?</span></summary>
+<div class="q-answer">
+<p><strong>Soda lime:</strong> Mixture of NaOH and CaO.</p>
+<p><strong>Role:</strong> When sodium salt of carboxylic acid is heated with soda lime, CO<sub>2</sub> is eliminated → alkane with one carbon less.</p>
+<p>CaO makes mixture porous, prevents fusion, absorbs moisture, improves heat distribution.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="30">
+<summary><span class="q-num">30</span><span class="q-text">Explain mechanism of nitration of benzene.</span></summary>
+<div class="q-answer">
+<p>C<sub>6</sub>H<sub>6</sub> + HNO<sub>3</sub> (conc. H<sub>2</sub>SO<sub>4</sub>, 323-333 K) → C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + H<sub>2</sub>O</p>
+<p><strong>Step 1:</strong> HNO<sub>3</sub> + H<sub>2</sub>SO<sub>4</sub> → NO<sub>2</sub>⁺ + H<sub>3</sub>O⁺ + 2HSO<sub>4</sub>⁻</p>
+<p><strong>Step 2:</strong> C<sub>6</sub>H<sub>6</sub> + NO<sub>2</sub>⁺ → [C<sub>6</sub>H<sub>6</sub>–NO<sub>2</sub>]⁺ (σ-complex, arenium ion)</p>
+<p><strong>Step 3:</strong> [C<sub>6</sub>H<sub>6</sub>–NO<sub>2</sub>]⁺ + HSO<sub>4</sub>⁻ → C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + H<sub>2</sub>SO<sub>4</sub></p>
+</div>
+</details>
+<details class="ncert-q" data-q="31">
+<summary><span class="q-num">31</span><span class="q-text">Why can't methane be prepared by Wurtz reaction?</span></summary>
+<div class="q-answer">
+<p>Wurtz: 2RX + 2Na → R–R + 2NaX (forms alkane with <strong>even</strong> number of C atoms).</p>
+<p>Methane requires R = H (not an alkyl group). HX + Na → H<sub>2</sub> gas, not CH<sub>4</sub>.</p>
+<p>Smallest alkane by Wurtz = ethane (C<sub>2</sub>H<sub>6</sub>).</p>
+</div>
+</details>
+<details class="ncert-q" data-q="32">
+<summary><span class="q-num">32</span><span class="q-text">Arrange in order of decreasing acidity: ethane, ethene, ethyne.</span></summary>
+<div class="q-answer">
+<p><strong>Ethyne &gt; Ethene &gt; Ethane</strong></p>
+<p>Acidity ∝ s-character: sp (50%) &gt; sp² (33%) &gt; sp³ (25%)</p>
+<p>pK<sub>a</sub> values: ethyne (~25), ethene (~44), ethane (~50)</p>
+</div>
+</details>
+<details class="ncert-q" data-q="33">
+<summary><span class="q-num">33</span><span class="q-text">An alkene on ozonolysis gives CH<sub>3</sub>CHO and HCHO. Identify.</span></summary>
+<div class="q-answer">
+<p>Working backwards: CH<sub>3</sub>CHO corresponds to CH<sub>3</sub>–CH= ; HCHO corresponds to =CH<sub>2</sub></p>
+<p><strong>Alkene: Propene</strong> (CH<sub>3</sub>–CH=CH<sub>2</sub>)</p>
+</div>
+</details>
+<details class="ncert-q" data-q="34">
+<summary><span class="q-num">34</span><span class="q-text">An alkene gives CH<sub>3</sub>CH<sub>2</sub>CHO and CH<sub>3</sub>CHO on ozonolysis. Identify.</span></summary>
+<div class="q-answer">
+<p>CH<sub>3</sub>CH<sub>2</sub>CHO corresponds to CH<sub>3</sub>CH<sub>2</sub>–CH= ; CH<sub>3</sub>CHO corresponds to CH<sub>3</sub>–CH=</p>
+<p><strong>Alkene: Pent-2-ene</strong> (CH<sub>3</sub>CH<sub>2</sub>–CH=CH–CH<sub>3</sub>)</p>
+</div>
+</details>
+<details class="ncert-q" data-q="35">
+<summary><span class="q-num">35</span><span class="q-text">What are arenes? Give examples.</span></summary>
+<div class="q-answer">
+<p><strong>Arenes</strong> (aromatic hydrocarbons) contain one or more benzene rings. Named from Greek <em>aroma</em> (pleasant odor).</p>
+<p>Examples: Benzene (C<sub>6</sub>H<sub>6</sub>), Toluene (C<sub>6</sub>H<sub>5</sub>CH<sub>3</sub>), Naphthalene (C<sub>10</sub>H<sub>8</sub>).</p>
+</div>
+</details>
+<details class="ncert-q" data-q="36">
+<summary><span class="q-num">36</span><span class="q-text">IUPAC names: (i) CH<sub>3</sub>–CH=CH<sub>2</sub> (ii) CH<sub>3</sub>–C≡C–CH<sub>3</sub></span></summary>
+<div class="q-answer">
+<p>(i) <strong>Propene</strong> (3 carbons, double bond at C-1)</p>
+<p>(ii) <strong>But-2-yne</strong> (4 carbons, triple bond at C-2)</p>
+</div>
+</details>
+<details class="ncert-q" data-q="37">
+<summary><span class="q-num">37</span><span class="q-text">What is Markovnikov's rule? Explain with example.</span></summary>
+<div class="q-answer">
+<p><strong>Rule:</strong> When an unsymmetrical reagent (HX) adds to an unsymmetrical alkene, H attaches to the C with more H atoms, X to C with fewer H atoms.</p>
+<p><strong>Example:</strong> Propene + HBr → 2-bromopropane (via 2° carbocation, more stable).</p>
+<p><strong>Reason:</strong> Reaction proceeds through the more stable carbocation intermediate.</p>
+</div>
+</details>
+<details class="ncert-q" data-q="38">
+<summary><span class="q-num">38</span><span class="q-text">Which is more stable: cis-2-butene or trans-2-butene? Why?</span></summary>
+<div class="q-answer">
+<p><strong>trans-2-Butene</strong> is more stable. In cis isomer, two CH<sub>3</sub> groups are on same side → steric hindrance. In trans, CH<sub>3</sub> groups are opposite → minimized steric repulsion.</p>
+<p>Energy difference: ~4.8 kJ mol⁻¹.</p>
+</div>
+</details>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- TAB 4: INTERACTIVE LAB -->
+<section class="tab-content" id="tab-4">
+<div class="glass-card">
+<h2><span class="emoji">🔬</span> Interactive Hydrocarbon Laboratory</h2>
+<p>Explore conformations, reaction mechanisms, and aromatic substitution through interactive Canvas simulations.</p>
+</div>
+<div class="lab-container">
+<!-- SIM 1: Ethane Conformer -->
+<div class="sim-card">
+<div class="sim-header">
+<div class="sim-title"><span>🧪</span> Ethane Conformation 3D Rotator</div>
+<div class="sim-controls">
+<label>Dihedral: <span class="sim-value" id="angleDisplay">0°</span></label>
+<input id="dihedralSlider" max="360" min="0" step="1" type="range" value="0"/>
+<button class="sim-btn" id="animateBtn">▶ Animate</button>
+</div>
+</div>
+<div class="sim-canvas-wrap">
+<canvas height="420" id="ethaneCanvas" width="900"></canvas>
+</div>
+<div class="sim-info">
+<span>Newman (left) · Sawhorse (right)</span>
+<span>Energy: <span class="sim-value" id="energyDisplay">0.0</span> kJ mol<sup>-1</sup></span>
+<span>Form: <span class="sim-value" id="confDisplay">Eclipsed</span></span>
+</div>
+</div>
+<!-- SIM 2: Markovnikov Engine -->
+<div class="sim-card">
+<div class="sim-header">
+<div class="sim-title"><span>⚡</span> Regioselectivity Engine</div>
+<div class="sim-controls">
+<div class="toggle-wrap">
+<span>No Peroxide</span>
+<div class="toggle" id="peroxideToggle"></div>
+<span>With Peroxide</span>
+</div>
+<button class="sim-btn" id="runMechBtn">▶ Run</button>
+<button class="sim-btn" id="resetMechBtn" style="background:linear-gradient(135deg,var(--text-muted),var(--text-secondary))">Reset</button>
+</div>
+</div>
+<div class="sim-canvas-wrap">
+<canvas height="380" id="markovnikovCanvas" width="900"></canvas>
+</div>
+<div class="sim-step-indicator" id="mechSteps">
+<span class="sim-step active" data-step="0">Step 0: Reactants</span>
+<span class="sim-step" data-step="1">Step 1: Attack</span>
+<span class="sim-step" data-step="2">Step 2: Intermediate</span>
+<span class="sim-step" data-step="3">Step 3: Product</span>
+</div>
+<div class="sim-info">
+<span>Propene + HBr</span>
+<span>Product: <span class="sim-value" id="productDisplay">2-Bromopropane</span></span>
+</div>
+</div>
+<!-- SIM 3: Benzene EAS -->
+<div class="sim-card">
+<div class="sim-header">
+<div class="sim-title"><span>🧪</span> Benzene EAS Sandbox</div>
+<div class="sim-controls">
+<label>Reaction:</label>
+<select id="easSelect">
+<option value="nitration">Nitration (HNO<sub>3</sub>/H<sub>2</sub>SO<sub>4</sub>)</option>
+<option value="halogenation">Halogenation (Cl<sub>2</sub>/FeCl<sub>3</sub>)</option>
+<option value="sulphonation">Sulphonation (H<sub>2</sub>SO<sub>4</sub>, Δ)</option>
+<option value="alkylation">Friedel-Crafts Alkylation</option>
+<option value="acylation">Friedel-Crafts Acylation</option>
+</select>
+<button class="sim-btn" id="runEasBtn">▶ Run</button>
+</div>
+</div>
+<div class="sim-canvas-wrap">
+<canvas height="400" id="benzeneCanvas" width="900"></canvas>
+</div>
+<div class="sim-step-indicator" id="easSteps">
+<span class="sim-step active" data-step="0">Step 0: Reactants</span>
+<span class="sim-step" data-step="1">Step 1: E<sup>+</sup></span>
+<span class="sim-step" data-step="2">Step 2: σ-Complex</span>
+<span class="sim-step" data-step="3">Step 3: Product</span>
+</div>
+<div class="sim-info">
+<span>E<sup>+</sup>: <span class="sim-value" id="electrophileDisplay">NO<sub>2</sub><sup>+</sup></span></span>
+<span>Product: <span class="sim-value" id="easProductDisplay">Nitrobenzene</span></span>
+</div>
+</div>
+<!-- SIM 4: Halogenation Timeline -->
+<div class="sim-card">
+<div class="sim-header">
+<div class="sim-title"><span>🔥</span> Free-Radical Halogenation Timeline</div>
+<div class="sim-controls">
+<button class="sim-btn" id="haloPrevBtn">◀ Prev</button>
+<button class="sim-btn" id="haloNextBtn">Next ▶</button>
+<button class="sim-btn" id="haloResetBtn" style="background:linear-gradient(135deg,var(--text-muted),var(--text-secondary))">Reset</button>
+</div>
+</div>
+<div class="sim-canvas-wrap">
+<canvas height="380" id="halogenCanvas" width="900"></canvas>
+</div>
+<div class="sim-step-indicator" id="haloSteps">
+<span class="sim-step active" data-step="0">Initiation</span>
+<span class="sim-step" data-step="1">Propagation 1</span>
+<span class="sim-step" data-step="2">Propagation 2</span>
+<span class="sim-step" data-step="3">Termination</span>
+</div>
+<div class="sim-info">
+<span>Phase: <span class="sim-value" id="haloPhaseDisplay">Initiation</span></span>
+<span>CH<sub>4</sub> + Cl<sub>2</sub> → CH<sub>3</sub>Cl + HCl</span>
+</div>
+</div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></section>
+</div><!-- /app-container -->
+<script>
+// 1. TAB NAVIGATION
+(function(){
+  const tabs=document.querySelectorAll('.tab-btn');
+  const contents=document.querySelectorAll('.tab-content');
+  if(!tabs.length||!contents.length)return;
+  tabs.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var target=this.dataset.tab;
+      tabs.forEach(function(b){b.classList.remove('active')});
+      contents.forEach(function(c){c.classList.remove('active')});
+      this.classList.add('active');
+      var el=document.getElementById(target);
+      if(el)el.classList.add('active');
+      if(window.renderMathInElement&&el){
+        try{renderMathInElement(el,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],ignoredTags:["script","noscript","style","textarea","pre","annotation","annotation-xml"]})}catch(e){}
+      }
+      if(target==='tab-4')setTimeout(resizeAllCanvases,100);
+    });
+  });
+})();
+
+// 2. HOTS TOGGLE
+function toggleHots(el){
+  var content=el.nextElementSibling;
+  if(content&&content.classList.contains('hots-content'))content.classList.toggle('open');
+}
+
+// 3. KATEX
+document.addEventListener('DOMContentLoaded',function(){
+  if(window.renderMathInElement){
+    renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],ignoredTags:["script","noscript","style","textarea","pre","annotation","annotation-xml"],throwOnError:false});
+  }
+  resizeAllCanvases();
+  initEthane(); initMarkovnikov(); initBenzene(); initHalogen();
+});
+
+// 4. CANVAS RESIZE
+function resizeCanvas(id){
+  var c=document.getElementById(id);if(!c)return;
+  var w=c.parentElement;if(!w)return;
+  var ww=w.clientWidth;if(ww<100)return;
+  c.style.width=ww+'px';c.style.height=(c.height*(ww/c.width))+'px';
+}
+function resizeAllCanvases(){
+  ['ethaneCanvas','markovnikovCanvas','benzeneCanvas','halogenCanvas'].forEach(resizeCanvas);
+}
+window.addEventListener('resize',resizeAllCanvases);
+
+// 5. NCERT SEARCH
+document.addEventListener('DOMContentLoaded',function(){
+  var searchBox=document.getElementById('ncertSearch');
+  if(searchBox){
+    searchBox.addEventListener('input',function(){
+      var q=this.value.toLowerCase();
+      document.querySelectorAll('.ncert-q').forEach(function(d){
+        var txt=d.textContent.toLowerCase();
+        d.style.display=txt.indexOf(q)>-1?'':'none';
+      });
+    });
+  }
+});
+
+// ============================================================
+// SIM 1: ETHANE CONFORMATION
+// ============================================================
+function initEthane(){
+  var canvas=document.getElementById('ethaneCanvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var slider=document.getElementById('dihedralSlider');
+  var angleDisp=document.getElementById('angleDisplay');
+  var energyDisp=document.getElementById('energyDisplay');
+  var confDisp=document.getElementById('confDisplay');
+  var animBtn=document.getElementById('animateBtn');
+  var angle=0,animId=null,isAnim=false;
+
+  function draw(deg){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var rad=deg*Math.PI/180;
+    var energy=6.25*(1-Math.cos(3*rad));
+    if(energyDisp)energyDisp.textContent=energy.toFixed(1);
+    var d=((deg%360)+360)%360;
+    var name='Skew';
+    if(d<5||Math.abs(d-360)<5||Math.abs(d-180)<5)name='Eclipsed';
+    else if(Math.abs(d-60)<5||Math.abs(d-300)<5||Math.abs(d-240)<5||Math.abs(d-120)<5)name='Staggered';
+    if(confDisp)confDisp.textContent=name;
+
+    // Newman Projection (left)
+    var cx=230,cy=180,r1=80,r2=52;
+    // back carbon ring
+    ctx.beginPath();ctx.arc(cx,cy,r2,0,2*Math.PI);
+    ctx.strokeStyle='rgba(255,255,255,0.1)';ctx.lineWidth=1;ctx.stroke();
+    // outer ring
+    ctx.beginPath();ctx.arc(cx,cy,r1,0,2*Math.PI);
+    ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=1;ctx.stroke();
+    // front carbon dot
+    ctx.beginPath();ctx.arc(cx,cy,12,0,2*Math.PI);
+    ctx.fillStyle='rgba(6,182,212,0.85)';ctx.fill();
+    // back carbon ring
+    ctx.beginPath();ctx.arc(cx,cy,10,0,2*Math.PI);
+    ctx.strokeStyle='rgba(139,92,246,0.7)';ctx.lineWidth=2.5;ctx.stroke();
+    // front C-H bonds
+    for(var i=0;i<3;i++){
+      var a=rad+i*2*Math.PI/3;
+      var ex=cx+Math.cos(a)*r1,ey=cy-Math.sin(a)*r1;
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(ex,ey);
+      ctx.strokeStyle='rgba(255,255,255,0.65)';ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle='rgba(255,255,255,0.45)';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('H',ex+Math.cos(a)*13,ey-Math.sin(a)*13+4);
+    }
+    // back C-H bonds (dashed, offset 60deg)
+    for(var i=0;i<3;i++){
+      var a=rad+Math.PI/3+i*2*Math.PI/3;
+      var ex=cx+Math.cos(a)*r2,ey=cy-Math.sin(a)*r2;
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(ex,ey);
+      ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([]);
+      ctx.fillStyle='rgba(255,255,255,0.25)';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('H',ex+Math.cos(a)*13,ey-Math.sin(a)*13+4);
+    }
+    ctx.fillStyle='rgba(255,255,255,0.3)';ctx.font='12px Inter,sans-serif';ctx.textAlign='center';
+    ctx.fillText('Newman Projection',cx,cy+r1+28);
+
+    // Sawhorse (right)
+    var cx2=640,cy2=180;
+    var x1=cx2-45,y1=cy2-20,x2=cx2+45,y2=cy2+20;
+    // front carbon
+    ctx.beginPath();ctx.arc(x1,y1,11,0,2*Math.PI);
+    ctx.fillStyle='rgba(6,182,212,0.85)';ctx.fill();
+    // back carbon
+    ctx.beginPath();ctx.arc(x2,y2,11,0,2*Math.PI);
+    ctx.fillStyle='rgba(139,92,246,0.85)';ctx.fill();
+    // C-C bond
+    ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);
+    ctx.strokeStyle='rgba(255,255,255,0.35)';ctx.lineWidth=2;ctx.stroke();
+    // front bonds
+    for(var i=0;i<3;i++){
+      var a=rad+i*2*Math.PI/3;
+      var ex=x1+Math.cos(a)*65,ey=y1-Math.sin(a)*65;
+      ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(ex,ey);
+      ctx.strokeStyle='rgba(255,255,255,0.55)';ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle='rgba(255,255,255,0.45)';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('H',ex+Math.cos(a)*12,ey-Math.sin(a)*12+4);
+    }
+    // back bonds
+    for(var i=0;i<3;i++){
+      var a=rad+Math.PI/3+i*2*Math.PI/3;
+      var ex=x2+Math.cos(a)*55,ey=y2-Math.sin(a)*55;
+      ctx.beginPath();ctx.moveTo(x2,y2);ctx.lineTo(ex,ey);
+      ctx.strokeStyle='rgba(255,255,255,0.28)';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.fillStyle='rgba(255,255,255,0.22)';ctx.font='11px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('H',ex+Math.cos(a)*12,ey-Math.sin(a)*12+4);
+    }
+    ctx.fillStyle='rgba(255,255,255,0.3)';ctx.font='12px Inter,sans-serif';ctx.textAlign='center';
+    ctx.fillText('Sawhorse Projection',cx2,cy2+115);
+    ctx.fillStyle='rgba(245,158,11,0.5)';ctx.font='11px Inter,sans-serif';
+    ctx.fillText('\u03B8='+deg+'\u00B0',cx2,cy2+75);
+
+    // Energy graph
+    var egX=cx2-130,egY=cy2+75,egW=260,egH=28;
+    ctx.fillStyle='rgba(0,0,0,0.15)';
+    if(ctx.roundRect)ctx.roundRect(egX,egY,egW,egH,4);
+    ctx.fillRect(egX,egY,egW,egH);
+    // curve
+    ctx.beginPath();
+    for(var x=0;x<=egW;x++){
+      var p=x/egW;
+      var eVal=Math.sin(p*3*2*Math.PI+Math.PI/2)*0.5+0.5;
+      var px=egX+x,py=egY+egH/2+(0.5-eVal)*0.35*egH;
+      if(x===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);
+    }
+    ctx.strokeStyle='rgba(6,182,212,0.5)';ctx.lineWidth=2;ctx.stroke();
+    // marker
+    var ep=((deg%360)+360)%360/360;
+    var eMarker=Math.sin(ep*3*2*Math.PI+Math.PI/2)*0.5+0.5;
+    var mx=egX+ep*egW,my=egY+egH/2+(0.5-eMarker)*0.35*egH;
+    ctx.beginPath();ctx.arc(mx,my,5,0,2*Math.PI);
+    ctx.fillStyle='rgba(245,158,11,0.9)';ctx.fill();
+    ctx.strokeStyle='#fff';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle='rgba(255,255,255,0.2)';ctx.font='8px Inter,sans-serif';ctx.textAlign='center';
+    ctx.fillText('0\u00B0',egX,egY+egH+10);
+    ctx.fillText('60\u00B0',egX+egW/6,egY+egH+10);
+    ctx.fillText('120\u00B0',egX+egW/3,egY+egH+10);
+    ctx.fillText('180\u00B0',egX+egW/2,egY+egH+10);
+    ctx.fillText('240\u00B0',egX+egW*2/3,egY+egH+10);
+    ctx.fillText('300\u00B0',egX+egW*5/6,egY+egH+10);
+    ctx.fillText('360\u00B0',egX+egW,egY+egH+10);
+  }
+
+  function update(val){
+    angle=parseInt(val);
+    if(angleDisp)angleDisp.textContent=angle+'\u00B0';
+    draw(angle);
+  }
+
+  if(slider){
+    slider.addEventListener('input',function(){
+      if(isAnim){isAnim=false;if(animId){cancelAnimationFrame(animId);animId=null}if(animBtn)animBtn.textContent='\u25B6 Animate';}
+      update(this.value);
+    });
+    update(slider.value);
+  }
+
+  if(animBtn){
+    animBtn.addEventListener('click',function(){
+      if(isAnim){
+        isAnim=false;if(animId){cancelAnimationFrame(animId);animId=null}
+        this.textContent='\u25B6 Animate';return;
+      }
+      isAnim=true;this.textContent='\u23F8 Pause';
+      var start=parseInt(slider?slider.value:0),t=0;
+      function step(){
+        if(!isAnim)return;
+        t+=0.02;var a=(start+t*45)%360;
+        if(slider)slider.value=Math.round(a);
+        update(Math.round(a));
+        animId=requestAnimationFrame(step);
+        if(t>8){isAnim=false;if(animBtn)animBtn.textContent='\u25B6 Animate';animId=null;}
+      }
+      animId=requestAnimationFrame(step);
+    });
+  }
+}
+
+// ============================================================
+// SIM 2: MARKOVNIKOV ENGINE
+// ============================================================
+function initMarkovnikov(){
+  var canvas=document.getElementById('markovnikovCanvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var toggle=document.getElementById('peroxideToggle');
+  var runBtn=document.getElementById('runMechBtn');
+  var resetBtn=document.getElementById('resetMechBtn');
+  var prodDisp=document.getElementById('productDisplay');
+  var steps=document.querySelectorAll('#mechSteps .sim-step');
+  var step=0,hasP=false,timer=null;
+
+  if(toggle){
+    toggle.addEventListener('click',function(){
+      this.classList.toggle('active');
+      hasP=this.classList.contains('active');
+      if(prodDisp)prodDisp.textContent=hasP?'1-Bromopropane (Anti-M.)':'2-Bromopropane (Markovnikov)';
+      resetSim();
+    });
+  }
+
+  function resetSim(){step=0;if(timer){clearTimeout(timer);timer=null}updateSteps();drawState(0);}
+  function updateSteps(){
+    steps.forEach(function(s,i){
+      s.classList.remove('active','done');
+      if(i===step)s.classList.add('active');
+      else if(i<step)s.classList.add('done');
+    });
+  }
+
+  function drawState(s){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var cx=canvas.width/2,cy=canvas.height/2-20;
+    if(s===0){
+      ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='22px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('CH\u2083\u2013CH=CH\u2082  +  H\u2013Br',cx,cy-5);
+      ctx.fillStyle='rgba(255,255,255,0.25)';ctx.font='14px Inter,sans-serif';
+      ctx.fillText('Propene + Hydrogen Bromide',cx,cy+30);
+    }else if(s===1){
+      if(!hasP){
+        ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='16px Inter,sans-serif';ctx.textAlign='center';
+        ctx.fillText('H\u207A attacks terminal CH\u2082 (Markovnikov)',cx,cy-55);
+        ctx.fillStyle='rgba(245,158,11,0.8)';ctx.font='20px Inter,sans-serif';
+        ctx.fillText('CH\u2083\u2013CH=CH\u2082  +  H\u207A',cx,cy-18);
+        ctx.fillStyle='rgba(6,182,212,0.5)';ctx.font='14px Inter,sans-serif';
+        ctx.fillText('\u2193 H\u207A adds to C-1 (more H atoms)',cx,cy+12);
+        ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='20px Inter,sans-serif';
+        ctx.fillText('CH\u2083\u2013\u207ACH\u2013CH\u2083  (2\u00B0 Carbocation)',cx,cy+48);
+        ctx.fillStyle='rgba(16,185,129,0.5)';ctx.font='13px Inter,sans-serif';
+        ctx.fillText('\u2713 More stable 2\u00B0 carbocation',cx,cy+78);
+      }else{
+        ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='16px Inter,sans-serif';ctx.textAlign='center';
+        ctx.fillText('Br\u2022 attacks terminal CH\u2082',cx,cy-55);
+        ctx.fillStyle='rgba(245,158,11,0.8)';ctx.font='20px Inter,sans-serif';
+        ctx.fillText('CH\u2083\u2013CH=CH\u2082  +  Br\u2022',cx,cy-18);
+        ctx.fillStyle='rgba(6,182,212,0.5)';ctx.font='14px Inter,sans-serif';
+        ctx.fillText('\u2193 Br\u2022 adds to form 2\u00B0 radical',cx,cy+12);
+        ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='20px Inter,sans-serif';
+        ctx.fillText('CH\u2083\u2013\u010Ch\u2013CH\u2082Br  (2\u00B0 Radical)',cx,cy+48);
+        ctx.fillStyle='rgba(16,185,129,0.5)';ctx.font='13px Inter,sans-serif';
+        ctx.fillText('\u2713 More stable 2\u00B0 radical intermediate',cx,cy+78);
+      }
+    }else if(s===2){
+      if(!hasP){
+        ctx.fillStyle='rgba(6,182,212,0.4)';ctx.font='15px Inter,sans-serif';ctx.textAlign='center';
+        ctx.fillText('Resonance-stabilized 2\u00B0 carbocation',cx,cy-30);
+        ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='22px Inter,sans-serif';
+        ctx.fillText('CH\u2083\u2013\u207ACH\u2013CH\u2083  \u2194  CH\u2083\u2013CH\u2013\u207ACH\u2083',cx,cy+10);
+        ctx.fillStyle='rgba(255,255,255,0.3)';ctx.font='13px Inter,sans-serif';
+        ctx.fillText('(delocalized positive charge)',cx,cy+40);
+      }else{
+        ctx.fillStyle='rgba(6,182,212,0.4)';ctx.font='15px Inter,sans-serif';ctx.textAlign='center';
+        ctx.fillText('2\u00B0 Free radical intermediate',cx,cy-30);
+        ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='22px Inter,sans-serif';
+        ctx.fillText('CH\u2083\u2013\u010Ch\u2013CH\u2082Br',cx,cy+10);
+        ctx.fillStyle='rgba(255,255,255,0.3)';ctx.font='13px Inter,sans-serif';
+        ctx.fillText('(stabilized by hyperconjugation)',cx,cy+40);
+      }
+    }else if(s===3){
+      if(!hasP){
+        ctx.fillStyle='rgba(16,185,129,0.5)';ctx.font='15px Inter,sans-serif';ctx.textAlign='center';
+        ctx.fillText('Br\u207B attacks carbocation',cx,cy-40);
+        ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='22px Inter,sans-serif';
+        ctx.fillText('CH\u2083\u2013CHBr\u2013CH\u2083',cx,cy-2);
+        ctx.fillStyle='rgba(16,185,129,0.6)';ctx.font='16px Inter,sans-serif';
+        ctx.fillText('\u2713 2-Bromopropane (Major, Markovnikov)',cx,cy+32);
+      }else{
+        ctx.fillStyle='rgba(16,185,129,0.5)';ctx.font='15px Inter,sans-serif';ctx.textAlign='center';
+        ctx.fillText('H\u2022 abstraction from H\u2013Br',cx,cy-40);
+        ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='22px Inter,sans-serif';
+        ctx.fillText('CH\u2083\u2013CH\u2082\u2013CH\u2082Br',cx,cy-2);
+        ctx.fillStyle='rgba(16,185,129,0.6)';ctx.font='16px Inter,sans-serif';
+        ctx.fillText('\u2713 1-Bromopropane (Major, Anti-Markovnikov)',cx,cy+32);
+      }
+    }
+  }
+
+  function runAnimation(){
+    resetSim();
+    step=1;updateSteps();drawState(1);
+    timer=setTimeout(function(){
+      step=2;updateSteps();drawState(2);
+      timer=setTimeout(function(){
+        step=3;updateSteps();drawState(3);
+        timer=null;
+      },1200);
+    },1200);
+  }
+
+  if(runBtn)runBtn.addEventListener('click',runAnimation);
+  if(resetBtn)resetBtn.addEventListener('click',resetSim);
+  drawState(0);
+}
+
+// ============================================================
+// SIM 3: BENZENE EAS SANDBOX
+// ============================================================
+function initBenzene(){
+  var canvas=document.getElementById('benzeneCanvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var sel=document.getElementById('easSelect');
+  var runBtn=document.getElementById('runEasBtn');
+  var epDisp=document.getElementById('electrophileDisplay');
+  var prodDisp=document.getElementById('easProductDisplay');
+  var steps=document.querySelectorAll('#easSteps .sim-step');
+  var step=0,timer=null;
+
+  var data={
+    nitration:{ep:'NO\u2082\u207A',prod:'Nitrobenzene',reagent:'HNO\u2083/H\u2082SO\u2084',color:'rgba(245,158,11,0.8)'},
+    halogenation:{ep:'Cl\u207A',prod:'Chlorobenzene',reagent:'Cl\u2082/FeCl\u2083',color:'rgba(6,182,212,0.8)'},
+    sulphonation:{ep:'SO\u2083',prod:'Benzenesulphonic acid',reagent:'H\u2082SO\u2084, \u0394',color:'rgba(139,92,246,0.8)'},
+    alkylation:{ep:'CH\u2083\u207A',prod:'Toluene',reagent:'CH\u2083Cl/AlCl\u2083',color:'rgba(236,72,153,0.8)'},
+    acylation:{ep:'CH\u2083CO\u207A',prod:'Acetophenone',reagent:'CH\u2083COCl/AlCl\u2083',color:'rgba(16,185,129,0.8)'}
+  };
+
+  function getData(){return data[sel?sel.value:'nitration']||data.nitration;}
+
+  function updateLabels(){
+    var d=getData();
+    if(epDisp)epDisp.textContent=d.ep;
+    if(prodDisp)prodDisp.textContent=d.prod;
+  }
+  if(sel)sel.addEventListener('change',function(){resetSim();updateLabels();});
+
+  function resetSim(){step=0;if(timer){clearTimeout(timer);timer=null}updateSteps();drawEAS(0);}
+  function updateSteps(){
+    steps.forEach(function(s,i){
+      s.classList.remove('active','done');
+      if(i===step)s.classList.add('active');
+      else if(i<step)s.classList.add('done');
+    });
+  }
+
+  // draw benzene hexagon
+  function drawBenzeneRing(cx,cy,r,color){
+    ctx.beginPath();
+    for(var i=0;i<6;i++){
+      var a=-Math.PI/2+i*Math.PI/3;
+      var x=cx+r*Math.cos(a),y=cy+r*Math.sin(a);
+      if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+    }
+    ctx.closePath();
+    ctx.strokeStyle=color||'rgba(255,255,255,0.6)';ctx.lineWidth=2;ctx.stroke();
+    // inner circle (delocalization)
+    ctx.beginPath();ctx.arc(cx,cy,r*0.6,0,2*Math.PI);
+    ctx.strokeStyle=color||'rgba(255,255,255,0.2)';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([]);
+  }
+
+  function drawEAS(s){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var cx=canvas.width/2,cy=canvas.height/2-10;
+    var d=getData();
+
+    if(s===0){
+      // Step 0: benzene + reagent
+      drawBenzeneRing(cx-130,cy,60,'rgba(255,255,255,0.6)');
+      ctx.fillStyle='rgba(255,255,255,0.3)';ctx.font='13px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('Benzene',cx-130,cy+90);
+
+      ctx.fillStyle='rgba(255,255,255,0.4)';ctx.font='28px Inter,sans-serif';
+      ctx.fillText('+',cx-15,cy+8);
+
+      // reagent box
+      ctx.fillStyle='rgba(245,158,11,0.15)';ctx.strokeStyle='rgba(245,158,11,0.3)';ctx.lineWidth=1;
+      if(ctx.roundRect)ctx.roundRect(cx+70,cy-35,120,70,8);
+      ctx.fillRect(cx+70,cy-35,120,70);ctx.strokeRect(cx+70,cy-35,120,70);
+
+      ctx.fillStyle='rgba(245,158,11,0.7)';ctx.font='14px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText(d.reagent,cx+130,cy+10);
+      ctx.fillStyle='rgba(255,255,255,0.2)';ctx.font='11px Inter,sans-serif';
+      ctx.fillText('Electrophilic reagent',cx+130,cy+50);
+
+      ctx.fillStyle='rgba(255,255,255,0.2)';ctx.font='13px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('Click "Run" to see mechanism',cx,cy+120);
+
+    }else if(s===1){
+      // Step 1: Generate E+
+      ctx.fillStyle='rgba(255,255,255,0.4)';ctx.font='16px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('Step 1: Generation of Electrophile',cx,cy-80);
+
+      ctx.fillStyle='rgba(255,255,255,0.3)';ctx.font='15px Inter,sans-serif';
+      ctx.fillText('Reagent  \u2192',cx-50,cy-40);
+
+      ctx.fillStyle=d.color;ctx.font='22px Inter,sans-serif';
+      ctx.fillText(d.ep+'  (Electrophile)',cx+30,cy-40);
+
+      ctx.fillStyle='rgba(255,255,255,0.2)';ctx.font='13px Inter,sans-serif';
+      ctx.fillText('Strongly electrophilic species',cx+30,cy-10);
+
+      drawBenzeneRing(cx,cy+35,50,'rgba(255,255,255,0.3)');
+      ctx.fillStyle='rgba(255,255,255,0.2)';ctx.font='12px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('Benzene (6\u03C0 e\u207B, aromatic)',cx,cy+100);
+
+    }else if(s===2){
+      // Step 2: sigma-complex
+      ctx.fillStyle='rgba(255,255,255,0.4)';ctx.font='16px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('Step 2: Formation of \u03C3-Complex (Arenium Ion)',cx,cy-90);
+
+      // deformed ring (sigma complex)
+      ctx.beginPath();
+      var pts=[];
+      for(var i=0;i<6;i++){
+        var a=-Math.PI/2+i*Math.PI/3;
+        var r=50;
+        if(i===0){r=55;cx+5;}// distorted at attack site
+        var x=cx+r*Math.cos(a),y=cy-15+r*Math.sin(a);
+        pts.push({x:x,y:y});
+        if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle='rgba(245,158,11,0.6)';ctx.lineWidth=2;ctx.stroke();
+
+      // Show E connected
+      var ex=pts[0].x+40,ey=pts[0].y-6;
+      ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);ctx.lineTo(ex,ey);
+      ctx.strokeStyle=d.color;ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle=d.color;ctx.font='16px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText(d.ep,ex,ey-8);
+
+      // Charge
+      ctx.fillStyle='rgba(239,68,68,0.6)';ctx.font='22px Inter,sans-serif';
+      ctx.fillText('\u2295',pts[2].x-12,pts[2].y-12);
+
+      ctx.fillStyle='rgba(255,255,255,0.2)';ctx.font='12px Inter,sans-serif';
+      ctx.fillText('Positive charge delocalized (resonance stabilized)',cx,cy+70);
+
+    }else if(s===3){
+      // Step 3: Product
+      ctx.fillStyle='rgba(16,185,129,0.5)';ctx.font='16px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('Step 3: Deprotonation \u2192 Aromaticity Restored',cx,cy-90);
+
+      // product benzene ring with substituent
+      drawBenzeneRing(cx,cy-5,55,'rgba(16,185,129,0.7)');
+
+      // show substituent
+      var subX=cx,subY=cy-5-55-8;
+      ctx.fillStyle=d.color;ctx.font='14px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText(d.ep,subX,subY);
+
+      ctx.fillStyle='rgba(16,185,129,0.2)';ctx.font='18px Inter,sans-serif';
+      ctx.fillText('+',cx+10,cy-5+30);
+
+      ctx.fillStyle='rgba(255,255,255,0.3)';ctx.font='13px Inter,sans-serif';
+      ctx.fillText('H\u207A',cx+10,cy-5+50);
+
+      ctx.fillStyle='rgba(16,185,129,0.6)';ctx.font='18px Inter,sans-serif';
+      ctx.fillText('\u2713 '+d.prod,cy+90,cy-5+20);
+    }
+  }
+
+  function runAnimation(){
+    resetSim();
+    step=1;updateSteps();drawEAS(1);updateLabels();
+    timer=setTimeout(function(){
+      step=2;updateSteps();drawEAS(2);
+      timer=setTimeout(function(){
+        step=3;updateSteps();drawEAS(3);
+        timer=null;
+      },1200);
+    },1200);
+  }
+
+  if(runBtn)runBtn.addEventListener('click',runAnimation);
+  updateLabels();
+  drawEAS(0);
+}
+
+// ============================================================
+// SIM 4: HALOGENATION TIMELINE
+// ============================================================
+function initHalogen(){
+  var canvas=document.getElementById('halogenCanvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var prevBtn=document.getElementById('haloPrevBtn');
+  var nextBtn=document.getElementById('haloNextBtn');
+  var resetBtn=document.getElementById('haloResetBtn');
+  var phaseDisp=document.getElementById('haloPhaseDisplay');
+  var steps=document.querySelectorAll('#haloSteps .sim-step');
+  var current=0;
+
+  function updateSteps(){
+    steps.forEach(function(s,i){
+      s.classList.remove('active','done');
+      if(i===current)s.classList.add('active');
+      else if(i<current)s.classList.add('done');
+    });
+    var phases=['Initiation','Propagation 1','Propagation 2','Termination'];
+    if(phaseDisp)phaseDisp.textContent=phases[current]||'Initiation';
+  }
+
+  function drawPhase(n){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var cx=canvas.width/2,cy=canvas.height/2-15;
+
+    if(n===0){
+      // Initiation: Cl2 UV -> 2Cl
+      ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='18px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('INITIATION',cx,cy-70);
+      ctx.fillStyle='rgba(245,158,11,0.6)';ctx.font='14px Inter,sans-serif';
+      ctx.fillText('Homolytic cleavage of Cl\u2082 by UV light',cx,cy-44);
+
+      ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='28px Inter,sans-serif';
+      ctx.fillText('Cl\u2013Cl',cx-55,cy+5);
+
+      ctx.fillStyle='rgba(6,182,212,0.6)';ctx.font='26px Inter,sans-serif';
+      ctx.fillText('h\u03BD',cx+40,cy-12);
+
+      ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='28px Inter,sans-serif';
+      ctx.fillText('2 Cl\u2022',cx+110,cy+5);
+
+      // UV arrow
+      ctx.beginPath();ctx.moveTo(cx+10,cy-20);ctx.lineTo(cx+10,cy+18);
+      ctx.strokeStyle='rgba(6,182,212,0.4)';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.fillStyle='rgba(6,182,212,0.4)';ctx.font='11px Inter,sans-serif';
+      ctx.fillText('UV',cx+25,cy-5);
+
+      // radical dots
+      var t=Date.now()/300;
+      for(var i=0;i<8;i++){
+        var a=t+i*Math.PI/4;
+        var rx=250*Math.cos(a),ry=30*Math.sin(a*2);
+        ctx.beginPath();ctx.arc(cx+110+rx,cy+25+ry,3,0,2*Math.PI);
+        ctx.fillStyle='rgba(245,158,11,0.7)';ctx.fill();
+      }
+
+      ctx.fillStyle='rgba(255,255,255,0.2)';ctx.font='12px Inter,sans-serif';
+      ctx.fillText('Chlorine radicals (Cl\u2022) are generated',cx,cy+70);
+    }
+    else if(n===1){
+      // Propagation 1: Cl + CH4 -> CH3 + HCl
+      ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='18px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('PROPAGATION 1',cx,cy-70);
+      ctx.fillStyle='rgba(245,158,11,0.6)';ctx.font='14px Inter,sans-serif';
+      ctx.fillText('Chlorine radical abstracts hydrogen from methane',cx,cy-44);
+
+      ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='24px Inter,sans-serif';
+      ctx.fillText('Cl\u2022 + CH\u2084',cx-50,cy+2);
+
+      ctx.fillStyle='rgba(6,182,212,0.5)';ctx.font='24px Inter,sans-serif';
+      ctx.fillText('\u2192',cx+80,cy+2);
+
+      ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='24px Inter,sans-serif';
+      ctx.fillText('HC l +  \u2022CH\u2083',cx+150,cy+2);
+
+      ctx.fillStyle='rgba(16,185,129,0.4)';ctx.font='13px Inter,sans-serif';
+      ctx.fillText('(Methyl radical formed)',cx,cy+40);
+      ctx.fillStyle='rgba(239,68,68,0.4)';ctx.font='13px Inter,sans-serif';
+      ctx.fillText('(HCl eliminated)',cx+55,cy+62);
+    }
+    else if(n===2){
+      // Propagation 2: CH3 + Cl2 -> CH3Cl + Cl
+      ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='18px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('PROPAGATION 2',cx,cy-70);
+      ctx.fillStyle='rgba(245,158,11,0.6)';ctx.font='14px Inter,sans-serif';
+      ctx.fillText('Methyl radical reacts with chlorine molecule',cx,cy-44);
+
+      ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='24px Inter,sans-serif';
+      ctx.fillText('\u2022CH\u2083 + Cl\u2082',cx-55,cy+2);
+
+      ctx.fillStyle='rgba(6,182,212,0.5)';ctx.font='24px Inter,sans-serif';
+      ctx.fillText('\u2192',cx+80,cy+2);
+
+      ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='24px Inter,sans-serif';
+      ctx.fillText('CH\u2083Cl + Cl\u2022',cx+155,cy+2);
+
+      ctx.fillStyle='rgba(16,185,129,0.4)';ctx.font='13px Inter,sans-serif';
+      ctx.fillText('(Chloromethane formed)',cx,cy+40);
+      ctx.fillStyle='rgba(6,182,212,0.4)';ctx.font='13px Inter,sans-serif';
+      ctx.fillText('(Cl\u2022 regenerated \u2192 chain continues)',cx,cy+62);
+    }
+    else if(n===3){
+      // Termination
+      ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='18px Inter,sans-serif';ctx.textAlign='center';
+      ctx.fillText('TERMINATION',cx,cy-80);
+      ctx.fillStyle='rgba(245,158,11,0.6)';ctx.font='14px Inter,sans-serif';
+      ctx.fillText('Radicals combine \u2192 chain ends',cx,cy-55);
+
+      // Three termination pathways
+      ctx.fillStyle='rgba(255,255,255,0.55)';ctx.font='16px Inter,sans-serif';
+      ctx.fillText('Cl\u2022 + Cl\u2022 \u2192 Cl\u2082',cx-20,cy-15);
+      ctx.fillStyle='rgba(255,255,255,0.45)';ctx.font='14px Inter,sans-serif';
+      ctx.fillText('\u2022CH\u2083 + \u2022CH\u2083 \u2192 CH\u2083\u2013CH\u2083',cx-20,cy+15);
+      ctx.fillStyle='rgba(255,255,255,0.35)';ctx.font='13px Inter,sans-serif';
+      ctx.fillText('\u2022CH\u2083 + Cl\u2022 \u2192 CH\u2083Cl',cx-20,cy+40);
+
+      ctx.fillStyle='rgba(16,185,129,0.3)';ctx.font='12px Inter,sans-serif';
+      ctx.fillText('(All radicals consumed)',cx,cy+72);
+    }
+  }
+
+  function goTo(n){
+    current=Math.max(0,Math.min(3,n));
+    updateSteps();
+    drawPhase(current);
+    // animate radicals for initiation
+    if(current===0){animateRadicals();}
+  }
+
+  var radAnimId=null;
+  function animateRadicals(){
+    if(radAnimId)cancelAnimationFrame(radAnimId);
+    var c=document.getElementById('halogenCanvas');if(!c)return;
+    var ctx2=c.getContext('2d');
+    function frame(){
+      if(current!==0){radAnimId=null;return;}
+      drawPhase(0);
+      radAnimId=requestAnimationFrame(frame);
+    }
+    radAnimId=requestAnimationFrame(frame);
+  }
+
+  if(nextBtn)nextBtn.addEventListener('click',function(){goTo(current+1);if(current===0)animateRadicals();});
+  if(prevBtn)prevBtn.addEventListener('click',function(){goTo(current-1);});
+  if(resetBtn)resetBtn.addEventListener('click',function(){goTo(0);});
+
+  // click on step labels
+  steps.forEach(function(s,i){
+    s.addEventListener('click',function(){goTo(i);});
+  });
+
+  goTo(0);
+}
+</script>
+</body>
+</html>

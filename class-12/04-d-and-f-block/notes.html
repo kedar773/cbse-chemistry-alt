@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 12 Chemistry: d- &amp; f-Block Elements - Master Study Notes</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--primary:#1a237e;--accent:#3949ab;--light:#e8eaf6;--bg:#fafafa;--card:#fff;--text:#212121;--text2:#555;--border:#ddd;--exception:#c62828;--stable:#2e7d32;--badge:#ff6f00;--anomaly:#b71c1c}
+body{margin:0;font-family:system-ui,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
+.tab-bar{position:sticky;top:0;z-index:100;background:var(--primary);display:flex;overflow-x:auto;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.tab-bar a{color:#fff;text-decoration:none;padding:14px 20px;display:block;white-space:nowrap;font-weight:600;font-size:14px;border-bottom:3px solid transparent;transition:.2s}
+.tab-bar a:hover,.tab-bar a.active{background:rgba(255,255,255,.1)}
+.tab-bar a.active{border-bottom-color:#ffd54f;color:#ffd54f}
+.tab-content{display:none;max-width:1100px;margin:0 auto;padding:20px}
+.tab-content.active{display:block}
+h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:6px;margin-top:30px}
+h3{color:var(--accent);margin-top:24px}
+h4{margin:16px 0 8px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:center}
+th{background:var(--primary);color:#fff;font-weight:600}
+tr:nth-child(even){background:#f5f5f5}
+.badge{display:inline-block;background:var(--badge);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-right:6px;vertical-align:middle}
+.crossref{color:var(--accent);font-size:13px;cursor:pointer;text-decoration:underline dotted}
+.exception{color:var(--exception);font-weight:700}
+.stable{color:var(--stable);font-weight:700}
+details{margin:8px 0;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+details summary{padding:10px 14px;cursor:pointer;font-weight:600;background:var(--light);border-bottom:1px solid transparent}
+details[open] summary{border-bottom-color:var(--border)}
+details .ans{padding:12px 14px}
+.chem{font-style:italic}
+.ion{font-style:normal}
+.note{background:#fff8e1;border-left:4px solid var(--badge);padding:10px 14px;margin:12px 0;border-radius:4px}
+.anomaly-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border:2px solid var(--anomaly);border-radius:12px;padding:24px;max-width:500px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.3);display:none}
+.anomaly-box h4{color:var(--anomaly);margin-top:0}
+.anomaly-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);z-index:199;display:none}
+.sandbox-grids{display:flex;flex-wrap:wrap;gap:4px;margin:12px 0}
+.sandbox-grids .series{flex:1;min-width:200px}
+.series h4{text-align:center;margin:4px 0}
+.elem-box{display:inline-flex;width:44px;height:44px;margin:2px;align-items:center;justify-content:center;border:1px solid #bbb;border-radius:4px;cursor:pointer;font-size:11px;font-weight:600;transition:.15s;background:#e3f2fd;position:relative}
+.elem-box:hover{transform:scale(1.15);z-index:5;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.elem-box.selected{border:2px solid var(--primary);background:#bbdefb}
+.elem-box.exception{background:#ffcdd2;border-color:var(--exception)}
+.elem-box.f-block{background:#f3e5f5}
+.elem-box .z{position:absolute;top:1px;left:3px;font-size:8px;color:#888}
+.info-panel{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;margin:12px 0}
+.info-panel h3{margin:0 0 8px;color:var(--primary)}
+.info-panel .prop{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dotted #eee;font-size:14px}
+.canvas-wrap{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;margin:12px 0;text-align:center}
+.canvas-wrap canvas{max-width:100%;height:auto}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;align-items:center}
+.controls label{font-weight:600;font-size:13px}
+.controls select,.controls input{padding:6px 10px;border:1px solid var(--border);border-radius:4px;font-size:14px}
+.btn{padding:8px 16px;border:none;border-radius:4px;cursor:pointer;font-weight:600;font-size:14px;background:var(--accent);color:#fff;transition:.2s}
+.btn:hover{background:var(--primary)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.equation-box{font-family:'Courier New',monospace;background:#fafafa;padding:10px;border-radius:6px;margin:8px 0;text-align:left;font-size:14px;line-height:1.8;border:1px solid #e0e0e0}
+.equation-box .step{color:var(--text2);font-size:12px;font-family:system-ui,sans-serif}
+.slider-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px}
+.slider-wrap input[type=range]{width:100%;max-width:600px}
+.radius-label{font-size:13px;color:var(--text2)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0;font-size:13px}
+.legend span{display:flex;align-items:center;gap:4px}
+.legend .swatch{width:16px;height:16px;border-radius:3px;display:inline-block}
+#print-notice{display:none;text-align:center;padding:40px;font-size:18px;color:#666}
+.chart-tooltip{position:absolute;background:rgba(0,0,0,.8);color:#fff;padding:6px 10px;border-radius:4px;font-size:12px;pointer-events:none;z-index:50;display:none}
+@media print{
+.tab-bar,.tab-bar *,.tab-content#sandbox{display:none!important}
+.tab-content{display:block!important;padding:10px!important;page-break-after:always}
+details[open]{border:1px solid #ccc!important}
+details summary{background:#eee!important}
+details:not([open]){border:1px solid #ccc!important}
+details:not([open]) summary{background:#eee!important}
+details:not([open]) .ans{display:block!important}
+body{background:#fff!important;color:#000!important;font-size:12px!important}
+th{background:#333!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+tr:nth-child(even){background:#f0f0f0!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.badge{background:#999!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.note{border-left-color:#999!important;background:#f9f9f9!important}
+.canvas-wrap canvas{max-width:600px!important;max-height:300px!important}
+.anomaly-box,.anomaly-overlay{display:none!important}
+#print-notice{display:block!important}
+.elem-box{background:#eee!important;border-color:#999!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.elem-box.exception{background:#ddd!important}
+.elem-box.f-block{background:#ddd!important}
+}
+</style>
+</head>
+<body>
+<div class="tab-bar" id="tabBar">
+<a class="active" href="#dblock" onclick="switchTab('dblock')">d-Block Elements</a>
+<a href="#fblock" onclick="switchTab('fblock')">f-Block Elements</a>
+<a href="#ncert" onclick="switchTab('ncert')">NCERT Solutions</a>
+<a href="#sandbox" onclick="switchTab('sandbox')">Interactive Sandbox</a>
+</div>
+<div id="print-notice">Study Notes - Class 12 Chemistry: d- &amp; f-Block Elements (NCERT). Visit the interactive version for sandbox tools.</div>
+<!-- ========== TAB 1: d-BLOCK ========== -->
+<div class="tab-content active" id="tab-dblock">
+<h2>d-Block Elements (Transition Elements)</h2>
+<p><strong>Definition:</strong> Elements in which the last electron enters the d-orbital of the penultimate shell. General electronic configuration: <strong>(n–1)d<sup>1–10</sup> ns<sup>1–2</sup></strong>.</p>
+<h3>1. Electronic Configurations</h3>
+<table>
+<tr><th>Element</th><th>Symbol</th><th>Z</th><th>Config (n–1)d &amp; ns</th><th>Configuration Note</th></tr>
+<tr><td>Scandium</td><td>Sc</td><td>21</td><td>[Ar] 3d<sup>1</sup> 4s<sup>2</sup></td><td></td></tr>
+<tr><td>Titanium</td><td>Ti</td><td>22</td><td>[Ar] 3d<sup>2</sup> 4s<sup>2</sup></td><td></td></tr>
+<tr><td>Vanadium</td><td>V</td><td>23</td><td>[Ar] 3d<sup>3</sup> 4s<sup>2</sup></td><td></td></tr>
+<tr><td class="exception">Chromium</td><td>Cr</td><td>24</td><td class="exception">[Ar] 3d<sup>5</sup> 4s<sup>1</sup></td><td class="exception">Exception: half-filled d<sup>5</sup> stability</td></tr>
+<tr><td>Manganese</td><td>Mn</td><td>25</td><td>[Ar] 3d<sup>5</sup> 4s<sup>2</sup></td><td></td></tr>
+<tr><td>Iron</td><td>Fe</td><td>26</td><td>[Ar] 3d<sup>6</sup> 4s<sup>2</sup></td><td></td></tr>
+<tr><td>Cobalt</td><td>Co</td><td>27</td><td>[Ar] 3d<sup>7</sup> 4s<sup>2</sup></td><td></td></tr>
+<tr><td>Nickel</td><td>Ni</td><td>28</td><td>[Ar] 3d<sup>8</sup> 4s<sup>2</sup></td><td></td></tr>
+<tr><td class="exception">Copper</td><td>Cu</td><td>29</td><td class="exception">[Ar] 3d<sup>10</sup> 4s<sup>1</sup></td><td class="exception">Exception: fully-filled d<sup>10</sup> stability</td></tr>
+<tr><td>Zinc</td><td>Zn</td><td>30</td><td>[Ar] 3d<sup>10</sup> 4s<sup>2</sup></td><td></td></tr>
+</table>
+<div class="note"><strong><span class="badge">⚡ CBSE PYQ - Expected</span> Why Cr and Cu are exceptions?</strong> <span class="crossref">[See Solved Q 8.1]</span><br/>
+Cr: 3d<sup>5</sup> 4s<sup>1</sup> (not 3d<sup>4</sup> 4s<sup>2</sup>) because half-filled d<sup>5</sup> confers extra stability through exchange energy and symmetrical distribution.<br/>
+Cu: 3d<sup>10</sup> 4s<sup>1</sup> (not 3d<sup>9</sup> 4s<sup>2</sup>) because fully-filled d<sup>10</sup> confers extra stability.</div>
+<h3>2. Periodic Trends (3d Series: Sc to Zn)</h3>
+<h4>(i) Atomic &amp; Ionic Radii</h4>
+<table>
+<tr><th>Property</th><th>Sc</th><th>Ti</th><th>V</th><th>Cr</th><th>Mn</th><th>Fe</th><th>Co</th><th>Ni</th><th>Cu</th><th>Zn</th></tr>
+<tr><td>Atomic Radius (pm)</td><td>164</td><td>147</td><td>135</td><td>129</td><td>137</td><td>126</td><td>125</td><td>124</td><td>128</td><td>137</td></tr>
+<tr><td>Ionic Radius M<sup>2+</sup> (pm)</td><td>—</td><td>86</td><td>79</td><td>73</td><td>67</td><td>61</td><td>65</td><td>69</td><td>73</td><td>74</td></tr>
+</table>
+<p><strong>Trend:</strong> Atomic radii decrease from Sc to Cr, then remain roughly constant (shield effect of d-electrons). <span class="badge">⚡ CBSE PYQ</span></p>
+<h4>(ii) Enthalpy of Atomization (Δ<sub>a</sub>H°)</h4>
+<table>
+<tr><th>Element</th><th>Sc</th><th>Ti</th><th>V</th><th>Cr</th><th>Mn</th><th>Fe</th><th>Co</th><th>Ni</th><th>Cu</th><th>Zn</th></tr>
+<tr><td>Δ<sub>a</sub>H° (kJ/mol)</td><td>326</td><td>473</td><td>515</td><td>397</td><td>281</td><td>416</td><td>425</td><td>430</td><td>338</td><td>130</td></tr>
+</table>
+<p><strong>Trend:</strong> Peaks at V (maximum due to strong metallic bonding at d<sup>3</sup>), drops at Cr (half-filled d<sup>5</sup> weakening bonding), sharp drop at Zn (d<sup>10</sup> - full d-orbital). <span class="badge">⚡ CBSE PYQ - Expected</span> <span class="crossref">[See Solved Q 8.2]</span></p>
+<h4>(iii) Ionization Enthalpy (IE<sub>1</sub>)</h4>
+<table>
+<tr><th>Element</th><th>Sc</th><th>Ti</th><th>V</th><th>Cr</th><th>Mn</th><th>Fe</th><th>Co</th><th>Ni</th><th>Cu</th><th>Zn</th></tr>
+<tr><td>IE<sub>1</sub> (kJ/mol)</td><td>631</td><td>658</td><td>650</td><td>652</td><td>717</td><td>759</td><td>758</td><td>737</td><td>745</td><td>906</td></tr>
+</table>
+<p><strong>Trend:</strong> Generally increases across period. Zn shows highest IE<sub>1</sub> due to stable d<sup>10</sup> configuration.</p>
+<h4>(iv) Standard Electrode Potential [E°(M<sup>2+</sup>/M)]</h4>
+<table>
+<tr><th>Element</th><th>Sc</th><th>Ti</th><th>V</th><th>Cr</th><th>Mn</th><th>Fe</th><th>Co</th><th>Ni</th><th>Cu</th><th>Zn</th></tr>
+<tr><td>E° (V)</td><td>−2.03</td><td>−1.63</td><td>−1.18</td><td>−0.91</td><td>−1.18</td><td>−0.44</td><td>−0.28</td><td>−0.25</td><td>+0.34</td><td>−0.76</td></tr>
+</table>
+<p><strong>Anomalies:</strong>
+<br/>• <strong>Mn:</strong> Low E° (−1.18 V) — extra stability of d<sup>5</sup> makes Mn<sup>2+</sup> formation easier.
+<br/>• <strong>Cu:</strong> Positive E° (+0.34 V) — high sublimation + low hydration enthalpy.
+<br/>• <strong>Zn:</strong> −0.76 V — d<sup>10</sup> fully filled, lower hydration enthalpy.
+<span class="badge">⚡ CBSE PYQ - Expected</span> <span class="crossref">[See Solved Q 8.3]</span></p>
+<h3>3. Oxidation States</h3>
+<table>
+<tr><th>Element</th><th>Common Oxidation States</th><th>Most Stable</th></tr>
+<tr><td>Sc</td><td>+3</td><td class="stable">+3</td></tr>
+<tr><td>Ti</td><td>+2, +3, +4</td><td class="stable">+4</td></tr>
+<tr><td>V</td><td>+2, +3, +4, +5</td><td class="stable">+5</td></tr>
+<tr><td>Cr</td><td>+2, +3, +6</td><td class="stable">+3</td></tr>
+<tr><td>Mn</td><td>+2, +3, +4, +6, +7</td><td class="stable">+2</td></tr>
+<tr><td>Fe</td><td>+2, +3</td><td class="stable">+3</td></tr>
+<tr><td>Co</td><td>+2, +3</td><td class="stable">+2</td></tr>
+<tr><td>Ni</td><td>+2</td><td class="stable">+2</td></tr>
+<tr><td>Cu</td><td>+1, +2</td><td class="stable">+2</td></tr>
+<tr><td>Zn</td><td>+2</td><td class="stable">+2</td></tr>
+</table>
+<div class="note"><strong><span class="badge">⚡ CBSE PYQ - Expected</span> Why do transition elements show variable oxidation states?</strong> <span class="crossref">[See Solved Q 8.4]</span><br/>
+Due to the availability of (n–1)d and ns orbitals with similar energies. The (n–1)d electrons can also participate in bonding as the energy difference between ns and (n–1)d is small.</div>
+<div class="note"><strong><span class="badge">⚡ CBSE PYQ - Expected</span> Why is Cu<sup>2+</sup> more stable than Cu<sup>+</sup> in aqueous medium?</strong> <span class="crossref">[See Solved Q 8.5]</span><br/>
+Cu<sup>2+</sup> has higher hydration enthalpy (enthalpy of hydration) which compensates for the higher IE<sub>2</sub>. Cu<sup>+</sup> disproportionates: 2Cu<sup>+</sup> → Cu + Cu<sup>2+</sup> (ΔG° negative).</div>
+<h3>4. Color and Magnetic Properties</h3>
+<table>
+<tr><th>Ion</th><th>Configuration</th><th>Unpaired e<sup>−</sup> (n)</th><th>Spin-Only Moment μ (BM)</th><th>Color</th></tr>
+<tr><td>Ti<sup>3+</sup></td><td>3d<sup>1</sup></td><td>1</td><td>1.73</td><td style="background:#9c27b0;color:#fff">Purple</td></tr>
+<tr><td>V<sup>3+</sup></td><td>3d<sup>2</sup></td><td>2</td><td>2.83</td><td style="background:#4caf50;color:#fff">Green</td></tr>
+<tr><td>Cr<sup>3+</sup></td><td>3d<sup>3</sup></td><td>3</td><td>3.87</td><td style="background:#8bc34a">Green/Violet</td></tr>
+<tr><td>Mn<sup>2+</sup></td><td>3d<sup>5</sup></td><td>5</td><td>5.92</td><td style="background:#ffcdd2">Pale Pink</td></tr>
+<tr><td>Fe<sup>2+</sup></td><td>3d<sup>6</sup></td><td>4</td><td>4.90</td><td style="background:#66bb6a;color:#fff">Pale Green</td></tr>
+<tr><td>Fe<sup>3+</sup></td><td>3d<sup>5</sup></td><td>5</td><td>5.92</td><td style="background:#ffb74d">Yellow/Brown</td></tr>
+<tr><td>Co<sup>2+</sup></td><td>3d<sup>7</sup></td><td>3</td><td>3.87</td><td style="background:#f48fb1">Pink</td></tr>
+<tr><td>Ni<sup>2+</sup></td><td>3d<sup>8</sup></td><td>2</td><td>2.83</td><td style="background:#81c784;color:#fff">Green</td></tr>
+<tr><td>Cu<sup>2+</sup></td><td>3d<sup>9</sup></td><td>1</td><td>1.73</td><td style="background:#42a5f5;color:#fff">Blue</td></tr>
+</table>
+<p><strong>Formula:</strong> μ = √<span style="text-decoration:overline;">n(n+2)</span> BM, where n = number of unpaired electrons.</p>
+<div class="note"><strong><span class="badge">⚡ CBSE PYQ - Expected</span> Why are transition metal ions colored?</strong> <span class="crossref">[See Solved Q 8.6]</span><br/>
+Due to d-d transitions. In the presence of ligands, the d-orbitals split into two sets (t<sub>2g</sub> and e<sub>g</sub>). Electrons absorb visible light to jump from lower to higher d-orbitals. The complementary color is observed.</div>
+<h3>5. Catalytic Properties</h3>
+<p>Transition metals and their compounds act as catalysts because:</p>
+<ul>
+<li>Variable oxidation states allow them to form intermediates</li>
+<li>Large surface area for adsorption (in heterogeneous catalysis)</li>
+</ul>
+<p><strong>Examples:</strong> V<sub>2</sub>O<sub>5</sub> (Contact process for H<sub>2</sub>SO<sub>4</sub>), Fe (Haber process for NH<sub>3</sub>), Ni (hydrogenation), Pd/Pt (hydrogenation, catalytic converters). <span class="badge">⚡ CBSE PYQ</span> <span class="crossref">[See Solved Q 8.7]</span></p>
+<h3>6. Interstitial Compounds</h3>
+<p>Formed when small atoms (H, B, C, N) occupy interstitial voids in the metal lattice. Properties: hard, high melting point, metallic conductivity retained.</p>
+<h3>7. Alloys</h3>
+<p>Transition metals form alloys due to similar atomic radii. Examples: Stainless steel (Fe + Cr + Ni), Brass (Cu + Zn), Bronze (Cu + Sn).</p>
+<h3>8. Oxoanions of d-Block Elements</h3>
+<h4>Potassium Dichromate (K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>)</h4>
+<p><strong>Preparation:</strong> 4FeCr<sub>2</sub>O<sub>4</sub> + 8Na<sub>2</sub>CO<sub>3</sub> + 7O<sub>2</sub> → 2Fe<sub>2</sub>O<sub>3</sub> + 8Na<sub>2</sub>CrO<sub>4</sub> + 8CO<sub>2</sub> → Na<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> → K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> (orange crystals).</p>
+<p><strong>Oxidizing reactions (Acidic medium):</strong><br/>
+Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 14H<sup>+</sup> + 6e<sup>−</sup> → 2Cr<sup>3+</sup> + 7H<sub>2</sub>O (E° = +1.33 V)</p>
+<p><strong>Structure:</strong> Two CrO<sub>4</sub> tetrahedra sharing an oxygen atom. Cr—O—Cr bridge.</p>
+<h4>Potassium Permanganate (KMnO<sub>4</sub>)</h4>
+<p><strong>Preparation:</strong> 2MnO<sub>2</sub> + 4KOH + O<sub>2</sub> → 2K<sub>2</sub>MnO<sub>4</sub> + 2H<sub>2</sub>O; then 3K<sub>2</sub>MnO<sub>4</sub> + 4CO<sub>2</sub> → 2KMnO<sub>4</sub> + MnO<sub>2</sub> + 4K<sub>2</sub>CO<sub>3</sub> (or electrolytic oxidation).</p>
+<p><strong>Oxidizing reactions:</strong><br/>
+Acidic: MnO<sub>4</sub><sup>−</sup> + 8H<sup>+</sup> + 5e<sup>−</sup> → Mn<sup>2+</sup> + 4H<sub>2</sub>O (E° = +1.51 V)<br/>
+Neutral: MnO<sub>4</sub><sup>−</sup> + 2H<sub>2</sub>O + 3e<sup>−</sup> → MnO<sub>2</sub> + 4OH<sup>−</sup> (E° = +0.59 V)<br/>
+Alkaline: MnO<sub>4</sub><sup>−</sup> + e<sup>−</sup> → MnO<sub>4</sub><sup>2−</sup> (E° = +0.56 V)</p>
+<p><span class="badge">⚡ CBSE PYQ - Expected</span> <span class="crossref">[See Solved Q 8.8]</span></p>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ========== END TAB 1 ========== -->
+<!-- ========== TAB 2: f-BLOCK ========== -->
+<div class="tab-content" id="tab-fblock">
+<h2>f-Block Elements (Inner Transition Elements)</h2>
+<p><strong>Definition:</strong> Elements in which the last electron enters the f-orbital of the antepenultimate shell. Two series: Lanthanoids (4f, Ce–Lu) and Actinoids (5f, Th–Lr). General configuration: <strong>(n–2)f<sup>1–14</sup> (n–1)d<sup>0–1</sup> ns<sup>2</sup></strong>.</p>
+<h3>1. The Lanthanoids (Ce to Lu)</h3>
+<table>
+<tr><th>Element</th><th>Sym</th><th>Z</th><th>Electronic Configuration</th></tr>
+<tr><td>Cerium</td><td>Ce</td><td>58</td><td>[Xe] 4f<sup>1</sup> 5d<sup>1</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Praseodymium</td><td>Pr</td><td>59</td><td>[Xe] 4f<sup>3</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Neodymium</td><td>Nd</td><td>60</td><td>[Xe] 4f<sup>4</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Promethium</td><td>Pm</td><td>61</td><td>[Xe] 4f<sup>5</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Samarium</td><td>Sm</td><td>62</td><td>[Xe] 4f<sup>6</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Europium</td><td>Eu</td><td>63</td><td>[Xe] 4f<sup>7</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Gadolinium</td><td>Gd</td><td>64</td><td>[Xe] 4f<sup>7</sup> 5d<sup>1</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Terbium</td><td>Tb</td><td>65</td><td>[Xe] 4f<sup>9</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Dysprosium</td><td>Dy</td><td>66</td><td>[Xe] 4f<sup>10</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Holmium</td><td>Ho</td><td>67</td><td>[Xe] 4f<sup>11</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Erbium</td><td>Er</td><td>68</td><td>[Xe] 4f<sup>12</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Thulium</td><td>Tm</td><td>69</td><td>[Xe] 4f<sup>13</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Ytterbium</td><td>Yb</td><td>70</td><td>[Xe] 4f<sup>14</sup> 6s<sup>2</sup></td></tr>
+<tr><td>Lutetium</td><td>Lu</td><td>71</td><td>[Xe] 4f<sup>14</sup> 5d<sup>1</sup> 6s<sup>2</sup></td></tr>
+</table>
+<h3>2. The Actinoids (Th to Lr)</h3>
+<table>
+<tr><th>Element</th><th>Sym</th><th>Z</th><th>Electronic Configuration</th></tr>
+<tr><td>Thorium</td><td>Th</td><td>90</td><td>[Rn] 6d<sup>2</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Protactinium</td><td>Pa</td><td>91</td><td>[Rn] 5f<sup>2</sup> 6d<sup>1</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Uranium</td><td>U</td><td>92</td><td>[Rn] 5f<sup>3</sup> 6d<sup>1</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Neptunium</td><td>Np</td><td>93</td><td>[Rn] 5f<sup>4</sup> 6d<sup>1</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Plutonium</td><td>Pu</td><td>94</td><td>[Rn] 5f<sup>6</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Americium</td><td>Am</td><td>95</td><td>[Rn] 5f<sup>7</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Curium</td><td>Cm</td><td>96</td><td>[Rn] 5f<sup>7</sup> 6d<sup>1</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Berkelium</td><td>Bk</td><td>97</td><td>[Rn] 5f<sup>9</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Californium</td><td>Cf</td><td>98</td><td>[Rn] 5f<sup>10</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Einsteinium</td><td>Es</td><td>99</td><td>[Rn] 5f<sup>11</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Fermium</td><td>Fm</td><td>100</td><td>[Rn] 5f<sup>12</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Mendelevium</td><td>Md</td><td>101</td><td>[Rn] 5f<sup>13</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Nobelium</td><td>No</td><td>102</td><td>[Rn] 5f<sup>14</sup> 7s<sup>2</sup></td></tr>
+<tr><td>Lawrencium</td><td>Lr</td><td>103</td><td>[Rn] 5f<sup>14</sup> 6d<sup>1</sup> 7s<sup>2</sup></td></tr>
+</table>
+<h3>3. Oxidation States</h3>
+<p><strong>Lanthanoids:</strong> Predominantly +3. Some show +2 (Eu, Yb due to f<sup>7</sup>, f<sup>14</sup> stability) and +4 (Ce, Tb). <span class="badge">⚡ CBSE PYQ - Expected</span></p>
+<p><strong>Actinoids:</strong> Show broader range (+3 to +7) because 5f, 6d, and 7s orbitals have closer energies.</p>
+<h3>4. Lanthanoid Contraction</h3>
+<p><strong>Definition:</strong> The steady decrease in atomic/ionic radii of lanthanoids with increasing atomic number (from Ce to Lu). <span class="badge">⚡ CBSE PYQ - Expected</span></p>
+<p><strong>Cause:</strong> Poor shielding of 4f electrons. As nuclear charge increases by +1 across the series, the 4f electrons are not effective at shielding each other, so the effective nuclear charge (Z<sub>eff</sub>) increases.</p>
+<p><strong>Consequences:</strong></p>
+<ul>
+<li>Similar radii of 4d and 5d elements (e.g., Zr &amp; Hf, Nb &amp; Ta, Mo &amp; W) — <strong>Zr-Hf pair is nearly identical in properties</strong></li>
+<li>Difficulty in separating lanthanoids</li>
+<li>Basic strength of hydroxides decreases across the series</li>
+</ul>
+<p><span class="crossref">[See Solved Q 8.9]</span></p>
+<h4>Lanthanoid vs Actinoid Contraction</h4>
+<table>
+<tr><th>Property</th><th>Lanthanoid Contraction</th><th>Actinoid Contraction</th></tr>
+<tr><td>Series</td><td>4f (Ce→Lu)</td><td>5f (Th→Lr)</td></tr>
+<tr><td>Shielding</td><td>4f e<sup>−</sup> shield poorly</td><td>5f e<sup>−</sup> shield even poorer</td></tr>
+<tr><td>Magnitude</td><td>Gradual (~14 pm total)</td><td>Larger (~20 pm total)</td></tr>
+<tr><td>Cause</td><td>Increasing Z<sub>eff</sub> due to poor 4f shielding</td><td>5f orbitals are more diffuse → even weaker shielding</td></tr>
+</table>
+<h3>5. Comparison: Lanthanoids vs Actinoids</h3>
+<table>
+<tr><th>Feature</th><th>Lanthanoids</th><th>Actinoids</th></tr>
+<tr><td>Electronic config</td><td>4f<sup>1–14</sup>5d<sup>0–1</sup>6s<sup>2</sup></td><td>5f<sup>1–14</sup>6d<sup>0–1</sup>7s<sup>2</sup></td></tr>
+<tr><td>Binding of f-electrons</td><td>4f deeply buried, less available</td><td>5f more exposed, greater involvement</td></tr>
+<tr><td>Oxidation states</td><td>Mostly +3 (+2, +4 rare)</td><td>+3 to +7 (wide range)</td></tr>
+<tr><td>Magnetic properties</td><td>Paramagnetic (except Lu, Yb)</td><td>Paramagnetic (many)</td></tr>
+<tr><td>Reactivity</td><td>Less reactive</td><td>More reactive, radioactive</td></tr>
+<tr><td>Separation</td><td>Difficult (similar properties)</td><td>Relatively easier due to range of OS</td></tr>
+</table>
+<div class="note"><strong><span class="badge">⚡ CBSE PYQ - Expected</span> Why does Zr and Hf have almost identical radii?</strong> Due to lanthanoid contraction. The 4f electrons poorly shield, so the increase in nuclear charge across Ln series pulls the 5s/5p/5d orbitals inwards. Hf (after Ln) ends up with nearly the same radius as Zr (before Ln).</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ========== END TAB 2 ========== -->
+<!-- ========== TAB 3: NCERT SOLUTIONS ========== -->
+<div class="tab-content" id="tab-ncert">
+<h2>NCERT Solutions — d- &amp; f-Block Elements (Chapter 8)</h2>
+<p><strong>Board Exam Focus Subset marked with <span class="badge">⚡ PYQ</span>.</strong></p>
+<details>
+<summary><strong>Q 8.1</strong> <span class="badge">⚡ PYQ</span> Write the electronic configurations of Cr and Cu. Why are they exceptional?</summary>
+<div class="ans">
+<p><strong>Cr (Z = 24):</strong> Expected [Ar] 3d<sup>4</sup> 4s<sup>2</sup> but actual is <strong>[Ar] 3d<sup>5</sup> 4s<sup>1</sup></strong>.<br/>
+<strong>Cu (Z = 29):</strong> Expected [Ar] 3d<sup>9</sup> 4s<sup>2</sup> but actual is <strong>[Ar] 3d<sup>10</sup> 4s<sup>1</sup></strong>.</p>
+<p><strong>Reason:</strong> Half-filled (d<sup>5</sup>) and fully-filled (d<sup>10</sup>) configurations provide extra stability due to:</p>
+<ul>
+<li>Greater exchange energy (electrons with parallel spins exchange energy)</li>
+<li>Symmetric distribution of electron density</li>
+<li>Lower energy due to reduced electron-electron repulsion</li>
+</ul>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.2</strong> <span class="badge">⚡ PYQ</span> Explain the trend in enthalpy of atomization of 3d series.</summary>
+<div class="ans">
+<p><strong>Trend:</strong> Increases from Sc (326) to V (515), then decreases with irregular pattern to Zn (130 kJ/mol).</p>
+<p><strong>Reason:</strong> Atomization enthalpy depends on metallic bond strength, which depends on the number of unpaired d-electrons available for bonding. Sc (d<sup>1</sup>): weak; V (d<sup>3</sup>): maximum due to 3 unpaired e<sup>−</sup>; Cr (d<sup>5</sup>): half-filled reduces bonding effectiveness; Mn (d<sup>5</sup>): weak; Zn (d<sup>10</sup>): no unpaired electrons → weakest metallic bonding.</p>
+<p><strong>Values:</strong> Sc 326, Ti 473, V 515, Cr 397, Mn 281, Fe 416, Co 425, Ni 430, Cu 338, Zn 130 (kJ/mol).</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.3</strong> <span class="badge">⚡ PYQ</span> Explain the anomalous electrode potential values of Mn and Cu.</summary>
+<div class="ans">
+<p><strong>Mn:</strong> E°(Mn<sup>2+</sup>/Mn) = −1.18 V (more negative than expected). The Mn<sup>2+</sup> (d<sup>5</sup>) has extra stability, making it easier to form, so the reduction potential is more negative.</p>
+<p><strong>Cu:</strong> E°(Cu<sup>2+</sup>/Cu) = +0.34 V (positive, unlike other 3d metals). This is due to: (a) high sublimation enthalpy of Cu, (b) not-so-high hydration enthalpy of Cu<sup>2+</sup>, and (c) high IE<sub>2</sub> of Cu.</p>
+<p><strong>Zn:</strong> E°(Zn<sup>2+</sup>/Zn) = −0.76 V (less negative than expected for d<sup>10</sup>), due to the stable d<sup>10</sup> configuration requiring more energy to ionize.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.4</strong> <span class="badge">⚡ PYQ</span> Why do transition elements show variable oxidation states?</summary>
+<div class="ans">
+<p>Transition elements show variable oxidation states because the (n−1)d and ns orbitals have very close energies. Both ns and (n−1)d electrons can participate in bonding. As we move across a series, the number of d-electrons changes, giving rise to different possible oxidation states.</p>
+<p>Examples: Mn shows +2, +3, +4, +6, +7; V shows +2, +3, +4, +5; Fe shows +2, +3.</p>
+<p><strong>Factors that stabilize a particular oxidation state:</strong> (a) d<sup>5</sup> and d<sup>10</sup> configurations, (b) nature of anion/ligand, (c) hydration/solvation energy, (d) crystal field stabilization energy (CFSE).</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.5</strong> <span class="badge">⚡ PYQ</span> Why is Cu<sup>2+</sup> more stable than Cu<sup>+</sup> in aqueous solution?</summary>
+<div class="ans">
+<p>Cu<sup>+</sup> (3d<sup>10</sup>) in aqueous solution <strong>disproportionates</strong>:<br/>
+2Cu<sup>+</sup>(aq) → Cu(s) + Cu<sup>2+</sup>(aq)</p>
+<p>This is because Cu<sup>2+</sup> (3d<sup>9</sup>) has much higher <strong>hydration enthalpy</strong> (Δ<sub>hyd</sub>H°) which compensates for the higher second ionization enthalpy (IE<sub>2</sub>) of Cu. The overall ΔG° for the disproportionation is negative.</p>
+<p>In the solid state (e.g., Cu<sub>2</sub>O), Cu<sup>+</sup> is stable because the lattice energy compensates.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.6</strong> <span class="badge">⚡ PYQ</span> Why are transition metal compounds generally colored?</summary>
+<div class="ans">
+<p>Transition metal ions absorb visible light due to <strong>d-d transitions</strong>. In a free transition metal ion, all d-orbitals have the same energy. However, in the presence of ligands (crystal field splitting), the d-orbitals split into two sets: t<sub>2g</sub> (lower energy) and e<sub>g</sub> (higher energy).</p>
+<p>Electrons in the lower d-orbitals absorb specific wavelengths of visible light to jump to higher d-orbitals. The color observed is the <strong>complementary color</strong> of the absorbed light.</p>
+<p><strong>Note:</strong> Sc<sup>3+</sup> (3d<sup>0</sup>) and Zn<sup>2+</sup> (3d<sup>10</sup>) are colorless because no d-d transition is possible (no unpaired electrons to promote).</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.7</strong> <span class="badge">⚡ PYQ</span> Explain catalytic properties of transition metals.</summary>
+<div class="ans">
+<p>Transition metals and their compounds act as catalysts because:</p>
+<ol>
+<li><strong>Variable oxidation states:</strong> They can form unstable intermediate compounds by changing their oxidation state, providing a new pathway with lower activation energy.</li>
+<li><strong>Surface adsorption:</strong> Transition metals provide a large surface area for reactant adsorption, weakening bonds in reactants.</li>
+</ol>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>V<sub>2</sub>O<sub>5</sub> in Contact process: 2SO<sub>2</sub> + O<sub>2</sub> → 2SO<sub>3</sub> (V<sup>5+</sup> ↔ V<sup>4+</sup>)</li>
+<li>Fe (finely divided) in Haber process: N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub></li>
+<li>Ni in hydrogenation of oils</li>
+<li>Pt/Pd in catalytic converters for automobile exhaust</li>
+</ul>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.8</strong> <span class="badge">⚡ PYQ</span> Describe the oxidizing action of KMnO<sub>4</sub> and K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>.</summary>
+<div class="ans">
+<p><strong>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> in acidic medium:</strong><br/>
+Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 14H<sup>+</sup> + 6e<sup>−</sup> → 2Cr<sup>3+</sup> + 7H<sub>2</sub>O (E° = +1.33 V)<br/>
+Color change: <strong>Orange → Green</strong> (Cr<sup>3+</sup>).</p>
+<p><strong>Examples:</strong><br/>
+Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 6Fe<sup>2+</sup> + 14H<sup>+</sup> → 2Cr<sup>3+</sup> + 6Fe<sup>3+</sup> + 7H<sub>2</sub>O<br/>
+Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 6I<sup>−</sup> + 14H<sup>+</sup> → 2Cr<sup>3+</sup> + 3I<sub>2</sub> + 7H<sub>2</sub>O</p>
+<p><strong>KMnO<sub>4</sub> in different media:</strong></p>
+<ul>
+<li><strong>Acidic:</strong> MnO<sub>4</sub><sup>−</sup> + 8H<sup>+</sup> + 5e<sup>−</sup> → Mn<sup>2+</sup> + 4H<sub>2</sub>O (E° = +1.51 V)<br/>
+Purple → Colorless/faint pink</li>
+<li><strong>Neutral:</strong> MnO<sub>4</sub><sup>−</sup> + 2H<sub>2</sub>O + 3e<sup>−</sup> → MnO<sub>2</sub> + 4OH<sup>−</sup> (E° = +0.59 V)<br/>
+Purple → Brown (MnO<sub>2</sub> precipitate)</li>
+<li><strong>Alkaline:</strong> MnO<sub>4</sub><sup>−</sup> + e<sup>−</sup> → MnO<sub>4</sub><sup>2−</sup> (E° = +0.56 V)<br/>
+Purple → Green (manganate ion)</li>
+</ul>
+<p><strong>Examples in acidic medium:</strong><br/>
+2MnO<sub>4</sub><sup>−</sup> + 5C<sub>2</sub>O<sub>4</sub><sup>2−</sup> + 16H<sup>+</sup> → 2Mn<sup>2+</sup> + 10CO<sub>2</sub> + 8H<sub>2</sub>O<br/>
+2MnO<sub>4</sub><sup>−</sup> + 10I<sup>−</sup> + 16H<sup>+</sup> → 2Mn<sup>2+</sup> + 5I<sub>2</sub> + 8H<sub>2</sub>O</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.9</strong> <span class="badge">⚡ PYQ</span> What is lanthanoid contraction? What are its consequences?</summary>
+<div class="ans">
+<p><strong>Lanthanoid contraction:</strong> The steady decrease in atomic/ionic radii of lanthanoids (Ce to Lu) with increasing atomic number.</p>
+<p><strong>Cause:</strong> Poor shielding of 4f electrons. As nuclear charge increases, the effective nuclear charge (Z<sub>eff</sub>) felt by outer electrons increases, pulling them inwards.</p>
+<p><strong>Consequences:</strong></p>
+<ol>
+<li><strong>Similar radii of 4d and 5d elements:</strong> Zr (160 pm) and Hf (159 pm) have nearly identical radii. Same for Nb-Ta, Mo-W. This makes separation of these pairs very difficult.</li>
+<li><strong>Difficulty in lanthanoid separation:</strong> All lanthanoids have similar chemical properties due to similar radii.</li>
+<li><strong>Decreasing basic strength:</strong> The basic strength of lanthanoid hydroxides [Ln(OH)<sub>3</sub>] decreases from Ce(OH)<sub>3</sub> to Lu(OH)<sub>3</sub>.</li>
+<li><strong>Ionic radii trend:</strong> Ln<sup>3+</sup> radii decrease from 103 pm (Ce<sup>3+</sup>) to 86 pm (Lu<sup>3+</sup>).</li>
+</ol>
+</div>
+</details>
+<h3>Additional NCERT Exercise Questions</h3>
+<details>
+<summary><strong>Q 8.10</strong> Which of the 3d series elements shows the maximum number of oxidation states and why?</summary>
+<div class="ans"><p><strong>Manganese (Mn)</strong> shows the maximum number of oxidation states: +2, +3, +4, +6, +7. This is because Mn has the electronic configuration [Ar] 3d<sup>5</sup> 4s<sup>2</sup>, and the 5 d-electrons along with the 2 s-electrons can be progressively removed (total 7 electrons) due to close energy of 3d and 4s orbitals.</p></div>
+</details>
+<details>
+<summary><strong>Q 8.11</strong> Assign reasons: (a) E°(M<sup>2+</sup>/M) for copper is positive. (b) Cr<sup>2+</sup> is reducing while Mn<sup>3+</sup> is oxidizing.</summary>
+<div class="ans"><p><strong>(a)</strong> Cu has high sublimation enthalpy, high IE<sub>2</sub>, and relatively low hydration enthalpy, making the overall process less favorable, giving a positive E°.</p>
+<p><strong>(b)</strong> Cr<sup>2+</sup> (3d<sup>4</sup>) easily loses one electron to form stable Cr<sup>3+</sup> (3d<sup>3</sup> half-filled t<sub>2g</sub>) → reducing. Mn<sup>3+</sup> (3d<sup>4</sup>) easily gains an electron to form stable Mn<sup>2+</sup> (3d<sup>5</sup> half-filled d-shell) → oxidizing.</p></div>
+</details>
+<details>
+<summary><strong>Q 8.12</strong> What are interstitial compounds? Give their characteristics.</summary>
+<div class="ans"><p><strong>Interstitial compounds</strong> are formed when small atoms (H, B, C, N) occupy interstitial voids in the transition metal lattice.</p>
+<p><strong>Characteristics:</strong> (a) Very hard and brittle, (b) High melting points, (c) Retain metallic conductivity, (d) Chemically inert.</p></div>
+</details>
+<details>
+<summary><strong>Q 8.13</strong> Why do transition metals form alloys? Give examples.</summary>
+<div class="ans"><p>Transition metals form alloys because their atomic radii are very similar, allowing one metal to substitute for another in the crystal lattice.</p>
+<p><strong>Examples:</strong> Stainless steel (Fe + Cr + Ni), Brass (Cu + Zn), Bronze (Cu + Sn), Nichrome (Ni + Cr).</p></div>
+</details>
+<details>
+<summary><strong>Q 8.14</strong> Describe the preparation of K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> from chromite ore.</summary>
+<div class="ans"><p><strong>Steps:</strong></p>
+<ol>
+<li>Fusion of chromite (FeCr<sub>2</sub>O<sub>4</sub>) with Na<sub>2</sub>CO<sub>3</sub> in air:<br/>
+4FeCr<sub>2</sub>O<sub>4</sub> + 8Na<sub>2</sub>CO<sub>3</sub> + 7O<sub>2</sub> → 2Fe<sub>2</sub>O<sub>3</sub> + 8Na<sub>2</sub>CrO<sub>4</sub> + 8CO<sub>2</sub></li>
+<li>Leaching with water and filtration</li>
+<li>Acidification of Na<sub>2</sub>CrO<sub>4</sub> with H<sub>2</sub>SO<sub>4</sub>:<br/>
+2Na<sub>2</sub>CrO<sub>4</sub> + H<sub>2</sub>SO<sub>4</sub> → Na<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> + Na<sub>2</sub>SO<sub>4</sub> + H<sub>2</sub>O</li>
+<li>Conversion to potassium salt:<br/>
+Na<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> + 2KCl → K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> + 2NaCl</li>
+</ol>
+<p>Orange crystals of K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> are obtained.</p></div>
+</details>
+<details>
+<summary><strong>Q 8.15</strong> Describe the preparation of KMnO<sub>4</sub> from pyrolusite ore.</summary>
+<div class="ans"><p><strong>Steps:</strong></p>
+<ol>
+<li>Fusion of MnO<sub>2</sub> (pyrolusite) with KOH and oxidant (KNO<sub>3</sub> or air):<br/>
+2MnO<sub>2</sub> + 4KOH + O<sub>2</sub> → 2K<sub>2</sub>MnO<sub>4</sub> + 2H<sub>2</sub>O</li>
+<li>Oxidation of K<sub>2</sub>MnO<sub>4</sub> to KMnO<sub>4</sub>:<br/>
+Method 1 (chemical): 3K<sub>2</sub>MnO<sub>4</sub> + 4CO<sub>2</sub> → 2KMnO<sub>4</sub> + MnO<sub>2</sub> + 4K<sub>2</sub>CO<sub>3</sub><br/>
+Method 2 (electrolytic): Anodic oxidation of K<sub>2</sub>MnO<sub>4</sub> at a Ni electrode.</li>
+</ol>
+<p>Deep purple/black crystals of KMnO<sub>4</sub> are obtained.</p></div>
+</details>
+<details>
+<summary><strong>Q 8.16</strong> Discuss the structure of chromate (CrO<sub>4</sub><sup>2−</sup>) and dichromate (Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup>) ions.</summary>
+<div class="ans"><p><strong>Chromate (CrO<sub>4</sub><sup>2−</sup>):</strong> Tetrahedral structure. Cr is sp<sup>3</sup> hybridized. Four O atoms at corners of tetrahedron. Cr–O bond length ~165 pm. Yellow color.</p>
+<p><strong>Dichromate (Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup>):</strong> Two CrO<sub>4</sub> tetrahedra sharing one oxygen at the common vertex. Cr–O–Cr bond angle ~126°. Terminal Cr–O bonds are shorter than the bridging Cr–O–Cr bonds. Orange color.</p>
+<p><strong>Interconversion in solution:</strong><br/>
+2CrO<sub>4</sub><sup>2−</sup> + 2H<sup>+</sup> ↔ Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + H<sub>2</sub>O<br/>
+Yellow (chromate) in basic/neutral, Orange (dichromate) in acidic.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.17</strong> What are the oxidation states of lanthanoids and actinoids? How do they differ?</summary>
+<div class="ans"><p><strong>Lanthanoids:</strong> Most common is +3. Ce also shows +4 (f<sup>0</sup> stable), Eu shows +2 (f<sup>7</sup> stable), Tb shows +4, Yb shows +2 (f<sup>14</sup> stable). The +3 state is the most stable for all lanthanoids.</p>
+<p><strong>Actinoids:</strong> Show a wider range of oxidation states: +3, +4, +5, +6, +7 (e.g., U shows +3, +4, +5, +6; Np shows +3 to +7). This is because 5f, 6d, and 7s orbitals have very close energies.</p>
+<p><strong>Difference:</strong> Actinoids exhibit higher oxidation states (+5 to +7) more commonly than lanthanoids due to poorer shielding of 5f electrons making them more available for bonding.</p>
+</div>
+</details>
+<details>
+<summary><strong>Q 8.18</strong> Compare the chemistry of lanthanoids and actinoids.</summary>
+<div class="ans"><table>
+<tr><th>Property</th><th>Lanthanoids</th><th>Actinoids</th></tr>
+<tr><td>Electronic configuration</td><td>4f<sup>1–14</sup>5d<sup>0–1</sup>6s<sup>2</sup></td><td>5f<sup>1–14</sup>6d<sup>0–1</sup>7s<sup>2</sup></td></tr>
+<tr><td>Binding of f-electrons</td><td>4f buried deep, less available</td><td>5f more exposed, more available</td></tr>
+<tr><td>Oxidation states</td><td>Mostly +3 (+2, +4 rare)</td><td>+3 to +7 (wider range)</td></tr>
+<tr><td>Magnetic properties</td><td>Paramagnetic (except Lu, Yb)</td><td>Many paramagnetic</td></tr>
+<tr><td>Reactivity</td><td>Less reactive</td><td>More reactive, most are radioactive</td></tr>
+<tr><td>Separation</td><td>Very difficult</td><td>Relatively easier</td></tr>
+</table></div>
+</details>
+<details>
+<summary><strong>Q 8.19</strong> Explain why: (a) Transition metals act as catalysts. (b) Zn, Cd, and Hg are not transition metals.</summary>
+<div class="ans"><p><strong>(a)</strong> Already covered in Q 8.7. Variable oxidation states and ability to form intermediates.</p>
+<p><strong>(b)</strong> Zn (d<sup>10</sup>), Cd (d<sup>10</sup>), and Hg (d<sup>10</sup>) have completely filled d-orbitals in their ground state and in their common oxidation state (+2). They do not have partially filled d-orbitals in any of their compounds, which is a requirement for being a transition element (as per IUPAC: element whose atom has partially filled d-orbitals in ground state or in any of its oxidation states).</p></div>
+</details>
+<details>
+<summary><strong>Q 8.20</strong> Calculate the magnetic moment of Fe<sup>3+</sup> and Cr<sup>3+</sup> ions.</summary>
+<div class="ans"><p><strong>Fe<sup>3+</sup>:</strong> Electronic config = [Ar] 3d<sup>5</sup>. Number of unpaired electrons (n) = 5.<br/>
+μ = √<span style="text-decoration:overline;">n(n+2)</span> = √<span style="text-decoration:overline;">5(7)</span> = √<span style="text-decoration:overline;">35</span> = <strong>5.92 BM</strong></p>
+<p><strong>Cr<sup>3+</sup>:</strong> Electronic config = [Ar] 3d<sup>3</sup>. Number of unpaired electrons (n) = 3.<br/>
+μ = √<span style="text-decoration:overline;">n(n+2)</span> = √<span style="text-decoration:overline;">3(5)</span> = √<span style="text-decoration:overline;">15</span> = <strong>3.87 BM</strong></p></div>
+</details>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ========== END TAB 3 ========== -->
+<!-- ========== TAB 4: INTERACTIVE SANDBOX ========== -->
+<div class="tab-content" id="tab-sandbox">
+<h2>Interactive d &amp; f-Block Element Sandbox</h2>
+<!-- ANOMALY OVERLAY + MODAL -->
+<div class="anomaly-overlay" id="anomalyOverlay" onclick="closeAnomaly()"></div>
+<div class="anomaly-box" id="anomalyBox"><h4 id="anomalyTitle"></h4><div id="anomalyBody"></div><button class="btn" onclick="closeAnomaly()" style="margin-top:10px">Close</button></div>
+<!-- Tooltip for chart -->
+<div class="chart-tooltip" id="chartTooltip"></div>
+<!-- === SECTION A: ELEMENTS INSPECTOR === -->
+<h3>A. Interactive Elements Inspector Grid</h3>
+<p>Click an element to view its detailed profile.</p>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+<div style="flex:2;min-width:300px">
+<h4>3d Series (Sc–Zn)</h4>
+<div id="grid3d"></div>
+<h4>4d Series (Y–Cd)</h4>
+<div id="grid4d"></div>
+<h4>5d Series (La, Hf–Hg)</h4>
+<div id="grid5d"></div>
+<h4>Lanthanoids (Ce–Lu)</h4>
+<div id="gridLn"></div>
+<h4>Actinoids (Th–Lr)</h4>
+<div id="gridAn"></div>
+</div>
+<div class="info-panel" id="elementInfoPanel" style="flex:1;min-width:280px">
+<h3>Select an element</h3>
+<p style="color:#888">Click any element box above to see full details here.</p>
+</div>
+</div>
+<!-- === SECTION B: TREND VISUALIZER === -->
+<h3>B. Dynamic Trend &amp; Anomaly Visualizer</h3>
+<div class="controls">
+<label for="trendSelect">Property:</label>
+<select id="trendSelect" onchange="updateTrendChart()">
+<option value="atomicRadius">Atomic Radius (pm)</option>
+<option value="ionicRadius">Ionic Radius M<sup>2+</sup> (pm)</option>
+<option value="ie1">Ionization Enthalpy IE<sub>1</sub> (kJ/mol)</option>
+<option value="elecPot">E°(M<sup>2+</sup>/M) (V)</option>
+<option value="atomEnth">Enthalpy of Atomization Δ<sub>a</sub>H° (kJ/mol)</option>
+</select>
+</div>
+<div class="canvas-wrap">
+<canvas height="420" id="trendCanvas" width="900"></canvas>
+</div>
+<div class="legend">
+<span><span class="swatch" style="background:#1a237e"></span> Normal data point</span>
+<span><span class="swatch" style="background:#b71c1c"></span> Anomalous value (click for explanation)</span>
+</div>
+<!-- === SECTION C: OXOANION REACTION SIMULATOR === -->
+<h3>C. Oxoanion Reaction Matrix Simulator</h3>
+<div class="controls">
+<label for="oxoanion">Oxoanion:</label>
+<select id="oxoanion">
+<option value="mno4">KMnO<sub>4</sub> (Permanganate)</option>
+<option value="cr2o7">K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> (Dichromate)</option>
+</select>
+<label for="medium">Medium:</label>
+<select id="medium">
+<option value="acidic">Acidic</option>
+<option value="neutral">Neutral</option>
+<option value="alkaline">Alkaline</option>
+</select>
+<label for="reductant">Reducing Agent:</label>
+<select id="reductant">
+<option value="fe2">Fe<sup>2+</sup></option>
+<option value="i-">I<sup>−</sup></option>
+<option value="c2o4">C<sub>2</sub>O<sub>4</sub><sup>2−</sup></option>
+<option value="h2s">H<sub>2</sub>S</option>
+</select>
+<button class="btn" id="runRxBtn" onclick="runReaction()">Run Reaction</button>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+<div class="canvas-wrap" style="flex:1;min-width:280px">
+<canvas height="300" id="beakerCanvas" width="350"></canvas>
+</div>
+<div class="equation-box" id="equationBox" style="flex:2;min-width:280px">
+<div class="step">Select an oxoanion, medium, and reducing agent, then click "Run Reaction" to see balanced equations and color change animation.</div>
+</div>
+</div>
+<!-- === SECTION D: CONTRACTION SLIDER === -->
+<h3>D. Lanthanoid vs Actinoid Contraction Slider</h3>
+<div class="controls">
+<label for="seriesToggle">Series:</label>
+<select id="seriesToggle" onchange="updateContraction()">
+<option value="lanthanoid">Lanthanoids (4f)</option>
+<option value="actinoid">Actinoids (5f)</option>
+</select>
+</div>
+<div class="canvas-wrap">
+<canvas height="360" id="contractionCanvas" width="900"></canvas>
+</div>
+<div class="slider-wrap">
+<label>Slide across the series:</label>
+<input id="contractionSlider" max="100" min="0" oninput="updateContraction()" type="range" value="0"/>
+<div class="radius-label" id="radiusLabel">Ce<sup>3+</sup>: 103.4 pm | f<sup>1</sup></div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ========== END TAB 4 ========== -->
+<script>
+// ======================= TAB SWITCHING =======================
+function switchTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-bar a').forEach(a=>a.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  document.querySelector('.tab-bar a[href="#'+id+'"]').classList.add('active');
+  if(id==='sandbox'){initSandbox();}
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',function(){
+  var h=location.hash.replace('#','');
+  if(h)switchTab(h);
+});
+if(location.hash){switchTab(location.hash.replace('#',''));}
+
+// ======================= ELEMENT DATA =======================
+const ELEMENTS = {
+  sc:{sym:'Sc',Z:21,name:'Scandium',config:'[Ar] 3d<sup>1</sup> 4s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'3d',color:'#e3f2fd'},
+  ti:{sym:'Ti',Z:22,name:'Titanium',config:'[Ar] 3d<sup>2</sup> 4s<sup>2</sup>',configNote:'',os:'+2, +3, +4',stable:'+4',series:'3d',color:'#e3f2fd'},
+  v:{sym:'V',Z:23,name:'Vanadium',config:'[Ar] 3d<sup>3</sup> 4s<sup>2</sup>',configNote:'',os:'+2, +3, +4, +5',stable:'+5',series:'3d',color:'#e3f2fd'},
+  cr:{sym:'Cr',Z:24,name:'Chromium',config:'[Ar] 3d<sup>5</sup> 4s<sup>1</sup>',configNote:'Exception: 3d<sup>5</sup>4s<sup>1</sup> (not 3d<sup>4</sup>4s<sup>2</sup>) due to half-filled d<sup>5</sup> stability',os:'+2, +3, +6',stable:'+3',series:'3d',color:'#ffcdd2'},
+  mn:{sym:'Mn',Z:25,name:'Manganese',config:'[Ar] 3d<sup>5</sup> 4s<sup>2</sup>',configNote:'',os:'+2, +3, +4, +6, +7',stable:'+2',series:'3d',color:'#e3f2fd'},
+  fe:{sym:'Fe',Z:26,name:'Iron',config:'[Ar] 3d<sup>6</sup> 4s<sup>2</sup>',configNote:'',os:'+2, +3',stable:'+3',series:'3d',color:'#e3f2fd'},
+  co:{sym:'Co',Z:27,name:'Cobalt',config:'[Ar] 3d<sup>7</sup> 4s<sup>2</sup>',configNote:'',os:'+2, +3',stable:'+2',series:'3d',color:'#e3f2fd'},
+  ni:{sym:'Ni',Z:28,name:'Nickel',config:'[Ar] 3d<sup>8</sup> 4s<sup>2</sup>',configNote:'',os:'+2',stable:'+2',series:'3d',color:'#e3f2fd'},
+  cu:{sym:'Cu',Z:29,name:'Copper',config:'[Ar] 3d<sup>10</sup> 4s<sup>1</sup>',configNote:'Exception: 3d<sup>10</sup>4s<sup>1</sup> (not 3d<sup>9</sup>4s<sup>2</sup>) due to fully-filled d<sup>10</sup> stability',os:'+1, +2',stable:'+2 (aq)',series:'3d',color:'#ffcdd2'},
+  zn:{sym:'Zn',Z:30,name:'Zinc',config:'[Ar] 3d<sup>10</sup> 4s<sup>2</sup>',configNote:'',os:'+2',stable:'+2',series:'3d',color:'#e3f2fd'},
+  y:{sym:'Y',Z:39,name:'Yttrium',config:'[Kr] 4d<sup>1</sup> 5s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'4d',color:'#e3f2fd'},
+  zr:{sym:'Zr',Z:40,name:'Zirconium',config:'[Kr] 4d<sup>2</sup> 5s<sup>2</sup>',configNote:'',os:'+2, +3, +4',stable:'+4',series:'4d',color:'#e3f2fd'},
+  nb:{sym:'Nb',Z:41,name:'Niobium',config:'[Kr] 4d<sup>4</sup> 5s<sup>1</sup>',configNote:'Exception: 4d<sup>4</sup>5s<sup>1</sup>',os:'+3, +4, +5',stable:'+5',series:'4d',color:'#ffcdd2'},
+  mo:{sym:'Mo',Z:42,name:'Molybdenum',config:'[Kr] 4d<sup>5</sup> 5s<sup>1</sup>',configNote:'Exception: 4d<sup>5</sup>5s<sup>1</sup>',os:'+2, +3, +4, +5, +6',stable:'+6',series:'4d',color:'#ffcdd2'},
+  tc:{sym:'Tc',Z:43,name:'Technetium',config:'[Kr] 4d<sup>5</sup> 5s<sup>2</sup>',configNote:'',os:'+4, +5, +6, +7',stable:'+7',series:'4d',color:'#e3f2fd'},
+  ru:{sym:'Ru',Z:44,name:'Ruthenium',config:'[Kr] 4d<sup>7</sup> 5s<sup>1</sup>',configNote:'Exception: 4d<sup>7</sup>5s<sup>1</sup>',os:'+3, +4, +6, +8',stable:'+3',series:'4d',color:'#ffcdd2'},
+  rh:{sym:'Rh',Z:45,name:'Rhodium',config:'[Kr] 4d<sup>8</sup> 5s<sup>1</sup>',configNote:'Exception: 4d<sup>8</sup>5s<sup>1</sup>',os:'+3',stable:'+3',series:'4d',color:'#ffcdd2'},
+  pd:{sym:'Pd',Z:46,name:'Palladium',config:'[Kr] 4d<sup>10</sup>',configNote:'Exception: 4d<sup>10</sup> (no 5s electron)',os:'+2, +4',stable:'+2',series:'4d',color:'#ffcdd2'},
+  ag:{sym:'Ag',Z:47,name:'Silver',config:'[Kr] 4d<sup>10</sup> 5s<sup>1</sup>',configNote:'Exception: 4d<sup>10</sup>5s<sup>1</sup>',os:'+1, +2',stable:'+1',series:'4d',color:'#ffcdd2'},
+  cd:{sym:'Cd',Z:48,name:'Cadmium',config:'[Kr] 4d<sup>10</sup> 5s<sup>2</sup>',configNote:'',os:'+2',stable:'+2',series:'4d',color:'#e3f2fd'},
+  la:{sym:'La',Z:57,name:'Lanthanum',config:'[Xe] 5d<sup>1</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'5d',color:'#e3f2fd'},
+  hf:{sym:'Hf',Z:72,name:'Hafnium',config:'[Xe] 4f<sup>14</sup> 5d<sup>2</sup> 6s<sup>2</sup>',configNote:'',os:'+2, +3, +4',stable:'+4',series:'5d',color:'#e3f2fd'},
+  ta:{sym:'Ta',Z:73,name:'Tantalum',config:'[Xe] 4f<sup>14</sup> 5d<sup>3</sup> 6s<sup>2</sup>',configNote:'',os:'+3, +4, +5',stable:'+5',series:'5d',color:'#e3f2fd'},
+  w:{sym:'W',Z:74,name:'Tungsten',config:'[Xe] 4f<sup>14</sup> 5d<sup>4</sup> 6s<sup>2</sup>',configNote:'',os:'+2, +3, +4, +5, +6',stable:'+6',series:'5d',color:'#e3f2fd'},
+  re:{sym:'Re',Z:75,name:'Rhenium',config:'[Xe] 4f<sup>14</sup> 5d<sup>5</sup> 6s<sup>2</sup>',configNote:'',os:'+3, +4, +5, +6, +7',stable:'+7',series:'5d',color:'#e3f2fd'},
+  os:{sym:'Os',Z:76,name:'Osmium',config:'[Xe] 4f<sup>14</sup> 5d<sup>6</sup> 6s<sup>2</sup>',configNote:'',os:'+3, +4, +6, +8',stable:'+4',series:'5d',color:'#e3f2fd'},
+  ir:{sym:'Ir',Z:77,name:'Iridium',config:'[Xe] 4f<sup>14</sup> 5d<sup>7</sup> 6s<sup>2</sup>',configNote:'',os:'+3, +4',stable:'+4',series:'5d',color:'#e3f2fd'},
+  pt:{sym:'Pt',Z:78,name:'Platinum',config:'[Xe] 4f<sup>14</sup> 5d<sup>9</sup> 6s<sup>1</sup>',configNote:'Exception: 5d<sup>9</sup>6s<sup>1</sup>',os:'+2, +4',stable:'+4',series:'5d',color:'#ffcdd2'},
+  au:{sym:'Au',Z:79,name:'Gold',config:'[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>1</sup>',configNote:'Exception: 5d<sup>10</sup>6s<sup>1</sup>',os:'+1, +3',stable:'+3',series:'5d',color:'#ffcdd2'},
+  hg:{sym:'Hg',Z:80,name:'Mercury',config:'[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup>',configNote:'',os:'+1, +2',stable:'+2',series:'5d',color:'#e3f2fd'},
+  ce:{sym:'Ce',Z:58,name:'Cerium',config:'[Xe] 4f<sup>1</sup> 5d<sup>1</sup> 6s<sup>2</sup>',configNote:'',os:'+3, +4',stable:'+3',series:'f',color:'#f3e5f5'},
+  pr:{sym:'Pr',Z:59,name:'Praseodymium',config:'[Xe] 4f<sup>3</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  nd:{sym:'Nd',Z:60,name:'Neodymium',config:'[Xe] 4f<sup>4</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  pm:{sym:'Pm',Z:61,name:'Promethium',config:'[Xe] 4f<sup>5</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  sm:{sym:'Sm',Z:62,name:'Samarium',config:'[Xe] 4f<sup>6</sup> 6s<sup>2</sup>',configNote:'',os:'+2, +3',stable:'+3',series:'f',color:'#f3e5f5'},
+  eu:{sym:'Eu',Z:63,name:'Europium',config:'[Xe] 4f<sup>7</sup> 6s<sup>2</sup>',configNote:'',os:'+2, +3',stable:'+3',series:'f',color:'#f3e5f5'},
+  gd:{sym:'Gd',Z:64,name:'Gadolinium',config:'[Xe] 4f<sup>7</sup> 5d<sup>1</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  tb:{sym:'Tb',Z:65,name:'Terbium',config:'[Xe] 4f<sup>9</sup> 6s<sup>2</sup>',configNote:'',os:'+3, +4',stable:'+3',series:'f',color:'#f3e5f5'},
+  dy:{sym:'Dy',Z:66,name:'Dysprosium',config:'[Xe] 4f<sup>10</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  ho:{sym:'Ho',Z:67,name:'Holmium',config:'[Xe] 4f<sup>11</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  er:{sym:'Er',Z:68,name:'Erbium',config:'[Xe] 4f<sup>12</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  tm:{sym:'Tm',Z:69,name:'Thulium',config:'[Xe] 4f<sup>13</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  yb:{sym:'Yb',Z:70,name:'Ytterbium',config:'[Xe] 4f<sup>14</sup> 6s<sup>2</sup>',configNote:'',os:'+2, +3',stable:'+3',series:'f',color:'#f3e5f5'},
+  lu:{sym:'Lu',Z:71,name:'Lutetium',config:'[Xe] 4f<sup>14</sup> 5d<sup>1</sup> 6s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'f',color:'#f3e5f5'},
+  th:{sym:'Th',Z:90,name:'Thorium',config:'[Rn] 6d<sup>2</sup> 7s<sup>2</sup>',configNote:'',os:'+4',stable:'+4',series:'an',color:'#e8f5e9'},
+  pa:{sym:'Pa',Z:91,name:'Protactinium',config:'[Rn] 5f<sup>2</sup> 6d<sup>1</sup> 7s<sup>2</sup>',configNote:'',os:'+4, +5',stable:'+5',series:'an',color:'#e8f5e9'},
+  u:{sym:'U',Z:92,name:'Uranium',config:'[Rn] 5f<sup>3</sup> 6d<sup>1</sup> 7s<sup>2</sup>',configNote:'',os:'+3, +4, +5, +6',stable:'+6',series:'an',color:'#e8f5e9'},
+  np:{sym:'Np',Z:93,name:'Neptunium',config:'[Rn] 5f<sup>4</sup> 6d<sup>1</sup> 7s<sup>2</sup>',configNote:'',os:'+3, +4, +5, +6, +7',stable:'+5',series:'an',color:'#e8f5e9'},
+  pu:{sym:'Pu',Z:94,name:'Plutonium',config:'[Rn] 5f<sup>6</sup> 7s<sup>2</sup>',configNote:'',os:'+3, +4, +5, +6',stable:'+4',series:'an',color:'#e8f5e9'},
+  am:{sym:'Am',Z:95,name:'Americium',config:'[Rn] 5f<sup>7</sup> 7s<sup>2</sup>',configNote:'',os:'+3, +4, +5, +6',stable:'+3',series:'an',color:'#e8f5e9'},
+  cm:{sym:'Cm',Z:96,name:'Curium',config:'[Rn] 5f<sup>7</sup> 6d<sup>1</sup> 7s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'an',color:'#e8f5e9'},
+  bk:{sym:'Bk',Z:97,name:'Berkelium',config:'[Rn] 5f<sup>9</sup> 7s<sup>2</sup>',configNote:'',os:'+3, +4',stable:'+3',series:'an',color:'#e8f5e9'},
+  cf:{sym:'Cf',Z:98,name:'Californium',config:'[Rn] 5f<sup>10</sup> 7s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'an',color:'#e8f5e9'},
+  es:{sym:'Es',Z:99,name:'Einsteinium',config:'[Rn] 5f<sup>11</sup> 7s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'an',color:'#e8f5e9'},
+  fm:{sym:'Fm',Z:100,name:'Fermium',config:'[Rn] 5f<sup>12</sup> 7s<sup>2</sup>',configNote:'',os:'+3',stable:'+3',series:'an',color:'#e8f5e9'},
+  md:{sym:'Md',Z:101,name:'Mendelevium',config:'[Rn] 5f<sup>13</sup> 7s<sup>2</sup>',configNote:'',os:'+2, +3',stable:'+3',series:'an',color:'#e8f5e9'},
+  no:{sym:'No',Z:102,name:'Nobelium',config:'[Rn] 5f<sup>14</sup> 7s<sup>2</sup>',configNote:'',os:'+2, +3',stable:'+2',series:'an',color:'#e8f5e9'},
+  lr:{sym:'Lr',Z:103,name:'Lawrencium',config:'[Rn] 5f<sup>14</sup> 7s<sup>2</sup> 6d<sup>1</sup>',configNote:'',os:'+3',stable:'+3',series:'an',color:'#e8f5e9'}
+};
+
+// Grid order keys
+const GRID_KEYS = {
+  '3d':['sc','ti','v','cr','mn','fe','co','ni','cu','zn'],
+  '4d':['y','zr','nb','mo','tc','ru','rh','pd','ag','cd'],
+  '5d':['la','hf','ta','w','re','os','ir','pt','au','hg'],
+  f:['ce','pr','nd','pm','sm','eu','gd','tb','dy','ho','er','tm','yb','lu'],
+  an:['th','pa','u','np','pu','am','cm','bk','cf','es','fm','md','no','lr']
+};
+
+let selectedElement = null;
+
+function buildGrid(containerId, keys, series) {
+  const c = document.getElementById(containerId);
+  c.className = 'sandbox-grids';
+  keys.forEach(k => {
+    const el = ELEMENTS[k];
+    const d = document.createElement('span');
+    d.className = 'elem-box' + (el.configNote ? ' exception' : '') + (series==='f'||series==='an'?' f-block':'');
+    d.innerHTML = '<span class="z">'+el.Z+'</span>'+el.sym;
+    d.onclick = function(){showElementInfo(k);};
+    c.appendChild(d);
+  });
+}
+
+function showElementInfo(k) {
+  const el = ELEMENTS[k];
+  selectedElement = k;
+  document.querySelectorAll('.elem-box').forEach(b=>b.classList.remove('selected'));
+  // find and highlight
+  const allBoxes = document.querySelectorAll('.elem-box');
+  allBoxes.forEach(b=>{
+    if(b.textContent.trim().replace(/\d+/g,'').trim()===el.sym) b.classList.add('selected');
+  });
+  const panel = document.getElementById('elementInfoPanel');
+  let stableDisplay = '<span class="stable">'+el.stable+'</span>';
+  let noteHtml = el.configNote ? '<p class="exception"><strong>Note:</strong> '+el.configNote+'</p>' : '';
+  panel.innerHTML = '<h3>'+el.sym+' ('+el.Z+') &mdash; '+el.name+'</h3>'+
+    '<div class="prop"><span>Series</span><span>'+el.series+'</span></div>'+
+    '<div class="prop"><span>Electronic Config</span><span>'+el.config+'</span></div>'+
+    '<div class="prop"><span>All Oxidation States</span><span>'+el.os+'</span></div>'+
+    '<div class="prop"><span>Most Stable OS</span><span>'+stableDisplay+'</span></div>'+
+    noteHtml;
+}
+
+// ======================= TREND DATA =======================
+const ELEM_ORDER = ['sc','ti','v','cr','mn','fe','co','ni','cu','zn'];
+const ELEM_LABELS = ['Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn'];
+const TREND_DATA = {
+  atomicRadius:[164,147,135,129,137,126,125,124,128,137],
+  ionicRadius:[0,86,79,73,67,61,65,69,73,74],
+  ie1:[631,658,650,652,717,759,758,737,745,906],
+  elecPot:[-2.03,-1.63,-1.18,-0.91,-1.18,-0.44,-0.28,-0.25,0.34,-0.76],
+  atomEnth:[326,473,515,397,281,416,425,430,338,130]
+};
+const TREND_UNITS = {
+  atomicRadius:'pm',ionicRadius:'pm',ie1:'kJ/mol',elecPot:'V',atomEnth:'kJ/mol'
+};
+const TREND_NAMES = {
+  atomicRadius:'Atomic Radius',ionicRadius:'Ionic Radius M<sup>2+</sup>',ie1:'Ionization Enthalpy IE<sub>1</sub>',
+  elecPot:'E&deg;(M<sup>2+</sup>/M)',atomEnth:'&Delta;<sub>a</sub>H&deg;'
+};
+
+// Anomaly definitions: which elements are anomalous for each property, with explanations
+const ANOMALIES = {
+  atomicRadius:{mn:'Mn (137 pm) shows higher radius than Cr (129 pm) due to d<sup>5</sup> configuration causing lower effective nuclear charge.',cu:'Cu radius (128 pm) is larger than Ni (124 pm) due to d<sup>10</sup> shielding effect.',zn:'Zn radius (137 pm) is larger due to d<sup>10</sup> configuration reducing nuclear attraction.'},
+  ionicRadius:{},
+  ie1:{cu:'Cu IE<sub>1</sub> (745 kJ/mol) is lower than Ni (737 kJ/mol would be expected pattern) — Cu has 3d<sup>10</sup>4s<sup>1</sup>, removing the 4s<sup>1</sup> electron requires less energy than removing a paired electron.',zn:'Zn has the highest IE<sub>1</sub> (906 kJ/mol) due to stable 3d<sup>10</sup>4s<sup>2</sup> configuration.'},
+  elecPot:{mn:'Mn E&deg; = &minus;1.18 V (more negative than Cr). The d<sup>5</sup> half-filled configuration of Mn<sup>2+</sup> provides extra stability, making the reduction of Mn<sup>2+</sup> to Mn less favorable.',cu:'Cu E&deg; = +0.34 V (positive, unlike all other 3d metals). Due to: (a) high sublimation enthalpy of Cu, (b) relatively low hydration enthalpy of Cu<sup>2+</sup>, (c) high ionization enthalpy.',zn:'Zn E&deg; = &minus;0.76 V (less negative than Mn despite d<sup>10</sup>). d<sup>10</sup> fully filled makes Zn<sup>2+</sup> formation less favorable.'},
+  atomEnth:{cr:'Cr &Delta;<sub>a</sub>H&deg; (397 kJ/mol) drops sharply from V (515 kJ/mol) because half-filled d<sup>5</sup> reduces the number of unpaired electrons available for metallic bonding.',mn:'Mn (281 kJ/mol) — sharp drop. Only 5 unpaired electrons in d<sup>5</sup> but they are in half-filled configuration which weakens metallic bond strength.',cu:'Cu (338 kJ/mol) drops from Ni (430 kJ/mol) due to d<sup>10</sup> configuration — only one 4s electron available for metallic bonding.',zn:'Zn (130 kJ/mol) — lowest in the series. d<sup>10</sup> fully filled, no unpaired d-electrons, only 2 s-electrons for metallic bonding.'}
+};
+
+function getAnomalousElements(prop) {
+  return Object.keys(ANOMALIES[prop] || {});
+}
+
+// ======================= TREND CHART =======================
+function updateTrendChart() {
+  const prop = document.getElementById('trendSelect').value;
+  const data = TREND_DATA[prop];
+  const canvas = document.getElementById('trendCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  // margins
+  const mL = 70, mR = 30, mT = 40, mB = 50;
+  const chartW = W - mL - mR;
+  const chartH = H - mT - mB;
+
+  // find min/max
+  let min = data[0], max = data[0];
+  data.forEach(v=>{if(v<min)min=v;if(v>max)max=v;});
+  // add 10% padding
+  const range = max - min || 1;
+  const pad = range*0.15;
+  const yMin = min - pad;
+  const yMax = max + pad;
+
+  // title
+  ctx.fillStyle = '#1a237e';
+  ctx.font = 'bold 16px system-ui';
+  ctx.textAlign = 'center';
+  ctx.fillText('3d Series ' + TREND_NAMES[prop] + ' (' + TREND_UNITS[prop] + ')', W/2, 22);
+
+  // grid lines
+  ctx.strokeStyle = '#e0e0e0';
+  ctx.lineWidth = 1;
+  const nGrid = 5;
+  for(let i=0;i<=nGrid;i++){
+    const y = mT + chartH * (1 - i/nGrid);
+    ctx.beginPath();ctx.moveTo(mL,y);ctx.lineTo(W-mR,y);ctx.stroke();
+    const val = yMin + (yMax-yMin)*i/nGrid;
+    ctx.fillStyle = '#888';
+    ctx.font = '11px system-ui';
+    ctx.textAlign = 'right';
+    ctx.fillText(val.toFixed(val%1===0?0:1), mL-5, y+4);
+  }
+
+  // x labels
+  const n = data.length;
+  const barW = Math.min(36, chartW / n * 0.6);
+  const gap = chartW / n;
+  const anomalEls = getAnomalousElements(prop);
+
+  // bars
+  data.forEach((v,i)=>{
+    const x = mL + gap*i + (gap-barW)/2;
+    const yVal = (v - yMin)/(yMax - yMin);
+    const barH = yVal * chartH;
+    const y = mT + chartH - barH;
+
+    const elemId = ELEM_ORDER[i];
+    const isAnomal = anomalEls.includes(elemId);
+
+    ctx.fillStyle = isAnomal ? '#b71c1c' : '#1a237e';
+    ctx.fillRect(x, y, barW, barH);
+
+    // value on top
+    ctx.fillStyle = isAnomal ? '#b71c1c' : '#333';
+    ctx.font = 'bold 11px system-ui';
+    ctx.textAlign = 'center';
+    ctx.fillText(v.toFixed(v%1===0?0:2), x+barW/2, y-5);
+
+    // label below
+    ctx.fillStyle = '#444';
+    ctx.font = '12px system-ui';
+    ctx.fillText(ELEM_LABELS[i], x+barW/2, H - mB + 16);
+
+    // clickable anomaly region
+    if(isAnomal){
+      const el = document.createElement('canvas');
+      // We'll use isPointInRect via click handler
+    }
+  });
+
+  // store data for click handler
+  canvas.dataset.prop = prop;
+  canvas.dataset.chartData = JSON.stringify(data);
+  canvas.dataset.anomalEls = JSON.stringify(anomalEls);
+}
+
+// chart click handler
+document.getElementById('trendCanvas').addEventListener('click',function(e){
+  const rect = this.getBoundingClientRect();
+  const scaleX = this.width / rect.width;
+  const scaleY = this.height / rect.height;
+  const mx = (e.clientX - rect.left) * scaleX;
+  const my = (e.clientY - rect.top) * scaleY;
+
+  const prop = this.dataset.prop;
+  const data = TREND_DATA[prop];
+  const anomalEls = JSON.parse(this.dataset.anomalEls || '[]');
+  if(!data) return;
+
+  // detect which bar was clicked
+  const mL = 70, mR = 30, mT = 40, mB = 50;
+  const chartW = this.width - mL - mR;
+  const chartH = this.height - mT - mB;
+  const gap = chartW / data.length;
+  const barW = Math.min(36, chartW / data.length * 0.6);
+
+  let min = data[0], max = data[0];
+  data.forEach(v=>{if(v<min)min=v;if(v>max)max=v;});
+  const range = max-min||1;
+  const pad = range*0.15;
+  const yMin2 = min - pad;
+  const yMax2 = max + pad;
+
+  for(let i=0;i<data.length;i++){
+    const v = data[i];
+    const x = mL + gap*i + (gap-barW)/2;
+    const yVal = (v - yMin2)/(yMax2 - yMin2);
+    const barH = yVal * chartH;
+    const y = mT + chartH - barH;
+
+    if(mx >= x && mx <= x+barW && my >= y && my <= y+barH){
+      const elemId = ELEM_ORDER[i];
+      if(anomalEls.includes(elemId)){
+        showAnomaly(ELEM_LABELS[i], ANOMALIES[prop][elemId]);
+      } else {
+        showAnomaly(ELEM_LABELS[i], 'Value: '+v.toFixed(v%1===0?0:2)+' '+TREND_UNITS[prop]+'. This is a normal trend value.');
+      }
+      break;
+    }
+  }
+});
+
+function showAnomaly(title, body) {
+  document.getElementById('anomalyTitle').innerHTML = title;
+  document.getElementById('anomalyBody').innerHTML = body;
+  document.getElementById('anomalyBox').style.display = 'block';
+  document.getElementById('anomalyOverlay').style.display = 'block';
+}
+function closeAnomaly() {
+  document.getElementById('anomalyBox').style.display = 'none';
+  document.getElementById('anomalyOverlay').style.display = 'none';
+}
+
+// ======================= OXOANION REACTION SIMULATOR =======================
+const REACTION_DATA = {
+  mno4:{
+    acidic:{
+      'fe2':{
+        color:[180,20,180],
+        endColor:[220,220,220],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + 8H<sup>+</sup> + 5e<sup>&minus;</sup> &rarr; Mn<sup>2+</sup> + 4H<sub>2</sub>O',
+        half2:'Fe<sup>2+</sup> &rarr; Fe<sup>3+</sup> + e<sup>&minus;</sup>',
+        overall:'MnO<sub>4</sub><sup>&minus;</sup> + 5Fe<sup>2+</sup> + 8H<sup>+</sup> &rarr; Mn<sup>2+</sup> + 5Fe<sup>3+</sup> + 4H<sub>2</sub>O',
+        colorChange:'Purple &rarr; Colorless/Pale pink (Mn<sup>2+</sup>)',
+        note:''
+      },
+      'i-':{
+        color:[180,20,180],endColor:[220,220,220],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + 8H<sup>+</sup> + 5e<sup>&minus;</sup> &rarr; Mn<sup>2+</sup> + 4H<sub>2</sub>O',
+        half2:'2I<sup>&minus;</sup> &rarr; I<sub>2</sub> + 2e<sup>&minus;</sup>',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + 10I<sup>&minus;</sup> + 16H<sup>+</sup> &rarr; 2Mn<sup>2+</sup> + 5I<sub>2</sub> + 8H<sub>2</sub>O',
+        colorChange:'Purple &rarr; Colorless + Brown I<sub>2</sub>',
+        note:'I<sub>2</sub> gives brown color'
+      },
+      'c2o4':{
+        color:[180,20,180],endColor:[220,220,220],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + 8H<sup>+</sup> + 5e<sup>&minus;</sup> &rarr; Mn<sup>2+</sup> + 4H<sub>2</sub>O',
+        half2:'C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> &rarr; 2CO<sub>2</sub> + 2e<sup>&minus;</sup>',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + 5C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> + 16H<sup>+</sup> &rarr; 2Mn<sup>2+</sup> + 10CO<sub>2</sub> + 8H<sub>2</sub>O',
+        colorChange:'Purple &rarr; Colorless (Mn<sup>2+</sup>), CO<sub>2</sub> evolves',
+        note:'Reaction is autocatalytic (Mn<sup>2+</sup> catalyzes it)'
+      },
+      'h2s':{
+        color:[180,20,180],endColor:[220,220,220],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + 8H<sup>+</sup> + 5e<sup>&minus;</sup> &rarr; Mn<sup>2+</sup> + 4H<sub>2</sub>O',
+        half2:'H<sub>2</sub>S &rarr; S + 2H<sup>+</sup> + 2e<sup>&minus;</sup>',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + 5H<sub>2</sub>S + 6H<sup>+</sup> &rarr; 2Mn<sup>2+</sup> + 5S + 8H<sub>2</sub>O',
+        colorChange:'Purple &rarr; Colorless + Yellow S precipitate',
+        note:'Sulfur precipitates as yellow colloid'
+      }
+    },
+    neutral:{
+      'fe2':{color:[180,20,180],endColor:[160,80,20],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + 2H<sub>2</sub>O + 3e<sup>&minus;</sup> &rarr; MnO<sub>2</sub> + 4OH<sup>&minus;</sup>',
+        half2:'Fe<sup>2+</sup> &rarr; Fe<sup>3+</sup> + e<sup>&minus;</sup>',
+        overall:'MnO<sub>4</sub><sup>&minus;</sup> + 3Fe<sup>2+</sup> + 2H<sub>2</sub>O &rarr; MnO<sub>2</sub> + 3Fe<sup>3+</sup> + 4OH<sup>&minus;</sup>',
+        colorChange:'Purple &rarr; Brown (MnO<sub>2</sub> precipitate)',
+        note:''
+      },
+      'i-':{color:[180,20,180],endColor:[160,80,20],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + 2H<sub>2</sub>O + 3e<sup>&minus;</sup> &rarr; MnO<sub>2</sub> + 4OH<sup>&minus;</sup>',
+        half2:'I<sup>&minus;</sup> (varies)',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + H<sub>2</sub>O + I<sup>&minus;</sup> &rarr; 2MnO<sub>2</sub> + 2OH<sup>&minus;</sup> + IO<sub>3</sub><sup>&minus;</sup>',
+        colorChange:'Purple &rarr; Brown MnO<sub>2</sub>',
+        note:''
+      },
+      'c2o4':{color:[180,20,180],endColor:[160,80,20],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + 2H<sub>2</sub>O + 3e<sup>&minus;</sup> &rarr; MnO<sub>2</sub> + 4OH<sup>&minus;</sup>',
+        half2:'C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> &rarr; 2CO<sub>2</sub> + 2e<sup>&minus;</sup>',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + 3C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> + 4H<sub>2</sub>O &rarr; 2MnO<sub>2</sub> + 6CO<sub>2</sub> + 8OH<sup>&minus;</sup>',
+        colorChange:'Purple &rarr; Brown MnO<sub>2</sub>',
+        note:''
+      },
+      'h2s':{color:[180,20,180],endColor:[160,80,20],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + 2H<sub>2</sub>O + 3e<sup>&minus;</sup> &rarr; MnO<sub>2</sub> + 4OH<sup>&minus;</sup>',
+        half2:'H<sub>2</sub>S &rarr; S + 2H<sup>+</sup> + 2e<sup>&minus;</sup>',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + 3H<sub>2</sub>S &rarr; 2MnO<sub>2</sub> + 3S + 2H<sub>2</sub>O + 2OH<sup>&minus;</sup>',
+        colorChange:'Purple &rarr; Brown MnO<sub>2</sub> + Yellow S',
+        note:''
+      }
+    },
+    alkaline:{
+      'fe2':{color:[180,20,180],endColor:[0,180,0],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + e<sup>&minus;</sup> &rarr; MnO<sub>4</sub><sup>2&minus;</sup>',
+        half2:'Fe<sup>2+</sup> &rarr; Fe<sup>3+</sup> + e<sup>&minus;</sup>',
+        overall:'MnO<sub>4</sub><sup>&minus;</sup> + Fe<sup>2+</sup> &rarr; MnO<sub>4</sub><sup>2&minus;</sup> + Fe<sup>3+</sup>',
+        colorChange:'Purple &rarr; Green (manganate ion)',
+        note:''
+      },
+      'i-':{color:[180,20,180],endColor:[0,180,0],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + e<sup>&minus;</sup> &rarr; MnO<sub>4</sub><sup>2&minus;</sup>',
+        half2:'I<sup>&minus;</sup> &rarr; &frac12;I<sub>2</sub> + e<sup>&minus;</sup>',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + 2I<sup>&minus;</sup> &rarr; 2MnO<sub>4</sub><sup>2&minus;</sup> + I<sub>2</sub>',
+        colorChange:'Purple &rarr; Green + Brown I<sub>2</sub>',
+        note:''
+      },
+      'c2o4':{color:[180,20,180],endColor:[0,180,0],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + e<sup>&minus;</sup> &rarr; MnO<sub>4</sub><sup>2&minus;</sup>',
+        half2:'C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> &rarr; 2CO<sub>2</sub> + 2e<sup>&minus;</sup>',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> &rarr; 2MnO<sub>4</sub><sup>2&minus;</sup> + 2CO<sub>2</sub>',
+        colorChange:'Purple &rarr; Green',
+        note:''
+      },
+      'h2s':{color:[180,20,180],endColor:[0,180,0],
+        half1:'MnO<sub>4</sub><sup>&minus;</sup> + e<sup>&minus;</sup> &rarr; MnO<sub>4</sub><sup>2&minus;</sup>',
+        half2:'H<sub>2</sub>S &rarr; S + 2H<sup>+</sup> + 2e<sup>&minus;</sup>',
+        overall:'2MnO<sub>4</sub><sup>&minus;</sup> + H<sub>2</sub>S &rarr; 2MnO<sub>4</sub><sup>2&minus;</sup> + S + 2H<sup>+</sup>',
+        colorChange:'Purple &rarr; Green + S precipitate',
+        note:''
+      }
+    }
+  },
+  cr2o7:{
+    acidic:{
+      'fe2':{
+        color:[255,140,0],endColor:[0,180,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 14H<sup>+</sup> + 6e<sup>&minus;</sup> &rarr; 2Cr<sup>3+</sup> + 7H<sub>2</sub>O',
+        half2:'Fe<sup>2+</sup> &rarr; Fe<sup>3+</sup> + e<sup>&minus;</sup>',
+        overall:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 6Fe<sup>2+</sup> + 14H<sup>+</sup> &rarr; 2Cr<sup>3+</sup> + 6Fe<sup>3+</sup> + 7H<sub>2</sub>O',
+        colorChange:'Orange &rarr; Green (Cr<sup>3+</sup>)',
+        note:''
+      },
+      'i-':{
+        color:[255,140,0],endColor:[0,180,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 14H<sup>+</sup> + 6e<sup>&minus;</sup> &rarr; 2Cr<sup>3+</sup> + 7H<sub>2</sub>O',
+        half2:'2I<sup>&minus;</sup> &rarr; I<sub>2</sub> + 2e<sup>&minus;</sup>',
+        overall:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 6I<sup>&minus;</sup> + 14H<sup>+</sup> &rarr; 2Cr<sup>3+</sup> + 3I<sub>2</sub> + 7H<sub>2</sub>O',
+        colorChange:'Orange &rarr; Green + Brown I<sub>2</sub>',
+        note:''
+      },
+      'c2o4':{
+        color:[255,140,0],endColor:[0,180,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 14H<sup>+</sup> + 6e<sup>&minus;</sup> &rarr; 2Cr<sup>3+</sup> + 7H<sub>2</sub>O',
+        half2:'C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> &rarr; 2CO<sub>2</sub> + 2e<sup>&minus;</sup>',
+        overall:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 3C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> + 14H<sup>+</sup> &rarr; 2Cr<sup>3+</sup> + 6CO<sub>2</sub> + 7H<sub>2</sub>O',
+        colorChange:'Orange &rarr; Green + CO<sub>2</sub> evolution',
+        note:''
+      },
+      'h2s':{
+        color:[255,140,0],endColor:[0,180,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 14H<sup>+</sup> + 6e<sup>&minus;</sup> &rarr; 2Cr<sup>3+</sup> + 7H<sub>2</sub>O',
+        half2:'H<sub>2</sub>S &rarr; S + 2H<sup>+</sup> + 2e<sup>&minus;</sup>',
+        overall:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 3H<sub>2</sub>S + 8H<sup>+</sup> &rarr; 2Cr<sup>3+</sup> + 3S + 7H<sub>2</sub>O',
+        colorChange:'Orange &rarr; Green + Yellow S',
+        note:''
+      }
+    },
+    neutral:{
+      'fe2':{color:[255,140,0],endColor:[0,180,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 14H<sup>+</sup> + 6e<sup>&minus;</sup> &rarr; 2Cr<sup>3+</sup> + 7H<sub>2</sub>O (acidic medium required for Cr<sub>2</sub>O<sub>7</sub>)',
+        half2:'Fe<sup>2+</sup> &rarr; Fe<sup>3+</sup> + e<sup>&minus;</sup>',
+        overall:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 6Fe<sup>2+</sup> + 14H<sup>+</sup> &rarr; 2Cr<sup>3+</sup> + 6Fe<sup>3+</sup> + 7H<sub>2</sub>O',
+        colorChange:'Orange &rarr; Green (reaction requires acidic medium)',
+        note:'Dichromate requires acidic medium for effective oxidation'
+      },
+      'i-':{color:[255,140,0],endColor:[0,180,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 14H<sup>+</sup> + 6e<sup>&minus;</sup> &rarr; 2Cr<sup>3+</sup> + 7H<sub>2</sub>O',
+        half2:'2I<sup>&minus;</sup> &rarr; I<sub>2</sub> + 2e<sup>&minus;</sup>',
+        overall:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 6I<sup>&minus;</sup> + 14H<sup>+</sup> &rarr; 2Cr<sup>3+</sup> + 3I<sub>2</sub> + 7H<sub>2</sub>O',
+        colorChange:'Orange &rarr; Green + Brown I<sub>2</sub>',
+        note:''
+      },
+      'c2o4':{color:[255,140,0],endColor:[0,180,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 14H<sup>+</sup> + 6e<sup>&minus;</sup> &rarr; 2Cr<sup>3+</sup> + 7H<sub>2</sub>O',
+        half2:'C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> &rarr; 2CO<sub>2</sub> + 2e<sup>&minus;</sup>',
+        overall:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 3C<sub>2</sub>O<sub>4</sub><sup>2&minus;</sup> + 14H<sup>+</sup> &rarr; 2Cr<sup>3+</sup> + 6CO<sub>2</sub> + 7H<sub>2</sub>O',
+        colorChange:'Orange &rarr; Green',
+        note:''
+      },
+      'h2s':{color:[255,140,0],endColor:[0,180,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 14H<sup>+</sup> + 6e<sup>&minus;</sup> &rarr; 2Cr<sup>3+</sup> + 7H<sub>2</sub>O',
+        half2:'H<sub>2</sub>S &rarr; S + 2H<sup>+</sup> + 2e<sup>&minus;</sup>',
+        overall:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 3H<sub>2</sub>S + 8H<sup>+</sup> &rarr; 2Cr<sup>3+</sup> + 3S + 7H<sub>2</sub>O',
+        colorChange:'Orange &rarr; Green + S',
+        note:''
+      }
+    },
+    alkaline:{
+      'fe2':{color:[255,140,0],endColor:[200,200,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 2OH<sup>&minus;</sup> &rarr; 2CrO<sub>4</sub><sup>2&minus;</sup> + H<sub>2</sub>O (dichromate &rarr; chromate in base)',
+        half2:'Fe<sup>2+</sup>',
+        overall:'In alkaline medium, Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> converts to CrO<sub>4</sub><sup>2&minus;</sup> (yellow). Oxidation of Fe<sup>2+</sup> still occurs.',
+        colorChange:'Orange &rarr; Yellow (chromate ion)',
+        note:'CrO<sub>4</sub><sup>2&minus;</sup> is yellow; oxidizing power is weaker in alkaline medium'
+      },
+      'i-':{color:[255,140,0],endColor:[200,200,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 2OH<sup>&minus;</sup> &rarr; 2CrO<sub>4</sub><sup>2&minus;</sup> + H<sub>2</sub>O',
+        half2:'',
+        overall:'2CrO<sub>4</sub><sup>2&minus;</sup> + 3I<sup>&minus;</sup> + 4H<sub>2</sub>O &rarr; 2Cr(OH)<sub>3</sub> + I<sub>3</sub><sup>&minus;</sup> + 6OH<sup>&minus;</sup>',
+        colorChange:'Orange &rarr; Yellow &rarr; Green (Cr(OH)<sub>3</sub>)',
+        note:''
+      },
+      'c2o4':{color:[255,140,0],endColor:[200,200,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 2OH<sup>&minus;</sup> &rarr; 2CrO<sub>4</sub><sup>2&minus;</sup> + H<sub>2</sub>O',
+        half2:'',
+        overall:'In alkaline medium, oxidation by chromate is slow.',
+        colorChange:'Orange &rarr; Yellow',
+        note:''
+      },
+      'h2s':{color:[255,140,0],endColor:[200,200,0],
+        half1:'Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> + 2OH<sup>&minus;</sup> &rarr; 2CrO<sub>4</sub><sup>2&minus;</sup> + H<sub>2</sub>O',
+        half2:'',
+        overall:'',
+        colorChange:'Orange &rarr; Yellow',
+        note:''
+      }
+    }
+  }
+};
+
+let rxAnimating = false;
+
+function runReaction() {
+  if(rxAnimating) return;
+  const ox = document.getElementById('oxoanion').value;
+  const med = document.getElementById('medium').value;
+  const red = document.getElementById('reductant').value;
+  const rx = REACTION_DATA[ox][med][red];
+  if(!rx){document.getElementById('equationBox').innerHTML='<div class="step">No data for this combination.</div>';return;}
+
+  rxAnimating = true;
+  document.getElementById('runRxBtn').disabled = true;
+
+  // Animate beaker
+  const canvas = document.getElementById('beakerCanvas');
+  const ctx = canvas.getContext('2d');
+  const cW = canvas.width, cH = canvas.height;
+  const startCol = rx.color;
+  const endCol = rx.endColor;
+  const frames = 40;
+  let frame = 0;
+
+  function drawBeaker(r,g,b) {
+    ctx.clearRect(0,0,cW,cH);
+    // beaker outline
+    ctx.strokeStyle = '#555';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(50,260);
+    ctx.lineTo(50,80);
+    ctx.lineTo(70,40);
+    ctx.lineTo(280,40);
+    ctx.lineTo(300,80);
+    ctx.lineTo(300,260);
+    ctx.closePath();
+    ctx.stroke();
+    // liquid
+    ctx.fillStyle = 'rgb('+Math.round(r)+','+Math.round(g)+','+Math.round(b)+')';
+    ctx.beginPath();
+    ctx.moveTo(54,256);
+    ctx.lineTo(54,85);
+    ctx.lineTo(72,50);
+    ctx.lineTo(278,50);
+    ctx.lineTo(296,85);
+    ctx.lineTo(296,256);
+    ctx.closePath();
+    ctx.fill();
+    // liquid surface wave
+    ctx.fillStyle = 'rgba(255,255,255,0.2)';
+    ctx.beginPath();
+    ctx.ellipse(175,52,120,12,0,Math.PI,0);
+    ctx.fill();
+    // label
+    ctx.fillStyle = '#333';
+    ctx.font = '12px system-ui';
+    ctx.textAlign = 'center';
+    ctx.fillText('Beaker',175,290);
+    // bubbles if animating
+    if(frame>0 && frame<frames-5){
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      for(let i=0;i<3;i++){
+        const bx = 100 + Math.random()*120;
+        const by = 120 + Math.random()*60;
+        ctx.beginPath();
+        ctx.arc(bx,by,4+Math.random()*4,0,Math.PI*2);
+        ctx.fill();
+      }
+    }
+  }
+
+  function animate() {
+    const t = frame / frames;
+    const r = startCol[0] + (endCol[0]-startCol[0])*t;
+    const g = startCol[1] + (endCol[1]-startCol[1])*t;
+    const b = startCol[2] + (endCol[2]-startCol[2])*t;
+    drawBeaker(r,g,b);
+    frame++;
+    if(frame <= frames){
+      setTimeout(animate, 40);
+    } else {
+      // display equations
+      let eqHtml = '';
+      eqHtml += '<div class="step">Color change: '+rx.colorChange+'</div>';
+      if(rx.half1) eqHtml += '<div class="step">Half-reaction (reduction):</div>'+rx.half1;
+      if(rx.half2) eqHtml += '<div class="step">Half-reaction (oxidation):</div>'+rx.half2;
+      if(rx.overall) eqHtml += '<div class="step">Overall balanced equation:</div><strong>'+rx.overall+'</strong>';
+      if(rx.note) eqHtml += '<div class="step">Note: '+rx.note+'</div>';
+      document.getElementById('equationBox').innerHTML = eqHtml;
+      rxAnimating = false;
+      document.getElementById('runRxBtn').disabled = false;
+    }
+  }
+  // draw initial
+  drawBeaker(startCol[0],startCol[1],startCol[2]);
+  setTimeout(animate, 300);
+}
+
+// ======================= CONTRACTION SLIDER =======================
+const LN_DATA = [
+  {sym:'Ce',Z:58,config:'4f<sup>1</sup>',radius:103.4},
+  {sym:'Pr',Z:59,config:'4f<sup>3</sup>',radius:101.3},
+  {sym:'Nd',Z:60,config:'4f<sup>4</sup>',radius:99.5},
+  {sym:'Pm',Z:61,config:'4f<sup>5</sup>',radius:97.9},
+  {sym:'Sm',Z:62,config:'4f<sup>6</sup>',radius:96.4},
+  {sym:'Eu',Z:63,config:'4f<sup>7</sup>',radius:95.0},
+  {sym:'Gd',Z:64,config:'4f<sup>7</sup>5d<sup>1</sup>',radius:93.8},
+  {sym:'Tb',Z:65,config:'4f<sup>9</sup>',radius:92.3},
+  {sym:'Dy',Z:66,config:'4f<sup>10</sup>',radius:90.8},
+  {sym:'Ho',Z:67,config:'4f<sup>11</sup>',radius:89.4},
+  {sym:'Er',Z:68,config:'4f<sup>12</sup>',radius:88.1},
+  {sym:'Tm',Z:69,config:'4f<sup>13</sup>',radius:86.9},
+  {sym:'Yb',Z:70,config:'4f<sup>14</sup>',radius:85.8},
+  {sym:'Lu',Z:71,config:'4f<sup>14</sup>5d<sup>1</sup>',radius:84.8}
+];
+
+const AN_DATA = [
+  {sym:'Th',Z:90,config:'5f<sup>0</sup>6d<sup>2</sup>',radius:108},
+  {sym:'Pa',Z:91,config:'5f<sup>2</sup>6d<sup>1</sup>',radius:105},
+  {sym:'U',Z:92,config:'5f<sup>3</sup>6d<sup>1</sup>',radius:103},
+  {sym:'Np',Z:93,config:'5f<sup>4</sup>6d<sup>1</sup>',radius:101},
+  {sym:'Pu',Z:94,config:'5f<sup>6</sup>',radius:100},
+  {sym:'Am',Z:95,config:'5f<sup>7</sup>',radius:99},
+  {sym:'Cm',Z:96,config:'5f<sup>7</sup>6d<sup>1</sup>',radius:97},
+  {sym:'Bk',Z:97,config:'5f<sup>9</sup>',radius:96},
+  {sym:'Cf',Z:98,config:'5f<sup>10</sup>',radius:95},
+  {sym:'Es',Z:99,config:'5f<sup>11</sup>',radius:94},
+  {sym:'Fm',Z:100,config:'5f<sup>12</sup>',radius:93},
+  {sym:'Md',Z:101,config:'5f<sup>13</sup>',radius:92},
+  {sym:'No',Z:102,config:'5f<sup>14</sup>',radius:91},
+  {sym:'Lr',Z:103,config:'5f<sup>14</sup>6d<sup>1</sup>',radius:90}
+];
+
+let currentSeries = 'lanthanoid';
+
+function updateContraction() {
+  const series = document.getElementById('seriesToggle').value;
+  currentSeries = series;
+  const dataSet = series === 'lanthanoid' ? LN_DATA : AN_DATA;
+  const slider = document.getElementById('contractionSlider');
+  const pct = parseInt(slider.value) / 100;
+  const idx = Math.round(pct * (dataSet.length - 1));
+  const el = dataSet[idx];
+
+  // Update label
+  document.getElementById('radiusLabel').innerHTML = el.sym+'<sup>3+</sup>: '+el.radius+' pm | '+el.config;
+
+  const canvas = document.getElementById('contractionCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  const chartL = 60, chartR = 40, chartT = 40, chartB = 50;
+  const chartW = W - chartL - chartR;
+  const chartH = H - chartT - chartB;
+
+  const radii = dataSet.map(d=>d.radius);
+  const minR = Math.min(...radii)-5;
+  const maxR = Math.max(...radii)+5;
+
+  // bars for all elements
+  ctx.font = '10px system-ui';
+  ctx.textAlign = 'center';
+  const gap = chartW / (dataSet.length);
+  const barW = Math.min(20, gap*0.5);
+
+  dataSet.forEach((d,i)=>{
+    const x = chartL + gap*i + (gap-barW)/2;
+    const h = (d.radius - minR)/(maxR - minR) * chartH;
+    const y = chartT + chartH - h;
+
+    if(i === idx){
+      ctx.fillStyle = '#3949ab';
+      ctx.shadowColor = 'rgba(57,73,171,0.4)';
+      ctx.shadowBlur = 8;
+    } else {
+      ctx.fillStyle = '#90caf9';
+      ctx.shadowBlur = 0;
+    }
+    ctx.fillRect(x, y, barW, h);
+    ctx.shadowBlur = 0;
+
+    ctx.fillStyle = '#666';
+    ctx.fillText(d.sym, x+barW/2, H-chartB+14);
+  });
+
+  // selected element annotation
+  ctx.fillStyle = '#1a237e';
+  ctx.font = 'bold 14px system-ui';
+  ctx.textAlign = 'left';
+  const label = series === 'lanthanoid' ? 'Lanthanoid Contraction (4f)' : 'Actinoid Contraction (5f)';
+  ctx.fillText(label, chartL, 18);
+
+  // radius scale
+  ctx.fillStyle = '#888';
+  ctx.font = '11px system-ui';
+  ctx.textAlign = 'right';
+  for(let r=Math.ceil(minR/10)*10; r<=maxR; r+=5){
+    const y = chartT + chartH - (r - minR)/(maxR - minR) * chartH;
+    ctx.fillStyle = '#e0e0e0';
+    ctx.beginPath();ctx.moveTo(chartL,y);ctx.lineTo(W-chartR,y);ctx.stroke();
+    ctx.fillStyle = '#888';
+    ctx.fillText(r+' pm', chartL-5, y+4);
+  }
+
+  // Orbital illustration (right side)
+  const orbX = W - 120;
+  const orbY = chartT + 30;
+  ctx.fillStyle = '#333';
+  ctx.font = '11px system-ui';
+  ctx.textAlign = 'center';
+  ctx.fillText(series === 'lanthanoid' ? '4f orbital' : '5f orbital', orbX+40, orbY-10);
+
+  const rScale = series === 'lanthanoid' ? (el.radius/103.4) : (el.radius/108);
+  // draw electron cloud
+  ctx.fillStyle = 'rgba(57,73,171,0.15)';
+  ctx.strokeStyle = 'rgba(57,73,171,0.4)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.ellipse(orbX+40, orbY+40, 28*rScale, 22*rScale, 0, 0, Math.PI*2);
+  ctx.fill();
+  ctx.stroke();
+  // nucleus
+  ctx.fillStyle = '#e53935';
+  ctx.beginPath();
+  ctx.arc(orbX+40, orbY+40, 4, 0, Math.PI*2);
+  ctx.fill();
+  // electrons
+  for(let e=0; e<Math.min(parseInt(el.config.replace(/<[^>]+>/g,'').match(/(\d+)/)?.[1]||'1'),8); e++){
+    const angle = (e/7)*Math.PI*2;
+    const dist = 10 + Math.random()*8;
+    ctx.fillStyle = '#1a237e';
+    ctx.beginPath();
+    ctx.arc(orbX+40+Math.cos(angle)*dist*rScale, orbY+40+Math.sin(angle)*dist*rScale*0.8, 3, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  // Explanation box
+  ctx.fillStyle = '#e8eaf6';
+  ctx.fillRect(chartL, H-80, chartW, 72);
+  ctx.fillStyle = '#1a237e';
+  ctx.font = 'bold 11px system-ui';
+  ctx.textAlign = 'left';
+  ctx.fillText('Key Concept:', chartL+8, H-60);
+  ctx.fillStyle = '#333';
+  ctx.font = '10px system-ui';
+  if(series === 'lanthanoid'){
+    ctx.fillText('4f electrons shield poorly &rarr; increasing Z', chartL+8, H-43);
+    ctx.fillText('gradually pulls outer electrons inward.', chartL+8, H-28);
+    ctx.fillText('Total contraction: ~18.6 pm across the series.', chartL+8, H-13);
+  } else {
+    ctx.fillText('5f electrons shield even more poorly than 4f.', chartL+8, H-43);
+    ctx.fillText('Actinoid contraction is LARGER than lanthanoid', chartL+8, H-28);
+    ctx.fillText('contraction due to more diffuse 5f orbitals.', chartL+8, H-13);
+  }
+}
+
+// ======================= INIT =======================
+function initSandbox(){
+  // build grids
+  buildGrid('grid3d', GRID_KEYS['3d'], '3d');
+  buildGrid('grid4d', GRID_KEYS['4d'], '4d');
+  buildGrid('grid5d', GRID_KEYS['5d'], '5d');
+  buildGrid('gridLn', GRID_KEYS['f'], 'f');
+  buildGrid('gridAn', GRID_KEYS['an'], 'an');
+  // initial chart
+  updateTrendChart();
+  // initial beaker draw
+  const bc = document.getElementById('beakerCanvas');
+  const bctx = bc.getContext('2d');
+  bctx.clearRect(0,0,bc.width,bc.height);
+  // draw empty beaker
+  bctx.strokeStyle = '#555';
+  bctx.lineWidth = 3;
+  bctx.beginPath();
+  bctx.moveTo(50,260);bctx.lineTo(50,80);bctx.lineTo(70,40);bctx.lineTo(280,40);bctx.lineTo(300,80);bctx.lineTo(300,260);bctx.closePath();
+  bctx.stroke();
+  bctx.fillStyle = 'rgba(200,200,200,0.3)';
+  bctx.beginPath();
+  bctx.moveTo(54,256);bctx.lineTo(54,85);bctx.lineTo(72,50);bctx.lineTo(278,50);bctx.lineTo(296,85);bctx.lineTo(296,256);bctx.closePath();
+  bctx.fill();
+  bctx.fillStyle = '#888';
+  bctx.font = '12px system-ui';
+  bctx.textAlign = 'center';
+  bctx.fillText('Select & Run a reaction',175,160);
+  // init contraction
+  updateContraction();
+  // mark sandbox initialized
+  if(window._sandboxInited) return;
+  window._sandboxInited = true;
+}
+
+// Auto-init sandbox if visible on load
+document.addEventListener('DOMContentLoaded',function(){
+  if(document.getElementById('tab-sandbox').classList.contains('active')) initSandbox();
+});
+</script>
+</body>
+</html>

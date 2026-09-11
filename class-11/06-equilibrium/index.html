@@ -1,0 +1,2634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 11 - Equilibrium // KEDAR'S CHEMISTRY</title>
+  <meta name="description" content="CBSE Class 11 Chemistry revision notes and JEE guide for Equilibrium (Physical Chemistry). Comprehensive coverage of Le Chatelier's Principle, Kc & Kp Relations, pH & Buffer Solutions, Solubility Product (Ksp), Acid-Base Theories with step-by-step equations by Kedar Krishna.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/cyber.css">
+  <link rel="stylesheet" href="../../assets/css/chapter.css">
+  <link rel="stylesheet" href="../../assets/vendor/katex/katex.min.css">
+  <script src="../../assets/vendor/katex/katex.min.js"></script>
+  <script src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script src="../../assets/vendor/katex/contrib/mhchem.min.js"></script>
+</head>
+<body data-chapter-slug="class-11-06-equilibrium">
+
+  <!-- Sticky Cyber Header -->
+  <header class="chapter-header">
+    <div class="chapter-nav-wrap">
+      <div class="chapter-nav-left">
+        <a href="../../index.html" class="back-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Portal
+        </a>
+        <div class="chapter-meta">
+          <div class="chapter-breadcrumb">
+            <span>Class 11</span>
+            <span>&bull;</span>
+            <span class="badge-branch branch-physical">Physical Chemistry</span>
+          </div>
+          <h1>Ch 06: Equilibrium</h1>
+        </div>
+      </div>
+
+      <div class="chapter-nav-right">
+        <button id="markCompletedBtn" class="action-btn" title="Track study completion">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+          Mark Complete
+        </button>
+        <button id="fullscreenBtn" class="btn-icon" title="Toggle Fullscreen" style="width: 36px; height: 36px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="chapter-tabs-bar">
+      <div class="chapter-tabs">
+        
+          <button class="tab-item active" data-target="panel-notes-1">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            Master Study Notes
+          </button>
+        
+          <button class="tab-item" data-target="panel-guide-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Equations & Applications
+          </button>
+        
+          <button class="tab-item" data-target="panel-guide-3">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Properties & Advanced Topics
+          </button>
+        
+      </div>
+    </div>
+  </header>
+
+  <!-- Panels Container -->
+  <main class="panels-container">
+    
+          <div id="panel-notes-1" class="view-panel active">
+            <div class="notes-frame-wrap">
+              <div class="frame-toolbar">
+                <span>INTERACTIVE NCERT REVISION NOTES</span>
+                <a href="notes.html" target="_blank" rel="noopener" class="action-btn" title="Open notes in new window">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  Open Standalone
+                </a>
+              </div>
+              <iframe src="notes.html" class="notes-iframe" id="frame-1" title="Master Study Notes"></iframe>
+            </div>
+          </div>
+        
+          <div id="panel-guide-2" class="view-panel">
+            <div class="guide-content-wrap">
+              <div class="guide-search-box" style="margin-bottom: 1.5rem;">
+                <span class="search-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" class="guide-search-input" placeholder="Search equations, concepts, or mechanisms in this guide...">
+              </div>
+              <div class="guide-content">
+                <h1>EQUILIBRIUM: EQUATIONS, CONCEPTS &amp; APPLICATIONS GUIDE</h1>
+<h2>JEE (Mains &amp; Advanced) | CBSE Class 11–12</h2>
+<hr />
+<h2>SECTION 0: FUNDAMENTAL EQUILIBRIUM CONCEPTS</h2>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Mathematical Form</th>
+<th>Key Feature</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reversible Reaction</strong></td>
+<td>Reaction proceeding in both forward and backward directions simultaneously</td>
+<td>A + B ⇌ C + D</td>
+<td>Can reach equilibrium under closed system</td>
+<td>2023, 2024, 2025</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Dynamic Equilibrium</strong></td>
+<td>Forward and reverse reaction rates are equal; no macroscopic change in concentrations</td>
+<td>$r_f = r_r$</td>
+<td>Reactions continue at molecular level but [concentrations] appear constant</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Equilibrium State</strong></td>
+<td>System reaches state where no net change in composition occurs</td>
+<td>$\frac{d[A]}{dt} = 0$ for all species</td>
+<td>Independent of path taken to equilibrium</td>
+<td>2021, 2022, 2023</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>System at Equilibrium</strong></td>
+<td>Closed, isolated system with no exchange of matter/energy with surroundings (for simplification)</td>
+<td>Closed system assumption</td>
+<td>Applies to solutions, gases in closed containers</td>
+<td>2024, 2025</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Molecular Interpretation</strong></td>
+<td>At equilibrium, both forward and backward molecular processes continue but at equal rates</td>
+<td>$N_f = N_r$ (number of molecules/time)</td>
+<td>Explains why equilibrium is dynamic, not static</td>
+<td>2022, 2023</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Approach to Equilibrium</strong></td>
+<td>System evolves over time from initial state to equilibrium following kinetics and thermodynamics</td>
+<td>$\frac{d[A]}{dt} = k_f[A][B] - k_r[C][D]$</td>
+<td>Time-dependent approach; exponential relaxation typical</td>
+<td>2024, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 1: EQUILIBRIUM CONSTANT (K_c, K_p, K_x)</h2>
+<h3>PART A: Equilibrium Constant Definition &amp; Calculation</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Equilibrium Constant Type</th>
+<th>Expression</th>
+<th>Units</th>
+<th>Physical Meaning</th>
+<th>Calculation Method</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>K_c (Concentration)</strong></td>
+<td>$K_c = \frac{[C]^c [D]^d}{[A]^a [B]^b}$</td>
+<td>(mol/L)^(Δn)</td>
+<td>Ratio of product to reactant concentrations at equilibrium; independent of initial concentrations</td>
+<td>Measure equilibrium [concentrations]; substitute into expression</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>K_p (Partial Pressure)</strong></td>
+<td>$K_p = \frac{P_C^c P_D^d}{P_A^a P_B^b}$</td>
+<td>(atm)^(Δn) or (bar)^(Δn)</td>
+<td>Ratio of product to reactant partial pressures at equilibrium; for gaseous systems</td>
+<td>Use partial pressures of gases; liquids/solids have P = 1</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>K_x (Mole Fraction)</strong></td>
+<td>$K_x = \frac{(x_C)^c (x_D)^d}{(x_A)^a (x_B)^b}$</td>
+<td>Dimensionless</td>
+<td>Ratio of mole fractions; used in ideal gas mixtures</td>
+<td>Calculate mole fractions from initial/equilibrium moles</td>
+<td>2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>K_c vs. K_p Relationship</strong></td>
+<td>$K_p = K_c (RT)^{\Delta n}$ where $\Delta n = (c+d) - (a+b)$</td>
+<td>Depends on Δn sign</td>
+<td>When Δn = 0, K_p = K_c; K_p &gt; K_c if Δn &gt; 0; K_p &lt; K_c if Δn &lt; 0</td>
+<td>Use R = 0.0821 L·atm/(mol·K) or 8.314 J/(mol·K); T in Kelvin</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>K_c vs. K_x Relationship</strong></td>
+<td>$K_x = K_c (P_{total})^{\Delta n}$</td>
+<td>Depends on Δn &amp; total pressure</td>
+<td>Converts K_c to K_x for gas-phase systems</td>
+<td>Use P_total in bar or atm</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Independence from Initial Conditions</strong></td>
+<td>K remains constant at fixed T regardless of initial [reactants] or [products]</td>
+<td>Dimensionless ratio; thermodynamic constant</td>
+<td>Key insight: equilibrium position changes with initial conditions but K does not</td>
+<td>Measure different initial states; calculate K for each; should match</td>
+<td>2022, 2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Temperature Dependence</strong></td>
+<td>$\frac{d \ln K}{dT} = \frac{\Delta H°}{RT^2}$ (Van't Hoff equation)</td>
+<td>K increases/decreases with T depending on ΔH° sign</td>
+<td>Exothermic reactions: K decreases with T; Endothermic: K increases with T</td>
+<td>Use Van't Hoff at two temperatures; K₂/K₁ = exp[ΔH°/R(1/T₁ - 1/T₂)]</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Calculating K from Experimental Data (ICE Tables)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Initial Concentrations</th>
+<th>Equilibrium Concentrations</th>
+<th>K_c Calculation</th>
+<th>Example (aA + bB ⇌ cC + dD)</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Generic ICE Setup</strong></td>
+<td>[A]₀, [B]₀, [C]₀, [D]₀ (typically 0 for products)</td>
+<td>[A]ₑq, [B]ₑq, [C]ₑq, [D]ₑq</td>
+<td>$K_c = \frac{[C]_{eq}^c [D]_{eq}^d}{[A]_{eq}^a [B]_{eq}^b}$</td>
+<td>H₂ + I₂ ⇌ 2HI: K_c = [HI]²/([H₂][I₂])</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>ICE Table with x (change)</strong></td>
+<td>[A]₀ = 1.0, [B]₀ = 1.0, [C]₀ = 0, [D]₀ = 0</td>
+<td>[A] = 1.0−x, [B] = 1.0−x, [C] = x, [D] = x</td>
+<td>Set up quadratic in x; solve for x; compute K_c</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃: if x mol of N₂ reacts, 3x mol H₂ reacts, 2x mol NH₃ forms</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Partial Equilibrium Data</strong></td>
+<td>Initial concentrations given; only one equilibrium [concentration] provided</td>
+<td>Use stoichiometry to deduce others</td>
+<td>Complete ICE table; then compute K_c</td>
+<td>If [A]₀ = 2, and [A]ₑq = 1.5, then Δ[A] = −0.5; by stoichiometry, deduce [B]ₑq, [C]ₑq, [D]ₑq</td>
+<td>2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Equilibrium from Degree of Dissociation (α)</strong></td>
+<td>Initial: [A]₀; Define α = fraction dissociated</td>
+<td>[A] = [A]₀(1−α), products formed based on stoichiometry</td>
+<td>$K_c = \frac{([A]_0 \alpha)^b \cdot ... }{[A]_0(1-\alpha)}$ (simplified)</td>
+<td>N₂O₄ ⇌ 2NO₂: if α fraction dissociates, K_c = [A]₀α²/(1−α)</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Multiple Experiments, Same K</strong></td>
+<td>Run reaction under different initial conditions (e.g., different [A]₀, [B]₀, or both = 0)</td>
+<td>K_c must be identical for each run at same T</td>
+<td>Average K from multiple trials for better accuracy</td>
+<td>Set A]₀ = 1 M in trial 1, [A]₀ = 2 M in trial 2; calculate K_c for both; should match</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 2: REACTION QUOTIENT (Q) &amp; PREDICTION OF REACTION DIRECTION</h2>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Q Relationship</th>
+<th>Definition</th>
+<th>Prediction Rule</th>
+<th>Physical Interpretation</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q &lt; K</strong></td>
+<td>Reaction quotient smaller than equilibrium constant</td>
+<td>Reaction proceeds <strong>forward</strong> (→) to reach equilibrium; [products] increase, [reactants] decrease</td>
+<td>System is "product-deficient"; more product must form</td>
+<td>For H₂ + I₂ ⇌ 2HI, if calculated Q &lt; K_c, more HI forms</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Q = K</strong></td>
+<td>Reaction quotient equals equilibrium constant</td>
+<td>System is <strong>at equilibrium</strong>; no net change in concentrations</td>
+<td>No driving force for reaction; forward and reverse rates equal</td>
+<td>Q = K indicates equilibrium state reached</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Q &gt; K</strong></td>
+<td>Reaction quotient larger than equilibrium constant</td>
+<td>Reaction proceeds <strong>backward</strong> (←) to reach equilibrium; [products] decrease, [reactants] increase</td>
+<td>System is "reactant-deficient"; reactants must reform</td>
+<td>For H₂ + I₂ ⇌ 2HI, if calculated Q &gt; K_c, HI decomposes</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Q Calculation</strong></td>
+<td>$Q = \frac{[C]^c [D]^d}{[A]^a [B]^b}$ (same form as K_c)</td>
+<td>Compare Q to K_c at same T</td>
+<td>Q uses <strong>instantaneous</strong> concentrations (any time); K uses <strong>equilibrium</strong> concentrations at specific T</td>
+<td>H₂ + I₂ ⇌ 2HI: at t=0, [H₂]=[I₂]=0.5 M, [HI]=0 → Q=0 &lt; K_c; reaction proceeds forward</td>
+<td>2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Direction from Q vs. K</strong></td>
+<td>If Q ≠ K, system is not at equilibrium; Q-vs-K tells direction</td>
+<td>Compare Q to K; no calculation of Δ[concentrations] needed initially</td>
+<td>Quick predictive tool for multi-step problems</td>
+<td>Combine with Le Chatelier to predict shifts under stress</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Numerical Example: H₂ + I₂ ⇌ 2HI (K_c = 50 at 400 K)</strong></td>
+<td>At t=0: [H₂]=1 M, [I₂]=1 M, [HI]=0; Q = 0/(1)(1) = 0</td>
+<td>Q &lt; K → reaction proceeds forward</td>
+<td>More HI forms until Q = K</td>
+<td>After equilibrium: [H₂]=[I₂]≈0.62 M, [HI]≈0.76 M; Q = (0.76)²/((0.62)(0.62)) = 50 = K_c ✓</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 3: LE CHATELIER'S PRINCIPLE &amp; EQUILIBRIUM SHIFTS</h2>
+<h3>PART A: Concentration Changes</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Stress Applied</th>
+<th>Effect on Equilibrium Position</th>
+<th>Effect on K_c</th>
+<th>Effect on [Concentrations]</th>
+<th>Example (N₂ + 3H₂ ⇌ 2NH₃)</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add Reactant (e.g., increase [A])</strong></td>
+<td>Equilibrium shifts <strong>right</strong> (→) to consume added A</td>
+<td>K_c <strong>unchanged</strong></td>
+<td>[A] increases overall; [B] increases overall; [C] increases (shifted), then [D] increases (shifted); net shift right</td>
+<td>Add N₂ → equilibrium shifts right; more N₂ consumed, more NH₃ formed</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Add Product (e.g., increase [C])</strong></td>
+<td>Equilibrium shifts <strong>left</strong> (←) to consume added C</td>
+<td>K_c <strong>unchanged</strong></td>
+<td>[C] increases overall; [D] increases overall; [A] increases (back reaction); [B] increases (back reaction); net shift left</td>
+<td>Add NH₃ → equilibrium shifts left; some NH₃ decomposes</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Remove Reactant (e.g., decrease [A])</strong></td>
+<td>Equilibrium shifts <strong>left</strong> (←) to replace A</td>
+<td>K_c <strong>unchanged</strong></td>
+<td>[A] decreases; system responds by shifting left to produce more A; but [A] remains lower overall</td>
+<td>Remove N₂ (e.g., by freezing out) → equilibrium shifts left (backward) to regenerate N₂</td>
+<td>2022, 2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Remove Product (e.g., decrease [C])</strong></td>
+<td>Equilibrium shifts <strong>right</strong> (→) to replace C</td>
+<td>K_c <strong>unchanged</strong></td>
+<td>[C] decreases; system responds by shifting right to produce more C; but [C] remains lower overall</td>
+<td>Remove NH₃ (e.g., by liquefaction) → equilibrium shifts right; more N₂ + H₂ convert to NH₃</td>
+<td>2021, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Change in Inert Gas (at constant volume)</strong></td>
+<td><strong>No effect</strong> on equilibrium (partial pressures of reactants/products unchanged)</td>
+<td>K_c <strong>unchanged</strong></td>
+<td>Concentrations of all species <strong>unchanged</strong></td>
+<td>In N₂ + 3H₂ ⇌ 2NH₃, adding He gas in rigid container → no shift</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Change in Volume (increases or decreases pressure if gases involved)</strong></td>
+<td>Shift depends on Δn = (products) − (reactants) stoichiometric coefficient difference</td>
+<td>K_c <strong>unchanged</strong></td>
+<td>If Δn &gt; 0: pressure decrease (V↑) shifts right; pressure increase (V↓) shifts left. If Δn &lt; 0: opposite. If Δn = 0: no shift.</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃: Δn = 2 − 4 = −2; decreasing V (P↑) shifts equilibrium right (toward fewer moles)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Temperature Changes</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Temperature Change</th>
+<th>Effect on Equilibrium for Exothermic Reaction (ΔH° &lt; 0)</th>
+<th>Effect on K</th>
+<th>Effect on Exothermic Reverse Reaction (ΔH° &gt; 0)</th>
+<th>Effect on Equilibrium for Endothermic Reaction (ΔH° &gt; 0)</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Increase T</strong></td>
+<td>Equilibrium shifts <strong>left</strong> (←) — reverse reaction favored; higher T disfavors exo reaction</td>
+<td>K <strong>decreases</strong></td>
+<td>At higher T, endothermic reverse is favored; rate of reverse increases more than forward</td>
+<td>Equilibrium shifts <strong>right</strong> (→) — forward reaction favored; higher T favors endo reaction</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃ (exo, ΔH° = −92 kJ/mol): T↑ → shifts left, K↓</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Decrease T</strong></td>
+<td>Equilibrium shifts <strong>right</strong> (→) — forward reaction favored; lower T favors exo reaction</td>
+<td>K <strong>increases</strong></td>
+<td>At lower T, endothermic reverse is disfavored; rate of reverse decreases more than forward</td>
+<td>Equilibrium shifts <strong>left</strong> (←) — forward reaction disfavored; lower T disfavors endo reaction</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃: T↓ → shifts right, K↑ (but reaction becomes slow)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>No Effect on K from Catalyst</strong></td>
+<td>Catalyst speeds both forward and reverse rates equally; reaches equilibrium faster but does not shift it</td>
+<td>K <strong>unchanged</strong></td>
+<td>Catalyst changes kinetics (activation energy), not thermodynamics (ΔG°, K)</td>
+<td>Catalyst changes kinetics (activation energy), not thermodynamics (ΔG°, K)</td>
+<td>Haber process: Fe catalyst speeds up N₂ + 3H₂ ⇌ 2NH₃ but K unchanged</td>
+<td>2022, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 4: ACID-BASE EQUILIBRIA</h2>
+<h3>PART A: Dissociation Constants (K_a, K_b, K_w)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Equilibrium Expression</th>
+<th>Mathematical Definition</th>
+<th>Physical Meaning</th>
+<th>Units</th>
+<th>Range/Typical Values</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>K_w (Ionic Product of Water)</strong></td>
+<td>H₂O ⇌ H⁺ + OH⁻</td>
+<td>$K_w = [H^+][OH^-]$</td>
+<td>At 25°C, always = 10⁻¹⁴; increases with T (endothermic dissociation)</td>
+<td>(mol/L)² or M²</td>
+<td>10⁻¹⁴ at 25°C; ~10⁻¹³ at 50°C; ~10⁻¹² at 100°C</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>K_a (Acid Dissociation)</strong></td>
+<td>HA ⇌ H⁺ + A⁻</td>
+<td>$K_a = \frac{[H^+][A^-]}{[HA]}$</td>
+<td>Measure of acid strength; larger K_a = stronger acid (more dissociation)</td>
+<td>(mol/L) or M (unitless if solvent effects ignored)</td>
+<td>Strong acids: K_a &gt;&gt; 1 (e.g., HCl K_a ~ 10⁶); Weak acids: K_a &lt; 1 (e.g., acetic acid K_a ~ 1.8 × 10⁻⁵)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>K_b (Base Dissociation)</strong></td>
+<td>B + H₂O ⇌ BH⁺ + OH⁻</td>
+<td>$K_b = \frac{[BH^+][OH^-]}{[B]}$</td>
+<td>Measure of base strength; larger K_b = stronger base (more dissociation)</td>
+<td>(mol/L) or M (unitless if solvent effects ignored)</td>
+<td>Strong bases: K_b ~ 1 (e.g., OH⁻ in NaOH); Weak bases: K_b &lt; 1 (e.g., NH₃ K_b ~ 1.8 × 10⁻⁵)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>K_a × K_b for Conjugate Pair</strong></td>
+<td>For conjugate acid-base pair HA/A⁻ and B/BH⁺</td>
+<td>$K_a(HA) \times K_b(A^-) = K_w$</td>
+<td>Fundamental relationship; allows conversion between K_a and K_b</td>
+<td>Dimensionless in this form (product of concentrations)</td>
+<td>10⁻¹⁴ at 25°C; used to relate dissociation constants of conjugates</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>pK_a and pK_b</strong></td>
+<td>$pK_a = -\log K_a$; $pK_b = -\log K_b$</td>
+<td>$pK_a + pK_b = 14$ (at 25°C)</td>
+<td>Logarithmic scale; smaller pK_a = stronger acid; smaller pK_b = stronger base</td>
+<td>Dimensionless</td>
+<td>Strong acids: pK_a &lt; 0 (e.g., HCl pK_a ~ −6); weak acids: pK_a ~ 2−10; very weak acids pK_a &gt; 10</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Polyprotic Acids (H₂A)</strong></td>
+<td>First dissociation: H₂A ⇌ H⁺ + HA⁻ (K_a1); Second: HA⁻ ⇌ H⁺ + A²⁻ (K_a2); K_a1 &gt; K_a2</td>
+<td>$K_{a1} = \frac{[H^+][HA^-]}{[H_2A]}$; $K_{a2} = \frac{[H^+][A^{2-}]}{[HA^-]}$</td>
+<td>Each successive dissociation has smaller K_a; [H₂A] &gt; [HA⁻] &gt; [A²⁻] typically</td>
+<td>(mol/L) per step</td>
+<td>H₂CO₃: K_a1 ~ 4.3 × 10⁻⁷, K_a2 ~ 5.6 × 10⁻¹¹; H₂SO₄: K_a1 ~ strong, K_a2 ~ 1.2 × 10⁻²</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: pH, pOH, and Henderson-Hasselbalch Equation</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Formula</th>
+<th>Calculation Method</th>
+<th>Physical Meaning</th>
+<th>Range/Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>pH Definition</strong></td>
+<td>$pH = -\log[H^+]$ or $[H^+] = 10^{-pH}$</td>
+<td>Measure [H⁺] in solution; convert to pH</td>
+<td>Logarithmic scale; pH &lt; 7 = acidic, pH &gt; 7 = basic, pH = 7 = neutral (at 25°C)</td>
+<td>pH 0 (1 M HCl) to pH 14 (1 M NaOH); physiological pH ~ 7.4</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>pOH Definition</strong></td>
+<td>$pOH = -\log[OH^-]$ or $[OH^-] = 10^{-pOH}$</td>
+<td>Measure [OH⁻]; convert to pOH</td>
+<td>Related to pH; pH + pOH = 14 at 25°C</td>
+<td>pOH 0 = very basic; pOH 7 = neutral; pOH 14 = very acidic</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>pH from K_a (Weak Acid)</strong></td>
+<td>$[H^+] = \sqrt{K_a \times C_a}$ (if dissociation &lt;&lt; C_a); $pH = -\log \sqrt{K_a \times C_a} = \frac{1}{2}(pK_a - \log C_a)$</td>
+<td>For weak acid HA with concentration C_a: assume [H⁺] ≈ [A⁻] from dissociation; check assumption that x &lt;&lt; C_a</td>
+<td>Approximation valid if K_a/C_a &lt; 10⁻⁵ or C_a/K_a &gt; 10⁵ (often holds for weak acids)</td>
+<td>Acetic acid (K_a = 1.8 × 10⁻⁵, 0.1 M): pH ≈ 2.87</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>pH from K_b (Weak Base)</strong></td>
+<td>$[OH^-] = \sqrt{K_b \times C_b}$ (if dissociation &lt;&lt; C_b); $pOH = \frac{1}{2}(pK_b - \log C_b)$; $pH = 14 - pOH$</td>
+<td>For weak base B with concentration C_b: assume [OH⁻] ≈ [BH⁺] from dissociation; check assumption</td>
+<td>Approximation valid if K_b/C_b &lt; 10⁻⁵</td>
+<td>Ammonia (K_b = 1.8 × 10⁻⁵, 0.1 M): pOH ≈ 2.87, pH ≈ 11.13</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Henderson-Hasselbalch Equation</strong></td>
+<td>$pH = pK_a + \log \frac{[A^-]}{[HA]}$</td>
+<td>Use when both weak acid HA and its conjugate base A⁻ present (buffer); [A⁻] from dissociation + added salt</td>
+<td>Relates pH to ratio of base to acid; when [A⁻] = [HA], pH = pK_a</td>
+<td>Buffer with acetic acid (pK_a = 4.76) and acetate: pH = 4.76 + log([Ac⁻]/[HAc])</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>pH of Strong Acid</strong></td>
+<td>$[H^+] = C_a$ (concentration of acid); $pH = -\log C_a$</td>
+<td>Strong acids fully dissociate (K_a &gt;&gt; 1); all acid molecules split into H⁺ and A⁻</td>
+<td>pH directly from acid concentration; no equilibrium calculation needed</td>
+<td>0.01 M HCl: pH = 2</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>pH of Strong Base</strong></td>
+<td>$[OH^-] = C_b$ (concentration of base); $pOH = -\log C_b$; $pH = 14 - pOH$</td>
+<td>Strong bases fully dissociate (K_b &gt;&gt; 1); all base molecules split into metal ion and OH⁻</td>
+<td>pOH directly from base concentration; convert to pH</td>
+<td>0.01 M NaOH: pOH = 2, pH = 12</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 5: SOLUBILITY EQUILIBRIA &amp; SOLUBILITY PRODUCT</h2>
+<h3>PART A: Solubility Product (K_sp) &amp; Precipitation</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Equilibrium Expression</th>
+<th>K_sp Definition</th>
+<th>Physical Meaning</th>
+<th>Example</th>
+<th>Calculation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Solubility Product (K_sp)</strong></td>
+<td>For salt MₓAᵧ ⇌ x M^(y+) + y A^(x−)</td>
+<td>$K_{sp} = [M^{y+}]^x [A^{x-}]^y$</td>
+<td>Product of ion concentrations at saturation; constant at fixed T</td>
+<td>AgCl ⇌ Ag⁺ + Cl⁻: K_sp = [Ag⁺][Cl⁻] ~ 1.8 × 10⁻¹⁰</td>
+<td>Measure solubility (S in mol/L); [Ag⁺] = S, [Cl⁻] = S; K_sp = S²</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Solubility from K_sp (Simple 1:1 Salt)</strong></td>
+<td>For MX ⇌ M⁺ + X⁻; K_sp = [M⁺][X⁻]</td>
+<td>$S = \sqrt{K_{sp}}$</td>
+<td>Solubility S = molar concentration of dissolved salt</td>
+<td>PbCl₂: K_sp ~ 1.6 × 10⁻⁵; S = √(1.6 × 10⁻⁵) ~ 4.0 × 10⁻³ M</td>
+<td>If S mol of MX dissolves, [M⁺] = S, [X⁻] = S; K_sp = S²</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Solubility from K_sp (Polyvalent Salt)</strong></td>
+<td>For M₂X ⇌ 2 M⁺ + X²⁻; K_sp = [M⁺]²[X²⁻]</td>
+<td>$S = \sqrt[3]{\frac{K_{sp}}{4}}$ (for 2:1 salt)</td>
+<td>If S mol of M₂X dissolves, [M⁺] = 2S, [X²⁻] = S; K_sp = (2S)²(S) = 4S³</td>
+<td>Ca₃(PO₄)₂: K_sp ~ 2.0 × 10⁻²⁹; S = ∛(K_sp/27)</td>
+<td>For MₓXᵧ: [M^(y+)] = x·S, [X^(x−)] = y·S; K_sp = (xS)^x (yS)^y = x^x y^y S^(x+y)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Ion Product (Q) vs. K_sp</strong></td>
+<td>$Q = [M^{y+}]^x [A^{x-}]^y$ (instantaneous ion concentrations, not at saturation)</td>
+<td>Q &lt; K_sp: unsaturated, salt dissolves; Q = K_sp: saturated, equilibrium; Q &gt; K_sp: supersaturated, precipitation occurs</td>
+<td>Q is used to predict whether precipitation will occur before reaching saturation</td>
+<td>Mix 0.1 M AgNO₃ with 0.1 M NaCl: Q = (0.1)(0.1) = 0.01 &gt;&gt; K_sp = 1.8 × 10⁻¹⁰ → precipitate forms</td>
+<td>Calculate ion concentrations immediately after mixing (before equilibrium); compare Q to K_sp</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Precipitation Prediction</strong></td>
+<td>If Q &gt; K_sp, precipitation occurs until Q = K_sp</td>
+<td>Spontaneous process; excess solid falls out of solution</td>
+<td>Identifies which ions will precipitate and in what order (selective precipitation)</td>
+<td>In a solution containing both Cl⁻ and I⁻, adding Ag⁺: AgI precipitates first (lower K_sp) before AgCl</td>
+<td>Compare Q values for different salts; precipitate in order of increasing K_sp (or decreasing solubility)</td>
+<td>2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Common Ion Effect</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Effect Type</th>
+<th>Description</th>
+<th>Equilibrium Shift</th>
+<th>Change in K_sp</th>
+<th>Change in Solubility</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Common Ion Effect</strong></td>
+<td>Adding ion already present in equilibrium (e.g., adding Cl⁻ to AgCl solution)</td>
+<td>Equilibrium shifts left (←) to decrease excess ions; precipitate forms</td>
+<td>K_sp <strong>unchanged</strong> (only depends on T)</td>
+<td>Solubility of AgCl <strong>decreases</strong> dramatically</td>
+<td>AgCl ⇌ Ag⁺ + Cl⁻ (K_sp = 1.8 × 10⁻¹⁰); pure water solubility ~ 1.3 × 10⁻⁵ M; in 0.1 M NaCl, solubility ~ 1.8 × 10⁻⁹ M</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Mechanism</strong></td>
+<td>Added common ion (e.g., Cl⁻ from NaCl) increases [Cl⁻]; to maintain K_sp = [Ag⁺][Cl⁻], [Ag⁺] must decrease; more AgCl precipitates</td>
+<td>More product-like ion → shift left to re-establish K_sp</td>
+<td>K_sp remains constant; it is a thermodynamic constant at fixed T</td>
+<td>Addition of 0.1 M Cl⁻: [Cl⁻] ≈ 0.1 M; [Ag⁺] = K_sp/[Cl⁻] = 1.8 × 10⁻¹⁰/0.1 = 1.8 × 10⁻⁹ M (reduced by ~10⁴×)</td>
+<td>Write ICE table: initial [from salt dissociation] + [from added common ion]; set [M⁺][X⁻] = K_sp</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Quantitative Calculation</strong></td>
+<td>Initial solubility in pure water: S ≈ √K_sp; with common ion [X⁻]_added: S ≈ K_sp/[X⁻]_added (if [X⁻]_added &gt;&gt; S)</td>
+<td>S_common = K_sp / [X⁻]_added (for MX salt); more complex for polyvalent salts</td>
+<td>Solubility inversely proportional to concentration of common ion</td>
+<td>AgCl in 1 M Cl⁻: S ≈ 1.8 × 10⁻¹⁰ / 1 = 1.8 × 10⁻¹⁰ M (vs. 1.3 × 10⁻⁵ M in pure water)</td>
+<td>Use the approximation that [common ion] remains nearly constant (not significantly reduced by dissolution)</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 6: SALT HYDROLYSIS</h2>
+<h3>PART A: Hydrolysis Constants &amp; Types</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Salt Type</th>
+<th>Hydrolysis Reaction</th>
+<th>Hydrolysis Constant</th>
+<th>Expression</th>
+<th>pH Effect</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Salt of Weak Acid &amp; Strong Base (e.g., NaA)</strong></td>
+<td>A⁻ + H₂O ⇌ HA + OH⁻</td>
+<td>$K_h = \frac{[HA][OH^-]}{[A^-]} = \frac{K_w}{K_a}$</td>
+<td>$K_h = \frac{10^{-14}}{K_a}$ (for monoprotic weak acid)</td>
+<td>pH &gt; 7 (basic) due to OH⁻ production</td>
+<td>NaOAc (sodium acetate): K_a(HAc) = 1.8 × 10⁻⁵; K_h = 10⁻¹⁴/(1.8 × 10⁻⁵) ~ 5.6 × 10⁻¹⁰</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Salt of Strong Acid &amp; Weak Base (e.g., NH₄Cl)</strong></td>
+<td>NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺</td>
+<td>$K_h = \frac{[NH_3][H_3O^+]}{[NH_4^+]} = \frac{K_w}{K_b}$</td>
+<td>$K_h = \frac{10^{-14}}{K_b}$ (for monoprotic weak base)</td>
+<td>pH &lt; 7 (acidic) due to H₃O⁺ production</td>
+<td>NH₄Cl: K_b(NH₃) = 1.8 × 10⁻⁵; K_h = 10⁻¹⁴/(1.8 × 10⁻⁵) ~ 5.6 × 10⁻¹⁰</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Salt of Weak Acid &amp; Weak Base (e.g., NH₄OAc)</strong></td>
+<td>Anion hydrolyzes: OAc⁻ + H₂O ⇌ HOAc + OH⁻; Cation hydrolyzes: NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺</td>
+<td>Two competing hydrolysis reactions; net pH depends on which K_h is larger</td>
+<td>If K_h(anion) &gt; K_h(cation), pH &gt; 7 (basic); if K_h(cation) &gt; K_h(anion), pH &lt; 7 (acidic); if nearly equal, pH ≈ 7</td>
+<td>pH depends on relative strength of weak acid vs. weak base</td>
+<td>NH₄OAc: K_h(OAc⁻) ~ 5.6 × 10⁻¹⁰, K_h(NH₄⁺) ~ 5.6 × 10⁻¹⁰ → pH ≈ neutral (both hydrolyze equally)</td>
+<td>Compare K_h values for cation vs. anion hydrolysis</td>
+<td>2022, 2023, 2024, 2025</td>
+</tr>
+<tr>
+<td><strong>Salt of Strong Acid &amp; Strong Base (e.g., NaCl)</strong></td>
+<td>No hydrolysis (neither Na⁺ nor Cl⁻ interact significantly with water)</td>
+<td>K_h ≈ 0 (negligible hydrolysis)</td>
+<td>No hydrolysis constant applies; salt acts spectator ion</td>
+<td>pH = 7 (neutral)</td>
+<td>NaCl: neither Na⁺ nor Cl⁻ hydrolyzes; solution pH ~ 7</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Degree of Hydrolysis &amp; pH Calculations</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Definition</th>
+<th>Formula (Weak Acid Salt, e.g., NaA)</th>
+<th>Formula (Weak Base Salt, e.g., NH₄Cl)</th>
+<th>Physical Meaning</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Degree of Hydrolysis (h)</strong></td>
+<td>Fraction of salt that undergoes hydrolysis</td>
+<td>$h = \frac{\text{moles hydrolyzed}}{\text{total moles of salt}}$ (fractional hydrolysis)</td>
+<td>Same definition; applies to any hydrolyzable salt</td>
+<td>Measure of extent of hydrolysis; h ∈ [0, 1]</td>
+<td>If 1% of NaOAc hydrolyzes, h = 0.01</td>
+<td>2021, 2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>[H⁺] from Salt Hydrolysis (Weak Acid Salt)</strong></td>
+<td>For NaA, anion A⁻ hydrolyzes: A⁻ + H₂O ⇌ HA + OH⁻</td>
+<td>$[OH^-] = \sqrt{K_h \cdot C_s} = \sqrt{\frac{K_w}{K_a} \cdot C_s}$ (if hydrolysis &lt;&lt; C_s)</td>
+<td>N/A for this case</td>
+<td>Use [OH⁻] to find pOH, then pH = 14 − pOH</td>
+<td>NaOAc (0.1 M): [OH⁻] = √[(10⁻¹⁴/1.8×10⁻⁵) × 0.1] ~ 7.5 × 10⁻⁶ M; pOH ~ 5.1; pH ~ 8.9</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>[H⁺] from Salt Hydrolysis (Weak Base Salt)</strong></td>
+<td>For NH₄Cl, cation NH₄⁺ hydrolyzes: NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺</td>
+<td>$[H^+] = \sqrt{K_h \cdot C_s} = \sqrt{\frac{K_w}{K_b} \cdot C_s}$ (if hydrolysis &lt;&lt; C_s)</td>
+<td>Direct [H⁺] from hydrolysis</td>
+<td>Convert to pH directly: pH = −log[H⁺]</td>
+<td>NH₄Cl (0.1 M): [H⁺] = √[(10⁻¹⁴/1.8×10⁻⁵) × 0.1] ~ 7.5 × 10⁻⁶ M; pH ~ 5.1</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 7: IONIC EQUILIBRIA &amp; COMPLEX ION FORMATION</h2>
+<h3>PART A: Complex Ion Equilibria</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Equilibrium Expression</th>
+<th>Formation Constant (K_f)</th>
+<th>Stability Constant</th>
+<th>Dissociation Constant (K_d)</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Complex Ion Formation</strong></td>
+<td>M^(n+) + x L ⇌ [ML_x]^(n−x) (L = ligand)</td>
+<td>$K_f = \frac{[ML_x]^{n-x}}{[M^{n+}][L]^x}$</td>
+<td>Measure of stability of complex; larger K_f = more stable complex</td>
+<td>$K_d = \frac{1}{K_f}$; dissociation of [ML_x] into M^(n+) and L</td>
+<td>[Ag(NH₃)₂]⁺ formation: Ag⁺ + 2NH₃ ⇌ [Ag(NH₃)₂]⁺; K_f ~ 1.6 × 10⁷</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Stepwise Formation</strong></td>
+<td>First: M + L ⇌ [ML], K₁; Second: [ML] + L ⇌ [ML₂], K₂; etc.</td>
+<td>$K_{f,overall} = K_1 \times K_2 \times ... \times K_x$ (product of stepwise constants)</td>
+<td>Overall K_f larger than any single stepwise K; stepwise constants decrease (K₁ &gt; K₂ &gt; K₃ &gt; ...)</td>
+<td>Reverse of stepwise dissociation; decompose into stepwise processes</td>
+<td>[Cu(NH₃)₄]²⁺: K₁ ~ 2.0 × 10³, K₂ ~ 6.3 × 10², K₃ ~ 1.0 × 10², K₄ ~ 2.0 × 10⁻¹; K_f,overall ~ 2.5 × 10⁶</td>
+<td>2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Effect on Solubility</strong></td>
+<td>Complex formation shifts dissolution equilibrium right: M_x A_y ⇌ x M + y A, then M + L ⇌ [ML]</td>
+<td>More complex forms → more M dissolved (apparent solubility increases)</td>
+<td>Complex formation can dramatically increase solubility of otherwise insoluble salts</td>
+<td>AgCl solubility: pure water ~ 1.3 × 10⁻⁵ M; in 1 M NH₃, [Ag⁺] ≈ 0.01 M (100× increase)</td>
+<td>[Ag(NH₃)₂]⁺ formation pulls Ag⁺ from solution, driving AgCl dissolution</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Common Complexes</strong></td>
+<td>[Ag(NH₃)₂]⁺, [Ag(CN)₂]⁻, [Cu(NH₃)₄]²⁺, [Fe(CN)₆]³⁻, [Zn(OH)₄]²⁻, [AlO₂]⁻</td>
+<td>K_f values: [Ag(NH₃)₂]⁺ ~ 1.6 × 10⁷; [Fe(CN)₆]³⁻ very large (very stable); [Zn(OH)₄]²⁻ variable</td>
+<td>Strength of complex formation depends on metal ion charge density and ligand strength</td>
+<td>Different ligands form complexes of varying stability with same metal</td>
+<td>Cyanide complexes typically very stable (hard acids, hard bases); ammine complexes moderately stable</td>
+<td>List K_f values for major complexes; identify strongest ligands (CN⁻, OH⁻, NH₃)</td>
+<td>2023, 2024, 2025</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 8: GRAPHICAL ANALYSIS — TITRATION &amp; BUFFER CURVES</h2>
+<h3>PART A: Acid-Base Titration Curves</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Titration Type</th>
+<th>Curve Shape Features</th>
+<th>pH at Equivalence Point</th>
+<th>Indicator Choice</th>
+<th>Buffer Region</th>
+<th>Calculations</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strong Acid (HCl) + Strong Base (NaOH)</strong></td>
+<td>S-shaped; steep vertical rise near equivalence point</td>
+<td>pH = 7 (neutral at 25°C)</td>
+<td>Methyl orange (pKᵢ ~ 3.4–4.4) or Methyl red (pKᵢ ~ 4.4–6.2)</td>
+<td>Minimal; both HCl and NaOH are strong (no buffer pair)</td>
+<td>Equivalence point: moles HCl = moles NaOH; [H⁺] = √(K_w × C_excess)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Weak Acid (HAc) + Strong Base (NaOH)</strong></td>
+<td>S-shaped with initial plateau (buffer region); equivalence point shifted to pH &gt; 7 (basic)</td>
+<td>pH &gt; 7; calculated from [OAc⁻] hydrolysis or Henderson-Hasselbalch near equivalence</td>
+<td>Phenolphthalein (pKᵢ ~ 8.2–10.0)</td>
+<td>Before equivalence: [HAc] &gt;&gt; [OAc⁻]; use H-H: pH = pK_a + log([OAc⁻]/[HAc])</td>
+<td>Equivalence point: [OAc⁻] present; hydrolyzes to raise pH; use K_h = K_w/K_a</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Weak Base (NH₃) + Strong Acid (HCl)</strong></td>
+<td>S-shaped with initial plateau (buffer region); equivalence point shifted to pH &lt; 7 (acidic)</td>
+<td>pH &lt; 7; calculated from [NH₄⁺] dissociation or charge balance</td>
+<td>Methyl red (pKᵢ ~ 4.4–6.2)</td>
+<td>Before equivalence: [NH₃] &gt;&gt; [NH₄⁺]; use K_b and Henderson-Hasselbalch</td>
+<td>Equivalence point: [NH₄⁺] present; dissociates to lower pH; use K_h = K_w/K_b</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Polyprotic Acid (H₂A) + Strong Base</strong></td>
+<td>Multiple S-shaped regions corresponding to successive equivalence points (first at [H⁺] from HA⁻, second at [OH⁻] from A²⁻)</td>
+<td>First ≈ pK_a1; Second ≈ pK_a2; Third (if H₃A) ≈ pK_a3</td>
+<td>Choose indicator based on which equivalence point is target</td>
+<td>Buffer regions: [H₂A]/[HA⁻] region using pK_a1; [HA⁻]/[A²⁻] region using pK_a2</td>
+<td>Track addition of NaOH; calculate [species] at each stage using ICE tables and K_a values</td>
+<td>2021, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Determining pH at Any Point</strong></td>
+<td>On titration curve: before equiv. (excess acid or base); at equiv. (salt hydrolysis); after equiv. (excess titrant)</td>
+<td>Before: excess acid [H⁺] = excess concentration; After: excess base [OH⁻] = excess concentration; At equiv.: depends on salt properties</td>
+<td>On x-axis: volume of titrant added; on y-axis: solution pH</td>
+<td>Plot points using Henderson-Hasselbalch (buffer region), K_h (equiv. point), or direct [H⁺]/[OH⁻] (excess regions)</td>
+<td>2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Buffer Curves &amp; Buffer Capacity</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Formula/Description</th>
+<th>Physical Meaning</th>
+<th>Graphical Behavior</th>
+<th>Example</th>
+<th>Calculation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Buffer Solution</strong></td>
+<td>Mixture of weak acid (HA) and its conjugate base (A⁻), typically from HA + NaA or HA + excess NaOH (partial neutralization)</td>
+<td>Resists large pH changes upon addition of small amounts of H⁺ or OH⁻; [HA] &gt;&gt; [H⁺] from dissociation</td>
+<td>Flat region on titration curve (small pH change over large volume range)</td>
+<td>Buffer: 0.1 M acetic acid + 0.1 M sodium acetate; non-buffer: 0.1 M acetic acid alone</td>
+<td>Mix weak acid and conjugate base in roughly equal amounts; check pH = pK_a ± 1 for effective buffering</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Henderson-Hasselbalch Equation</strong></td>
+<td>$pH = pK_a + \log \frac{[A^-]}{[HA]}$</td>
+<td>Relates pH to ratio of base to acid in buffer; predicts pH shifts when acid/base added</td>
+<td>On buffer curve (titration), pH changes gradually; slope = ΔpH/ΔV near midpoint</td>
+<td>Acetic acid buffer (pK_a = 4.76): if [Ac⁻]/[HAc] = 1, pH = 4.76; if [Ac⁻]/[HAc] = 10, pH = 5.76</td>
+<td>Measure [HA] and [A⁻] at equilibrium; plug into H-H</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Buffer Capacity (β)</strong></td>
+<td>$\beta = \frac{dn}{dpH} = \frac{\text{moles of strong acid or base added}}{\Delta pH}$</td>
+<td>Larger β = more resistant to pH change; capacity to absorb added H⁺ or OH⁻</td>
+<td>Steeper buffer curve slope (smaller ΔpH for same dn) → higher capacity</td>
+<td>Buffer with [HA] = [A⁻] = 0.5 M has higher capacity than buffer with [HA] = [A⁻] = 0.05 M</td>
+<td>β ≈ 2.303 × ([HA] + [A⁻]) × [A⁻]/([HA] + [A⁻]) ≈ 2.303 × C × α(1−α) near pH = pK_a (C = buffer concentration)</td>
+<td>2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Buffer Range</strong></td>
+<td>pH range where buffer is effective: pK_a ± 1</td>
+<td>Outside buffer range, [HA] or [A⁻] becomes negligible; buffer loses capacity</td>
+<td>Flat region of titration curve occurs within pK_a ± 1</td>
+<td>Acetate buffer (pK_a = 4.76): effective pH ~ 3.76 to 5.76</td>
+<td>Choose weak acid/base with pK_a near desired pH; construct buffer</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Buffer Design</strong></td>
+<td>Select weak acid (or base) with pK_a close to target pH; mix with salt of conjugate base (or cation)</td>
+<td>pH ≈ pK_a when [A⁻]/[HA] ≈ 1 (roughly equal amounts); adjust ratio for desired pH</td>
+<td>Slope of buffer curve flat within ±1 pH unit of pK_a</td>
+<td>To make pH 5 buffer: use acetic acid (pK_a 4.76) + acetate; ratio [Ac⁻]/[HAc] ≈ 2 (pH = 4.76 + 0.30 ~ 5.1)</td>
+<td>Use H-H to calculate required [A⁻]/[HA] ratio; prepare by dissolving HA and adding NaA, or by partial neutralization</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 9: JEE FOCUS POINTS &amp; MULTI-EQUILIBRIUM PROBLEMS</h2>
+<h3>PART A: Coupled Equilibria &amp; Common Mistakes</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Problem Type</th>
+<th>Equilibrium Steps</th>
+<th>Key Insight</th>
+<th>Common Mistake</th>
+<th>Solution Approach</th>
+<th>Example (2024/2025 PYQ)</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Solubility in Presence of Complex-Forming Ligand</strong></td>
+<td>AgCl ⇌ Ag⁺ + Cl⁻; Ag⁺ + 2NH₃ ⇌ [Ag(NH₃)₂]⁺</td>
+<td>Coupling of two equilibria: dissolution ↔ complex formation; Ag⁺ removal drives AgCl dissolution</td>
+<td>Ignoring complex formation or treating solubility equilibrium independently</td>
+<td>Write total equilibrium by combining AgCl dissolution + complex formation; calculate apparent solubility from combined K expression</td>
+<td>AgCl solubility in 1 M NH₃ ≈ 0.01 M (vs. 1.3 × 10⁻⁵ in pure water)</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Salt Hydrolysis in Buffer Context</strong></td>
+<td>Weak acid HA + salt NaA present; A⁻ hydrolyzes weakly; HA provides additional H⁺</td>
+<td>Hydrolysis competes with dissociation; total [H⁺] from both HA dissociation and water equilibrium</td>
+<td>Treating buffer as if only dissociation of HA occurs; ignoring hydrolysis</td>
+<td>Use exact charge balance: [H⁺] + [Na⁺] = [A⁻] + [OH⁻]; also [A⁻] = [HA] + excess from salt</td>
+<td>pH of 0.1 M NaOAc in 0.1 M HAc buffer ≈ 4.76 (pK_a because [A⁻] ≈ [HA])</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Multi-Equilibrium with Polyprotic Acid</strong></td>
+<td>H₂A ⇌ H⁺ + HA⁻ (K_a1); HA⁻ ⇌ H⁺ + A²⁻ (K_a2); H₂O ⇌ H⁺ + OH⁻ (K_w)</td>
+<td>If K_a1 &gt;&gt; K_a2, first dissociation dominant early; later dissociation matters near buffer points</td>
+<td>Assuming simultaneous dissociation or ignoring K_a1 &gt;&gt; K_a2 hierarchy</td>
+<td>Analyze pH regions: low pH dominated by K_a1; intermediate (buffer) by K_a1 &amp; K_a2; high pH by K_a2</td>
+<td>H₂CO₃: K_a1 ~ 4.3 × 10⁻⁷ &gt;&gt; K_a2 ~ 5.6 × 10⁻¹¹; at pH ~ 8, both forms significant</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Precision in ICE Table with Small K_a</strong></td>
+<td>Initial [HA] = 0.1 M; K_a = 1.8 × 10⁻⁵; assume dissociation x &lt;&lt; 0.1</td>
+<td>Approximation valid if K_a/C_a &lt; 10⁻⁵ (often holds); check by calculating K_a/C_a and validating assumption post-calculation</td>
+<td>Forgetting to check assumption; using incorrect form of quadratic</td>
+<td>Calculate x = √(K_a × C_a); if x/C_a &gt; 5%, solve full quadratic; always verify assumption</td>
+<td>Acetic acid: x = √(1.8 × 10⁻⁵ × 0.1) ≈ 1.34 × 10⁻³; x/C_a = 1.3% &lt; 5% ✓</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Strategic Problem-Solving for JEE</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Application</th>
+<th>Steps</th>
+<th>Example Problem Type</th>
+<th>Expected Time</th>
+<th>PYQ Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identify Equilibrium Type Quickly</strong></td>
+<td>Scan problem for key terms: "buffer", "precipitate", "complex", "titration", "hydrolysis"</td>
+<td>1) Classify equilibrium type; 2) Select relevant K (K_a, K_b, K_sp, K_f); 3) Choose tool (ICE, H-H, charge balance)</td>
+<td>Multi-choice: identify whether shift is due to concentration, temperature, or pressure</td>
+<td>~ 1–2 min</td>
+<td>2021–2026 JEE Mains</td>
+</tr>
+<tr>
+<td><strong>Use Approximations Strategically</strong></td>
+<td>Weak acid dissociation, buffer equations, simple K_sp</td>
+<td>Apply if K/C &gt; 10⁻⁵ (approximate); verify post-calculation; refine if approximation breaks down</td>
+<td>Numerical problem: calculate pH of 0.1 M weak acid quickly without quadratic</td>
+<td>~ 2–3 min for calculation</td>
+<td>2022, 2023, 2024, 2025 JEE Mains</td>
+</tr>
+<tr>
+<td><strong>Combine Multiple Equilibria Graphically</strong></td>
+<td>When equilibrium position depends on multiple factors (T, P, concentration, complex formation)</td>
+<td>Plot or sketch how K or equilibrium concentrations change; visualize lever effect</td>
+<td>Predict AgCl solubility vs. [NH₃] concentration; sketch curve showing S vs. [L]</td>
+<td>~ 3–5 min for analysis</td>
+<td>2023, 2024, 2025, 2026 Advanced</td>
+</tr>
+<tr>
+<td><strong>Numerical Precision &amp; Significant Figures</strong></td>
+<td>Data from experiments or tables; K values with 2–3 sig figs</td>
+<td>Report answer to same precision as input data; round intermediate steps only in final answer</td>
+<td>K_a = 1.8 × 10⁻⁵; compute pH; report to 2 decimal places</td>
+<td>Varies</td>
+<td>All PYQ sets</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 10: NUMERICAL PRACTICE &amp; ADVANCED INTEGRATION</h2>
+<h3>Representative Numerical Problems (with answers key)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Problem No.</th>
+<th>Description</th>
+<th>Key Concepts</th>
+<th>Setup</th>
+<th>Solution Approach</th>
+<th>Answer</th>
+<th>PYQ Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E-1</strong></td>
+<td>H₂ + I₂ ⇌ 2HI. At 400 K, K_c = 50. Initial [H₂] = [I₂] = 1 M, [HI] = 0. Equilibrium [H₂]?</td>
+<td>K_c calculation, ICE table, symmetric changes</td>
+<td>ICE: I (1, 1, 0); C (−x, −x, +2x); E (1−x, 1−x, 2x)</td>
+<td>Set K_c = (2x)²/((1−x)(1−x)) = 50; solve (2x)² = 50(1−x)²; x ≈ 0.38</td>
+<td>[H₂]ₑq ≈ 0.62 M</td>
+<td>2024 Mains</td>
+</tr>
+<tr>
+<td><strong>E-2</strong></td>
+<td>N₂ + 3H₂ ⇌ 2NH₃. K_c = 0.5 at 500 K. Initial [N₂] = 1 M, [H₂] = 3 M, [NH₃] = 0. Find equilibrium [NH₃].</td>
+<td>K_c, stoichiometric changes, quadratic</td>
+<td>ICE: I (1, 3, 0); C (−x, −3x, +2x); E (1−x, 3−3x, 2x)</td>
+<td>0.5 = (2x)²/((1−x)(3−3x)³); expand and solve cubic (or iterate)</td>
+<td>[NH₃]ₑq ≈ 0.65 M</td>
+<td>2023 Mains</td>
+</tr>
+<tr>
+<td><strong>E-3</strong></td>
+<td>Q vs. K: H₂ + I₂ ⇌ 2HI (K_c = 50). At time t, [H₂] = [I₂] = 0.5 M, [HI] = 1 M. Direction?</td>
+<td>Q calculation, Q vs. K comparison, reaction direction</td>
+<td>Q = (1)²/((0.5)(0.5)) = 4</td>
+<td>Q = 4 &lt; K_c = 50 → reaction proceeds forward (→)</td>
+<td>Reaction shifts <strong>right</strong></td>
+<td>2025 Mains</td>
+</tr>
+<tr>
+<td><strong>E-4</strong></td>
+<td>Le Chatelier: N₂ + 3H₂ ⇌ 2NH₃, ΔH° = −92 kJ/mol. At equilibrium. (a) Increase T? (b) Increase P? (c) Add He gas at const. V?</td>
+<td>Exothermic shift, Δn effect, inert gas addition</td>
+<td>(a) T↑ → shifts left (unfavorable for exo); (b) Δn = −2, P↑ → shifts right (favors fewer moles); (c) He addition at const. V → no effect (partial pressures unchanged)</td>
+<td>(a) Left; (b) Right; (c) No change</td>
+<td>(a) Shifts left, K↓; (b) Shifts right, K same; (c) No shift, K same</td>
+<td>2026 Mains</td>
+</tr>
+<tr>
+<td><strong>E-5</strong></td>
+<td>K_c vs. K_p: N₂ + 3H₂ ⇌ 2NH₃ at 500 K. K_c = 0.5. Find K_p.</td>
+<td>K_p = K_c(RT)^Δn, Δn calculation</td>
+<td>Δn = 2 − (1 + 3) = −2; K_p = 0.5 × (0.0821 × 500)^(−2) = 0.5 / (41.05)²</td>
+<td>K_p ≈ 2.97 × 10⁻⁴</td>
+<td>~3.0 × 10⁻⁴ bar⁻²</td>
+<td>2024 Advanced</td>
+</tr>
+<tr>
+<td><strong>E-6</strong></td>
+<td>Weak Acid pH: 0.1 M acetic acid (K_a = 1.8 × 10⁻⁵). Find pH. Assumption valid?</td>
+<td>K_a dissociation, approximation check, pH from [H⁺]</td>
+<td>[H⁺] = √(K_a × C_a) = √(1.8 × 10⁻⁵ × 0.1) = √(1.8 × 10⁻⁶) ≈ 1.34 × 10⁻³ M</td>
+<td>[H⁺]/C_a = 1.34 × 10⁻³ / 0.1 = 0.0134 = 1.34% &lt; 5% ✓; pH = −log(1.34 × 10⁻³) ≈ 2.87</td>
+<td>pH ≈ 2.87</td>
+<td>2021 Mains</td>
+</tr>
+<tr>
+<td><strong>E-7</strong></td>
+<td>K_a from pH: Weak acid (C_a = 0.5 M) has pH = 2.45. Find K_a.</td>
+<td>K_a from pH, [H⁺] from pH definition</td>
+<td>[H⁺] = 10^(−2.45) ≈ 3.55 × 10⁻³ M; [HA] ≈ 0.5 − 0.00355 ≈ 0.496 M; K_a = [H⁺][A⁻]/[HA] = (3.55 × 10⁻³)² / 0.496</td>
+<td>K_a ≈ 2.5 × 10⁻⁵</td>
+<td>2023 Mains</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>E-8</strong></td>
+<td>Buffer pH (H-H): 0.1 M acetic acid + 0.1 M sodium acetate. pH = ? (K_a = 1.8 × 10⁻⁵; pK_a = 4.74)</td>
+<td>Henderson-Hasselbalch, buffer in 1:1 ratio</td>
+<td>pH = pK_a + log([A⁻]/[HA]) = 4.74 + log(0.1/0.1) = 4.74 + 0 = 4.74</td>
+<td>pH = 4.74 ✓ (at pK_a when [A⁻] = [HA])</td>
+<td>4.74</td>
+<td>2022 Mains</td>
+</tr>
+<tr>
+<td><strong>E-9</strong></td>
+<td>Salt Hydrolysis (Weak Acid Salt): 0.1 M NaOAc. pH = ? (K_a = 1.8 × 10⁻⁵; K_h = 10⁻¹⁴/(1.8 × 10⁻⁵) ≈ 5.6 × 10⁻¹⁰)</td>
+<td>K_h, [OH⁻] from hydrolysis, pOH to pH</td>
+<td>[OH⁻] = √(K_h × C_s) = √(5.6 × 10⁻¹⁰ × 0.1) ≈ 7.5 × 10⁻⁶ M; pOH = −log(7.5 × 10⁻⁶) ≈ 5.1; pH = 14 − 5.1 = 8.9</td>
+<td>pH ≈ 8.9 (basic)</td>
+<td>2025 Mains</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>E-10</strong></td>
+<td>K_sp &amp; Solubility: AgCl solubility in pure water. K_sp = 1.8 × 10⁻¹⁰. Find solubility (g/L). M(AgCl) = 143.5 g/mol.</td>
+<td>K_sp definition, S = √K_sp, solubility to g/L conversion</td>
+<td>S = √(1.8 × 10⁻¹⁰) ≈ 1.34 × 10⁻⁵ M; mass = S × M = 1.34 × 10⁻⁵ × 143.5 ≈ 1.92 × 10⁻³ g/L</td>
+<td>S ≈ 1.9 × 10⁻³ g/L</td>
+<td>2024 Mains</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>E-11</strong></td>
+<td>Common Ion Effect: AgCl solubility in 0.1 M NaCl. K_sp = 1.8 × 10⁻¹⁰.</td>
+<td>K_sp with common ion, solubility reduction</td>
+<td>S = K_sp/[Cl⁻] = 1.8 × 10⁻¹⁰ / 0.1 = 1.8 × 10⁻⁹ M</td>
+<td>Solubility reduced by ~10⁴× from pure water</td>
+<td>S ≈ 1.8 × 10⁻⁹ M</td>
+<td>2023 Mains</td>
+</tr>
+<tr>
+<td><strong>E-12</strong></td>
+<td>Precipitation Prediction: Mix 100 mL of 0.01 M AgNO₃ with 100 mL of 0.01 M NaCl. Will AgCl precipitate? K_sp = 1.8 × 10⁻¹⁰.</td>
+<td>Q vs. K_sp, instantaneous [ions] after mixing</td>
+<td>After mixing, [Ag⁺] = 0.005 M, [Cl⁻] = 0.005 M (dilution); Q = (0.005)(0.005) = 2.5 × 10⁻⁵</td>
+<td>Q &gt;&gt; K_sp → precipitate forms immediately</td>
+<td>Yes, AgCl precipitates (Q &gt;&gt; K_sp)</td>
+<td>2026 Mains</td>
+</tr>
+<tr>
+<td><strong>E-13</strong></td>
+<td>Titration (Weak Acid): Titrate 50 mL of 0.1 M HAc with 0.1 M NaOH. (a) pH at equivalence point? (b) Indicator choice?</td>
+<td>Equivalence point pH from salt hydrolysis, indicator selection</td>
+<td>At equivalence (50 mL added): [Ac⁻] = 0.05 M (diluted); [OH⁻] from hydrolysis; pOH ≈ 5.1; pH ≈ 8.9</td>
+<td>(a) pH ≈ 8.9; (b) Phenolphthalein (range 8.2–10.0) ✓</td>
+<td>8.9, Phenolphthalein</td>
+<td>2025 Advanced</td>
+</tr>
+<tr>
+<td><strong>E-14</strong></td>
+<td>Complex Ion &amp; Solubility: AgCl solubility in 1 M NH₃. K_sp = 1.8 × 10⁻¹⁰; K_f([Ag(NH₃)₂]⁺) ≈ 1.6 × 10⁷.</td>
+<td>Coupled equilibria: AgCl ⇌ Ag⁺ + Cl⁻; Ag⁺ + 2NH₃ ⇌ [Ag(NH₃)₂]⁺</td>
+<td>Combined equilibrium: K_combined = K_sp × K_f = 1.8 × 10⁻¹⁰ × 1.6 × 10⁷ ≈ 2.88 × 10⁻³; S ≈ √(K × [NH₃]²/[NH₃]²) ≈ 0.01 M (rough approximation; exact calculation needed)</td>
+<td>S ≈ 0.01 M</td>
+<td>2024 Advanced</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>E-15</strong></td>
+<td>K_c from ΔG°: For reaction, ΔG° = −10 kJ/mol at 298 K. Find K_c. R = 8.314 J/(mol·K).</td>
+<td>ΔG° = −RT ln K; K from ΔG°</td>
+<td>ln K = −ΔG°/RT = −(−10000) / (8.314 × 298) = 10000/2477.6 ≈ 4.036; K = e^4.036 ≈ 56.6</td>
+<td>K_c ≈ 56.6 (or ~57)</td>
+<td>2023 Advanced</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 10: JEE ADVANCED STRATEGY &amp; INTEGRATION</h2>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Key Focus for JEE</th>
+<th>Common Pitfall</th>
+<th>Strategy</th>
+<th>Relevant PYQ Years</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equilibrium Constant vs. Reaction Quotient</strong></td>
+<td>Both use same form; K is at equilibrium only; Q can be at any time; Q vs K predicts direction</td>
+<td>Confusing Q with K; forgetting that Q changes as reaction proceeds while K is constant</td>
+<td>Immediately identify whether concentrations given are at equilibrium (K) or any time (Q); use Q &lt; K → forward, Q &gt; K → backward</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Le Chatelier with Thermodynamic Insight</strong></td>
+<td>Shift direction from K change; K depends only on ΔG°/T; concentration shifts do not change K but do shift equilibrium position</td>
+<td>Thinking K changes with concentration; forgetting that inert gas at const. V has no effect</td>
+<td>Separate kinetic effect (rate) from thermodynamic effect (K, equilibrium position); memorize: [C], [P], [V] change position but not K; T changes K</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Weak Acid/Base Approximations</strong></td>
+<td>Assumption that dissociation &lt;&lt; initial concentration greatly simplifies calculations; validity condition: K_a/C or K_b/C &lt; 10⁻⁵</td>
+<td>Applying approximation without checking; using approximate [H⁺] = √(K × C) even when assumption fails</td>
+<td>Calculate K/C ratio first; if &lt; 10⁻⁵, use approximation; if &gt; 10⁻⁵, solve quadratic; always verify post-calculation</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Buffer Capacity &amp; pH Range</strong></td>
+<td>Effective buffering occurs when pK_a ± 1; capacity increases with concentration; equal amounts of acid and base ⟹ pH = pK_a</td>
+<td>Choosing buffer outside its effective range; ignoring concentration effect on capacity</td>
+<td>Match pK_a to target pH (within ±1); use H-H to calculate exact [A⁻]/[HA] ratio; remember β ∝ C</td>
+<td>2022, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Polyprotic Acid Calculations</strong></td>
+<td>K_a1 &gt;&gt; K_a2 typically; at intermediate pH, both forms present; use both K_a expressions and charge balance for exact answer</td>
+<td>Ignoring second dissociation or assuming complete dissociation at first step; treating as if only K_a1 matters</td>
+<td>Identify pH region: if pH &lt;&lt; pK_a1, only H₂A present; if pK_a1 &lt; pH &lt; pK_a2, both H₂A and HA⁻ significant; use simultaneous equilibria</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Solubility Product vs. Solubility</strong></td>
+<td>K_sp is constant; solubility S depends on ionic strength and common ions; K_sp = S^stoichiometry for pure solvent; modify for common ions</td>
+<td>Confusing S with K_sp; assuming S constant when common ion added; forgetting that [M⁺]/[X⁻] ratio changes with stoichiometry</td>
+<td>Derive S from K_sp using correct stoichiometric relationship; for MX, S = √K_sp; for M₂X, S = ³√(K_sp/4); adjust for common ions</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Graphical Interpretation</strong></td>
+<td>Titration curves show inflection point at equivalence; steep region defines indicator range; buffer region plateau</td>
+<td>Misreading y-axis (pH) or x-axis (volume); confusing buffer region with steep region</td>
+<td>Sketch curve for each case (strong–strong, weak–strong, weak–weak); mark equivalence point pH, half-equivalence (=pK_a), and buffer range</td>
+<td>2023, 2024, 2025, 2026</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p><strong>END OF FILE 1</strong></p>
+<p><em>This guide emphasizes table-based learning. Review each section systematically; practice numerical problems. PYQ coverage spans 2021–2026 CBSE/JEE.</em></p>
+              </div>
+            </div>
+          </div>
+        
+          <div id="panel-guide-3" class="view-panel">
+            <div class="guide-content-wrap">
+              <div class="guide-search-box" style="margin-bottom: 1.5rem;">
+                <span class="search-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" class="guide-search-input" placeholder="Search equations, concepts, or mechanisms in this guide...">
+              </div>
+              <div class="guide-content">
+                <h1>EQUILIBRIUM: PROPERTIES, ADVANCED TOPICS &amp; COMPREHENSIVE ANALYSIS</h1>
+<h2>JEE (Mains &amp; Advanced) | CBSE Class 11–12</h2>
+<hr />
+<h2>SECTION 1: EQUILIBRIUM CONSTANT RELATIONSHIPS &amp; CONVERSIONS</h2>
+<h3>PART A: K_c ↔ K_p ↔ K_x Interconversions</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Conversion</th>
+<th>Formula</th>
+<th>Derivation</th>
+<th>Condition</th>
+<th>Physical Interpretation</th>
+<th>Example Calculation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>K_c to K_p</strong></td>
+<td>$K_p = K_c(RT)^{\Delta n}$ where $\Delta n = n_{products} - n_{reactants}$</td>
+<td>From ideal gas P = nRT/V = CRT; substitute into K_p expression</td>
+<td>Δn = stoichiometric coefficient sum difference; R = 0.0821 L·atm/(mol·K) or 8.314 J/(mol·K); T in Kelvin</td>
+<td>When Δn = 0, K_p = K_c; when Δn &gt; 0, K_p &gt; K_c (more pressure-sensitive); when Δn &lt; 0, K_p &lt; K_c</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃: Δn = 2 − 4 = −2; at 500 K, K_p = K_c × (0.0821 × 500)^(−2) = K_c / (41.05)²</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>K_p to K_c</strong></td>
+<td>$K_c = K_p / (RT)^{\Delta n}$ or $K_c = K_p (RT)^{-\Delta n}$</td>
+<td>Inverse of K_c to K_p; rearrange to solve for K_c</td>
+<td>Same conditions as K_c to K_p</td>
+<td>Direct reversal of conversion; used when K_p given but K_c needed</td>
+<td>N₂O₄ ⇌ 2NO₂: K_p = 0.148 atm at 400 K, Δn = 2 − 1 = 1; K_c = 0.148 / (0.0821 × 400) ≈ 4.5 × 10⁻³</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>K_c to K_x</strong></td>
+<td>$K_x = K_c (P_{total})^{\Delta n}$</td>
+<td>From K_c (in molarity) to K_x (in mole fractions); use P = C × RT and x_i = C_i/C_total</td>
+<td>P_total in bar or atm; equivalent to K_c(P_total)^Δn</td>
+<td>K_x relates partial pressures to mole fractions; used in gas mixtures where composition ratio matters</td>
+<td>For N₂ + 3H₂ ⇌ 2NH₃ at 500 K and 100 atm: if K_c = 0.5, K_x = 0.5 × 100^(−2) = 5 × 10⁻⁵ (dimensionless)</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>K_x to K_p</strong></td>
+<td>$K_p = K_x (P_{total})^{\Delta n}$</td>
+<td>Combine K_x and P_total; inverse of K_c to K_x relationship</td>
+<td>Use same Δn definition</td>
+<td>Converts mole fraction equilibrium to partial pressure equilibrium</td>
+<td>If K_x = 5 × 10⁻⁵ at 100 atm with Δn = −2, K_p = 5 × 10⁻⁵ × (100)² = 0.5 (in atm²⁻ᐃⁿ units)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Temperature Effect on K Conversion</strong></td>
+<td>K_p/K_c = (RT)^Δn changes with T; larger T → larger (RT)^Δn for Δn &gt; 0</td>
+<td>As T increases, the multiplicative factor (RT) increases; affects K_p ↔ K_c ratio</td>
+<td>Critical for Haber–Bosch and other industrial processes where T significantly affects conversion</td>
+<td>K ratios (K_p/K_c or K_c/K_x) change with T even though individual K constants depend on T via ΔG°</td>
+<td>At 300 K vs. 500 K: (RT)^Δn differs by ~(500/300)^Δn factor; important for high-pressure, high-T industrial reactions</td>
+<td>2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Combining Reactions &amp; K Multiplication</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>K Relationship</th>
+<th>Example Reactions</th>
+<th>Combined K</th>
+<th>Physical Meaning</th>
+<th>Calculation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Adding Reactions (Reverse)</strong></td>
+<td>If Reaction 1: A + B ⇌ C (K₁), and use Reaction 1 reversed (C ⇌ A + B), then K_reverse = 1/K₁</td>
+<td>Decomposition vs. formation: H₂ + Cl₂ ⇌ 2HCl (K_f); 2HCl ⇌ H₂ + Cl₂ (K_d = 1/K_f)</td>
+<td>K_reverse = 1/K_forward</td>
+<td>Reversing a reaction inverts the equilibrium constant; if K_f large, K_d small (very unfavorable reverse)</td>
+<td>If HCl formation K = 4.0 × 10³³ at 298 K, HCl decomposition K ≈ 2.5 × 10⁻³⁴ (virtually no decomposition)</td>
+<td>2021, 2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Adding Reactions (Summation)</strong></td>
+<td>Reaction 1: A ⇌ B (K₁); Reaction 2: B ⇌ C (K₂); Overall: A ⇌ C (K_overall = K₁ × K₂)</td>
+<td>CO₂ formation: C + O₂ ⇌ CO₂ can be decomposed into: C + ½O₂ ⇌ CO (K₁) and CO + ½O₂ ⇌ CO₂ (K₂)</td>
+<td>K_net = K₁ × K₂ × K₃... for series of reactions; apply only if reactions combine to give net reaction</td>
+<td>Adding equilibria in series multiplies equilibrium constants; mechanistic pathway doesn't matter, only initial and final states</td>
+<td>2C + O₂ ⇌ 2CO (K₁ = 10⁵); 2CO + O₂ ⇌ 2CO₂ (K₂ = 10¹⁰); overall 2C + 2O₂ ⇌ 2CO₂ (K_net = K₁ × K₂ = 10¹⁵)</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Scaling Reactions</strong></td>
+<td>If reaction is scaled by factor n: aA ⇌ bB (K), then naA ⇌ nbB has K' = K^n</td>
+<td>Scaling a reaction multiplies exponents in equilibrium expression; 2H₂ + O₂ ⇌ 2H₂O (K₁) vs. H₂ + ½O₂ ⇌ H₂O (K₂ = √K₁)</td>
+<td>K_scaled = K^(scale_factor)</td>
+<td>Scaling affects the K value; doubling stoichiometric coefficients squares the K value; halving coefficients takes square root</td>
+<td>If N₂ + 3H₂ ⇌ 2NH₃ has K = 0.5 at 500 K, then ½N₂ + 3/2H₂ ⇌ NH₃ has K' = √0.5 ≈ 0.707</td>
+<td>2021, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Hess's Law for Equilibria</strong></td>
+<td>For coupled reactions: if Reaction 1 → ΔG₁° and Reaction 2 → ΔG₂°, then combined ΔG° = ΔG₁° + ΔG₂°; and K_combined = exp(−ΔG°/RT)</td>
+<td>Gibbs free energy additivity; since K = exp(−ΔG°/RT), combining ΔG° values multiplies K values</td>
+<td>K₁ × K₂ = exp(−(ΔG₁° + ΔG₂°)/RT) = exp(−ΔG°/RT)</td>
+<td>Allows prediction of K for complex reactions by combining simpler reactions with known K values</td>
+<td>Fe₂O₃ + 3CO ⇌ 2Fe + 3CO₂ can be decomposed; combine K values for intermediate oxidation states</td>
+<td>2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 2: THERMODYNAMIC FOUNDATIONS &amp; ΔG°–K RELATIONSHIP</h2>
+<h3>PART A: Gibbs Free Energy and Equilibrium</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Formula</th>
+<th>Physical Meaning</th>
+<th>Condition</th>
+<th>Predictive Power</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ΔG° = −RT ln K</strong></td>
+<td>$\Delta G° = -RT \ln K$ or $K = e^{-\Delta G° / RT}$</td>
+<td>Fundamental link between thermodynamics (ΔG°) and equilibrium (K); K determines feasibility and extent of reaction</td>
+<td>ΔG° &lt; 0: K &gt; 1, reaction favored (proceed forward); ΔG° &gt; 0: K &lt; 1, reaction unfavorable; ΔG° = 0: K = 1 (equilibrium)</td>
+<td>Knowing ΔG° predicts K; knowing K predicts ΔG°; sign of ΔG° indicates reaction direction at standard conditions</td>
+<td>HCl formation: 2HCl ⇌ H₂ + Cl₂, ΔG° ≈ +113 kJ/mol (positive) → K ≈ 2.4 × 10⁻²⁰ (reaction doesn't occur, HCl very stable)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Numerical: K from ΔG°</strong></td>
+<td>$K = \exp \left( \frac{-\Delta G°}{RT} \right)$ where R = 8.314 J/(mol·K), T in K</td>
+<td>Direct calculation: measure ΔG° from experiment or tables; compute K</td>
+<td>Units: if ΔG° in kJ/mol, convert to J/mol (×1000); then divide by RT</td>
+<td>Result is dimensionless K (or with units depending on Δn)</td>
+<td>For reaction with ΔG° = −10 kJ/mol = −10,000 J/mol at 298 K: K = exp(−(−10000)/(8.314 × 298)) = exp(4.03) ≈ 56.2</td>
+<td>2023, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Sign Rules: ΔG° &amp; K</strong></td>
+<td>ΔG° &lt; 0 ↔ K &gt; 1 ↔ Rxn favored (→); ΔG° &gt; 0 ↔ K &lt; 1 ↔ Rxn unfavored (←); ΔG° = 0 ↔ K = 1 ↔ Equilibrium</td>
+<td>Negative ΔG° means reaction releases free energy and proceeds spontaneously at standard conditions</td>
+<td>ΔG° measured under standard conditions (25°C, 1 atm, 1 M concentrations); actual ΔG depends on Q: ΔG = ΔG° + RT ln Q</td>
+<td>Used to predict reaction feasibility; large</td>
+<td>ΔG°</td>
+<td>→ strongly favored/unfavored</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃, ΔG° ≈ −33 kJ/mol (negative) → K ≈ 600 at 298 K (reaction strongly favored at low T)</td>
+</tr>
+<tr>
+<td><strong>ΔG° from ΔH° &amp; ΔS°</strong></td>
+<td>$\Delta G° = \Delta H° - T \Delta S°$</td>
+<td>Combines enthalpy (bond breaking, heat release) and entropy (disorder) effects; T increases entropy contribution</td>
+<td>ΔH° &lt; 0, ΔS° &gt; 0: always favorable (ΔG° &lt; 0); ΔH° &gt; 0, ΔS° &gt; 0: favorable at high T only; ΔH° &lt; 0, ΔS° &lt; 0: favorable at low T only; ΔH° &gt; 0, ΔS° &lt; 0: never favorable</td>
+<td>Temperature-dependent; at low T, ΔH° dominates; at high T, TΔS° dominates</td>
+<td>Explains why exothermic reactions (ΔH° &lt; 0) with disorder increase (ΔS° &gt; 0) are always thermodynamically favored</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃: ΔH° ≈ −92 kJ/mol (exo); ΔS° ≈ −198 J/(mol·K) (disorder decreases, negative); ΔG° = −92,000 − T(−198) = −92,000 + 198T; at 298 K, ΔG° ≈ −33 kJ/mol (favorable)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+</tr>
+<tr>
+<td><strong>Temperature Crossover (ΔG° Changes Sign)</strong></td>
+<td>When ΔH° and ΔS° have same sign effect, ΔG° can change sign at crossover T: T_crossover = ΔH°/ΔS°</td>
+<td>Reactions with ΔH° &lt; 0 but ΔS° &lt; 0 are favored at low T; unfavored at high T (T &gt; T_crossover)</td>
+<td>Example: N₂ + 3H₂ ⇌ 2NH₃ is favorable at low T due to exothermic ΔH° overcoming entropy loss; at very high T, entropy loss dominates and reaction becomes unfavorable</td>
+<td>Explains industrial compromise: Haber–Bosch uses moderate T (~450 K) to balance K (lower T better) vs. kinetics (higher T faster)</td>
+<td>T_crossover = (−92,000)/(-198) ≈ 465 K; at T &lt; 465 K, ΔG° &lt; 0 (favorable); at T &gt; 465 K, ΔG° &gt; 0 (unfavorable)</td>
+<td>2022, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Electrode Potential &amp; K (Electrochemistry Link)</strong></td>
+<td>$E° = \frac{RT}{nF} \ln K$ or $K = \exp \left( \frac{nFE°}{RT} \right)$</td>
+<td>For redox reactions: equilibrium constant relates to standard cell potential E° via Faraday's law; n = electrons transferred</td>
+<td>Large positive E° → large K (favored reduction); large negative E° → small K (unfavored reduction)</td>
+<td>Connects electrochemistry (half-reactions, E°) to chemical equilibrium (K); used in galvanic cells and electrolysis</td>
+<td>For Cu²⁺ + Zn ⇌ Cu + Zn²⁺: E° ≈ 1.1 V; K = exp((2 × 96485 × 1.1)/(8.314 × 298)) ≈ 10³⁷ (reaction strongly favored)</td>
+<td>2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Van't Hoff Equation &amp; Temperature Effects on K</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Formula</th>
+<th>Form</th>
+<th>Application</th>
+<th>Example Calculation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Van't Hoff Equation (Differential)</strong></td>
+<td>$\frac{d \ln K}{dT} = \frac{\Delta H°}{RT^2}$</td>
+<td>Differential form; shows how K changes with infinitesimal temperature change</td>
+<td>Exothermic (ΔH° &lt; 0): d ln K / dT &lt; 0 → K decreases with T; Endothermic (ΔH° &gt; 0): d ln K / dT &gt; 0 → K increases with T</td>
+<td>Small changes; used when ΔH° is approximately constant over small T range</td>
+<td>2022, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Van't Hoff (Integrated Form)</strong></td>
+<td>$\ln \frac{K_2}{K_1} = \frac{\Delta H°}{R} \left( \frac{1}{T_1} - \frac{1}{T_2} \right)$ or $\ln \frac{K_2}{K_1} = -\frac{\Delta H°}{R} \left( \frac{1}{T_2} - \frac{1}{T_1} \right)$</td>
+<td>Integrated form; used for calculations at two different temperatures</td>
+<td>If ΔH° is known, predict K at new T; or, measure K at two T values to determine ΔH°</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃: at T₁ = 298 K, K₁ = 600; ΔH° = −92 kJ/mol. Find K at T₂ = 400 K. ln(K₂/600) = (−92000/8.314) × (1/298 − 1/400) = −11,067 × (0.00336 − 0.00250) = −11,067 × 0.00086 ≈ −9.52; K₂/600 ≈ 7.3 × 10⁻⁵; K₂ ≈ 0.044</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>K vs. T Graph</strong></td>
+<td>For exothermic: K decreases as T increases (downward curve); for endothermic: K increases as T increases (upward curve)</td>
+<td>Semilog plot: ln K vs. 1/T gives linear relationship; slope = ΔH°/R</td>
+<td>Slope analysis: steeper slope → larger</td>
+<td>ΔH°</td>
+<td>; flat line → small</td>
+<td>ΔH°</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 3: EQUILIBRIUM SHIFT ANALYSIS &amp; QUANTITATIVE PREDICTION (ICE TABLES)</h2>
+<h3>PART A: Comprehensive ICE Table Strategy</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Initial Setup</th>
+<th>Change Row</th>
+<th>Equilibrium Row</th>
+<th>Key Calculation</th>
+<th>Verification</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Generic ICE (Symmetric Stoichiometry)</strong></td>
+<td>[A]₀ = 1.0 M, [B]₀ = 1.0 M, [C]₀ = 0, [D]₀ = 0</td>
+<td>ΔA = −x, ΔB = −x, ΔC = +x, ΔD = +x</td>
+<td>[A] = 1.0−x, [B] = 1.0−x, [C] = x, [D] = x</td>
+<td>K_c = x²/[(1.0−x)(1.0−x)] = x²/(1.0−x)²; solve for x</td>
+<td>x/[A]₀ &lt; 5% to validate approximation</td>
+<td>H₂ + I₂ ⇌ 2HI: initial 1 M each, K = 50; x ≈ 0.38 (shift right)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>ICE with Stoichiometric Coefficients</strong></td>
+<td>Initial: [N₂]₀ = 1.0 M, [H₂]₀ = 3.0 M, [NH₃]₀ = 0</td>
+<td>Per mole N₂ reacting: ΔN₂ = −x, ΔH₂ = −3x, ΔNH₃ = +2x</td>
+<td>[N₂] = 1.0−x, [H₂] = 3.0−3x, [NH₃] = 2x</td>
+<td>K_c = (2x)² / [(1.0−x)(3.0−3x)³]; expand and solve cubic or iterate</td>
+<td>Check that x &lt; 1.0 (N₂ not depleted) and x &lt; 1.0 (H₂ has 3x, so x &lt; 1.0 valid)</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃: K = 0.5 at 500 K; solve for [NH₃] at equilibrium</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>ICE with Pre-Existing Products</strong></td>
+<td>Initial: [A]₀ = 1.0 M, [B]₀ = 0, [C]₀ = 0.5 M</td>
+<td>ΔA = −x, ΔB = +x, ΔC = −x (reverse reaction likely since Q &gt; K initially)</td>
+<td>[A] = 1.0−x, [B] = x, [C] = 0.5−x</td>
+<td>Set Q = [C]/[A][B], compare to K; if Q &gt; K, x negative (reverse shift); solve for x from K expression</td>
+<td>Ensure all equilibrium [concentrations] positive</td>
+<td>If Q calculated shows Q &gt; K, equilibrium shifts left (←)</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>ICE with Degree of Dissociation (α)</strong></td>
+<td>Define α = fraction of reactant dissociated; initial [A]₀ = C_A</td>
+<td>[A] = C_A(1−α), [B] = C_A α (assuming 1:1 stoichiometry), [C] = C_A α</td>
+<td>K_c = [B][C]/[A] = (C_A α)(C_A α) / [C_A(1−α)] = C_A α²/(1−α)</td>
+<td>Solve for α; then [concentrations] from α and C_A</td>
+<td>α ∈ [0, 1]; if α &gt; 1, dissociation incomplete or error in setup</td>
+<td>N₂O₄ ⇌ 2NO₂: if α = 0.2 at 1 atm, K_c = C_A × (0.2)²/(1−0.2) = 0.05 C_A</td>
+<td>2021, 2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Equilibrium with Inert Gas Addition (Constant Volume)</strong></td>
+<td>At equilibrium: [A]ₑq, [B]ₑq, [C]ₑq, [D]ₑq; add He gas at constant V</td>
+<td>No change in [concentrations] of A, B, C, D; He is inert and doesn't participate</td>
+<td>Equilibrium [concentrations] remain unchanged</td>
+<td>Q unchanged; K unchanged → equilibrium position unchanged</td>
+<td>Total pressure increases (He addition), but partial pressures of reactants/products unchanged</td>
+<td>N₂ + 3H₂ ⇌ 2NH₃ at equilibrium; add He gas → no shift</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Equilibrium with Volume Change (Pressure by Compression)</strong></td>
+<td>Initial [A]ₑq = 0.5 M, [B]ₑq = 0.5 M, [C]ₑq = 1.0 M; reduce volume by half (double pressure)</td>
+<td>New [concentrations] double initially (same moles, half volume): [A] = 1.0 M, [B] = 1.0 M, [C] = 2.0 M</td>
+<td>Q = (2.0)² / (1.0 × 1.0) = 4; if K = 1, then Q &gt; K → shift left (←)</td>
+<td>Calculate new equilibrium [concentrations] by setting K = Q_new with adjustment for volume</td>
+<td>Check Le Chatelier's prediction: if Δn &lt; 0 (fewer product moles), shift right; if Δn &gt; 0, shift left</td>
+<td>H₂ + I₂ ⇌ 2HI (Δn = 0): volume change doesn't shift equilibrium; [concentrations] change uniformly but ratios maintained</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Calculating Equilibrium Concentrations (Advanced Cases)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Initial Scenario</th>
+<th>Approach</th>
+<th>Key Equations</th>
+<th>Example Problem</th>
+<th>Solution Outline</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Combining Initial ICE with Temperature Change</strong></td>
+<td>At 298 K: H₂ + I₂ ⇌ 2HI, K₁ = 50, equilibrium reached with [HI] = 0.76 M</td>
+<td>Change T to 500 K; use Van't Hoff to find K₂; set up new ICE with current [concentrations] as new initial; solve for new equilibrium</td>
+<td>Use Van't Hoff; then ICE table starting from current state (not original state)</td>
+<td>H₂ + I₂ ⇌ 2HI: ΔH° ≈ −10 kJ/mol (exothermic). At 298 K, K = 50. Change T to 400 K; find new equilibrium [HI].</td>
+<td>1) Van't Hoff: ln(K₂/K₁) = (ΔH°/R)(1/T₁ − 1/T₂); 2) Find K at 400 K; 3) Set new ICE with current [concentrations]; 4) Solve for shift</td>
+<td>2021, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Mixed Stoichiometry with Limiting Reactant</strong></td>
+<td>H₂ + Cl₂ ⇌ 2HCl; initial [H₂] = 2 M, [Cl₂] = 1 M, [HCl] = 0; K_c = 50</td>
+<td>Identify limiting reactant (Cl₂ is limiting); assume one fully reacts; set up ICE from partially reacted state; solve for additional shift</td>
+<td>Use stoichiometry to determine extent of complete reaction; then ICE for additional equilibration</td>
+<td>H₂ + Cl₂ ⇌ 2HCl (K = 50); [H₂]₀ = 2, [Cl₂]₀ = 1, [HCl]₀ = 0. Find equilibrium [HCl].</td>
+<td>If Cl₂ fully reacted: [H₂] = 1, [Cl₂] = 0, [HCl] = 2; Q = 4/(1 × 0) = undefined (Cl₂ at 0, not equilibrium). Cl₂ can't go to 0; set up ICE: let x = additional Cl₂ formed; K = (2−2x)²/((1+x)x) = 50; solve for x.</td>
+<td>2022, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Equilibrium at Very Small K (Weak Dissociation)</strong></td>
+<td>HA ⇌ H⁺ + A⁻; [HA]₀ = 0.1 M; K_a = 1.8 × 10⁻⁵ (very small)</td>
+<td>Approximation valid: assume x &lt;&lt; 0.1; [HA]ₑq ≈ [HA]₀ = 0.1 M; [H⁺] ≈ x = √(K_a × 0.1)</td>
+<td>K_a = x²/0.1; x = √(1.8 × 10⁻⁶) ≈ 1.34 × 10⁻³</td>
+<td>Acetic acid: 0.1 M, K_a = 1.8 × 10⁻⁵; find pH.</td>
+<td>[H⁺] = √(K_a × C) ≈ √(1.8 × 10⁻⁶) ≈ 1.34 × 10⁻³ M; pH = −log(1.34 × 10⁻³) ≈ 2.87</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Equilibrium at Very Large K (Nearly Complete Reaction)</strong></td>
+<td>N₂O₄ ⇌ 2NO₂; at low T (e.g., 250 K), K ≈ 10⁻² (very small); reverse is favored</td>
+<td>Most NO₂ recombines to N₂O₄; assume equilibrium heavily favors N₂O₄</td>
+<td>If [NO₂]₀ &gt;&gt; √K, then [NO₂] ≈ √(K × [N₂O₄])</td>
+<td>N₂O₄ ⇌ 2NO₂: at 250 K, K ≈ 0.01. Start with [NO₂] = 1 M.</td>
+<td>Set up ICE: N₂O₄ forms from NO₂ recombination. [N₂O₄] = y, [NO₂] = 1 − 2y. K = (1−2y)²/y = 0.01; solve for y. Since K is small, y large (significant N₂O₄ forms).</td>
+<td>2023, 2024</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 4: ACID STRENGTH &amp; BASE STRENGTH COMPARATIVE ANALYSIS</h2>
+<h3>PART A: Trends in K_a &amp; K_b Values</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Acid/Base Type</th>
+<th>K_a or K_b Range</th>
+<th>Typical Examples</th>
+<th>Strength Order</th>
+<th>Trend Notes</th>
+<th>Relationship</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strong Acids</strong></td>
+<td>K_a &gt;&gt; 1 (often &gt; 10¹)</td>
+<td>HCl, HNO₃, H₂SO₄ (first dissociation), HClO₄</td>
+<td>100% dissociation; complete ionization</td>
+<td>Complete dissociation; [H⁺] ≈ C_acid; no ICE table needed; assume full dissociation</td>
+<td>K_a so large that approximation [HA] ≈ 0 valid; used for titrant in labs</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Weak Acids (General Organic)</strong></td>
+<td>K_a ~ 10⁻³ to 10⁻⁶</td>
+<td>Acetic acid (1.8 × 10⁻⁵), formic acid (1.8 × 10⁻⁴), phenol (1.3 × 10⁻¹⁰)</td>
+<td>Partial dissociation; strength varies</td>
+<td>K_a values cluster in weak range; larger K_a (e.g., formic) → stronger acid than smaller K_a (e.g., acetic)</td>
+<td>pK_a = −log K_a; strong acids pK_a &lt; 0, weak acids pK_a ~ 2−10, very weak acids pK_a &gt; 10</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Very Weak Acids (Amphiprotic Ions, Water-like)</strong></td>
+<td>K_a ~ 10⁻⁹ to 10⁻¹⁶</td>
+<td>HCO₃⁻ (4.7 × 10⁻¹¹), H₂O (K_a ≈ 1.8 × 10⁻¹⁶), HS⁻</td>
+<td>Minimal dissociation; often acts as base too</td>
+<td>Comparable to water or weaker; can act as acid or base (amphiprotic)</td>
+<td>Amphiprotic species: HCO₃⁻ dissociates as acid (K_a = 4.7 × 10⁻¹¹) or accepts proton as base (K_b = K_w/K_a1 for CO₃²⁻ formation)</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Strong Bases</strong></td>
+<td>K_b &gt;&gt; 1 (often &gt; 10⁻¹)</td>
+<td>NaOH, KOH, Ca(OH)₂, NH₂⁻</td>
+<td>100% dissociation; complete ionization</td>
+<td>Complete dissociation; [OH⁻] ≈ C_base × (formula charge); no equilibrium calculation needed</td>
+<td>Strong bases typically hydroxide salts of alkali/alkaline earth metals; NH₂⁻ (amide) very strong</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Weak Bases (Amines, Anions)</strong></td>
+<td>K_b ~ 10⁻⁵ to 10⁻⁹</td>
+<td>NH₃ (1.8 × 10⁻⁵), methylamine (4.4 × 10⁻⁴), F⁻ (K_b = K_w/K_a(HF) = 1.4 × 10⁻¹¹, very weak base)</td>
+<td>Partial dissociation; strength varies</td>
+<td>K_b values range in weak to very weak; larger K_b (e.g., methylamine) → stronger base; smaller K_b (e.g., F⁻) → weaker base</td>
+<td>pK_b = −log K_b; strong bases pK_b &lt; 0 (rare), weak bases pK_b ~ 5−11, very weak bases pK_b &gt; 11</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Conjugate Acid-Base Pair Relationship</strong></td>
+<td>K_a × K_b = K_w = 10⁻¹⁴ (at 25°C)</td>
+<td>HF/F⁻: K_a(HF) = 6.8 × 10⁻⁴, K_b(F⁻) = 10⁻¹⁴/(6.8 × 10⁻⁴) = 1.5 × 10⁻¹¹</td>
+<td>Stronger the acid, weaker the conjugate base; and vice versa</td>
+<td>Inverse relationship: as K_a increases, K_b for conjugate decreases proportionally; fundamental principle for buffer design</td>
+<td>Used to find K_b from K_a (or vice versa) without separate measurement</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Polyprotic Acids (Stepwise Dissociation)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Acid</th>
+<th>Dissociation Steps</th>
+<th>K_a1</th>
+<th>K_a2</th>
+<th>K_a3</th>
+<th>pK_a Values</th>
+<th>pH Regions</th>
+<th>Example Calculation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H₂CO₃ (Carbonic Acid)</strong></td>
+<td>H₂CO₃ ⇌ H⁺ + HCO₃⁻; HCO₃⁻ ⇌ H⁺ + CO₃²⁻</td>
+<td>4.3 × 10⁻⁷</td>
+<td>5.6 × 10⁻¹¹</td>
+<td>—</td>
+<td>6.37, 10.25</td>
+<td>pH &lt; 6.37: mostly H₂CO₃; 6.37 &lt; pH &lt; 10.25: mostly HCO₃⁻; pH &gt; 10.25: mostly CO₃²⁻</td>
+<td>At pH 8 (bicarbonate buffer in ocean): [HCO₃⁻]/[H₂CO₃] ≈ 10^(8−6.37) ≈ 427 (mostly HCO₃⁻)</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>H₂SO₄ (Sulfuric Acid)</strong></td>
+<td>First dissociation: strong (K_a1 &gt;&gt; 1); Second: weak (K_a2 = 1.2 × 10⁻²)</td>
+<td>&gt;&gt; 1 (complete)</td>
+<td>1.2 × 10⁻²</td>
+<td>—</td>
+<td>≈ 1.2</td>
+<td>First complete; second partial</td>
+<td>0.1 M H₂SO₄: first → [H⁺] = 0.1; second from K_a2 equilibrium</td>
+<td>2021, 2022, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>H₃PO₄ (Phosphoric Acid)</strong></td>
+<td>H₃PO₄ ⇌ H⁺ + H₂PO₄⁻; H₂PO₄⁻ ⇌ H⁺ + HPO₄²⁻; HPO₄²⁻ ⇌ H⁺ + PO₄³⁻</td>
+<td>7.5 × 10⁻³</td>
+<td>6.2 × 10⁻⁸</td>
+<td>2.2 × 10⁻¹³</td>
+<td>2.12, 7.21, 12.67</td>
+<td>pH &lt; 2.12: mostly H₃PO₄; 2.12 &lt; pH &lt; 7.21: mostly H₂PO₄⁻; 7.21 &lt; pH &lt; 12.67: mostly HPO₄²⁻; pH &gt; 12.67: mostly PO₄³⁻</td>
+<td>pH 7 (neutral): H₂PO₄⁻ and HPO₄²⁻ coexist; K_a2 ≈ K_a3 / (HPO₄²⁻/PO₄³⁻), use both</td>
+<td>2021, 2022, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 5: BUFFER SOLUTIONS — COMPREHENSIVE DESIGN &amp; ANALYSIS</h2>
+<h3>PART A: Buffer Design Formulas &amp; Selection</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Buffer Type</th>
+<th>Components</th>
+<th>pH Formula</th>
+<th>Effective pH Range</th>
+<th>Capacity</th>
+<th>Design Method</th>
+<th>Example Buffer</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Weak Acid + Conjugate Base</strong></td>
+<td>HA + A⁻ (e.g., HAc + Ac⁻ from NaAc, or HAc + excess NaOH partial neutralization)</td>
+<td>$pH = pK_a + \log \frac{[A^-]}{[HA]}$</td>
+<td>pK_a ± 1 (e.g., for acetic acid pK_a = 4.74, buffer effective pH 3.74–5.74)</td>
+<td>β ≈ 2.303 × [HA] when [A⁻] = [HA]</td>
+<td>Mix weak acid with salt of conjugate base; adjust [A⁻]/[HA] ratio to set pH near pK_a</td>
+<td>Acetate buffer: 0.1 M HAc + 0.1 M NaAc (pH ≈ 4.74); if [NaAc] = 0.5 M and [HAc] = 0.1 M, pH ≈ 4.74 + log(5) ≈ 5.43</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Weak Base + Conjugate Acid</strong></td>
+<td>B + BH⁺ (e.g., NH₃ + NH₄⁺ from NH₄Cl, or NH₃ + partial excess HCl)</td>
+<td>$pH = pK_a(BH^+) + \log \frac{[B]}{[BH^+]}$ (convert to pOH: $pOH = pK_b + \log \frac{[BH^+]}{[B]}$)</td>
+<td>pK_b ± 1 (e.g., for ammonia pK_b ≈ 4.75, buffer effective pOH 3.75–5.75, or pH 8.25–10.25)</td>
+<td>Similar to weak acid buffer</td>
+<td>Mix weak base with salt of conjugate acid; adjust [B]/[BH⁺] ratio</td>
+<td>Ammonia buffer: 0.1 M NH₃ + 0.1 M NH₄Cl (pOH ≈ 4.75, pH ≈ 9.25); if [NH₄Cl] = 0.5 M and [NH₃] = 0.1 M, pOH ≈ 4.75 + log(0.2) ≈ 4.45, pH ≈ 9.55</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Polyprotic Acid Buffers (H₂A/HA⁻)</strong></td>
+<td>H₂A (weak polyprotic) + HA⁻ (salt of first dissociation)</td>
+<td>$pH = pK_{a1} + \log \frac{[HA^-]}{[H_2A]}$ (for H₂A/HA⁻ pair)</td>
+<td>pK_a1 ± 1; or pH = pK_a2 ± 1 for HA⁻/A²⁻ pair</td>
+<td>Depends on which pair is chosen; typically both [H₂A] and [HA⁻] should be present</td>
+<td>Mix polyprotic acid (or salt) at pH where two forms coexist significantly; use pK_a values</td>
+<td>Phosphate buffer (H₂PO₄⁻/HPO₄²⁻): pK_a2 = 7.21, effective pH 6.21–8.21; useful for biochemistry at pH 7</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Buffer Capacity &amp; pH Shift Calculation</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Formula</th>
+<th>Physical Meaning</th>
+<th>Calculation</th>
+<th>Example</th>
+<th>Interpretation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Buffer Capacity (β)</strong></td>
+<td>$\beta = \frac{dn}{d(pH)} = \frac{\Delta n}{\Delta pH}$ (moles of strong acid/base per unit pH change)</td>
+<td>Resistance to pH change; larger β → more stable pH</td>
+<td>Add known moles of strong acid/base; measure ΔpH; ratio gives β</td>
+<td>Buffer with [HAc] = [Ac⁻] = 0.5 M has higher capacity than 0.05 M (same ratio)</td>
+<td>Higher concentration buffers more resistant to pH change; doubling concentration quadruples capacity (approximately)</td>
+<td>2022, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>pH Shift with Added Acid/Base</strong></td>
+<td>$\Delta pH = -\log \left( \frac{[A^-] - n_{acid}}{[HA] + n_{acid}} \right) - pK_a$ (for acid added)</td>
+<td>Adding strong acid reduces [A⁻] and increases [HA]; using H-H, new pH calculated</td>
+<td>Add x moles of HCl to buffer; new [A⁻] = old [A⁻] − x; new [HA] = old [HA] + x; recalculate pH</td>
+<td>Acetate buffer: 1 L of 0.1 M HAc + 0.1 M Ac⁻ (pH 4.74). Add 0.01 mol HCl. New [Ac⁻] = 0.09 M, [HAc] = 0.11 M. pH = 4.74 + log(0.09/0.11) ≈ 4.65 (ΔpH ≈ −0.09)</td>
+<td>Small ΔpH (0.09) despite adding acid; shows buffering effect</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Buffer Design for Target pH</strong></td>
+<td>Select weak acid/base with pK_a (or pK_b) near target pH; calculate required [A⁻]/[HA] ratio</td>
+<td>Use H-H to set desired pH; algebraically solve for ratio</td>
+<td>For pH 8.0, need pK_a ≈ 8 (or pK_b ≈ 6). Ammonia buffer: pK_b ≈ 4.75, so pH = 14 − 4.75 + log([NH₃]/[NH₄⁺]) = 9.25 + log([NH₃]/[NH₄⁺]). To get pH 8.0: log([NH₃]/[NH₄⁺]) = 8.0 − 9.25 = −1.25; [NH₃]/[NH₄⁺] ≈ 0.056</td>
+<td>Use H-H: pH = pK_a + log([A⁻]/[HA]); set pH = 8.0; if pK_a ≈ 8, then [A⁻]/[HA] ≈ 1 (roughly equal amounts)</td>
+<td>For pH 7.0: use phosphate buffer (H₂PO₄⁻/HPO₄²⁻, pK_a2 = 7.21) or use ammonia with pK_b adjustment; mix to get desired ratio</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 6: COMPLEX ION EQUILIBRIA &amp; STABILITY</h2>
+<h3>PART A: Formation Constants &amp; Ligand Strength</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Complex</th>
+<th>Metal</th>
+<th>Ligand</th>
+<th>K_f Value</th>
+<th>Stability</th>
+<th>Applications</th>
+<th>Example Calculation</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[Ag(NH₃)₂]⁺</strong></td>
+<td>Ag⁺</td>
+<td>NH₃</td>
+<td>1.6 × 10⁷</td>
+<td>Moderately stable; dissociation minimal</td>
+<td>Photography (sensitizer), analytical chemistry</td>
+<td>K_f = [[Ag(NH₃)₂]⁺]/([Ag⁺][NH₃]²) = 1.6 × 10⁷; if [Ag⁺] = 10⁻⁶ M, [NH₃] = 1 M, [[Ag(NH₃)₂]⁺] = 1.6 × 10⁷ × 10⁻⁶ × 1 = 16 M (unrealistic; [Ag(NH₃)₂]⁺] is limited by total Ag)</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>[Cu(NH₃)₄]²⁺</strong></td>
+<td>Cu²⁺</td>
+<td>NH₃</td>
+<td>~2.5 × 10⁶ (stepwise K₁ ~ 10³, K₂ ~ 10³, K₃ ~ 10², K₄ ~ 1)</td>
+<td>Moderately stable; stepwise dissociation</td>
+<td>Analytical determination of Cu²⁺, deep blue color</td>
+<td>Stepwise: K₁ = [[Cu(NH₃)]²⁺]/([Cu²⁺][NH₃]) ~ 10³; overall K_f = K₁ × K₂ × K₃ × K₄</td>
+<td>2022, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>[Fe(CN)₆]³⁻ &amp; [Fe(CN)₆]⁴⁻</strong></td>
+<td>Fe³⁺/Fe²⁺</td>
+<td>CN⁻</td>
+<td>Extremely large (K_f ~ 10⁴⁰ for ferrocyanide)</td>
+<td>Extremely stable; nearly irreversible dissociation</td>
+<td>Prussian blue pigment, redox potential marker, analytical standard</td>
+<td>K_d (dissociation) = 1/K_f ≈ 10⁻⁴⁰ (essentially no dissociation; very stable complex)</td>
+<td>2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>[Zn(OH)₄]²⁻</strong></td>
+<td>Zn²⁺</td>
+<td>OH⁻</td>
+<td>Variable (K_f depends on [OH⁻]; amphoteric hydroxide)</td>
+<td>Amphoteric: dissolves in acid (forms Zn²⁺) or excess base (forms [Zn(OH)₄]²⁻)</td>
+<td>Explains Zn(OH)₂ solubility minimum at intermediate pH; industrial zinc processing</td>
+<td>Zn²⁺ + 4OH⁻ ⇌ [Zn(OH)₄]²⁻; K_f expression: K_f = [[Zn(OH)₄]²⁻]/([Zn²⁺][OH⁻]⁴)</td>
+<td>2021, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>[AlO₂]⁻ (Aluminate)</strong></td>
+<td>Al³⁺</td>
+<td>OH⁻</td>
+<td>Similar amphoteric behavior to Zn(OH)₂; complex dissolves in strong base</td>
+<td>Amphoteric; Al(OH)₃ dissolves in excess NaOH to form [AlO₂]⁻</td>
+<td>Bauxite ore processing (Bayer process); alumina production</td>
+<td>Al(OH)₃ + OH⁻ ⇌ [AlO₂]⁻ + 2H₂O (acid–base reaction, K_eq related to K_a/K_b)</td>
+<td>2023, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Effect of Complex Formation on Solubility</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Equilibria</th>
+<th>Coupling Mechanism</th>
+<th>Effect on Solubility</th>
+<th>Mathematical Prediction</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Solubility without Complexation</strong></td>
+<td>AgCl ⇌ Ag⁺ + Cl⁻; K_sp = 1.8 × 10⁻¹⁰</td>
+<td>Single equilibrium; solid ⇌ ions</td>
+<td>S = √K_sp ≈ 1.34 × 10⁻⁵ M</td>
+<td>Pure water, no ligand present</td>
+<td>AgCl in pure water: S ≈ 1.34 × 10⁻⁵ M (~1.9 × 10⁻³ g/L)</td>
+<td>2021, 2022, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>Solubility with Complexation by Strong Ligand</strong></td>
+<td>AgCl ⇌ Ag⁺ + Cl⁻ (K_sp); Ag⁺ + 2NH₃ ⇌ [Ag(NH₃)₂]⁺ (K_f = 1.6 × 10⁷)</td>
+<td>Removal of Ag⁺ via complex formation shifts AgCl dissolution equilibrium right; more AgCl dissolves</td>
+<td>S increases dramatically; up to 100×–10,000×</td>
+<td>K_combined = K_sp × K_f = 1.8 × 10⁻¹⁰ × 1.6 × 10⁷ ≈ 2.88 × 10⁻³; combined solubility equilibrium: AgCl(s) + 2NH₃ ⇌ [Ag(NH₃)₂]⁺ + Cl⁻; K_combined = [complex][Cl⁻]/[NH₃]²</td>
+<td>AgCl in 1 M NH₃: S ≈ 0.01 M (vs. 1.34 × 10⁻⁵ M in pure water); ~750× increase</td>
+<td>2021, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Solubility Curve vs. Ligand Concentration</strong></td>
+<td>Plot S vs. [L] where L is free ligand concentration; initial S low, increases with [L]</td>
+<td>Initially, dissolution limited by K_sp; as [L] increases, complex formation increases, pulling more Ag⁺ into solution</td>
+<td>S-shaped curve: plateau at low [L], rapid rise in intermediate [L], eventual plateau at high [L] (all Ag dissolved as complex)</td>
+<td>Calculate S for multiple [NH₃] values using combined K_combined expression; plot S vs. [NH₃]</td>
+<td>AgCl + NH₃: [NH₃] = 0.01 M → S ≈ 10⁻⁶ M; [NH₃] = 1 M → S ≈ 0.01 M; [NH₃] = 10 M → S ≈ 0.1 M</td>
+<td>Graphically visualizes how ligand addition dissolves otherwise insoluble salt</td>
+<td>2024, 2025, 2026</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 7: SIMULTANEOUS EQUILIBRIA &amp; COMMON ION EFFECTS</h2>
+<h3>PART A: Multiple Equilibria in One Solution</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>System</th>
+<th>Equilibria Present</th>
+<th>Primary Effect</th>
+<th>Secondary Effects</th>
+<th>Analytical Approach</th>
+<th>Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Weak Acid + Its Salt (Buffer)</strong></td>
+<td>HA ⇌ H⁺ + A⁻ (K_a); A⁻ + H₂O ⇌ HA + OH⁻ (K_b from K_w/K_a); H₂O ⇌ H⁺ + OH⁻ (K_w)</td>
+<td>HA dissociation and A⁻ hydrolysis compete; when [HA] ≈ [A⁻], both proceed equally</td>
+<td>Water dissociation negligible; pH determined by H-H equation (ratio dominates)</td>
+<td>Use H-H directly; don't need to solve both K_a and K_b simultaneously if buffer is well-designed (pK_a ± 1)</td>
+<td>0.1 M HAc + 0.1 M NaAc: pH = pK_a + log(1) ≈ 4.74; exact: K_a from HA dissociation, K_b from Ac⁻ hydrolysis balance to give same pH</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Salt of Weak Acid + Weak Base (Hydrolysis Competition)</strong></td>
+<td>NH₄⁺ ⇌ H⁺ + NH₃ (K_h,NH₄⁺ = K_w/K_b); OAc⁻ + H₂O ⇌ HAc + OH⁻ (K_h,OAc⁻ = K_w/K_a); net acid–base interaction</td>
+<td>Hydrolysis of cation (produces H⁺) vs. hydrolysis of anion (produces OH⁻); if K_h values comparable, pH near neutral</td>
+<td>Temperature affects K_w and both K_a/K_b; ionic strength effects on activity coefficients</td>
+<td>Calculate K_h for cation and anion; compare magnitudes; if K_h(cation) &gt; K_h(anion), solution acidic; vice versa</td>
+<td>NH₄OAc: K_h(NH₄⁺) = 10⁻¹⁴/(1.8 × 10⁻⁵) ≈ 5.6 × 10⁻¹⁰; K_h(OAc⁻) = 10⁻¹⁴/(1.8 × 10⁻⁵) ≈ 5.6 × 10⁻¹⁰ (equal); pH ≈ 7 (neutral)</td>
+<td>2022, 2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Common Ion Effect in Salt Precipitation</strong></td>
+<td>AgCl ⇌ Ag⁺ + Cl⁻ (K_sp); NaCl → Na⁺ + Cl⁻ (complete dissociation)</td>
+<td>Added Cl⁻ shifts AgCl equilibrium left; [Ag⁺] decreases dramatically</td>
+<td>Selectivity: salt of common ion (Cl⁻) doesn't contribute to its own precipitation; only shifts equilibrium</td>
+<td>Write K_sp expression; identify common ion concentration (e.g., from NaCl); calculate solubility using K_sp/[common ion]</td>
+<td>AgCl in 0.1 M NaCl: S = K_sp/[Cl⁻] = 1.8 × 10⁻¹⁰/0.1 = 1.8 × 10⁻⁹ M (vs. 1.3 × 10⁻⁵ M in pure water)</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 8: COMPARATIVE ANALYSIS TABLES</h2>
+<h3>PART A: Acid Strength Ranking (K_a &amp; pK_a)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Acid</th>
+<th>K_a</th>
+<th>pK_a</th>
+<th>Classification</th>
+<th>Conjugate Base Strength</th>
+<th>Common Use</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 (Strongest)</strong></td>
+<td>HClO₄ (perchloric)</td>
+<td>&gt;&gt;10</td>
+<td>&lt;0</td>
+<td>Super-strong</td>
+<td>ClO₄⁻ (inert)</td>
+<td>Titrant, non-coordinating anion</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>H₂SO₄ (first dissociation)</td>
+<td>&gt;&gt;1</td>
+<td>~−3</td>
+<td>Strong</td>
+<td>HSO₄⁻ (weak acid)</td>
+<td>Battery electrolyte, desiccant</td>
+<td>2021, 2023, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>HNO₃ (nitric)</td>
+<td>~10</td>
+<td>~−1.4</td>
+<td>Strong</td>
+<td>NO₃⁻ (inert)</td>
+<td>Oxidizing acid</td>
+<td>2021, 2022, 2024</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>HCl (hydrochloric)</td>
+<td>~10⁶</td>
+<td>~−6</td>
+<td>Strong</td>
+<td>Cl⁻ (inert)</td>
+<td>Analytical standard</td>
+<td>2021, 2022, 2023</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>H₃PO₄ (first dissociation)</td>
+<td>7.5 × 10⁻³</td>
+<td>2.12</td>
+<td>Weak (moderately)</td>
+<td>H₂PO₄⁻ (weak base)</td>
+<td>Buffer, fertilizer</td>
+<td>2021, 2023, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>H₂SO₄ (second dissociation)</td>
+<td>1.2 × 10⁻²</td>
+<td>1.92</td>
+<td>Weak (moderately)</td>
+<td>SO₄²⁻ (weak base)</td>
+<td>Consequence of strong first step</td>
+<td>2022, 2024</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Formic (HCOOH)</td>
+<td>1.8 × 10⁻⁴</td>
+<td>3.74</td>
+<td>Weak</td>
+<td>Formate (HCOO⁻, weak base)</td>
+<td>Preservative, reducing agent</td>
+<td>2024, 2025</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>Acetic (CH₃COOH)</td>
+<td>1.8 × 10⁻⁵</td>
+<td>4.74</td>
+<td>Weak</td>
+<td>Acetate (CH₃COO⁻, weak base)</td>
+<td>Vinegar, buffer</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td>Carbonic (H₂CO₃, first)</td>
+<td>4.3 × 10⁻⁷</td>
+<td>6.37</td>
+<td>Very weak</td>
+<td>Bicarbonate (HCO₃⁻, weak base)</td>
+<td>Carbonate system, natural buffering</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td>Phenol (C₆H₅OH)</td>
+<td>1.3 × 10⁻¹⁰</td>
+<td>9.88</td>
+<td>Very weak</td>
+<td>Phenoxide (C₆H₅O⁻, weak base)</td>
+<td>Disinfectant, polymerization</td>
+<td>2021, 2024, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>11 (Weakest)</strong></td>
+<td>Water (H₂O)</td>
+<td>~1.8 × 10⁻¹⁶</td>
+<td>15.74</td>
+<td>Extremely weak</td>
+<td>Hydroxide (OH⁻, strong base)</td>
+<td>Solvent, reference</td>
+<td>2021, 2022</td>
+<td>⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>PART B: Base Strength Ranking (K_b &amp; pK_b)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Base</th>
+<th>K_b</th>
+<th>pK_b</th>
+<th>Classification</th>
+<th>Conjugate Acid Strength</th>
+<th>Common Use</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 (Strongest)</strong></td>
+<td>OH⁻ (hydroxide ion)</td>
+<td>~1</td>
+<td>~0</td>
+<td>Super-strong</td>
+<td>H₂O (very weak acid)</td>
+<td>Strong base, neutralization</td>
+<td>2021, 2022, 2023</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>NH₂⁻ (amide ion)</td>
+<td>~10</td>
+<td>0</td>
+<td>Super-strong</td>
+<td>NH₃ (very weak acid)</td>
+<td>Strong reducing base</td>
+<td>2023, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Methylamine (CH₃NH₂)</td>
+<td>4.4 × 10⁻⁴</td>
+<td>3.36</td>
+<td>Moderately weak</td>
+<td>CH₃NH₃⁺ (weak acid)</td>
+<td>Organic synthesis</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Ammonia (NH₃)</td>
+<td>1.8 × 10⁻⁵</td>
+<td>4.74</td>
+<td>Weak</td>
+<td>NH₄⁺ (weak acid, pK_a 9.25)</td>
+<td>Buffer, fertilizer, laboratory base</td>
+<td>2021, 2022, 2023, 2024, 2025, 2026</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Carbonate (CO₃²⁻)</td>
+<td>2.1 × 10⁻⁴</td>
+<td>3.68</td>
+<td>Moderately weak</td>
+<td>Bicarbonate (HCO₃⁻, pK_a 10.25)</td>
+<td>Natural buffer (hard water), cleaning</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Bicarbonate (HCO₃⁻)</td>
+<td>2.3 × 10⁻⁸</td>
+<td>7.63</td>
+<td>Very weak (amphiprotic)</td>
+<td>Carbonic acid (H₂CO₃, pK_a 6.37)</td>
+<td>Physiological buffer (blood), natural waters</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Fluoride (F⁻)</td>
+<td>1.4 × 10⁻¹¹</td>
+<td>10.85</td>
+<td>Very weak</td>
+<td>Hydrofluoric acid (HF, pK_a 3.14)</td>
+<td>Weak conjugate base of strong HF</td>
+<td>2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>Chloride (Cl⁻)</td>
+<td>~10⁻¹⁴</td>
+<td>14</td>
+<td>Negligible</td>
+<td>Hydrochloric acid (HCl, strong acid)</td>
+<td>Spectator ion in most solutions</td>
+<td>2021, 2022</td>
+<td>⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 9: COMPLEX PROBLEM PATTERNS &amp; INTEGRATED SOLUTIONS</h2>
+<h3>Pattern 1: Solubility Equilibrium + Le Chatelier (Temperature Effect)</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Problem Type</th>
+<th>Setup</th>
+<th>Equilibrium Expressions</th>
+<th>Analysis</th>
+<th>Solution Strategy</th>
+<th>Numerical Example</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temperature Effect on K_sp</strong></td>
+<td>Salt solubility changes with T; typically increases for endothermic dissolution, decreases for exothermic</td>
+<td>AgCl ⇌ Ag⁺ + Cl⁻; K_sp ∝ exp(−ΔG°/RT); ΔG° = ΔH° − TΔS°; assume ΔH° roughly constant</td>
+<td>Increasing T: shifts equilibrium to favor dissolution if ΔH_dissolution &gt; 0 (endothermic); affects K_sp value</td>
+<td>Use Van't Hoff for K_sp: ln(K_sp,2/K_sp,1) = (ΔH°_dissolution/R)(1/T₁ − 1/T₂)</td>
+<td>AgCl: assume ΔH°_dissolution ≈ +65 kJ/mol (endothermic). At 298 K, K_sp = 1.8 × 10⁻¹⁰. Find K_sp at 323 K. ln(K_sp,323/1.8×10⁻¹⁰) = (65000/8.314) × (1/298 − 1/323) ≈ 3.1; K_sp,323 ≈ 1.8 × 10⁻¹⁰ × e^3.1 ≈ 3 × 10⁻⁹ (increased)</td>
+<td>2021, 2023, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Pattern 2: Titration Curve — Equivalence Point pH Determination</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Curve Region</th>
+<th>pH Calculation Method</th>
+<th>Key Result</th>
+<th>Example: 50 mL 0.1 M Weak Acid (K_a = 1.8 × 10⁻⁵) + 0.1 M NaOH</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Before Equivalence Point (e.g., 25 mL NaOH added, midpoint)</strong></td>
+<td>Henderson-Hasselbalch: pH = pK_a + log([A⁻]/[HA]); at midpoint, [A⁻] = [HA], so pH = pK_a</td>
+<td>pH = pK_a = 4.74 (independent of volumes!)</td>
+<td>At 25 mL: [HAc]₀ = 0.05 M, [Ac⁻]₀ = 0.025 M; pH ≈ 4.74 (exactly pK_a)</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>At Equivalence Point (50 mL NaOH added)</strong></td>
+<td>All HA converted to A⁻ (concentration = 0.05 M in 100 mL total); A⁻ undergoes hydrolysis: A⁻ + H₂O ⇌ HA + OH⁻</td>
+<td>pH = ½(pK_w + pK_a + log C_A); or use K_h = K_w/K_a to find [OH⁻]</td>
+<td>C_A = 0.05 M; K_h = 10⁻¹⁴/(1.8 × 10⁻⁵) ≈ 5.6 × 10⁻¹⁰; [OH⁻] = √(5.6 × 10⁻¹⁰ × 0.05) ≈ 5.3 × 10⁻⁶ M; pOH ≈ 5.3; pH ≈ 8.7</td>
+<td>2021, 2022, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>After Equivalence Point (75 mL NaOH added; 25 mL excess)</strong></td>
+<td>Excess OH⁻ in solution: [OH⁻] = moles excess NaOH / total volume; pOH = −log[OH⁻]</td>
+<td>pH = 14 − pOH; depends on volume of excess NaOH added</td>
+<td>Excess NaOH = (75 − 50) × 0.1 / 125 mL = 0.02 M; pOH = 1.7; pH ≈ 12.3</td>
+<td>2021, 2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Pattern 3: Polyprotic Acid Titration — Multiple Equivalence Points</h3>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Equivalence Point</th>
+<th>Reaction Completed</th>
+<th>[Species] Present</th>
+<th>pH Calculation</th>
+<th>Example (H₂CO₃ + NaOH)</th>
+<th>PYQ Tags</th>
+<th>JEE Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First Equivalence Point (1 mL NaOH for each mL H₂A)</strong></td>
+<td>H₂A + OH⁻ → HA⁻ + H₂O</td>
+<td>[HA⁻] concentrated; mixture of weak acid (HA⁻ → H⁺ + A²⁻) and base (HA⁻ + H₂O → H₂A + OH⁻)</td>
+<td>pH ≈ ½(pK_a1 + pK_a2) (amphiprotic approximation)</td>
+<td>H₂CO₃: pK_a1 = 6.37, pK_a2 = 10.25; pH_equiv1 ≈ ½(6.37 + 10.25) ≈ 8.3</td>
+<td>2023, 2024, 2025, 2026</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Second Equivalence Point (2 mL NaOH for each mL H₂A)</strong></td>
+<td>H₂A + 2OH⁻ → A²⁻ + 2H₂O</td>
+<td>[A²⁻] concentrated; A²⁻ acts as base (A²⁻ + H₂O ⇌ HA⁻ + OH⁻)</td>
+<td>pH ≈ ½(pK_a2 + pK_w); or use K_b(A²⁻) = K_w/K_a2</td>
+<td>H₂CO₃: K_b(CO₃²⁻) = 10⁻¹⁴/(5.6 × 10⁻¹¹) ≈ 1.8 × 10⁻⁴; [OH⁻] = √(1.8 × 10⁻⁴ × 0.05) ≈ 3 × 10⁻³ M; pOH ≈ 2.5; pH ≈ 11.5</td>
+<td>2023, 2024, 2025</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>SECTION 10: JEE ADVANCED STRATEGY &amp; CONCEPTUAL INTEGRATION</h2>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>JEE Focus</th>
+<th>Common Misconception</th>
+<th>Problem-Solving Approach</th>
+<th>Expected Difficulty</th>
+<th>PYQ Frequency (2021–2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ΔG° vs. K vs. Q (Thermodynamic-Kinetic Integration)</strong></td>
+<td>Relationship between ΔG°, K, and reaction direction; spontaneity at non-standard conditions using Q</td>
+<td>K depends on T and ΔG° (via K = e^{−ΔG°/RT}); confusing K as constant regardless of context</td>
+<td>Calculate ΔG = ΔG° + RT ln Q; if ΔG &lt; 0, reaction proceeds forward; use K to check equilibrium</td>
+<td>8/10 (Advanced)</td>
+<td>Very High (all years, especially Advanced)</td>
+</tr>
+<tr>
+<td><strong>Coupled Equilibria (Complex Formation + Solubility)</strong></td>
+<td>When two equilibria interact (dissolution + complex formation), K_combined = K_sp × K_f; predicting apparent solubility</td>
+<td>Treating solubility and complex formation as independent; not recognizing that complex formation shifts dissolution equilibrium</td>
+<td>Write coupled equilibrium expression directly; calculate combined K; solve for equilibrium [free ion] and complex</td>
+<td>8/10 (Advanced)</td>
+<td>High (2024, 2025, 2026 Advanced)</td>
+</tr>
+<tr>
+<td><strong>pH of Amphiprotic Species (HA⁻ in polyprotic systems)</strong></td>
+<td>HA⁻ can act as both acid and base; pH ≈ ½(pK_a1 + pK_a2) for approximation, or solve exactly using both K_a and K_b expressions</td>
+<td>Assuming HA⁻ acts only as acid or only as base; not setting up both dissociation and hydrolysis simultaneously</td>
+<td>Compare K_a2 (HA⁻ → H⁺ + A²⁻) vs. K_b (HA⁻ + H₂O → H₂A + OH⁻); use exact charge balance if precise pH needed</td>
+<td>7/10 (Advanced)</td>
+<td>Medium–High (2023, 2024, 2025)</td>
+</tr>
+<tr>
+<td><strong>Successive Approximations in Weak Acid Mixtures</strong></td>
+<td>When weak acid K_a is borderline (K_a ~ 10⁻⁴ to 10⁻⁶), approximation x &lt;&lt; C may fail; must solve quadratic</td>
+<td>Using approximation without checking K_a/C ratio; not refining answer via quadratic if approximation fails</td>
+<td>Calculate K_a/C first; if &lt; 10⁻⁵, use √(K_a × C); if borderline, solve quadratic; if &gt; 10⁻⁵, must use exact formula</td>
+<td>6/10 (Mains)</td>
+<td>Medium (2021, 2022, 2024)</td>
+</tr>
+<tr>
+<td><strong>Solubility Product with Multiple Common Ions</strong></td>
+<td>If both Ag⁺ and Cl⁻ are added to AgCl solution, total K_sp expression must account for all ions</td>
+<td>Ignoring one common ion source; treating K_sp expression incompletely</td>
+<td>Write K_sp = [Ag⁺][Cl⁻] with all sources: [Ag⁺] from salt dissociation + added source; [Cl⁻] from salt dissociation + added source</td>
+<td>6/10 (Mains)</td>
+<td>Low–Medium (2022, 2023)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p><strong>END OF FILE 2</strong></p>
+<p><em>Use this advanced analysis guide to deepen understanding of equilibrium concepts. Combine with File 1 for complete JEE preparation. Regular practice with numerical problems and tabular comparisons is essential.</em></p>
+              </div>
+            </div>
+          </div>
+        
+
+    <!-- Chapter Navigation Footer -->
+    <nav class="chapter-bottom-nav">
+      
+          <a href="../../class-11/05-thermodynamics/index.html" class="nav-ch-btn">
+            <span class="dir">&larr; Previous Chapter</span>
+            <span class="title">Ch 5: Chemical Thermodynamics</span>
+          </a>
+        
+      
+          <a href="../../class-11/07-redox/index.html" class="nav-ch-btn" style="text-align: right; margin-left: auto;">
+            <span class="dir">Next Chapter &rarr;</span>
+            <span class="title">Ch 7: Redox Reactions</span>
+          </a>
+        
+    </nav>
+  </main>
+
+  <script src="../../assets/js/chapter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 11 Chemistry - Some Basic Concepts of Chemistry</title>
+<link href="../../assets/vendor/katex/katex.min.css" rel="stylesheet"/>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f4f8;color:#1a1a2e;line-height:1.7}
+.katex{font-size:1.05em!important}
+/* Tabs */
+.tab-container{max-width:1200px;margin:0 auto;padding:0 16px}
+.tab-nav{display:flex;background:#1a1a2e;border-radius:12px 12px 0 0;overflow:hidden;position:sticky;top:0;z-index:100;flex-wrap:wrap}
+.tab-label{padding:14px 20px;color:#8899aa;cursor:pointer;font-weight:600;font-size:0.85rem;transition:all 0.3s;text-align:center;flex:1 1 auto;min-width:0;word-break:break-word}
+.tab-label:hover{color:#fff;background:#16213e}
+input[type=radio]{display:none}
+.tab-panel{display:none;background:#fff;padding:28px 24px;border-radius:0 0 12px 12px;box-shadow:0 4px 24px rgba(0,0,0,0.08);animation:fadeIn 0.4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+#tab1:checked~.tab-nav label[for=tab1],
+#tab2:checked~.tab-nav label[for=tab2],
+#tab3:checked~.tab-nav label[for=tab3],
+#tab4:checked~.tab-nav label[for=tab4]{background:#0f3460;color:#fff}
+#tab1:checked~.tab-container #panel1,
+#tab2:checked~.tab-container #panel2,
+#tab3:checked~.tab-container #panel3,
+#tab4:checked~.tab-container #panel4{display:block}
+/* Typography */
+h2{color:#0f3460;font-size:1.5rem;margin:28px 0 12px;border-bottom:3px solid #e94560;padding-bottom:6px;display:inline-block}
+h3{color:#1a1a2e;font-size:1.2rem;margin:20px 0 10px}
+h4{color:#16213e;font-size:1.05rem;margin:16px 0 8px}
+p{margin:8px 0}
+/* Exam Badge */
+.exam-badge{display:inline-block;background:linear-gradient(135deg,#e94560,#c23152);color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:20px;margin-left:8px;vertical-align:middle;letter-spacing:0.3px}
+.exam-badge-yield{background:linear-gradient(135deg,#f59e0b,#d97706)}
+/* Cross-ref */
+.cross-ref{display:inline-block;background:#eef2ff;color:#4f46e5;font-size:0.75rem;padding:1px 8px;border-radius:12px;margin-left:6px;cursor:pointer;border:1px solid #c7d2fe}
+.cross-ref:hover{background:#4f46e5;color:#fff}
+/* Derivation Bubble */
+.deriv-toggle{display:inline-block;background:#1a1a2e;color:#fff;font-size:0.75rem;padding:3px 12px;border-radius:20px;cursor:pointer;margin:4px 0;border:none;transition:all 0.3s;font-weight:600}
+.deriv-toggle:hover{background:#e94560;transform:scale(1.05)}
+.deriv-panel{display:none;background:#f8fafc;border-left:4px solid #e94560;padding:16px 20px;margin:10px 0;border-radius:0 8px 8px 0;font-size:0.92rem}
+.deriv-panel.open{display:block;animation:slideDown 0.3s ease}
+@keyframes slideDown{from{opacity:0;max-height:0}to{opacity:1;max-height:800px}}
+/* Timeline */
+.timeline-wrap{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:16px;padding:32px 20px;margin:20px 0;overflow:hidden}
+.timeline{display:flex;justify-content:space-between;align-items:flex-start;position:relative;padding:20px 0;min-height:180px;overflow-x:auto;gap:8px}
+.timeline::before{content:'';position:absolute;top:50px;left:5%;right:5%;height:4px;background:linear-gradient(90deg,#e94560,#0f3460,#e94560);border-radius:2px;z-index:1}
+.tl-node{display:flex;flex-direction:column;align-items:center;flex:1 0 100px;position:relative;z-index:2;cursor:pointer;animation:tlAppear 0.6s ease backwards}
+@keyframes tlAppear{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.tl-node:nth-child(1){animation-delay:0s}
+.tl-node:nth-child(2){animation-delay:0.15s}
+.tl-node:nth-child(3){animation-delay:0.3s}
+.tl-node:nth-child(4){animation-delay:0.45s}
+.tl-node:nth-child(5){animation-delay:0.6s}
+.tl-node:nth-child(6){animation-delay:0.75s}
+.tl-dot{width:28px;height:28px;border-radius:50%;background:#e94560;border:4px solid #fff;box-shadow:0 0 0 3px #e94560;transition:all 0.3s;flex-shrink:0}
+.tl-node.active .tl-dot,.tl-node:hover .tl-dot{background:#f59e0b;box-shadow:0 0 0 3px #f59e0b,0 0 20px rgba(245,158,11,0.5);transform:scale(1.2)}
+.tl-year{color:#8899aa;font-size:0.7rem;font-weight:700;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+.tl-title{color:#fff;font-size:0.78rem;font-weight:600;text-align:center;margin-top:2px}
+.tl-info{display:none;background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:12px;border-radius:8px;margin-top:8px;width:160px;text-align:center;color:#d1d5db;font-size:0.75rem;line-height:1.4;border:1px solid rgba(255,255,255,0.1)}
+.tl-node.active .tl-info{display:block;animation:fadeIn 0.4s ease}
+/* Info Cards */
+.info-card{background:#f8fafc;border-radius:12px;padding:16px 20px;margin:12px 0;border-left:4px solid #0f3460}
+.info-card.warn{border-left-color:#f59e0b;background:#fffbeb}
+.info-card.tip{border-left-color:#10b981;background:#ecfdf5}
+/* Table */
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.9rem}
+th,td{padding:8px 12px;text-align:left;border:1px solid #e2e8f0}
+th{background:#1a1a2e;color:#fff;font-weight:600}
+tr:nth-child(even){background:#f8fafc}
+/* Lists */
+ul,ol{margin:8px 0;padding-left:24px}
+li{margin:4px 0}
+/* Details */
+details{background:#f8fafc;border-radius:8px;margin:8px 0;border:1px solid #e2e8f0;overflow:hidden}
+details summary{padding:12px 16px;cursor:pointer;font-weight:600;color:#0f3460;background:#f1f5f9;transition:background 0.2s}
+details summary:hover{background:#e2e8f0}
+details[open] summary{background:#0f3460;color:#fff}
+details .sol-content{padding:16px 20px}
+/* Formula Box */
+.formula-box{background:linear-gradient(135deg,#eef2ff,#e0e7ff);border-radius:12px;padding:16px 20px;margin:12px 0;border:1px solid #c7d2fe}
+.formula-box .vars{font-size:0.85rem;color:#475569;margin-top:8px;padding:8px 12px;background:#fff;border-radius:8px}
+/* Tab 4: Interactive */
+.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.lab-card{background:#f8fafc;border-radius:12px;padding:16px;border:2px solid #e2e8f0;transition:border-color 0.3s}
+.lab-card:hover{border-color:#0f3460}
+.lab-card h3{font-size:0.95rem;margin:0 0 8px;color:#0f3460}
+canvas{display:block;margin:8px auto;max-width:100%;border-radius:8px;background:#fff;border:1px solid #e2e8f0}
+.slider-group{display:flex;align-items:center;gap:12px;margin:6px 0;flex-wrap:wrap}
+.slider-group label{font-size:0.8rem;font-weight:600;min-width:80px}
+.slider-group input[type=range]{flex:1;min-width:100px}
+.slider-group output{font-size:0.8rem;min-width:50px;text-align:right;font-weight:700;color:#0f3460}
+.btn{background:#0f3460;color:#fff;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.85rem;transition:all 0.3s}
+.btn:hover{background:#e94560;transform:translateY(-2px)}
+.btn-sm{padding:6px 12px;font-size:0.75rem}
+.ledger{background:#1a1a2e;color:#fff;border-radius:8px;padding:12px;font-family:'Courier New',monospace;font-size:0.8rem;margin:8px 0;line-height:1.6}
+.ledger span{color:#f59e0b}
+/* Print */
+@media print{
+.tab-nav,#tab4:checked~.tab-container #panel4,.tab-label[for=tab4],input#tab4{display:none!important}
+.tab-panel{display:block!important;page-break-inside:auto;background:#fff!important;box-shadow:none!important;border-radius:0!important;padding:16px!important}
+#tab1:checked~.tab-container #panel1,#tab2:checked~.tab-container #panel2,#tab3:checked~.tab-container #panel3{display:block!important}
+.deriv-panel{display:block!important;background:#f9f9f9!important;border:1px solid #ddd!important}
+details[open] summary{background:#333!important;color:#fff!important}
+details summary{background:#eee!important;color:#000!important}
+.timeline-wrap{background:#fff!important;border:1px solid #ccc!important}
+.tl-info{display:block!important;background:#f9f9f9!important;color:#000!important;border:1px solid #ccc!important}
+.tl-year{color:#666!important}
+.tl-title{color:#000!important}
+.exam-badge{-webkit-print-color-adjust:exact!important;color-adjust:exact!important}
+.lab-grid{display:none!important}
+.deriv-toggle{display:none!important}
+}
+/* Scrollbar */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:#f1f5f9}
+::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#64748b}
+/* Responsive */
+@media(max-width:768px){
+.tab-label{font-size:0.72rem;padding:10px 8px}
+.tab-panel{padding:16px 12px}
+.timeline{min-height:140px}
+.tl-node{flex:1 0 70px}
+.tl-info{width:120px;font-size:0.65rem}
+.lab-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<input checked="" id="tab1" name="tabs" type="radio"/>
+<input id="tab2" name="tabs" type="radio"/>
+<input id="tab3" name="tabs" type="radio"/>
+<input id="tab4" name="tabs" type="radio"/>
+<nav class="tab-nav">
+<label class="tab-label" for="tab1">📜 History, Matter &amp; Laws</label>
+<label class="tab-label" for="tab2">🧪 Mole, Formulas &amp; Concentration</label>
+<label class="tab-label" for="tab3">📖 NCERT Solutions</label>
+<label class="tab-label" for="tab4">🔬 Interactive Lab</label>
+</nav>
+<div class="tab-container">
+<!-- ==================== TAB 1 ==================== -->
+<div class="tab-panel" id="panel1">
+<h2>1. Introduction: What is Chemistry?</h2>
+<p>Chemistry (from Egyptian <em>kēme</em> — "earth") is the scientific study of matter—its composition, structure, properties, and the changes it undergoes. It is often called the <strong>Central Science</strong> because it bridges physics (atomic structure, thermodynamics) with biology (biochemistry, molecular genetics) and Earth sciences.</p>
+<h3>Branches of Chemistry</h3>
+<ul>
+<li><strong>Physical Chemistry:</strong> Laws of thermodynamics, quantum mechanics, kinetics, and the mole concept — the foundation of this chapter.</li>
+<li><strong>Organic Chemistry:</strong> Study of carbon-based compounds (hydrocarbons, polymers, drugs).</li>
+<li><strong>Inorganic Chemistry:</strong> Elements, coordination compounds, metallurgy, and periodic trends.</li>
+<li><strong>Analytical Chemistry:</strong> Qualitative and quantitative analysis — titration, spectroscopy, chromatography.</li>
+<li><strong>Biochemistry:</strong> Chemical processes within living organisms (enzymes, DNA, metabolism).</li>
+</ul>
+<p>This first chapter establishes the <strong>quantitative language</strong> of chemistry — the mole, stoichiometry, and concentration — without which no branch of chemistry can operate.</p>
+<!-- ===== TIMELINE ===== -->
+<h2>2. Chronology of Chemistry</h2>
+<div class="timeline-wrap">
+<div class="timeline" id="timeline">
+<div class="tl-node" data-info="Ancient Egyptians &amp; Greeks practiced alchemy—attempting to transform base metals into gold. They discovered glassmaking, dyeing, and metallurgy. Empedocles proposed the four-element theory (Earth, Air, Fire, Water).">
+<div class="tl-dot"></div>
+<div class="tl-year">~3000 BCE – 300 BCE</div>
+<div class="tl-title">Alchemy &amp; Ancient Roots</div>
+<div class="tl-info">Alchemists discovered practical processes (distillation, sublimation) while chasing transmutation. The four-element theory dominated early thought.</div>
+</div>
+<div class="tl-node" data-info="Antoine Lavoisier (1743–1794), father of modern chemistry, established the Law of Conservation of Mass using precise experiments with sealed vessels. He identified oxygen and ended the phlogiston theory. He also co-devised the modern naming system for chemical compounds.">
+<div class="tl-dot"></div>
+<div class="tl-year">1770s – 1794</div>
+<div class="tl-title">Lavoisier: Birth of Modern Chem</div>
+<div class="tl-info">Lavoisier's quantitative experiments proved mass is neither created nor destroyed in chemical reactions. He published <em>Traite Elementaire de Chimie</em> (1789) — the first modern chemistry textbook.</div>
+</div>
+<div class="tl-node" data-info="John Dalton (1766–1844) proposed the Atomic Theory in 1808: all matter is composed of indivisible atoms; atoms of the same element are identical; compounds form by combination of different atoms in fixed ratios. This directly led to the Laws of Chemical Combination.">
+<div class="tl-dot"></div>
+<div class="tl-year">1808</div>
+<div class="tl-title">Dalton's Atomic Theory</div>
+<div class="tl-info">Dalton's theory explained the Law of Multiple Proportions and Definite Proportions. He also prepared the first table of atomic weights — the precursor to modern atomic mass.</div>
+</div>
+<div class="tl-node" data-info="Amedeo Avogadro (1776–1856) proposed that equal volumes of gases at the same T &amp; P contain equal numbers of molecules — Avogadro's Law (1811). This distinction between atoms and molecules resolved confusion in gas stoichiometry and led eventually to Avogadro's Number ($6.022 \times 10^{23}$).">
+<div class="tl-dot"></div>
+<div class="tl-year">1811</div>
+<div class="tl-title">Avogadro's Hypothesis</div>
+<div class="tl-info">Avogadro's insight that gas particles could be diatomic ($\text{H}_2$, $\text{O}_2$) reconciled Dalton's theory with Gay-Lussac's Law of combining volumes. His work was ignored for decades but became foundational.</div>
+</div>
+<div class="tl-node" data-info="Dmitri Mendeleev (1834–1907) published the first Periodic Table in 1869, arranging the 63 known elements by atomic weight and predicting undiscovered elements (gallium, germanium, scandium) with striking accuracy.">
+<div class="tl-dot"></div>
+<div class="tl-year">1869</div>
+<div class="tl-title">Mendeleev's Periodic Table</div>
+<div class="tl-info">Mendeleev's table revealed periodicity in chemical properties. He famously left blanks for undiscovered elements and predicted their properties — a triumph of chemical classification.</div>
+</div>
+<div class="tl-node" data-info="The 20th century saw the quantum mechanical model of the atom (Bohr, Schrödinger, Heisenberg), discovery of subatomic particles, the mole concept as a formal SI unit (1971), and modern stoichiometric instrumentation (mass spectrometry, NMR, X-ray crystallography).">
+<div class="tl-dot"></div>
+<div class="tl-year">20th Century – Present</div>
+<div class="tl-title">Modern Chemistry</div>
+<div class="tl-info">Chemistry today spans from quantum dots to drug design, from climate science to materials engineering — all resting on the quantitative foundation of the mole and stoichiometry.</div>
+</div>
+</div>
+</div>
+<!-- ===== MATTER ===== -->
+<h2>3. Matter and Its Classification</h2>
+<p><strong>Matter</strong> is anything that has mass and occupies space. It exists in three physical states (solid, liquid, gas) and is classified by composition:</p>
+<ul>
+<li><strong>Mixtures:</strong> Two or more substances physically mixed — can be homogeneous (solutions, alloys) or heterogeneous (suspensions, colloids). Separable by physical means.</li>
+<li><strong>Pure Substances:</strong> Constant composition — either elements (one type of atom) or compounds (fixed ratio of elements combined chemically, separable only by chemical reactions).</li>
+</ul>
+<!-- ===== MEASUREMENT ===== -->
+<h2>4. Measurement and Uncertainty <span class="exam-badge">⚡ CBSE High-Yield</span></h2>
+<p>Chemistry is quantitative. Every measurement has a <strong>magnitude</strong>, a <strong>unit</strong>, and an associated <strong>uncertainty</strong>. The SI system (Le Système International d'Unités) provides seven base units:</p>
+<table>
+<tr><th>Quantity</th><th>Unit</th><th>Symbol</th></tr>
+<tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
+<tr><td>Length</td><td>metre</td><td>m</td></tr>
+<tr><td>Time</td><td>second</td><td>s</td></tr>
+<tr><td>Amount of substance</td><td>mole</td><td>mol</td></tr>
+<tr><td>Temperature</td><td>kelvin</td><td>K</td></tr>
+<tr><td>Current</td><td>ampere</td><td>A</td></tr>
+<tr><td>Luminous intensity</td><td>candela</td><td>cd</td></tr>
+</table>
+<h3>Significant Figures <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h3>
+<p>Rules for determining significant figures in measured values:</p>
+<ul>
+<li>All non-zero digits are significant (e.g., $1234 \rightarrow 4$ SF)</li>
+<li>Zeros between non-zero digits are significant ($1002 \rightarrow 4$ SF)</li>
+<li>Leading zeros are NOT significant ($0.0023 \rightarrow 2$ SF)</li>
+<li>Trailing zeros in a number with a decimal are significant ($1.200 \rightarrow 4$ SF)</li>
+<li>Trailing zeros in a number without a decimal are ambiguous ($1200 \rightarrow 2, 3,\text{ or }4$ SF depending on precision)</li>
+</ul>
+<div class="info-card tip">
+<strong>Precision vs. Accuracy:</strong> Precision measures reproducibility (closeness of repeated measurements). Accuracy measures closeness to the true value. A dartboard analogy: tight cluster but off-center = precise but not accurate; scattered around bullseye = accurate but not precise.
+</div>
+<p><strong>Scientific Notation:</strong> Expressing numbers as $N \times 10^n$ where $1 \leq N &lt; 10$ and $n$ is an integer exponent. E.g., $0.000045 \rightarrow 4.5 \times 10^{-5}$ (2 SF), $602200000000000000000000 \rightarrow 6.022 \times 10^{23}$ (4 SF).</p>
+<div class="info-card warn">
+<strong>Rules for Arithmetic:</strong> Addition/Subtraction — result has the least number of decimal places. Multiplication/Division — result has the least number of significant figures. <span class="exam-badge">⚡ CBSE High-Yield</span>
+</div>
+<!-- ===== LAWS OF CHEMICAL COMBINATION ===== -->
+<h2>5. Laws of Chemical Combination</h2>
+<p>These five empirical laws form the bedrock of stoichiometry. They describe how matter interacts chemically and led directly to Dalton's Atomic Theory.</p>
+<h3>5.1 Law of Conservation of Mass <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<p><em>Antoine Lavoisier (1789):</em> Mass can neither be created nor destroyed in a chemical reaction. The total mass of reactants equals the total mass of products.</p>
+<div class="formula-box">
+$$ \sum m_{\text{reactants}} = \sum m_{\text{products}} $$
+</div>
+<p><strong>Real-world example:</strong> In the combustion of $32.0\text{ g}$ of methane ($\text{CH}_4$) with $128.0\text{ g}$ of oxygen, the products — $88.0\text{ g}$ of $\text{CO}_2$ and $72.0\text{ g}$ of $\text{H}_2\text{O}$ — sum to $160.0\text{ g}$, exactly matching the reactants.</p>
+<h3>5.2 Law of Definite Proportions (Proust's Law) <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<p><em>Joseph Proust (1799):</em> A chemical compound always contains exactly the same proportion of elements by mass, regardless of the source or method of preparation.</p>
+<div class="formula-box">
+$$ \text{Mass ratio} = \frac{\text{mass of element A}}{\text{mass of element B}} = \text{constant} $$
+</div>
+<p><strong>Example — Water ($\text{H}_2\text{O}$):</strong> Whether from rain, river, or laboratory synthesis, the mass ratio is always $1 : 8$ (hydrogen : oxygen). In $18.0\text{ g}$ of water: $2.0\text{ g H}$ and $16.0\text{ g O}$.</p>
+<h3>5.3 Law of Multiple Proportions <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h3>
+<p><em>John Dalton (1803):</em> When two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are in the ratio of small whole numbers.</p>
+<div class="info-card">
+<strong>Classic Example — Carbon &amp; Oxygen:</strong><br/>
+CO (carbon monoxide): $12\text{ g C}$ combines with $16\text{ g O}$<br/>
+CO₂ (carbon dioxide): $12\text{ g C}$ combines with $32\text{ g O}$<br/>
+Mass of oxygen per fixed $12\text{ g C}$: $16 : 32 = 1 : 2$ (simple whole numbers) <span class="cross-ref" onclick="document.getElementById('tab3').click();setTimeout(()=&gt;document.querySelector('#panel3 details')?.scrollIntoView({behavior:'smooth'}),300)">📌 See Solved Q 1.7</span>
+</div>
+<h3>5.4 Gay Lussac's Law of Combining Volumes <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<p><em>Joseph Louis Gay-Lussac (1808):</em> When gases react, they do so in volumes that bear a simple whole-number ratio to one another and to the volumes of products (if gaseous), measured under same T &amp; P.</p>
+<p><strong>Example — Synthesis of water:</strong></p>
+$$ 2\text{H}_2(g) + \text{O}_2(g) \rightarrow 2\text{H}_2\text{O}(g) $$
+$$ \text{Volume ratio: } 2 : 1 : 2 $$
+
+<h3>5.5 Avogadro's Law <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<p><em>Amedeo Avogadro (1811):</em> Equal volumes of all gases at the same temperature and pressure contain the same number of molecules.</p>
+<div class="formula-box">
+$$ V \propto n \quad (\text{at constant } T \text{ and } P) $$
+<p class="vars" style="margin-top:6px">Where $V$ = volume of gas, $n$ = number of moles of gas.</p>
+</div>
+<p><strong>Significance:</strong> This law provides the bridge between the macroscopic world (gas volumes) and the microscopic world (number of molecules). At STP ($0^\circ$C, 1 atm), one mole of any gas occupies $22.4\text{ L}$.</p>
+<!-- ===== DALTON'S ATOMIC THEORY ===== -->
+<h2>6. Dalton's Atomic Theory</h2>
+<p>Dalton's postulates (1808) unified the laws of chemical combination:</p>
+<ol>
+<li>All matter consists of tiny, indivisible particles called <strong>atoms</strong>.</li>
+<li>All atoms of a given element are identical in mass and chemical properties.</li>
+<li>Atoms of different elements have different masses and properties.</li>
+<li>Compounds form by the combination of atoms of different elements in simple whole-number ratios.</li>
+<li>Chemical reactions involve rearrangement of atoms; atoms are neither created nor destroyed.</li>
+</ol>
+<div class="info-card warn">
+<strong>Modern Limitations:</strong> Dalton's "indivisible" atom was disproved by subatomic particles (electrons, protons, neutrons). Isotopes show that atoms of the same element can have different masses. However, his framework of <strong>fixed mass ratios and conservation in reactions</strong> remains the foundation of stoichiometry.
+</div>
+<!-- ===== ATOMIC MASS ===== -->
+<h2>7. Atomic, Average, and Molecular Masses</h2>
+<h3>7.1 Atomic Mass Unit (u) <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<p>One atomic mass unit (u) is defined as exactly $1/12^{\text{th}}$ the mass of one carbon-12 atom. This provides a convenient scale for microscopic masses:</p>
+<div class="formula-box">
+$$ 1 \text{ u} = \frac{1}{12} \times \text{mass of one } ^{12}\text{C atom} = 1.660539 \times 10^{-24} \text{ g} $$
+</div>
+<h3>7.2 Atomic Mass</h3>
+<p>The <strong>atomic mass</strong> of an element is the mass of one atom expressed in atomic mass units (u). For $^{12}\text{C}$, it is exactly $12\text{ u}$.</p>
+<h3>7.3 Average Atomic Mass <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h3>
+<p>Most elements occur as a mixture of isotopes. The <strong>average atomic mass</strong> accounts for the natural abundance of each isotope:</p>
+<div class="formula-box">
+$$ \text{Average atomic mass} = \frac{\sum (\text{isotopic mass} \times \text{fractional abundance})}{\sum \text{fractional abundance}} $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+Isotopic mass — mass of a specific isotope (in u)<br/>
+Fractional abundance — fraction of atoms of that isotope in nature<br/>
+Units: atomic mass units (u) — dimensionless ratio, though often expressed in g mol$^{-1}$ for molar mass
+</div>
+</div>
+<button class="deriv-toggle" onclick="toggleDeriv(this)">📐 Derivation &amp; HOTS Depth</button>
+<div class="deriv-panel">
+<h4>Derivation — Weighted Average Logic</h4>
+<p>If an element has two isotopes with masses $m_1, m_2$ and abundances $p_1\%, p_2\%$:</p>
+$$ \text{Average mass} = \frac{m_1 \times p_1 + m_2 \times p_2}{p_1 + p_2} = \frac{m_1 p_1 + m_2 p_2}{100} $$
+<h4>HOTS Strategies:</h4>
+<ol>
+<li><strong>Reverse Abundance:</strong> If average atomic mass is given, set up the equation with one unknown abundance (the other = $100 - x$). Solve for $x$.</li>
+<li><strong>Three-Isotope Problems:</strong> Use two given abundances and the average mass to find the third abundance via a system of linear equations.</li>
+<li><strong>Mass Spectrometry Data:</strong> In problems where peak intensities are given (rather than percentages), treat intensities as proportional to abundance.</li>
+</ol>
+</div>
+<p><strong>Example — Chlorine:</strong> $^{35}\text{Cl}$ (mass = $34.9689\text{ u}$, 75.77%) and $^{37}\text{Cl}$ (mass = $36.9659\text{ u}$, 24.23%)</p>
+$$ \text{Avg} = \frac{(34.9689 \times 75.77) + (36.9659 \times 24.23)}{100} = 35.45\text{ u} $$
+
+<h3>7.4 Molecular Mass <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<p>The <strong>molecular mass</strong> is the sum of atomic masses of all atoms in a molecule, expressed in u.</p>
+<p><strong>Example — Water ($\text{H}_2\text{O}$):</strong></p>
+$$ \text{Molecular mass of H}_2\text{O} = (2 \times 1.008) + (1 \times 16.00) = 18.016\text{ u} $$
+
+<h3>7.5 Formula Mass</h3>
+<p>For ionic compounds (e.g., $\text{NaCl}$, $\text{CaCO}_3$) that exist as formula units rather than discrete molecules, we use <strong>formula mass</strong> — the sum of atomic masses in the empirical formula.</p>
+<p><strong>Example — Sodium chloride:</strong> $\text{NaCl} \rightarrow 22.99 + 35.45 = 58.44\text{ u}$</p>
+<div class="info-card tip">
+<strong>Key Insight:</strong> The numerical value of atomic/molecular mass in u is exactly the same as the molar mass in g mol$^{-1}$. For example, $\text{H}_2\text{O}$ has molecular mass $18.016\text{ u}$ <em>and</em> molar mass $18.016\text{ g mol}^{-1}$. This equivalence is the bridge from a single molecule to one mole. <span class="exam-badge">⚡ CBSE High-Yield</span>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ==================== TAB 2 ==================== -->
+<div class="tab-panel" id="panel2">
+<h2>8. The Mole Concept <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h2>
+<p>The <strong>mole</strong> (symbol: mol) is the SI base unit for amount of substance. It is defined as the amount containing exactly $6.02214076 \times 10^{23}$ elementary entities — this number is <strong>Avogadro's constant</strong> ($N_A$).</p>
+<div class="formula-box">
+$$ 1 \text{ mol} = 6.022 \times 10^{23} \text{ particles} $$
+$$ N_A = 6.022 \times 10^{23} \text{ mol}^{-1} $$
+</div>
+<p><strong>Why $6.022 \times 10^{23}$?</strong> This number is chosen so that the mass of one mole of a substance in grams equals its atomic/molecular mass in u. A single $^{12}\text{C}$ atom weighs $12\text{ u}$; one mole of $^{12}\text{C}$ atoms weighs exactly $12\text{ g}$.</p>
+<div class="info-card tip">
+<strong>Molar Mass ($M$):</strong> The mass of one mole of a substance. Units: $\text{g mol}^{-1}$.<br/>
+$$ M = \frac{\text{mass (g)}}{\text{amount (mol)}} $$
+</div>
+<h3>Converting Between Mass, Moles, and Particles</h3>
+<div class="formula-box">
+$$ n = \frac{m}{M} \quad \text{or} \quad n = \frac{N}{N_A} $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+$n$ = amount of substance (mol)<br/>
+$m$ = mass (g)<br/>
+$M$ = molar mass (g mol$^{-1}$)<br/>
+$N$ = number of particles (atoms, molecules, ions, formula units)<br/>
+$N_A = 6.022 \times 10^{23}$ mol$^{-1}$ (Avogadro's constant)
+</div>
+</div>
+<button class="deriv-toggle" onclick="toggleDeriv(this)">📐 Dimensional Analysis Path</button>
+<div class="deriv-panel">
+<h4>Dimensional Analysis Framework</h4>
+<p>The mole is a conversion factor between the macroscopic scale (grams) and the microscopic scale (atoms/molecules):</p>
+$$ \text{Grams} \xrightarrow{\div M} \text{Moles} \xrightarrow{\times N_A} \text{Particles} $$
+$$ \text{Particles} \xrightarrow{\div N_A} \text{Moles} \xrightarrow{\times M} \text{Grams} $$
+
+<h4>HOTS Strategies:</h4>
+<ol>
+<li><strong>Multi-step conversion:</strong> A problem gives grams of compound and asks for number of atoms of a specific element. Convert: $\text{g} \rightarrow \text{mol compound} \rightarrow \text{mol element} \times \text{subscript} \rightarrow \text{atoms} \times N_A$.</li>
+<li><strong>Hydrates:</strong> For compounds like $\text{CuSO}_4 \cdot 5\text{H}_2\text{O}$, include the water mass in molar mass. The "moles of compound" gives 5$\times$ moles of water.</li>
+<li><strong>Relative mass comparisons:</strong> Given equal masses of different elements, the one with the smallest molar mass has the most moles (and most atoms).</li>
+</ol>
+</div>
+<p><strong>Worked Example:</strong> How many atoms are in $5.40\text{ g}$ of aluminium? ($M_{\text{Al}} = 27.0\text{ g mol}^{-1}$)</p>
+$$ n = \frac{5.40}{27.0} = 0.200 \text{ mol}$$
+$$ N = 0.200 \times 6.022 \times 10^{23} = 1.20 \times 10^{23} \text{ atoms}$$
+
+<!-- ===== PERCENTAGE COMPOSITION ===== -->
+<h2>9. Percentage Composition <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h2>
+<p>The mass percentage of each element in a compound provides a crucial link between experimental data and chemical formulas.</p>
+<div class="formula-box">
+$$ \text{Mass \% of element} = \frac{\text{mass of element in 1 mol of compound}}{\text{molar mass of compound}} \times 100 $$
+</div>
+<p><strong>Example — Ethanol ($\text{C}_2\text{H}_5\text{OH}$, $M = 46.07\text{ g mol}^{-1}$):</strong></p>
+$$ \%\text{C} = \frac{2 \times 12.01}{46.07} \times 100 = 52.14\% $$
+$$ \%\text{H} = \frac{6 \times 1.008}{46.07} \times 100 = 13.13\% $$
+$$ \%\text{O} = \frac{1 \times 16.00}{46.07} \times 100 = 34.73\% $$
+
+<div class="info-card tip">
+<strong>Using % as a conversion bridge:</strong> If a compound is $40.0\%$ carbon by mass, then $100\text{ g}$ contains $40.0\text{ g C}$. This is the starting point for empirical formula determination.
+</div>
+<!-- ===== EMPIRICAL & MOLECULAR FORMULAS ===== -->
+<h2>10. Empirical and Molecular Formulas <span class="exam-badge">⚡ CBSE High-Yield</span></h2>
+<p>The <strong>empirical formula</strong> is the simplest whole-number ratio of atoms in a compound. The <strong>molecular formula</strong> is the actual number of atoms in one molecule.</p>
+<div class="formula-box">
+$$ \text{Molecular formula} = (\text{Empirical formula})_n $$
+$$ n = \frac{\text{Molecular mass}}{\text{Empirical formula mass}} $$
+</div>
+<button class="deriv-toggle" onclick="toggleDeriv(this)">📐 Derivation &amp; HOTS Depth</button>
+<div class="deriv-panel">
+<h4>Algorithm — Empirical Formula from Mass % Data:</h4>
+<ol>
+<li>Assume $100\text{ g}$ sample → mass of each element = its %</li>
+<li>Convert mass to moles: $n = m/M$</li>
+<li>Divide each mole value by the smallest mole value</li>
+<li>If necessary, multiply by a small integer to get whole numbers</li>
+</ol>
+<h4>HOTS Strategies:</h4>
+<ol>
+<li><strong>Decimal thresholds:</strong> If ratios are within 0.1 of an integer, round directly (e.g., 1.98 → 2). If close to 0.5 (e.g., 1.5), multiply all by 2. Similarly for 0.33 → multiply by 3, 0.25 → multiply by 4.</li>
+<li><strong>Difference between empirical and molecular:</strong> Only molecular formula requires molecular mass data (often from mass spectrometry or osmotic pressure). Empirical formula alone cannot distinguish glucose ($\text{C}_6\text{H}_{12}\text{O}_6$) from formaldehyde ($\text{CH}_2\text{O}$).</li>
+<li><strong>Combustion analysis:</strong> Given masses of $\text{CO}_2$ and $\text{H}_2\text{O}$ produced, back-calculate grams of C and H, then O by difference.</li>
+</ol>
+</div>
+<p><strong>Worked Example — A compound is $40.00\%$ C, $6.71\%$ H, $53.29\%$ O. The molecular mass is $180.16\text{ g mol}^{-1}$. Find empirical and molecular formulas.</strong></p>
+<p><em>Step 1:</em> In $100\text{ g}$: $40.00\text{ g C}$, $6.71\text{ g H}$, $53.29\text{ g O}$.</p>
+<p><em>Step 2:</em> Moles: C = $40.00/12.01 = 3.331$; H = $6.71/1.008 = 6.656$; O = $53.29/16.00 = 3.331$</p>
+<p><em>Step 3:</em> Divide by smallest (3.331): C : H : O = $1 : 1.998 : 1 \approx 1 : 2 : 1$ → Empirical formula = $\text{CH}_2\text{O}$</p>
+<p><em>Step 4:</em> Empirical formula mass = $12.01 + 2.016 + 16.00 = 30.03\text{ g mol}^{-1}$</p>
+<p><em>Step 5:</em> $n = 180.16 / 30.03 = 6$ → Molecular formula = $\text{C}_6\text{H}_{12}\text{O}_6$ (glucose)</p>
+<!-- ===== STOICHIOMETRY ===== -->
+<h2>11. Stoichiometry and Stoichiometric Calculations <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h2>
+<p><strong>Stoichiometry</strong> (from Greek <em>stoicheion</em> — element, <em>metron</em> — measure) is the quantitative relationship between reactants and products in a chemical reaction. The balanced chemical equation provides molar ratios that serve as conversion factors.</p>
+<div class="formula-box">
+$$ \text{For } aA + bB \rightarrow cC + dD: \quad \frac{n_A}{a} = \frac{n_B}{b} = \frac{n_C}{c} = \frac{n_D}{d} $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+$a, b, c, d$ — stoichiometric coefficients (dimensionless)<br/>
+$n_A, n_B, n_C, n_D$ — amount of each substance (mol)
+</div>
+</div>
+<h3>Mass-Mass Calculations <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<p><strong>Real-world context — Industrial synthesis of water:</strong> How much oxygen is needed to completely react with $10.0\text{ g}$ of hydrogen in the Haber-Bosch water-gas shift context?</p>
+$$ 2\text{H}_2 + \text{O}_2 \rightarrow 2\text{H}_2\text{O} $$
+
+<p><em>Step 1:</em> Moles of $\text{H}_2 = 10.0\text{ g} / 2.016\text{ g mol}^{-1} = 4.96\text{ mol}$</p>
+<p><em>Step 2:</em> From balanced eq: $2\text{ mol H}_2 : 1\text{ mol O}_2$, so $n_{\text{O}_2} = 4.96 / 2 = 2.48\text{ mol}$</p>
+<p><em>Step 3:</em> Mass of $\text{O}_2 = 2.48 \times 32.00 = 79.4\text{ g}$</p>
+<h3>Mass-Volume and Volume-Volume Calculations</h3>
+<p>At STP ($0^\circ$C, 1 atm): $1\text{ mol}$ of any gas occupies $22.4\text{ L}$. This is the <strong>molar volume</strong>.</p>
+<div class="formula-box">
+$$ V_{\text{gas}} = n \times 22.4\text{ L mol}^{-1} \quad (\text{at STP}) $$
+</div>
+<p><strong>Example — Methane combustion:</strong> What volume of $\text{CO}_2$ (at STP) is produced from burning $16.0\text{ g}$ of methane?</p>
+$$ \text{CH}_4 + 2\text{O}_2 \rightarrow \text{CO}_2 + 2\text{H}_2\text{O} $$
+
+<p>$n_{\text{CH}_4} = 16.0 / 16.04 = 0.998\text{ mol} \rightarrow n_{\text{CO}_2} = 0.998\text{ mol}$</p>
+$$ V_{\text{CO}_2} = 0.998 \times 22.4 = 22.4\text{ L} $$
+
+<!-- ===== LIMITING REAGENT ===== -->
+<h2>12. Limiting Reagent (Limiting Reactant) <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h2>
+<p>The <strong>limiting reagent</strong> is the reactant that is completely consumed in a reaction, determining the maximum amount of product formed. The other reactants are in <strong>excess</strong>.</p>
+<button class="deriv-toggle" onclick="toggleDeriv(this)">📐 Derivation &amp; HOTS Depth</button>
+<div class="deriv-panel">
+<h4>Algorithm to Identify Limiting Reagent:</h4>
+<ol>
+<li>Write the balanced chemical equation.</li>
+<li>Convert all given masses to moles: $n = m/M$.</li>
+<li>Divide each mole value by its stoichiometric coefficient.</li>
+<li>The reactant with the <strong>smallest</strong> resulting value is the limiting reagent.</li>
+<li>Use the limiting reagent's moles to calculate theoretical yield of product.</li>
+<li>Subtract consumed amount from excess reactant's initial amount to find excess remaining.</li>
+</ol>
+<h4>HOTS Strategies:</h4>
+<ol>
+<li><strong>Multiple products:</strong> When a reaction produces multiple products, the limiting reagent determines the yield of ALL products simultaneously.</li>
+<li><strong>Sequential reactions:</strong> In multi-step processes, the overall limiting reagent is determined by the first reaction. Any excess from step 1 becomes the starting material for step 2.</li>
+<li><strong>Percentage yield:</strong> $\% \text{ yield} = \frac{\text{actual yield}}{\text{theoretical yield}} \times 100$. The theoretical yield is always based on the limiting reagent. <span class="exam-badge">⚡ CBSE High-Yield</span></li>
+</ol>
+</div>
+<p><strong>Worked Example — Haber process:</strong> If $28.0\text{ g N}_2$ reacts with $10.0\text{ g H}_2$:</p>
+$$ \text{N}_2 + 3\text{H}_2 \rightarrow 2\text{NH}_3 $$
+
+<p>$n_{\text{N}_2} = 28.0/28.0 = 1.00\text{ mol}$; $n_{\text{H}_2} = 10.0/2.016 = 4.96\text{ mol}$</p>
+<p>Divide by coefficients: N$_2$: $1.00/1 = 1.00$; H$_2$: $4.96/3 = 1.65$</p>
+<p>Since $1.00 &lt; 1.65$, N$_2$ is the <strong>limiting reagent</strong>.</p>
+<p>Theoretical yield: $1.00\text{ mol N}_2 \rightarrow 2.00\text{ mol NH}_3 = 34.1\text{ g}$</p>
+<p>H$_2$ consumed: $3 \times 1.00 = 3.00\text{ mol}$ (out of $4.96\text{ mol}$) → $1.96\text{ mol H}_2$ excess = $3.95\text{ g}$</p>
+<!-- ===== CONCENTRATION TERMS ===== -->
+<h2>13. Concentration Terms in Solutions <span class="exam-badge">⚡ CBSE High-Yield</span></h2>
+<p>A <strong>solution</strong> comprises a <strong>solute</strong> (minor component) dissolved in a <strong>solvent</strong> (major component). Concentration expresses the amount of solute per quantity of solution or solvent.</p>
+<h3>13.1 Mass Percentage ($\%$ w/w)</h3>
+<div class="formula-box">
+$$ \%\text{ w/w} = \frac{m_{\text{solute}}}{m_{\text{solution}}} \times 100 = \frac{m_{\text{solute}}}{m_{\text{solute}} + m_{\text{solvent}}} \times 100 $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+$m_{\text{solute}}$ — mass of solute (g)<br/>
+$m_{\text{solution}}$ — total mass of solution (g)<br/>
+Units: dimensionless (%)
+</div>
+</div>
+<h3>13.2 Volume Percentage ($\%$ v/v)</h3>
+<div class="formula-box">
+$$ \%\text{ v/v} = \frac{V_{\text{solute}}}{V_{\text{solution}}} \times 100 $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+$V_{\text{solute}}$ — volume of solute (mL or L)<br/>
+$V_{\text{solution}}$ — total volume of solution (same units)<br/>
+Commonly used for liquid-liquid solutions (ethanol in water)
+</div>
+</div>
+<h3>13.3 Mass by Volume Percentage ($\%$ w/v) <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<div class="formula-box">
+$$ \%\text{ w/v} = \frac{m_{\text{solute}}}{V_{\text{solution}}} \times 100 $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+$m_{\text{solute}}$ — mass of solute (g)<br/>
+$V_{\text{solution}}$ — volume of solution (mL)<br/>
+Units: g/100 mL
+</div>
+</div>
+<h3>13.4 Parts Per Million (ppm)</h3>
+<div class="formula-box">
+$$ \text{ppm} = \frac{m_{\text{solute}}}{m_{\text{solution}}} \times 10^6 $$
+<p style="margin-top:6px;font-size:0.85rem;color:#475569">Used for very dilute solutions: trace elements in water, pollutants in air.</p>
+</div>
+<h3>13.5 Mole Fraction ($x$) <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h3>
+<div class="formula-box">
+$$ x_i = \frac{n_i}{\sum n_{\text{all components}}} \quad \text{and} \quad \sum x_i = 1 $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+$n_i$ — moles of component $i$ (mol)<br/>
+$\sum n$ — total moles of all components (mol)<br/>
+$x_{\text{solute}} + x_{\text{solvent}} = 1$ for a binary solution
+</div>
+</div>
+<button class="deriv-toggle" onclick="toggleDeriv(this)">📐 Derivation &amp; HOTS Depth</button>
+<div class="deriv-panel">
+<h4>Mole Fraction — Why It Matters:</h4>
+<p>Mole fraction is <strong>temperature-independent</strong> because it depends on mass (via moles), not volume. It is used in Raoult's law for vapor pressure, and in calculating vapor composition during distillation.</p>
+<h4>HOTS Strategy:</h4>
+<p><strong>Connecting mole fraction to molarity:</strong> When density ($\rho$) is given, convert mole fraction to molarity via:</p>
+$$ M = \frac{x_{\text{solute}} \times \rho \times 1000}{x_{\text{solute}} M_{\text{solute}} + x_{\text{solvent}} M_{\text{solvent}}} $$
+<p>This is a frequent board exam problem type — density acts as a conversion bridge.</p>
+</div>
+<h3>13.6 Molarity ($M$) <span class="exam-badge">⚡ CBSE Expected - High Yield</span></h3>
+<div class="formula-box">
+$$ M = \frac{n_{\text{solute}}}{V_{\text{solution (L)}}} = \frac{m_{\text{solute}}}{M_{\text{solute}} \times V_{\text{(L)}}} $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+$n_{\text{solute}}$ — amount of solute (mol)<br/>
+$V_{\text{solution}}$ — volume of solution (L)<br/>
+Units: mol L$^{-1}$ (or M)
+</div>
+</div>
+<button class="deriv-toggle" onclick="toggleDeriv(this)">📐 Derivation &amp; HOTS Depth</button>
+<div class="deriv-panel">
+<h4>Temperature Dependence of Molarity:</h4>
+<p>Molarity depends on <strong>volume</strong>, which expands with temperature. As $T \uparrow$, $V \uparrow$, so $M \downarrow$ — even though the amount of solute is unchanged. This is why molarity is <strong>not</strong> preferred for precise thermodynamic work.</p>
+<h4>Dilution Formula:</h4>
+$$ M_1 V_1 = M_2 V_2 $$
+<p>Where (1) = concentrated stock solution and (2) = diluted solution. The product $M \times V$ = moles of solute, which is conserved during dilution.</p>
+<h4>HOTS Strategy:</h4>
+<p><strong>Mixing two solutions of the same solute:</strong></p>
+$$ M_{\text{mix}} = \frac{M_1 V_1 + M_2 V_2}{V_1 + V_2} $$
+<p>This is a weighted average by volume.</p>
+</div>
+<h3>13.7 Molality ($m$) <span class="exam-badge">⚡ CBSE High-Yield</span></h3>
+<div class="formula-box">
+$$ m = \frac{n_{\text{solute}}}{m_{\text{solvent (kg)}}} $$
+<div class="vars">
+<strong>Variables:</strong><br/>
+$n_{\text{solute}}$ — amount of solute (mol)<br/>
+$m_{\text{solvent}}$ — mass of solvent (kg)<br/>
+Units: mol kg$^{-1}$ (or $m$)
+</div>
+</div>
+<button class="deriv-toggle" onclick="toggleDeriv(this)">📐 Derivation &amp; HOTS Depth</button>
+<div class="deriv-panel">
+<h4>Why Molality Is Temperature-Independent:</h4>
+<p>Mass does not change with temperature. Unlike volume, $m_{\text{solvent}}$ remains constant regardless of thermal expansion. For this reason, <strong>molality</strong> (not molarity) is used in colligative property calculations (freezing point depression, boiling point elevation).</p>
+<h4>HOTS Strategy — Density Bridge:</h4>
+<p>If molarity ($M$) and density ($\rho$, in g mL$^{-1}$) are given, convert to molality:</p>
+$$ m = \frac{M}{\rho - \frac{M \times M_{\text{solute}}}{1000}} \times 1000 $$
+<p>Where the denominator is effectively the mass of solvent (in g) per liter of solution. This is a common exam problem.</p>
+</div>
+<h3>13.8 Concentration Inter-Conversion Summary</h3>
+<table>
+<tr><th>Term</th><th>Formula</th><th>Temp. Dependent?</th><th>Primary Use</th></tr>
+<tr><td>Mass % (w/w)</td><td>$(m_{\text{solute}}/m_{\text{solution}}) \times 100$</td><td>No</td><td>Industry, labeling</td></tr>
+<tr><td>Volume % (v/v)</td><td>$(V_{\text{solute}}/V_{\text{solution}}) \times 100$</td><td>Yes</td><td>Alcohol content</td></tr>
+<tr><td>Mass/vol % (w/v)</td><td>$(m_{\text{solute}}/V_{\text{solution}}) \times 100$</td><td>Yes</td><td>Clinical labs</td></tr>
+<tr><td>ppm</td><td>$(m_{\text{solute}}/m_{\text{solution}}) \times 10^6$</td><td>No</td><td>Trace analysis</td></tr>
+<tr><td>Mole fraction ($x$)</td><td>$n_i/\sum n$</td><td>No</td><td>Raoult's law, vapor pressure</td></tr>
+<tr><td>Molarity ($M$)</td><td>$n_{\text{solute}}/V_{\text{solution(L)}}$</td><td><strong>Yes</strong></td><td>Lab solutions, titrations</td></tr>
+<tr><td>Molality ($m$)</td><td>$n_{\text{solute}}/m_{\text{solvent(kg)}}$</td><td><strong>No</strong></td><td>Colligative properties</td></tr>
+</table>
+<div class="info-card tip">
+<strong>Quick Reference — Density Bridge (Board Exam Favorite):</strong> Given molarity $M$ and density $\rho$ (g/mL), find molality $m$:
+$$ m = \frac{1000M}{1000\rho - M \cdot M_{\text{solute}}} $$
+<span class="exam-badge">⚡ CBSE Expected - High Yield</span> <span class="cross-ref" onclick="document.getElementById('tab3').click();setTimeout(()=&gt;document.querySelectorAll('#panel3 details')[14]?.scrollIntoView({behavior:'smooth'}),300)">📌 See Solved Q 1.35</span>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ==================== TAB 3 ==================== -->
+<div class="tab-panel" id="panel3">
+<h2>NCERT Exercise Solutions <span class="exam-badge">⚡ CBSE High-Yield</span></h2>
+<p>Complete solutions to all NCERT in-text and end-of-chapter exercises, formatted in KaTeX. Click each question to expand the solution.</p>
+<details>
+<summary>Q 1.1: Calculate the molecular mass of $\text{H}_2\text{O}$, $\text{CO}_2$, and $\text{CH}_4$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Atomic masses: H = $1.008\text{ u}$, O = $16.00\text{ u}$, C = $12.01\text{ u}$</p>
+<p>$\text{H}_2\text{O}$: $2(1.008) + 16.00 = 2.016 + 16.00 = \mathbf{18.016\text{ u}}$</p>
+<p>$\text{CO}_2$: $12.01 + 2(16.00) = 12.01 + 32.00 = \mathbf{44.01\text{ u}}$</p>
+<p>$\text{CH}_4$: $12.01 + 4(1.008) = 12.01 + 4.032 = \mathbf{16.042\text{ u}}$</p>
+</div>
+</details>
+<details>
+<summary>Q 1.2: Calculate the mass percent of each element in $\text{H}_2\text{O}$ and $\text{CO}_2$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p><strong>Water ($\text{H}_2\text{O}$, $M = 18.016\text{ g mol}^{-1}$):</strong></p>
+$$ \%\text{H} = \frac{2 \times 1.008}{18.016} \times 100 = \frac{2.016}{18.016} \times 100 = 11.19\% $$
+$$ \%\text{O} = \frac{16.00}{18.016} \times 100 = 88.81\% $$
+
+<p><strong>Carbon dioxide ($\text{CO}_2$, $M = 44.01\text{ g mol}^{-1}$):</strong></p>
+$$ \%\text{C} = \frac{12.01}{44.01} \times 100 = 27.29\% $$
+$$ \%\text{O} = \frac{2 \times 16.00}{44.01} \times 100 = \frac{32.00}{44.01} \times 100 = 72.71\% $$
+</div>
+</details>
+<details>
+<summary>Q 1.3: Calculate the number of molecules in $8.0\text{ g}$ of $\text{O}_2$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Molar mass of $\text{O}_2 = 32.0\text{ g mol}^{-1}$</p>
+$$ n = \frac{8.0}{32.0} = 0.25\text{ mol} $$
+$$ N = 0.25 \times 6.022 \times 10^{23} = 1.506 \times 10^{23}\text{ molecules} $$
+</div>
+</details>
+<details>
+<summary>Q 1.4: Calculate the mass of $0.5\text{ mol}$ of $\text{N}_2$ gas.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Molar mass of $\text{N}_2 = 28.0\text{ g mol}^{-1}$</p>
+$$ m = n \times M = 0.5 \times 28.0 = 14.0\text{ g} $$
+</div>
+</details>
+<details>
+<summary>Q 1.5: What is the mass of $5\text{ mol}$ of $\text{CO}_2$?</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Molar mass of $\text{CO}_2 = 44.0\text{ g mol}^{-1}$</p>
+$$ m = 5 \times 44.0 = 220.0\text{ g} $$
+</div>
+</details>
+<details>
+<summary>Q 1.6: Calculate the number of moles in $12.044 \times 10^{23}$ atoms of He.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+$$ n = \frac{N}{N_A} = \frac{12.044 \times 10^{23}}{6.022 \times 10^{23}} = 2.0\text{ mol} $$
+</div>
+</details>
+<details>
+<summary>Q 1.7: State and illustrate the Law of Multiple Proportions with examples.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p><strong>Law of Multiple Proportions</strong> (Dalton, 1803): When two elements combine to form more than one compound, the masses of one that combine with a fixed mass of the other are in the ratio of small whole numbers.</p>
+<p><strong>Example — Sulfur and Oxygen:</strong></p>
+<p>SO$_2$: $32\text{ g S}$ combines with $32\text{ g O}$</p>
+<p>SO$_3$: $32\text{ g S}$ combines with $48\text{ g O}$</p>
+<p>For fixed $32\text{ g S}$, O masses are $32 : 48 = 2 : 3$ — a simple whole-number ratio.</p>
+</div>
+</details>
+<details>
+<summary>Q 1.8: Define Avogadro's Law and give its significance.</summary>
+<div class="sol-content">
+<p><strong>Avogadro's Law:</strong> Equal volumes of all gases at the same temperature and pressure contain the same number of molecules.</p>
+<p><strong>Significance:</strong></p>
+<ul>
+<li>Provides the relationship between gas volume and number of moles: $V \propto n$</li>
+<li>Leads to the concept of molar volume: $22.4\text{ L}$ at STP</li>
+<li>Distinguishes between atoms and molecules (e.g., $\text{O}_2$ is diatomic)</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>Q 1.9: What is the difference between empirical and molecular formula? Give an example.</summary>
+<div class="sol-content">
+<p><strong>Empirical formula:</strong> Simplest whole-number ratio of atoms (e.g., $\text{CH}_2\text{O}$ for glucose).</p>
+<p><strong>Molecular formula:</strong> Actual number of atoms of each element in a molecule (e.g., $\text{C}_6\text{H}_{12}\text{O}_6$ for glucose).</p>
+<p>The molecular formula is a whole-number multiple of the empirical formula: $n = M_{\text{molecular}} / M_{\text{empirical}}$.</p>
+</div>
+</details>
+<details>
+<summary>Q 1.10: A compound contains $4.07\%$ H, $24.27\%$ C, and $71.65\%$ Cl. Its molar mass is $98.96\text{ g mol}^{-1}$. Find empirical and molecular formulas.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>In $100\text{ g}$: H = $4.07\text{ g}$, C = $24.27\text{ g}$, Cl = $71.65\text{ g}$</p>
+<p>Moles: H = $4.07/1.008 = 4.04$; C = $24.27/12.01 = 2.02$; Cl = $71.65/35.45 = 2.02$</p>
+<p>Divide by $2.02$: C : H : Cl = $1 : 2 : 1$ → Empirical formula = $\text{CH}_2\text{Cl}$</p>
+<p>Empirical mass = $12.01 + 2.016 + 35.45 = 49.48\text{ g mol}^{-1}$</p>
+<p>$n = 98.96/49.48 = 2$ → Molecular formula = $\text{C}_2\text{H}_4\text{Cl}_2$</p>
+</div>
+</details>
+<details>
+<summary>Q 1.11: Calculate the molarity of a solution containing $5.0\text{ g}$ of NaOH in $500\text{ mL}$ of solution.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Molar mass of NaOH = $23.0 + 16.0 + 1.008 = 40.0\text{ g mol}^{-1}$</p>
+$$ n = \frac{5.0}{40.0} = 0.125\text{ mol} $$
+$$ V = 500\text{ mL} = 0.500\text{ L} $$
+$$ M = \frac{0.125}{0.500} = 0.25\text{ M} $$
+</div>
+</details>
+<details>
+<summary>Q 1.12: Calculate the mass of NaOH required to make $250\text{ mL}$ of $0.5\text{ M}$ solution.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+$$ n = M \times V = 0.5 \times 0.250 = 0.125\text{ mol} $$
+$$ m = n \times M_{\text{NaOH}} = 0.125 \times 40.0 = 5.0\text{ g} $$
+</div>
+</details>
+<details>
+<summary>Q 1.13: Calculate the number of moles in $1.0\text{ L}$ of $0.1\text{ M}$ $\text{H}_2\text{SO}_4$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+$$ n = M \times V = 0.1 \times 1.0 = 0.1\text{ mol} $$
+</div>
+</details>
+<details>
+<summary>Q 1.14: How many grams of $\text{K}_2\text{CO}_3$ are needed for $200\text{ mL}$ of $0.05\text{ M}$ solution?</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Molar mass of $\text{K}_2\text{CO}_3 = 2(39.1) + 12.01 + 3(16.0) = 138.21\text{ g mol}^{-1}$</p>
+$$ n = 0.05 \times 0.200 = 0.010\text{ mol} $$
+$$ m = 0.010 \times 138.21 = 1.38\text{ g} $$
+</div>
+</details>
+<details>
+<summary>Q 1.15: Concentrated $\text{HNO}_3$ is $69.8\%$ (w/w) with density $1.41\text{ g mL}^{-1}$. Find molarity.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>In $100\text{ g}$ solution: $69.8\text{ g HNO}_3$</p>
+<p>Volume of $100\text{ g}$ solution = $100 / 1.41 = 70.92\text{ mL} = 0.07092\text{ L}$</p>
+<p>Moles of $\text{HNO}_3 = 69.8 / 63.01 = 1.108\text{ mol}$</p>
+$$ M = \frac{1.108}{0.07092} = 15.6\text{ M} $$
+<p>Alternatively, using the density bridge formula:</p>
+$$ M = \frac{\% \times \rho \times 10}{M_{\text{solute}}} = \frac{69.8 \times 1.41 \times 10}{63.01} = 15.6\text{ M} $$
+</div>
+</details>
+<details>
+<summary>Q 1.16: Calculate molality of $2.5\text{ g}$ ethanoic acid ($\text{CH}_3\text{COOH}$) in $75\text{ g}$ benzene.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Molar mass of $\text{CH}_3\text{COOH} = 60.05\text{ g mol}^{-1}$</p>
+$$ n = \frac{2.5}{60.05} = 0.0416\text{ mol} $$
+$$ m_{\text{solvent}} = 75\text{ g} = 0.075\text{ kg} $$
+$$ m = \frac{0.0416}{0.075} = 0.555\text{ mol kg}^{-1} $$
+</div>
+</details>
+<details>
+<summary>Q 1.17: Calculate mole fraction of ethanol in a solution containing $46\text{ g}$ ethanol and $90\text{ g}$ water.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$n_{\text{ethanol}} = 46/46.07 = 0.998\text{ mol}$; $n_{\text{water}} = 90/18.016 = 4.996\text{ mol}$</p>
+$$ x_{\text{ethanol}} = \frac{0.998}{0.998 + 4.996} = \frac{0.998}{5.994} = 0.166 $$
+</div>
+</details>
+<details>
+<summary>Q 1.18: What volume of $0.25\text{ M}$ solution can be made from $4.0\text{ g}$ of NaOH?</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+$$ n = \frac{4.0}{40.0} = 0.10\text{ mol} $$
+$$ V = \frac{n}{M} = \frac{0.10}{0.25} = 0.40\text{ L} = 400\text{ mL} $$
+</div>
+</details>
+<details>
+<summary>Q 1.19: Calculate molarity of $\text{OH}^-$ ions in $0.02\text{ M}$ $\text{Ba(OH)}_2$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$\text{Ba(OH)}_2 \rightarrow \text{Ba}^{2+} + 2\text{OH}^-$</p>
+<p>$1\text{ mol Ba(OH)}_2$ gives $2\text{ mol OH}^-$</p>
+$$ [\text{OH}^-] = 2 \times 0.02 = 0.04\text{ M} $$
+</div>
+</details>
+<details>
+<summary>Q 1.20: $5.0\text{ g}$ of $\text{CaCO}_3$ reacts with $50\text{ mL}$ of $1.0\text{ M}$ HCl. Find limiting reagent and $\text{CO}_2$ produced.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$\text{CaCO}_3 + 2\text{HCl} \rightarrow \text{CaCl}_2 + \text{H}_2\text{O} + \text{CO}_2$</p>
+<p>$n_{\text{CaCO}_3} = 5.0/100.09 = 0.0500\text{ mol}$</p>
+<p>$n_{\text{HCl}} = 1.0 \times 0.050 = 0.050\text{ mol}$</p>
+<p>Divide by coefficients: CaCO$_3$: $0.0500/1 = 0.0500$; HCl: $0.050/2 = 0.025$</p>
+<p>HCl has the smaller value → <strong>HCl is the limiting reagent</strong>.</p>
+<p>Moles of $\text{CO}_2 = \frac{1}{2} \times n_{\text{HCl}} = 0.025\text{ mol}$</p>
+<p>Mass of $\text{CO}_2 = 0.025 \times 44.01 = 1.10\text{ g}$</p>
+</div>
+</details>
+<details>
+<summary>Q 1.21: Calculate the mass percent of $\text{Ca}$ in $\text{CaCO}_3$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Molar mass of $\text{CaCO}_3 = 40.08 + 12.01 + 48.00 = 100.09\text{ g mol}^{-1}$</p>
+$$ \%\text{Ca} = \frac{40.08}{100.09} \times 100 = 40.04\% $$
+</div>
+</details>
+<details>
+<summary>Q 1.22: How many significant figures in (a) $0.0025$, (b) $208$, (c) $5005$, (d) $126000$, (e) $500.0$?</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>(a) $0.0025$ → leading zeros not significant → <strong>2 SF</strong></p>
+<p>(b) $208$ → all non-zero + zero between → <strong>3 SF</strong></p>
+<p>(c) $5005$ → zeros between non-zero → <strong>4 SF</strong></p>
+<p>(d) $126000$ → ambiguous: <strong>3, 4, 5, or 6 SF</strong> depending on precision of measurement</p>
+<p>(e) $500.0$ → trailing zero with decimal → <strong>4 SF</strong></p>
+</div>
+</details>
+<details>
+<summary>Q 1.23: Express up to appropriate SF: (a) $2.5 \times 1.25$, (b) $3.45 + 2.3$</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>(a) $2.5 \times 1.25 = 3.125$ → 2 SF (least precise factor has 2 SF) → <strong>3.1</strong></p>
+<p>(b) $3.45 + 2.3 = 5.75$ → 1 decimal place (least precise has 1 decimal) → <strong>5.8</strong></p>
+</div>
+</details>
+<details>
+<summary>Q 1.24: Diameter of Zn atom is $2.6\text{ \AA}$. Find its radius in pm and number of atoms in $1.6\text{ cm}$ length if arranged side by side.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$1\text{ \AA} = 100\text{ pm}$</p>
+<p>Radius $= 2.6/2 = 1.3\text{ \AA} = 130\text{ pm}$</p>
+<p>$1.6\text{ cm} = 1.6 \times 10^7\text{ pm}$</p>
+$$ \text{Number of atoms} = \frac{1.6 \times 10^7}{260} = 6.15 \times 10^4 $$
+</div>
+</details>
+<details>
+<summary>Q 1.25: Calculate molecular mass of $\text{C}_2\text{H}_6$, $\text{C}_2\text{H}_5\text{OH}$, $\text{CH}_3\text{COOH}$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Atomic masses: C = $12.01\text{ u}$, H = $1.008\text{ u}$, O = $16.00\text{ u}$</p>
+<p>$\text{C}_2\text{H}_6$: $2(12.01) + 6(1.008) = 24.02 + 6.048 = \mathbf{30.068\text{ u}}$</p>
+<p>$\text{C}_2\text{H}_5\text{OH}$: $2(12.01) + 6(1.008) + 16.00 = 24.02 + 6.048 + 16.00 = \mathbf{46.068\text{ u}}$</p>
+<p>$\text{CH}_3\text{COOH}$: $2(12.01) + 4(1.008) + 2(16.00) = 24.02 + 4.032 + 32.00 = \mathbf{60.052\text{ u}}$</p>
+</div>
+</details>
+<details>
+<summary>Q 1.26: Determine empirical formula of a compound with $26.57\%$ K, $35.36\%$ Cr, $38.07\%$ O.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>In $100\text{ g}$: $26.57\text{ g K}$, $35.36\text{ g Cr}$, $38.07\text{ g O}$</p>
+<p>Moles: K = $26.57/39.10 = 0.6795$; Cr = $35.36/52.00 = 0.6800$; O = $38.07/16.00 = 2.379$</p>
+<p>Divide by $0.6795$: K : Cr : O = $1 : 1.001 : 3.501 \approx 1 : 1 : 3.5 \rightarrow \times 2 = 2 : 2 : 7$</p>
+<p>Empirical formula = $\mathbf{K_2Cr_2O_7}$</p>
+</div>
+</details>
+<details>
+<summary>Q 1.27: Calculate mass of $6.022 \times 10^{23}$ molecules of $\text{NH}_4\text{Cl}$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$6.022 \times 10^{23}$ molecules = $1$ mole</p>
+<p>Molar mass of $\text{NH}_4\text{Cl} = 14.01 + 4.032 + 35.45 = 53.49\text{ g mol}^{-1}$</p>
+$$ m = 1 \times 53.49 = 53.49\text{ g} $$
+</div>
+</details>
+<details>
+<summary>Q 1.28: How many atoms of oxygen are in $0.5\text{ mol}$ of $\text{CaCO}_3$?</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$1\text{ mol CaCO}_3$ contains $3\text{ mol O}$ atoms</p>
+<p>$0.5\text{ mol CaCO}_3$ contains $1.5\text{ mol O}$ atoms</p>
+$$ N = 1.5 \times 6.022 \times 10^{23} = 9.033 \times 10^{23}\text{ O atoms} $$
+</div>
+</details>
+<details>
+<summary>Q 1.29: Calculate the number of moles in (a) $52\text{ g He}$, (b) $12.044 \times 10^{23}$ He atoms, (c) $8.0\text{ g O}_2$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>(a) $n = 52/4.003 = \mathbf{12.99\text{ mol}}$</p>
+<p>(b) $n = 12.044 \times 10^{23} / 6.022 \times 10^{23} = \mathbf{2.0\text{ mol}}$</p>
+<p>(c) $n = 8.0/32.0 = \mathbf{0.25\text{ mol}}$</p>
+</div>
+</details>
+<details>
+<summary>Q 1.30: Balance: $\text{Fe}_2\text{O}_3 + \text{Al} \rightarrow \text{Fe} + \text{Al}_2\text{O}_3$ and find mass of Al needed for $1.0\text{ kg}$ of $\text{Fe}_2\text{O}_3$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Balanced eq: $\text{Fe}_2\text{O}_3 + 2\text{Al} \rightarrow 2\text{Fe} + \text{Al}_2\text{O}_3$</p>
+<p>$n_{\text{Fe}_2\text{O}_3} = 1000/159.69 = 6.262\text{ mol}$</p>
+<p>$n_{\text{Al}} = 2 \times 6.262 = 12.524\text{ mol}$</p>
+$$ m_{\text{Al}} = 12.524 \times 26.98 = 337.9\text{ g} $$
+</div>
+</details>
+<details>
+<summary>Q 1.31: Calculate the concentration of $\text{NO}_3^-$ in $0.10\text{ M}$ $\text{Al(NO}_3\text{)}_3$.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$\text{Al(NO}_3\text{)}_3 \rightarrow \text{Al}^{3+} + 3\text{NO}_3^-$</p>
+<p>$1\text{ mol}$ gives $3\text{ mol NO}_3^-$</p>
+$$ [\text{NO}_3^-] = 3 \times 0.10 = 0.30\text{ M} $$
+</div>
+</details>
+<details>
+<summary>Q 1.32: Calculate molality of $1.0\text{ M}$ $\text{NaCl}$ solution (density $1.06\text{ g mL}^{-1}$).</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$1.0\text{ L}$ of solution contains $1.0\text{ mol NaCl}$ ($58.44\text{ g}$)</p>
+<p>Mass of $1.0\text{ L}$ solution = $1000 \times 1.06 = 1060\text{ g}$</p>
+<p>Mass of solvent = $1060 - 58.44 = 1001.56\text{ g} = 1.002\text{ kg}$</p>
+$$ m = \frac{1.0}{1.002} = 0.998\text{ mol kg}^{-1} $$
+</div>
+</details>
+<details>
+<summary>Q 1.33: $10.0\text{ g}$ of $\text{NaCl}$ dissolved in $100\text{ g}$ water. Find mass %, mole fraction, molality.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p><strong>Mass %:</strong> $\% = \frac{10.0}{10.0 + 100} \times 100 = 9.09\%$</p>
+<p><strong>Molality:</strong> $n_{\text{NaCl}} = 10.0/58.44 = 0.171\text{ mol}$; $m = 0.171/0.100 = 1.71\text{ mol kg}^{-1}$</p>
+<p><strong>Mole fraction:</strong> $n_{\text{H}_2\text{O}} = 100/18.016 = 5.55\text{ mol}$</p>
+$$ x_{\text{NaCl}} = \frac{0.171}{0.171 + 5.55} = 0.0299 $$
+</div>
+</details>
+<details>
+<summary>Q 1.34: Urea ($\text{NH}_2\text{CONH}_2$) — calculate mass % of N, and mass of N in $10.0\text{ kg}$ urea.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>Molar mass: $2(14.01) + 4(1.008) + 12.01 + 16.00 = 60.06\text{ g mol}^{-1}$</p>
+$$ \%\text{N} = \frac{28.02}{60.06} \times 100 = 46.65\% $$
+$$ \text{Mass of N in 10.0 kg} = 10.0 \times 0.4665 = 4.665\text{ kg} $$
+</div>
+</details>
+<details>
+<summary>Q 1.35: Density bridge — $1.0\text{ M}$ $\text{H}_2\text{SO}_4$ (density $1.06\text{ g mL}^{-1}$). Find molality.</summary>
+<div class="sol-content">
+<p><strong>Solution:</strong></p>
+<p>$1.0\text{ L}$ contains $1.0\text{ mol H}_2\text{SO}_4$ ($98.08\text{ g}$)</p>
+<p>Mass of $1.0\text{ L}$ solution = $1000 \times 1.06 = 1060\text{ g}$</p>
+<p>Mass of solvent = $1060 - 98.08 = 961.92\text{ g} = 0.9619\text{ kg}$</p>
+$$ m = \frac{1.0}{0.9619} = 1.04\text{ mol kg}^{-1} $$
+<p>Using density bridge formula:</p>
+$$ m = \frac{1000M}{1000\rho - M \cdot M_{\text{solute}}} = \frac{1000 \times 1.0}{1060 - 98.08} = \frac{1000}{961.92} = 1.04\text{ m} $$
+</div>
+</details>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ==================== TAB 4 ==================== -->
+<div class="tab-panel" id="panel4">
+<h2>🔬 Interactive Stoichiometry &amp; Concentration Lab</h2>
+<p>Explore chemical concepts through hands-on visual simulations. Each tool is powered by HTML5 Canvas and JavaScript.</p>
+<div class="lab-grid">
+<div class="lab-card" id="lawsProver">
+<h3>1. Laws of Chemical Combination Prover</h3>
+<p style="font-size:0.8rem;color:#64748b">Select two elements and adjust masses. The simulator forms two different compounds (e.g., CO and CO₂) and shows the mass ratios on a balance scale — proving the Law of Multiple Proportions (simple whole-number ratios).</p>
+<canvas height="310" id="lawsCanvas" width="440"></canvas>
+<div class="slider-group">
+<label>Element A:</label>
+<select id="elemA" onchange="resetLaws()" style="padding:4px 8px;border-radius:6px;border:1px solid #ccc">
+<option value="C">Carbon (C, 12.01 u)</option>
+<option value="S">Sulfur (S, 32.06 u)</option>
+<option value="N">Nitrogen (N, 14.01 u)</option>
+</select>
+<label>Mass of A:</label>
+<input id="massA" max="48" min="6" oninput="resetLaws()" step="1" type="range" value="12"/>
+<output id="massAVal">12 g</output>
+</div>
+<div class="slider-group">
+<label>Element B:</label>
+<select id="elemB" onchange="resetLaws()" style="padding:4px 8px;border-radius:6px;border:1px solid #ccc">
+<option value="O">Oxygen (O, 16.00 u)</option>
+<option value="H">Hydrogen (H, 1.008 u)</option>
+<option value="Cl">Chlorine (Cl, 35.45 u)</option>
+</select>
+<label>Mass of B:</label>
+<input id="massB" max="80" min="4" oninput="resetLaws()" step="1" type="range" value="16"/>
+<output id="massBVal">16 g</output>
+</div>
+<div class="ledger" id="lawsLedger">
+Compound 1: — | Ratio (A:B) = — | Compound 2: — | Ratio (A:B) = — | Whole-number ratio: —
+</div>
+<button class="btn btn-sm" onclick="animateLaws()">▶ Animate Compound Formation</button>
+</div>
+<div class="lab-card" id="limitingReagent">
+<h3>2. Limiting Reagent Balance Engine</h3>
+<p style="font-size:0.8rem;color:#64748b">Simulate Haber's ammonia synthesis ($\text{N}_2 + 3\text{H}_2 \rightarrow 2\text{NH}_3$). Adjust starting moles and watch molecules bond to form ammonia. Excess reactant flashes yellow.</p>
+<canvas height="310" id="haberCanvas" width="440"></canvas>
+<div class="slider-group">
+<label>$\text{N}_2$ (mol):</label>
+<input id="n2mol" max="10" min="1" oninput="stopHaberAnim();updateHaber()" step="0.5" type="range" value="3"/>
+<output id="n2val">3.0</output>
+</div>
+<div class="slider-group">
+<label>$\text{H}_2$ (mol):</label>
+<input id="h2mol" max="20" min="1" oninput="stopHaberAnim();updateHaber()" step="0.5" type="range" value="6"/>
+<output id="h2val">6.0</output>
+</div>
+<div class="ledger" id="haberLedger">
+Limiting Reagent: — | NH₃ Yield: — mol | Excess: — mol
+</div>
+<button class="btn btn-sm" onclick="animateHaber()">▶ Run Synthesis</button>
+</div>
+<div class="lab-card" id="solutionPrep">
+<h3>3. Solution Preparation &amp; Dilution Simulator</h3>
+<p style="font-size:0.8rem;color:#64748b">Prepare a solution in a virtual lab with a volumetric flask and digital readout. Add diluent to see $\text{M}_1\text{V}_1 = \text{M}_2\text{V}_2$ update in real-time. Watch particles disperse as solute dissolves.</p>
+<canvas height="310" id="solnCanvas" width="440"></canvas>
+<div class="slider-group">
+<label>Solute:</label>
+<select id="soluteChoice" onchange="updateSoln()" style="padding:4px 8px;border-radius:6px;border:1px solid #ccc">
+<option value="NaOH">NaOH ($M=40.0$)</option>
+<option value="CuSO4">CuSO$_4$ ($M=159.6$)</option>
+<option value="NaCl">NaCl ($M=58.44$)</option>
+</select>
+<label>Mass (g):</label>
+<input id="soluteMass" max="50" min="2" oninput="updateSoln()" step="0.5" type="range" value="10"/>
+<output id="sMassVal">10.0 g</output>
+</div>
+<div class="slider-group">
+<label>Volume (mL):</label>
+<input id="solnVol" max="500" min="50" oninput="updateSoln()" step="10" type="range" value="200"/>
+<output id="volVal">200 mL</output>
+</div>
+<div class="slider-group">
+<label>Dilution — Add solvent:</label>
+<input id="dilutionHandle" max="300" min="0" oninput="updateSoln()" step="10" type="range" value="0"/>
+<output id="dilVal">+0 mL</output>
+</div>
+<div class="ledger" id="solnLedger">
+Molarity: — M | Molality: — m | Mole Fraction: — | After Dilution: M₂ = —
+</div>
+</div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></div>
+</div><!-- /tab-container -->
+<script>
+// ----- UTILITY -----
+function toggleDeriv(btn) {
+  var panel = btn.nextElementSibling;
+  panel.classList.toggle('open');
+}
+
+// ----- TIMELINE -----
+document.querySelectorAll('.tl-node').forEach(function(node){
+  node.addEventListener('click', function(){
+    this.classList.toggle('active');
+  });
+});
+
+// ----- KATEX AUTO-RENDER -----
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof renderMathInElement === 'function'){
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ],
+      throwOnError: false
+    });
+  }
+});
+
+// ----- MOLECULAR DRAWING UTILITIES -----
+var ELEM_COLORS = {C:'#374151', S:'#eab308', N:'#3b82f6', O:'#ef4444', H:'#f0f0f0', Cl:'#22c55e'};
+var ELEM_LABELS = {C:'C', S:'S', N:'N', O:'O', H:'H', Cl:'Cl'};
+var ATOMIC_MASSES = {C:12.01, S:32.06, N:14.01, O:16.00, H:1.008, Cl:35.45};
+
+function drawAtom(ctx, x, y, elem, r){
+  ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+  ctx.fillStyle = ELEM_COLORS[elem]||'#666'; ctx.fill();
+  ctx.strokeStyle = elem==='H'?'#666':ELEM_COLORS[elem]; ctx.lineWidth=1.5; ctx.stroke();
+  ctx.fillStyle = elem==='H'||elem==='S'?'#333':'#fff';
+  ctx.font = 'bold '+(r*0.85)+'px sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(ELEM_LABELS[elem]||elem, x, y+0.5);
+}
+
+function drawBond(ctx, x1, y1, x2, y2, count, color){
+  ctx.strokeStyle = color||'#666'; ctx.lineWidth = 2;
+  var dx=x2-x1, dy=y2-y1, d=Math.sqrt(dx*dx+dy*dy)||1;
+  var nx=-dy/d*4, ny=dx/d*4;
+  if(count===1){
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  } else if(count===2){
+    ctx.beginPath(); ctx.moveTo(x1+nx, y1+ny); ctx.lineTo(x2+nx, y2+ny); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x1-nx, y1-ny); ctx.lineTo(x2-nx, y2-ny); ctx.stroke();
+  } else if(count===3){
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x1+nx*1.5, y1+ny*1.5); ctx.lineTo(x2+nx*1.5, y2+ny*1.5); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x1-nx*1.5, y1-ny*1.5); ctx.lineTo(x2-nx*1.5, y2-ny*1.5); ctx.stroke();
+  }
+}
+
+function drawMolecule(ctx, type, cx, cy, scale){
+  var s = scale||1; var r = 12*s;
+  if(type==='CO'){
+    drawAtom(ctx, cx-16*s, cy, 'C', r); drawAtom(ctx, cx+16*s, cy, 'O', r);
+    drawBond(ctx, cx-14*s, cy, cx+14*s, cy, 3, '#444');
+  } else if(type==='CO₂'){
+    drawAtom(ctx, cx-22*s, cy, 'O', r); drawAtom(ctx, cx, cy, 'C', r); drawAtom(ctx, cx+22*s, cy, 'O', r);
+    drawBond(ctx, cx-20*s, cy, cx-2*s, cy, 2, '#444');
+    drawBond(ctx, cx+2*s, cy, cx+20*s, cy, 2, '#444');
+  } else if(type==='SO₂'){
+    drawAtom(ctx, cx-16*s, cy+6*s, 'O', r*0.9); drawAtom(ctx, cx, cy-8*s, 'S', r*1.1); drawAtom(ctx, cx+16*s, cy+6*s, 'O', r*0.9);
+    drawBond(ctx, cx-2*s, cy-4*s, cx-13*s, cy+5*s, 2, '#444');
+    drawBond(ctx, cx+2*s, cy-4*s, cx+13*s, cy+5*s, 2, '#444');
+  } else if(type==='SO₃'){
+    // Trigonal planar: S in center, 3 O at 120°
+    drawAtom(ctx, cx, cy-14*s, 'S', r*1.1);
+    var ox = 13*s, oy = 7*s;
+    drawAtom(ctx, cx, cy+7*s, 'O', r*0.9);
+    drawAtom(ctx, cx-ox, cy+oy, 'O', r*0.9);
+    drawAtom(ctx, cx+ox, cy+oy, 'O', r*0.9);
+    drawBond(ctx, cx, cy-11*s, cx, cy+5*s, 2, '#444');
+    drawBond(ctx, cx, cy-11*s, cx-ox+3*s, cy+oy-3*s, 2, '#444');
+    drawBond(ctx, cx, cy-11*s, cx+ox-3*s, cy+oy-3*s, 2, '#444');
+  } else if(type==='NO'){
+    drawAtom(ctx, cx-9*s, cy, 'N', r); drawAtom(ctx, cx+9*s, cy, 'O', r);
+    drawBond(ctx, cx-7*s, cy, cx+7*s, cy, 2, '#444');
+  } else if(type==='NO₂'){
+    drawAtom(ctx, cx, cy-9*s, 'N', r); 
+    drawAtom(ctx, cx-10*s, cy+7*s, 'O', r*0.9);
+    drawAtom(ctx, cx+10*s, cy+7*s, 'O', r*0.9);
+    drawBond(ctx, cx, cy-6*s, cx-8*s, cy+6*s, 1, '#444');
+    drawBond(ctx, cx, cy-6*s, cx+8*s, cy+6*s, 1, '#444');
+  } else if(type==='N₂'){
+    drawAtom(ctx, cx-14*s, cy, 'N', r); drawAtom(ctx, cx+14*s, cy, 'N', r);
+    drawBond(ctx, cx-12*s, cy, cx+12*s, cy, 3, '#1e40af');
+  } else if(type==='H₂'){
+    drawAtom(ctx, cx-9*s, cy, 'H', r*0.8); drawAtom(ctx, cx+9*s, cy, 'H', r*0.8);
+    drawBond(ctx, cx-7*s, cy, cx+7*s, cy, 1, '#999');
+  } else if(type==='NH₃'){
+    var a=20*s, h=16*s;
+    drawAtom(ctx, cx, cy-4*s, 'N', r);
+    drawAtom(ctx, cx-a, cy+h, 'H', r*0.8);
+    drawAtom(ctx, cx+a, cy+h, 'H', r*0.8);
+    drawAtom(ctx, cx, cy+h+4*s, 'H', r*0.8);
+    drawBond(ctx, cx, cy+7*s, cx-a+3*s, cy+h-3*s, 1, '#999');
+    drawBond(ctx, cx, cy+7*s, cx+a-3*s, cy+h-3*s, 1, '#999');
+    drawBond(ctx, cx, cy+7*s, cx, cy+h-1*s, 1, '#999');
+  } else if(type==='HCl'){
+    drawAtom(ctx, cx-10*s, cy, 'H', r*0.8); drawAtom(ctx, cx+10*s, cy, 'Cl', r*1.1);
+    drawBond(ctx, cx-7*s, cy, cx+7*s, cy, 1, '#999');
+  } else {
+    // Generic molecular formula display
+    ctx.fillStyle = '#0f3460'; ctx.font='bold '+(12*s)+'px sans-serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(type, cx, cy);
+    ctx.fillStyle = '#e94560'; ctx.font='8px sans-serif';
+    ctx.fillText('↔', cx, cy+12*s);
+  }
+}
+
+// ----- TOOL 1: LAWS PROVER -----
+var lawsCtx, lawsAnimId;
+var lawsPhase = 0, lawsAnimRunning = false;
+
+function initLaws(){
+  lawsCtx = document.getElementById('lawsCanvas').getContext('2d');
+  resetLaws();
+}
+
+function getLawConfig(){
+  var a = document.getElementById('elemA').value;
+  var b = document.getElementById('elemB').value;
+  var mA = parseFloat(document.getElementById('massA').value);
+  var mB = parseFloat(document.getElementById('massB').value);
+  document.getElementById('massAVal').textContent = mA + ' g';
+  document.getElementById('massBVal').textContent = mB + ' g';
+  return {a:a, b:b, mA:mA, mB:mB};
+}
+
+function getCompoundNames(a, b){
+  var pairs = {
+    'C-O':{c1:'CO', c2:'CO₂', r1:'1:1.33', r2:'1:2.67'},
+    'C-H':{c1:'CH₄', c2:'C₂H₆', r1:'1:0.34', r2:'1:0.50'},
+    'C-Cl':{c1:'CCl₄', c2:'C₂Cl₆', r1:'1:11.8', r2:'1:17.7'},
+    'S-O':{c1:'SO₂', c2:'SO₃', r1:'1:1.00', r2:'1:1.50'},
+    'S-H':{c1:'H₂S', c2:'H₂S₂', r1:'1:0.063', r2:'1:0.126'},
+    'S-Cl':{c1:'SCl₂', c2:'S₂Cl₂', r1:'1:2.21', r2:'1:1.10'},
+    'N-O':{c1:'NO', c2:'NO₂', r1:'1:1.14', r2:'1:2.28'},
+    'N-H':{c1:'NH₃', c2:'N₂H₄', r1:'1:0.216', r2:'1:0.144'},
+    'N-Cl':{c1:'NCl₃', c2:'N₂Cl₄', r1:'1:7.59', r2:'1:5.06'},
+  };
+  return pairs[a+'-'+b]||{c1:a+b, c2:a+'₂'+b, r1:'—', r2:'—'};
+}
+
+function computeLawRatios(){
+  var cfg = getLawConfig();
+  var mA = cfg.mA, mB = cfg.mB;
+  var mA_mol = mA / ATOMIC_MASSES[cfg.a];
+  var mB_mol = mB / ATOMIC_MASSES[cfg.b];
+  var r = mB_mol / mA_mol;
+  return {ratioAtoB: r.toFixed(4), mA:mA, mB:mB};
+}
+
+function drawLaws(animProgress){
+  var ctx = lawsCtx;
+  ctx.clearRect(0,0,440,310);
+  
+  // Title bar
+  ctx.fillStyle = '#1a1a2e'; ctx.fillRect(0,0,440,28);
+  ctx.fillStyle = '#fff'; ctx.font='bold 11px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('⚖  Law of Multiple Proportions — Particle Sandbox', 220, 18);
+
+  var cfg = getLawConfig();
+  var pair = getCompoundNames(cfg.a, cfg.b);
+  var ratios = computeLawRatios();
+
+  var ap = animProgress || 0; // 0-1
+
+  // Left panel: Element A particles
+  ctx.fillStyle = '#f1f5f9'; ctx.fillRect(10,32,130,240);
+  ctx.fillStyle = '#0f3460'; ctx.font='bold 9px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('Element ' + cfg.a + ' (' + ELEM_LABELS[cfg.a] + ')', 75, 46);
+  
+  var nA = Math.min(Math.round(cfg.mA / ATOMIC_MASSES[cfg.a] * 5), 18);
+  for(var i=0; i<nA; i++){
+    var ax = 20 + (i%4)*28 + Math.sin(i*2.3)*3;
+    var ay = 60 + Math.floor(i/4)*30 + Math.cos(i*1.7)*3;
+    if(ap>0 && i < nA*ap) { ax += (180-ax)*ap*0.5; ay += (120-ay)*ap*0.3; }
+    drawAtom(ctx, ax, ay, cfg.a, 8);
+  }
+  ctx.fillStyle='#475569'; ctx.font='8px sans-serif'; ctx.fillText(cfg.mA + ' g', 75, 262);
+
+  // Right panel: Element B particles
+  ctx.fillStyle = '#f1f5f9'; ctx.fillRect(300,32,130,240);
+  ctx.fillStyle = '#0f3460'; ctx.font='bold 9px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('Element ' + cfg.b + ' (' + ELEM_LABELS[cfg.b] + ')', 365, 46);
+  
+  var nB = Math.min(Math.round(cfg.mB / ATOMIC_MASSES[cfg.b] * 5), 18);
+  for(var i=0; i<nB; i++){
+    var bx = 310 + (i%4)*28 + Math.sin(i*1.3)*3;
+    var by = 60 + Math.floor(i/4)*30 + Math.cos(i*2.1)*3;
+    if(ap>0 && i < nB*ap) { bx -= (bx-260)*ap*0.5; by += (140-by)*ap*0.2; }
+    drawAtom(ctx, bx, by, cfg.b, 8);
+  }
+  ctx.fillStyle='#475569'; ctx.font='8px sans-serif'; ctx.fillText(cfg.mB + ' g', 365, 262);
+
+  // Center: Compound display area
+  ctx.fillStyle='rgba(224,231,255,0.3)'; ctx.fillRect(145,32,150,240);
+  ctx.strokeStyle='#c7d2fe'; ctx.lineWidth=1; ctx.setLineDash([4,4]);
+  ctx.strokeRect(145,32,150,240); ctx.setLineDash([]);
+
+  // Compound 1 (top center)
+  var c1 = pair.c1;
+  ctx.fillStyle='#0f3460'; ctx.font='bold 9px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('Compound 1: ' + c1, 220, 52);
+  drawMolecule(ctx, c1, 220, 90, 0.8);
+
+  // Compound 2 (bottom center)
+  var c2 = pair.c2;
+  ctx.fillStyle='#0f3460'; ctx.font='bold 9px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('Compound 2: ' + c2, 220, 155);
+  drawMolecule(ctx, c2, 220, 195, 0.8);
+
+  // Scale at bottom
+  var scaleY = 278;
+  ctx.strokeStyle='#1a1a2e'; ctx.lineWidth=2;
+  ctx.beginPath();
+  ctx.moveTo(80, scaleY); ctx.lineTo(360, scaleY);
+  ctx.moveTo(220, scaleY); ctx.lineTo(220, scaleY-12);
+  ctx.moveTo(130, scaleY-12); ctx.lineTo(130, scaleY-6);
+  ctx.moveTo(310, scaleY-12); ctx.lineTo(310, scaleY-6);
+  ctx.stroke();
+
+  var mA_ratio = (cfg.mA / ATOMIC_MASSES[cfg.a]).toFixed(2);
+  var mB_ratio = (cfg.mB / ATOMIC_MASSES[cfg.b]).toFixed(2);
+  var wholeNum = '—';
+  var ratioVal = parseFloat(mB_ratio) / parseFloat(mA_ratio);
+  if(!isNaN(ratioVal) && ratioVal>0){
+    var approx = Math.round(ratioVal*4)/4;
+    var fracs = {0.5:'1:2', 0.67:'2:3', 0.75:'3:4', 1:'1:1', 1.33:'4:3', 1.5:'3:2', 2:'2:1', 2.5:'5:2', 3:'3:1'};
+    var best = '—';
+    for(var f in fracs){ if(Math.abs(ratioVal-parseFloat(f)) < 0.15) best = fracs[f]; }
+    wholeNum = best;
+  }
+
+  ctx.fillStyle='#0f3460'; ctx.font='bold 9px sans-serif'; ctx.textAlign='center';
+  ctx.fillText(mA_ratio + ' mol ' + cfg.a, 130, scaleY-16);
+  ctx.fillText(mB_ratio + ' mol ' + cfg.b, 310, scaleY-16);
+
+  var ledger = document.getElementById('lawsLedger');
+  if(wholeNum !== '—'){
+    ctx.fillStyle='#e94560'; ctx.font='bold 10px sans-serif';
+    ctx.fillText('✔ Whole-number ratio: ' + wholeNum, 220, scaleY+16);
+    ledger.innerHTML = 'Compound 1: <span>'+c1+'</span> | Ratio (A:B) = <span>'+pair.r1+'</span> | Compound 2: <span>'+c2+'</span> | Ratio (A:B) = <span>'+pair.r2+'</span> | Whole-number ratio: <span>'+wholeNum+'</span>';
+  } else {
+    ctx.fillStyle='#94a3b8'; ctx.font='9px sans-serif';
+    ctx.fillText('Adjust masses to see whole-number ratios', 220, scaleY+16);
+    ledger.innerHTML = 'Compound 1: <span>'+c1+'</span> | Ratio (A:B) = <span>'+pair.r1+'</span> | Compound 2: <span>'+c2+'</span> | Ratio (A:B) = <span>'+pair.r2+'</span> | Whole-number ratio: <span>adjust masses...</span>';
+  }
+}
+
+function resetLaws(){
+  if(lawsAnimId) { cancelAnimationFrame(lawsAnimId); lawsAnimId=null; }
+  lawsAnimRunning = false; lawsPhase = 0;
+  drawLaws(0);
+}
+
+function animateLaws(){
+  if(lawsAnimRunning) return;
+  lawsAnimRunning = true; lawsPhase = 0;
+  var startTime = Date.now();
+  function loop(){
+    var elapsed = (Date.now() - startTime) / 1000;
+    var progress = Math.min(elapsed / 2.5, 1);
+    drawLaws(progress);
+    if(progress < 1){
+      lawsAnimId = requestAnimationFrame(loop);
+    } else {
+      lawsAnimRunning = false;
+      drawLaws(1);
+    }
+  }
+  loop();
+}
+
+// ----- TOOL 2: LIMITING REAGENT HABER -----
+var haberCtx, haberAnimId, haberRunning = false;
+var haberFrame = 0, haberMolecules = [];
+var MAX_N2 = 8, MAX_H2 = 20, MAX_NH3 = 12;
+
+function initHaber(){
+  haberCtx = document.getElementById('haberCanvas').getContext('2d');
+  updateHaber();
+}
+
+function stopHaberAnim(){
+  if(haberAnimId) { cancelAnimationFrame(haberAnimId); haberAnimId = null; }
+  haberRunning = false;
+}
+
+function updateHaber(){
+  var n2 = parseFloat(document.getElementById('n2mol').value);
+  var h2 = parseFloat(document.getElementById('h2mol').value);
+  document.getElementById('n2val').textContent = n2.toFixed(1);
+  document.getElementById('h2val').textContent = h2.toFixed(1);
+  var limiting = (n2/1 < h2/3) ? 'N₂' : 'H₂';
+  var product = limiting === 'N₂' ? 2*n2 : (2/3)*h2;
+  var excess = limiting === 'N₂' ? Math.max(0, h2 - 3*n2) : Math.max(0, n2 - h2/3);
+  document.getElementById('haberLedger').innerHTML =
+    'Limiting Reagent: <span>' + limiting + '</span> | NH₃ Yield: <span>' + product.toFixed(2) + '</span> mol | Excess <span>' + (limiting==='N₂'?'H₂':'N₂') + '</span>: <span>' + excess.toFixed(2) + '</span> mol';
+  drawHaber(n2, h2, product, limiting, 0);
+}
+
+function drawHaber(n2, h2, nh3Yield, limiting, animF){
+  var ctx = haberCtx;
+  ctx.clearRect(0,0,440,310);
+
+  // Background
+  ctx.fillStyle = '#f8fafc'; ctx.fillRect(0,0,440,310);
+  
+  // Reactor chamber
+  ctx.strokeStyle = '#1a1a2e'; ctx.lineWidth = 2;
+  ctx.strokeRect(20,30,400,240);
+  ctx.fillStyle = 'rgba(15,52,96,0.02)'; ctx.fillRect(20,30,400,240);
+
+  // Title
+  ctx.fillStyle = '#0f3460'; ctx.font='bold 11px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('N₂ + 3H₂ → 2NH₃', 220, 16);
+  ctx.font='8px sans-serif'; ctx.fillStyle='#64748b'; ctx.fillText('Haber-Bosch Ammonia Synthesis', 220, 28);
+  ctx.fillStyle='#1a1a2e'; ctx.font='8px sans-serif'; ctx.textAlign='left';
+  ctx.fillText('N₂: ' + n2.toFixed(1) + ' mol', 30, 258);
+  ctx.fillText('H₂: ' + h2.toFixed(1) + ' mol', 130, 258);
+
+  // Calculate display counts based on animF (0-1)
+  var progress = Math.min(animF || 0, 1);
+  var n2disp = Math.min(Math.round(n2*2), MAX_N2);
+  var h2disp = Math.min(Math.round(h2*2), MAX_H2);
+  var n2remaining = Math.max(0, Math.round(n2disp * (1 - progress)));
+  var h2remaining = Math.max(0, Math.round(h2disp * (1 - progress)));
+  var nh3disp = Math.min(Math.round(nh3Yield * 1.5 * progress), MAX_NH3);
+  
+  // Determine consumption stoichiometry
+  var consumePerStep = limiting === 'N₂' ? h2disp/n2disp : n2disp*3/h2disp;
+  var n2consumed = Math.round(n2disp * progress);
+  var h2consumed = Math.round(h2disp * progress);
+  if(limiting === 'N₂'){
+    h2consumed = Math.min(h2disp, Math.round(n2consumed * 3));
+    n2consumed = Math.min(n2disp, Math.round(h2consumed / 3));
+  } else {
+    n2consumed = Math.min(n2disp, Math.round(h2consumed / 3));
+    h2consumed = Math.min(h2disp, Math.round(n2consumed * 3));
+  }
+  n2remaining = n2disp - n2consumed;
+  h2remaining = h2disp - h2consumed;
+  
+  // Draw N₂ molecules (left side)
+  var n2cols = 2, n2rows = Math.ceil(n2disp/n2cols);
+  for(var i=0; i<n2disp; i++){
+    var col = i % n2cols, row = Math.floor(i / n2cols);
+    var x = 55 + col*55, y = 50 + row*50;
+    if(i >= n2disp - n2consumed && progress > 0){
+      // Moving toward center — animate
+      var targetX = 200 + Math.sin(i*2.1)*15;
+      var targetY = 130 + Math.cos(i*1.7)*15;
+      x += (targetX - x) * progress;
+      y += (targetY - y) * progress;
+      ctx.globalAlpha = 1 - progress*0.5;
+    }
+    var isExcess = (limiting==='H₂' && progress>=1 && i < n2remaining);
+    if(isExcess){
+      ctx.shadowColor = '#f59e0b'; ctx.shadowBlur = 15;
+    }
+    drawMolecule(ctx, 'N₂', x, y, 0.65);
+    ctx.shadowBlur = 0;
+    ctx.globalAlpha = 1;
+    if(isExcess){
+      ctx.fillStyle='#f59e0b'; ctx.font='bold 8px sans-serif'; ctx.textAlign='center';
+      ctx.fillText('⚡ Excess', x, y+28);
+    }
+  }
+
+  // Draw H₂ molecules (right side)
+  var h2cols = 3, h2rows = Math.ceil(h2disp/h2cols);
+  for(var i=0; i<h2disp; i++){
+    var col = i % h2cols, row = Math.floor(i / h2cols);
+    var x = 310 + col*35, y = 50 + row*38;
+    if(i >= h2disp - h2consumed && progress > 0){
+      var targetX = 200 + Math.sin(i*1.3+1)*20;
+      var targetY = 140 + Math.cos(i*0.9+1)*15;
+      x += (targetX - x) * progress;
+      y += (targetY - y) * progress;
+      ctx.globalAlpha = 1 - progress*0.5;
+    }
+    var isExcess = (limiting==='N₂' && progress>=1 && i < h2remaining);
+    if(isExcess){
+      ctx.shadowColor = '#f59e0b'; ctx.shadowBlur = 15;
+    }
+    drawMolecule(ctx, 'H₂', x, y, 0.55);
+    ctx.shadowBlur = 0;
+    ctx.globalAlpha = 1;
+    if(isExcess){
+      ctx.fillStyle='#f59e0b'; ctx.font='bold 8px sans-serif'; ctx.textAlign='center';
+      ctx.fillText('⚡ Excess', x, y+24);
+    }
+  }
+
+  // Draw NH₃ products (center, appearing as reaction proceeds)
+  for(var i=0; i<nh3disp; i++){
+    var x = 190 + Math.sin(i*2.5+progress*10)*25;
+    var y = 130 + Math.cos(i*1.8+progress*8)*20 + (i%3)*12;
+    var alpha = Math.min(1, (i+1)/(nh3disp+1) * 1.5 - 0.5);
+    ctx.globalAlpha = Math.max(0.1, alpha);
+    ctx.shadowColor = '#22c55e'; ctx.shadowBlur = 8;
+    drawMolecule(ctx, 'NH₃', x, y, 0.65);
+    ctx.shadowBlur = 0;
+  }
+  ctx.globalAlpha = 1;
+
+  // Counter legend
+  ctx.fillStyle='#1a1a2e'; ctx.font='9px sans-serif'; ctx.textAlign='left';
+  ctx.fillStyle='#3b82f6'; ctx.fillRect(250,256,8,8); ctx.fillStyle='#333'; ctx.fillText(' N₂', 260, 264);
+  ctx.fillStyle='#94a3b8'; ctx.fillRect(290,256,8,8); ctx.fillStyle='#333'; ctx.fillText(' H₂', 300, 264);
+  ctx.fillStyle='#22c55e'; ctx.fillRect(330,256,8,8); ctx.fillStyle='#333'; ctx.fillText(' NH₃', 340, 264);
+  ctx.fillStyle='#333'; ctx.textAlign='right';
+  ctx.fillText('Remaining: N₂='+n2remaining+' H₂='+h2remaining+' NH₃='+nh3disp, 430, 264);
+
+  if(progress >= 1){
+    ctx.fillStyle='#e94560'; ctx.font='bold 11px sans-serif'; ctx.textAlign='center';
+    ctx.fillText('★ ' + limiting + ' is LIMITING REAGENT', 220, 280);
+  }
+}
+
+function animateHaber(){
+  if(haberRunning) return;
+  haberRunning = true; haberFrame = 0;
+  var n2 = parseFloat(document.getElementById('n2mol').value);
+  var h2 = parseFloat(document.getElementById('h2mol').value);
+  var limiting = (n2/1 < h2/3) ? 'N₂' : 'H₂';
+  var product = limiting === 'N₂' ? 2*n2 : (2/3)*h2;
+  var totalFrames = 80;
+
+  function loop(){
+    haberFrame++;
+    var progress = Math.min(haberFrame / totalFrames, 1);
+    // Ease in-out
+    var eased = progress < 0.5 ? 2*progress*progress : 1 - Math.pow(-2*progress+2,2)/2;
+    drawHaber(n2, h2, product, limiting, eased);
+    if(haberFrame < totalFrames + 30){
+      haberAnimId = requestAnimationFrame(loop);
+    } else {
+      haberRunning = false;
+      drawHaber(n2, h2, product, limiting, 1);
+    }
+  }
+  loop();
+}
+
+// ----- TOOL 3: SOLUTION PREP & DILUTION -----
+var solnCtx, solnAnimId, solnTime = 0, solnParticles = [];
+
+function initSoln(){
+  solnCtx = document.getElementById('solnCanvas').getContext('2d');
+  solnParticles = [];
+  updateSoln();
+  animateSolnLoop();
+}
+
+function animateSolnLoop(){
+  solnTime += 0.04;
+  var tab4 = document.getElementById('tab4');
+  if(tab4 && tab4.checked){
+    var choice = document.getElementById('soluteChoice').value;
+    var mass = parseFloat(document.getElementById('soluteMass').value);
+    var vol = parseFloat(document.getElementById('solnVol').value);
+    var dil = parseFloat(document.getElementById('dilutionHandle').value);
+    var M_solute = {NaOH:40.0, CuSO4:159.6, NaCl:58.44}[choice];
+    var density = 1.0;
+    var moles = mass / M_solute;
+    var volL = vol / 1000;
+    var volTotalL = (vol + dil) / 1000;
+    var M = moles / volL;
+    var M2 = moles / volTotalL;
+    var solventMass_g = vol - mass;
+    var m = solventMass_g > 0 ? (moles / (solventMass_g/1000)) : 0;
+    var n_solvent = solventMass_g / 18.016;
+    var x = moles / (moles + n_solvent);
+
+    // Ensure particle count matches mass
+    var targetCount = Math.min(Math.round(mass * 2), 35);
+    while(solnParticles.length < targetCount){
+      solnParticles.push({ox:0, oy:0, vx:(Math.random()-0.5)*0.5, vy:(Math.random()-0.5)*0.5, phase:Math.random()*6.28});
+    }
+    while(solnParticles.length > targetCount) solnParticles.pop();
+
+    drawSoln(mass, vol, dil, choice, M, m, x, M2, moles, M_solute);
+  }
+  solnAnimId = requestAnimationFrame(animateSolnLoop);
+}
+
+function updateSoln(){
+  var choice = document.getElementById('soluteChoice').value;
+  var mass = parseFloat(document.getElementById('soluteMass').value);
+  var vol = parseFloat(document.getElementById('solnVol').value);
+  var dil = parseFloat(document.getElementById('dilutionHandle').value);
+  document.getElementById('sMassVal').textContent = mass.toFixed(1) + ' g';
+  document.getElementById('volVal').textContent = vol + ' mL';
+  document.getElementById('dilVal').textContent = '+' + dil + ' mL';
+}
+
+function drawSoln(mass, vol, dil, choice, M, m, x, M2, moles, Msol){
+  var ctx = solnCtx;
+  ctx.clearRect(0,0,440,310);
+
+  // Digital scale on left
+  ctx.fillStyle = '#1a1a2e'; ctx.fillRect(8,34,75,40);
+  ctx.strokeStyle = '#333'; ctx.lineWidth = 1; ctx.strokeRect(8,34,75,40);
+  ctx.fillStyle = '#22c55e'; ctx.font='8px monospace'; ctx.textAlign='left';
+  ctx.fillText('⚖ BALANCE', 12, 44);
+  ctx.fillStyle = '#fff'; ctx.font='bold 10px monospace';
+  ctx.fillText(mass.toFixed(1) + ' g', 12, 63);
+
+  // Beaker with solute
+  var bX = 10, bY = 80, bW = 75, bH = 50;
+  ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(bX, bY); ctx.lineTo(bX, bY+bH-8);
+  ctx.quadraticCurveTo(bX, bY+bH-2, bX+6, bY+bH-2);
+  ctx.lineTo(bX+bW-6, bY+bH-2);
+  ctx.quadraticCurveTo(bX+bW, bY+bH-2, bX+bW, bY+bH-8);
+  ctx.lineTo(bX+bW, bY);
+  ctx.stroke();
+  ctx.fillStyle = '#e2e8f0'; ctx.fillRect(bX+3, bY+8, bW-6, bH-16);
+  ctx.fillStyle = '#475569'; ctx.font='7px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('Solute', bX+bW/2, bY+5);
+  
+  // Solid solute particles in beaker
+  var nSolid = Math.min(Math.round(mass * 0.6), 20);
+  for(var i=0; i<nSolid; i++){
+    var sx = bX+8 + (i*7 % (bW-16));
+    var sy = bY+bH-12 - Math.floor(i*3/(bW-10))*5;
+    ctx.beginPath(); ctx.arc(sx, sy, 3, 0, Math.PI*2);
+    ctx.fillStyle = '#e94560'; ctx.fill();
+  }
+
+  // Main volumetric flask
+  var fX = 120, fW = 150, fBottom = 290;
+  var fNeckTop = 50, fNeckW = 30, fNeckH = 30;
+  var fBodyTop = fNeckTop + fNeckH;
+  
+  ctx.strokeStyle = '#1a1a2e'; ctx.lineWidth = 2;
+  ctx.fillStyle = 'rgba(224,231,255,0.15)';
+  ctx.beginPath();
+  // Neck
+  ctx.moveTo(fX + (fW-fNeckW)/2, fNeckTop);
+  ctx.lineTo(fX + (fW-fNeckW)/2, fNeckTop + fNeckH);
+  // Body
+  ctx.lineTo(fX + 15, fBodyTop+10);
+  ctx.lineTo(fX + 15, fBottom - 20);
+  ctx.quadraticCurveTo(fX + 15, fBottom - 5, fX + 35, fBottom - 5);
+  ctx.lineTo(fX + fW - 35, fBottom - 5);
+  ctx.quadraticCurveTo(fX + fW - 15, fBottom - 5, fX + fW - 15, fBottom - 20);
+  ctx.lineTo(fX + fW - 15, fBodyTop+10);
+  ctx.lineTo(fX + fW - (fW-fNeckW)/2, fNeckTop + fNeckH);
+  ctx.lineTo(fX + fW - (fW-fNeckW)/2, fNeckTop);
+  ctx.stroke();
+  ctx.fill();
+
+  // Graduation marks on flask
+  ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 1;
+  for(var g=0; g<5; g++){
+    var gy = fBodyTop + 25 + g*38;
+    var gx1 = fX + 15, gx2 = fX + 25;
+    ctx.beginPath(); ctx.moveTo(gx1, gy); ctx.lineTo(gx2, gy); ctx.stroke();
+    ctx.fillStyle='#94a3b8'; ctx.font='6px sans-serif'; ctx.textAlign='left';
+    ctx.fillText((vol - g*((vol-dil)/4)) > 0 ? Math.round(vol - g*(vol/4))+'mL' : '', gx2+2, gy+2);
+  }
+
+  // Liquid fill
+  var totalVol = vol + dil;
+  var fillRatio = Math.min(totalVol / 500, 0.95);
+  var liquidTop = fBottom - 10 - fillRatio * (fBottom - fBodyTop - 30);
+  var colors = {NaOH:'#3b82f6', CuSO4:'#22c55e', NaCl:'#a855f7'};
+  var c1 = colors[choice] || '#3b82f6';
+  
+  var grad = ctx.createLinearGradient(0, fBottom, 0, liquidTop);
+  grad.addColorStop(0, c1 + '88');
+  grad.addColorStop(0.5, c1 + '44');
+  grad.addColorStop(1, c1 + '18');
+  ctx.fillStyle = grad;
+  ctx.beginPath();
+  ctx.moveTo(fX + 17, fBottom - 7);
+  ctx.lineTo(fX + 17, Math.max(liquidTop, fBodyTop+20));
+  ctx.lineTo(fX + fW - 17, Math.max(liquidTop, fBodyTop+20));
+  ctx.lineTo(fX + fW - 17, fBottom - 7);
+  ctx.quadraticCurveTo(fX + fW - 17, fBottom - 7, fX + fW - 35, fBottom - 7);
+  ctx.lineTo(fX + 35, fBottom - 5);
+  ctx.fill();
+
+  // Meniscus line
+  ctx.strokeStyle = c1; ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(fX + 20, liquidTop);
+  ctx.quadraticCurveTo(fX + fW/2 + 5, liquidTop - 3, fX + fW - 20, liquidTop);
+  ctx.stroke();
+
+  // Dissolving particles (Brownian motion inside flask)
+  var particleCount = solnParticles.length;
+  for(var i=0; i<particleCount; i++){
+    var p = solnParticles[i];
+    // Brownian motion
+    p.vx += (Math.random()-0.5)*0.3;
+    p.vy += (Math.random()-0.5)*0.3;
+    p.vx *= 0.95; p.vy *= 0.95;
+    p.ox += p.vx;
+    p.oy += p.vy;
+    
+    // Keep within flask liquid region
+    var maxX = fW - 35 - 18, maxY = fBottom - 20 - liquidTop - 10;
+    if(p.ox > maxX) { p.ox = maxX; p.vx *= -0.5; }
+    if(p.ox < -maxX) { p.ox = -maxX; p.vx *= -0.5; }
+    if(p.oy > maxY) { p.oy = maxY; p.vy *= -0.5; }
+    if(p.oy < -maxY) { p.oy = -maxY; p.vy *= -0.5; }
+    
+    var px = fX + fW/2 + p.ox + Math.sin(solnTime*2 + p.phase)*2;
+    var py = (liquidTop + fBottom - 5)/2 + p.oy + Math.cos(solnTime*1.7 + p.phase)*2;
+    
+    ctx.beginPath(); ctx.arc(px, py, 2.5 + Math.sin(solnTime*3 + i)*0.5, 0, Math.PI*2);
+    ctx.fillStyle = '#e94560';
+    ctx.globalAlpha = 0.5 + Math.sin(solnTime*2 + p.phase)*0.2;
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+
+  // Label on flask
+  ctx.fillStyle = '#1a1a2e'; ctx.font='bold 9px sans-serif'; ctx.textAlign='center';
+  ctx.fillText(choice + ' (aq)', fX + fW/2, fNeckTop + 16);
+
+  // Dilution water being added (animated drop)
+  if(dil > 0){
+    ctx.fillStyle = 'rgba(59,130,246,0.4)';
+    var dropX = fX + fW/2 + Math.sin(solnTime*2)*10;
+    var dropY = fNeckTop + 10 + Math.sin(solnTime*3)*3;
+    ctx.beginPath(); ctx.arc(dropX, dropY, 5, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#3b82f6'; ctx.font='8px sans-serif';
+    ctx.fillText('+H₂O', fX + fW/2, fNeckTop + 5);
+  }
+
+  // RIGHT SIDE: Digital display panel
+  var dX = 290, dY = 34, dW = 142;
+  ctx.fillStyle = '#1a1a2e';
+  ctx.beginPath();
+  if(ctx.roundRect){ ctx.roundRect(dX, dY, dW, 256, 6); }
+  else { ctx.rect(dX, dY, dW, 256); }
+  ctx.fill();
+
+  // Panel title
+  ctx.fillStyle = '#22c55e'; ctx.font='bold 9px monospace'; ctx.textAlign='left';
+  ctx.fillText('▶ SOLUTION MONITOR', dX+10, dY+18);
+  ctx.strokeStyle = '#333'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(dX+8, dY+24); ctx.lineTo(dX+dW-8, dY+24); ctx.stroke();
+
+  // Solution concentration readouts
+  var labels = [
+    'Molarity (M)', M.toFixed(4) + ' mol/L',
+    'Molality (m)', m.toFixed(4) + ' mol/kg',
+    'Mole Fraction (x)', x.toFixed(6),
+    'Moles of solute', moles.toFixed(4) + ' mol',
+    'Vol. of solution', (totalVol/1000).toFixed(3) + ' L'
+  ];
+  ctx.font = '9px monospace';
+  for(var i=0; i<labels.length; i+=2){
+    var ly = dY + 40 + i*12;
+    ctx.fillStyle = '#8899aa'; ctx.textAlign='left';
+    ctx.fillText('$ ' + labels[i], dX+10, ly);
+    ctx.fillStyle = '#f59e0b'; ctx.textAlign='right';
+    ctx.fillText(labels[i+1], dX+dW-10, ly);
+  }
+
+  // Dilution equation display
+  ctx.strokeStyle = '#333'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(dX+8, dY+138); ctx.lineTo(dX+dW-8, dY+138); ctx.stroke();
+  ctx.fillStyle = '#e94560'; ctx.font='bold 10px monospace'; ctx.textAlign='center';
+  ctx.fillText('═══ DILUTION ═══', dX+dW/2, dY+153);
+  
+  ctx.font = '10px monospace';
+  ctx.fillStyle = '#fff'; ctx.textAlign='left';
+  ctx.fillText('M₁ = ' + M.toFixed(3) + ' M', dX+12, dY+170);
+  ctx.fillText('V₁ = ' + (vol/1000).toFixed(3) + ' L', dX+12, dY+184);
+  if(dil > 0){
+    ctx.fillStyle = '#22c55e'; ctx.font='10px monospace';
+    ctx.fillText('M₁V₁ = M₂V₂', dX+12, dY+202);
+    ctx.fillStyle = '#f59e0b'; ctx.font='bold 10px monospace';
+    ctx.fillText('M₂ = ' + M2.toFixed(4) + ' M', dX+12, dY+218);
+    ctx.fillStyle = '#8899aa'; ctx.font='8px monospace';
+    ctx.fillText('('+M.toFixed(3)+'×'+(vol/1000).toFixed(3)+'L)', dX+12, dY+234);
+    ctx.fillText('= '+M2.toFixed(3)+'×'+((vol+dil)/1000).toFixed(3)+'L', dX+12, dY+246);
+  } else {
+    ctx.fillStyle = '#8899aa'; ctx.font='8px monospace';
+    ctx.fillText('Move DILUTION slider →', dX+12, dY+204);
+    ctx.fillText('to see M₁V₁ = M₂V₂', dX+12, dY+218);
+  }
+
+  // Bottom title bar
+  ctx.fillStyle = '#1a1a2e'; ctx.fillRect(0,0,440,30);
+  ctx.fillStyle = '#fff'; ctx.font='bold 11px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('🧪 Solution Preparation & Dilution Workbench', 220, 19);
+  
+  // Update HTML ledger
+  document.getElementById('solnLedger').innerHTML =
+    'Molarity: <span>' + M.toFixed(3) + '</span> M | Molality: <span>' + m.toFixed(3) + '</span> m | Mole Fraction: <span>' + x.toFixed(4) + '</span> | After Dilution: M₂ = <span>' + M2.toFixed(3) + '</span> M';
+}
+
+// ----- INIT -----
+document.addEventListener('DOMContentLoaded', function(){
+  initLaws();
+  initHaber();
+  initSoln();
+});
+</script>
+</body>
+</html>

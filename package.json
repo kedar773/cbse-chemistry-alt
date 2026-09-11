@@ -1,0 +1,15 @@
+{
+  "name": "kedar-chemistry-cyber-alt",
+  "version": "2.0.0",
+  "description": "CBSE Class 11 & 12 Chemistry Master Portal // Cyber Dark Mode // Three.js Scrollytelling",
+  "main": "index.html",
+  "scripts": {
+    "cap:add:android": "npx cap add android",
+    "cap:add:ios": "npx cap add ios",
+    "cap:sync": "npx cap sync",
+    "cap:open:android": "npx cap open android",
+    "cap:open:ios": "npx cap open ios"
+  },
+  "author": "Kedar Krishna",
+  "license": "MIT"
+}

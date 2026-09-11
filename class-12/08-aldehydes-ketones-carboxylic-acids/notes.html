@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Master Study Notes: Aldehydes, Ketones &amp; Carboxylic Acids | CBSE Class 12</title>
+<style>
+        :root {
+            --dark-red: #8B0000;
+            --dark-blue: #00008B;
+            --bg-light: #fefefe;
+            --border: #cccccc;
+            --text: #1a1a1a;
+            --accent-bg: #f9f9f9;
+            --highlight-yellow: #fffde7;
+            --mechanism-bg: #fff5f5;
+            --tab-active: #f0f4f8;
+            --tab-hover: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11.5pt;
+            line-height: 1.65;
+            color: #1a1a1a;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            flex-wrap: wrap;
+            background: #f8fafc;
+            border-bottom: 2px solid #cbd5e1;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: white;
+            padding: 2px 10px 0 10px;
+        }
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 11pt;
+            font-weight: 600;
+            color: #475569;
+            border-bottom: 3px solid transparent;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .tab-btn:hover {
+            background: var(--tab-hover);
+            color: #1e293b;
+        }
+        .tab-btn.active {
+            color: #0f172a;
+            border-bottom: 3px solid #2563eb;
+            background: #eff6ff;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 15mm 18mm 18mm 18mm;
+            animation: fade 0.3s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Print container styling reused */
+        h1 {
+            font-size: 20pt;
+            text-align: center;
+            color: #1a1a1a;
+            border-bottom: 3px double #333;
+            padding-bottom: 8px;
+            margin-bottom: 6px;
+        }
+        h2 {
+            font-size: 15pt;
+            color: #222;
+            border-bottom: 2px solid #555;
+            padding-bottom: 4px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            page-break-after: avoid;
+        }
+        h3 {
+            font-size: 12.5pt;
+            color: #2c2c2c;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 11.5pt;
+            color: #333;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+
+        .named-rxn,
+        .mechanism-highlight {
+            color: #8B0000;
+            font-weight: bold;
+        }
+        .key-structure,
+        .key-reagent {
+            color: #00008B;
+            font-weight: bold;
+        }
+
+        p {
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+        ul,
+        ol {
+            margin: 6px 0 10px 22px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 14px 0;
+            font-size: 10.5pt;
+            page-break-inside: avoid;
+        }
+        th,
+        td {
+            border: 1px solid #bbb;
+            padding: 6px 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #e8e8e8;
+            font-weight: bold;
+        }
+        table caption {
+            font-weight: bold;
+            margin-bottom: 4px;
+            font-size: 11pt;
+        }
+
+        .question-block {
+            background: #fffde7;
+            border-left: 4px solid #f0c040;
+            padding: 10px 14px;
+            margin: 12px 0 14px 0;
+            border-radius: 3px;
+            page-break-inside: avoid;
+            font-size: 10.8pt;
+        }
+        .q-marker {
+            font-weight: bold;
+            color: #8B6914;
+        }
+        .q-answer {
+            margin-top: 6px;
+            padding-left: 8px;
+            border-left: 2px dotted #d4b040;
+        }
+
+        .mechanism-box {
+            background: #fff5f5;
+            border: 1.5px dashed #c44;
+            padding: 12px 16px;
+            margin: 12px 0 16px;
+            border-radius: 4px;
+            page-break-inside: avoid;
+            font-size: 10.8pt;
+        }
+        .mechanism-box .mech-title {
+            color: #8B0000;
+            font-weight: bold;
+            font-size: 11.5pt;
+            margin-bottom: 6px;
+        }
+
+        .note-box {
+            background: #f0f4f8;
+            border: 1px solid #b0c4d8;
+            padding: 10px 14px;
+            margin: 10px 0 14px;
+            border-radius: 3px;
+            page-break-inside: avoid;
+            font-size: 10.8pt;
+        }
+        .note-box .note-title {
+            font-weight: bold;
+            color: #1a3a5c;
+        }
+
+        .reaction-line {
+            text-align: center;
+            margin: 8px 0;
+            font-size: 11pt;
+            page-break-inside: avoid;
+            letter-spacing: 0.3px;
+        }
+        .rxn-arrow {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 0 4px;
+            color: #333;
+        }
+
+        /* Dropdown styling */
+        details {
+            margin: 10px 0;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 8px 12px;
+            page-break-inside: avoid;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #1e40af;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details summary::before {
+            content: "▶";
+            font-size: 0.8em;
+            transition: transform 0.2s;
+            display: inline-block;
+            width: 16px;
+        }
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        details .answer-content {
+            margin-top: 8px;
+            padding-left: 8px;
+            border-left: 3px solid #94a3b8;
+            color: #1e293b;
+        }
+        .hint-text {
+            font-style: italic;
+            background: #fff7ed;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 10.5pt;
+        }
+
+        .chapter-subtitle {
+            text-align: center;
+            font-size: 10pt;
+            color: #555;
+            margin-bottom: 16px;
+        }
+        .print-footer {
+            text-align: center;
+            font-size: 9pt;
+            color: #888;
+            margin-top: 8px;
+            border-top: 1px solid #ddd;
+            padding-top: 4px;
+        }
+
+        @media print {
+            body {
+                font-size: 11pt;
+                background: #fff;
+            }
+            .tab-nav {
+                display: none;
+            }
+            .tab-content {
+                display: block !important;
+                padding: 12mm 15mm 15mm 15mm;
+                page-break-inside: avoid;
+            }
+            .tab-content.active {
+                display: block;
+            }
+            details {
+                display: block;
+            }
+            details summary::before {
+                content: "▸ ";
+                transform: none;
+            }
+            details .answer-content {
+                display: block;
+            }
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Tab Navigation -->
+<div class="tab-nav" id="tabNav">
+<button class="tab-btn active" data-tab="tab1">1. Nomenclature &amp; Properties</button>
+<button class="tab-btn" data-tab="tab2">2. Preparation (Aldehydes &amp; Ketones)</button>
+<button class="tab-btn" data-tab="tab3">3. Reactions (Aldehydes &amp; Ketones)</button>
+<button class="tab-btn" data-tab="tab4">4. Carboxylic Acids</button>
+<button class="tab-btn" data-tab="tab5">5. NCERT Questions (Intext &amp; Exercises)</button>
+<button class="tab-btn" data-tab="tab6">6. PYQs &amp; Important Conversions</button>
+</div>
+<!-- ================== TAB 1 : NOMENCLATURE & PROPERTIES ================== -->
+<div class="tab-content active" id="tab1">
+<h1>Master Study Notes</h1>
+<p class="chapter-subtitle">Aldehydes, Ketones &amp; Carboxylic Acids · NCERT Class 12 · Tab 1</p>
+<h2>1. Nomenclature of Aldehydes &amp; Ketones</h2>
+<p><strong>General Formulas:</strong> Aldehydes: <span class="key-structure">R–CHO</span>; Ketones: <span class="key-structure">R–CO–R′</span></p>
+<ul>
+<li><strong>Aldehydes:</strong> Replace "-e" with <strong>"-al"</strong>. –CHO carbon is position 1.</li>
+<li><strong>Ketones:</strong> Replace "-e" with <strong>"-one"</strong>. Lowest number for carbonyl.</li>
+</ul>
+<table>
+<caption>Common vs IUPAC Names</caption>
+<tr><th>Formula</th><th>Common Name</th><th>IUPAC Name</th></tr>
+<tr><td>HCHO</td><td>Formaldehyde</td><td><span class="key-structure">Methanal</span></td></tr>
+<tr><td>CH<sub>3</sub>CHO</td><td>Acetaldehyde</td><td><span class="key-structure">Ethanal</span></td></tr>
+<tr><td>CH<sub>3</sub>COCH<sub>3</sub></td><td>Acetone</td><td><span class="key-structure">Propan-2-one</span></td></tr>
+<tr><td>C<sub>6</sub>H<sub>5</sub>CHO</td><td>Benzaldehyde</td><td>Benzenecarbaldehyde</td></tr>
+<tr><td>C<sub>6</sub>H<sub>5</sub>COCH<sub>3</sub></td><td>Acetophenone</td><td>1-Phenylethanone</td></tr>
+</table>
+<h2>3. Physical Properties (Aldehydes &amp; Ketones)</h2>
+<ul>
+<li><strong>Boiling points:</strong> Lower than alcohols (no H-bonding), higher than ethers/alkanes.</li>
+<li><strong>Solubility:</strong> C<sub>1</sub>-C<sub>4</sub> soluble in water (H-bond with H<sub>2</sub>O).</li>
+<li>Methanal is gas; ethanal is volatile liquid.</li>
+</ul>
+<div class="question-block">
+<span class="q-marker">📌 [In-Text Q 8.5]</span> Boiling point order: butane &lt; ethoxyethane &lt; propanal &lt; propan-1-ol.
+        </div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ================== TAB 2 : PREPARATION ================== -->
+<div class="tab-content" id="tab2">
+<h1>Master Study Notes</h1>
+<p class="chapter-subtitle">Preparation of Aldehydes &amp; Ketones · Tab 2</p>
+<h3>2.1 Oxidation of Alcohols</h3>
+<p>1° alcohol + <span class="key-reagent">PCC</span> → Aldehyde. 2° alcohol + <span class="key-reagent">K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sup>+</sup></span> → Ketone.</p>
+<div class="question-block"><span class="q-marker">📌 [Example 8.1]</span> Butan-2-ol → butan-2-one.</div>
+<h3>2.2 Dehydrogenation (Cu, 573 K)</h3>
+<p>RCH<sub>2</sub>OH → RCHO + H<sub>2</sub> (1° alcohol → aldehyde)</p>
+<h3>2.3 Ozonolysis of Alkenes</h3>
+<p>RCH=CHR' + O<sub>3</sub> → Zn/H<sub>2</sub>O → RCHO + R'CHO</p>
+<div class="question-block"><span class="q-marker">📌 [In-Text Q 8.2]</span> 2-methylbut-2-ene → propan-2-one + ethanal.</div>
+<h3>2.4 Hydration of Alkynes</h3>
+<p>HC≡CH + H<sub>2</sub>O →<sup>HgSO<sub>4</sub>/H<sub>2</sub>SO<sub>4</sub></sup> CH<sub>3</sub>CHO</p>
+<h3>2.5 Rosenmund Reduction <span class="named-rxn">(RCOCl → RCHO)</span></h3>
+<p><span class="key-reagent">H<sub>2</sub>/Pd-BaSO<sub>4</sub></span> (poisoned catalyst).</p>
+<div class="question-block"><span class="q-marker">📌 [Example 8.3]</span> Ethanoyl chloride → ethanal.</div>
+<h3>2.6 Stephen Reaction <span class="named-rxn">(RCN → RCHO)</span></h3>
+<p><span class="key-reagent">SnCl<sub>2</sub>/HCl</span> then H<sub>2</sub>O.</p>
+<h3>2.7 Grignard + Nitrile → Ketone</h3>
+<p>RCN + R'MgX → H<sub>3</sub>O<sup>+</sup> → R–CO–R'</p>
+<h3>2.8 Friedel–Crafts Acylation</h3>
+<p>Benzene + CH<sub>3</sub>COCl →<sup>AlCl<sub>3</sub></sup> C<sub>6</sub>H<sub>5</sub>COCH<sub>3</sub></p>
+<h3>2.9 Gattermann–Koch Reaction <span class="named-rxn">(Benzene → Benzaldehyde)</span></h3>
+<p>CO + HCl + C<sub>6</sub>H<sub>6</sub> →<sup>AlCl<sub>3</sub>/CuCl</sup> C<sub>6</sub>H<sub>5</sub>CHO</p>
+<h3>2.10 Etard Reaction <span class="named-rxn">(Toluene → Benzaldehyde)</span></h3>
+<p><span class="key-reagent">CrO<sub>2</sub>Cl<sub>2</sub>/CS<sub>2</sub></span> then H<sub>2</sub>O.</p>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ================== TAB 3 : REACTIONS (Aldehydes & Ketones) ================== -->
+<div class="tab-content" id="tab3">
+<h1>Master Study Notes</h1>
+<p class="chapter-subtitle">Reactions of Aldehydes &amp; Ketones · Tab 3</p>
+<div class="mechanism-box">
+<div class="mech-title">🔬 Nucleophilic Addition (AN) Mechanism</div>
+<p>Nu<sup>−</sup> attacks δ+ carbon → tetrahedral intermediate → protonation.</p>
+</div>
+<h3>4.1 Addition of HCN</h3>
+<p>CH<sub>3</sub>CHO + HCN → CH<sub>3</sub>CH(OH)CN (cyanohydrin).</p>
+<h3>4.2 Addition of NaHSO<sub>3</sub></h3>
+<p>Forms crystalline bisulphite adduct (reversible, purification).</p>
+<h3>4.3 Addition of Grignard Reagents</h3>
+<p>HCHO → 1° alcohol; other aldehydes → 2°; ketones → 3° alcohol.</p>
+<div class="question-block"><span class="q-marker">📌 [Example 8.5]</span> Propanone + CH<sub>3</sub>MgBr → (CH<sub>3</sub>)<sub>3</sub>COH.</div>
+<h3>4.4 Addition of Alcohols (Acetal/Ketal)</h3>
+<p>CH<sub>3</sub>CHO + 2 C<sub>2</sub>H<sub>5</sub>OH →<sup>dry HCl</sup> CH<sub>3</sub>CH(OC<sub>2</sub>H<sub>5</sub>)<sub>2</sub></p>
+<h3>4.5 Ammonia Derivatives (Imine formation)</h3>
+<table>
+<tr><th>Reagent</th><th>Product</th></tr>
+<tr><td>NH<sub>2</sub>OH</td><td>Oxime</td></tr>
+<tr><td>NH<sub>2</sub>NH<sub>2</sub></td><td>Hydrazone</td></tr>
+<tr><td>C<sub>6</sub>H<sub>5</sub>NHNH<sub>2</sub></td><td>Phenylhydrazone</td></tr>
+<tr><td>2,4-DNP</td><td>Yellow/orange ppt (test)</td></tr>
+</table>
+<div class="question-block"><span class="q-marker">📌 [In-Text Q 8.6]</span> Semicarbazone of propanone: (CH<sub>3</sub>)<sub>2</sub>C=NNHCONH<sub>2</sub>.</div>
+<h3>4.6 Reduction</h3>
+<p><strong>Catalytic / NaBH<sub>4</sub>:</strong> Aldehydes → 1° alcohol; Ketones → 2° alcohol.<br/>
+<span class="named-rxn">Clemmensen:</span> <span class="key-reagent">Zn-Hg / conc. HCl</span> (acidic) → CH<sub>2</sub>.<br/>
+<span class="named-rxn">Wolff–Kishner:</span> <span class="key-reagent">NH<sub>2</sub>NH<sub>2</sub> / KOH / glycol</span> (basic) → CH<sub>2</sub>.</p>
+<div class="question-block"><span class="q-marker">📌 [Example 8.6]</span> Acetophenone → ethylbenzene (Clemmensen or Wolff–Kishner).</div>
+<h3>4.7 Oxidation</h3>
+<p><strong>Tollens' test:</strong> Ag mirror (aldehydes).<br/><strong>Fehling's test:</strong> Cu<sub>2</sub>O red ppt (aliphatic aldehydes). Aromatic aldehydes <strong>do not</strong> react.<br/><strong>Iodoform test:</strong> CH<sub>3</sub>CO– or CH<sub>3</sub>CH(OH)– give yellow CHI<sub>3</sub>.</p>
+<div class="question-block"><span class="q-marker">📌 [In-Text Q 8.8]</span> Propan-2-ol &amp; butan-2-one give iodoform; propanal, butan-1-ol do not.</div>
+<h3>4.8 Aldol Condensation <span class="named-rxn">(α-H required)</span></h3>
+<p>2 CH<sub>3</sub>CHO →<sup>dil. NaOH</sup> CH<sub>3</sub>CH(OH)CH<sub>2</sub>CHO →<sup>Δ</sup> CH<sub>3</sub>CH=CHCHO</p>
+<div class="question-block"><span class="q-marker">📌 [Example 8.7]</span> Propanal aldol → CH<sub>3</sub>CH<sub>2</sub>CH=C(CH<sub>3</sub>)CHO.</div>
+<h3>4.9 Cannizzaro Reaction <span class="named-rxn">(no α-H)</span></h3>
+<p>2 C<sub>6</sub>H<sub>5</sub>CHO + conc. NaOH → C<sub>6</sub>H<sub>5</sub>CH<sub>2</sub>OH + C<sub>6</sub>H<sub>5</sub>COONa</p>
+<div class="question-block"><span class="q-marker">📌 [In-Text Q 8.9]</span> Benzaldehyde does NOT give Fehling's test but gives Tollens'.</div>
+<h3>4.10 Electrophilic Substitution (meta-directing)</h3>
+<p>Nitration of benzaldehyde → m-nitrobenzaldehyde.</p>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ================== TAB 4 : CARBOXYLIC ACIDS ================== -->
+<div class="tab-content" id="tab4">
+<h1>Master Study Notes</h1>
+<p class="chapter-subtitle">Carboxylic Acids · Tab 4</p>
+<h2>5. Nomenclature &amp; Preparation</h2>
+<p>Replace "-e" with <strong>"-oic acid"</strong>. HCOOH → methanoic acid; CH<sub>3</sub>COOH → ethanoic acid.</p>
+<h3>Preparation Methods</h3>
+<ul>
+<li>Oxidation of 1° alcohols / aldehydes (<span class="key-reagent">KMnO<sub>4</sub>/H<sup>+</sup></span>)</li>
+<li>Hydrolysis of nitriles (RCN → RCOOH)</li>
+<li>Carbonation of Grignard reagent: RMgX + CO<sub>2</sub> → RCOOH</li>
+<li>Hydrolysis of esters, acid chlorides, anhydrides.</li>
+</ul>
+<div class="question-block"><span class="q-marker">📌 [Example 8.9]</span> CH<sub>3</sub>Br → CH<sub>3</sub>MgBr →<sup>CO<sub>2</sub>/H<sup>+</sup></sup> CH<sub>3</sub>COOH.</div>
+<h2>6. Physical Properties &amp; Acidity</h2>
+<p>Higher b.p. due to dimeric H‑bonding. Acidity: RCOOH ⇌ RCOO<sup>−</sup> + H<sup>+</sup>. EWG increases acidity; EDG decreases it.</p>
+<div class="question-block"><span class="q-marker">📌 [Exercise 8.13]</span> Acidity: 4-methoxybenzoic &lt; 4-methylbenzoic &lt; benzoic &lt; 4-nitrobenzoic.</div>
+<h2>7. Chemical Reactions</h2>
+<h3>7.1 Salt Formation</h3>
+<p>CH<sub>3</sub>COOH + NaHCO<sub>3</sub> → CO<sub>2</sub>↑ (test for –COOH)</p>
+<h3>7.2 Acid Chlorides</h3>
+<p><span class="key-reagent">SOCl<sub>2</sub></span> preferred (gaseous by‑products).</p>
+<div class="question-block"><span class="q-marker">📌 [In-Text Q 8.10]</span> SOCl<sub>2</sub> gives pure RCOCl.</div>
+<h3>7.3 Esterification (Fischer)</h3>
+<p>RCOOH + R'OH ⇌<sup>H<sup>+</sup></sup> RCOOR' + H<sub>2</sub>O</p>
+<h3>7.4 Amide formation</h3>
+<p>RCOOH + NH<sub>3</sub> → RCOONH<sub>4</sub> →<sup>Δ</sup> RCONH<sub>2</sub></p>
+<h3>7.5 Reduction</h3>
+<p><span class="key-reagent">LiAlH<sub>4</sub></span> or B<sub>2</sub>H<sub>6</sub> → 1° alcohol.</p>
+<h3>7.6 Decarboxylation</h3>
+<p>RCOONa + NaOH/CaO → R–H + Na<sub>2</sub>CO<sub>3</sub></p>
+<h3>7.7 Kolbe's Electrolysis</h3>
+<p>2 CH<sub>3</sub>COONa → CH<sub>3</sub>–CH<sub>3</sub></p>
+<h3>7.8 HVZ Reaction <span class="named-rxn">(α‑halogenation)</span></h3>
+<p>RCH<sub>2</sub>COOH + Cl<sub>2</sub>/red P → RCHClCOOH</p>
+<div class="question-block"><span class="q-marker">📌 [Example 8.10]</span> Ethanoic acid → α‑chloroethanoic acid (HVZ).</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ================== TAB 5 : NCERT QUESTIONS ================== -->
+<div class="tab-content" id="tab5">
+<h1>NCERT Questions (Intext &amp; Exercises)</h1>
+<p class="chapter-subtitle">All answers in dropdown · Click to reveal</p>
+<h2>In-Text Questions</h2>
+<details>
+<summary>📌 In-Text Q 8.2: Ozonolysis of 2-methylbut-2-ene</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> Propan-2-one (CH<sub>3</sub>COCH<sub>3</sub>) and ethanal (CH<sub>3</sub>CHO).</p>
+<span class="hint-text">💡 Hint: Unsymmetrical alkene gives two carbonyl compounds.</span>
+</div>
+</details>
+<details>
+<summary>📌 In-Text Q 8.5: Arrange boiling points: propan-1-ol, propanal, butane, ethoxyethane</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> Butane &lt; Ethoxyethane &lt; Propanal &lt; Propan-1-ol.</p>
+<span class="hint-text">💡 Hint: H-bonding &gt; dipole-dipole &gt; van der Waals.</span>
+</div>
+</details>
+<details>
+<summary>📌 In-Text Q 8.6: Semicarbazone of propanone</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> (CH<sub>3</sub>)<sub>2</sub>C=NNHCONH<sub>2</sub></p>
+<span class="hint-text">💡 Hint: Replace =O with =N–NHCONH<sub>2</sub>.</span>
+</div>
+</details>
+<details>
+<summary>📌 In-Text Q 8.8: Iodoform test – which give positive?</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> Propan-2-ol (CH<sub>3</sub>CHOHCH<sub>3</sub>) and butan-2-one (CH<sub>3</sub>COCH<sub>2</sub>CH<sub>3</sub>). Propanal and butan-1-ol give negative.</p>
+<span class="hint-text">💡 Hint: CH<sub>3</sub>CO– or CH<sub>3</sub>CH(OH)– group required.</span>
+</div>
+</details>
+<details>
+<summary>📌 In-Text Q 8.9: Benzaldehyde – Fehling's test?</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> No, benzaldehyde does not reduce Fehling's solution. It gives positive Tollens' test.</p>
+<span class="hint-text">💡 Hint: Aromatic aldehydes resist oxidation under Fehling's alkaline conditions.</span>
+</div>
+</details>
+<details>
+<summary>📌 In-Text Q 8.10: Why SOCl<sub>2</sub> preferred over PCl<sub>5</sub>?</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> By‑products (SO<sub>2</sub> + HCl) are gases, leaving pure acid chloride. PCl<sub>5</sub> leaves POCl<sub>3</sub> (liquid).</p>
+<span class="hint-text">💡 Hint: Easier purification.</span>
+</div>
+</details>
+<h2>NCERT Examples</h2>
+<details>
+<summary>📌 Example 8.1: Oxidation of butan-2-ol</summary>
+<div class="answer-content"><p><strong>Answer:</strong> Butan-2-one (CH<sub>3</sub>COCH<sub>2</sub>CH<sub>3</sub>).</p>
+<span class="hint-text">💡 Hint: Secondary alcohol → ketone.</span></div>
+</details>
+<details>
+<summary>📌 Example 8.3: Rosenmund – ethanoyl chloride to ethanal</summary>
+<div class="answer-content"><p><strong>Answer:</strong> H<sub>2</sub>/Pd-BaSO<sub>4</sub> (Rosenmund reduction).</p>
+<span class="hint-text">💡 Hint: Poisoned catalyst stops at aldehyde.</span></div>
+</details>
+<details>
+<summary>📌 Example 8.5: Propanone + CH<sub>3</sub>MgBr → ?</summary>
+<div class="answer-content"><p><strong>Answer:</strong> (CH<sub>3</sub>)<sub>3</sub>COH (2-methylpropan-2-ol).</p>
+<span class="hint-text">💡 Hint: Ketone + Grignard → 3° alcohol.</span></div>
+</details>
+<details>
+<summary>📌 Example 8.6: Acetophenone → ethylbenzene</summary>
+<div class="answer-content"><p><strong>Answer:</strong> Clemmensen (Zn-Hg/HCl) or Wolff–Kishner (NH<sub>2</sub>NH<sub>2</sub>/KOH).</p>
+<span class="hint-text">💡 Hint: Reduction of C=O to CH<sub>2</sub>.</span></div>
+</details>
+<details>
+<summary>📌 Example 8.7: Propanal aldol condensation product</summary>
+<div class="answer-content"><p><strong>Answer:</strong> CH<sub>3</sub>CH<sub>2</sub>CH=C(CH<sub>3</sub>)CHO (2-methylpent-2-enal).</p>
+<span class="hint-text">💡 Hint: Aldol addition then dehydration.</span></div>
+</details>
+<details>
+<summary>📌 Example 8.9: Ethanoic acid from bromomethane</summary>
+<div class="answer-content"><p><strong>Answer:</strong> CH<sub>3</sub>Br → CH<sub>3</sub>MgBr →<sup>CO<sub>2</sub>/H<sub>3</sub>O<sup>+</sup></sup> CH<sub>3</sub>COOH.</p>
+<span class="hint-text">💡 Hint: Grignard carbonation.</span></div>
+</details>
+<details>
+<summary>📌 Example 8.10: HVZ – ethanoic acid → α-chloroethanoic acid</summary>
+<div class="answer-content"><p><strong>Answer:</strong> Cl<sub>2</sub>/red phosphorus (HVZ reaction).</p>
+<span class="hint-text">💡 Hint: α‑halogenation of carboxylic acid.</span></div>
+</details>
+<h2>Exercise Questions</h2>
+<details>
+<summary>📌 Q 8.1: Structures of (i) 2-chloro-3-methylpentanal (ii) 3-bromo-4-phenylpentanoic acid (iii) hex-2-en-4-ynoic acid</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> (i) CH<sub>3</sub>CH<sub>2</sub>CH(CH<sub>3</sub>)CHClCHO<br/>
+                    (ii) CH<sub>3</sub>CH(C<sub>6</sub>H<sub>5</sub>)CHBrCH<sub>2</sub>COOH<br/>
+                    (iii) CH<sub>3</sub>C≡C–CH=CH–COOH</p>
+<span class="hint-text">💡 Hint: Number chains correctly; –CHO and –COOH are terminal.</span>
+</div>
+</details>
+<details>
+<summary>📌 Q 8.5: Predict products (i) propanone + HCN (ii) ethanal + NH<sub>2</sub>OH (iii) benzaldehyde + conc. NaOH</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> (i) (CH<sub>3</sub>)<sub>2</sub>C(OH)CN (cyanohydrin)<br/>
+                    (ii) CH<sub>3</sub>CH=NOH (oxime)<br/>
+                    (iii) C<sub>6</sub>H<sub>5</sub>CH<sub>2</sub>OH + C<sub>6</sub>H<sub>5</sub>COONa (Cannizzaro).</p>
+<span class="hint-text">💡 Hint: Benzaldehyde has no α‑H → Cannizzaro.</span>
+</div>
+</details>
+<details>
+<summary>📌 Q 8.7: Conversions (i) ethanal → but-2-enal (ii) propanone → 2-methylpropan-2-ol (iii) benzoic acid → benzaldehyde</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> (i) Aldol condensation: 2CH<sub>3</sub>CHO →<sup>dil. NaOH</sup> aldol →<sup>Δ</sup> CH<sub>3</sub>CH=CHCHO.<br/>
+                    (ii) CH<sub>3</sub>COCH<sub>3</sub> + CH<sub>3</sub>MgBr →<sup>H<sub>3</sub>O<sup>+</sup></sup> (CH<sub>3</sub>)<sub>3</sub>COH.<br/>
+                    (iii) C<sub>6</sub>H<sub>5</sub>COOH →<sup>SOCl<sub>2</sub></sup> C<sub>6</sub>H<sub>5</sub>COCl →<sup>H<sub>2</sub>/Pd-BaSO<sub>4</sub></sup> C<sub>6</sub>H<sub>5</sub>CHO.</p>
+<span class="hint-text">💡 Hint: (i) aldol, (ii) Grignard, (iii) Rosenmund.</span>
+</div>
+</details>
+<details>
+<summary>📌 Q 8.9: Distinguish between (i) propanal &amp; propanone (ii) benzaldehyde &amp; acetophenone (iii) ethanal &amp; propanal</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> (i) Tollens' test: propanal → Ag mirror; propanone → no reaction.<br/>
+                    (ii) Iodoform test: acetophenone (CH<sub>3</sub>CO–) → yellow ppt; benzaldehyde → no reaction.<br/>
+                    (iii) Iodoform test: ethanal (CH<sub>3</sub>CHO) → yellow ppt; propanal → no reaction.</p>
+<span class="hint-text">💡 Hint: Aldehydes reduce Tollens'; methyl ketones give iodoform.</span>
+</div>
+</details>
+<details>
+<summary>📌 Q 8.11: Boiling point of ethanoic acid higher than propan-1-ol?</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> Ethanoic acid forms strong dimers via H‑bonding, effectively doubling molecular mass.</p>
+<span class="hint-text">💡 Hint: Dimerisation in carboxylic acids.</span>
+</div>
+</details>
+<details>
+<summary>📌 Q 8.13: Acidity order: benzoic, 4-nitrobenzoic, 4-methoxybenzoic, 4-methylbenzoic</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> 4-Methoxybenzoic &lt; 4-Methylbenzoic &lt; Benzoic &lt; 4-Nitrobenzoic.</p>
+<span class="hint-text">💡 Hint: EWG increase acidity; EDG decrease it.</span>
+</div>
+</details>
+<details>
+<summary>📌 Q 8.15: Complete reactions (i) C<sub>6</sub>H<sub>5</sub>COCH<sub>3</sub> →<sup>Zn-Hg/HCl</sup> (ii) CH<sub>3</sub>CH<sub>2</sub>COOH →<sup>Br<sub>2</sub>/red P</sup> (iii) C<sub>6</sub>H<sub>5</sub>CHO →<sup>conc. NaOH</sup></summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> (i) C<sub>6</sub>H<sub>5</sub>CH<sub>2</sub>CH<sub>3</sub> (Clemmensen)<br/>
+                    (ii) CH<sub>3</sub>CHBrCOOH (HVZ)<br/>
+                    (iii) C<sub>6</sub>H<sub>5</sub>CH<sub>2</sub>OH + C<sub>6</sub>H<sub>5</sub>COONa (Cannizzaro).</p>
+<span class="hint-text">💡 Hint: Identify reaction type from reagents.</span>
+</div>
+</details>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ================== TAB 6 : PYQs & IMPORTANT CONVERSIONS ================== -->
+<div class="tab-content" id="tab6">
+<h1>Important PYQs &amp; Conversions</h1>
+<p class="chapter-subtitle">Drop-down answers with hints · Board exam focus</p>
+<h2>Frequently Asked Conversions</h2>
+<details>
+<summary>🔄 Convert ethanal to but-2-enal</summary>
+<div class="answer-content">
+<p><strong>Pathway:</strong> Aldol condensation: 2 CH<sub>3</sub>CHO →<sup>dil. NaOH</sup> CH<sub>3</sub>CH(OH)CH<sub>2</sub>CHO →<sup>Δ, –H<sub>2</sub>O</sup> CH<sub>3</sub>CH=CHCHO.</p>
+<span class="hint-text">💡 Hint: Use aldol addition followed by dehydration.</span>
+</div>
+</details>
+<details>
+<summary>🔄 Convert acetone to tert‑butyl alcohol</summary>
+<div class="answer-content">
+<p><strong>Pathway:</strong> CH<sub>3</sub>COCH<sub>3</sub> + CH<sub>3</sub>MgBr →<sup>dry ether</sup> →<sup>H<sub>3</sub>O<sup>+</sup></sup> (CH<sub>3</sub>)<sub>3</sub>COH.</p>
+<span class="hint-text">💡 Hint: Grignard addition to ketone gives 3° alcohol.</span>
+</div>
+</details>
+<details>
+<summary>🔄 Convert benzoic acid to benzaldehyde</summary>
+<div class="answer-content">
+<p><strong>Pathway:</strong> C<sub>6</sub>H<sub>5</sub>COOH →<sup>SOCl<sub>2</sub></sup> C<sub>6</sub>H<sub>5</sub>COCl →<sup>H<sub>2</sub>/Pd-BaSO<sub>4</sub></sup> C<sub>6</sub>H<sub>5</sub>CHO (Rosenmund).</p>
+<span class="hint-text">💡 Hint: Acid → acid chloride → Rosenmund reduction.</span>
+</div>
+</details>
+<details>
+<summary>🔄 Convert toluene to benzaldehyde</summary>
+<div class="answer-content">
+<p><strong>Pathway:</strong> Etard reaction: C<sub>6</sub>H<sub>5</sub>CH<sub>3</sub> →<sup>CrO<sub>2</sub>Cl<sub>2</sub>/CS<sub>2</sub></sup> →<sup>H<sub>2</sub>O</sup> C<sub>6</sub>H<sub>5</sub>CHO.</p>
+<span class="hint-text">💡 Hint: Chromyl chloride oxidation stops at aldehyde.</span>
+</div>
+</details>
+<details>
+<summary>🔄 Convert ethanoic acid to methane</summary>
+<div class="answer-content">
+<p><strong>Pathway:</strong> CH<sub>3</sub>COOH →<sup>NaOH</sup> CH<sub>3</sub>COONa →<sup>NaOH/CaO, Δ</sup> CH<sub>4</sub> (decarboxylation).</p>
+<span class="hint-text">💡 Hint: Soda lime decarboxylation.</span>
+</div>
+</details>
+<details>
+<summary>🔄 Convert propanone to propene</summary>
+<div class="answer-content">
+<p><strong>Pathway:</strong> CH<sub>3</sub>COCH<sub>3</sub> →<sup>NaBH<sub>4</sub></sup> CH<sub>3</sub>CHOHCH<sub>3</sub> →<sup>conc. H<sub>2</sub>SO<sub>4</sub>, Δ</sup> CH<sub>3</sub>CH=CH<sub>2</sub> (dehydration).</p>
+<span class="hint-text">💡 Hint: Reduce ketone to alcohol, then dehydrate.</span>
+</div>
+</details>
+<h2>Important PYQs (Board Exams)</h2>
+<details>
+<summary>📝 Why does benzaldehyde not give Fehling's test? (CBSE 2023, 2022)</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> Benzaldehyde cannot reduce Fehling's solution because the –CHO group is directly attached to the benzene ring, which stabilises it against oxidation under alkaline conditions. It gives positive Tollens' test.</p>
+<span class="hint-text">💡 Hint: Aromatic aldehydes are resistant to Fehling's.</span>
+</div>
+</details>
+<details>
+<summary>📝 Predict the product: C<sub>6</sub>H<sub>5</sub>COCH<sub>3</sub> + NaOH/I<sub>2</sub> → ? (CBSE 2024)</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> Yellow precipitate of iodoform (CHI<sub>3</sub>) + C<sub>6</sub>H<sub>5</sub>COONa. Iodoform test for methyl ketone.</p>
+<span class="hint-text">💡 Hint: Methyl ketone gives iodoform reaction.</span>
+</div>
+</details>
+<details>
+<summary>📝 How will you distinguish between propanal and propanone? (CBSE 2021)</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> Tollens' test – propanal gives silver mirror; propanone does not. (Or Fehling's test – propanal gives red ppt.)</p>
+<span class="hint-text">💡 Hint: Aldehydes are easily oxidised.</span>
+</div>
+</details>
+<details>
+<summary>📝 Explain the mechanism of aldol condensation. (CBSE 2019)</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> Base abstracts α‑H → enolate ion → attacks another carbonyl carbon → aldol (β‑hydroxy carbonyl) → dehydration → α,β‑unsaturated carbonyl.</p>
+<span class="hint-text">💡 Hint: Nucleophilic addition of enolate to carbonyl.</span>
+</div>
+</details>
+<details>
+<summary>📝 Give a chemical test to distinguish between ethanoic acid and ethanal. (CBSE 2020)</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> NaHCO<sub>3</sub> test: ethanoic acid gives brisk effervescence of CO<sub>2</sub>; ethanal does not. (Or Tollens' test for ethanal)</p>
+<span class="hint-text">💡 Hint: Carboxylic acid liberates CO<sub>2</sub> with bicarbonate.</span>
+</div>
+</details>
+<details>
+<summary>📝 Arrange in increasing acidity: CH<sub>3</sub>COOH, ClCH<sub>2</sub>COOH, Cl<sub>2</sub>CHCOOH, CCl<sub>3</sub>COOH. (CBSE 2018)</summary>
+<div class="answer-content">
+<p><strong>Answer:</strong> CH<sub>3</sub>COOH &lt; ClCH<sub>2</sub>COOH &lt; Cl<sub>2</sub>CHCOOH &lt; CCl<sub>3</sub>COOH. More EWG → stronger acid.</p>
+<span class="hint-text">💡 Hint: Inductive effect of chlorine increases acidity.</span>
+</div>
+</details>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<script>
+        (function() {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            function switchTab(tabId) {
+                contents.forEach(c => c.classList.remove('active'));
+                tabs.forEach(b => b.classList.remove('active'));
+                document.getElementById(tabId).classList.add('active');
+                const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+                if (activeBtn) activeBtn.classList.add('active');
+            }
+
+            tabs.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    switchTab(tabId);
+                });
+            });
+
+            // Ensure first tab is active on load
+            if (!document.querySelector('.tab-content.active')) {
+                switchTab('tab1');
+            }
+        })();
+    </script>
+<p class="print-footer" style="text-align:center; margin-top:20px;">📄 CBSE Class 12 · Aldehydes, Ketones &amp; Carboxylic Acids · Interactive Tabs with Dropdown Answers</p>
+</body>
+</html>

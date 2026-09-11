@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 11 Chemistry | Redox Reactions — Master Notes</title>
+<link href="../../assets/vendor/katex/katex.min.css" rel="stylesheet"/>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f4f6f9;--card:#fff;--text:#1a2332;--accent:#2a4b7c;--accent2:#3b6cb5;--redox:#7b2d8e;--gold:#d4a017;--border:#d0d7de;--shadow:0 2px 12px rgba(0,0,0,0.08)}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+h1{font-size:1.8rem;padding:20px 0 5px;color:var(--accent);border-bottom:3px solid var(--accent)}
+h1 small{font-size:0.9rem;font-weight:400;color:#555;display:block}
+h2{font-size:1.35rem;margin:24px 0 10px;color:var(--accent2);border-left:4px solid var(--redox);padding-left:12px}
+h3{font-size:1.1rem;margin:18px 0 8px;color:#333}
+/* Tabs */
+.tab-bar{display:flex;gap:4px;background:var(--accent);border-radius:10px 10px 0 0;overflow:hidden;margin-top:16px}
+.tab-bar label{flex:1;text-align:center;padding:12px 4px;color:#cbd5e1;font-size:0.82rem;font-weight:600;cursor:pointer;transition:.2s;background:transparent;user-select:none;letter-spacing:0.3px}
+.tab-bar label:hover{background:rgba(255,255,255,0.08);color:#fff}
+.tab-bar label:has(input:checked){background:#fff;color:var(--accent);border-radius:8px 8px 0 0}
+.tab-bar input{display:none}
+.tab-panel{display:none;background:var(--card);padding:28px 24px;border-radius:0 0 10px 10px;box-shadow:var(--shadow)}
+.tab-panel.open{display:block}
+/* Badges */
+.badge{display:inline-block;background:var(--gold);color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:20px;margin-left:6px;vertical-align:middle;letter-spacing:0.5px}
+.badge-purple{background:var(--redox)}
+/* HOTS Bubble */
+.hots-bubble{margin:14px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fafbfc}
+.hots-trigger{display:block;padding:12px 16px;cursor:pointer;font-weight:600;color:var(--accent);background:#eef2f9;transition:.2s;border:none;width:100%;text-align:left;font-size:0.95rem}
+.hots-trigger:hover{background:#dde5f2}
+.hots-trigger::before{content:"\25B6";display:inline-block;margin-right:10px;transition:.25s;color:var(--redox);font-size:0.8rem}
+.hots-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;padding:0 16px}
+.hots-body.open{max-height:2000px;padding:16px}
+.hots-trigger.open::before{transform:rotate(90deg)}
+/* Cross-ref */
+.cross{color:var(--accent2);font-size:0.8rem;font-weight:600;margin-left:8px;cursor:pointer}
+/* Details override */
+details{margin:12px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fafbfc}
+summary{padding:12px 16px;cursor:pointer;font-weight:600;color:var(--accent);background:#eef2f9}
+details[open] summary{background:#dde5f2}
+details .content{padding:16px}
+/* Step Reveal */
+.step{background:#f8faff;border-left:4px solid var(--accent2);padding:14px 18px;margin:10px 0;border-radius:0 8px 8px 0;display:none}
+.step.show{display:block;animation:fadeIn .4s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Tab4 tools */
+.tool-panel{background:#f0f4fe;border-radius:10px;padding:20px;margin:16px 0;border:1px solid var(--border)}
+.ctrl-group{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
+.ctrl-group select,.ctrl-group button{padding:8px 16px;border-radius:6px;border:1px solid var(--border);font-size:0.9rem;background:var(--card);cursor:pointer}
+.ctrl-group button{background:var(--accent2);color:#fff;border:none;font-weight:600}
+.ctrl-group button:hover{background:#2a5a9e}
+.ctrl-group button:disabled{opacity:0.5;cursor:not-allowed}
+canvas{display:block;max-width:100%;background:#fff;border-radius:8px;border:1px solid var(--border);margin:10px auto}
+/* Print */
+@media print{
+  body{background:#fff;font-size:12px}
+  .tab-bar,.tab-bar label{display:none!important}
+  .tab-panel{display:block!important;box-shadow:none;border:none;padding:10px 0;page-break-inside:auto}
+  .tab-panel#tab4{display:none!important}
+  .hots-body{max-height:none!important;padding:10px!important;overflow:visible!important}
+  details .content{display:block!important}
+  details[open] summary{background:#eee}
+  .hots-trigger::before{content:"\25B8"} /* hide triangle in print */
+  .badge{border:1px solid #999;color:#000;background:#fff}
+  .container{max-width:100%;padding:0}
+  h1{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Redox Reactions <small>Class 11 Chemistry · NCERT Based · CBSE High-Yield</small></h1>
+<!-- Tabs -->
+<div class="tab-bar">
+<label><input checked="" name="tabs" onchange="switchTab(1)" type="radio"/>📘 Concepts</label>
+<label><input name="tabs" onchange="switchTab(2)" type="radio"/>⚡ Titrations &amp; Methods</label>
+<label><input name="tabs" onchange="switchTab(3)" type="radio"/>📝 NCERT Solutions</label>
+<label><input name="tabs" onchange="switchTab(4)" type="radio"/>🧪 Interactive Lab</label>
+</div>
+<!-- ===== TAB 1 ===== -->
+<div class="tab-panel open" id="tab1">
+<h2>1.1 Classical Concept of Redox</h2>
+<p>Originally, oxidation was defined as <strong>addition of oxygen</strong> or <strong>removal of hydrogen</strong>, while reduction was <strong>removal of oxygen</strong> or <strong>addition of hydrogen</strong>.</p>
+<p>Modern definition: <strong>Oxidation</strong> is <em>loss of electrons</em>; <strong>Reduction</strong> is <em>gain of electrons</em>. A redox reaction involves simultaneous loss and gain of electrons.</p>
+$$ \text{Zn(s)} + \text{Cu}^{2+}(\text{aq}) \longrightarrow \text{Zn}^{2+}(\text{aq}) + \text{Cu(s)} $$
+<p>Zn loses 2 electrons (oxidised); Cu²⁺ gains 2 electrons (reduced).</p>
+<h2>1.2 Oxidation Number — Rules &amp; Rationale <span class="badge">CBSE High-Yield</span></h2>
+<p>Oxidation number (ON) is the <em>formal charge</em> an atom would have if all bonds were 100% ionic. The underlying physical principle is <strong>electronegativity</strong>: shared electrons are assigned to the more electronegative atom.</p>
+<ol style="padding-left:20px">
+<li>ON of an element in its free (uncombined) state = <strong>0</strong> (e.g., $\text{O}_2$, $\text{H}_2$, $\text{Fe}$).</li>
+<li>ON of a <strong>monatomic ion</strong> = its charge (e.g., $\text{Al}^{3+} = +3$, $\text{Cl}^- = -1$).</li>
+<li>Oxygen: usually <strong>−2</strong>, except in peroxides ($\text{O}_2^{2-}$, ON = −1), superoxides ($\text{O}_2^-$, ON = −½), and $\text{OF}_2$ (ON = +2). <span class="badge badge-purple">HOTS</span></li>
+<li>Hydrogen: usually <strong>+1</strong> (with non-metals), <strong>−1</strong> in metal hydrides (e.g., $\text{NaH}$).</li>
+<li>Fluorine: always <strong>−1</strong>. Other halogens vary: usually −1, positive when bonded to oxygen.</li>
+<li>Sum of ONs in a <strong>neutral compound</strong> = <strong>0</strong>.</li>
+<li>Sum of ONs in a <strong>polyatomic ion</strong> = <strong>charge of the ion</strong>.</li>
+<li>For a <strong>coordination compound</strong> or complex, the algebraic sum of ONs of the central metal and ligands equals the net charge.</li>
+</ol>
+<!-- HOTS: CrO5 -->
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">📐 Step-by-Step &amp; HOTS: Fractional Oxidation States — CrO<sub>5</sub> (Peroxochromate)</button>
+<div class="hots-body">
+<p>In $\text{CrO}_5$, oxygen appears in two forms: oxo ($\text{O}^{2-}$) and peroxo ($\text{O}_2^{2-}$). Structure: Cr is bonded to 1 oxo O and 2 peroxo groups (O—O).</p>
+$$ \text{CrO}_5:\; \text{Cr} + 1(-2) + 2(-2) = 0 \;\Rightarrow\; \text{Cr} -2 -4 = 0 \;\Rightarrow\; \text{Cr} = +6 $$
+<p>The peroxo oxygens have ON = −1 each (two O atoms per peroxo group contribute −2 total per group). Hence Cr is +6, <em>not</em> +10.</p>
+<h3>HOTS Strategy:</h3>
+<ul><li>Always draw the <strong>Lewis / structural formula</strong> first: identify peroxo vs oxo bridges.</li>
+<li>Remember: peroxo linkage is $\text{O}—\text{O}$, each O is −1.</li>
+<li>Superoxide ($\text{O}_2^-$) has each O at −½.</li>
+</ul>
+</div>
+</div>
+<!-- HOTS: Na2S4O6 -->
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">📐 HOTS: Na<sub>2</sub>S<sub>4</sub>O<sub>6</sub> (Sodium Tetrathionate)</button>
+<div class="hots-body">
+<p>Structure: $\text{^-O}_3\text{S}—\text{S}—\text{S}—\text{SO}_3^-$. The two central S atoms are bonded to each other (ON = 0). The two terminal S atoms each bonded to 3 oxygens (ON = +5).</p>
+$$ \text{Na}_2\text{S}_4\text{O}_6:\; (2\times+1) + 4a + 6(-2) = 0 \;\Rightarrow\; 2 + 4a -12 = 0 \;\Rightarrow\; a = +2.5 \text{ (average)} $$
+$$ \text{Terminal S: } a + 3(-2) = -1 \;\Rightarrow\; a = +5; \quad \text{Central S—S: each S = 0} $$
+<h3>HOTS Strategy:</h3>
+<ul><li>The "average" ON (+2.5) is misleading — use the structure to find individual ONs.</li>
+<li>S—S bond: electronegativity is equal, so each S gets 0 from that bond.</li>
+<li>This is <strong>not</strong> a fractional oxidation state of a single atom; it is an average of different atoms.</li>
+</ul>
+</div>
+</div>
+<!-- HOTS: KO2 -->
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">📐 HOTS: KO<sub>2</sub> (Potassium Superoxide)</button>
+<div class="hots-body">
+<p>KO₂ contains the superoxide ion $\text{O}_2^-$. Each O has ON = −½.</p>
+$$ \text{KO}_2:\; (+1) + 2a = 0 \;\Rightarrow\; a = -\frac12 $$
+<p>Physical basis: the O—O bond order is 1.5 (one σ bond plus a 3-electron π bond). The unpaired electron delocalises, giving each O a formal charge of −½.</p>
+<h3>HOTS Strategy:</h3>
+<ul><li>Recognise $\text{O}_2^-$ (superoxide) vs $\text{O}_2^{2-}$ (peroxide) vs $\text{O}^{2-}$ (oxide).</li>
+<li>Use magnetic data: KO₂ is paramagnetic (unpaired e⁻), confirming superoxide.</li>
+</ul>
+</div>
+</div>
+<!-- HOTS: Fe3O4 -->
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">📐 HOTS: Fe<sub>3</sub>O<sub>4</sub> (Magnetite — Mixed Valence)</button>
+<div class="hots-body">
+<p>Fe₃O₄ is actually <strong>FeO · Fe₂O₃</strong> — one Fe²⁺ and two Fe³⁺.</p>
+$$ 3a + 4(-2) = 0 \;\Rightarrow\; a = +\frac83 \text{ (average)} $$
+$$ \text{Fe}^{2+}:\; +2;\qquad \text{Fe}^{3+}:\; +3 $$
+<h3>HOTS Strategy:</h3>
+<ul><li>When an average ON is fractional, check for mixed-valence compounds.</li>
+<li>Use stoichiometry: Fe₃O₄ = FeO + Fe₂O₃.</li>
+<li>Mössbauer spectroscopy or magnetic susceptibility can distinguish the two Fe sites.</li>
+</ul>
+</div>
+</div>
+<!-- HOTS: Na2S2O3 -->
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">📐 HOTS: Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> (Sodium Thiosulphate)</button>
+<div class="hots-body">
+<p>Structure: $\text{^-O}_3\text{S}—\text{S}^-$. Central S = +6 (bonded to 3 oxygens); terminal S = −2 (bonded only to S).</p>
+$$ \text{Na}_2\text{S}_2\text{O}_3:\; 2(+1) + a + b + 3(-2) = 0;\quad a = +6,\; b = -2 $$
+<h3>HOTS Strategy:</h3>
+<ul><li>The two S atoms are <strong>non-equivalent</strong> — one is sulfonate-like (+6), the other is sulfide-like (−2).</li>
+<li>In iodometric titrations, $\text{S}_2\text{O}_3^{2-}$ reacts with I₂ to form $\text{S}_4\text{O}_6^{2-}$ (tetrathionate).</li>
+</ul>
+</div>
+</div>
+<!-- HOTS: H2SO5 -->
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">📐 HOTS: H<sub>2</sub>SO<sub>5</sub> (Caro's Acid / Peroxomonosulphuric Acid)</button>
+<div class="hots-body">
+<p>Structure: HO—SO₂—O—OH. One oxygen is peroxo (O—O, ON = −1).</p>
+$$ \text{H}_2\text{SO}_5:\; 2(+1) + a + 4(-1) + 1(-1_{\text{peroxo}}) = 0? $$
+<p>Careful: 1 oxo O (−2) + 3 oxo O (−2 each) + 1 peroxo O (−1 each for 2 O atoms). Total from O: 1(−2) + 2(−2) + 1(−2) = −6? No — let's use structure:</p>
+$$ \text{H}_2\text{SO}_5:\; 2(+1) + a + 3(-2) +(-2)_{\text{peroxo}} = 0 \;\Rightarrow\; 2 + a -6 -2 = 0 \;\Rightarrow\; a = +6 $$
+<p>Sulphur is in +6 oxidation state (not +8). The peroxide linkage accounts for the extra oxygen.</p>
+<h3>HOTS Strategy:</h3>
+<ul><li>Always identify peroxo bonds (O—O) — they contribute −1 per O instead of −2.</li>
+<li>Peroxo groups are detected by their reaction with $\text{KMnO}_4$ or $\text{KI}$.</li>
+</ul>
+</div>
+</div>
+<!-- HOTS: NH4NO3 -->
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">📐 HOTS: NH<sub>4</sub>NO<sub>3</sub> (Ammonium Nitrate — Two N Sites)</button>
+<div class="hots-body">
+<p>NH₄NO₃ has two distinct N atoms: NH₄⁺ and NO₃⁻.</p>
+$$ \text{NH}_4^+:\; a + 4(+1) = +1 \;\Rightarrow\; a = -3 $$
+$$ \text{NO}_3^-:\; b + 3(-2) = -1 \;\Rightarrow\; b = +5 $$
+<p>N is in both −3 (ammoniacal) and +5 (nitrate) oxidation states in the same compound.</p>
+<h3>HOTS Strategy:</h3>
+<ul><li>Split the compound into its constituent ions first.</li>
+<li>The average ON of N in NH₄NO₃ is ${(-3 + 5)}/{2} = +1$, but this hides the true chemistry.</li>
+<li>Ammonium nitrate is used as a fertiliser because both N forms are bioavailable.</li>
+</ul>
+</div>
+</div>
+<h2>1.3 Types of Redox Reactions <span class="badge">CBSE Expected</span></h2>
+<h3>(a) Combination Reactions</h3>
+<p>Two or more substances combine to form a single product. The oxidation numbers change as elements combine.</p>
+$$ 2\text{H}_2(g) + \text{O}_2(g) \longrightarrow 2\text{H}_2\text{O}(l) \qquad [\text{H: }0 \to +1;\; \text{O: }0 \to -2] $$
+$$ \overset{0}{\text{C}}(s) + \overset{0}{\text{O}_2}(g) \longrightarrow \overset{+4-2}{\text{CO}_2}(g) $$
+$$ \overset{0}{\text{N}_2}(g) + 3\overset{0}{\text{H}_2}(g) \longrightarrow 2\overset{-3+1}{\text{NH}_3}(g) $$
+<p><span class="cross">📌 See Solved Q 8.1</span></p>
+<h3>(b) Decomposition Reactions</h3>
+<p>A single compound breaks down into two or more simpler substances.</p>
+$$ 2\overset{+1-2}{\text{H}_2\text{O}}(l) \xrightarrow{\text{electrolysis}} 2\overset{0}{\text{H}_2}(g) + \overset{0}{\text{O}_2}(g) $$
+$$ 2\overset{+1+5-2}{\text{KClO}_3}(s) \xrightarrow{\Delta} 2\overset{-1}{\text{KCl}}(s) + 3\overset{0}{\text{O}_2}(g) $$
+
+<h3>(c) Displacement Reactions</h3>
+<p>One element displaces another from its compound. Two types: <strong>Metal displacement</strong> and <strong>Non-metal displacement</strong>.</p>
+$$ \overset{0}{\text{Zn}}(s) + \overset{+2}{\text{Cu}}\text{SO}_4(aq) \longrightarrow \overset{+2}{\text{Zn}}\text{SO}_4(aq) + \overset{0}{\text{Cu}}(s) $$
+$$ \overset{0}{\text{Cl}_2}(g) + 2\overset{-1}{\text{KBr}}(aq) \longrightarrow 2\overset{-1}{\text{KCl}}(aq) + \overset{0}{\text{Br}_2}(l) $$
+<p><span class="cross">📌 See Solved Q 8.3</span></p>
+<h3>(d) Disproportionation Reactions</h3>
+<p>The <em>same</em> species undergoes both oxidation and reduction simultaneously. The element must have at least three oxidation states. <span class="badge">CBSE High-Yield</span></p>
+$$ 3\overset{0}{\text{Cl}_2}(g) + 6\overset{+1-2}{\text{NaOH}}(aq) \longrightarrow 5\overset{-1}{\text{NaCl}}(aq) + \overset{+5-2}{\text{NaClO}_3}(aq) + 3\overset{+1-2}{\text{H}_2\text{O}}(l) $$
+<p>Cl₂ (ON = 0) is simultaneously reduced to Cl⁻ (−1) and oxidised to ClO₃⁻ (+5). <span class="cross">📌 See Solved Q 8.12</span></p>
+$$ 2\overset{-1}{\text{H}_2\text{O}_2}(aq) \longrightarrow 2\overset{-2}{\text{H}_2\text{O}}(l) + \overset{0}{\text{O}_2}(g) $$
+<p>H₂O₂ (O = −1) disproportionates: O is reduced to −2 (H₂O) and oxidised to 0 (O₂).</p>
+<h2>1.4 Redox Reactions in Real-World Contexts</h2>
+<ul>
+<li><strong>Cellular Respiration:</strong> $\text{C}_6\text{H}_{12}\text{O}_6 + 6\text{O}_2 \rightarrow 6\text{CO}_2 + 6\text{H}_2\text{O}$. Glucose is oxidised, O₂ is reduced. Electron transfer via NADH/FADH₂ in the electron transport chain drives ATP synthesis.</li>
+<li><strong>Corrosion:</strong> $\text{Fe}(s) \rightarrow \text{Fe}^{2+}(aq) + 2e^-$ (anode); $\text{O}_2(g) + 2\text{H}_2\text{O}(l) + 4e^- \rightarrow 4\text{OH}^-(aq)$ (cathode). The rusting of iron is an electrochemical redox process.</li>
+<li><strong>Metallurgy:</strong> Extraction of iron in blast furnace: $\text{Fe}_2\text{O}_3 + 3\text{CO} \rightarrow 2\text{Fe} + 3\text{CO}_2$. Fe³⁺ is reduced to Fe⁰; C in CO is oxidised from +2 to +4.</li>
+<li><strong>Bleaching:</strong> $\text{Cl}_2$ gas dissolves in water to form HOCl, which oxidises coloured stains (reduction of HOCl to Cl⁻).</li>
+</ul>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ===== TAB 2 ===== -->
+<div class="tab-panel" id="tab2">
+<h2>2.1 Balancing Redox Equations — Overview</h2>
+<p>Two systematic methods are prescribed by NCERT. Both ultimately give the same balanced equation; choose whichever is more convenient for the given reaction.</p>
+<h2>Method A: Oxidation Number Method <span class="badge">CBSE Expected</span></h2>
+<h3>Algorithm (6 Steps):</h3>
+<ol style="padding-left:20px">
+<li>Write skeletal equation and assign ON to all atoms.</li>
+<li>Identify atoms whose ON changes → oxidised (ON ↑) and reduced (ON ↓).</li>
+<li>Compute total increase per atom × number of atoms, and total decrease per atom × number of atoms.</li>
+<li>Equalise total increase = total decrease by multiplying with appropriate coefficients.</li>
+<li>Balance all other atoms except H and O by inspection.</li>
+<li>Balance H and O using H⁺ and H₂O (acidic) or OH⁻ and H₂O (basic).</li>
+</ol>
+<h3>Worked Example 1 — Acidic Medium: K₂Cr₂O₇ + FeSO₄ + H₂SO₄ → Cr₂(SO₄)₃ + Fe₂(SO₄)₃ + K₂SO₄ + H₂O</h3>
+<div class="hots-bubble">
+<button class="hots-trigger open" onclick="toggleHots(this)">▶ Step 1: Assign Oxidation Numbers</button>
+<div class="hots-body open">
+$$\text{K}_2\overset{+6}{\text{Cr}}_2\text{O}_7 + \overset{+2}{\text{Fe}}\text{SO}_4 + \text{H}_2\text{SO}_4 \longrightarrow \overset{+3}{\text{Cr}}_2(\text{SO}_4)_3 + \overset{+3}{\text{Fe}}_2(\text{SO}_4)_3 + \text{K}_2\text{SO}_4 + \text{H}_2\text{O}$$
+<p>Cr: +6 → +3 (reduction, gain of 3 e⁻ per Cr × 2 = 6 e⁻ gained)<br/>Fe: +2 → +3 (oxidation, loss of 1 e⁻ per Fe)</p>
+</div></div>
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">▶ Step 2–4: Equalise Electron Change</button>
+<div class="hots-body">
+<p>Total decrease in ON per Cr₂O₇²⁻: 2 × (+6 → +3) = 2 × 3 = <strong>6</strong><br/>Total increase per Fe: 1 (+2 → +3) = <strong>1</strong></p>
+<p>LCM of 6 and 1 = 6. Multiply Fe by 6:</p>
+$$\text{K}_2\text{Cr}_2\text{O}_7 + 6\text{FeSO}_4 + \text{H}_2\text{SO}_4 \longrightarrow \text{Cr}_2(\text{SO}_4)_3 + 3\text{Fe}_2(\text{SO}_4)_3 + \text{K}_2\text{SO}_4 + \text{H}_2\text{O}$$
+</div></div>
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">▶ Steps 5–6: Balance Remaining Atoms</button>
+<div class="hots-body">
+<p>Balance SO₄²⁻: Left: 6 (from FeSO₄) + from H₂SO₄. Right: 3×3 + 1 = 10. So 7 H₂SO₄ needed.</p>
+<p>Balance H and O: Left H = 7×2 = 14; Right needs 7 H₂O.</p>
+$$ \text{K}_2\text{Cr}_2\text{O}_7 + 6\text{FeSO}_4 + 7\text{H}_2\text{SO}_4 \longrightarrow \text{Cr}_2(\text{SO}_4)_3 + 3\text{Fe}_2(\text{SO}_4)_3 + \text{K}_2\text{SO}_4 + 7\text{H}_2\text{O} $$
+<p><strong>Verification:</strong> O: LHS = 7+24+28 = 59; RHS = 12+36+4+7 = 59 ✓<br/>H: LHS = 14; RHS = 14 ✓<br/>Charge: LHS = 0; RHS = 0 ✓</p>
+</div></div>
+<h3>Worked Example 2 — Basic Medium: Cl₂ → Cl⁻ + ClO₃⁻ (Disproportionation in hot conc. KOH)</h3>
+<div class="hots-bubble">
+<button class="hots-trigger open" onclick="toggleHots(this)">▶ Step-by-Step ON Method (Basic)</button>
+<div class="hots-body open">
+<p>Skeletal: $\text{Cl}_2 \longrightarrow \text{Cl}^- + \text{ClO}_3^-$</p>
+<p>ON of Cl: 0 (in Cl₂) → −1 (in Cl⁻) and +5 (in ClO₃⁻).</p>
+<p>Decrease per Cl (red): 1; Increase per Cl (ox): 5.</p>
+<p>To equalise, multiply Cl⁻ by 5 and ClO₃⁻ by 1:</p>
+$$ \text{Cl}_2 \longrightarrow 5\text{Cl}^- + 1\text{ClO}_3^- $$
+<p>But this uses 6 Cl atoms — LHS must be 3Cl₂:</p>
+$$ 3\text{Cl}_2 \longrightarrow 5\text{Cl}^- + \text{ClO}_3^- $$
+<p>Now balance O with OH⁻ (basic medium) and H₂O:</p>
+<p>RHS has 3 O atoms (from ClO₃⁻). Add 6 OH⁻ to LHS to provide O and balance H:</p>
+$$ 3\text{Cl}_2 + 6\text{OH}^- \longrightarrow 5\text{Cl}^- + \text{ClO}_3^- + 3\text{H}_2\text{O} $$
+<p><strong>Final:</strong> $\;3\text{Cl}_2 + 6\text{KOH} \longrightarrow 5\text{KCl} + \text{KClO}_3 + 3\text{H}_2\text{O}$</p>
+</div></div>
+<h2>Method B: Half-Reaction (Ion-Electron) Method <span class="badge">CBSE Expected</span></h2>
+<h3>Algorithm (7 Steps):</h3>
+<ol style="padding-left:20px">
+<li>Write skeletal ionic equation (split soluble electrolytes into ions).</li>
+<li>Identify half-reactions — one for oxidation, one for reduction.</li>
+<li>Balance atoms other than O and H in each half-reaction.</li>
+<li><strong>Acidic medium:</strong> Balance O with H₂O, then H with H⁺.<br/>
+<strong>Basic medium:</strong> Balance O with H₂O, then H with H₂O (the side needing H gets OH⁻ added).</li>
+<li>Balance charge by adding electrons (e⁻) to the appropriate side.</li>
+<li>Multiply half-reactions so electrons lost = electrons gained.</li>
+<li>Add the half-reactions and cancel common species to get the net ionic equation.</li>
+</ol>
+<h3>Worked Example 3 — Acidic Medium: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺</h3>
+<div class="hots-bubble">
+<button class="hots-trigger open" onclick="toggleHots(this)">▶ Stepwise Half-Reaction Method (Acidic)</button>
+<div class="hots-body open">
+<p><strong>Step 1:</strong> Reduction half: $\text{MnO}_4^- \rightarrow \text{Mn}^{2+}$<br/>Oxidation half: $\text{Fe}^{2+} \rightarrow \text{Fe}^{3+}$</p>
+<p><strong>Step 2:</strong> Balance O and H (acidic: use H₂O and H⁺):</p>
+$$\text{MnO}_4^- + 8\text{H}^+ \longrightarrow \text{Mn}^{2+} + 4\text{H}_2\text{O}$$
+$$\text{Fe}^{2+} \longrightarrow \text{Fe}^{3+}$$
+<p><strong>Step 3:</strong> Balance charge with e⁻:</p>
+$$\text{MnO}_4^- + 8\text{H}^+ + 5e^- \longrightarrow \text{Mn}^{2+} + 4\text{H}_2\text{O}\quad (\text{charge: } -1 +8 -5 = +2 = \text{RHS } +2)$$
+$$\text{Fe}^{2+} \longrightarrow \text{Fe}^{3+} + e^-$$
+<p><strong>Step 4:</strong> Equalise electrons: Multiply oxidation half by 5:</p>
+$$5\text{Fe}^{2+} \longrightarrow 5\text{Fe}^{3+} + 5e^-$$
+<p><strong>Step 5:</strong> Add and cancel:</p>
+$$\text{MnO}_4^- + 8\text{H}^+ + 5\text{Fe}^{2+} \longrightarrow \text{Mn}^{2+} + 4\text{H}_2\text{O} + 5\text{Fe}^{3+}$$
+</div></div>
+<h3>Worked Example 4 — Basic Medium: Cr(OH)₃ + H₂O₂ → CrO₄²⁻ + H₂O</h3>
+<div class="hots-bubble">
+<button class="hots-trigger" onclick="toggleHots(this)">▶ Stepwise Half-Reaction Method (Basic)</button>
+<div class="hots-body">
+<p><strong>Skeletal ionic:</strong> $\text{Cr(OH)}_3 + \text{H}_2\text{O}_2 \longrightarrow \text{CrO}_4^{2-} + \text{H}_2\text{O}$</p>
+<p><strong>Oxidation half:</strong> $\text{Cr(OH)}_3 \rightarrow \text{CrO}_4^{2-}$ (Cr: +3 → +6, loss of 3 e⁻)</p>
+<p>Balance O: add H₂O to LHS; balance H: add OH⁻ to RHS (basic conditions):</p>
+$$\text{Cr(OH)}_3 + \text{H}_2\text{O} \longrightarrow \text{CrO}_4^{2-} + 5\text{H}^+$$
+<p>But in basic medium, add OH⁻ to both sides to neutralise H⁺:</p>
+$$\text{Cr(OH)}_3 + \text{H}_2\text{O} + 5\text{OH}^- \longrightarrow \text{CrO}_4^{2-} + 5\text{H}_2\text{O}$$
+$$\text{Cr(OH)}_3 + 5\text{OH}^- \longrightarrow \text{CrO}_4^{2-} + 4\text{H}_2\text{O} + 3e^-$$
+<p><strong>Reduction half:</strong> $\text{H}_2\text{O}_2 \rightarrow \text{H}_2\text{O}$ (O: −1 → −2, gain of 1 e⁻ per O = 2 e⁻ total)</p>
+$$\text{H}_2\text{O}_2 + 2\text{H}^+ + 2e^- \longrightarrow 2\text{H}_2\text{O}$$
+<p>Neutralise H⁺ with OH⁻:</p>
+$$\text{H}_2\text{O}_2 + 2\text{H}_2\text{O} + 2e^- \longrightarrow 2\text{H}_2\text{O} + 2\text{OH}^-$$
+$$\text{H}_2\text{O}_2 + 2e^- \longrightarrow 2\text{OH}^-$$
+<p><strong>Equalise e⁻:</strong> Multiply oxidation by 2, reduction by 3:</p>
+$$2\text{Cr(OH)}_3 + 10\text{OH}^- \longrightarrow 2\text{CrO}_4^{2-} + 8\text{H}_2\text{O} + 6e^-$$
+$$3\text{H}_2\text{O}_2 + 6e^- \longrightarrow 6\text{OH}^-$$
+<p><strong>Add:</strong></p>
+$$2\text{Cr(OH)}_3 + 10\text{OH}^- + 3\text{H}_2\text{O}_2 \longrightarrow 2\text{CrO}_4^{2-} + 8\text{H}_2\text{O} + 6\text{OH}^-$$
+<p>Cancel 6 OH⁻ from both sides:</p>
+$$2\text{Cr(OH)}_3 + 4\text{OH}^- + 3\text{H}_2\text{O}_2 \longrightarrow 2\text{CrO}_4^{2-} + 8\text{H}_2\text{O}$$
+</div></div>
+<h2>2.2 Redox Titrations <span class="badge">CBSE High-Yield</span></h2>
+<p>Redox titrations involve the transfer of electrons between the analyte and titrant. The equivalence point is detected by a <strong>self-indicator</strong> (e.g., KMnO₄) or a specific redox indicator (e.g., diphenylamine, ferroin).</p>
+<h3>KMnO₄ as a Self-Indicator</h3>
+<p>In acidic medium, $\text{MnO}_4^-$ (deep purple) is reduced to $\text{Mn}^{2+}$ (colourless). As long as reducing analyte is present, the purple colour disappears. At the endpoint, one excess drop turns the solution <strong>permanent faint pink</strong>.</p>
+<p>No external indicator needed — KMnO₄ is its own indicator.</p>
+<h3>Oxalic Acid vs KMnO₄ — A Classic Titration</h3>
+<p>The reaction (acidic medium, ~60–70°C):</p>
+$$ 2\text{MnO}_4^- + 5\text{C}_2\text{O}_4^{2-} + 16\text{H}^+ \longrightarrow 2\text{Mn}^{2+} + 10\text{CO}_2 + 8\text{H}_2\text{O} $$
+<p><strong>Equivalent weight calculations:</strong></p>
+$$ \text{Eq. wt. of KMnO}_4 = \frac{\text{Molar mass}}{\text{n-factor}} = \frac{158}{5} = 31.6\,\text{g/eq} $$
+$$ \text{Eq. wt. of H}_2\text{C}_2\text{O}_4 \cdot 2\text{H}_2\text{O} = \frac{126}{2} = 63\,\text{g/eq} $$
+
+<h3>Redox Couples &amp; Electrode Potential</h3>
+<p>A redox reaction is a combination of two <strong>half-cells</strong> (redox couples). Standard electrode potentials ($E^\ominus$) predict the spontaneity:</p>
+$$ E^\ominus_{\text{cell}} = E^\ominus_{\text{cathode}} - E^\ominus_{\text{anode}} $$
+<p>If $E^\ominus_{\text{cell}} &gt; 0$, the reaction is spontaneous (galvanic cell).</p>
+<p>Nernst equation relates potential to concentration:</p>
+$$ E = E^\ominus - \frac{0.0591}{n}\log Q \quad \text{(at 298 K)} $$
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ===== TAB 3 ===== -->
+<div class="tab-panel" id="tab3">
+<h2>3. NCERT Exercise Solutions — Redox Reactions (Chapter 8) <span class="badge">Full CBSE Coverage</span></h2>
+<details>
+<summary>Q 8.1: Assign oxidation number to the underlined elements in each of the following species</summary>
+<div class="content">
+<p>(a) $\text{Na}\underline{\text{H}}_2\text{PO}_4$ — H is +1, Na is +1, PO₄ is −3. Let P = x: $1 + 2(+1) + x + 4(-2) = 0 \Rightarrow 1 + 2 + x -8 = 0 \Rightarrow x = +5$.</p>
+<p>(b) $\text{NaH}\underline{\text{S}}\text{O}_4$ — Na = +1, H = +1, O₄ = −8. Let S = x: $+1 +1 + x -8 = 0 \Rightarrow x = +6$.</p>
+<p>(c) $\text{H}_4\underline{\text{P}}_2\text{O}_7$ — H₄ = +4, O₇ = −14. Let P = x: $4 + 2x -14 = 0 \Rightarrow 2x = 10 \Rightarrow x = +5$.</p>
+<p>(d) $\text{K}_2\underline{\text{Mn}}\text{O}_4$ — K₂ = +2, O₄ = −8. Let Mn = x: $2 + x -8 = 0 \Rightarrow x = +6$.</p>
+<p>(e) $\text{Ca}\underline{\text{O}}_2$ — Ca = +2. Let O = x: $2 + 2x = 0 \Rightarrow x = -1$ (peroxide).</p>
+<p>(f) $\underline{\text{Na}}\text{BH}_4$ — BH₄⁻, B = +3, H₄ = −4. Then Na = +1 (matches).</p>
+<p>(g) $\text{H}_2\underline{\text{S}}_2\text{O}_7$ — H₂ = +2, O₇ = −14. Let S = x: $2 + 2x -14 = 0 \Rightarrow 2x = 12 \Rightarrow x = +6$.</p>
+<p>(h) $\text{KAl}(\underline{\text{S}}\text{O}_4)_2\cdot12\text{H}_2\text{O}$ — K = +1, Al = +3, O = −8 × 2 = −16, H = +24 in H₂O. Let S = x: $+1+3+2x-16+24-24=0 \Rightarrow 2x = +12 \Rightarrow x = +6$.</p>
+</div>
+</details>
+<details>
+<summary>Q 8.2: What is the oxidation number of S in H₂S₂O₈?</summary>
+<div class="content">
+<p>Structure: HO—SO₂—O—O—SO₂—OH. It contains a peroxo bridge (O—O).</p>
+<p>Peroxo O = −1 each; other O = −2 each. Total O contribution: 2(−1) + 6(−2) = −14. H₂ = +2.</p>
+<p>Let S = x: $2 + 2x -14 = 0 \Rightarrow 2x = 12 \Rightarrow x = +6$.</p>
+<p>Each S = +6 (not +7, despite the average).</p>
+</div>
+</details>
+<details>
+<summary>Q 8.3: Identify oxidising/reducing agents in: (a) 2H₂ + O₂ → 2H₂O, (b) PbO₂ + 4HCl → PbCl₂ + Cl₂ + 2H₂O, (c) 4NH₃ + 5O₂ → 4NO + 6H₂O</summary>
+<div class="content">
+<p>(a) H: 0 → +1 (oxidised, reducing agent), O: 0 → −2 (reduced, oxidising agent).</p>
+<p>(b) Pb: +4 → +2 (reduced, oxidising agent = PbO₂), Cl: −1 → 0 (oxidised, reducing agent = HCl).</p>
+<p>(c) N: −3 → +2 in NO (oxidised, reducing agent = NH₃), O: 0 → −2 (reduced, oxidising agent = O₂).</p>
+</div>
+</details>
+<details>
+<summary>Q 8.4: Balance the redox equation: MnO₄⁻ + I⁻ → MnO₂ + IO₃⁻ (basic medium)</summary>
+<div class="content">
+<p><strong>Oxidation half:</strong> I⁻ → IO₃⁻ (I: −1 → +5, loss of 6 e⁻)</p>
+<p>Balance O with H₂O, H with OH⁻ (basic):</p>
+$$\text{I}^- + 6\text{OH}^- \longrightarrow \text{IO}_3^- + 3\text{H}_2\text{O} + 6e^-$$
+<p><strong>Reduction half:</strong> MnO₄⁻ → MnO₂ (Mn: +7 → +4, gain of 3 e⁻)</p>
+$$\text{MnO}_4^- + 2\text{H}_2\text{O} + 3e^- \longrightarrow \text{MnO}_2 + 4\text{OH}^-$$
+<p>Equalise e⁻: multiply reduction by 2:</p>
+$$2\text{MnO}_4^- + 4\text{H}_2\text{O} + 6e^- \longrightarrow 2\text{MnO}_2 + 8\text{OH}^-$$
+<p>Add half-reactions:</p>
+$$\text{I}^- + 6\text{OH}^- + 2\text{MnO}_4^- + 4\text{H}_2\text{O} \longrightarrow \text{IO}_3^- + 3\text{H}_2\text{O} + 2\text{MnO}_2 + 8\text{OH}^-$$
+<p>Cancel 4H₂O from LHS with 3H₂O from RHS → net 1H₂O on LHS? Let's re-check... Actually cancel 3H₂O from both sides leaving 1H₂O on LHS. Cancel 6OH⁻ from both sides leaving 2OH⁻ on RHS:</p>
+$$\text{I}^- + 2\text{MnO}_4^- + \text{H}_2\text{O} \longrightarrow \text{IO}_3^- + 2\text{MnO}_2 + 2\text{OH}^-$$
+</div>
+</details>
+<details>
+<summary>Q 8.5: Balance: MnO₄⁻ + SO₃²⁻ → Mn²⁺ + SO₄²⁻ (acidic medium)</summary>
+<div class="content">
+<p><strong>Reduction:</strong> $\text{MnO}_4^- + 8\text{H}^+ + 5e^- \rightarrow \text{Mn}^{2+} + 4\text{H}_2\text{O}$</p>
+<p><strong>Oxidation:</strong> $\text{SO}_3^{2-} + \text{H}_2\text{O} \rightarrow \text{SO}_4^{2-} + 2\text{H}^+ + 2e^-$</p>
+<p>Equalise: multiply reduction by 2, oxidation by 5:</p>
+$$2\text{MnO}_4^- + 16\text{H}^+ + 10e^- \rightarrow 2\text{Mn}^{2+} + 8\text{H}_2\text{O}$$
+$$5\text{SO}_3^{2-} + 5\text{H}_2\text{O} \rightarrow 5\text{SO}_4^{2-} + 10\text{H}^+ + 10e^-$$
+<p>Add:</p>
+$$2\text{MnO}_4^- + 16\text{H}^+ + 5\text{SO}_3^{2-} + 5\text{H}_2\text{O} \rightarrow 2\text{Mn}^{2+} + 8\text{H}_2\text{O} + 5\text{SO}_4^{2-} + 10\text{H}^+$$
+<p>Cancel: 10H⁺ from both sides, 5H₂O from both sides:</p>
+$$2\text{MnO}_4^- + 6\text{H}^+ + 5\text{SO}_3^{2-} \rightarrow 2\text{Mn}^{2+} + 3\text{H}_2\text{O} + 5\text{SO}_4^{2-}$$
+</div>
+</details>
+<details>
+<summary>Q 8.6: What is the n-factor of KMnO₄ in (a) acidic, (b) basic (neutral), and (c) strongly alkaline medium?</summary>
+<div class="content">
+<p>(a) <strong>Acidic:</strong> MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O → n = 5</p>
+<p>(b) <strong>Neutral/weakly basic:</strong> MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻ → n = 3</p>
+<p>(c) <strong>Strongly alkaline:</strong> MnO₄⁻ + e⁻ → MnO₄²⁻ → n = 1</p>
+</div>
+</details>
+<details>
+<summary>Q 8.7: Justify that the reaction 2Cu₂O + Cu₂S → 6Cu + SO₂ is a redox reaction. Identify the species oxidised/reduced.</summary>
+<div class="content">
+<p>Cu in Cu₂O: +1 → 0 (reduced), Cu in Cu₂S: +1 → 0 (reduced), S in Cu₂S: −2 → +4 (oxidised).</p>
+<p>Cu⁺ is the oxidising agent (gets reduced), S²⁻ is the reducing agent (gets oxidised).</p>
+</div>
+</details>
+<details>
+<summary>Q 8.8: Balance: H₂O₂ + Fe²⁺ → Fe³⁺ + H₂O (acidic)</summary>
+<div class="content">
+<p><strong>Oxidation:</strong> Fe²⁺ → Fe³⁺ + e⁻</p>
+<p><strong>Reduction:</strong> H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O</p>
+<p>Equalise: multiply oxidation by 2:</p>
+$$2\text{Fe}^{2+} \rightarrow 2\text{Fe}^{3+} + 2e^-$$
+<p>Add:</p>
+$$\text{H}_2\text{O}_2 + 2\text{H}^+ + 2\text{Fe}^{2+} \rightarrow 2\text{Fe}^{3+} + 2\text{H}_2\text{O}$$
+</div>
+</details>
+<details>
+<summary>Q 8.9: Balance: Cr₂O₇²⁻ + SO₂ → Cr³⁺ + SO₄²⁻ (acidic)</summary>
+<div class="content">
+<p><strong>Reduction:</strong> Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O</p>
+<p><strong>Oxidation:</strong> SO₂ + 2H₂O → SO₄²⁻ + 4H⁺ + 2e⁻</p>
+<p>Equalise: multiply oxidation by 3:</p>
+$$3\text{SO}_2 + 6\text{H}_2\text{O} \rightarrow 3\text{SO}_4^{2-} + 12\text{H}^+ + 6e^-$$
+<p>Add:</p>
+$$\text{Cr}_2\text{O}_7^{2-} + 14\text{H}^+ + 3\text{SO}_2 + 6\text{H}_2\text{O} \rightarrow 2\text{Cr}^{3+} + 7\text{H}_2\text{O} + 3\text{SO}_4^{2-} + 12\text{H}^+$$
+<p>Cancel:</p>
+$$\text{Cr}_2\text{O}_7^{2-} + 2\text{H}^+ + 3\text{SO}_2 \rightarrow 2\text{Cr}^{3+} + \text{H}_2\text{O} + 3\text{SO}_4^{2-}$$
+</div>
+</details>
+<details>
+<summary>Q 8.10: Balance: P₄ + OH⁻ → PH₃ + H₂PO₂⁻ (disproportionation in base)</summary>
+<div class="content">
+<p>P in P₄ = 0; in PH₃ = −3 (reduction); in H₂PO₂⁻ = +1 (oxidation).</p>
+<p>This is disproportionation of P₄.</p>
+<p><strong>Reduction:</strong> P₄ → 4PH₃: each P gains 3 e⁻ × 4 = 12 e⁻</p>
+<p><strong>Oxidation:</strong> P₄ → 4H₂PO₂⁻: each P loses 1 e⁻ × 4 = 4 e⁻</p>
+<p>P₄ acts as both oxidant and reductant. Ratio: for every 1 P₄ reduced, 3 P₄ oxidised (to balance e⁻ 12:4 = 3:1).</p>
+<p>Multiply: 3P₄ (ox) + 1P₄ (red):</p>
+$$ \text{P}_4 + 3\text{P}_4 + 12\text{OH}^- \longrightarrow 4\text{PH}_3 + 12\text{H}_2\text{PO}_2^-$$
+<p>Simplified:</p>
+$$\text{P}_4 + 3\text{OH}^- + 3\text{H}_2\text{O} \longrightarrow \text{PH}_3 + 3\text{H}_2\text{PO}_2^-$$
+</div>
+</details>
+<details>
+<summary>Q 8.11: Balance: P₄ + OH⁻ → PH₃ + HPO₃²⁻ (alternative product)</summary>
+<div class="content">
+<p>P: 0 → −3 (PH₃, reduction) and 0 → +3 (HPO₃²⁻, oxidation).</p>
+<p><strong>Reduction half:</strong> P₄ + 12H⁺ + 12e⁻ → 4PH₃</p>
+<p>In base: P₄ + 12H₂O + 12e⁻ → 4PH₃ + 12OH⁻</p>
+<p><strong>Oxidation half:</strong> P₄ + 8H₂O → 4HPO₃²⁻ + 16H⁺ + 12e⁻</p>
+<p>In base: P₄ + 16OH⁻ → 4HPO₃²⁻ + 8H₂O + 12e⁻</p>
+<p>Add (e⁻ cancel):</p>
+$$2\text{P}_4 + 12\text{H}_2\text{O} + 16\text{OH}^- \longrightarrow 4\text{PH}_3 + 12\text{OH}^- + 4\text{HPO}_3^{2-} + 8\text{H}_2\text{O}$$
+<p>Cancel:</p>
+$$2\text{P}_4 + 4\text{H}_2\text{O} + 4\text{OH}^- \longrightarrow 4\text{PH}_3 + 4\text{HPO}_3^{2-}$$
+$$\text{P}_4 + 2\text{H}_2\text{O} + 2\text{OH}^- \longrightarrow 2\text{PH}_3 + 2\text{HPO}_3^{2-}$$
+</div>
+</details>
+<details>
+<summary>Q 8.12: What is disproportionation? Give two examples.</summary>
+<div class="content">
+<p>Disproportionation is a redox reaction where the <strong>same species</strong> undergoes both oxidation and reduction simultaneously. The element must have at least three oxidation states.</p>
+<p><strong>Example 1:</strong> $2\text{H}_2\text{O}_2 \rightarrow 2\text{H}_2\text{O} + \text{O}_2$ (O: −1 → −2 and 0)</p>
+<p><strong>Example 2:</strong> $3\text{Cl}_2 + 6\text{OH}^- \rightarrow 5\text{Cl}^- + \text{ClO}_3^- + 3\text{H}_2\text{O}$ (Cl: 0 → −1 and +5)</p>
+</div>
+</details>
+<details>
+<summary>Q 8.13: The compound AgF₂ is unstable. Suggest a possible redox reaction that may occur when it comes in contact with water.</summary>
+<div class="content">
+<p>Ag in AgF₂ is in +2 oxidation state, which is highly oxidising. It can oxidise water:</p>
+$$2\text{AgF}_2 + 2\text{H}_2\text{O} \longrightarrow 2\text{Ag} + 4\text{HF} + \text{O}_2$$
+<p>Ag²⁺ is reduced to Ag⁰; O²⁻ in water is oxidised to O₂.</p>
+</div>
+</details>
+<details>
+<summary>Q 8.14: Balance: MnO₄⁻ + Br⁻ → MnO₂ + BrO₃⁻ (basic medium)</summary>
+<div class="content">
+<p><strong>Reduction:</strong> MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻ (×2 to match e⁻)</p>
+<p><strong>Oxidation:</strong> Br⁻ + 6OH⁻ → BrO₃⁻ + 3H₂O + 6e⁻</p>
+<p>Equalise e⁻: multiply reduction by 2:</p>
+$$2\text{MnO}_4^- + 4\text{H}_2\text{O} + 6e^- \rightarrow 2\text{MnO}_2 + 8\text{OH}^-$$
+<p>Add:</p>
+$$\text{Br}^- + 6\text{OH}^- + 2\text{MnO}_4^- + 4\text{H}_2\text{O} \rightarrow \text{BrO}_3^- + 3\text{H}_2\text{O} + 2\text{MnO}_2 + 8\text{OH}^-$$
+<p>Cancel:</p>
+$$\text{Br}^- + 2\text{MnO}_4^- + \text{H}_2\text{O} \rightarrow \text{BrO}_3^- + 2\text{MnO}_2 + 2\text{OH}^-$$
+</div>
+</details>
+<details>
+<summary>Q 8.15: Balance: NO₃⁻ + I⁻ → NO₂ + I₂ (acidic medium)</summary>
+<div class="content">
+<p><strong>Reduction:</strong> NO₃⁻ + 2H⁺ + e⁻ → NO₂ + H₂O</p>
+<p><strong>Oxidation:</strong> 2I⁻ → I₂ + 2e⁻</p>
+<p>Equalise: multiply reduction by 2:</p>
+$$2\text{NO}_3^- + 4\text{H}^+ + 2e^- \rightarrow 2\text{NO}_2 + 2\text{H}_2\text{O}$$
+<p>Add:</p>
+$$2\text{NO}_3^- + 4\text{H}^+ + 2\text{I}^- \rightarrow 2\text{NO}_2 + 2\text{H}_2\text{O} + \text{I}_2$$
+</div>
+</details>
+<details>
+<summary>Q 8.16: Balance: H₂S + HNO₃ → NO + S + H₂O</summary>
+<div class="content">
+<p><strong>Oxidation:</strong> H₂S → S + 2H⁺ + 2e⁻</p>
+<p><strong>Reduction:</strong> HNO₃ + 3H⁺ + 3e⁻ → NO + 2H₂O</p>
+<p>Equalise: multiply oxidation by 3, reduction by 2:</p>
+$$3\text{H}_2\text{S} \rightarrow 3\text{S} + 6\text{H}^+ + 6e^-$$
+$$2\text{HNO}_3 + 6\text{H}^+ + 6e^- \rightarrow 2\text{NO} + 4\text{H}_2\text{O}$$
+<p>Add:</p>
+$$3\text{H}_2\text{S} + 2\text{HNO}_3 \rightarrow 3\text{S} + 2\text{NO} + 4\text{H}_2\text{O}$$
+</div>
+</details>
+<details>
+<summary>Q 8.17: Balance: H₂O₂ + I⁻ → I₂ + H₂O (acidic)</summary>
+<div class="content">
+<p><strong>Oxidation:</strong> 2I⁻ → I₂ + 2e⁻</p>
+<p><strong>Reduction:</strong> H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O</p>
+<p>Add:</p>
+$$\text{H}_2\text{O}_2 + 2\text{H}^+ + 2\text{I}^- \longrightarrow \text{I}_2 + 2\text{H}_2\text{O}$$
+</div>
+</details>
+<details>
+<summary>Q 8.18: Calculate equivalent mass of KMnO₄ in acidic medium.</summary>
+<div class="content">
+<p>n-factor = 5 (Mn: +7 → +2).</p>
+$$E = \frac{M}{n} = \frac{158}{5} = 31.6\,\text{g/eq}$$
+</div>
+</details>
+<details>
+<summary>Q 8.19: Why does KMnO₄ act as a self-indicator?</summary>
+<div class="content">
+<p>KMnO₄ has an intense purple colour. In acidic medium, it is reduced to colourless Mn²⁺. As long as a reducing agent (analyte) is present, the purple colour disappears immediately. At the endpoint, excess MnO₄⁻ gives a permanent faint pink colour — no external indicator is needed.</p>
+</div>
+</details>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ===== TAB 4 ===== -->
+<div class="tab-panel" id="tab4">
+<h2>🧪 Interactive Redox Balancing &amp; Titration Sandbox</h2>
+<!-- Tool A: Balancing Solver -->
+<div class="tool-panel" id="solver-tool">
+<h3>A. Algorithmic Redox Balancing Solver</h3>
+<p>Choose a skeletal equation and medium, then click <strong>"Next Step"</strong> to walk through the balancing process.</p>
+<div class="ctrl-group">
+<select id="eq-select">
+<option value="0">MnO₄⁻ + I⁻ → MnO₂ + IO₃⁻ (basic)</option>
+<option value="1">Cr₂O₇²⁻ + Fe²⁺ → Cr³⁺ + Fe³⁺ (acidic)</option>
+<option value="2">Cl₂ → Cl⁻ + ClO₃⁻ (basic, disproportionation)</option>
+<option value="3">Cu + HNO₃ → Cu²⁺ + NO + H₂O (acidic)</option>
+<option value="4">H₂O₂ → H₂O + O₂ (disproportionation)</option>
+</select>
+<label>Medium:
+    <select id="medium-select">
+<option value="acidic">Acidic (H⁺/H₂O)</option>
+<option value="basic">Basic (OH⁻/H₂O)</option>
+</select>
+</label>
+<button id="reset-step-btn" onclick="resetSolver()">↺ Reset</button>
+</div>
+<div id="solver-steps">
+<div class="step" id="step-0"><strong>Ready.</strong> Select an equation and click "Next Step".</div>
+<div class="step" id="step-1"><strong>Step 1:</strong> <span id="s1-text">Assigning oxidation numbers...</span></div>
+<div class="step" id="step-2"><strong>Step 2:</strong> <span id="s2-text">Splitting into half-reactions...</span></div>
+<div class="step" id="step-3"><strong>Step 3:</strong> <span id="s3-text">Balancing atoms (except O/H)...</span></div>
+<div class="step" id="step-4"><strong>Step 4:</strong> <span id="s4-text">Balancing O and H...</span></div>
+<div class="step" id="step-5"><strong>Step 5:</strong> <span id="s5-text">Equalising charges and combining...</span></div>
+<div class="step" id="step-final"><strong>✅ Final Balanced Equation:</strong> <span id="final-eq"></span></div>
+</div>
+<div class="ctrl-group" style="justify-content:center">
+<button id="next-step-btn" onclick="nextStep()">▶ Next Step</button>
+</div>
+</div>
+<!-- Tool B: Disproportionation Visualizer -->
+<div class="tool-panel">
+<h3>B. Disproportionation Reaction Particle Visualizer <span class="badge badge-purple">Live Animation</span></h3>
+<p>Animating H₂O₂ → H₂O + O₂ — the same oxygen atom is both reduced (−1→−2) and oxidised (−1→0).</p>
+<canvas height="400" id="disprop-canvas" width="700"></canvas>
+<div class="ctrl-group" style="justify-content:center">
+<button onclick="startDisprop()">▶ Start Animation</button>
+<button onclick="resetDisprop()">↺ Reset</button>
+</div>
+</div>
+<!-- Tool C: Titration Simulator -->
+<div class="tool-panel">
+<h3>C. Redox Titration Lab Simulator <span class="badge">CBSE Expected</span></h3>
+<p>Titration of <strong>Oxalic Acid (H₂C₂O₄)</strong> vs <strong>Acidified KMnO₄</strong>. Click to add titrant dropwise.</p>
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+<div style="flex:1;min-width:280px;text-align:center">
+<svg height="440" id="titration-svg" style="background:#fafbfc;border-radius:8px;border:1px solid var(--border)" viewbox="0 0 300 500" width="260">
+<!-- Burette -->
+<rect fill="none" height="250" rx="2" stroke="#333" stroke-width="2" width="30" x="110" y="20"></rect>
+<rect fill="#ddd" height="12" rx="3" stroke="#333" stroke-width="1.5" width="40" x="105" y="18"></rect>
+<!-- Graduations -->
+<line stroke="#555" stroke-width="1" x1="140" x2="148" y1="40" y2="40"></line><text fill="#555" font-size="7" x="150" y="43">0</text>
+<line stroke="#555" stroke-width="1" x1="140" x2="148" y1="80" y2="80"></line><text fill="#555" font-size="7" x="150" y="83">10</text>
+<line stroke="#555" stroke-width="1" x1="140" x2="148" y1="120" y2="120"></line><text fill="#555" font-size="7" x="150" y="123">20</text>
+<line stroke="#555" stroke-width="1" x1="140" x2="148" y1="160" y2="160"></line><text fill="#555" font-size="7" x="150" y="163">30</text>
+<line stroke="#555" stroke-width="1" x1="140" x2="148" y1="200" y2="200"></line><text fill="#555" font-size="7" x="150" y="203">40</text>
+<line stroke="#555" stroke-width="1" x1="140" x2="148" y1="240" y2="240"></line><text fill="#555" font-size="7" x="150" y="243">50</text>
+<!-- Burette liquid -->
+<rect fill="#5b2d8e" height="230" id="burette-liquid" opacity="0.7" rx="1" width="26" x="112" y="30"></rect>
+<!-- Stopcock -->
+<rect fill="#666" height="10" rx="2" stroke="#444" stroke-width="1" width="50" x="100" y="268"></rect>
+<circle cx="125" cy="273" fill="#888" r="5"></circle>
+<!-- Droplet -->
+<ellipse cx="125" cy="295" fill="#5b2d8e" id="droplet" opacity="0" rx="6" ry="9" style="transition:opacity 0.3s"></ellipse>
+<!-- Flask -->
+<path d="M80 350 L100 370 L140 370 L160 350 Z" fill="none" stroke="#333" stroke-width="2"></path>
+<rect fill="none" height="14" rx="1" stroke="#333" stroke-width="1.5" width="14" x="88" y="340"></rect>
+<rect fill="none" height="14" rx="1" stroke="#333" stroke-width="1.5" width="14" x="148" y="340"></rect>
+<path d="M70 350 Q70 420 100 430 L140 430 Q170 420 170 350 Z" fill="#e8f0fe" id="flask-body" stroke="#333" stroke-width="2"></path>
+<!-- Flask liquid -->
+<path d="M72 355 Q72 418 101 428 L139 428 Q168 418 168 355 Z" fill="#e0e7ff" id="flask-liquid" opacity="0.7"></path>
+<!-- White tile -->
+<rect fill="#f5f5f5" height="12" rx="2" stroke="#ccc" stroke-width="1" width="110" x="65" y="445"></rect>
+<!-- Label -->
+<text fill="#555" font-size="9" text-anchor="middle" x="120" y="480">H₂C₂O₄ + H₂SO₄</text>
+</svg>
+<div class="ctrl-group" style="justify-content:center">
+<button id="drop-btn" onclick="addDrop()">💧 Drop Titrant</button>
+<button onclick="resetTitration()">↺ Reset</button>
+</div>
+<p id="titration-info" style="font-size:0.85rem;color:#555;margin-top:6px">Volume added: <span id="vol-display">0.00</span> mL | Colour: <span id="colour-display">Colourless</span></p>
+</div>
+<div style="flex:1;min-width:280px">
+<canvas height="240" id="titration-graph" width="360"></canvas>
+<p style="font-size:0.75rem;text-align:center;color:#888">Titrant Volume (mL) vs Oxidation Potential (V)</p>
+</div>
+</div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:12px 0;margin-top:24px;font-size:0.85em;color:#8899aa;border-top:1px solid rgba(255,255,255,0.08)">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- end tab-panels -->
+</div> <!-- .container -->
+<script>
+// ===== Tab switching =====
+function switchTab(n) {
+  document.querySelectorAll('.tab-panel').forEach(el => el.classList.remove('open'));
+  document.getElementById('tab'+n).classList.add('open');
+  renderMathInElement(document.getElementById('tab'+n), {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+}
+
+// ===== HOTS toggle =====
+function toggleHots(btn) {
+  btn.classList.toggle('open');
+  let body = btn.nextElementSibling;
+  if (body) body.classList.toggle('open');
+}
+
+// ===== SOLVER ENGINE =====
+const SOLVER_DATA = [
+  { // 0: MnO4- + I- -> MnO2 + IO3- (basic)
+    reactants: ['MnO₄⁻', 'I⁻'],
+    products: ['MnO₂', 'IO₃⁻'],
+    medium: 'basic',
+    steps: {
+      1: 'ON: Mn in MnO₄⁻ = +7 → MnO₂ = +4 (reduction, gain 3e⁻). I in I⁻ = −1 → IO₃⁻ = +5 (oxidation, loss 6e⁻).',
+      2: 'Reduction: MnO₄⁻ → MnO₂\nOxidation: I⁻ → IO₃⁻',
+      3: 'Atoms other than O/H are already balanced (1 Mn, 1 I each side).',
+      4: 'Red: MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻\nOx: I⁻ + 6OH⁻ → IO₃⁻ + 3H₂O + 6e⁻',
+      5: 'Multiplying red by 2: 2MnO₄⁻ + 4H₂O + 6e⁻ → 2MnO₂ + 8OH⁻\nAdding: I⁻ + 2MnO₄⁻ + H₂O → IO₃⁻ + 2MnO₂ + 2OH⁻'
+    },
+    final: 'I⁻ + 2MnO₄⁻ + H₂O → IO₃⁻ + 2MnO₂ + 2OH⁻'
+  },
+  { // 1: Cr2O72- + Fe2+ -> Cr3+ + Fe3+ (acidic)
+    reactants: ['Cr₂O₇²⁻', 'Fe²⁺'],
+    products: ['Cr³⁺', 'Fe³⁺'],
+    medium: 'acidic',
+    steps: {
+      1: 'ON: Cr = +6 → +3 (red, gain 3e⁻ per Cr × 2 = 6e⁻). Fe = +2 → +3 (ox, loss 1e⁻).',
+      2: 'Reduction: Cr₂O₇²⁻ → 2Cr³⁺\nOxidation: Fe²⁺ → Fe³⁺',
+      3: 'Cr and Fe balanced as written.',
+      4: 'Red: Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O\nOx: Fe²⁺ → Fe³⁺ + e⁻',
+      5: 'Multiplying ox by 6: 6Fe²⁺ → 6Fe³⁺ + 6e⁻\nAdding: Cr₂O₇²⁻ + 14H⁺ + 6Fe²⁺ → 2Cr³⁺ + 7H₂O + 6Fe³⁺'
+    },
+    final: 'Cr₂O₇²⁻ + 14H⁺ + 6Fe²⁺ → 2Cr³⁺ + 7H₂O + 6Fe³⁺'
+  },
+  { // 2: Cl2 -> Cl- + ClO3- (basic, disproportionation)
+    reactants: ['Cl₂'],
+    products: ['Cl⁻', 'ClO₃⁻'],
+    medium: 'basic',
+    steps: {
+      1: 'ON: Cl in Cl₂ = 0 → Cl⁻ = −1 (red, gain 1e⁻) and ClO₃⁻ = +5 (ox, loss 5e⁻).',
+      2: 'Reduction: Cl₂ → 2Cl⁻\nOxidation: Cl₂ → ClO₃⁻ (1 Cl atom)',
+      3: 'Balance oxidised Cl: Cl₂ → 2ClO₃⁻ needs 2 Cl. Reduction: 3Cl₂ → 5Cl⁻ uses 5 of 6 Cl? Ratio: loss 5e⁻ vs gain 1e⁻. Multiply: 5(red gain) + 1(ox loss). Coefficients: 5Cl⁻ + 1ClO₃⁻ = 6Cl total → 3Cl₂.',
+      4: 'Ox: Cl₂ + 12OH⁻ → 2ClO₃⁻ + 6H₂O + 10e⁻\nRed: Cl₂ + 2e⁻ → 2Cl⁻ (×5: 5Cl₂ + 10e⁻ → 10Cl⁻)',
+      5: 'Adding: 3Cl₂ + 6OH⁻ → 5Cl⁻ + ClO₃⁻ + 3H₂O'
+    },
+    final: '3Cl₂ + 6OH⁻ → 5Cl⁻ + ClO₃⁻ + 3H₂O'
+  },
+  { // 3: Cu + HNO3 -> Cu2+ + NO + H2O (acidic)
+    reactants: ['Cu', 'HNO₃'],
+    products: ['Cu²⁺', 'NO', 'H₂O'],
+    medium: 'acidic',
+    steps: {
+      1: 'ON: Cu = 0 → +2 (ox, loss 2e⁻). N in HNO₃ = +5 → NO = +2 (red, gain 3e⁻).',
+      2: 'Oxidation: Cu → Cu²⁺\nReduction: HNO₃ → NO',
+      3: 'Cu and N already balanced (1 each).',
+      4: 'Ox: Cu → Cu²⁺ + 2e⁻\nRed: HNO₃ + 3H⁺ + 3e⁻ → NO + 2H₂O',
+      5: 'Multiplying ox by 3, red by 2: 3Cu → 3Cu²⁺ + 6e⁻; 2HNO₃ + 6H⁺ + 6e⁻ → 2NO + 4H₂O\nAdding: 3Cu + 2HNO₃ + 6H⁺ → 3Cu²⁺ + 2NO + 4H₂O'
+    },
+    final: '3Cu + 2HNO₃ + 6H⁺ → 3Cu²⁺ + 2NO + 4H₂O'
+  },
+  { // 4: H2O2 -> H2O + O2 (disproportionation)
+    reactants: ['H₂O₂'],
+    products: ['H₂O', 'O₂'],
+    medium: 'acidic',
+    steps: {
+      1: 'ON of O in H₂O₂ = −1 → in H₂O = −2 (red, gain 1e⁻ per O) and in O₂ = 0 (ox, loss 1e⁻ per O).',
+      2: 'Reduction: H₂O₂ → 2H₂O (O: −1 → −2, gain 1e⁻ per O = 2e⁻ total)\nOxidation: H₂O₂ → O₂ (O: −1 → 0, loss 1e⁻ per O = 2e⁻ total)',
+      3: 'No other atoms to balance.',
+      4: 'Red: H₂O₂ + 2H⁺ + 2e⁻ → 2H₂O\nOx: H₂O₂ → O₂ + 2H⁺ + 2e⁻',
+      5: 'Adding: 2H₂O₂ → 2H₂O + O₂'
+    },
+    final: '2H₂O₂ → 2H₂O + O₂'
+  }
+];
+
+let solverStep = 0;
+let curEq = 0;
+
+function resetSolver() {
+  solverStep = 0;
+  for (let i = 0; i <= 5; i++) document.getElementById('step-'+i).classList.remove('show');
+  document.getElementById('step-final').classList.remove('show');
+  document.getElementById('step-0').classList.add('show');
+  document.getElementById('next-step-btn').disabled = false;
+}
+
+function showStep(n) {
+  for (let i = 0; i <= 5; i++) document.getElementById('step-'+i).classList.remove('show');
+  document.getElementById('step-final').classList.remove('show');
+  if (n <= 5) document.getElementById('step-'+n).classList.add('show');
+  else document.getElementById('step-final').classList.add('show');
+}
+
+function nextStep() {
+  let idx = parseInt(document.getElementById('eq-select').value);
+  let med = document.getElementById('medium-select').value;
+  let data = SOLVER_DATA[idx];
+  if (!data) return;
+
+  if (solverStep === 0) {
+    showStep(1);
+    document.getElementById('s1-text').textContent = data.steps[1];
+    solverStep = 1;
+  } else if (solverStep === 1) {
+    showStep(2);
+    document.getElementById('s2-text').textContent = data.steps[2];
+    solverStep = 2;
+  } else if (solverStep === 2) {
+    showStep(3);
+    document.getElementById('s3-text').textContent = data.steps[3];
+    solverStep = 3;
+  } else if (solverStep === 3) {
+    showStep(4);
+    document.getElementById('s4-text').textContent = data.steps[4];
+    solverStep = 4;
+  } else if (solverStep === 4) {
+    showStep(5);
+    document.getElementById('s5-text').textContent = data.steps[5];
+    solverStep = 5;
+  } else if (solverStep === 5) {
+    showStep(6);
+    document.getElementById('final-eq').textContent = data.final;
+    document.getElementById('next-step-btn').disabled = true;
+    solverStep = 6;
+  }
+}
+</script>
+<!-- KaTeX auto-render on load -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });
+  // init solver
+  resetSolver();
+  // init canvases
+  initDisprop();
+  initTitration();
+  // Open first HOTS bubbles that need to be open
+  document.querySelectorAll('.hots-trigger.open').forEach(b => {
+    let body = b.nextElementSibling;
+    if (body) body.classList.add('open');
+  });
+});
+</script>
+<script>
+// ===== DISPROPORTIONATION PARTICLE VISUALIZER =====
+let disCtx, disAnimId, disProgress = 0, disRunning = false;
+
+function initDisprop() {
+  const c = document.getElementById('disprop-canvas');
+  if (!c) return;
+  disCtx = c.getContext('2d');
+  drawDispropFrame(0);
+}
+
+function drawDispropFrame(t) {
+  const ctx = disCtx;
+  const w = 700, h = 400;
+  ctx.clearRect(0, 0, w, h);
+
+  // Background
+  const grad = ctx.createLinearGradient(0,0,0,h);
+  grad.addColorStop(0,'#f0f4fe'); grad.addColorStop(1,'#e8ecf4');
+  ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
+
+  // Title
+  ctx.fillStyle = '#2a4b7c'; ctx.font = 'bold 16px Segoe UI,sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Disproportionation of H₂O₂', w/2, 30);
+
+  // Three phases: start, splitting, end
+  const progress = t; // 0 to 1
+  const phase = progress < 0.3 ? 0 : progress < 0.7 ? 1 : 2;
+  const p = Math.min(1, progress / 0.3);
+
+  // Center H2O2 molecule
+  const cx = w/2, cy = 180;
+
+  // Draw O-O bond
+  ctx.strokeStyle = '#e74c3c'; ctx.lineWidth = 4;
+  const bondLen = 60;
+  const spread = bondLen * (phase >= 2 ? 1.5 : phase === 1 ? 1 + 0.5 * ((progress-0.3)/0.4) : 1);
+
+  // Left O
+  const lx = cx - spread/2, ly = cy;
+  // Right O
+  const rx = cx + spread/2, ry = cy;
+
+  // Electrons
+  ctx.fillStyle = '#f39c12';
+  const eCount = 4;
+  for (let i = 0; i < eCount; i++) {
+    const angle = (i/eCount) * Math.PI * 2 + progress * 2;
+    const r = 12 + 8 * Math.sin(progress * 3 + i);
+    const ex = cx + r * Math.cos(angle);
+    const ey = cy + r * Math.sin(angle) - 30;
+    ctx.beginPath(); ctx.arc(ex, ey, 4, 0, Math.PI*2); ctx.fill();
+  }
+  ctx.fillStyle = '#333'; ctx.font = '12px Segoe UI,sans-serif';
+  ctx.fillText('e⁻ cloud', cx, cy-55);
+
+  // H2O2 molecule
+  ctx.strokeStyle = '#2c3e50'; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(rx, ry); ctx.stroke();
+
+  // Atoms
+  drawAtom(ctx, lx, ly, 'O', '#e74c3c', 20, '−1');
+  drawAtom(ctx, rx, ry, 'O', '#e74c3c', 20, '−1');
+
+  // H atoms
+  const hAngle = -Math.PI/3;
+  ctx.strokeStyle = '#555'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(lx, ly);
+  ctx.lineTo(lx + 25*Math.cos(hAngle), ly + 25*Math.sin(hAngle)); ctx.stroke();
+  drawAtom(ctx, lx + 25*Math.cos(hAngle), ly + 25*Math.sin(hAngle), 'H', '#3498db', 12, '+1');
+  ctx.beginPath(); ctx.moveTo(rx, ry);
+  ctx.lineTo(rx + 25*Math.cos(Math.PI-hAngle), ry + 25*Math.sin(Math.PI-hAngle)); ctx.stroke();
+  drawAtom(ctx, rx + 25*Math.cos(Math.PI-hAngle), ry + 25*Math.sin(Math.PI-hAngle), 'H', '#3498db', 12, '+1');
+
+  // Products (phase 2+)
+  if (phase >= 2) {
+    // H2O (reduced)
+    const h2ox = w/2 - 180, h2oy = cy + 80;
+    ctx.strokeStyle = '#2c3e50'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(h2ox-15, h2oy); ctx.lineTo(h2ox+15, h2oy); ctx.stroke();
+    drawAtom(ctx, h2ox-15, h2oy, 'O', '#e74c3c', 18, '−2');
+    drawAtom(ctx, h2ox+15, h2oy, 'H', '#3498db', 11, '+1');
+    ctx.strokeStyle = '#555'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(h2ox+15, h2oy);
+    ctx.lineTo(h2ox+35, h2oy-15); ctx.stroke();
+    drawAtom(ctx, h2ox+35, h2oy-15, 'H', '#3498db', 11, '+1');
+    ctx.fillStyle = '#1a6b37'; ctx.font = 'bold 13px Segoe UI,sans-serif';
+    ctx.textAlign = 'center'; ctx.fillText('Reduced: O⁻² (H₂O)', h2ox, h2oy+50);
+
+    // O2 (oxidised)
+    const o2x = w/2 + 180, o2y = cy + 80;
+    ctx.strokeStyle = '#2c3e50'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(o2x-20, o2y); ctx.lineTo(o2x+20, o2y); ctx.stroke();
+    drawAtom(ctx, o2x-20, o2y, 'O', '#e74c3c', 18, '0');
+    drawAtom(ctx, o2x+20, o2y, 'O', '#e74c3c', 18, '0');
+    ctx.fillStyle = '#a04000'; ctx.font = 'bold 13px Segoe UI,sans-serif';
+    ctx.textAlign = 'center'; ctx.fillText('Oxidised: O⁰ (O₂)', o2x, o2y+50);
+
+    // Arrows showing electron path
+    ctx.strokeStyle = '#f39c12'; ctx.lineWidth = 2; ctx.setLineDash([5,5]);
+    ctx.beginPath(); ctx.moveTo(cx-10, cy-10);
+    ctx.lineTo(h2ox, h2oy-20); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx+10, cy-10);
+    ctx.lineTo(o2x, o2y-20); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#f39c12'; ctx.font = 'bold 11px Segoe UI,sans-serif';
+    ctx.fillText('+ e⁻ (reduction)', (cx-10+h2ox)/2, (cy-10+h2oy-20)/2 - 8);
+    ctx.fillText('− e⁻ (oxidation)', (cx+10+o2x)/2-10, (cy-10+o2y-20)/2 - 8);
+  }
+
+  // Legend
+  ctx.fillStyle = '#555'; ctx.font = '11px Segoe UI,sans-serif'; ctx.textAlign = 'left';
+  ctx.fillText('Purple spheres = Oxygen  |  Blue spheres = Hydrogen  |  Yellow dots = Electrons', 20, h-15);
+  ctx.fillText('ON shown on each atom', 20, h-32);
+}
+
+function drawAtom(ctx, x, y, label, colour, r, onText) {
+  ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+  ctx.fillStyle = colour; ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.fillStyle = '#fff'; ctx.font = `bold ${r*0.8}px Segoe UI,sans-serif`;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(label, x, y-2);
+  ctx.fillStyle = '#e67e22'; ctx.font = 'bold 11px Segoe UI,sans-serif';
+  ctx.textBaseline = 'bottom';
+  ctx.fillText(onText, x, y - r - 5);
+  ctx.textBaseline = 'alphabetic';
+}
+
+function startDisprop() {
+  if (disRunning) return;
+  disRunning = true; disProgress = 0;
+  const step = 0.005;
+  function frame() {
+    disProgress += step;
+    if (disProgress > 1) { disProgress = 1; disRunning = false; }
+    drawDispropFrame(disProgress);
+    if (disRunning) disAnimId = requestAnimationFrame(frame);
+  }
+  if (disAnimId) cancelAnimationFrame(disAnimId);
+  disAnimId = requestAnimationFrame(frame);
+}
+
+function resetDisprop() {
+  if (disAnimId) cancelAnimationFrame(disAnimId);
+  disRunning = false; disProgress = 0;
+  drawDispropFrame(0);
+}
+
+// ===== TITRATION LAB SIMULATOR =====
+let titVolume = 0, titEndpoint = 26.8, titRunning = false;
+let titData = [];
+
+function initTitration() {
+  drawTitrationGraph();
+}
+
+function addDrop() {
+  if (titRunning) return;
+  titRunning = true;
+  const dropVol = 0.5 + Math.random() * 0.5;
+  const drop = document.getElementById('droplet');
+  const liquid = document.getElementById('flask-liquid');
+  const buretteLiquid = document.getElementById('burette-liquid');
+  const volDisplay = document.getElementById('vol-display');
+  const colourDisplay = document.getElementById('colour-display');
+
+  // Animate droplet
+  drop.style.opacity = '1';
+  drop.setAttribute('cy', '295');
+
+  // After drop falls
+  setTimeout(() => {
+    drop.style.opacity = '0';
+    titVolume += dropVol;
+    volDisplay.textContent = titVolume.toFixed(2);
+
+    // Simulate colour change
+    const isBeforeEP = titVolume < titEndpoint - 0.2;
+    const isAtEP = titVolume >= titEndpoint - 0.2 && titVolume < titEndpoint + 0.2;
+    const isAfterEP = titVolume >= titEndpoint + 0.2;
+
+    if (isBeforeEP) {
+      liquid.style.fill = '#e0e7ff';
+      colourDisplay.textContent = 'Colourless (Mn²⁺)';
+      colourDisplay.style.color = '#555';
+    } else if (isAtEP) {
+      liquid.style.fill = '#f0c0d0';
+      colourDisplay.textContent = 'Faint pink (endpoint)';
+      colourDisplay.style.color = '#c0392b';
+    } else {
+      liquid.style.fill = '#e8a0b8';
+      colourDisplay.textContent = 'Permanent pink (excess)';
+      colourDisplay.style.color = '#922b21';
+    }
+
+    // Update burette level
+    const buretteH = 230 * (1 - titVolume / 50);
+    buretteLiquid.setAttribute('y', 30 + (230 - Math.max(0,buretteH)));
+    buretteLiquid.setAttribute('height', Math.max(0,buretteH));
+
+    // Record data point
+    const potential = 0.5 + (titVolume < titEndpoint ?
+      -0.3 * (titVolume/titEndpoint) :
+      0.3 * ((titVolume - titEndpoint)/(50-titEndpoint)));
+    titData.push({v: titVolume, e: 0.5 + potential});
+    drawTitrationGraph();
+
+    titRunning = false;
+  }, 400);
+}
+
+function drawTitrationGraph() {
+  const c = document.getElementById('titration-graph');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const w = 360, h = 240, pad = {t:20,b:30,l:40,r:20};
+  ctx.clearRect(0,0,w,h);
+
+  // Grid
+  ctx.strokeStyle = '#ddd'; ctx.lineWidth = 0.5;
+  for (let x = 0; x <= 50; x += 10) {
+    const px = pad.l + (x/50)*(w-pad.l-pad.r);
+    ctx.beginPath(); ctx.moveTo(px, pad.t); ctx.lineTo(px, h-pad.b); ctx.stroke();
+  }
+  for (let y = 0; y <= 1; y += 0.2) {
+    const py = h-pad.b - (y/1)*(h-pad.t-pad.b);
+    ctx.beginPath(); ctx.moveTo(pad.l, py); ctx.lineTo(w-pad.r, py); ctx.stroke();
+  }
+
+  // Axes
+  ctx.strokeStyle = '#333'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, h-pad.b); ctx.lineTo(w-pad.r, h-pad.b); ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = '#555'; ctx.font = '11px Segoe UI,sans-serif'; ctx.textAlign = 'center';
+  ctx.fillText('Volume (mL)', w/2, h-5);
+  ctx.save(); ctx.translate(14, h/2); ctx.rotate(-Math.PI/2); ctx.fillText('E (V)', 0, 0); ctx.restore();
+
+  // Y-axis ticks
+  ctx.textAlign = 'right'; ctx.font = '9px Segoe UI,sans-serif';
+  for (let y = 0; y <= 1; y += 0.2) {
+    const py = h-pad.b - (y/1)*(h-pad.t-pad.b);
+    ctx.fillText(y.toFixed(1), pad.l-5, py+3);
+    ctx.beginPath(); ctx.moveTo(pad.l-3, py); ctx.lineTo(pad.l, py); ctx.stroke();
+  }
+
+  // X-axis ticks
+  ctx.textAlign = 'center';
+  for (let x = 0; x <= 50; x += 10) {
+    const px = pad.l + (x/50)*(w-pad.l-pad.r);
+    ctx.fillText(x, px, h-pad.b+15);
+    ctx.beginPath(); ctx.moveTo(px, h-pad.b); ctx.lineTo(px, h-pad.b+3); ctx.stroke();
+  }
+
+  // Data curve
+  if (titData.length < 2) return;
+  ctx.strokeStyle = '#2a4b7c'; ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  for (let i = 0; i < titData.length; i++) {
+    const px = pad.l + (titData[i].v/50)*(w-pad.l-pad.r);
+    const py = h-pad.b - ((titData[i].e+0.2)/1.4)*(h-pad.t-pad.b);
+    if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+  }
+  ctx.stroke();
+
+  // Endpoint marker dashed
+  if (titEndpoint > 0) {
+    const epx = pad.l + (titEndpoint/50)*(w-pad.l-pad.r);
+    ctx.strokeStyle = '#e74c3c'; ctx.lineWidth = 1.5; ctx.setLineDash([4,4]);
+    ctx.beginPath(); ctx.moveTo(epx, pad.t); ctx.lineTo(epx, h-pad.b); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#e74c3c'; ctx.font = 'bold 9px Segoe UI,sans-serif';
+    ctx.textAlign = 'center'; ctx.fillText('EP', epx, pad.t-3);
+  }
+}
+
+function resetTitration() {
+  titVolume = 0; titData = [];
+  document.getElementById('vol-display').textContent = '0.00';
+  document.getElementById('colour-display').textContent = 'Colourless';
+  document.getElementById('colour-display').style.color = '#555';
+  document.getElementById('flask-liquid').style.fill = '#e0e7ff';
+  document.getElementById('burette-liquid').setAttribute('y', '30');
+  document.getElementById('burette-liquid').setAttribute('height', '230');
+  document.getElementById('droplet').style.opacity = '0';
+  drawTitrationGraph();
+}
+</script>
+</body>
+</html>

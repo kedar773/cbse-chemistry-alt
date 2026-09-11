@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Solutions – Class 12 Chemistry | Master Study Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+:root{--bg:#0B1121;--card:#111C30;--surface:#172541;--accent:#0EA5A0;--accent-light:#17D4CD;--accent-glow:rgba(14,165,160,0.12);--gold:#F5A623;--gold-glow:rgba(245,166,35,0.12);--text:#E4EAF1;--text-muted:#7B8FA6;--border:#1F3050;--danger:#EF4444;--positive:#FF6B6B;--negative:#4ECDC4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.25;}
+::selection{background:var(--accent);color:#000;}
+::-webkit-scrollbar{width:8px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.bg-blob{position:fixed;border-radius:50%;filter:blur(120px);z-index:-1;pointer-events:none;}
+.bg-blob-1{width:600px;height:600px;top:-200px;left:-150px;background:rgba(14,165,160,0.07);animation:blobA 25s ease-in-out infinite alternate;}
+.bg-blob-2{width:500px;height:500px;bottom:-100px;right:-100px;background:rgba(245,166,35,0.06);animation:blobB 30s ease-in-out infinite alternate;}
+@keyframes blobA{0%{transform:translate(0,0) scale(1);}100%{transform:translate(80px,60px) scale(1.15);}}
+@keyframes blobB{0%{transform:translate(0,0) scale(1);}100%{transform:translate(-60px,-80px) scale(1.2);}}
+.site-header{padding:2.5rem 2rem 1.5rem;text-align:center;}
+.site-header h1{font-size:clamp(2.2rem,5vw,3.4rem);background:linear-gradient(135deg,var(--accent-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.02em;}
+.site-header p{color:var(--text-muted);font-size:0.95rem;margin-top:0.3rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;}
+.tab-nav{display:flex;gap:0.25rem;padding:0.5rem;margin:0 auto 2rem;max-width:1100px;background:var(--card);border-radius:1rem;border:1px solid var(--border);overflow-x:auto;}
+.tab-btn{flex:1;min-width:max-content;padding:0.75rem 1.25rem;border:none;background:transparent;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;border-radius:0.75rem;cursor:pointer;transition:all 0.3s;white-space:nowrap;}
+.tab-btn:hover{color:var(--text);background:rgba(255,255,255,0.04);}
+.tab-btn.active{background:linear-gradient(135deg,var(--accent),#0B8A86);color:#fff;box-shadow:0 4px 20px rgba(14,165,160,0.3);}
+.tab-btn i{margin-right:0.4rem;}
+.tab-panel{display:none;max-width:1100px;margin:0 auto;padding:0 1.5rem 4rem;animation:fadeUp 0.4s ease;}
+.tab-panel.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.note-card{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1.75rem;margin-bottom:1.75rem;position:relative;overflow:hidden;transition:border-color 0.3s;}
+.note-card:hover{border-color:rgba(14,165,160,0.3);}
+.note-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));}
+.note-card h2{font-size:1.6rem;color:var(--text);margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;}
+.note-card h2 .icon-circle{width:36px;height:36px;border-radius:50%;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:0.9rem;flex-shrink:0;}
+.note-card h3{font-size:1.2rem;color:var(--accent-light);margin:1.25rem 0 0.6rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border);}
+.note-card p,.note-card li{color:var(--text);font-size:0.92rem;line-height:1.75;}
+.note-card ul,.note-card ol{padding-left:1.4rem;margin:0.5rem 0;}
+.note-card li{margin-bottom:0.35rem;}
+.formula-box{background:var(--accent-glow);border-left:4px solid var(--accent);padding:0.7rem 1.2rem;border-radius:0 0.5rem 0.5rem 0;margin:0.9rem 0;font-weight:600;font-size:1.02rem;color:var(--accent-light);font-family:'DM Sans',sans-serif;letter-spacing:0.01em;}
+.badge-pyq{display:inline-flex;align-items:center;gap:0.25rem;background:linear-gradient(135deg,#F5A623,#E08A00);color:#1a1a1a;font-size:0.68rem;font-weight:700;padding:0.15rem 0.55rem;border-radius:2rem;letter-spacing:0.02em;white-space:nowrap;vertical-align:middle;}
+.cross-ref{color:var(--accent);font-size:0.82rem;font-weight:600;cursor:pointer;text-decoration:none;}
+.cross-ref:hover{text-decoration:underline;}
+.dev-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:0.75rem;overflow:hidden;margin:1rem 0;font-size:0.88rem;}
+.dev-table thead th{background:var(--surface);color:var(--text);font-weight:700;padding:0.75rem 1rem;text-align:left;border-bottom:2px solid var(--accent);}
+.dev-table tbody td{padding:0.65rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.dev-table tbody tr:last-child td{border-bottom:none;}
+.dev-table tbody tr:hover{background:rgba(14,165,160,0.04);}
+.dev-table .pos-col{color:var(--positive);font-weight:600;}
+.dev-table .neg-col{color:var(--negative);font-weight:600;}
+details{background:var(--surface);border:1px solid var(--border);border-radius:0.75rem;margin-bottom:0.75rem;overflow:hidden;transition:border-color 0.3s;}
+details:hover{border-color:rgba(14,165,160,0.3);}
+details[open]{border-color:var(--accent);}
+summary{padding:1rem 1.25rem;font-weight:600;font-size:0.95rem;cursor:pointer;display:flex;align-items:center;gap:0.6rem;color:var(--text);list-style:none;user-select:none;transition:background 0.2s;}
+summary:hover{background:rgba(14,165,160,0.05);}
+summary::before{content:'\f054';font-family:'Font Awesome 6 Free';font-weight:900;font-size:0.7rem;color:var(--accent);transition:transform 0.3s;}
+details[open] summary::before{transform:rotate(90deg);}
+summary .q-num{background:var(--accent);color:#000;font-weight:700;font-size:0.75rem;padding:0.15rem 0.55rem;border-radius:0.3rem;margin-right:0.25rem;}
+details .answer{padding:1rem 1.25rem 1.25rem;border-top:1px solid var(--border);font-size:0.9rem;line-height:1.8;color:var(--text);}
+details .answer .step{margin:0.4rem 0;padding-left:1rem;border-left:2px solid var(--border);}
+.sim-container{background:var(--card);border:1px solid var(--border);border-radius:1rem;overflow:hidden;margin-bottom:2rem;transition:border-color 0.3s;}
+.sim-container:hover{border-color:rgba(14,165,160,0.3);}
+.sim-header{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
+.sim-header h3{font-size:1.15rem;color:var(--text);display:flex;align-items:center;gap:0.5rem;}
+.sim-controls{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;}
+.sim-btn{padding:0.45rem 1rem;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.8rem;border-radius:0.5rem;cursor:pointer;transition:all 0.2s;}
+.sim-btn:hover{border-color:var(--accent);color:var(--text);}
+.sim-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.sim-btn.gold{background:var(--gold);color:#1a1a1a;border-color:var(--gold);}
+.sim-canvas-wrap{padding:1rem;background:#080E1A;}
+.sim-canvas-wrap canvas{display:block;width:100%;border-radius:0.5rem;background:#0A1020;}
+.sim-info{padding:0.75rem 1.5rem;font-size:0.82rem;color:var(--text-muted);border-top:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.sim-info i{color:var(--accent);}
+.slider-wrap{display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0;font-size:0.82rem;color:var(--text-muted);}
+.slider-wrap input[type=range]{flex:1;-webkit-appearance:none;height:6px;background:var(--border);border-radius:3px;outline:none;}
+.slider-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--accent);border-radius:50%;cursor:pointer;box-shadow:0 0 8px rgba(14,165,160,0.4);}
+.slider-val{font-weight:700;color:var(--accent-light);min-width:70px;text-align:right;}
+.vp-display{background:var(--surface);border:1px solid var(--border);border-radius:0.5rem;padding:0.5rem 1rem;font-size:0.85rem;font-weight:600;display:flex;align-items:center;gap:0.5rem;}
+.vp-display .vp-val{color:var(--accent-light);font-size:1.1rem;}
+@media(max-width:768px){.tab-nav{border-radius:0.75rem;margin:0 0.75rem 1.5rem;}.tab-panel{padding:0 0.75rem 3rem;}.note-card{padding:1.25rem;}.sim-header{flex-direction:column;align-items:flex-start;}}
+@media print{.tab-nav,.sim-container,.bg-blob{display:none!important;}body{background:#fff!important;color:#000!important;}.site-header{padding:1rem;}.site-header h1{-webkit-text-fill-color:#0B8A86!important;background:none!important;font-size:2rem;}.site-header p{color:#555!important;}.tab-panel{display:block!important;padding:0 1rem 2rem!important;}.note-card{background:#fff!important;border:1px solid #ddd!important;break-inside:avoid;box-shadow:none!important;}.note-card::before{background:#0B8A86!important;}.formula-box{background:#f0faf9!important;border-left-color:#0B8A86!important;color:#0B8A86!important;}.dev-table thead th{background:#eee!important;color:#000!important;}.dev-table tbody td{color:#222!important;}details{background:#fff!important;border:1px solid #ccc!important;}summary{color:#000!important;}details .answer{color:#222!important;}.badge-pyq{background:#F5A623!important;color:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}#tab4{display:none!important;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
+</style>
+</head>
+<body>
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+<header class="site-header">
+<h1>Solutions</h1>
+<p>Class 12 Chemistry · NCERT Chapter 2 · Master Study Notes</p>
+</header>
+<nav aria-label="Study Notes Sections" class="tab-nav" role="tablist">
+<button aria-selected="true" class="tab-btn active" data-tab="1" role="tab"><i class="fa-solid fa-flask-vial"></i> Solubility &amp; VP</button>
+<button aria-selected="false" class="tab-btn" data-tab="2" role="tab"><i class="fa-solid fa-temperature-arrow-up"></i> Colligative Props</button>
+<button aria-selected="false" class="tab-btn" data-tab="3" role="tab"><i class="fa-solid fa-book-open"></i> NCERT Q&amp;A</button>
+<button aria-selected="false" class="tab-btn" data-tab="4" role="tab"><i class="fa-solid fa-microscope"></i> Virtual Lab</button>
+</nav>
+<!-- TAB 1 -->
+<section class="tab-panel active" id="tab1" role="tabpanel">
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-percent"></i></span> Concentration Terms</h2>
+<h3>1. Molarity (M)</h3>
+<div class="formula-box">M = n<sub>solute</sub> / V<sub>solution (L)</sub></div>
+<p><strong>Temperature-dependent</strong>. <span class="badge-pyq"><i class="fa-solid fa-bolt"></i> CBSE PYQ</span></p>
+<h3>2. Molality (m)</h3>
+<div class="formula-box">m = n<sub>solute</sub> / W<sub>solvent (kg)</sub></div>
+<p><strong>Temperature-independent</strong>. Preferred in colligative calculations.</p>
+<h3>3. Mole Fraction (x)</h3>
+<div class="formula-box">x<sub>A</sub> = n<sub>A</sub> / (n<sub>A</sub> + n<sub>B</sub>)  ;  x<sub>A</sub> + x<sub>B</sub> = 1</div>
+<span class="cross-ref" onclick="switchTab(3)"><i class="fa-solid fa-thumbtack"></i> [See Q2.5]</span>
+</article>
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-wind"></i></span> Henry's Law</h2>
+<p>Solubility of a gas is directly proportional to the partial pressure of the gas above the liquid.</p>
+<div class="formula-box">p = K<sub>H</sub> · x</div>
+<ul>
+<li>Higher K<sub>H</sub> → lower solubility. <span class="badge-pyq"><i class="fa-solid fa-bolt"></i> CBSE PYQ</span></li>
+<li>K<sub>H</sub> increases with temperature → solubility decreases (warm soda goes flat).</li>
+<li><strong>Applications:</strong> Soft drinks (sealed under high CO<sub>2</sub>), Scuba diving (N<sub>2</sub> solubility in blood → "bends").</li>
+</ul>
+<span class="cross-ref" onclick="switchTab(3)"><i class="fa-solid fa-thumbtack"></i> [See Q2.6]</span>
+</article>
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-droplet"></i></span> Raoult's Law</h2>
+<h3>Volatile Solute + Volatile Solvent</h3>
+<div class="formula-box">p<sub>total</sub> = p<sub>A</sub><sup>°</sup>·x<sub>A</sub> + p<sub>B</sub><sup>°</sup>·x<sub>B</sub></div>
+<h3>Non-Volatile Solute</h3>
+<div class="formula-box">Relative lowering = (p<sub>A</sub><sup>°</sup> − p<sub>s</sub>) / p<sub>A</sub><sup>°</sup> = x<sub>B</sub></div>
+<span class="badge-pyq"><i class="fa-solid fa-bolt"></i> CBSE PYQ</span> <span class="cross-ref" onclick="switchTab(3)"><i class="fa-solid fa-thumbtack"></i> [See Q2.8]</span>
+<h3>Ideal Solutions</h3>
+<ul>
+<li>ΔH<sub>mix</sub> = 0, ΔV<sub>mix</sub> = 0</li>
+<li>A–A / B–B interactions ≈ A–B interactions</li>
+<li>Examples: n-Hexane + n-Heptane, Benzene + Toluene</li>
+</ul>
+</article>
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-arrows-split-up-and-left"></i></span> Non-Ideal Solutions &amp; Deviations</h2>
+<table class="dev-table">
+<thead><tr><th>Property</th><th>Positive Deviation</th><th>Negative Deviation</th></tr></thead>
+<tbody>
+<tr><td>A–B vs A–A/B–B</td><td class="pos-col">Weaker (A–B &lt; A–A, B–B)</td><td class="neg-col">Stronger (A–B &gt; A–A, B–B)</td></tr>
+<tr><td>ΔH<sub>mix</sub></td><td class="pos-col">&gt; 0 (Endothermic)</td><td class="neg-col">&lt; 0 (Exothermic)</td></tr>
+<tr><td>ΔV<sub>mix</sub></td><td class="pos-col">&gt; 0 (Expansion)</td><td class="neg-col">&lt; 0 (Contraction)</td></tr>
+<tr><td>Vapor Pressure</td><td class="pos-col">Higher than ideal</td><td class="neg-col">Lower than ideal</td></tr>
+<tr><td>Azeotrope</td><td>Minimum boiling</td><td>Maximum boiling</td></tr>
+<tr><td>Example</td><td class="pos-col">Ethanol + Water, CS<sub>2</sub> + Acetone</td><td class="neg-col">Chloroform + Acetone, HNO<sub>3</sub> + Water</td></tr>
+</tbody>
+</table>
+<span class="badge-pyq"><i class="fa-solid fa-bolt"></i> Board Favourite</span>
+</article>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- TAB 2 -->
+<section class="tab-panel" id="tab2" role="tabpanel">
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-temperature-arrow-up"></i></span> Elevation of Boiling Point</h2>
+<p>Adding non-volatile solute lowers VP → higher T needed to boil.</p>
+<div class="formula-box">ΔT<sub>b</sub> = T<sub>b</sub> − T<sub>b</sub><sup>°</sup> = i · K<sub>b</sub> · m</div>
+<span class="badge-pyq"><i class="fa-solid fa-bolt"></i> CBSE PYQ</span> <span class="cross-ref" onclick="switchTab(3)"><i class="fa-solid fa-thumbtack"></i> [See Q2.17]</span>
+</article>
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-temperature-arrow-down"></i></span> Depression of Freezing Point</h2>
+<div class="formula-box">ΔT<sub>f</sub> = T<sub>f</sub><sup>°</sup> − T<sub>f</sub> = i · K<sub>f</sub> · m</div>
+<div class="formula-box">M<sub>B</sub> = i · K<sub>f</sub> · w<sub>B</sub> · 1000 / (ΔT<sub>f</sub> · w<sub>A</sub>)</div>
+<span class="badge-pyq"><i class="fa-solid fa-bolt"></i> Most Tested</span> <span class="cross-ref" onclick="switchTab(3)"><i class="fa-solid fa-thumbtack"></i> [See Q2.11, Q2.21]</span>
+</article>
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-arrows-left-right"></i></span> Osmotic Pressure (Π)</h2>
+<div class="formula-box">Π = i · C · R · T = i · (w<sub>B</sub>/M<sub>B</sub>) · (RT/V)</div>
+<ul>
+<li>Measured at room temp (suitable for biomolecules)</li>
+<li>Dilute solutions give measurable Π</li>
+<li><strong>Reverse Osmosis:</strong> Apply P &gt; Π to purify water.</li>
+</ul>
+<span class="badge-pyq"><i class="fa-solid fa-bolt"></i> CBSE PYQ</span> <span class="cross-ref" onclick="switchTab(3)"><i class="fa-solid fa-thumbtack"></i> [See Q2.20, Q2.22]</span>
+</article>
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-subscript"></i></span> Van 't Hoff Factor (i)</h2>
+<div class="formula-box">i = Observed colligative property / Normal colligative property</div>
+<h3>Dissociation (e.g., NaCl, KCl)</h3>
+<div class="formula-box">i = 1 + (n − 1) · α</div>
+<h3>Association (e.g., Acetic acid in benzene)</h3>
+<div class="formula-box">i = 1 − (1 − 1/n) · α</div>
+<table class="dev-table">
+<thead><tr><th>Solute</th><th>Example</th><th>i (if α=1)</th></tr></thead>
+<tbody>
+<tr><td>Non-electrolyte</td><td>Glucose</td><td>1</td></tr>
+<tr><td>Binary 1:1</td><td>NaCl</td><td>2</td></tr>
+<tr><td>Binary 2:1</td><td>BaCl<sub>2</sub></td><td>3</td></tr>
+<tr><td>Associated</td><td>CH<sub>3</sub>COOH (benzene)</td><td>&lt; 1</td></tr>
+</tbody>
+</table>
+<span class="badge-pyq"><i class="fa-solid fa-bolt"></i> Board Favourite</span> <span class="cross-ref" onclick="switchTab(3)"><i class="fa-solid fa-thumbtack"></i> [See Q2.11]</span>
+</article>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- TAB 3 -->
+<section class="tab-panel" id="tab3" role="tabpanel">
+<article class="note-card">
+<h2><span class="icon-circle"><i class="fa-solid fa-book-open"></i></span> NCERT Textbook Solutions</h2>
+<details>
+<summary><span class="q-num">Q2.1</span> Calculate the mass percentage of benzene (C6H6) and carbon tetrachloride (CCl4) if 22 g of benzene is dissolved in 122 g of CCl4.</summary>
+<div class="answer">
+<div class="step">Total mass of solution = 22 + 122 = 144 g</div>
+<div class="step">Mass % of benzene = (22 / 144) × 100 = <strong>15.28%</strong></div>
+<div class="step">Mass % of CCl4 = (122 / 144) × 100 = <strong>84.72%</strong></div>
+</div>
+</details>
+<details>
+<summary><span class="q-num">Q2.5</span> Calculate the mole fraction of benzene in a solution containing 30% by mass in CCl4. <span class="badge-pyq"><i class="fa-solid fa-bolt"></i> Expected</span></summary>
+<div class="answer">
+<div class="step">Let total mass = 100 g. Mass of C6H6 = 30 g, Mass of CCl4 = 70 g</div>
+<div class="step">n(C6H6) = 30 / 78 = 0.385 mol; n(CCl4) = 70 / 154 = 0.455 mol</div>
+<div class="step">x(C6H6) = 0.385 / (0.385 + 0.455) = <strong>0.458</strong></div>
+</div>
+</details>
+<details>
+<summary><span class="q-num">Q2.6</span> Henry's law constant for CO2 in water is 1.67 × 10<sup>8</sup> Pa at 298 K. Calculate the solubility when its pressure is 0.987 bar. <span class="badge-pyq"><i class="fa-solid fa-bolt"></i> CBSE PYQ</span></summary>
+<div class="answer">
+<div class="step">p = 0.987 bar = 98700 Pa. By Henry's law: x = p / K<sub>H</sub></div>
+<div class="step">x = 98700 / (1.67 × 10<sup>8</sup>) = <strong>5.91 × 10<sup>-4</sup></strong></div>
+</div>
+</details>
+<details>
+<summary><span class="q-num">Q2.8</span> The vapor pressure of pure benzene at a certain temperature is 0.850 bar. A non-volatile solid (0.5 g) is added to 39.0 g of benzene (M = 78). The vapor pressure of the solution is 0.845 bar. What is the molar mass of the solid? <span class="badge-pyq"><i class="fa-solid fa-bolt"></i> CBSE PYQ</span></summary>
+<div class="answer">
+<div class="step">Relative lowering: (0.850 - 0.845) / 0.850 = 0.00588 = x<sub>B</sub></div>
+<div class="step">n<sub>A</sub> = 39.0 / 78 = 0.5 mol</div>
+<div class="step">x<sub>B</sub> ≈ n<sub>B</sub>/n<sub>A</sub> → 0.00588 = (0.5 / M<sub>B</sub>) / 0.5</div>
+<div class="step">M<sub>B</sub> = 1 / 0.00588 = <strong>170 g mol<sup>-1</sup></strong></div>
+</div>
+</details>
+<details>
+<summary><span class="q-num">Q2.11</span> 0.5 g of KCl dissolved in 100 g of water freezes at -0.24°C. Calculate the degree of dissociation of KCl. (K<sub>f</sub> = 1.86) <span class="badge-pyq"><i class="fa-solid fa-bolt"></i> Board Favourite</span></summary>
+<div class="answer">
+<div class="step">Molality (observed) = ΔT<sub>f</sub> / K<sub>f</sub> = 0.24 / 1.86 = 0.129 m</div>
+<div class="step">Molality (calculated) = (0.5/74.5) × (1000/100) = 0.0671 m</div>
+<div class="step">i = 0.129 / 0.0671 = 1.922</div>
+<div class="step">For KCl: n = 2 → i = 1 + α → 1.922 = 1 + α</div>
+<div class="step">α = <strong>0.922 (92.2%)</strong></div>
+</div>
+</details>
+<details>
+<summary><span class="q-num">Q2.17</span> 18 g of glucose is dissolved in 1 kg of water. At what temperature will water boil at 1.013 bar? (K<sub>b</sub> = 0.52) <span class="badge-pyq"><i class="fa-solid fa-bolt"></i> Expected</span></summary>
+<div class="answer">
+<div class="step">m = (18/180) × (1000/1000) = 0.1 mol kg<sup>-1</sup></div>
+<div class="step">ΔT<sub>b</sub> = 0.52 × 0.1 = 0.052°C</div>
+<div class="step">Boiling point = 100 + 0.052 = <strong>100.052°C</strong></div>
+</div>
+</details>
+<details>
+<summary><span class="q-num">Q2.20</span> A 5% (w/V) solution of cane sugar (M=342) is isotonic with 0.877% solution of X. Find molar mass of X. <span class="badge-pyq"><i class="fa-solid fa-bolt"></i> CBSE PYQ</span></summary>
+<div class="answer">
+<div class="step">C<sub>sugar</sub> = (5/342) × (1000/100) = 0.146 M</div>
+<div class="step">C<sub>X</sub> = 8.77 / M<sub>X</sub>. Since isotonic: C<sub>sugar</sub> = C<sub>X</sub></div>
+<div class="step">M<sub>X</sub> = 8.77 / 0.146 = <strong>60.07 g mol<sup>-1</sup></strong> (Urea)</div>
+</div>
+</details>
+</article>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<!-- TAB 4: VIRTUAL LAB -->
+<section class="tab-panel" id="tab4" role="tabpanel">
+<!-- Sim 1 -->
+<div class="sim-container">
+<div class="sim-header">
+<h3><i class="fa-solid fa-flask" style="color:var(--accent)"></i> Raoult's Law Sandbox</h3>
+<div class="sim-controls">
+<button class="sim-btn active" id="btn-pure" onclick="raoultMode('pure')">Pure Solvent</button>
+<button class="sim-btn" id="btn-solution" onclick="raoultMode('solution')">Non-Volatile Solute</button>
+<button class="sim-btn" id="btn-pos" onclick="raoultMode('positive')">+ve Deviation</button>
+<button class="sim-btn" id="btn-neg" onclick="raoultMode('negative')">−ve Deviation</button>
+</div>
+</div>
+<div class="sim-canvas-wrap"><canvas height="400" id="raoultCanvas" width="900"></canvas></div>
+<div class="sim-info">
+<i class="fa-solid fa-circle-info"></i> <span id="raoultInfo">Pure solvent: Vapor escapes freely. Vapor pressure is at maximum (p°).</span>
+<div class="vp-display">VP: <span class="vp-val" id="vpValue">1.00</span> p°</div>
+</div>
+</div>
+<!-- Sim 2 -->
+<div class="sim-container">
+<div class="sim-header">
+<h3><i class="fa-solid fa-chart-line" style="color:var(--gold)"></i> Dynamic Colligative Properties Graph</h3>
+<div class="sim-controls">
+<button class="sim-btn gold" id="btn-addSolute" onclick="addSoluteGraph()">Add Solute</button>
+<button class="sim-btn" id="btn-resetGraph" onclick="resetGraph()">Reset</button>
+</div>
+</div>
+<div class="sim-canvas-wrap"><canvas height="460" id="graphCanvas" width="900"></canvas></div>
+<div class="sim-info"><i class="fa-solid fa-circle-info"></i> <span id="graphInfo">Click "Add Solute" to shift the liquid-vapor curve, visually creating ΔTb and ΔTf.</span></div>
+</div>
+<!-- Sim 3 -->
+<div class="sim-container">
+<div class="sim-header">
+<h3><i class="fa-solid fa-vials" style="color:var(--negative)"></i> Animated Osmosis Tube</h3>
+<div class="sim-controls">
+<div class="slider-wrap">
+<span>External Pressure:</span>
+<input id="pressureSlider" max="10" min="0" oninput="updatePressure(this.value)" step="0.1" type="range" value="0"/>
+<span class="slider-val" id="pressureVal">0.0 atm</span>
+</div>
+</div>
+</div>
+<div class="sim-canvas-wrap"><canvas height="440" id="osmosisCanvas" width="900"></canvas></div>
+<div class="sim-info"><i class="fa-solid fa-circle-info"></i> <span id="osmosisInfo">Osmosis: Water flows left to right (dilute to concentrated). Increase pressure to stop flow (Π ≈ 5 atm) or reverse it (RO).</span></div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></section>
+<script>
+/* ─── Tab Logic ─── */
+let simInitialized = false;
+function switchTab(n) {
+  document.querySelectorAll('.tab-btn').forEach(b => { b.classList.toggle('active', +b.dataset.tab === n); b.setAttribute('aria-selected', +b.dataset.tab === n); });
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab' + n).classList.add('active');
+  if (n === 4 && !simInitialized) initSims();
+}
+document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => switchTab(+b.dataset.tab)));
+
+/* ─── Print Support ─── */
+window.addEventListener('beforeprint', () => document.querySelectorAll('details').forEach(d => { d.dataset.wasOpen = d.open; d.open = true; }));
+window.addEventListener('afterprint', () => document.querySelectorAll('details').forEach(d => { if(d.dataset.wasOpen !== 'true') d.open = false; }));
+
+/* ─── Sim Init ─── */
+function initSims() {
+  simInitialized = true;
+  initRaoult(); initGraph(); initOsmosis();
+}
+
+/* ═══════════════════════════════════════════
+   SIMULATION 1: Raoult's Law Sandbox
+   ═══════════════════════════════════════════ */
+let rCtx, raoultState = 'pure', vaporMols = [], liquidMols = [], soluteMols = [];
+const CW = 900, CH = 400, CL = 70, CR = 830, LTOP = 220, LBOT = 340;
+
+function initRaoult() {
+  const c = document.getElementById('raoultCanvas'); rCtx = c.getContext('2d');
+  resetRaoultMols(); drawRaoult();
+}
+
+function resetRaoultMols() {
+  liquidMols = []; vaporMols = []; soluteMols = [];
+  for(let i=0;i<40;i++) liquidMols.push({ x:CL+20+Math.random()*(CR-CL-40), y:LTOP+15+Math.random()*(LBOT-LTOP-30), vx:(Math.random()-0.5)*0.6, vy:(Math.random()-0.5)*0.6, r:4+Math.random()*2 });
+  for(let i=0;i<18;i++) vaporMols.push({ x:CL+20+Math.random()*(CR-CL-40), y:50+Math.random()*(LTOP-80), vx:(Math.random()-0.5)*2.5, vy:(Math.random()-0.5)*2.5, r:3.5 });
+}
+
+function raoultMode(mode) {
+  raoultState = mode;
+  document.querySelectorAll('#btn-pure,#btn-solution,#btn-pos,#btn-neg').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+(mode==='positive'?'pos':mode==='negative'?'neg':mode)).classList.add('active');
+  let targetV = 18; soluteMols = [];
+  if(mode==='solution'){targetV=9; for(let i=0;i<15;i++) soluteMols.push({x:CL+20+Math.random()*(CR-CL-40), y:LTOP+15+Math.random()*(LBOT-LTOP-30), vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3, r:7});}
+  else if(mode==='positive'){targetV=26; for(let i=0;i<15;i++) soluteMols.push({x:CL+20+Math.random()*(CR-CL-40), y:LTOP+15+Math.random()*(LBOT-LTOP-30), vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3, r:7});}
+  else if(mode==='negative'){targetV=6; for(let i=0;i<15;i++) soluteMols.push({x:CL+20+Math.random()*(CR-CL-40), y:LTOP+15+Math.random()*(LBOT-LTOP-30), vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3, r:7});}
+  while(vaporMols.length<targetV) vaporMols.push({x:CL+20+Math.random()*(CR-CL-40), y:50+Math.random()*(LTOP-80), vx:(Math.random()-0.5)*2.5, vy:(Math.random()-0.5)*2.5, r:3.5});
+  while(vaporMols.length>targetV) vaporMols.pop();
+  
+  const info = document.getElementById('raoultInfo'), vp = document.getElementById('vpValue');
+  if(mode==='pure'){info.textContent='Pure solvent: Vapor escapes freely. VP is at maximum (p°).';vp.textContent='1.00';}
+  else if(mode==='solution'){info.textContent='Non-volatile solute: Solute blocks escape → fewer vapor molecules → lower P. p = p°·xₐ';vp.textContent='0.50';}
+  else if(mode==='positive'){info.textContent='Positive deviation: A–B weaker than A–A / B–B. Molecules escape easily → P higher. ΔH_mix > 0';vp.textContent='1.30';}
+  else{info.textContent='Negative deviation: A–B stronger than A–A / B–B. Molecules held tighter → P lower. ΔH_mix < 0';vp.textContent='0.25';}
+}
+
+function drawRaoult() {
+  const ctx = rCtx; ctx.clearRect(0,0,CW,CH);
+  // Container
+  ctx.strokeStyle='#3A5F8A'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(CL,30); ctx.lineTo(CL,LBOT); ctx.lineTo(CR,LBOT); ctx.lineTo(CR,30); ctx.stroke();
+  ctx.fillStyle='#2A4566'; ctx.fillRect(CL-5,22,CR-CL+10,8);
+  // Liquid fill
+  const isPos = raoultState==='positive', isNeg = raoultState==='negative';
+  ctx.fillStyle = raoultState==='pure'?'rgba(14,165,160,0.25)':isPos?'rgba(255,107,107,0.2)':isNeg?'rgba(78,205,196,0.22)':'rgba(14,165,160,0.18)';
+  ctx.fillRect(CL+2, LTOP, CR-CL-4, LBOT-LTOP-2);
+  // Surface wave
+  ctx.beginPath(); ctx.moveTo(CL+2,LTOP);
+  for(let x=CL+2;x<=CR-2;x+=3) ctx.lineTo(x, LTOP+Math.sin((x+Date.now()*0.003)*0.05)*2);
+  ctx.strokeStyle='rgba(14,165,160,0.5)'; ctx.lineWidth=1.5; ctx.stroke();
+  
+  // Molecules helper
+  function moveMols(arr, top, bot) {
+    arr.forEach(m => {
+      m.x+=m.vx; m.y+=m.vy;
+      if(m.x<CL+m.r+5||m.x>CR-m.r-5) m.vx*=-1;
+      if(m.y<top+m.r+5||m.y>bot-m.r-5) m.vy*=-1;
+    });
+  }
+  function drawMols(arr, fill, stroke) {
+    arr.forEach(m => { ctx.beginPath(); ctx.arc(m.x,m.y,m.r,0,Math.PI*2); ctx.fillStyle=fill; ctx.fill(); ctx.strokeStyle=stroke; ctx.lineWidth=0.8; ctx.stroke(); });
+  }
+  
+  moveMols(liquidMols, LTOP, LBOT);
+  drawMols(liquidMols, 'rgba(20,212,205,0.55)', 'rgba(20,212,205,0.8)');
+  
+  moveMols(soluteMols, LTOP, LBOT);
+  const sCol = isPos?'rgba(255,107,107,0.7)':isNeg?'rgba(78,205,196,0.7)':'rgba(245,166,35,0.7)';
+  const sBord = isPos?'rgba(255,107,107,1)':isNeg?'rgba(78,205,196,1)':'rgba(245,166,35,1)';
+  drawMols(soluteMols, sCol, sBord);
+
+  // Interaction lines
+  if(isPos||isNeg) {
+    for(let i=0;i<liquidMols.length;i++) for(let j=0;j<soluteMols.length;j++) {
+      const dx=liquidMols[i].x-soluteMols[j].x, dy=liquidMols[i].y-soluteMols[j].y, dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<45){ctx.beginPath();ctx.moveTo(liquidMols[i].x,liquidMols[i].y);ctx.lineTo(soluteMols[j].x,soluteMols[j].y);
+      if(isNeg){ctx.strokeStyle='rgba(78,205,196,0.6)';ctx.lineWidth=2;ctx.setLineDash([]);}
+      else{ctx.strokeStyle='rgba(255,107,107,0.35)';ctx.lineWidth=1;ctx.setLineDash([4,4]);}
+      ctx.stroke();ctx.setLineDash([]);}
+    }
+  }
+
+  vaporMols.forEach(m => {
+    m.x+=m.vx; m.y+=m.vy; m.vx+=(Math.random()-0.5)*0.15; m.vy+=(Math.random()-0.5)*0.15;
+    m.vx=Math.max(-3,Math.min(3,m.vx)); m.vy=Math.max(-3,Math.min(3,m.vy));
+    if(m.x<CL+m.r+5||m.x>CR-m.r-5) m.vx*=-1; if(m.y<30+m.r+10||m.y>LTOP-m.r-5) m.vy*=-1;
+    ctx.beginPath(); ctx.arc(m.x,m.y,m.r,0,Math.PI*2); ctx.fillStyle='rgba(14,165,160,0.7)'; ctx.fill(); ctx.strokeStyle='rgba(14,165,160,1)'; ctx.lineWidth=0.7; ctx.stroke();
+    ctx.beginPath(); ctx.arc(m.x,m.y,m.r+3,0,Math.PI*2); ctx.fillStyle='rgba(14,165,160,0.1)'; ctx.fill();
+  });
+
+  // Labels
+  ctx.font='600 13px DM Sans'; ctx.fillStyle='#7B8FA6'; ctx.textAlign='center';
+  if(vaporMols.length>0){ctx.fillStyle='rgba(14,165,160,0.8)';ctx.fillText('Vapor Phase',(CL+CR)/2,52);}
+  ctx.fillStyle='#7B8FA6';ctx.fillText('Liquid Phase',(CL+CR)/2,LBOT+20);
+  ctx.font='700 14px DM Sans';
+  const labels={pure:['Pure Solvent (A)','#17D4CD'],solution:['Solution: A + Non-volatile Solute','#F5A623'],positive:['Positive Deviation: A–B weaker','#FF6B6B'],negative:['Negative Deviation: A–B stronger','#4ECDC4']};
+  ctx.fillStyle=labels[raoultState][1]; ctx.fillText(labels[raoultState][0],(CL+CR)/2,LTOP+16);
+  
+  requestAnimationFrame(drawRaoult);
+}
+
+/* ═══════════════════════════════════════════
+   SIMULATION 2: Phase Diagram Graph
+   ═══════════════════════════════════════════ */
+let gCtx, graphHasSolute = false, graphAnimP = 0, graphAnim = false;
+
+function initGraph() {
+  const c = document.getElementById('graphCanvas'); gCtx = c.getContext('2d');
+  drawPhaseDiagram(0);
+}
+
+function addSoluteGraph() {
+  if(graphHasSolute) return; graphHasSolute=true; graphAnim=true; graphAnimP=0; 
+  document.getElementById('btn-addSolute').classList.add('active'); animGraph();
+}
+function resetGraph() {
+  graphHasSolute=false; graphAnim=false; graphAnimP=0; 
+  document.getElementById('btn-addSolute').classList.remove('active');
+  document.getElementById('graphInfo').textContent='Click "Add Solute" to shift the liquid-vapor curve, visually creating ΔTb and ΔTf.';
+  drawPhaseDiagram(0);
+}
+function animGraph() {
+  if(!graphAnim) return; graphAnimP=Math.min(1,graphAnimP+0.015); drawPhaseDiagram(graphAnimP);
+  if(graphAnimP<1) requestAnimationFrame(animGraph);
+  else { graphAnim=false; document.getElementById('graphInfo').textContent='Solute added! Boiling point elevated by ΔTb, freezing point depressed by ΔTf.'; }
+}
+
+function drawPhaseDiagram(p) {
+  const ctx=gCtx, W=900, H=460, pL=80, pR=860, pT=40, pB=400, pW=pR-pL, pH=pB-pT;
+  ctx.clearRect(0,0,W,H);
+  // Axes
+  ctx.strokeStyle='#3A5F8A'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(pL,pT); ctx.lineTo(pL,pB); ctx.lineTo(pR,pB); ctx.stroke();
+  ctx.font='600 13px DM Sans'; ctx.fillStyle='#7B8FA6'; ctx.textAlign='center';
+  ctx.fillText('Temperature →',(pL+pR)/2,H-12);
+  ctx.save(); ctx.translate(22,(pT+pB)/2); ctx.rotate(-Math.PI/2); ctx.fillText('Vapor Pressure →',0,0); ctx.restore();
+
+  const tx=t=>pL+t*pW, py=p=>pB-p*pH;
+  const Tf=0.25, Tb=0.65, Tt=0.15, atmP=0.58;
+
+  // Pure curves
+  ctx.beginPath(); ctx.moveTo(tx(0.02),py(0.02)); ctx.bezierCurveTo(tx(0.08),py(0.15),tx(0.12),py(0.30),tx(Tt),py(0.35));
+  ctx.strokeStyle='rgba(147,197,253,0.8)'; ctx.lineWidth=2.5; ctx.stroke();
+  
+  ctx.beginPath(); ctx.moveTo(tx(Tt),py(0.35)); ctx.bezierCurveTo(tx(0.30),py(0.50),tx(0.50),py(0.70),tx(0.85),py(0.95));
+  ctx.strokeStyle='#17D4CD'; ctx.lineWidth=2.5; ctx.stroke();
+
+  ctx.beginPath(); ctx.moveTo(tx(Tt),py(0.35)); ctx.lineTo(tx(Tt+0.01),py(0.90));
+  ctx.strokeStyle='rgba(147,197,253,0.6)'; ctx.lineWidth=2.5; ctx.stroke();
+
+  // Triple point
+  ctx.beginPath(); ctx.arc(tx(Tt),py(0.35),5,0,Math.PI*2); ctx.fillStyle='#93C5FD'; ctx.fill();
+  ctx.font='500 11px DM Sans'; ctx.fillStyle='#93C5FD'; ctx.textAlign='left'; ctx.fillText('Triple Point',tx(Tt)+10,py(0.35)-5);
+
+  // 1 atm
+  ctx.setLineDash([6,4]); ctx.strokeStyle='rgba(245,166,35,0.5)'; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(pL,py(atmP)); ctx.lineTo(pR,py(atmP)); ctx.stroke(); ctx.setLineDash([]);
+  ctx.font='600 11px DM Sans'; ctx.fillStyle='#F5A623'; ctx.textAlign='right'; ctx.fillText('1 atm',pL-5,py(atmP)+4);
+
+  // Normal BP
+  ctx.setLineDash([4,4]); ctx.strokeStyle='rgba(23,212,205,0.4)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(tx(Tb),py(atmP)); ctx.lineTo(tx(Tb),pB); ctx.stroke(); ctx.setLineDash([]);
+  ctx.fillStyle='#17D4CD'; ctx.textAlign='center'; ctx.fillText('T°b',tx(Tb),pB+16);
+
+  // Normal FP
+  const TfPure=Tt+0.01;
+  ctx.setLineDash([4,4]); ctx.strokeStyle='rgba(147,197,253,0.4)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(tx(TfPure),py(0.90)); ctx.lineTo(tx(TfPure),pB); ctx.stroke(); ctx.setLineDash([]);
+  ctx.fillStyle='#93C5FD'; ctx.fillText('T°f',tx(TfPure),pB+16);
+
+  // Phase labels
+  ctx.font='700 14px DM Serif Display'; ctx.textAlign='center';
+  ctx.fillStyle='rgba(147,197,253,0.35)'; ctx.fillText('SOLID',tx(0.12),py(0.70));
+  ctx.fillStyle='rgba(23,212,205,0.30)'; ctx.fillText('LIQUID',tx(0.42),py(0.50));
+  ctx.fillStyle='rgba(245,166,35,0.25)'; ctx.fillText('VAPOR',tx(0.70),py(0.25));
+
+  // Solution curves
+  if(p>0) {
+    const sh=p*0.08, shF=p*0.06;
+    ctx.beginPath(); ctx.moveTo(tx(Tt+sh*0.3),py(0.35-p*0.04));
+    ctx.bezierCurveTo(tx(0.30+sh*0.5),py(0.50-p*0.06),tx(0.50+sh*0.8),py(0.70-p*0.05),tx(0.85+sh),py(0.95));
+    ctx.strokeStyle=`rgba(245,166,35,${0.3+p*0.5})`; ctx.lineWidth=2.5; ctx.stroke();
+
+    ctx.beginPath(); ctx.moveTo(tx(0.02),py(0.02));
+    ctx.bezierCurveTo(tx(0.08),py(0.15-p*0.02),tx(0.12),py(0.30-p*0.02),tx(Tt+sh*0.3),py(0.35-p*0.04));
+    ctx.strokeStyle=`rgba(245,166,35,${0.15+p*0.3})`; ctx.lineWidth=2; ctx.stroke();
+
+    const TbSol=Tb+sh*0.65, TfSol=TfPure-shF;
+    ctx.setLineDash([4,4]); ctx.strokeStyle=`rgba(245,166,35,${0.3+p*0.4})`; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(tx(TbSol),py(atmP)); ctx.lineTo(tx(TbSol),pB); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(tx(TfSol),py(0.90)); ctx.lineTo(tx(TfSol),pB); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle=`rgba(245,166,35,${0.5+p*0.5})`; ctx.textAlign='center';
+    ctx.fillText('Tb',tx(TbSol),pB+16); ctx.fillText('Tf',tx(TfSol),pB+16);
+
+    if(p>0.3) {
+      const a=Math.min(1,(p-0.3)*2.5);
+      ctx.fillStyle=`rgba(255,107,107,${0.12*a})`; ctx.fillRect(tx(TbPure),py(atmP)-18,tx(TbSol)-tx(TbPure),18);
+      ctx.font=`700 12px DM Sans`; ctx.fillStyle=`rgba(255,107,107,${a})`; ctx.textAlign='center';
+      ctx.fillText('ΔTb',(tx(TbPure)+tx(TbSol))/2,py(atmP)-4);
+      ctx.strokeStyle=`rgba(255,107,107,${0.7*a})`; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(tx(TbPure)+3,py(atmP)-12); ctx.lineTo(tx(TbSol)-3,py(atmP)-12); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(tx(TbSol)-3,py(atmP)-12); ctx.lineTo(tx(TbSol)-9,py(atmP)-15); ctx.lineTo(tx(TbSol)-9,py(atmP)-9); ctx.closePath(); ctx.fillStyle=`rgba(255,107,107,${0.7*a})`; ctx.fill();
+    }
+    if(p>0.5) {
+      const a=Math.min(1,(p-0.5)*2.5);
+      ctx.fillStyle=`rgba(78,205,196,${0.12*a})`; ctx.fillRect(tx(TfSol),pB-25,tx(TfPure)-tx(TfSol),25);
+      ctx.font=`700 12px DM Sans`; ctx.fillStyle=`rgba(78,205,196,${a})`; ctx.textAlign='center';
+      ctx.fillText('ΔTf',(tx(TfSol)+tx(TfPure))/2,pB-8);
+      ctx.strokeStyle=`rgba(78,205,196,${0.7*a})`; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(tx(TfPure)-3,pB-14); ctx.lineTo(tx(TfSol)+3,pB-14); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(tx(TfSol)+3,pB-14); ctx.lineTo(tx(TfSol)+9,pB-17); ctx.lineTo(tx(TfSol)+9,pB-11); ctx.closePath(); ctx.fillStyle=`rgba(78,205,196,${0.7*a})`; ctx.fill();
+    }
+  }
+  // Legend
+  ctx.font='600 11px DM Sans'; ctx.textAlign='left';
+  ctx.fillStyle='#17D4CD'; ctx.fillRect(pR-180,pT+5,20,3); ctx.fillStyle='#7B8FA6'; ctx.fillText('Pure Solvent',pR-155,pT+10);
+  if(p>0){ctx.fillStyle=`rgba(245,166,35,${0.5+p*0.5})`; ctx.fillRect(pR-180,pT+22,20,3); ctx.fillStyle='#7B8FA6'; ctx.fillText('Solution',pR-155,pT+27);}
+}
+
+/* ═══════════════════════════════════════════
+   SIMULATION 3: Osmosis Tube
+   ═══════════════════════════════════════════ */
+let oCtx, extP=0;
+const PI_ATM=5.0; // Osmotic pressure of the solution
+const waterMols=[]; // {x, y, side:'l'|'r', vx, vy}
+
+function initOsmosis() {
+  const c = document.getElementById('osmosisCanvas'); oCtx = c.getContext('2d');
+  for(let i=0;i<40;i++) waterMols.push({x:100+Math.random()*250, y:100+Math.random()*300, side:'l', vx:(Math.random()-0.5)*1.5, vy:(Math.random()-0.5)*1.5});
+  for(let i=0;i<40;i++) waterMols.push({x:550+Math.random()*250, y:100+Math.random()*300, side:'r', vx:(Math.random()-0.5)*1.5, vy:(Math.random()-0.5)*1.5});
+  drawOsmosis();
+}
+
+function updatePressure(v) {
+  extP = parseFloat(v);
+  document.getElementById('pressureVal').textContent = extP.toFixed(1) + ' atm';
+  const info = document.getElementById('osmosisInfo');
+  if(extP < PI_ATM - 0.5) info.textContent = 'Osmosis in progress: Water flows left → right (dilute to concentrated). Net flow reduces as P approaches Π.';
+  else if(extP >= PI_ATM - 0.5 && extP <= PI_ATM + 0.5) info.textContent = 'Equilibrium reached! External pressure ≈ Osmotic Pressure (Π). No net flow across SPM.';
+  else info.textContent = 'Reverse Osmosis (RO)! External pressure > Π. Water flows right → left (concentrated to dilute), purifying the water.';
+}
+
+function drawOsmosis() {
+  const ctx=oCtx, W=900, H=440;
+  ctx.clearRect(0,0,W,H);
+  
+  // U-tube outline
+  ctx.strokeStyle='#3A5F8A'; ctx.lineWidth=4;
+  // Left arm
+  ctx.beginPath(); ctx.moveTo(80,60); ctx.lineTo(80,380); ctx.quadraticCurveTo(80,420,120,420); ctx.lineTo(380,420); ctx.lineTo(380,390); ctx.stroke();
+  // Right arm
+  ctx.beginPath(); ctx.moveTo(820,60); ctx.lineTo(820,380); ctx.quadraticCurveTo(820,420,780,420); ctx.lineTo(520,420); ctx.lineTo(520,390); ctx.stroke();
+  
+  // Semi-permeable membrane (SPM)
+  ctx.fillStyle='rgba(14,165,160,0.3)'; ctx.fillRect(385,80,30,320);
+  ctx.setLineDash([6,4]); ctx.strokeStyle='var(--accent)'; ctx.lineWidth=2; ctx.strokeRect(385,80,30,320); ctx.setLineDash([]);
+  ctx.font='600 11px DM Sans'; ctx.fillStyle='var(--accent-light)'; ctx.textAlign='center';
+  ctx.save(); ctx.translate(400,240); ctx.rotate(-Math.PI/2); ctx.fillText('SEMI-PERMEABLE MEMBRANE',0,0); ctx.restore();
+
+  // Liquid fills
+  const rightBase = 100; // Higher base level due to osmosis
+  ctx.fillStyle='rgba(14,165,160,0.15)';
+  ctx.fillRect(85, 80, 295, 330); // Left full
+  ctx.fillStyle='rgba(245,166,35,0.12)';
+  ctx.fillRect(420, 80, 395, 330); // Right full (solute side)
+  
+  // Solute dots on right side
+  ctx.fillStyle='rgba(245,166,35,0.5)';
+  for(let i=0;i<25;i++) {
+    const sx = 440 + (i%5)*70, sy = 120 + Math.floor(i/5)*60;
+    ctx.beginPath(); ctx.arc(sx,sy,6,0,Math.PI*2); ctx.fill();
+  }
+
+  // Water molecules movement
+  const netFlowDir = extP < PI_ATM ? 1 : extP > PI_ATM ? -1 : 0; // 1=left-to-right, -1=right-to-left
+  const flowStr = Math.abs(PI_ATM - extP) / PI_ATM;
+  
+  waterMols.forEach(m => {
+    // Drift force based on osmosis
+    if(m.x > 300 && m.x < 500) {
+      m.vx += netFlowDir * flowStr * 0.1;
+    }
+    
+    m.x += m.vx; m.y += m.vy;
+    m.vx *= 0.98; m.vy *= 0.98; // friction
+    m.vx += (Math.random()-0.5)*0.3; m.vy += (Math.random()-0.5)*0.3; // Brownian
+
+    // Bounds
+    const isLeft = m.x < 400;
+    const lBound = isLeft ? 85 : 420, rBound = isLeft ? 380 : 815;
+    if(m.x < lBound) { m.x = lBound; m.vx = Math.abs(m.vx); }
+    if(m.x > rBound) { m.x = rBound; m.vx = -Math.abs(m.vx); }
+    if(m.y < 85) { m.y = 85; m.vy = Math.abs(m.vy); }
+    if(m.y > 395) { m.y = 395; m.vy = -Math.abs(m.vy); }
+
+    // SPM crossing logic: allow water to pass, block if side mismatch + probability
+    if(m.x > 380 && m.x < 420) {
+      // If moving with net flow, high chance to pass
+      if(Math.random() < 0.05 * flowStr) {
+        m.x = netFlowDir === 1 ? 425 : 375;
+      } else if(Math.random() < 0.02) {
+        // Random crossing
+        m.x = m.x < 400 ? 425 : 375;
+      } else {
+        // Bounce back
+        m.x = m.x < 400 ? 378 : 422;
+        m.vx *= -1;
+      }
+    }
+
+    // Draw
+    ctx.beginPath(); ctx.arc(m.x, m.y, 3, 0, Math.PI*2);
+    ctx.fillStyle = isLeft ? 'rgba(14,165,160,0.8)' : 'rgba(20,212,205,0.8)';
+    ctx.fill();
+  });
+
+  // Pressure arrow on right side
+  if(extP > 0) {
+    const arrowLen = extP * 8;
+    ctx.strokeStyle='#EF4444'; ctx.lineWidth=3;
+    ctx.beginPath(); ctx.moveTo(820-arrowLen, 50); ctx.lineTo(820, 50); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(820,50); ctx.lineTo(810,44); ctx.lineTo(810,56); ctx.closePath(); ctx.fillStyle='#EF4444'; ctx.fill();
+    ctx.font='600 12px DM Sans'; ctx.fillStyle='#EF4444'; ctx.textAlign='center';
+    ctx.fillText('P = ' + extP.toFixed(1) + ' atm', 820-arrowLen/2, 40);
+  }
+
+  // Labels
+  ctx.font='600 13px DM Sans'; ctx.fillStyle='#7B8FA6'; ctx.textAlign='center';
+  ctx.fillText('Dilute Solution (Water)', 230, 410);
+  ctx.fillText('Concentrated Solution', 620, 410);
+  
+  ctx.font='700 12px DM Sans';
+  ctx.fillStyle='#17D4CD'; ctx.fillText('Solvent (H₂O)', 230, 95);
+  ctx.fillStyle='#F5A623'; ctx.fillText('Solvent + Solute', 620, 95);
+
+  requestAnimationFrame(drawOsmosis);
+}
+</script>
+</body>
+</html>

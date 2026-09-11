@@ -1,0 +1,10 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Logs and runtime
+*.log
+node_modules/
+dist/
+.vscode/
+.idea/

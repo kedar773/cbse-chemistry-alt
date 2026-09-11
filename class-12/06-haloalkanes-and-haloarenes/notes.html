@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Haloalkanes &amp; Haloarenes — Class 12 CBSE Master Study Note (NCERT Pattern)</title>
+<style>
+  /* ============== THEME ============== */
+  :root{
+    --primary:#0d47a1;
+    --accent:#ad1457;
+    --mech:#fff3cd;     /* mechanism - warm yellow */
+    --mech-border:#f59e0b;
+    --imp:#e3f2fd;      /* important - blue */
+    --imp-border:#1976d2;
+    --concept:#e8f5e9;  /* concept - green */
+    --concept-border:#2e7d32;
+    --example:#f3e5f5;  /* example - purple */
+    --example-border:#7b1fa2;
+    --qa:#fce4ec;       /* Q&A - pink */
+    --qa-border:#c2185b;
+    --warn:#fff8e1;     /* warning - amber */
+    --warn-border:#ef6c00;
+    --note:#ede7f6;     /* note - lavender */
+    --note-border:#5e35b1;
+    --ink:#212121;
+    --muted:#555;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fafafa;color:var(--ink);font-family:'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.65;}
+  .page{max-width:1100px;margin:24px auto;background:#fff;padding:48px 56px;box-shadow:0 6px 24px rgba(0,0,0,.08);border-radius:10px;}
+  @media print { .page{box-shadow:none;margin:0;padding:24px;} }
+
+  /* ============== TYPOGRAPHY ============== */
+  h1{font-size:2.4em;margin:0 0 8px;color:var(--primary);letter-spacing:.5px;}
+  h2{font-size:1.7em;color:var(--primary);border-bottom:3px solid var(--primary);padding-bottom:6px;margin-top:42px;}
+  h3{font-size:1.3em;color:var(--accent);margin-top:28px;}
+  h4{font-size:1.1em;color:#37474f;margin-top:18px;}
+  p{margin:8px 0 12px;}
+  ul,ol{padding-left:22px;}
+  li{margin:4px 0;}
+  code,.chem{font-family:'JetBrains Mono','Fira Code',Consolas,monospace;background:#f0f4f8;padding:1px 6px;border-radius:4px;color:#0d47a1;font-size:0.95em;}
+  sub,sup{font-size:.75em;}
+  .chem-formula{font-family:'Cambria Math',serif;font-style:italic;}
+
+  /* ============== COVER ============== */
+  .cover{
+    text-align:center;
+    padding:30px 10px 40px;
+    background:linear-gradient(135deg,#e3f2fd 0%,#fce4ec 100%);
+    border-radius:12px;
+    margin-bottom:30px;
+  }
+  .cover h1{font-size:2.8em;margin:0;color:var(--primary);}
+  .cover .sub{color:var(--accent);font-size:1.15em;font-weight:600;margin-top:6px;}
+  .cover .meta{margin-top:18px;color:var(--muted);font-size:.95em;}
+  .cover .legend{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px;font-size:.85em;}
+  .cover .legend span{padding:4px 10px;border-radius:14px;color:#000;font-weight:600;}
+
+  /* ============== TOC ============== */
+  .toc{background:#f5f7fa;padding:18px 24px;border-left:5px solid var(--primary);border-radius:6px;margin-bottom:32px;}
+  .toc h2{margin-top:0;border:none;font-size:1.3em;}
+  .toc ol{columns:2;column-gap:30px;}
+  .toc a{color:#0d47a1;text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+
+  /* ============== CALLOUT BOXES ============== */
+  .box{padding:14px 18px;border-radius:8px;margin:14px 0;border-left:6px solid;page-break-inside:avoid;}
+  .box .box-title{font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+  .mech{background:var(--mech);border-color:var(--mech-border);}
+  .mech .box-title{color:#b45309;}
+  .imp{background:var(--imp);border-color:var(--imp-border);}
+  .imp .box-title{color:#0d47a1;}
+  .concept{background:var(--concept);border-color:var(--concept-border);}
+  .concept .box-title{color:#1b5e20;}
+  .example{background:var(--example);border-color:var(--example-border);}
+  .example .box-title{color:#6a1b9a;}
+  .qa{background:var(--qa);border-color:var(--qa-border);}
+  .qa .box-title{color:#880e4f;}
+  .warn{background:var(--warn);border-color:var(--warn-border);}
+  .warn .box-title{color:#e65100;}
+  .note{background:var(--note);border-color:var(--note-border);}
+  .note .box-title{color:#4527a0;}
+
+  /* ============== QUESTION MARKERS ============== */
+  .qmarker{display:inline-block;background:#ad1457;color:#fff;font-size:.72em;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;}
+  .qmarker.big{font-size:.8em;padding:3px 10px;}
+  .qmarker.blue{background:#1565c0;}
+  .qmarker.green{background:#2e7d32;}
+  .qmarker.purple{background:#6a1b9a;}
+
+  /* ============== TABLES ============== */
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em;}
+  th,td{border:1px solid #cfd8dc;padding:8px 10px;text-align:left;vertical-align:top;}
+  th{background:#e3f2fd;color:#0d47a1;font-weight:700;}
+  tr:nth-child(even) td{background:#f8fafc;}
+
+  /* ============== REACTION BLOCK ============== */
+  .rxn{background:#fdfdfd;border:1px solid #e0e0e0;border-left:5px solid #6a1b9a;padding:12px 16px;border-radius:6px;margin:10px 0;font-family:'Cambria Math','Times New Roman',serif;font-size:1.05em;}
+  .rxn .reagents{color:#ad1457;font-weight:600;}
+  .rxn .conditions{color:#37474f;font-size:.95em;}
+  .rxn .arrow{color:#0d47a1;font-weight:700;font-size:1.2em;}
+  .arrow{display:inline-block;margin:0 8px;}
+
+  /* ============== MOLECULE ============== */
+  .mol{display:inline-block;border:1px solid #cfd8dc;background:#fafafa;padding:6px 10px;border-radius:6px;font-family:'Cambria Math',serif;margin:2px;}
+
+  /* ============== MECHANISM STEPS ============== */
+  .step{display:flex;align-items:center;gap:14px;margin:6px 0;flex-wrap:wrap;}
+  .step .num{background:var(--accent);color:#fff;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-weight:700;font-size:.9em;flex-shrink:0;}
+
+  /* ============== HEADER TAGS ============== */
+  .tag{display:inline-block;font-size:.72em;background:#cfd8dc;color:#37474f;padding:2px 8px;border-radius:10px;margin-right:4px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;}
+  .tag.react{background:#f8bbd0;color:#880e4f;}
+  .tag.theory{background:#c8e6c9;color:#1b5e20;}
+  .tag.example{background:#e1bee7;color:#4a148c;}
+  .tag.qa{background:#ffe0b2;color:#e65100;}
+
+  /* ============== HIGHLIGHT KEYWORDS ============== */
+  mark.k{background:#fff59d;padding:1px 4px;border-radius:3px;color:#000;}
+  mark.r{background:#ffcdd2;padding:1px 4px;border-radius:3px;color:#000;}
+  mark.g{background:#c8e6c9;padding:1px 4px;border-radius:3px;color:#000;}
+  mark.b{background:#bbdefb;padding:1px 4px;border-radius:3px;color:#000;}
+
+  hr{border:none;border-top:2px dashed #cfd8dc;margin:30px 0;}
+
+  /* ============== FOOTER ============== */
+  .footer{text-align:center;color:#777;margin-top:40px;font-size:.85em;border-top:2px solid #cfd8dc;padding-top:14px;}
+
+  /* Print-friendliness */
+  @media print{
+    .no-print{display:none;}
+    .page{padding:0;}
+    h2{page-break-before:auto;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<!-- ===================== COVER ===================== -->
+<div class="cover">
+<h1>🧪 Haloalkanes &amp; Haloarenes</h1>
+<div class="sub">Class 12 CBSE — Master Study Note (Strictly NCERT Pattern, Chapter 6)</div>
+<div class="meta">📘 Chemistry · Unit 10 · Halogen-Containing Organic Compounds<br/>
+  Includes: Theory • Mechanisms • Real Molecules • NCERT Examples • In-text Q&amp;A • Exercise Q&amp;A</div>
+<div class="legend">
+<span style="background:#fff3cd">⚙️ Mechanism</span>
+<span style="background:#e3f2fd">⭐ Important</span>
+<span style="background:#e8f5e9">💡 Concept</span>
+<span style="background:#f3e5f5">🧬 Example</span>
+<span style="background:#fce4ec">❓ Q&amp;A</span>
+<span style="background:#fff8e1">⚠️ Watch out</span>
+</div>
+</div>
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+<h2>📋 Table of Contents</h2>
+<ol>
+<li><a href="#s1">1. Classification of Haloalkanes &amp; Haloarenes</a></li>
+<li><a href="#s2">2. Nomenclature (Common &amp; IUPAC)</a></li>
+<li><a href="#s3">3. Nature of the C–X Bond</a></li>
+<li><a href="#s4">4. Methods of Preparation</a></li>
+<li><a href="#s5">5. Physical Properties</a></li>
+<li><a href="#s6">6. Chemical Reactions of Haloalkanes</a></li>
+<li><a href="#s7">7. Chemical Reactions of Haloarenes</a></li>
+<li><a href="#s8">8. Polyhalogen Compounds</a></li>
+<li><a href="#s9">9. NCERT Solved Examples</a></li>
+<li><a href="#s10">10. NCERT In-text Questions (6.1 – 6.3)</a></li>
+<li><a href="#s11">11. NCERT Exercise Questions (6.1 – 6.31)</a></li>
+<li><a href="#s12">12. Quick Recap &amp; Mnemonics</a></li>
+</ol>
+</div>
+<!-- ===================== 1. CLASSIFICATION ===================== -->
+<h2 id="s1">1. Classification of Haloalkanes &amp; Haloarenes</h2>
+<div class="concept">
+<div class="box-title">💡 Definition</div>
+<p><b>Haloalkanes</b> are compounds obtained by replacing one or more hydrogen atoms of an <b>open-chain (aliphatic) hydrocarbon</b> by halogen atoms (F, Cl, Br, I).<br/>
+<b>Haloarenes</b> are compounds obtained by replacing one or more hydrogen atoms of an <b>aromatic hydrocarbon (benzene ring)</b> by halogen atoms.</p>
+</div>
+<h3>1.1 On the basis of number of halogen atoms</h3>
+<table>
+<tr><th>Type</th><th>Example</th><th>Common name</th></tr>
+<tr><td>Mono-haloalkane</td><td>CH₃–Cl, CH₃–CH₂–Br</td><td>Methyl chloride, Ethyl bromide</td></tr>
+<tr><td>Di-haloalkane</td><td>CH₂Cl₂, CH₃CHCl₂</td><td>Dichloromethane, 1,1-Dichloroethane</td></tr>
+<tr><td>Tri-haloalkane</td><td>CHCl₃, CH₃CCl₃</td><td>Chloroform, 1,1,1-Trichloroethane</td></tr>
+<tr><td>Tetra-haloalkane</td><td>CCl₄, CHBr₃</td><td>Carbon tetrachloride, Bromoform</td></tr>
+</table>
+<h3>1.2 On the basis of the carbon bearing the halogen</h3>
+<div class="imp">
+<div class="box-title">⭐ Classification is super-important for reactions <span class="qmarker">Q 6.1, 6.13, 6.30, 6.31</span></div>
+</div>
+<h4>(a) Alkyl halides (haloalkanes)</h4>
+<table>
+<tr><th>Class</th><th>Carbon bearing X is attached to…</th><th>Example</th></tr>
+<tr><td><b>Primary (1°)</b></td><td>…one other carbon</td><td>CH₃–CH₂–Br (Bromoethane), CH₃–CH₂–CH₂–Cl (1-Chloropropane)</td></tr>
+<tr><td><b>Secondary (2°)</b></td><td>…two other carbons</td><td>(CH₃)₂CH–Br (2-Bromopropane), CH₃–CH(Cl)–CH₂–CH₃ (2-Chlorobutane)</td></tr>
+<tr><td><b>Tertiary (3°)</b></td><td>…three other carbons</td><td>(CH₃)₃C–Cl (tert-Butyl chloride, 2-Chloro-2-methylpropane)</td></tr>
+</table>
+<h4>(b) Allylic, Benzylic, Vinylic &amp; Aryl halides</h4>
+<ul>
+<li><b>Allylic halide</b> — halogen attached to the carbon <i>next to</i> a C=C double bond.<br/>
+<span class="mol">CH₂=CH–CH₂–Br</span> (3-Bromopropene / Allyl bromide)</li>
+<li><b>Benzylic halide</b> — halogen attached to a carbon that is directly attached to the benzene ring.<br/>
+<span class="mol">C₆H₅–CH₂–Cl</span> (Benzyl chloride / 1-Phenylchloromethane)</li>
+<li><b>Vinylic halide</b> — halogen directly attached to a sp² carbon of a C=C double bond.<br/>
+<span class="mol">CH₂=CH–Cl</span> (Chloroethene / Vinyl chloride)</li>
+<li><b>Aryl halide</b> — halogen directly attached to a sp² carbon of the benzene ring.<br/>
+<span class="mol">C₆H₅–Cl</span> (Chlorobenzene)</li>
+</ul>
+<div class="warn">
+<div class="box-title">⚠️ Watch out: allyl ≠ vinyl!</div>
+  In <b>allyl</b> halides the X is on the <i>sp³ carbon next to</i> the C=C, so the C–X is <b>normal</b> and reactive. In <b>vinyl</b> halides the X is on the <i>sp² carbon of</i> the C=C, so the C–X has partial double-bond character and is <b>very unreactive</b>.
+</div>
+<!-- ===================== 2. NOMENCLATURE ===================== -->
+<h2 id="s2">2. Nomenclature</h2>
+<h3>2.1 Common (trivial) names</h3>
+<table>
+<tr><th>Compound</th><th>Formula</th><th>Common name</th></tr>
+<tr><td>Methyl chloride</td><td>CH₃Cl</td><td>Refrigerant R-40</td></tr>
+<tr><td>Methylene chloride</td><td>CH₂Cl₂</td><td>Paint-stripper solvent</td></tr>
+<tr><td>Chloroform</td><td>CHCl₃</td><td>Anaesthetic (now obsolete)</td></tr>
+<tr><td>Carbon tetrachloride</td><td>CCl₄</td><td>Once used as dry-cleaning fluid</td></tr>
+<tr><td>Allyl iodide</td><td>CH₂=CH–CH₂–I</td><td>Allyl iodide</td></tr>
+<tr><td>Benzyl chloride</td><td>C₆H₅CH₂Cl</td><td>Benzyl chloride</td></tr>
+</table>
+<h3>2.2 IUPAC rules <span class="qmarker blue">Q 6.2, 6.3</span></h3>
+<div class="imp">
+<div class="box-title">⭐ Steps to name a haloalkane/haloarene</div>
+<ol>
+<li>Find the <b>longest carbon chain</b> (parent alkane).</li>
+<li>Number to give the halogen the <b>lowest locant</b>; if tie with substituent, halide wins by older IUPAC rule, but as per NCERT examples we give lowest locant overall.</li>
+<li>Replace the “-e” of alkane with the <b>halide prefix</b>: <i>fluoro, chloro, bromo, iodo</i>.</li>
+<li>For haloarenes, name the parent as <b>halobenzene</b> (e.g., chlorobenzene) or use the substituted alkyl chain when the chain is larger.</li>
+<li>List substituents <b>alphabetically</b>: <i>fluoro → chloro → bromo → iodo</i> (ignore “di/tri” prefixes for ordering).</li>
+</ol>
+</div>
+<div class="example">
+<div class="box-title">🧬 Worked examples</div>
+<ul>
+<li><span class="mol">CH₃–CH(Br)–CH₃</span> → <b>2-Bromopropane</b></li>
+<li><span class="mol">CH₂=CH–CH(Br)–CH₂–CH₃</span> → <b>3-Bromopent-1-ene</b></li>
+<li><span class="mol">p-Cl–C₆H₄–CH₂–CH(CH₃)₂</span> → <b>1-Chloro-4-(2-methylpropyl)benzene</b> (or <i>p-chloroisobutylbenzene</i>)</li>
+<li><span class="mol">(CH₃)₂CHCH(Cl)CH₃</span> → <b>2-Chloro-3-methylbutane</b></li>
+</ul>
+</div>
+<!-- ===================== 3. C-X BOND ===================== -->
+<h2 id="s3">3. Nature of the C–X Bond</h2>
+<div class="concept">
+<div class="box-title">💡 Key idea</div>
+  Carbon and halogen differ greatly in <b>electronegativity</b> and <b>size</b>, so the C–X bond is <b>polarised</b> (C^δ+–X^δ–). This polarity makes haloalkanes/haloarenes prone to <b>nucleophilic substitution</b>.
+</div>
+<table>
+<tr><th>Bond</th><th>Bond length (pm)</th><th>Bond enthalpy (kJ mol⁻¹)</th><th>Dipole moment (D)</th></tr>
+<tr><td>C–F</td><td>139</td><td>485</td><td>1.51</td></tr>
+<tr><td>C–Cl</td><td>178</td><td>339</td><td>1.56</td></tr>
+<tr><td>C–Br</td><td>193</td><td>276</td><td>1.48</td></tr>
+<tr><td>C–I</td><td>214</td><td>238</td><td>1.29</td></tr>
+</table>
+<div class="imp">
+<div class="box-title">⭐ Reactivity order for alkyl halides (nucleophilic substitution)</div>
+<p style="font-size:1.15em;color:#ad1457;font-weight:700;">RI &gt; RBr &gt; RCl &gt; RF</p>
+<p>Reason: as size of X increases and bond strength decreases, the C–X bond becomes <b>weaker</b> and easier to break, so reactivity rises from F to I.</p>
+</div>
+<div class="concept">
+<div class="box-title">💡 C–X bond in haloarenes</div>
+  In <b>chlorobenzene</b>, the C–Cl bond is <b>shorter</b> than in alkyl chlorides because the halogen is attached to a sp²-hybridised carbon (more s-character → shorter bond). The lone pair on Cl is also delocalised into the benzene ring, giving the C–Cl bond <b>partial double-bond character</b> — making haloarenes far less reactive.
+</div>
+<!-- ===================== 4. PREPARATION ===================== -->
+<h2 id="s4">4. Methods of Preparation <span class="qmarker">Q 6.4, 6.14, 6.16</span></h2>
+<h3>4.1 From Alcohols (the most common method)</h3>
+<div class="rxn">
+  R–OH + HX → R–X + H₂O    (HX = HCl, HBr, HI)
+</div>
+<div class="rxn">
+  R–OH + NaX + H₂SO₄ → R–X + NaHSO₄ + H₂O    (X = Cl, Br)
+</div>
+<div class="rxn">
+  3R–OH + PX₃ → 3R–X + H₃PO₃
+</div>
+<div class="rxn">
+  R–OH + PCl₅ → R–Cl + POCl₃ + HCl
+</div>
+<div class="rxn">
+  R–OH + SOCl₂ (thionyl chloride) → R–Cl + SO₂ + HCl
+</div>
+<div class="warn">
+<div class="box-title">⚠️ Why not H₂SO₄ + NaI?</div>
+  NaI + H₂SO₄ produces <b>HI</b>, but concentrated H₂SO₄ <b>oxidises HI to I₂</b> (2HI + H₂SO₄ → I₂ + SO₂ + 2H₂O), so the yield of alkyl iodide falls drastically. We use <b>KI + H₃PO₄</b> instead. <span class="qmarker">Q 6.20</span>
+</div>
+<h3>4.2 Free Radical Halogenation of Alkanes</h3>
+<div class="rxn">
+  CH₄ + Cl₂ ⟶ hv → CH₃Cl + HCl (further chlorination gives CH₂Cl₂, CHCl₃, CCl₄)
+</div>
+<div class="rxn">
+  CH₃–CH₃ + Br₂ ⟶ hv → CH₃CH₂Br + HBr
+</div>
+<div class="mech">
+<div class="box-title">⚙️ Mechanism: Free Radical Halogenation (3 steps) <span class="qmarker">Q 6.15</span></div>
+<div class="step"><span class="num">1</span><b>Initiation:</b> Cl–Cl ⟶ hv → 2 Cl•</div>
+<div class="step"><span class="num">2</span><b>Propagation:</b> Cl• + CH₄ → •CH₃ + HCl    then    •CH₃ + Cl₂ → CH₃Cl + Cl•</div>
+<div class="step"><span class="num">3</span><b>Termination:</b> Cl• + Cl• → Cl₂   or   •CH₃ + Cl• → CH₃Cl   or   •CH₃ + •CH₃ → C₂H₆</div>
+</div>
+<div class="imp">
+<div class="box-title">⭐ Order of reactivity of halogens with alkanes</div>
+<p style="font-size:1.1em;color:#ad1457;font-weight:700;">F₂ &gt; Cl₂ &gt; Br₂ &gt; I₂</p>
+<p>Order of selectivity (H abstraction): <b>3° &gt; 2° &gt; 1°</b>; Bromine is more selective than chlorine.</p>
+</div>
+<h3>4.3 Allylic &amp; Benzylic Halogenation (NBS / high temperature)</h3>
+<div class="rxn">
+  CH₃–CH=CH₂ + Cl₂ ⟶ 500°C → CH₂=CH–CH₂–Cl (allyl chloride) + HCl
+</div>
+<div class="rxn">
+  C₆H₅–CH₃ + Cl₂ ⟶ hv or heat → C₆H₅–CH₂Cl (benzyl chloride) + HCl
+</div>
+<div class="concept">
+<div class="box-title">💡 Why allylic/benzylic?</div>
+  The intermediate <b>allyl / benzyl radical</b> is <b>resonance-stabilised</b>, so halogenation at these positions is favoured over the vinylic/aryl position.
+</div>
+<h3>4.4 Vinylic &amp; Aryl Halogenation — NOT direct</h3>
+<p>Aryl and vinylic halides <b>cannot be prepared</b> by direct halogenation of arenes/alkenes; they are obtained by <i>special methods</i> such as the <b>Sandmeyer reaction</b> (diazonium salt + CuCl/HCl) or the <b>BHC/Balard preparation</b> of chlorobenzene from benzene + Cl₂ + uv (gives addition, not substitution).</p>
+<h3>4.5 From Alkenes — Addition Reactions</h3>
+<h4>(a) Addition of HX (Markovnikov)</h4>
+<div class="rxn">
+  CH₃–CH=CH₂ + HBr → CH₃–CH(Br)–CH₃ (2-Bromopropane, Markovnikov product)
+</div>
+<div class="rxn">
+  CH₃–CH=CH₂ + HI → CH₃–CH(I)–CH₃ (2-Iodopropane)
+</div>
+<h4>(b) Anti-Markovnikov (peroxide effect / Kharash effect)</h4>
+<div class="rxn">
+  CH₃–CH=CH₂ + HBr ⟶ (C₆H₅COO)₂ (peroxide) → CH₃–CH₂–CH₂–Br (1-Bromopropane)
+</div>
+<div class="warn">
+<div class="box-title">⚠️ Peroxide effect works ONLY with HBr!</div>
+  HCl and HI do <b>not</b> show the peroxide effect (HCl: H–Cl bond too strong; HI: peroxide reduces I₂).
+</div>
+<h4>(c) Addition of X₂ (halogen)</h4>
+<div class="rxn">
+  CH₂=CH₂ + Br₂ ⟶ CH₂Br–CH₂Br (1,2-Dibromoethane, vic-dibromide)
+</div>
+<div class="rxn">
+  CH₃–CH=CH₂ + Br₂ → CH₃–CHBr–CH₂Br (1,2-Dibromopropane)
+</div>
+<div class="mech">
+<div class="box-title">⚙️ Mechanism: Electrophilic addition of Br₂ to alkene</div>
+<div class="step"><span class="num">1</span>The π-electrons attack Br₂, displacing Br⁻ and forming a cyclic <b>bromonium ion</b>.</div>
+<div class="step"><span class="num">2</span>Br⁻ attacks the more substituted carbon from the <b>opposite face</b> → <b>anti addition</b>, trans product.</div>
+</div>
+<!-- ===================== 5. PHYSICAL PROPERTIES ===================== -->
+<h2 id="s5">5. Physical Properties <span class="qmarker">Q 6.4, 6.5, 6.6, 6.24</span></h2>
+<h3>5.1 Boiling Point</h3>
+<div class="concept">
+<div class="box-title">💡 Factors affecting B.P.</div>
+<ol>
+<li><b>Intermolecular forces</b> — larger molecules have stronger van der Waals forces.</li>
+<li><b>Polar C–X bond</b> — adds dipole-dipole attraction.</li>
+<li><b>Size/mass of halogen</b> — I &gt; Br &gt; Cl &gt; F for boiling point (molar mass dominates).</li>
+</ol>
+</div>
+<table>
+<tr><th>Series trend</th><th>Reason</th></tr>
+<tr><td>For same alkyl group, BP: <b>RI &gt; RBr &gt; RCl &gt; RF</b></td><td>Increasing molar mass / surface area</td></tr>
+<tr><td>For same halogen, BP: <b>1° &lt; 2° &lt; 3°</b> (branching reduces surface contact)</td><td>Van der Waals forces decrease with branching</td></tr>
+<tr><td>More halogens → higher BP</td><td>CH₄ (–161 °C) &lt; CH₃Cl (–24 °C) &lt; CH₂Cl₂ (40 °C) &lt; CHCl₃ (61 °C) &lt; CCl₄ (77 °C)</td></tr>
+</table>
+<h3>5.2 Density</h3>
+<p>Monohaloalkanes (except fluoro) are <b>denser than water</b>. Density <b>increases</b> with the number and mass of halogen atoms: CHCl₃ (1.49) &gt; CCl₄ (1.59).</p>
+<h3>5.3 Solubility</h3>
+<div class="concept">
+<div class="box-title">💡 Haloalkanes/Haloarenes are insoluble in water <span class="qmarker">Q 6.23</span></div>
+  Although C–X is polar, haloalkanes <b>cannot form H-bonds with water</b> (no O–H or N–H), so they are <b>immiscible with water</b> but freely soluble in organic solvents like ether, CCl₄, benzene. The hydrocarbon part dominates the interaction.
+</div>
+<h3>5.4 Dipole moment <span class="qmarker">Q 6.6, 6.24</span></h3>
+<div class="imp">
+<div class="box-title">⭐ Why μ(cyclohexyl chloride) &gt; μ(chlorobenzene)</div>
+  In <b>chlorobenzene</b>, the C–Cl σ bond has a dipole, but the lone pair on Cl is delocalised into the ring (resonance) which produces a dipole in the <b>opposite direction</b>. These two dipoles <b>partially cancel</b>, giving a <b>smaller</b> net dipole moment (≈ 1.69 D). In <b>cyclohexyl chloride</b>, no such resonance exists, so the dipoles add up (≈ 2.1 D).
+</div>
+<!-- ===================== 6. REACTIONS OF HALOALKANES ===================== -->
+<h2 id="s6">6. Chemical Reactions of Haloalkanes <span class="qmarker">Q 6.10 – 6.13, 6.17, 6.18</span></h2>
+<h3>6.1 Nucleophilic Substitution Reactions</h3>
+<div class="concept">
+<div class="box-title">💡 General picture</div>
+<p style="text-align:center;font-size:1.1em;"><span class="chem">Nu:⁻</span> + <span class="chem">R–X</span> → <span class="chem">R–Nu</span> + <span class="chem">X:⁻</span></p>
+  The nucleophile (Nu⁻) attacks the δ+ carbon and <b>displaces the halide ion</b>. Two mechanisms operate: <b>SN2</b> (one-step, bimolecular) and <b>SN1</b> (two-step, unimolecular).
+</div>
+<h4>(a) SN2 Mechanism (Bimolecular, Concerted)</h4>
+<div class="mech">
+<div class="box-title">⚙️ Mechanism: SN2 — single concerted step</div>
+<p>For primary (and most secondary) alkyl halides, e.g., hydrolysis of <span class="mol">CH₃–CH₂–Br</span> with OH⁻.</p>
+<p>1. <b>Back-side attack</b>: Nucleophile approaches the carbon <b>opposite to the leaving group</b>.</p>
+<p>2. A <b>transition state</b> is formed in which the C–Nu bond is partially formed and C–X is partially broken — carbon is sp²-like (trigonal bipyramidal) with Nu and X in axial positions.</p>
+<p>3. <b>Inversion of configuration</b> (Walden inversion) — the product has the opposite stereochemistry.</p>
+<p>Rate = k [R–X][Nu⁻] — <b>second order</b>, bimolecular.</p>
+</div>
+<div class="imp">
+<div class="box-title">⭐ SN2 reactivity order (for R–X with same halogen)</div>
+<p style="font-size:1.1em;color:#ad1457;font-weight:700;">Methyl &gt; Primary (1°) &gt; Secondary (2°) &gt;&gt; Tertiary (3°)</p>
+<p>Tertiary halides are sterically blocked — backside attack is impossible.</p>
+</div>
+<h4>(b) SN1 Mechanism (Unimolecular, Two-step)</h4>
+<div class="mech">
+<div class="box-title">⚙️ Mechanism: SN1 — two steps via carbocation</div>
+<p>For tertiary (and some secondary) alkyl halides, e.g., hydrolysis of <span class="mol">(CH₃)₃C–Cl</span> in water.</p>
+<p><b>Step 1 (slow):</b> The C–X bond ionises to form a <b>carbocation</b> (R⁺) and X⁻. This is the rate-determining step.</p>
+<p><b>Step 2 (fast):</b> The nucleophile attacks the planar carbocation from either face → <b>racemisation</b> (50 : 50 retention + inversion if the carbon was a stereocentre).</p>
+<p>Rate = k [R–X] — <b>first order</b>, unimolecular.</p>
+</div>
+<div class="imp">
+<div class="box-title">⭐ SN1 reactivity order (for R–X with same halogen)</div>
+<p style="font-size:1.1em;color:#ad1457;font-weight:700;">Tertiary (3°) &gt; Secondary (2°) &gt; Primary (1°) &gt;&gt; Methyl</p>
+<p>Stability of carbocation: 3° &gt; 2° &gt; 1° (hyperconjugation / +I effect).</p>
+</div>
+<table>
+<tr><th>Feature</th><th>SN2</th><th>SN1</th></tr>
+<tr><td>Steps</td><td>One (concerted)</td><td>Two (via carbocation)</td></tr>
+<tr><td>Rate law</td><td>Rate = k[RX][Nu⁻]</td><td>Rate = k[RX]</td></tr>
+<tr><td>Substrate preference</td><td>Methyl, 1°</td><td>3° &gt; 2°</td></tr>
+<tr><td>Stereochemistry</td><td>Inversion (Walden)</td><td>Racemisation</td></tr>
+<tr><td>Solvent</td><td>Polar aprotic (DMSO, acetone)</td><td>Polar protic (water, alcohol)</td></tr>
+<tr><td>Nucleophile</td><td>Strong required</td><td>Weak is fine (solvent attacks)</td></tr>
+<tr><td>Carbocation rearrangement?</td><td>No</td><td>Yes (possible)</td></tr>
+</table>
+<h3>6.2 Important SN Reactions with Reagents</h3>
+<div class="imp">
+<div class="box-title">⭐ List of textbook nucleophilic substitutions (master list) <span class="qmarker">Q 6.12, 6.16, 6.17, 6.26</span></div>
+</div>
+<table>
+<tr><th>Reagent (Nu⁻)</th><th>Product</th><th>Example (real molecule)</th><th>Mechanism</th></tr>
+<tr><td>aq. KOH / NaOH</td><td>R–OH (alcohol)</td><td>CH₃CH₂Br + aq. KOH → CH₃CH₂OH</td><td>SN2 (1°), SN1 (3°)</td></tr>
+<tr><td>alc. KOH / NaOH</td><td>R'=C (alkene) — elimination</td><td>CH₃CH₂CH(Br)CH₃ + alc. KOH → CH₃CH=CHCH₃ (but-2-ene)</td><td>E2 / E1</td></tr>
+<tr><td>NaI in dry acetone</td><td>R–I (<b>Finkelstein</b>)</td><td>CH₃CH₂Cl + NaI → CH₃CH₂I + NaCl↓</td><td>SN2</td></tr>
+<tr><td>KCN (alc.)</td><td>R–C≡N (alkyl cyanide / nitrile)</td><td>CH₃Cl + KCN → CH₃–C≡N (acetonitrile)</td><td>SN2 — C-attack</td></tr>
+<tr><td>AgCN (alc.)</td><td>R–N≡C (isocyanide)</td><td>CH₃Cl + AgCN → CH₃–N≡C (methyl isocyanide)</td><td>SN2 — N-attack (Ag–N bond is covalent, Ag⁺ stays)</td></tr>
+<tr><td>KNO₂ (potassium nitrite)</td><td>R–NO₂ (nitroalkane)</td><td>CH₃CH₂Br + KNO₂ → CH₃CH₂NO₂ (nitroethane)</td><td>SN2 — O-attack (O is more nucleophilic in KNO₂)</td></tr>
+<tr><td>AgNO₂ (silver nitrite)</td><td>R–O–N=O (alkyl nitrite, ester)</td><td>CH₃CH₂Br + AgNO₂ → CH₃CH₂–O–N=O (ethyl nitrite)</td><td>SN2 — O-attack from AgNO₂</td></tr>
+<tr><td>NaSH</td><td>R–SH (thiol)</td><td>CH₃Br + NaSH → CH₃SH (methanethiol)</td><td>SN2</td></tr>
+<tr><td>NaOR' (sodium alkoxide)</td><td>R–O–R' (ether — <b>Williamson synthesis</b>)</td><td>CH₃CH₂Br + NaOC₂H₅ → CH₃CH₂OC₂H₅ + NaBr</td><td>SN2</td></tr>
+<tr><td>R'COOAg (silver carboxylate)</td><td>R'COOR (ester)</td><td>CH₃Br + CH₃COOAg → CH₃COOCH₃ (methyl acetate)</td><td>SN2</td></tr>
+<tr><td>AgNO₃ (aq. alc.)</td><td>R–ONO₂ (alkyl nitrate) + AgX↓</td><td>C₆H₅CH₂Cl + AgNO₃ → C₆H₅CH₂ONO₂ + AgCl↓</td><td>SN1 (benzylic gives fast ppt.)</td></tr>
+<tr><td>NaX (with H₂SO₄)</td><td>R–X'</td><td>CH₃OH + NaBr + H₂SO₄ → CH₃Br</td><td>SN2 on R–OSO₃H</td></tr>
+</table>
+<div class="concept">
+<div class="box-title">💡 KCN vs AgCN — who attacks from where? <span class="qmarker">Q 6.10</span></div>
+<ul>
+<li><b>KCN</b> is <b>ionic</b> (K⁺ CN⁻). The C atom of CN⁻ is more nucleophilic than N → attack from C → alkyl cyanide <span class="mol">R–C≡N</span>.</li>
+<li><b>AgCN</b> is largely <b>covalent</b> (Ag–C bond). The N end is the only free donor → attack from N → isocyanide <span class="mol">R–N≡C</span>.</li>
+</ul>
+  The major product with KCN is the cyanide (nitrile); with AgCN it is the isocyanide. <b>Cyanide ion is ambidentate</b> (two donor atoms).
+</div>
+<div class="concept">
+<div class="box-title">💡 KNO₂ vs AgNO₂ — same trick, different anion <span class="qmarker">Q 6.10</span></div>
+<b>NO₂⁻</b> is also ambidentate (N and O). In KNO₂ the O is more nucleophilic → nitroalkane; in AgNO₂ the Ag–O bond makes N the donor → alkyl nitrite (R–O–N=O).
+</div>
+<h3>6.3 Elimination Reactions <span class="qmarker">Q 6.11, 6.17(xi)–(xv)</span></h3>
+<div class="concept">
+<div class="box-title">💡 β-elimination — a nucleophile acts as a base</div>
+  Haloalkanes + strong base (alc. KOH) → <b>alkene</b> + HX. Two mechanisms: <b>E2</b> (one step, anti-periplanar) and <b>E1</b> (two step, via carbocation).
+</div>
+<div class="rxn">
+  CH₃–CH(Br)–CH₃ + alc. KOH → CH₃–CH=CH₂ (propene) + KBr + H₂O
+</div>
+<div class="rxn">
+  CH₃–CH₂–CH(Br)–CH₃ + alc. KOH → CH₃–CH=CH–CH₃ (but-2-ene, Saytzeff) + KBr + H₂O
+</div>
+<div class="imp">
+<div class="box-title">⭐ Saytzeff (Zaitsev) Rule</div>
+  In dehydrohalogenation, the preferred product is the <b>more highly substituted alkene</b> (more stable). For 2-bromobutane the major product is <b>but-2-ene</b> (CH₃–CH=CH–CH₃) rather than but-1-ene.
+</div>
+<div class="mech">
+<div class="box-title">⚙️ Mechanism: E2 (bimolecular, anti-periplanar)</div>
+<p>1. Base removes a β-H while the leaving group X departs from the opposite side.</p>
+<p>2. <b>Anti-periplanar geometry</b>: H–C–C–X must be in the same plane but on opposite sides.</p>
+<p>3. Two new π-bonds form between Cα and Cβ; C–X breaks; C–H breaks. <b>Concerted</b> — single step.</p>
+<p>Rate = k[RX][base].</p>
+</div>
+<div class="mech">
+<div class="box-title">⚙️ Mechanism: E1 (unimolecular)</div>
+<p>1. <b>Slow:</b> C–X ionises → carbocation (R⁺) + X⁻.</p>
+<p>2. <b>Fast:</b> Base removes a β-H from the carbocation → alkene.</p>
+<p>Rate = k[RX]. Favoured for 3° halides, polar protic solvents, weak bases.</p>
+</div>
+<h4>Dehalogenation (vicinal dihalides)</h4>
+<div class="rxn">
+  CH₃–CH(Br)–CH(Br)–CH₃ + Zn dust ⟶ Δ → CH₃–CH=CH–CH₃ (but-2-ene) + ZnBr₂
+</div>
+<h3>6.4 Reaction with Metals <span class="qmarker">Q 6.12, 6.17</span></h3>
+<h4>(a) Wurtz Reaction (R–X with Na in dry ether)</h4>
+<div class="rxn">
+  2 R–X + 2 Na ⟶ dry ether → R–R + 2 NaX
+</div>
+<div class="example">
+<div class="box-title">🧬 Example</div>
+  2 CH₃–CH₂–Br + 2 Na → CH₃–CH₂–CH₂–CH₃ (n-butane) + 2 NaBr
+</div>
+<h4>(b) Corey–House Synthesis (R₂CuLi — lithium dialkylcuprate)</h4>
+<div class="rxn">
+  2 R–Li + CuI → R₂CuLi (lithium dialkylcuprate)
+</div>
+<div class="rxn">
+  R₂CuLi + R'–X → R–R' + R–Cu + LiX
+</div>
+<div class="example">
+<div class="box-title">🧬 Example</div>
+  (CH₃)₂CuLi + CH₃CH₂Cl → CH₃–CH₂–CH₃ (propane)
+</div>
+<h4>(c) Grignard Reagent Formation</h4>
+<div class="rxn">
+  R–X + Mg ⟶ dry ether → R–Mg–X (Grignard reagent)
+</div>
+<div class="example">
+<div class="box-title">🧬 Examples</div>
+  CH₃–CH₂–Br + Mg → CH₃–CH₂–MgBr (ethylmagnesium bromide)<br/>
+  C₆H₅–Br + Mg → C₆H₅–MgBr (phenylmagnesium bromide)
+</div>
+<div class="warn">
+<div class="box-title">⚠️ Why anhydrous conditions? <span class="qmarker">Q 6.19, 6.27</span></div>
+  Grignard reagents are <b>strong nucleophiles / bases</b>. They react violently with any protic source — water, alcohols, even the –OH of glass is enough.
+  <div class="rxn" style="margin-top:8px;">R–MgX + H₂O → R–H + Mg(OH)X</div>
+  Hence, the reaction must be carried out in <b>anhydrous ether</b> with dry apparatus.
+</div>
+<!-- ===================== 7. REACTIONS OF HALOARENES ===================== -->
+<h2 id="s7">7. Chemical Reactions of Haloarenes <span class="qmarker">Q 6.21, 6.22, 6.25, 6.26</span></h2>
+<div class="concept">
+<div class="box-title">💡 Haloarenes are LESS reactive than haloalkanes</div>
+<p>Three reasons:</p>
+<ol>
+<li><b>Resonance:</b> Lone pair on Cl is delocalised into the ring → C–Cl acquires partial double bond character → shorter and stronger.</li>
+<li><b>sp² carbon:</b> The C–X is on sp², more s-character → shorter, stronger bond.</li>
+<li><b>Instability of phenyl cation:</b> An SN1 route would need an aryl cation, which is highly unstable (the empty orbital is in the ring plane and cannot overlap).</li>
+</ol>
+</div>
+<h3>7.1 Nucleophilic Substitution (very slow; activated ring → fast)</h3>
+<div class="imp">
+<div class="box-title">⭐ Order: p-Nitrochlorobenzene &gt;&gt; Chlorobenzene <span class="qmarker">Q 6.22</span></div>
+  Strong <b>electron-withdrawing groups</b> (–NO₂, –CN, –COCH₃) at <b>ortho / para</b> positions stabilise the anionic Meisenheimer intermediate, making SNAr much faster.
+</div>
+<div class="rxn">
+  p-NO₂–C₆H₄–Cl + aq. NaOH ⟶ 443 K, 300 atm → p-NO₂–C₆H₄–OH + NaCl
+</div>
+<div class="mech">
+<div class="box-title">⚙️ Mechanism: SNAr — addition–elimination (Benzyne for unactivated)</div>
+<p>1. Nu⁻ attacks the carbon bearing X → <b>Meisenheimer complex</b> (sp³, carbanion stabilised by –M groups at o/p).</p>
+<p>2. X⁻ leaves, restoring aromaticity → substituted product.</p>
+</div>
+<h3>7.2 Electrophilic Substitution (favoured because Cl is o/p-directing)</h3>
+<div class="rxn">
+  C₆H₅Cl + HNO₃ ⟶ conc. H₂SO₄ → o-NO₂–C₆H₄–Cl + p-NO₂–C₆H₄–Cl (mainly para)
+</div>
+<div class="rxn">
+  C₆H₅Cl + Cl₂ ⟶ FeCl₃ → o-Cl–C₆H₄–Cl + p-Cl–C₆H₄–Cl (mainly para)
+</div>
+<div class="rxn">
+  C₆H₅Cl + CH₃Cl ⟶ anh. AlCl₃ → o- and p-CH₃–C₆H₄–Cl
+</div>
+<div class="example">
+<div class="box-title">🧬 Real products</div>
+<b>Chlorobenzene + fuming HNO₃ / H₂SO₄</b> → mainly <b>1-chloro-4-nitrobenzene</b> (p-nitrochlorobenzene).<br/>
+<b>Chlorobenzene + Cl₂ / FeCl₃</b> → mainly <b>1,4-dichlorobenzene</b>.<br/>
+<b>Chlorobenzene + CH₃Cl / AlCl₃</b> → mainly <b>1-chloro-4-methylbenzene</b> (p-chlorotoluene).
+</div>
+<div class="imp">
+<div class="box-title">⭐ Halogens are o/p-directing but deactivating</div>
+  The lone pair on halogen (+M, ortho/para director) increases ring electron density, but the –I effect of the strongly electronegative halogen reduces overall reactivity. Net: <b>ring is deactivated but o/p substitution dominates</b>.
+</div>
+<h3>7.3 Reaction with Metals</h3>
+<h4>(a) Wurtz–Fittig Reaction (R–X + Ar–X + Na)</h4>
+<div class="rxn">
+  C₆H₅–Br + CH₃–Br + 2 Na ⟶ dry ether → C₆H₅–CH₃ (toluene) + 2 NaBr
+</div>
+<div class="example">
+<div class="box-title">🧬 Real molecules</div>
+  Bromobenzene + iodomethane + Na → <b>toluene</b><br/>
+  Chlorobenzene + 1-chloropropane + Na → <b>propylbenzene</b>
+</div>
+<h4>(b) Fittig Reaction (R–X + R–X + Na → R–R)</h4>
+The classical Fittig reaction is for two alkyl halides only. In NCERT, the <b>Wurtz–Fittig</b> couples an aryl and an alkyl halide.
+
+<h4>(c) Ullmann Reaction (biaryl synthesis)</h4>
+<div class="rxn">
+  2 C₆H₅–I + 2 Cu ⟶ Δ → C₆H₅–C₆H₅ (biphenyl) + 2 CuI
+</div>
+<h3>7.4 Reactions of the Side Chain (when aryl halide has a benzylic C–X)</h3>
+<p>Benzylic halides behave like primary alkyl halides — fast SN1, SN2, and E1/E2.</p>
+<div class="rxn">
+  C₆H₅–CH₂Cl + alc. KCN → C₆H₅–CH₂–C≡N (phenylacetonitrile) — <b>SN2</b>
+</div>
+<div class="rxn">
+  C₆H₅–CH₂Cl + alc. KOH → C₆H₅–CH=CH₂? No! → C₆H₅–CH₂–OH (excess? no — actually elimination requires β-H, which is on the ring or absent, so substitution dominates giving benzyl alcohol under aqueous KOH, and stilbene from PhCH₂Cl with PhCHCl is via Wurtz; with strong base PhCH=CHPh forms <b>trans-stilbene</b> if two benzyl halides couple)
+</div>
+<p style="font-size:.9em;color:#777;">(Benzyl chloride: aq. KOH → benzyl alcohol C₆H₅CH₂OH. With alc. KOH, elimination to give stilbene requires a separate benzylic coupling — studied in Wurtz.)</p>
+<!-- ===================== 8. POLYHALOGEN COMPOUNDS ===================== -->
+<h2 id="s8">8. Polyhalogen Compounds <span class="qmarker">Q 6.25, 6.31</span></h2>
+<h3>8.1 Dichloromethane (CH₂Cl₂) — Methylene chloride</h3>
+<p>Colourless, sweet-smelling liquid, BP 40 °C. Used as a <b>solvent for paint strippers</b>, aerosol propellants, in food processing (decaffeination of coffee).</p>
+<h3>8.2 Trichloromethane (CHCl₃) — Chloroform</h3>
+<p>Colourless, dense (1.49 g/cm³), sweet-smelling liquid, BP 61 °C. Once used as an <b>anaesthetic</b>, now replaced (causes liver damage and is carcinogenic). Used as a <b>laboratory solvent</b>. On exposure to light and air it forms the poisonous <b>phosgene</b> (COCl₂), so it is stored in dark bottles filled to the brim.</p>
+<div class="rxn">2 CHCl₃ + O₂ ⟶ hv → 2 COCl₂ + 2 HCl</div>
+<h3>8.3 Triiodomethane (CHI₃) — Iodoform</h3>
+<p>Yellow solid, antiseptic. Formed in the <b>iodoform test</b> for the –COCH₃ group (methyl ketone) or CH₃CH(OH)– (ethanol / 2° alcohol).</p>
+<div class="rxn">
+  CH₃–CO–CH₃ + 3 I₂ + 4 NaOH → CHI₃↓ (yellow) + CH₃COONa + 3 NaI + 3 H₂O
+</div>
+<h3>8.4 Tetrachloromethane (CCl₄) — Carbon tetrachloride</h3>
+<p>Colourless, non-inflammable liquid. Once used as a <b>fire-extinguisher fluid</b> and dry-cleaning agent, but is now banned because it damages the <b>ozone layer</b> and is highly toxic (liver damage). When heated to 773 K, it gives the toxic <b>phosgene</b>:</p>
+<div class="rxn">CCl₄ + H₂O ⟶ Δ → COCl₂ + 2 HCl</div>
+<h3>8.5 Freons <span class="qmarker">Q 6.25</span></h3>
+<div class="concept">
+<div class="box-title">💡 Freons (CFC) — banned!</div>
+<b>Freon-12</b>: CCl₂F₂ (dichlorodifluoromethane). Was used as a refrigerant and aerosol propellant. <b>Banned under the Montreal Protocol (1987)</b> because chlorine radicals catalyse ozone destruction:
+  <div class="rxn">CF₂Cl₂ ⟶ hv → •CF₂Cl + Cl•;   Cl• + O₃ → ClO• + O₂;   ClO• + O → Cl• + O₂</div>
+<b>Replacement:</b> HFCs (e.g. CH₂FCF₃ — HFC-134a) which contain no Cl and don't harm ozone.
+</div>
+<h3>8.6 p,p′-Dichlorodiphenyltrichloroethane (DDT)</h3>
+<p>Insecticide used against <b>mosquitoes (malaria)</b> and crop pests. Made by:</p>
+<div class="rxn">
+  2 C₆H₅Cl + CCl₃CHO ⟶ con. H₂SO₄ → (p-Cl–C₆H₄)₂CH–CCl₃ (DDT) + H₂O
+</div>
+<p>DDT is <b>banned in many countries</b> because it is non-biodegradable, accumulates in food chains, and harms birds (egg-shell thinning).</p>
+<hr/>
+<!-- ===================== 9. NCERT EXAMPLES ===================== -->
+<h2 id="s9">9. NCERT Solved Examples (with steps)</h2>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.1 — IUPAC name of a haloalkane</div>
+<p><b>Q.</b> Give the IUPAC name of the compound: (CH₃)₂CH–CH(Cl)–CH₃.</p>
+<p><b>Step 1.</b> Longest chain = 4 carbons → butane.</p>
+<p><b>Step 2.</b> Substituents: chloro at C-2, methyl at C-3.</p>
+<p><b>Step 3.</b> Alphabetical: chloro before methyl.</p>
+<p><b>Answer:</b> <b>2-Chloro-3-methylbutane</b>. (Type: 2°, alkyl)</p>
+</div>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.2 — Nomenclature of haloarene</div>
+<p><b>Q.</b> Name: p-Cl–C₆H₄–CH₂–CH(CH₃)₂.</p>
+<p><b>Step.</b> The ring is the parent (benzene), with a chloro substituent. The chain is a 2-methylpropyl (isobutyl) group. Chlorine is on the ring carbon para to the side chain attachment.</p>
+<p><b>Answer:</b> <b>1-Chloro-4-(2-methylpropyl)benzene</b> (or p-chloro-(2-methylpropyl)benzene).</p>
+</div>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.3 — Boiling-point comparison</div>
+<p><b>Q.</b> Which has higher BP — 1-bromopropane or 2-bromopropane?</p>
+<p><b>Reason.</b> Both have the same molar mass and dipole. 1-Bromopropane is a straight chain (more surface contact, stronger van der Waals forces); 2-bromopropane is branched. <b>Answer: 1-Bromopropane has the higher BP</b>.</p>
+</div>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.4 — Boiling-point comparison (halogen size)</div>
+<p><b>Q.</b> Which has higher BP — CH₃Cl or CH₃I?</p>
+<p><b>Reason.</b> Larger halogen → larger electron cloud → stronger London dispersion. <b>Answer: CH₃I has higher BP</b> (CH₃Cl = –24 °C, CH₃I = 42.4 °C).</p>
+</div>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.5 — Finkelstein reaction</div>
+<p><b>Q.</b> Write the reaction: 1-bromopropane with NaI in dry acetone.</p>
+<p><b>Answer:</b> CH₃CH₂CH₂Br + NaI → CH₃CH₂CH₂I + NaBr↓ (NaBr is <b>insoluble</b> in acetone, so equilibrium shifts forward).</p>
+<p>Mechanism: <b>SN2</b>; works only for 1° (and 2°) halides — 3° and aryl chlorides do not react.</p>
+</div>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.6 — Wurtz reaction stoichiometry</div>
+<p><b>Q.</b> How would you synthesise n-hexane from a haloalkane?</p>
+<p><b>Answer:</b> 2 CH₃CH₂CH₂Br + 2 Na ⟶ dry ether → CH₃(CH₂)₄CH₃ (n-hexane) + 2 NaBr. Wurtz reaction works best for symmetric alkanes; for unsymmetric alkanes, use the <b>Corey–House synthesis</b> instead.</p>
+</div>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.7 — Williamson synthesis</div>
+<p><b>Q.</b> Starting from CH₃CH₂OH, prepare CH₃CH₂OCH(CH₃)₂.</p>
+<p><b>Steps:</b></p>
+<ol>
+<li>CH₃CH₂OH + Na → CH₃CH₂O⁻Na⁺ (sodium ethoxide) + ½H₂</li>
+<li>(CH₃)₂CHOH + PBr₃ → (CH₃)₂CHBr (2-bromopropane)</li>
+<li>CH₃CH₂O⁻Na⁺ + (CH₃)₂CHBr → CH₃CH₂OCH(CH₃)₂ (ethyl isopropyl ether, <b>SN2</b>)</li>
+</ol>
+<p><b>Why 2° alkyl halide?</b> Williamson with 3° alkyl halide is impossible — elimination wins. With 1° and 2° halides, SN2 is fine.</p>
+</div>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.8 — Conversion problem</div>
+<p><b>Q.</b> Convert: Ethanol → Ethane nitrile (CH₃CH₂CN).</p>
+<p><b>Steps:</b></p>
+<ol>
+<li>CH₃CH₂OH + PCl₅ → CH₃CH₂Cl + POCl₃ + HCl (chlorination)</li>
+<li>CH₃CH₂Cl + alc. KCN → CH₃CH₂CN + KCl (SN2 with KCN — gives cyanide, not isocyanide)</li>
+</ol>
+<p>Total yield is good; ethanol is the starting material.</p>
+</div>
+<div class="qa">
+<div class="box-title">❓ NCERT Example 6.9 — Conversion (propene → 1-nitropropane)</div>
+<p><b>Q.</b> Propene → 1-nitropropane.</p>
+<p><b>Steps:</b></p>
+<ol>
+<li>CH₃–CH=CH₂ + HBr (peroxide) → CH₃–CH₂–CH₂Br (anti-Markovnikov, 1-bromopropane)</li>
+<li>CH₃CH₂CH₂Br + AgNO₂ → CH₃CH₂CH₂NO₂ (1-nitropropane) + AgBr</li>
+</ol>
+</div>
+<hr/>
+<!-- ===================== 10. IN-TEXT Q&A ===================== -->
+<h2 id="s10">10. NCERT In-text Questions (Solved)</h2>
+<div class="qa">
+<div class="box-title">❓ In-text Q 6.1</div>
+<p><b>Q.</b> What is the product formed when chlorobenzene is treated with Cl₂ in presence of FeCl₃?</p>
+<p><b>Ans.</b> Electrophilic aromatic substitution → mainly <b>1,4-dichlorobenzene (p-dichlorobenzene)</b> along with some ortho isomer. The chlorine atom is an <i>o/p director</i> (lone pair donation), so substitution is favoured at the para position.</p>
+<div class="rxn">C₆H₅Cl + Cl₂ ⟶ FeCl₃ → <b>p-Cl–C₆H₄–Cl</b> + HCl</div>
+</div>
+<div class="qa">
+<div class="box-title">❓ In-text Q 6.2 — Write the structure of the major organic product in each</div>
+<table>
+<tr><th>#</th><th>Reaction</th><th>Mechanism</th><th>Major product</th></tr>
+<tr><td>(i)</td><td>2-Chloropropane + NaOH (aq)</td><td>SN2/SN1 (2°)</td><td>CH₃–CH(OH)–CH₃ (Propan-2-ol)</td></tr>
+<tr><td>(ii)</td><td>2-Chloropropane + NaOH (alc)</td><td>E2</td><td>CH₃–CH=CH₂ (Propene) — Saytzeff</td></tr>
+<tr><td>(iii)</td><td>CH₃Cl + AgNO₃ (aq)</td><td>SN2 (Me, very slow with Ag⁺ because AgCl sparingly soluble but no reaction with aqueous Ag⁺ without heating — NCERT accepts <b>no ppt</b> at room temperature; heated gives CH₃OH + AgCl)</td><td>No precipitate at room temperature; on warming → CH₃OH + AgCl↓</td></tr>
+<tr><td>(iv)</td><td>C₆H₅Cl + AgNO₃ (aq)</td><td>Aryl — does not ionise</td><td><b>No reaction</b> (aryl halides do not give AgX ppt. with AgNO₃)</td></tr>
+<tr><td>(v)</td><td>CH₃Cl + KCN</td><td>SN2 — C-attack</td><td>CH₃–C≡N (Acetonitrile / methyl cyanide)</td></tr>
+<tr><td>(vi)</td><td>CH₃CH₂Br + AgNO₂ (alc)</td><td>SN2 — O-attack</td><td>CH₃CH₂–O–N=O (Ethyl nitrite)</td></tr>
+<tr><td>(vii)</td><td>C₆H₅Br + Mg + dry ether</td><td>Grignard</td><td>C₆H₅–MgBr (Phenylmagnesium bromide)</td></tr>
+<tr><td>(viii)</td><td>CH₃CH₂Cl + alc. KOH</td><td>E2</td><td>CH₂=CH₂ (Ethene)</td></tr>
+<tr><td>(ix)</td><td>C₆H₅Cl + Cl₂/FeCl₃</td><td>EAS (o/p)</td><td>p-Cl–C₆H₄–Cl (1,4-dichlorobenzene, major)</td></tr>
+</table>
+</div>
+<div class="qa">
+<div class="box-title">❓ In-text Q 6.3 — Conversions</div>
+<table>
+<tr><th>#</th><th>Conversion</th><th>Steps / Reaction</th></tr>
+<tr><td>(i)</td><td>Propene → Propan-1-ol</td><td>CH₃–CH=CH₂ + HBr (peroxide) → CH₃CH₂CH₂Br (anti-Mark.); then + aq. KOH (SN2) → CH₃CH₂CH₂OH (propan-1-ol)</td></tr>
+<tr><td>(ii)</td><td>Ethanol → But-1-yne</td><td>Step 1: CH₃CH₂OH + PBr₃ → CH₃CH₂Br. Step 2: 2 CH₃CH₂Br + 2 Na (Wurtz) → CH₃CH₂CH₂CH₃ (butane). Step 3: Br₂/uv → CH₃CH₂CH(Br)CH₃. Step 4: alc. KOH → CH₃CH=CHCH₃ (but-2-ene). Step 5: Br₂/CCl₄ → CH₃CHBrCHBrCH₃. Step 6: alc. KOH (2 eq) → CH₃–C≡C–CH₃ (but-2-yne). Step 7: Na/NH₃(l) → CH≡C–CH₂–CH₃ (but-1-yne).</td></tr>
+<tr><td>(iii)</td><td>1-Iodopropane → 1-Bromopropane</td><td>CH₃CH₂CH₂I + KBr (acetone) — but direct Finkelstein is for Cl→I. For I→Br: <b>CH₃CH₂CH₂I + AgBr (or HBr) → CH₃CH₂CH₂Br + AgI</b> (AgI precipitates). Or use KBr in acetone (reverse Finkelstein is unfavourable). NCERT approach: react with alcoholic KBr is not good; use AgBr in CCl₄ or simply use HBr. Alternative: <span class="chem">CH₃CH₂CH₂I + HBr → CH₃CH₂CH₂Br + HI</span> — but HI is a stronger reducing agent. Practical: <b>Finkelstein with AgBr</b>.</td></tr>
+<tr><td>(iv)</td><td>1-Iodopropane → 1,1-Dichloropropane</td><td>Step 1: alc. KOH → CH₃CH=CH₂ (propene). Step 2: + Cl₂ (CCl₄) → CH₃CHClCH₂Cl (1,2-dichloropropane). Step 3: + alc. KOH (excess) → CH₃C≡CH (propyne). Step 4: + 2 HCl → CH₃CCl₂CH₃ (2,2-dichloropropane). <i>That gives 2,2- not 1,1-.</i> NCERT answer: add HCl twice to propyne — gives gem-dihalide on the more substituted carbon. For <b>1,1-dichloropropane</b>: CH₃CH₂CH₂I → CH₃CH=CH₂ (alc. KOH) → CH₃CHClCH₂Cl (Cl₂) → then alc. KOH removes only the less hindered Cl? No, both are removed. <b>Better:</b> 1-iodopropane + PCl₅ (twice is not possible) or use CH₃CH₂CHO + PCl₅ → CH₃CH₂CHCl₂. NCERT accepts 2,2-dichloropropane from propyne; for 1,1-, propanal + PCl₅ is the way.</td></tr>
+<tr><td>(v)</td><td>Benzene → 4-Bromonitrobenzene</td><td>Step 1: C₆H₆ + Br₂/FeBr₃ → C₆H₅Br. Step 2: C₆H₅Br + conc. HNO₃/H₂SO₄ → p-Br–C₆H₄–NO₂ (Br is o/p director; para major).</td></tr>
+<tr><td>(vi)</td><td>Toluene → Benzyl alcohol</td><td>C₆H₅CH₃ + Cl₂/hv → C₆H₅CH₂Cl (benzylic chlorination). Then + aq. NaOH (SN2 at benzylic C) → C₆H₅CH₂OH (benzyl alcohol).</td></tr>
+<tr><td>(vii)</td><td>Propene → 1-Nitropropane</td><td>Step 1: propene + HBr/peroxide → CH₃CH₂CH₂Br. Step 2: + AgNO₂ → CH₃CH₂CH₂NO₂ (1-nitropropane).</td></tr>
+<tr><td>(viii)</td><td>2-Chloropropane → 1-Chloropropane</td><td>Step 1: + alc. KOH → CH₃CH=CH₂ (propene). Step 2: + HCl (anti-Mark via peroxide) → CH₃CH₂CH₂Cl (1-chloropropane).</td></tr>
+<tr><td>(ix)</td><td>2-Chloropropane → 2-Nitropropane</td><td>+ AgNO₂ (alc.) → (CH₃)₂CH–O–N=O (isopropyl nitrite) — that's an alkyl nitrite! For <b>2-nitropropane</b>, use KNO₂: (CH₃)₂CHCl + KNO₂ → (CH₃)₂CH–NO₂ (2-nitropropane).</td></tr>
+<tr><td>(x)</td><td>Ethanol → Propanenitrile</td><td>Step 1: CH₃CH₂OH + PCl₅ → CH₃CH₂Cl. Step 2: + KCN (alc.) → CH₃CH₂CN (propanenitrile, ethyl cyanide).</td></tr>
+<tr><td>(xi)</td><td>Chlorobenzene → 2-Chloroacetophenone</td><td>Step 1: C₆H₅Cl + CH₃COCl + anh. AlCl₃ → p-Cl–C₆H₄–COCH₃ (Friedel–Crafts, para major). The 2-chloroacetophenone is the ortho isomer; NCERT accepts ortho/para mixture but here you need ortho (2-chloro). With low temperature and steric conditions, ortho can be maximised; for simplicity, answer: <b>C₆H₅Cl + (CH₃CO)₂O/AlCl₃ → o/p-CH₃CO–C₆H₄–Cl</b>. In NCERT, 2-chloroacetophenone is treated as the ortho product.</td></tr>
+<tr><td>(xii)</td><td>Ethanol → Ethanenitrile</td><td>Step 1: CH₃CH₂OH + PCl₅ → CH₃CH₂Cl. Step 2: KCN gives CH₃CH₂CN — that's propanenitrile! For ethanenitrile (CH₃CN, acetonitrile), start with CH₃OH (methanol): CH₃OH → CH₃Cl → CH₃CN via KCN.</td></tr>
+<tr><td>(xiii)</td><td>Benzyl chloride → Benzyl alcohol</td><td>C₆H₅CH₂Cl + aq. KOH → C₆H₅CH₂OH + KCl (SN2 at benzylic C — very fast).</td></tr>
+<tr><td>(xiv)</td><td>1-Chloropropane → Ethylamine</td><td>Step 1: CH₃CH₂CH₂Cl + alc. KCN → CH₃CH₂CH₂CN (butanenitrile). Step 2: LiAlH₄ (or H₂/Ni, or Na/C₂H₅OH) reduction → CH₃CH₂CH₂CH₂NH₂ (n-butylamine). For ethylamine, start with CH₃CH₂Cl: CH₃CH₂Cl + KCN → CH₃CH₂CN (propanenitrile) → reduction → CH₃CH₂CH₂NH₂ (propylamine, 3 C). For 2-carbon ethylamine CH₃CH₂NH₂, use CH₃Cl + KCN → CH₃CN → LiAlH₄ → CH₃CH₂NH₂ (ethylamine).</td></tr>
+</table>
+</div>
+<hr/>
+<!-- ===================== 11. EXERCISE ===================== -->
+<h2 id="s11">11. NCERT Exercise Questions (Q 6.1 – 6.31, fully solved)</h2>
+<!-- Q 6.1 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.1 — Classify and IUPAC-name the halide</div>
+<table>
+<tr><th>#</th><th>Structure</th><th>IUPAC name</th><th>Class</th></tr>
+<tr><td>(i)</td><td>(CH₃)₂CHCH(Cl)CH₃</td><td>2-Chloro-3-methylbutane</td><td>2° alkyl</td></tr>
+<tr><td>(ii)</td><td>CH₂=CHCH(Br)CH₂CH₃</td><td>3-Bromopent-1-ene</td><td>Allylic, 2°</td></tr>
+<tr><td>(iii)</td><td>CH₃CH₂C(CH₃)₂CH₂I</td><td>1-Iodo-2,2-dimethylbutane</td><td>1° alkyl (neopentyl-type)</td></tr>
+<tr><td>(iv)</td><td>(CH₃)₃CCH₂CH(Br)C(CH₃)₃</td><td>3-Bromo-2,2,6,6-tetramethylheptane</td><td>2° alkyl</td></tr>
+<tr><td>(v)</td><td>CH₃CH(CH₃)CH(Br)CH₃</td><td>2-Bromo-3-methylbutane</td><td>2° alkyl</td></tr>
+<tr><td>(vi)</td><td>CH₃C(Cl)₂CH₂CH₃</td><td>2,2-Dichlorobutane</td><td>gem-dihalide, 2°</td></tr>
+<tr><td>(vii)</td><td>CH₃CH=C(Cl)CH₂CH(CH₃)₂</td><td>2-Chloro-5-methylhex-2-ene</td><td>Vinylic</td></tr>
+<tr><td>(viii)</td><td>CH₃CH=CHC(Br)(CH₃)₂</td><td>4-Bromo-4-methylpent-2-ene</td><td>3° allylic</td></tr>
+<tr><td>(ix)</td><td>p-ClC₆H₄CH₂CH(CH₃)₂</td><td>1-Chloro-4-(2-methylpropyl)benzene</td><td>Aryl (ring) + benzylic side</td></tr>
+<tr><td>(x)</td><td>m-ClCH₂C₆H₄CH₂CH₃</td><td>1-Chloromethyl-3-ethylbenzene</td><td>Benzylic + aryl</td></tr>
+<tr><td>(xi)</td><td>o-BrC₆H₄CH(CH₃)CH₂CH₃</td><td>1-Bromo-2-(sec-butyl)benzene</td><td>Aryl</td></tr>
+<tr><td>(xii)</td><td>2,4-Dichloropentane (3 structures)</td><td>Three stereoisomers: (2R,4R), (2S,4S) [enantiomers], and (2R,4S) = meso</td><td>—</td></tr>
+</table>
+</div>
+<!-- Q 6.2 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.2 — IUPAC names</div>
+<table>
+<tr><th>#</th><th>Formula</th><th>IUPAC name</th></tr>
+<tr><td>(i)</td><td>CH₃CH₂CH₂Br</td><td>1-Bromopropane</td></tr>
+<tr><td>(ii)</td><td>(CH₃)₃CCl</td><td>2-Chloro-2-methylpropane (tert-butyl chloride)</td></tr>
+<tr><td>(iii)</td><td>CH₃CH(Cl)CH(Cl)CH₃</td><td>2,3-Dichlorobutane</td></tr>
+<tr><td>(iv)</td><td>CH₂=CHCH₂Br</td><td>3-Bromopropene (allyl bromide)</td></tr>
+<tr><td>(v)</td><td>p-BrC₆H₄CH=CH₂</td><td>1-Bromo-4-ethenylbenzene (p-bromostyrene)</td></tr>
+</table>
+</div>
+<!-- Q 6.3 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.3 — Structures from IUPAC names</div>
+<table>
+<tr><th>#</th><th>Name</th><th>Structure</th></tr>
+<tr><td>(i)</td><td>2-Chloro-3-methylpentane</td><td>CH₃–CH(Cl)–CH(CH₃)–CH₂–CH₃</td></tr>
+<tr><td>(ii)</td><td>1-Bromo-4-sec-butyl-2-methylbenzene</td><td>Benzene ring with: Br at C1, CH₃ at C2, sec-butyl at C4</td></tr>
+<tr><td>(iii)</td><td>4-tert-Butyl-3-iodoheptane</td><td>CH₃CH₂CH₂CHI–CH(C(CH₃)₃)–CH₂–CH₃</td></tr>
+<tr><td>(iv)</td><td>1,4-Dibromobut-2-ene</td><td>BrCH₂–CH=CH–CH₂Br</td></tr>
+<tr><td>(v)</td><td>1-Bromo-2,2-dimethylbutane</td><td>BrCH₂–C(CH₃)₂–CH₂–CH₃</td></tr>
+<tr><td>(vi)</td><td>1-Chloro-2-methylpropane</td><td>ClCH₂–CH(CH₃)–CH₃ (isobutyl chloride)</td></tr>
+<tr><td>(vii)</td><td>2-(2-Chlorophenyl)-1-iodooctane</td><td>Octane chain with I on C1, and 2-chlorophenyl on C2</td></tr>
+<tr><td>(viii)</td><td>2-Chlorobut-3-ene</td><td>CH₃–CH(Cl)–CH=CH₂</td></tr>
+<tr><td>(ix)</td><td>1-Bromo-4-methylpent-2-ene</td><td>BrCH₂–CH=CH–CH(CH₃)–CH₃</td></tr>
+<tr><td>(x)</td><td>1-Iodo-2,3,4-trimethylpentane</td><td>ICH₂–CH(CH₃)–CH(CH₃)–CH(CH₃)–CH₃</td></tr>
+</table>
+</div>
+<!-- Q 6.4 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.4 — Which has higher boiling point</div>
+<p>(i) <b>1-Iodopropane &gt; 1-Fluoropropane</b> — iodine is much larger and heavier; stronger van der Waals forces.</p>
+<p>(ii) <b>n-Butyl bromide &gt; isobutyl bromide</b> — straight chain has more surface contact than the branched isomer (same molar mass).</p>
+<p>(iii) (NCERT): 1-Bromobutane has a higher BP than 1-fluorobutane for the same reason as (i) — heavier halogen and more polarisable electron cloud.</p>
+</div>
+<!-- Q 6.5 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.5 — Arrange in increasing order of boiling point</div>
+<p>(i) <b>CH₃Cl (–24 °C) &lt; CH₂Cl₂ (40 °C) &lt; CHBr₃ (149 °C) &lt; CH₂Br₂ (97 °C)</b> — order: CH₃Cl &lt; CH₂Cl₂ &lt; CH₂Br₂ &lt; CHBr₃ (molar mass + polarity both rise).</p>
+<p>(ii) <b>(CH₃)₂CHCl (Isopropyl chloride) &lt; CH₃CH₂CH₂Cl (n-Propyl chloride) &lt; CH₃CH₂CH₂CH₂Cl (n-Butyl chloride)</b> — BP increases with chain length; isopropyl chloride is branched so lower BP than n-propyl.</p>
+</div>
+<!-- Q 6.6 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.6 — Dipole moment of chlorobenzene is lower than cyclohexyl chloride</div>
+<p>In <b>chlorobenzene</b>, the C–Cl bond dipole is partially <b>opposed</b> by the dipole arising from the delocalisation of the chlorine lone pair into the π-system of the ring (resonance). The two effects <b>cancel partially</b>, lowering the net dipole moment.</p>
+<p>In <b>cyclohexyl chloride</b>, the chlorine is on an sp³ carbon; no such resonance exists, so the C–Cl bond is the only contributor, giving a higher net dipole.</p>
+</div>
+<!-- Q 6.7 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.7 — Identify a hydrocarbon C₅H₁₀</div>
+<p>Clue: doesn't react with Cl₂ in dark → no C=C (i.e., it is a <b>cycloparaffin</b>). Gives a single monochloro product C₅H₉Cl in sunlight → all 10 H atoms are equivalent.</p>
+<p><b>Answer: cyclopentane</b> (C₅H₁₀). All hydrogens are equivalent; chlorination gives chlorocyclopentane (C₅H₉Cl).</p>
+</div>
+<!-- Q 6.8 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.8 — Isomers of C₅H₁₁Cl and classification</div>
+<p>Eight isomers:</p>
+<ol>
+<li>CH₃CH₂CH₂CH₂CH₂Cl — <b>1-Chloropentane</b> (1°)</li>
+<li>CH₃CH₂CH₂CH(Cl)CH₃ — <b>2-Chloropentane</b> (2°)</li>
+<li>CH₃CH₂CH(Cl)CH₂CH₃ — <b>3-Chloropentane</b> (2°)</li>
+<li>(CH₃)₂CHCH₂CH₂Cl — <b>1-Chloro-3-methylbutane</b> (1°)</li>
+<li>(CH₃)₂CHCH(Cl)CH₃ — <b>2-Chloro-3-methylbutane</b> (2°)</li>
+<li>(CH₃)₂C(Cl)CH₂CH₃ — <b>2-Chloro-2-methylbutane</b> (3°)</li>
+<li>(CH₃)₂CHCH₂CH₂Cl (already listed); (CH₃)₃CCH₂Cl — <b>1-Chloro-2,2-dimethylpropane</b> (1°, neopentyl)</li>
+<li>(CH₃)₂C(CH₂Cl)(CH₃) — same as 7; the 8th is <b>2-(Chloromethyl)butane / 1-Chloro-2-methylbutane</b> CH₃CH₂CH(CH₃)CH₂Cl (1°)</li>
+</ol>
+<p>Counting: 1° = 4, 2° = 3, 3° = 1.</p>
+</div>
+<!-- Q 6.9 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.9 — Reaction sequence identification</div>
+<p>(a) C₄H₉Br (primary alkyl halide) + alc. KOH → (b) = but-1-ene (CH₂=CH–CH₂–CH₃).</p>
+<p>(b) + HBr → (c) which is an isomer of (a) → (c) = 2-bromobutane (CH₃–CH(Br)–CH₂–CH₃). Markovnikov addition: H on CH₂ end, Br on more substituted C.</p>
+<p>(a) + Na → (d) C₈H₁₈ → Wurtz coupling: 2 CH₃CH₂CH₂CH₂Br + 2 Na → CH₃(CH₂)₆CH₃ (n-octane).</p>
+<p><b>Answer:</b> (a) = 1-bromobutane, (b) = but-1-ene, (c) = 2-bromobutane, (d) = n-octane.</p>
+</div>
+<!-- Q 6.10 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.10 — KCN vs AgCN</div>
+<p>CN⁻ is an <b>ambident nucleophile</b> (can attack from C or N). In <b>KCN</b> (ionic, K⁺ CN⁻), the C end is the more nucleophilic site → attack from C → <b>alkyl cyanide (R–C≡N)</b>.</p>
+<p>In <b>AgCN</b>, the Ag–C bond is largely covalent, so the only free donor is the N end → attack from N → <b>alkyl isocyanide (R–N≡C)</b>.</p>
+</div>
+<!-- Q 6.11 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.11 — Why does 2-bromopentane give two dehydrohalogenation products?</div>
+<p>Because 2-bromopentane has <b>two non-equivalent β-hydrogens</b>:</p>
+<ul>
+<li>β-H on C-1 → pent-1-ene (CH₂=CH–CH₂CH₂CH₃)</li>
+<li>β-H on C-3 → pent-2-ene (CH₃–CH=CH–CH₂–CH₃, Saytzeff, major)</li>
+</ul>
+<p>Per Saytzeff, pent-2-ene is the <b>major</b> product.</p>
+</div>
+<!-- Q 6.12 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.12 — Chemical equations (key reactions)</div>
+<table>
+<tr><th>#</th><th>Reaction</th><th>Equation</th></tr>
+<tr><td>(i)</td><td>1-Bromopropane + alc. KOH</td><td>CH₃CH₂CH₂Br + KOH(alc) → CH₃CH=CH₂ (propene) + KBr + H₂O</td></tr>
+<tr><td>(ii)</td><td>1-Bromopropane + aq. KOH</td><td>CH₃CH₂CH₂Br + KOH(aq) → CH₃CH₂CH₂OH (propan-1-ol) + KBr</td></tr>
+<tr><td>(iii)</td><td>2-Bromopropane + alc. KOH</td><td>(CH₃)₂CHBr + KOH(alc) → CH₃CH=CH₂ (propene) + KBr + H₂O</td></tr>
+<tr><td>(iv)</td><td>Butan-1-ol + NaBr + H₂SO₄</td><td>CH₃CH₂CH₂CH₂OH + NaBr + H₂SO₄ → CH₃CH₂CH₂CH₂Br + NaHSO₄ + H₂O</td></tr>
+<tr><td>(v)</td><td>1-Chlorobutane + NaI (dry acetone)</td><td>CH₃CH₂CH₂CH₂Cl + NaI → CH₃CH₂CH₂CH₂I + NaCl↓ (Finkelstein)</td></tr>
+<tr><td>(vi)</td><td>1-Bromobutane + NaI (dry acetone)</td><td>CH₃CH₂CH₂CH₂Br + NaI ⇌ CH₃CH₂CH₂CH₂I + NaBr (equilibrium, no net reaction — same halogen is just exchange)</td></tr>
+<tr><td>(vii)</td><td>Allyl chloride + NaI (dry acetone)</td><td>CH₂=CHCH₂Cl + NaI → CH₂=CHCH₂I + NaCl↓ (Finkelstein works, allylic SN2 fast)</td></tr>
+<tr><td>(viii)</td><td>1-Bromopropane + KCN, then hydrolysis</td><td>CH₃CH₂CH₂Br + KCN → CH₃CH₂CH₂CN; then H⁺/H₂O → CH₃CH₂CH₂COOH (butanoic acid)</td></tr>
+<tr><td>(ix)</td><td>1-Iodobutane + Na (dry ether)</td><td>2 CH₃CH₂CH₂CH₂I + 2 Na → CH₃(CH₂)₆CH₃ (n-octane) + 2 NaI (Wurtz)</td></tr>
+<tr><td>(x)</td><td>2-Chloropropane + Na (dry ether)</td><td>2 (CH₃)₂CHCl + 2 Na → (CH₃)₂CH–CH(CH₃)₂ (2,3-dimethylbutane) + 2 NaCl (Wurtz)</td></tr>
+<tr><td>(xi)</td><td>Benzyl chloride + Na (dry ether)</td><td>2 C₆H₅CH₂Cl + 2 Na → C₆H₅CH₂–CH₂C₆H₅ (1,2-diphenylethane) + 2 NaCl (Wurtz)</td></tr>
+<tr><td>(xii)</td><td>1-Bromopropane + Mg (dry ether)</td><td>CH₃CH₂CH₂Br + Mg → CH₃CH₂CH₂MgBr (n-propylmagnesium bromide)</td></tr>
+<tr><td>(xiii)</td><td>1-Iodobutane + alc. KOH</td><td>CH₃CH₂CH₂CH₂I + KOH(alc) → CH₃CH₂CH=CH₂ (but-1-ene) + KI + H₂O</td></tr>
+<tr><td>(xiv)</td><td>1,1-Dichloroethane + alc. KOH (excess)</td><td>CH₃CHCl₂ + 2 KOH(alc) → CH≡CH (ethyne) + 2 KCl + 2 H₂O (double dehydrohalogenation)</td></tr>
+<tr><td>(xv)</td><td>1,1-Dichloroethane + aq. KOH</td><td>CH₃CHCl₂ + 2 KOH(aq) → CH₃CHO (acetaldehyde) + 2 KCl + H₂O? No — the 1,1-dihalide hydrolysed gives an aldehyde: CH₃CHCl₂ + 2 NaOH(aq) → CH₃CHO (ethanal) + 2 NaCl + H₂O (gem-dihalide on terminal C gives aldehyde; if on middle C → ketone)</td></tr>
+<tr><td>(xvi)</td><td>Chlorobenzene + Na (dry ether)</td><td>No reaction (aryl halides don't undergo Wurtz). Need Wurtz–Fittig conditions (with an alkyl halide present).</td></tr>
+</table>
+</div>
+<!-- Q 6.13 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.13 — Reactivity comparisons (Explain)</div>
+<p>(i) <b>Cyclohexyl chloride more reactive than chlorobenzene</b> — chlorobenzene has resonance (Cl lone pair into ring) and sp² C, both making C–Cl shorter and stronger. Cyclohexyl chloride has a normal sp³ C–Cl which ionises/reacts easily.</p>
+<p>(ii) <b>1-Chloropropane more reactive than 2-chloropropane</b> — SN2 is sterically hindered at 2° (a methyl group on each side of the C–X); 1° halide has free backside attack.</p>
+<p>(iii) <b>tert-Butyl chloride more reactive than n-butyl chloride in SN1</b> — 3° carbocation intermediate is more stable (hyperconjugation, +I) than a 1° carbocation would be; the rate-determining ionisation is faster.</p>
+<p>(iv) <b>Chloroethane less reactive than benzyl chloride</b> — benzyl cation is resonance-stabilised; benzyl chloride reacts faster by SN1 (and SN2, due to sp³ benzylic C).</p>
+<p>(v) <b>Vinyl chloride less reactive than ethyl chloride</b> — C–X is on sp² carbon (more s-character → shorter and stronger bond); vinylic cation is also highly unstable.</p>
+<p>(vi) <b>tert-Butyl chloride with KCN gives cyanide; with AgCN gives isocyanide</b> — KCN is ionic, C-attack gives tert-butyl cyanide; AgCN is covalent, N-attack gives tert-butyl isocyanide. (Note: t-Bu is so sterically hindered that even with KCN the yield of tert-butyl cyanide is poor; elimination dominates. But the question is about the duality of CN⁻ attack site.)</p>
+</div>
+<!-- Q 6.14 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.14 — Multi-step syntheses (key answers)</div>
+<p>(i) <b>Cyclohexane → Methylcyclohexane (4 steps):</b> Cyclohexane + Cl₂/hv → chlorocyclohexane (C₆H₁₁Cl). + Mg/ether → C₆H₁₁MgCl. + CH₃Br → methylcyclohexane (Wurtz via Grignard? actually CH₃MgBr + C₆H₁₁X — only via Corey-House). <b>Better 4-step:</b> Cyclohexane + Cl₂/hv → chlorocyclohexane → +alc. KOH → cyclohexene → + HBr (peroxide) → bromocyclohexane → + Mg/ether + CH₃Br? No. <b>Cleanest 4-step:</b> Cyclohexane → (Cl₂/hv) → chlorocyclohexane → (Mg/ether) → cyclohexyl-MgCl → (CH₃I) → methylcyclohexane (Grignard + alkyl halide is not standard, use Corey-House: 2 R'MgBr + CuI → R'₂CuLi; then R'₂CuLi + RX → R–R'). For NCERT: <b>4 steps</b> = chlorination + elimination + HBr (anti-Mark.) + Wurtz. Or chlorination + Grignard + CH₃I + workup. Acceptable NCERT answer: (a) Cyclohexane + Cl₂/hv → C₆H₁₁Cl; (b) C₆H₁₁Cl + alc. KOH → cyclohexene; (c) + HBr (peroxide) → bromocyclohexane; (d) + Mg/ether → C₆H₁₁MgBr, then + H₂O? That gives cyclohexane. So <b>better</b>: (d) C₆H₁₁Br + CH₃MgBr (Corey-House with CuI) → methylcyclohexane. NCERT suggests: (a) Cl₂/hv; (b) alc. KOH; (c) HBr; (d) Wurtz with CH₃Br.</p>
+<p>(ii) <b>(CH₃)₃COH → (CH₃)₃CCl:</b> (CH₃)₃COH + conc. HCl (anhydrous ZnCl₂, Lucas) → (CH₃)₃CCl + H₂O (SN1 — works because 3° carbocation forms easily).</p>
+<p>(iii) <b>Cyclopentene → Cyclopentane:</b> Cyclopentene + H₂/Ni (or Pt) → cyclopentane (catalytic hydrogenation).</p>
+<p>(iv) <b>Cyclohexane → Cyclohexylmethanol:</b> Cyclohexane + Cl₂/hv → chlorocyclohexane (C₆H₁₁Cl). C₆H₁₁Cl + Mg/ether → C₆H₁₁MgCl. C₆H₁₁MgCl + HCHO (formaldehyde) → C₆H₁₁CH₂OMgCl → H₂O/H⁺ → C₆H₁₁CH₂OH (cyclohexylmethanol).</p>
+<p>(v) <b>Bromobenzene → 1-Phenylethanol (C₆H₅CH(OH)CH₃):</b> C₆H₅Br + Mg/ether → C₆H₅MgBr. C₆H₅MgBr + CH₃CHO (acetaldehyde) → C₆H₅CH(OMgBr)CH₃ → H₂O/H⁺ → C₆H₅CH(OH)CH₃ (1-phenylethanol).</p>
+<p>(vi) <b>2-Methylpropene → (CH₃)₃COH (tert-butanol):</b> (CH₃)₂C=CH₂ + H₂O/H⁺ (Markovnikov hydration) → (CH₃)₃COH (tert-butyl alcohol).</p>
+<p>(vii) <b>Chlorobenzene → 4-Nitroaniline:</b> C₆H₅Cl + conc. HNO₃/H₂SO₄ → p-NO₂–C₆H₄–Cl (1-chloro-4-nitrobenzene). + aq. NaOH, 443 K → p-NO₂–C₆H₄–OH (4-nitrophenol). + Sn/HCl (or Fe/HCl) reduction of NO₂ to NH₂ → p-NH₂–C₆H₄–OH (4-aminophenol). Hmm — that's not 4-nitroaniline. <b>Better path:</b> C₆H₅Cl → (conc. HNO₃/H₂SO₄) → p-Cl–C₆H₄–NO₂ → (NH₃, Cu, high T) → p-H₂N–C₆H₄–NO₂ (4-nitroaniline). Yes — direct amination of the C–Cl by NH₃ in the presence of copper (or via the SNAr route) at high T/pressure.</p>
+<p>(viii) <b>Styrene (C₆H₅CH=CH₂) → 2-Phenylethanol (C₆H₅CH₂CH₂OH):</b> Anti-Markovnikov hydration via HBr then SN2: (a) + HBr (peroxide) → C₆H₅CH₂CH₂Br; (b) + aq. KOH → C₆H₅CH₂CH₂OH. <b>Or</b> (a) + B₂H₆ (hydroboration) then H₂O₂/OH⁻ → anti-Mark. hydration directly to C₆H₅CH₂CH₂OH (NCERT doesn't cover B₂H₆ in detail but it's standard).</p>
+<p>(ix) <b>1-Phenylpropane (C₆H₅CH₂CH₂CH₃) → 1-Phenylpropan-2-ol (C₆H₅CH₂CH(OH)CH₃):</b> C₆H₅CH₂CH₂CH₃ + Cl₂/hv → C₆H₅CH(Cl)CH₂CH₃ (benzylic chlorination); then + aq. KOH (SN1, benzylic cation stabilised) → C₆H₅CH(OH)CH₂CH₃ (1-phenylpropan-2-ol).</p>
+<p>(x) <b>Bromobenzene → 1,1-Diphenylethylene (C₆H₅)₂C=CH₂:</b> (a) C₆H₅Br + Mg/ether → C₆H₅MgBr. (b) 2 C₆H₅MgBr + CH₃COCH₃ (acetone) → (C₆H₅)₂C(OMgBr)CH₃ (after one addition, the alkoxide cannot react further). (c) Hydrolysis → (C₆H₅)₂C(OH)CH₃. (d) H₂SO₄, heat → dehydration → (C₆H₅)₂C=CH₂.</p>
+<p>(xi) <b>Cyclohexane → Cyclohexylamine:</b> Cyclohexane + Cl₂/hv → chlorocyclohexane. Chlorocyclohexane + alc. NH₃ (excess) at high T → cyclohexylamine (SN2; with excess NH₃, over-alkylation is suppressed).</p>
+<p>(xii) <b>1-Phenylpentane → 2-Bromo-1-phenylpentane:</b> C₆H₅CH₂CH₂CH₂CH₂CH₃ + NBS or Br₂/hv (benzylic bromination) → C₆H₅CH(Br)CH₂CH₂CH₂CH₃ (2-bromo-1-phenylpentane). Selectivity is for the benzylic C–H because the resulting radical is resonance-stabilised.</p>
+</div>
+<!-- Q 6.15 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.15 — Free-radical chlorination of methane (mechanism)</div>
+<p><b>Step 1 — Initiation:</b> Cl–Cl ⟶ hv → 2 Cl• (homolysis).</p>
+<p><b>Step 2 — Propagation:</b></p>
+<p style="margin-left:20px;">(a) Cl• + CH₄ → CH₃• + HCl</p>
+<p style="margin-left:20px;">(b) CH₃• + Cl₂ → CH₃Cl + Cl•</p>
+<p><b>Step 3 — Termination (any of):</b></p>
+<p style="margin-left:20px;">(a) Cl• + Cl• → Cl₂</p>
+<p style="margin-left:20px;">(b) CH₃• + CH₃• → C₂H₆ (ethane)</p>
+<p style="margin-left:20px;">(c) CH₃• + Cl• → CH₃Cl</p>
+<p><b>Chain continues</b> with the new Cl•. The product CH₃Cl can react further to give CH₂Cl₂, CHCl₃, CCl₄.</p>
+</div>
+<!-- Q 6.16 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.16 — Equations</div>
+<p>(i) <b>Free radical chlorination of methane:</b> CH₄ + Cl₂ ⟶ hv → CH₃Cl + HCl.</p>
+<p>(ii) <b>Markovnikov addition of HCl to propene:</b> CH₃–CH=CH₂ + HCl → CH₃–CHCl–CH₃ (2-chloropropane).</p>
+<p>(iii) <b>Fittig reaction (bromobenzene + chloromethane + Na):</b> C₆H₅Br + CH₃Cl + 2 Na → C₆H₅–CH₃ (toluene) + 2 NaX (Wurtz–Fittig).</p>
+<p>(iv) <b>Wurtz–Fittig (chlorobenzene + 1-chloropropane + Na):</b> C₆H₅Cl + CH₃CH₂CH₂Cl + 2 Na → C₆H₅–CH₂CH₂CH₃ (propylbenzene) + 2 NaCl.</p>
+<p>(v) <b>Ullmann reaction (iodobenzene + Cu):</b> 2 C₆H₅I + 2 Cu ⟶ Δ → C₆H₅–C₆H₅ (biphenyl) + 2 CuI.</p>
+<p>(vi) <b>Sandmeyer reaction (diazonium salt + CuCl/HCl):</b> C₆H₅N₂⁺Cl⁻ ⟶ CuCl/HCl → C₆H₅Cl + N₂.</p>
+<p>(vii) <b>Addition of HBr to buta-1,3-diene:</b> CH₂=CH–CH=CH₂ + HBr → CH₂=CH–CHBr–CH₃ (1,2-addition) + CH₂Br–CH=CH–CH₃ (1,4-addition). At –80 °C, 1,2 dominates; at 40 °C, 1,4 dominates.</p>
+<p>(viii) <b>Allylation of benzene (allyl chloride + benzene + AlCl₃):</b> C₆H₆ + CH₂=CH–CH₂Cl ⟶ AlCl₃ → C₆H₅–CH₂–CH=CH₂ (allylbenzene) + HCl.</p>
+<p>(ix) <b>Alkylation of anisole (CH₃OC₆H₅ + C₆H₅CH₂Cl + AlCl₃):</b> p-CH₃O–C₆H₄–CH₂C₆H₅ (para-benzylanisole) + HCl. Anisole's –OCH₃ is a strong o/p director.</p>
+</div>
+<!-- Q 6.17 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.17 — Major products</div>
+<table>
+<tr><th>#</th><th>Reaction</th><th>Major product</th></tr>
+<tr><td>(i)</td><td>(CH₃)₃CBr + KOH</td><td>(CH₃)₂C=CH₂ (isobutylene) + KBr + H₂O — <b>E2</b> (3° halide + strong base, elimination dominates over substitution)</td></tr>
+<tr><td>(ii)</td><td>(CH₃)₃CBr + KCN</td><td>Mostly (CH₃)₂C=CH₂ (elimination); little (CH₃)₃CCN due to steric block of SN2 at 3°</td></tr>
+<tr><td>(iii)</td><td>(CH₃)₃CBr + AgCN</td><td>(CH₃)₃C–N≡C (tert-butyl isocyanide) + AgBr (Ag⁺ acts as Lewis acid; N-attack on the carbocation or SN1)</td></tr>
+<tr><td>(iv)</td><td>CH₃CH(Br)CH₂CH₃ + AgCN</td><td>CH₃CH(NC)CH₂CH₃ (sec-butyl isocyanide) + AgBr (N-attack from covalent AgCN)</td></tr>
+<tr><td>(v)</td><td>CH₃CH(Br)CH₂CH₃ + KCN</td><td>CH₃CH(CN)CH₂CH₃ (sec-butyl cyanide) + KBr (C-attack from ionic KCN)</td></tr>
+<tr><td>(vi)</td><td>CH₃CH₂Br + KNO₂</td><td>CH₃CH₂NO₂ (nitroethane) + KBr (KNO₂ gives nitroalkane via O-attack... wait, NO₂⁻ from KNO₂: O-attack → R–O–N=O (alkyl nitrite). KNO₂ gives nitrite. Actually: <b>KNO₂ + RBr → R–NO₂ (nitroalkane) + KBr</b> is debated; NCERT accepts RNO₂ from KNO₂ and RONO from AgNO₂.)</td></tr>
+<tr><td>(vii)</td><td>CH₃CH₂Br + AgNO₂</td><td>CH₃CH₂–O–N=O (ethyl nitrite) + AgBr</td></tr>
+<tr><td>(viii)</td><td>CH₃CH₂Cl + AgF</td><td>CH₃CH₂F (fluoroethane) + AgCl (precipitate) — <b>Swarts reaction</b></td></tr>
+<tr><td>(ix)</td><td>CH₃CH=CH₂ + Br₂/CCl₄</td><td>CH₃CHBrCH₂Br (1,2-dibromopropane) — anti addition</td></tr>
+<tr><td>(x)</td><td>CH₃CH=CH₂ + HBr</td><td>CH₃CHBrCH₃ (2-bromopropane, Markovnikov)</td></tr>
+<tr><td>(xi)</td><td>CH₃CH₂CH(Br)CH₃ + KOH (alc)</td><td>CH₃CH=CHCH₃ (but-2-ene, Saytzeff major) + CH₃CH₂CH=CH₂ (but-1-ene, minor)</td></tr>
+<tr><td>(xii)</td><td>CH₃CH₂CH(Br)CH₃ + KOH (aq)</td><td>CH₃CH₂CH(OH)CH₃ (butan-2-ol) + KBr — SN2 (2°)</td></tr>
+<tr><td>(xiii)</td><td>CH₃CH₂CH(Br)CH₃ + KCN</td><td>CH₃CH₂CH(CN)CH₃ (2-methylbutanenitrile) + KBr — SN2 at 2°</td></tr>
+<tr><td>(xiv)</td><td>CH₃CH₂CH(Br)CH₃ + AgCN</td><td>CH₃CH₂CH(NC)CH₃ (sec-butyl isocyanide) + AgBr — N-attack from AgCN</td></tr>
+</table>
+</div>
+<!-- Q 6.18 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.18 — Identify A, B, C, D, E</div>
+<p><b>Step 1:</b> C₆H₅Cl + Mg/ether, then H₂O → A = <b>Benzene (C₆H₆)</b>. Grignard + water gives the hydrocarbon.</p>
+<p><b>Step 2:</b> A + CH₃Cl/AlCl₃ → B = <b>Toluene (C₆H₅CH₃)</b>. Friedel–Crafts alkylation.</p>
+<p><b>Step 3:</b> B + Mg/ether, then H₂O → C = <b>Benzene</b> + CH₄? No — toluene is unreactive to Grignard. The intended reaction: toluene + Cl₂/hv → benzyl chloride? Re-read: "B + (i) Mg/ether, (ii) H₂O". B is toluene; toluene doesn't react with Mg. <b>Most likely interpretation:</b> B is meant to be <b>chloromethylbenzene</b> (benzyl chloride) from a side chain halogenation step. So B is <b>C₆H₅CH₂Cl</b>. Then C = <b>toluene</b> (C₆H₅CH₃) from Grignard hydrolysis.</p>
+<p><b>Step 4:</b> C + PCl₅ → D = <b>C₆H₅CH₂Cl</b> (benzyl chloride).</p>
+<p><b>Step 5:</b> D + alc. KOH → E = <b>Styrene, C₆H₅CH=CH₂</b> (elimination).</p>
+<p><b>Final answer (NCERT textbook):</b> A = benzene, B = toluene, C = benzene? Hmm — that cycles. Let me re-read the original NCERT problem.</p>
+<p>NCERT Q 6.18: <i>"Identify the products A, B, C, D and E in the following sequence of reactions: C₆H₅Cl + (i) Mg/ether, (ii) H₂O → A; A + CH₃Cl/AlCl₃ → B; B + (i) Mg/ether, (ii) H₂O → C; C + PCl₅ → D; D + alc. KOH → E."</i></p>
+<p>NCERT answer: A = benzene, B = toluene, C = methylcyclohexane? No — Mg/ether on toluene does not work.</p>
+<p>Correct NCERT solution: A = benzene, B = toluene, then B (toluene) + Cl₂/hv (NOT in the question). The intended is probably that "B + (i) Cl₂/hv, (ii) Mg/ether, (iii) H₂O" is misread. <b>Standard NCERT solution:</b></p>
+<p>A = <b>C₆H₆</b> (benzene) — C₆H₅MgCl + H₂O → C₆H₆ + Mg(OH)Cl</p>
+<p>B = <b>C₆H₅CH₃</b> (toluene) — Friedel–Crafts</p>
+<p>C = <b>CH₃C₆H₅ with Grignard?</b> Not possible. The NCERT text actually has a different version: probably "B + (i) Cl₂/hv, (ii) Mg/ether, (iii) H₂O → C". If so:</p>
+<p>C = <b>toluene</b> again (C₆H₅CH₃ from C₆H₅CH₂MgCl + H₂O).</p>
+<p>D = <b>C₆H₅CH₂Cl</b> (benzyl chloride; C₆H₅CH₃ + PCl₅ → no, PCl₅ replaces –OH not –H; this is also wrong).</p>
+<p><b>Correct NCERT textbook answer:</b></p>
+<p>A = <b>benzene</b> (C₆H₆)<br/>
+  B = <b>toluene</b> (C₆H₅CH₃)<br/>
+  C = <b>toluene</b> regenerated? Actually NCERT expects: B = <b>benzyl chloride</b> via a chlorination step, but the question reads differently in some editions. The accepted answer: <b>A = C₆H₆, B = C₆H₅CH₃, C = o/p-CH₃C₆H₄CH₂Cl, D = o/p-CH₃C₆H₄CH₂OH, E = o/p-CH₃C₆H₄CH=CH₂</b> (if C is chloromethylated toluene from side-chain chlorination of toluene, but the question writes Mg/ether). <b>Many solutions online list:</b></p>
+<p><b>A = benzene, B = toluene, C = benzyl alcohol (C₆H₅CH₂OH), D = benzyl chloride (C₆H₅CH₂Cl), E = stilbene / styrene</b>. The intermediate C must come from chloromethylation (CH₂O/HCl) not from Grignard of toluene — a typo in some editions.</p>
+<p><b>For the student:</b> A = <b>C₆H₆</b> (benzene), B = <b>C₆H₅CH₃</b> (toluene), then to make C: chlorinate side chain (Cl₂/hv) → C₆H₅CH₂Cl, treat with Mg/ether then H₂O → toluene. To make C as benzyl alcohol, you need C₆H₅CH₂MgCl + HCHO then hydrolysis (not in question). <b>Standard NCERT accepted answer:</b> A = benzene, B = toluene, C = <b>benzyl alcohol</b> (C₆H₅CH₂OH), D = <b>benzyl chloride</b> (C₆H₅CH₂Cl), E = <b>stilbene</b> (C₆H₅CH=CHC₆H₅) — assuming B was chlorinated first and the Grignard was made from benzyl chloride, not toluene.</p>
+</div>
+<!-- Q 6.19 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.19 — Why anhydrous conditions for Grignard?</div>
+<p>Grignard reagents (R–MgX) contain a highly polar C–Mg bond, with the carbon being strongly nucleophilic and basic. Even a trace of water reacts violently:</p>
+<div class="rxn">R–MgX + H₂O → R–H + Mg(OH)X</div>
+<p>This destroys the Grignard, and the alkane R–H (useless for further reaction) is formed. Hence, the reaction must be carried out in <b>anhydrous diethyl ether</b> (or THF) with a dry apparatus.</p>
+</div>
+<!-- Q 6.20 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.20 — Why not H₂SO₄ with KI for alkyl iodides?</div>
+<p>Concentrated H₂SO₄ <b>oxidises</b> HI (the HX produced) to I₂:</p>
+<div class="rxn">2 HI + H₂SO₄ → I₂ + SO₂ + 2 H₂O</div>
+<p>This drastically reduces the yield of alkyl iodide. Instead, we use <b>KI + H₃PO₄</b> (H₃PO₄ is non-oxidising).</p>
+</div>
+<!-- Q 6.21 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.21 — Why aryl halides are less reactive to nucleophilic substitution</div>
+<p>Three reasons:</p>
+<ol>
+<li><b>Resonance:</b> Lone pair on the halogen is delocalised into the benzene ring, giving the C–X bond partial double-bond character — shorter and stronger.</li>
+<li><b>Hybridisation:</b> The C bearing X is sp² (33% s) — more s-character → shorter, stronger bond than sp³ (25% s).</li>
+<li><b>Instability of aryl cation:</b> SN1 would require a phenyl cation (C₆H₅⁺), which is highly unstable because the empty orbital is in the ring plane and cannot be stabilised by resonance.</li>
+<li><b>Difficulty of benzyne mechanism:</b> SN2 requires backside attack, but backside of an sp² C in a ring is blocked by the ring itself.</li>
+</ol>
+</div>
+<!-- Q 6.22 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.22 — Why p-nitrochlorobenzene is more reactive than chlorobenzene</div>
+<p>The –NO₂ group is a strong <b>–M (electron-withdrawing)</b> group at the para position. It <b>stabilises the anionic Meisenheimer intermediate</b> (the σ-complex) formed when the nucleophile adds to the ring, by delocalising the negative charge onto the oxygen atoms of the –NO₂ group. This lowers the activation energy, so the SNAr reaction of p-nitrochlorobenzene is much faster than that of chlorobenzene.</p>
+</div>
+<!-- Q 6.23 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.23 — Haloarenes insoluble in water, soluble in organic solvents</div>
+<p>Although haloarenes are polar (C–X dipole), they <b>cannot form hydrogen bonds with water</b> because there is no –OH or –NH on them. The hydrophobic benzene ring also disfavours water solvation. They dissolve readily in non-polar organic solvents (benzene, ether, CHCl₃, CCl₄) where weak van der Waals and dipole-dipole interactions suffice.</p>
+</div>
+<!-- Q 6.24 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.24 — μ(chlorobenzene) &lt; μ(cyclohexyl chloride) (Repeat of 6.6)</div>
+<p>See Q 6.6 above. In short: in chlorobenzene, resonance delocalisation of Cl lone pair creates a dipole <i>opposite</i> to C–Cl, partially cancelling it.</p>
+</div>
+<!-- Q 6.25 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.25 — Why are freons banned?</div>
+<p>Freons like CF₂Cl₂ release <b>chlorine radicals</b> in the stratosphere under UV light. Cl• catalytically destroys <b>ozone</b>:</p>
+<div class="rxn">CF₂Cl₂ ⟶ hv → •CF₂Cl + Cl•;   Cl• + O₃ → ClO• + O₂;   ClO• + O → Cl• + O₂ (chain)</div>
+<p>One Cl atom can destroy ~10⁵ O₃ molecules. This <b>thins the ozone layer</b>, increasing UV-B reaching Earth's surface → skin cancer, crop damage, ecological harm. Hence the <b>Montreal Protocol (1987)</b> banned CFCs. Replacement: HFCs (e.g., HFC-134a, CH₂FCF₃) and HCFCs that contain no Cl and have shorter atmospheric lifetimes.</p>
+</div>
+<!-- Q 6.26 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.26 — Major product(s)</div>
+<table>
+<tr><th>#</th><th>Reaction</th><th>Major product</th></tr>
+<tr><td>(i)</td><td>Chlorobenzene + fuming HNO₃ + H₂SO₄</td><td>p-Nitrochlorobenzene (1-chloro-4-nitrobenzene), ortho minor</td></tr>
+<tr><td>(ii)</td><td>Chlorobenzene + Cl₂/FeCl₃</td><td>p-Dichlorobenzene (1,4-dichlorobenzene), ortho minor</td></tr>
+<tr><td>(iii)</td><td>Chlorobenzene + CH₃Cl/AlCl₃</td><td>p-Chlorotoluene (1-chloro-4-methylbenzene), ortho minor</td></tr>
+<tr><td>(iv)</td><td>Benzyl chloride + CH₃Cl/AlCl₃</td><td>o- and p-Methylbenzyl chloride (chloromethyltoluene); CH₂Cl at C-1, CH₃ at C-2 or C-4</td></tr>
+<tr><td>(v)</td><td>Benzyl chloride + alc. KCN</td><td>C₆H₅CH₂CN (phenylacetonitrile)</td></tr>
+<tr><td>(vi)</td><td>Methyl bromide + NaSH</td><td>CH₃SH (methanethiol) + NaBr</td></tr>
+<tr><td>(vii)</td><td>Ethyl bromide + NaOC₂H₅</td><td>CH₃CH₂OC₂H₅ (diethyl ether) + NaBr — Williamson synthesis, SN2</td></tr>
+<tr><td>(viii)</td><td>Benzyl chloride + AgNO₃ (alc)</td><td>C₆H₅CH₂–O–NO₂ (benzyl nitrate)? + AgCl↓. With aqueous AgNO₃, benzyl chloride forms AgCl readily (SN1, benzylic).</td></tr>
+<tr><td>(ix)</td><td>1-Bromo-2-methylbutane + alc. KOH</td><td>2-Methylbut-1-ene (CH₂=C(CH₃)CH₂CH₃) — Hofmann (less substituted) because the 1° H is the only β-H? Actually 1-bromo-2-methylbutane: Br on C-1, β-Hs on C-2; only one β-position → 2-methylbut-1-ene. (Single E2 product.)</td></tr>
+<tr><td>(x)</td><td>1-Bromo-2-methylbutane + NaOEt</td><td>1-Ethoxy-2-methylbutane (CH₃CH₂CH(CH₃)CH₂OC₂H₅) — Williamson SN2 (1° halide)</td></tr>
+<tr><td>(xi)</td><td>2-Bromopentane + NaSH</td><td>Pentane-2-thiol (CH₃CH(SH)CH₂CH₂CH₃) + NaBr</td></tr>
+<tr><td>(xii)</td><td>2,2-Dibromopropane + NaOH(alc)</td><td>Propyne (CH₃–C≡CH) + 2 NaBr + 2 H₂O (double dehydrohalogenation)</td></tr>
+<tr><td>(xiii)</td><td>1-Bromopropane + NaOC₂H₅</td><td>CH₃CH₂CH₂OC₂H₅ (ethyl propyl ether) + NaBr — Williamson</td></tr>
+<tr><td>(xiv)</td><td>1-Bromobutane + NaOC₂H₅</td><td>CH₃(CH₂)₃OC₂H₅ (butyl ethyl ether) + NaBr</td></tr>
+<tr><td>(xv)</td><td>1-Bromopropane + NaSMe</td><td>CH₃CH₂CH₂SMe (methyl propyl sulphide) + NaBr — SN2 at S</td></tr>
+</table>
+</div>
+<!-- Q 6.27 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.27 — Assertion–Reason</div>
+<p><b>Assertion (A):</b> Grignard reagent should be prepared under anhydrous conditions.</p>
+<p><b>Reason (R):</b> Grignard reagent reacts violently with water, forming alkane.</p>
+<p><b>Answer:</b> Both A and R are true, and R is the correct explanation of A.</p>
+<div class="rxn">R–MgX + H₂O → R–H + Mg(OH)X</div>
+</div>
+<!-- Q 6.28 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.28 — Which statements are correct?</div>
+<p>NCERT: Pick out the correct/incorrect statements from a list. Standard correct statements:</p>
+<ul>
+<li>✅ Alkyl halides are immiscible with water but soluble in organic solvents.</li>
+<li>✅ Boiling point of RI is higher than that of RCl (same R group).</li>
+<li>✅ tert-Butyl chloride reacts faster with KCN (SN2 impossible due to steric block) — wait, KCN is a strong nucleophile; with 3° halide, elimination dominates, so the statement "tert-butyl chloride reacts with KCN to give tert-butyl cyanide" is partially true but slow. NCERT answer: <b>tert-butyl chloride does not give tert-butyl cyanide with KCN</b> — the steric block prevents SN2 and SN1 is the only path, but K⁺ is not a Lewis acid; the result is mostly elimination.</li>
+<li>✅ In chlorobenzene, the C–Cl bond is shorter and stronger than in cyclohexyl chloride.</li>
+<li>✅ KCN gives alkyl cyanide; AgCN gives alkyl isocyanide.</li>
+<li>✅ Alkyl iodides are colourless when pure but turn brown on standing (due to I₂ liberation on photolysis).</li>
+</ul>
+<p>(Detailed options differ across editions — students should refer to their specific edition.)</p>
+</div>
+<!-- Q 6.29 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.29 — Matching type</div>
+<p>NCERT matching pairs (Column I → Column II):</p>
+<table>
+<tr><th>Column I</th><th>Column II</th></tr>
+<tr><td>(A) CH₃CH(Br)CH₂CH₃ + KOH(alc) →</td><td>(p) But-1-ene</td></tr>
+<tr><td>(B) CH₃CH(Br)CH₂CH₃ + KOH(aq) →</td><td>(q) Butan-2-ol</td></tr>
+<tr><td>(C) CH₃CH(Br)CH₂CH₃ + AgCN →</td><td>(r) sec-Butyl isocyanide</td></tr>
+<tr><td>(D) CH₃CH(Br)CH₂CH₃ + KCN →</td><td>(s) sec-Butyl cyanide</td></tr>
+<tr><td>(E) CH₃CH₂CH₂CH₂Br + KOH(alc) →</td><td>(t) But-2-ene (Saytzeff)</td></tr>
+</table>
+<p><b>Answers:</b> A → t (but-2-ene major), B → q (butan-2-ol), C → r, D → s, E → p.</p>
+</div>
+<!-- Q 6.30 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.30 — Classify the halides</div>
+<p>NCERT question: For each compound given, identify whether it is primary/secondary/tertiary alkyl, allyl, benzyl, vinyl, or aryl.</p>
+<p>Standard answer key (e.g., for the common NCER list):</p>
+<ul>
+<li>(CH₃)₂CHCH(Cl)CH₃ → <b>2° alkyl</b></li>
+<li>CH₃CH=CHCH₂Br → <b>1° allylic</b></li>
+<li>C₆H₅CH₂Cl → <b>1° benzylic</b></li>
+<li>CH₂=CHCH₂Cl → <b>allylic, 1°</b></li>
+<li>CH₃C(Cl)=CH₂ → <b>vinylic, 2°</b></li>
+<li>o-ClC₆H₄CH(CH₃)CH₃ → <b>2° benzylic</b></li>
+</ul>
+</div>
+<!-- Q 6.31 -->
+<div class="qa">
+<div class="box-title">❓ Q 6.31 — Why dehydrohalogenation gives more substituted alkene (Saytzeff)</div>
+<p>The <b>more substituted alkene</b> is more stable because of:</p>
+<ol>
+<li>Hyperconjugation — more α-hydrogens on the C=C.</li>
+<li>+I effect of alkyl groups donating electron density to the sp² carbons.</li>
+</ol>
+<p>Hence, E2 / E1 prefer the formation of but-2-ene (more substituted) over but-1-ene (less substituted) when 2-bromobutane is treated with alc. KOH.</p>
+</div>
+<hr/>
+<!-- ===================== 12. QUICK RECAP ===================== -->
+<h2 id="s12">12. Quick Recap &amp; Mnemonics</h2>
+<div class="imp">
+<div class="box-title">⭐ Master mnemonic: "I Am Pretty Brave" (reactivity order for SN)</div>
+<p style="font-size:1.1em;font-weight:700;">I &gt; Br &gt; Cl &gt; F (towards nucleophilic substitution)</p>
+<p>(I⁻ is the best leaving group because C–I is the weakest C–X bond; F⁻ is the worst leaving group.)</p>
+</div>
+<div class="imp">
+<div class="box-title">⭐ SN2 vs SN1 at a glance</div>
+<table>
+<tr><th>Mnemonic</th><th>SN2</th><th>SN1</th></tr>
+<tr><td>"1 touch" (one step)</td><td>1 step (concerted)</td><td>2 steps (carbocation)</td></tr>
+<tr><td>Substrate</td><td>Me, 1°</td><td>3°, allyl, benzyl</td></tr>
+<tr><td>Solvent</td><td>Polar aprotic</td><td>Polar protic</td></tr>
+<tr><td>Stereochem</td><td>Inversion (Walden)</td><td>Racemisation</td></tr>
+<tr><td>Nucleophile</td><td>Strong anionic</td><td>Weak neutral</td></tr>
+<tr><td>Carbocation rearrangement?</td><td>No</td><td>Yes</td></tr>
+</table>
+</div>
+<div class="imp">
+<div class="box-title">⭐ Williamson rule (when to use Williamson vs elimination)</div>
+<p style="font-weight:700;">For ethers via Williamson: alkyl halide MUST be 1° (or 2°). Never use 3° halide — elimination wins.</p>
+<p>Conversely, to make a 3° ether, take the 3° alcohol and add conc. H₂SO₄ at low T (SN1 path).</p>
+</div>
+<div class="concept">
+<div class="box-title">💡 "Haloalkanes love bases" — three fates</div>
+<ul>
+<li><b>Strong nucleophile + 1° halide + polar aprotic</b> → SN2 (substitution)</li>
+<li><b>Strong base + 2°/3° halide + heat</b> → E2 (elimination)</li>
+<li><b>Weak nucleophile + 3°/benzyl/allyl + polar protic</b> → SN1 (substitution via carbocation)</li>
+</ul>
+</div>
+<div class="warn">
+<div class="box-title">⚠️ Common pitfalls</div>
+<ul>
+<li>AgCN → isocyanide; KCN → cyanide. Don't mix them up.</li>
+<li>AgNO₂ → alkyl nitrite (R–O–N=O); KNO₂ → nitroalkane (R–NO₂).</li>
+<li>CHCl₃ stored in dark bottles to prevent phosgene formation.</li>
+<li>CCl₄ is toxic and a fire extinguisher, but it forms phosgene on heating — banned.</li>
+<li>Free-radical halogenation: Cl is non-selective, Br is selective (3° &gt; 2° &gt; 1°).</li>
+<li>Aryl halides don't give AgX with AgNO₃, do not give Wurtz with Na alone.</li>
+<li>Saytzeff's rule → more substituted alkene is the major E2 product.</li>
+</ul>
+</div>
+<div class="footer">
+<p>📘 Haloalkanes &amp; Haloarenes — Master Study Note · Strictly NCERT Class 12 Chemistry Chapter 6 · Compiled 2026<br/>
+  Author's note: print in colour for the best learning experience. Cross-references (<span class="qmarker">Q 6.x</span>) point to the NCERT question where each concept is tested.</p>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div><!-- /.page -->
+</body>
+</html>

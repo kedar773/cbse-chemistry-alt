@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CBSE Class 12 | Coordination Compounds - Master Study Notes</title>
+<style>
+/* ===== CSS RESET & BASE STYLES ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #1e3a8a;
+  --primary-light: #3b82f6;
+  --secondary: #7c3aed;
+  --accent: #f59e0b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f97316;
+  --bg-dark: #0f172a;
+  --bg-card: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --radius: 12px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.main-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.main-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.main-header .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #1e293b;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.badge-pyq {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.tab-nav {
+  display: flex;
+  background: white;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow-x: auto;
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  background: #f1f5f9;
+  color: var(--primary);
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  background: linear-gradient(to bottom, #eff6ff, white);
+}
+
+.tab-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  min-height: 80vh;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.tab-content {
+  display: none;
+  padding: 2rem;
+  animation: fadeIn 0.3s;
+}
+
+.tab-content.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+}
+
+.formula {
+  font-family: 'Cambria Math', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  background: #f8fafc;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid var(--border);
+  margin: 2px 0;
+}
+
+details {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+details summary {
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(to right, #eff6ff, #f8fafc);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+details summary::-webkit-details-marker { display: none; }
+
+details summary::after {
+  content: '▼';
+  transition: transform 0.3s;
+}
+
+details[open] summary::after { transform: rotate(180deg); }
+
+details .solution-body {
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+  background: white;
+}
+
+.simulator-panel {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.simulator-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sim-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.sim-btn:hover { background: rgba(255,255,255,0.2); }
+.sim-btn.active {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+}
+
+.canvas-container {
+  background: #0f172a;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.slider-container label { font-weight: 500; min-width: 150px; }
+
+.slider-container input[type="range"] {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #475569;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.iupac-builder {
+  background: #f8fafc;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 2px solid var(--border);
+}
+
+.iupac-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: monospace;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.iupac-steps {
+  list-style: none;
+  counter-reset: step;
+}
+
+.iupac-steps li {
+  counter-increment: step;
+  padding: 0.75rem;
+  padding-left: 3rem;
+  position: relative;
+  border-left: 3px solid var(--primary-light);
+  margin-bottom: 0.5rem;
+  background: white;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-primary);
+}
+
+.iupac-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.result-box {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.comparison-table th {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1rem;
+  text-align: left;
+}
+
+.comparison-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.comparison-table tr:nth-child(even) { background: #f8fafc; }
+.comparison-table tr:hover { background: #eff6ff; }
+
+/* ===== FIXED ENERGY DIAGRAM STYLES ===== */
+.energy-diagram-wrapper {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-lg);
+  overflow-x: auto;
+}
+
+.energy-diagram-wrapper svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .tab-nav, 
+  #tab4, 
+  .simulator-panel,
+  .sim-btn,
+  .tab-btn:not(.active) {
+    display: none !important;
+  }
+  
+  .tab-content {
+    display: block !important;
+    page-break-after: always;
+  }
+  
+  details, details[open] {
+    border: 1px solid #ccc;
+    background: white !important;
+  }
+  
+  details summary::after { display: none; }
+  
+  .card, .highlight-box {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    background: white !important;
+  }
+  
+  .badge {
+    border: 1px solid var(--accent);
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+.flex { display: flex; gap: 1rem; flex-wrap: wrap; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.text-center { text-align: center; }
+.text-sm { font-size: 0.9rem; }
+.text-muted { color: var(--text-secondary); }
+
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .tab-btn { padding: 0.75rem 1rem; font-size: 0.85rem; }
+  .main-header h1 { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+<header class="main-header">
+<h1>⚗️ Coordination Compounds</h1>
+<p class="subtitle">CBSE Class 12 Chemistry | Chapter 9 - Master Study Notes</p>
+<p class="text-sm" style="margin-top: 0.5rem; opacity: 0.8;">NCERT Curriculum | Board Exam Focused | Interactive Learning</p>
+</header>
+<nav class="tab-nav" id="tabNav">
+<button class="tab-btn active" onclick="switchTab('tab1')">📋 Nomenclature &amp; Isomerism</button>
+<button class="tab-btn" onclick="switchTab('tab2')">🔗 Bonding Theories</button>
+<button class="tab-btn" onclick="switchTab('tab3')">📝 NCERT Solutions</button>
+<button class="tab-btn" onclick="switchTab('tab4')">🔬 Interactive Lab</button>
+</nav>
+<div class="tab-container">
+<!-- ================= TAB 1: NOMENCLATURE & ISOMERISM ================= -->
+<div class="tab-content active" id="tab1">
+<h2 style="color: var(--primary); margin-bottom: 1.5rem;">📋 Nomenclature &amp; Isomerism</h2>
+<div class="card">
+<h3>🧪 Werner's Coordination Theory (1893)</h3>
+<span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span>
+<div class="highlight-box mt-1">
+<strong>Key Postulates:</strong>
+<ol style="margin-top: 0.5rem; padding-left: 1.5rem;">
+<li>Metals exhibit <strong>two types of valencies</strong>: Primary (ionizable) and Secondary (non-ionizable)</li>
+<li><strong>Primary valency</strong> = Oxidation state (satisfied by anions, shown by dotted lines)</li>
+<li><strong>Secondary valency</strong> = Coordination number (satisfied by ligands/anions, shown by solid lines)</li>
+<li>Secondary valencies are directed towards fixed positions in space → <strong>definite geometry</strong></li>
+</ol>
+</div>
+<table class="comparison-table mt-1">
+<tr><th>Complex</th><th>Primary Valency</th><th>Secondary Valency</th><th>Formula</th></tr>
+<tr><td>CoCl₃·6NH₃</td><td>3</td><td>6</td><td>[Co(NH₃)₆]Cl₃</td></tr>
+<tr><td>CoCl₃·5NH₃</td><td>3</td><td>6</td><td>[Co(NH₃)₅Cl]Cl₂</td></tr>
+<tr><td>CoCl₃·4NH₃</td><td>3</td><td>6</td><td>[Co(NH₃)₄Cl₂]Cl</td></tr>
+<tr><td>CoCl₃·3NH₃</td><td>3</td><td>6</td><td>[Co(NH₃)₃Cl₃]</td></tr>
+</table>
+<p class="text-sm text-muted mt-1">📌 [See Solved Q 9.1 - Werner's Theory]</p>
+</div>
+<div class="card">
+<h3>📛 IUPAC Nomenclature Rules</h3>
+<span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span>
+<div class="grid-2 mt-1">
+<div>
+<h4 style="color: var(--primary);">Rules for Complex Ion:</h4>
+<ol style="padding-left: 1.5rem; line-height: 2;">
+<li>Name cation first, then anion</li>
+<li>List ligands <strong>alphabetically</strong> (ignore prefixes)</li>
+<li>Anionic ligands end in <strong>"-o"</strong>: Cl⁻→chloro, CN⁻→cyano</li>
+<li>Neutral ligands: NH₃→ammine, H₂O→aqua, CO→carbonyl</li>
+<li>Prefixes: di, tri, tetra, penta, hexa</li>
+<li>If ligand name has prefix: use bis, tris, tetrakis</li>
+<li>Metal name: ends in "-ate" for anions</li>
+<li>Oxidation state in Roman numerals in parentheses</li>
+</ol>
+</div>
+<div>
+<h4 style="color: var(--primary);">Common Ligand Names:</h4>
+<table class="comparison-table">
+<tr><th>Formula</th><th>IUPAC Name</th></tr>
+<tr><td>NH₃</td><td>Ammine</td></tr>
+<tr><td>H₂O</td><td>Aqua</td></tr>
+<tr><td>CO</td><td>Carbonyl</td></tr>
+<tr><td>NO</td><td>Nitrosyl</td></tr>
+<tr><td>en (H₂NCH₂CH₂NH₂)</td><td>Ethane-1,2-diamine</td></tr>
+<tr><td>ox²⁻</td><td>Oxalato</td></tr>
+<tr><td>Cl⁻</td><td>Chlorido</td></tr>
+<tr><td>CN⁻</td><td>Cyanido</td></tr>
+<tr><td>OH⁻</td><td>Hydroxido</td></tr>
+</table>
+</div>
+</div>
+<div class="highlight-box mt-1">
+<strong>Example:</strong> <span class="formula">[Co(NH₃)₅Cl]Cl₂</span><br/>
+      → <strong>Pentaamminechloridocobalt(III) chloride</strong>
+</div>
+<p class="text-sm text-muted mt-1">📌 [See Solved Q 9.2 - IUPAC Naming]</p>
+</div>
+<div class="card">
+<h3>🔄 Isomerism in Coordination Compounds</h3>
+<span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span>
+<h4 class="mt-1" style="color: var(--secondary);">A. Structural Isomerism</h4>
+<div class="grid-2 mt-1">
+<div class="card" style="background: #fef3c7;">
+<h4>1. Linkage Isomerism</h4>
+<p>Same ligand binds through different donor atoms</p>
+<p class="formula mt-1">[Co(NH₃)₅(NO₂)]²⁺</p>
+<ul style="padding-left: 1.5rem;">
+<li>Nitro (yellow): bonds through N</li>
+<li>Nitrito (red): bonds through O → [Co(NH₃)₅(ONO)]²⁺</li>
+</ul>
+<p class="text-sm text-muted">Ambidentate ligands: NO₂⁻, SCN⁻, CN⁻</p>
+</div>
+<div class="card" style="background: #dbeafe;">
+<h4>2. Coordination Isomerism</h4>
+<p>Exchange of ligands between cationic and anionic complex ions</p>
+<p class="formula mt-1">[Co(NH₃)₆][Cr(CN)₆]</p>
+<p>↔</p>
+<p class="formula">[Cr(NH₃)₆][Co(CN)₆]</p>
+</div>
+<div class="card" style="background: #dcfce7;">
+<h4>3. Ionization Isomerism</h4>
+<p>Same formula gives different ions in solution</p>
+<p class="formula mt-1">[Co(NH₃)₅Br]SO₄</p>
+<p>↔</p>
+<p class="formula">[Co(NH₃)₅SO₄]Br</p>
+</div>
+<div class="card" style="background: #fce7f3;">
+<h4>4. Solvate (Hydrate) Isomerism</h4>
+<p>Difference in whether solvent is inside coordination sphere or outside</p>
+<p class="formula mt-1">[Cr(H₂O)₆]Cl₃ (violet)</p>
+<p class="formula">[Cr(H₂O)₅Cl]Cl₂·H₂O (blue-green)</p>
+<p class="formula">[Cr(H₂O)₄Cl₂]Cl·2H₂O (dark green)</p>
+</div>
+</div>
+</div>
+<div class="card">
+<h4 style="color: var(--secondary);">B. Stereoisomerism</h4>
+<span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span>
+<div class="grid-2 mt-1">
+<div>
+<h4>1. Geometric (Cis-Trans) Isomerism</h4>
+<p><strong>Occurs in:</strong> Square planar &amp; Octahedral complexes</p>
+<p><strong>Not possible in:</strong> Tetrahedral complexes (all positions equivalent)</p>
+<div class="highlight-box mt-1">
+<strong>MA₄B₂ type:</strong>
+<ul style="padding-left: 1.5rem;">
+<li><strong>Cis:</strong> Two B ligands adjacent (90°)</li>
+<li><strong>Trans:</strong> Two B ligands opposite (180°)</li>
+</ul>
+</div>
+<div class="highlight-box">
+<strong>MA₃B₃ type:</strong>
+<ul style="padding-left: 1.5rem;">
+<li><strong>Fac (facial):</strong> Three same ligands on one face</li>
+<li><strong>Mer (meridional):</strong> Three same ligands in a plane</li>
+</ul>
+</div>
+</div>
+<div>
+<h4>2. Optical Isomerism</h4>
+<p><strong>Occurs in:</strong> Complexes with no plane of symmetry</p>
+<p><strong>Types:</strong> d (dextro) and l (laevo) - non-superimposable mirror images</p>
+<div class="highlight-box mt-1">
+<strong>Common examples:</strong>
+<ul style="padding-left: 1.5rem;">
+<li>[Co(en)₃]³⁺</li>
+<li>[Co(en)₂Cl₂]⁺ (cis only - trans is optically inactive)</li>
+<li>[Cr(ox)₃]³⁻</li>
+<li>Tetrahedral: [M(AA)₂X₂]</li>
+</ul>
+</div>
+<div class="highlight-box">
+<strong>Key Point:</strong> Trans isomers generally have plane of symmetry → optically INACTIVE
+        </div>
+</div>
+</div>
+<p class="text-sm text-muted mt-1">📌 [See Solved Q 9.6 - Geometric Isomers] 📌 [See Solved Q 9.7 - Optical Isomers] 📌 [See Tab 4 for 3D Visualizer]</p>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ================= TAB 2: BONDING THEORIES (FIXED) ================= -->
+<div class="tab-content" id="tab2">
+<h2 style="color: var(--primary); margin-bottom: 1.5rem;">🔗 Bonding Theories</h2>
+<div class="card">
+<h3>🧬 Valence Bond Theory (VBT)</h3>
+<span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span>
+<div class="highlight-box">
+<strong>Postulates:</strong>
+<ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
+<li>Central metal atom/ion provides empty orbitals for bonding</li>
+<li>Orbitals undergo <strong>hybridization</strong></li>
+<li>Ligands donate electron pairs → coordinate bonds</li>
+<li>Geometry depends on type of hybridization</li>
+</ol>
+</div>
+<table class="comparison-table mt-1">
+<tr>
+<th>Coord. No.</th>
+<th>Hybridization</th>
+<th>Geometry</th>
+<th>Example</th>
+<th>Magnetic</th>
+</tr>
+<tr>
+<td>2</td><td>sp</td><td>Linear</td><td>[Ag(NH₃)₂]⁺</td><td>Diamagnetic</td>
+</tr>
+<tr>
+<td>4</td><td>sp³</td><td>Tetrahedral</td><td>[NiCl₄]²⁻</td><td>Paramagnetic</td>
+</tr>
+<tr>
+<td>4</td><td>dsp²</td><td>Square Planar</td><td>[Ni(CN)₄]²⁻</td><td>Diamagnetic</td>
+</tr>
+<tr>
+<td>6</td><td>sp³d²</td><td>Octahedral (outer)</td><td>[CoF₆]³⁻</td><td>Paramagnetic</td>
+</tr>
+<tr>
+<td>6</td><td>d²sp³</td><td>Octahedral (inner)</td><td>[Co(NH₃)₆]³⁺</td><td>Diamagnetic</td>
+</tr>
+</table>
+<div class="highlight-box mt-1">
+<strong>⚡ Board Exam Focus - Hybridization Calculation:</strong>
+<ol style="padding-left: 1.5rem;">
+<li>Find oxidation state of metal</li>
+<li>Write d-electron configuration</li>
+<li>Strong field ligand (CN⁻, CO, NH₃) → pairing occurs → inner orbital complex</li>
+<li>Weak field ligand (F⁻, Cl⁻, H₂O) → no pairing → outer orbital complex</li>
+</ol>
+</div>
+</div>
+<div class="card">
+<h3>⚡ Crystal Field Theory (CFT)</h3>
+<span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span>
+<div class="highlight-box">
+<strong>Core Concept:</strong> Electrostatic interaction between metal d-orbitals and ligand electrons. Ligands are treated as point charges that cause <strong>splitting of d-orbitals</strong>.
+    </div>
+<h4 class="mt-1">Octahedral Splitting (Δ<sub>o</sub>)</h4>
+<p>Five degenerate d-orbitals split into:</p>
+<ul style="padding-left: 1.5rem;">
+<li><strong>t₂<sub>g</sub></strong> (lower energy): d<sub>xy</sub>, d<sub>yz</sub>, d<sub>zx</sub> — point between axes</li>
+<li><strong>e<sub>g</sub></strong> (higher energy): d<sub>x²-y²</sub>, d<sub>z²</sub> — point along axes (more repulsion)</li>
+</ul>
+<div class="energy-diagram-wrapper">
+<svg height="400" viewbox="0 0 700 400" width="700" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="400" width="700"></rect>
+<!-- Energy axis -->
+<line marker-end="url(#arrowhead)" stroke="#1e293b" stroke-width="3" x1="100" x2="100" y1="350" y2="50"></line>
+<text fill="#1e293b" font-size="16" font-weight="bold" transform="rotate(-90, 70, 200)" x="70" y="200">Energy</text>
+<!-- Degenerate level (before splitting) -->
+<g>
+<line stroke="#64748b" stroke-dasharray="8,4" stroke-width="5" x1="140" x2="240" y1="200" y2="200"></line>
+<text fill="#64748b" font-size="14" font-weight="600" x="250" y="205">5 degenerate d-orbitals</text>
+<text fill="#64748b" font-size="12" x="140" y="230">(Before Splitting)</text>
+</g>
+<!-- e_g level (higher energy) -->
+<g>
+<line stroke="#ef4444" stroke-width="6" x1="400" x2="560" y1="100" y2="100"></line>
+<line stroke="#ef4444" stroke-width="6" x1="400" x2="560" y1="130" y2="130"></line>
+<text fill="#ef4444" font-size="18" font-weight="bold" x="580" y="105">e<tspan baseline-shift="sub" font-size="12">g</tspan></text>
+<text fill="#1e293b" font-size="14" x="580" y="125">d<tspan baseline-shift="sub" font-size="10">x²-y²</tspan>, d<tspan baseline-shift="sub" font-size="10">z²</tspan></text>
+<text fill="#64748b" font-size="12" font-style="italic" x="580" y="145">Higher energy</text>
+</g>
+<!-- t_2g level (lower energy) -->
+<g>
+<line stroke="#3b82f6" stroke-width="6" x1="400" x2="560" y1="270" y2="270"></line>
+<line stroke="#3b82f6" stroke-width="6" x1="400" x2="560" y1="300" y2="300"></line>
+<line stroke="#3b82f6" stroke-width="6" x1="400" x2="560" y1="330" y2="330"></line>
+<text fill="#3b82f6" font-size="18" font-weight="bold" x="580" y="275">t<tspan baseline-shift="sub" font-size="12">2g</tspan></text>
+<text fill="#1e293b" font-size="14" x="580" y="295">d<tspan baseline-shift="sub" font-size="10">xy</tspan>, d<tspan baseline-shift="sub" font-size="10">yz</tspan>, d<tspan baseline-shift="sub" font-size="10">zx</tspan></text>
+<text fill="#64748b" font-size="12" font-style="italic" x="580" y="315">Lower energy</text>
+</g>
+<!-- Delta_o arrow -->
+<line marker-end="url(#arrowDown)" marker-start="url(#arrowUp)" stroke="#f59e0b" stroke-width="3" x1="620" x2="620" y1="105" y2="325"></line>
+<text fill="#f59e0b" font-size="20" font-weight="bold" x="635" y="220">Δ<tspan baseline-shift="sub" font-size="14">o</tspan></text>
+<!-- Barycenter line -->
+<line stroke="#64748b" stroke-dasharray="4,3" stroke-width="1" x1="400" x2="560" y1="200" y2="200"></line>
+<text fill="#64748b" font-size="11" x="400" y="215">Barycenter</text>
+<!-- Labels -->
+<text fill="#1e293b" font-size="15" font-weight="bold" text-anchor="middle" x="190" y="260">Before Splitting</text>
+<text fill="#1e293b" font-size="15" font-weight="bold" text-anchor="middle" x="480" y="370">After Splitting (Octahedral)</text>
+<!-- Arrow markers -->
+<defs>
+<marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3">
+<polygon fill="#1e293b" points="0 0, 10 3, 0 6"></polygon>
+</marker>
+<marker id="arrowUp" markerheight="8" markerwidth="8" orient="auto" refx="4" refy="8">
+<polygon fill="#f59e0b" points="0 8, 4 0, 8 8"></polygon>
+</marker>
+<marker id="arrowDown" markerheight="8" markerwidth="8" orient="auto" refx="4" refy="0">
+<polygon fill="#f59e0b" points="0 0, 4 8, 8 0"></polygon>
+</marker>
+</defs>
+</svg>
+</div>
+<h4 class="mt-1">Tetrahedral Splitting (Δ<sub>t</sub>)</h4>
+<p>Opposite pattern to octahedral:</p>
+<ul style="padding-left: 1.5rem;">
+<li><strong>e</strong> (lower energy): d<sub>x²-y²</sub>, d<sub>z²</sub></li>
+<li><strong>t₂</strong> (higher energy): d<sub>xy</sub>, d<sub>yz</sub>, d<sub>zx</sub></li>
+</ul>
+<p class="formula mt-1">Δ<sub>t</sub> = (4/9) Δ<sub>o</sub></p>
+<div class="energy-diagram-wrapper">
+<svg height="400" viewbox="0 0 700 400" width="700" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="400" width="700"></rect>
+<!-- Energy axis -->
+<line marker-end="url(#arrowhead2)" stroke="#1e293b" stroke-width="3" x1="100" x2="100" y1="350" y2="50"></line>
+<text fill="#1e293b" font-size="16" font-weight="bold" transform="rotate(-90, 70, 200)" x="70" y="200">Energy</text>
+<!-- t_2 level (higher energy) -->
+<g>
+<line stroke="#3b82f6" stroke-width="6" x1="400" x2="560" y1="100" y2="100"></line>
+<line stroke="#3b82f6" stroke-width="6" x1="400" x2="560" y1="130" y2="130"></line>
+<line stroke="#3b82f6" stroke-width="6" x1="400" x2="560" y1="160" y2="160"></line>
+<text fill="#3b82f6" font-size="18" font-weight="bold" x="580" y="105">t<tspan baseline-shift="sub" font-size="12">2</tspan></text>
+<text fill="#1e293b" font-size="14" x="580" y="125">d<tspan baseline-shift="sub" font-size="10">xy</tspan>, d<tspan baseline-shift="sub" font-size="10">yz</tspan>, d<tspan baseline-shift="sub" font-size="10">zx</tspan></text>
+<text fill="#64748b" font-size="12" font-style="italic" x="580" y="145">Higher energy</text>
+</g>
+<!-- e level (lower energy) -->
+<g>
+<line stroke="#ef4444" stroke-width="6" x1="400" x2="560" y1="270" y2="270"></line>
+<line stroke="#ef4444" stroke-width="6" x1="400" x2="560" y1="300" y2="300"></line>
+<text fill="#ef4444" font-size="18" font-weight="bold" x="580" y="275">e</text>
+<text fill="#1e293b" font-size="14" x="580" y="295">d<tspan baseline-shift="sub" font-size="10">x²-y²</tspan>, d<tspan baseline-shift="sub" font-size="10">z²</tspan></text>
+<text fill="#64748b" font-size="12" font-style="italic" x="580" y="315">Lower energy</text>
+</g>
+<!-- Delta_t arrow -->
+<line marker-end="url(#arrowDown2)" marker-start="url(#arrowUp2)" stroke="#f59e0b" stroke-width="3" x1="620" x2="620" y1="105" y2="295"></line>
+<text fill="#f59e0b" font-size="20" font-weight="bold" x="635" y="205">Δ<tspan baseline-shift="sub" font-size="14">t</tspan></text>
+<!-- Labels -->
+<text fill="#1e293b" font-size="15" font-weight="bold" text-anchor="middle" x="480" y="370">Tetrahedral Splitting</text>
+<text fill="#64748b" font-size="13" font-weight="600" x="400" y="350">Δ<tspan baseline-shift="sub" font-size="10">t</tspan> = (4/9) Δ<tspan baseline-shift="sub" font-size="10">o</tspan></text>
+<!-- Arrow markers -->
+<defs>
+<marker id="arrowhead2" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3">
+<polygon fill="#1e293b" points="0 0, 10 3, 0 6"></polygon>
+</marker>
+<marker id="arrowUp2" markerheight="8" markerwidth="8" orient="auto" refx="4" refy="8">
+<polygon fill="#f59e0b" points="0 8, 4 0, 8 8"></polygon>
+</marker>
+<marker id="arrowDown2" markerheight="8" markerwidth="8" orient="auto" refx="4" refy="0">
+<polygon fill="#f59e0b" points="0 0, 4 8, 8 0"></polygon>
+</marker>
+</defs>
+</svg>
+</div>
+<div class="highlight-box mt-1">
+<strong>⚡ Key Relationships:</strong>
+<ul style="padding-left: 1.5rem;">
+<li>If Δ<sub>o</sub> &lt; P (pairing energy) → <strong>High spin</strong> complex (weak field ligand)</li>
+<li>If Δ<sub>o</sub> &gt; P → <strong>Low spin</strong> complex (strong field ligand)</li>
+<li>CFSE = (-0.4x + 0.6y) Δ<sub>o</sub>, where x = electrons in t<sub>2g</sub>, y = electrons in e<sub>g</sub></li>
+</ul>
+</div>
+<p class="text-sm text-muted mt-1">📌 [See Solved Q 9.13 - CFSE Calculation] 📌 [See Tab 4 CFT Sandbox]</p>
+</div>
+<div class="card">
+<h3>⚖️ VBT vs CFT Comparison</h3>
+<span class="badge badge-pyq">⚡ CBSE PYQ - Expected</span>
+<table class="comparison-table">
+<tr>
+<th>Aspect</th>
+<th>VBT</th>
+<th>CFT</th>
+</tr>
+<tr>
+<td><strong>Nature</strong></td>
+<td>Covalent character (orbital overlap)</td>
+<td>Electrostatic (ionic model)</td>
+</tr>
+<tr>
+<td><strong>Explains</strong></td>
+<td>Geometry, hybridization, magnetism</td>
+<td>Color, magnetism, CFSE, spectra</td>
+</tr>
+<tr>
+<td><strong>Limitations</strong></td>
+<td>Cannot explain color, assumes strong/weak ligands</td>
+<td>Cannot explain covalent character (π-bonding)</td>
+</tr>
+<tr>
+<td><strong>Example: [CoF₆]³⁻</strong></td>
+<td>Co³⁺ (d⁶), no pairing, sp³d², outer orbital, paramagnetic (4 unpaired e⁻)</td>
+<td>Δ<sub>o</sub> &lt; P, t₂<sub>g</sub>⁴ e<sub>g</sub>², high spin, absorbs red, appears blue-green</td>
+</tr>
+<tr>
+<td><strong>Example: [Co(NH₃)₆]³⁺</strong></td>
+<td>Co³⁺ (d⁶), pairing, d²sp³, inner orbital, diamagnetic</td>
+<td>Δ<sub>o</sub> &gt; P, t₂<sub>g</sub>⁶, low spin, absorbs violet, appears yellow-orange</td>
+</tr>
+</table>
+</div>
+<div class="card">
+<h3>🎨 Color &amp; Magnetic Properties</h3>
+<div class="grid-2">
+<div>
+<h4 style="color: var(--secondary);">Origin of Color</h4>
+<ul style="padding-left: 1.5rem;">
+<li>d-d transition: electron absorbs photon → jumps from t₂<sub>g</sub> to e<sub>g</sub></li>
+<li>E<sub>photon</sub> = hν = Δ<sub>o</sub></li>
+<li>Complementary color observed</li>
+</ul>
+<div class="highlight-box mt-1">
+<strong>Colorless complexes:</strong>
+<ul style="padding-left: 1.5rem;">
+<li>d⁰ configuration (no d-d transition possible)</li>
+<li>d¹⁰ configuration (no empty d-orbitals)</li>
+<li>Example: [Sc(H₂O)₆]³⁺ (Sc³⁺ is d⁰)</li>
+<li>Example: [Zn(H₂O)₆]²⁺ (Zn²⁺ is d¹⁰)</li>
+</ul>
+</div>
+</div>
+<div>
+<h4 style="color: var(--secondary);">Magnetic Moment</h4>
+<div class="formula mt-1">μ = √(n(n+2)) BM (Bohr Magneton)</div>
+<p class="text-sm mt-1">where n = number of unpaired electrons</p>
+<table class="comparison-table mt-1">
+<tr><th>Unpaired e⁻</th><th>μ (BM)</th></tr>
+<tr><td>0</td><td>0 (Diamagnetic)</td></tr>
+<tr><td>1</td><td>1.73</td></tr>
+<tr><td>2</td><td>2.83</td></tr>
+<tr><td>3</td><td>3.87</td></tr>
+<tr><td>4</td><td>4.90</td></tr>
+<tr><td>5</td><td>5.92</td></tr>
+</table>
+</div>
+</div>
+<p class="text-sm text-muted mt-1">📌 [See Solved Q 9.15 - Magnetic Moment Calculation]</p>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ================= TAB 3: NCERT SOLUTIONS ================= -->
+<div class="tab-content" id="tab3">
+<h2 style="color: var(--primary); margin-bottom: 1.5rem;">📝 NCERT Solutions - Coordination Compounds</h2>
+<div class="highlight-box">
+<strong>Chapter 9 Solutions:</strong> Complete step-by-step solutions for all exercise questions. Click each question to reveal the detailed answer.
+  </div>
+<div style="margin-top: 1.5rem;">
+<details>
+<summary>Q 9.1: Indicate the types of isomerism exhibited by the following complexes: [Co(NH₃)₅Cl]Cl₂, [Co(en)₃]Cl₃</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<ol style="padding-left: 1.5rem;">
+<li><strong>[Co(NH₃)₅Cl]Cl₂:</strong> Shows <strong>ionization isomerism</strong> with [Co(NH₃)₅Cl₂]Cl. No geometric or optical isomerism as it's an MA₅B type complex.</li>
+<li><strong>[Co(en)₃]Cl₃:</strong> Shows <strong>optical isomerism</strong> (d and l forms). The complex has no plane of symmetry and exists as non-superimposable mirror images.</li>
+</ol>
+</div>
+</details>
+<details>
+<summary>Q 9.2: Give IUPAC names for: (i) [Co(NH₃)₆]Cl₃ (ii) K₂[NiCl₄] (iii) [Pt(NH₃)₂Cl(NO₂)]</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<ol style="padding-left: 1.5rem;">
+<li><strong>[Co(NH₃)₆]Cl₃:</strong> Hexaamminecobalt(III) chloride
+          <br/><em>Oxidation state: x + 0 = +3, so Co is +3</em></li>
+<li><strong>K₂[NiCl₄]:</strong> Potassium tetrachloridonickelate(II)
+          <br/><em>Oxidation state: 2(+1) + x + 4(-1) = 0, so Ni is +2. Anion complex → "-ate" suffix</em></li>
+<li><strong>[Pt(NH₃)₂Cl(NO₂)]:</strong> Diamminechloridonitrito-N-platinum(II)
+          <br/><em>Oxidation state: x + 0 + (-1) + (-1) = 0, so Pt is +2. Ligands alphabetical: ammine, chlorido, nitrito-N</em></li>
+</ol>
+</div>
+</details>
+<details>
+<summary>Q 9.3: Explain the bonding in [Fe(CN)₆]⁴⁻ using VBT</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<ol style="padding-left: 1.5rem;">
+<li>Central metal: Fe²⁺ (atomic number 26)</li>
+<li>Electronic configuration of Fe: [Ar] 3d⁶ 4s²</li>
+<li>Fe²⁺: [Ar] 3d⁶</li>
+<li>CN⁻ is a <strong>strong field ligand</strong> → causes pairing</li>
+<li>3d orbitals: ↑↓ ↑↓ ↑↓ (all paired)</li>
+<li>Hybridization: <strong>d²sp³</strong> (uses two 3d, one 4s, three 4p orbitals)</li>
+<li>Geometry: <strong>Octahedral</strong></li>
+<li>Magnetic property: <strong>Diamagnetic</strong> (no unpaired electrons)</li>
+</ol>
+</div>
+</details>
+<details>
+<summary>Q 9.4: What is crystal field splitting energy? How does it determine configuration?</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<p><strong>Crystal Field Splitting Energy (Δ<sub>o</sub>):</strong> The energy difference between the two sets of d-orbitals (t₂<sub>g</sub> and e<sub>g</sub>) in an octahedral field.</p>
+<ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
+<li><strong>Δ<sub>o</sub> &lt; P (pairing energy):</strong> Electrons enter e<sub>g</sub> level → <strong>High spin complex</strong> (weak field ligands like F⁻, H₂O)</li>
+<li><strong>Δ<sub>o</sub> &gt; P:</strong> Electrons pair up in t₂<sub>g</sub> before entering e<sub>g</sub> → <strong>Low spin complex</strong> (strong field ligands like CN⁻, CO, NH₃)</li>
+</ul>
+<div class="highlight-box mt-1">
+<strong>Example:</strong> For d⁶ configuration:
+          <ul style="padding-left: 1.5rem;">
+<li>Weak field: t₂<sub>g</sub>⁴ e<sub>g</sub>² (4 unpaired e⁻)</li>
+<li>Strong field: t₂<sub>g</sub>⁶ (0 unpaired e⁻)</li>
+</ul>
+</div>
+</div>
+</details>
+<details>
+<summary>Q 9.5: Predict the number of unpaired electrons in [Cr(H₂O)₆]³⁺ and [Cr(CN)₆]³⁻</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<p><strong>Central metal:</strong> Cr³⁺ (atomic number 24)</p>
+<p><strong>Electronic configuration:</strong> Cr³⁺ is [Ar] 3d³</p>
+<ol style="padding-left: 1.5rem;">
+<li><strong>[Cr(H₂O)₆]³⁺:</strong> H₂O is weak field ligand
+          <br/>3d³ configuration: t₂<sub>g</sub>³ e<sub>g</sub>⁰
+          <br/>Unpaired electrons = <strong>3</strong></li>
+<li><strong>[Cr(CN)₆]³⁻:</strong> CN⁻ is strong field ligand
+          <br/>But d³ configuration has only 3 electrons, so even with strong field, they all go to t₂<sub>g</sub>
+<br/>Unpaired electrons = <strong>3</strong></li>
+</ol>
+<div class="highlight-box mt-1">
+<strong>Note:</strong> For d¹, d², d³ configurations, the number of unpaired electrons is the same regardless of ligand strength because all electrons fit in the lower t₂<sub>g</sub> level.
+        </div>
+</div>
+</details>
+<details>
+<summary>Q 9.6: Draw all geometrical isomers of [Pt(NH₃)(Br)(Cl)(py)]</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<p>This is a square planar complex of type [Mabcd] with four different ligands.</p>
+<p>For [Mabcd] type, there are <strong>3 geometrical isomers</strong>:</p>
+<ol style="padding-left: 1.5rem;">
+<li><strong>Isomer 1:</strong> NH₃ and Br trans to each other, Cl and py trans to each other</li>
+<li><strong>Isomer 2:</strong> NH₃ and Cl trans to each other, Br and py trans to each other</li>
+<li><strong>Isomer 3:</strong> NH₃ and py trans to each other, Br and Cl trans to each other</li>
+</ol>
+<div class="highlight-box mt-1">
+<strong>Formula:</strong> Number of geometrical isomers for [Mabcd] = <strong>3</strong>
+</div>
+</div>
+</details>
+<details>
+<summary>Q 9.7: How many geometrical isomers are possible for [Co(en)₃]³⁺?</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<p>[Co(en)₃]³⁺ is an octahedral complex with three bidentate ethylenediamine ligands.</p>
+<ul style="padding-left: 1.5rem;">
+<li>Since all three ligands are identical (en), <strong>no geometrical isomerism</strong> is possible</li>
+<li>However, the complex has <strong>optical isomerism</strong> (d and l forms)</li>
+<li>Total isomers = 2 (optical isomers only)</li>
+</ul>
+<div class="highlight-box mt-1">
+<strong>Key Point:</strong> Complexes of type [M(AA)₃] where AA = symmetric bidentate ligand show only optical isomerism, not geometric isomerism.
+        </div>
+</div>
+</details>
+<details>
+<summary>Q 9.8: Why is [Ni(CN)₄]²⁻ diamagnetic while [NiCl₄]²⁻ is paramagnetic?</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<p><strong>Central metal:</strong> Ni²⁺ (atomic number 28)</p>
+<p><strong>Electronic configuration:</strong> Ni²⁺ is [Ar] 3d⁸</p>
+<ol style="padding-left: 1.5rem;">
+<li><strong>[Ni(CN)₄]²⁻:</strong>
+<ul style="padding-left: 1.5rem;">
+<li>CN⁻ is a <strong>strong field ligand</strong></li>
+<li>Causes pairing of 3d electrons</li>
+<li>Hybridization: <strong>dsp²</strong> (square planar)</li>
+<li>All electrons paired → <strong>Diamagnetic</strong></li>
+</ul>
+</li>
+<li><strong>[NiCl₄]²⁻:</strong>
+<ul style="padding-left: 1.5rem;">
+<li>Cl⁻ is a <strong>weak field ligand</strong></li>
+<li>No pairing of 3d electrons</li>
+<li>Hybridization: <strong>sp³</strong> (tetrahedral)</li>
+<li>2 unpaired electrons → <strong>Paramagnetic</strong></li>
+</ul>
+</li>
+</ol>
+</div>
+</details>
+<details>
+<summary>Q 9.9: Explain why [Fe(H₂O)₆]³⁺ is strongly paramagnetic while [Fe(CN)₆]³⁻ is weakly paramagnetic</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<p><strong>Central metal:</strong> Fe³⁺ (d⁵ configuration)</p>
+<ol style="padding-left: 1.5rem;">
+<li><strong>[Fe(H₂O)₆]³⁺:</strong>
+<ul style="padding-left: 1.5rem;">
+<li>H₂O is weak field ligand → Δ<sub>o</sub> &lt; P</li>
+<li>High spin complex: t₂<sub>g</sub>³ e<sub>g</sub>²</li>
+<li><strong>5 unpaired electrons</strong> → Strongly paramagnetic</li>
+<li>μ = √(5×7) = 5.92 BM</li>
+</ul>
+</li>
+<li><strong>[Fe(CN)₆]³⁻:</strong>
+<ul style="padding-left: 1.5rem;">
+<li>CN⁻ is strong field ligand → Δ<sub>o</sub> &gt; P</li>
+<li>Low spin complex: t₂<sub>g</sub>⁵</li>
+<li><strong>1 unpaired electron</strong> → Weakly paramagnetic</li>
+<li>μ = √(1×3) = 1.73 BM</li>
+</ul>
+</li>
+</ol>
+</div>
+</details>
+<details>
+<summary>Q 9.10: Give evidence that [Co(NH₃)₅Cl]Cl₂ and [Co(NH₃)₅Cl]SO₄ are ionization isomers</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<p>Ionization isomers give different ions in solution, which can be detected by precipitation reactions.</p>
+<ol style="padding-left: 1.5rem;">
+<li><strong>[Co(NH₃)₅Cl]Cl₂ in water:</strong>
+<br/>→ [Co(NH₃)₅Cl]²⁺ + 2Cl⁻
+          <br/>Add AgNO₃: <strong>White ppt of AgCl</strong> (from Cl⁻ ions)
+          <br/>Add BaCl₂: No ppt (no SO₄²⁻ ions)</li>
+<li><strong>[Co(NH₃)₅Cl]SO₄ in water:</strong>
+<br/>→ [Co(NH₃)₅Cl]⁺ + SO₄²⁻
+          <br/>Add AgNO₃: No ppt (no free Cl⁻ ions)
+          <br/>Add BaCl₂: <strong>White ppt of BaSO₄</strong></li>
+</ol>
+<div class="highlight-box mt-1">
+<strong>Conclusion:</strong> The different precipitation reactions prove these are ionization isomers.
+        </div>
+</div>
+</details>
+<details>
+<summary>Q 9.11: Calculate CFSE for [Co(NH₃)₆]³⁺ given Δ<sub>o</sub> = 23000 cm⁻¹</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<ol style="padding-left: 1.5rem;">
+<li>Co³⁺ is d⁶ configuration</li>
+<li>NH₃ is strong field ligand → Low spin complex</li>
+<li>Configuration: t₂<sub>g</sub>⁶ e<sub>g</sub>⁰</li>
+<li>CFSE = (-0.4 × n<sub>t2g</sub> + 0.6 × n<sub>eg</sub>) × Δ<sub>o</sub></li>
+<li>CFSE = (-0.4 × 6 + 0.6 × 0) × 23000</li>
+<li>CFSE = -2.4 × 23000 = <strong>-55200 cm⁻¹</strong></li>
+</ol>
+<div class="highlight-box mt-1">
+<strong>Note:</strong> Negative CFSE indicates stabilization. The higher the magnitude, the more stable the complex.
+        </div>
+</div>
+</details>
+<details>
+<summary>Q 9.12: Why is [Sc(H₂O)₆]³⁺ colorless?</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<ol style="padding-left: 1.5rem;">
+<li>Sc³⁺ has electronic configuration: [Ar] 3d⁰</li>
+<li>There are <strong>no d-electrons</strong> in Sc³⁺</li>
+<li>For color to appear, d-d transition must occur (electron jumps from t₂<sub>g</sub> to e<sub>g</sub>)</li>
+<li>Since there are no d-electrons, <strong>no d-d transition is possible</strong></li>
+<li>Therefore, no light is absorbed in visible region</li>
+<li>Result: The complex appears <strong>colorless</strong></li>
+</ol>
+<div class="highlight-box mt-1">
+<strong>General Rule:</strong> Complexes with d⁰ or d¹⁰ configurations are colorless because d-d transitions are not possible.
+        </div>
+</div>
+</details>
+<details>
+<summary>Q 9.13: Predict magnetic moment of [Ni(H₂O)₆]²⁺</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<ol style="padding-left: 1.5rem;">
+<li>Ni²⁺ is d⁸ configuration</li>
+<li>H₂O is weak field ligand</li>
+<li>In octahedral field: t₂<sub>g</sub>⁶ e<sub>g</sub>²</li>
+<li>Number of unpaired electrons (n) = 2</li>
+<li>μ = √(n(n+2)) = √(2×4) = √8 = <strong>2.83 BM</strong></li>
+</ol>
+</div>
+</details>
+<details>
+<summary>Q 9.14: Differentiate between inner and outer orbital complexes</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<table class="comparison-table">
+<tr><th>Feature</th><th>Inner Orbital</th><th>Outer Orbital</th></tr>
+<tr><td>Hybridization</td><td>d²sp³</td><td>sp³d²</td></tr>
+<tr><td>d-orbitals used</td><td>(n-1)d (inner)</td><td>nd (outer)</td></tr>
+<tr><td>Ligand type</td><td>Strong field</td><td>Weak field</td></tr>
+<tr><td>Spin state</td><td>Low spin</td><td>High spin</td></tr>
+<tr><td>Pairing</td><td>Occurs</td><td>No pairing</td></tr>
+<tr><td>Example</td><td>[Co(NH₃)₆]³⁺</td><td>[CoF₆]³⁻</td></tr>
+</table>
+</div>
+</details>
+<details>
+<summary>Q 9.15: What is the spectrochemical series? Give examples.</summary>
+<div class="solution-body">
+<p><strong>Solution:</strong></p>
+<p><strong>Spectrochemical Series:</strong> An ordering of ligands based on the magnitude of crystal field splitting they cause.</p>
+<div class="formula mt-1">I⁻ &lt; Br⁻ &lt; S²⁻ &lt; SCN⁻ &lt; Cl⁻ &lt; N₃⁻ &lt; F⁻ &lt; OH⁻ &lt; H₂O &lt; NCS⁻ &lt; NH₃ &lt; en &lt; NO₂⁻ &lt; CN⁻ &lt; CO</div>
+<ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
+<li><strong>Weak field ligands</strong> (left side): I⁻, Br⁻, Cl⁻, F⁻, H₂O → Small Δ<sub>o</sub>, high spin complexes</li>
+<li><strong>Strong field ligands</strong> (right side): NH₃, en, CN⁻, CO → Large Δ<sub>o</sub>, low spin complexes</li>
+</ul>
+<div class="highlight-box mt-1">
+<strong>Application:</strong> Predicting magnetic behavior and color of complexes based on ligand position in the series.
+        </div>
+</div>
+</details>
+</div>
+<p class="text-sm text-muted mt-1">📌 For interactive simulations and 3D models, visit <strong>Tab 4: Interactive Lab</strong></p>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+<!-- ================= TAB 4: INTERACTIVE VIRTUAL LAB (COMPLETELY FIXED) ================= -->
+<div class="tab-content" id="tab4">
+<h2 style="color: var(--primary); margin-bottom: 1.5rem;">🔬 Interactive Virtual Lab</h2>
+<div class="simulator-panel">
+<h3 style="color: white; margin-bottom: 1rem;">🎲 3D Isomerism Visualizer</h3>
+<p style="opacity: 0.8; margin-bottom: 1rem;">Interactive coordinate display for Octahedral and Tetrahedral complexes. Toggle between geometric and optical isomers.</p>
+<div class="simulator-controls" id="geom-controls">
+<button class="sim-btn active" onclick="switchGeometry('octahedral', this)">Octahedral</button>
+<button class="sim-btn" onclick="switchGeometry('tetrahedral', this)">Tetrahedral</button>
+</div>
+<div class="simulator-controls" id="isomer-controls">
+<button class="sim-btn active" id="btn-cis" onclick="setIsomer('cis', this)">Cis</button>
+<button class="sim-btn" id="btn-trans" onclick="setIsomer('trans', this)">Trans</button>
+<button class="sim-btn" id="btn-fac" onclick="setIsomer('fac', this)">Fac</button>
+<button class="sim-btn" id="btn-mer" onclick="setIsomer('mer', this)">Mer</button>
+<button class="sim-btn" id="btn-optical" onclick="setIsomer('optical', this)">Optical</button>
+</div>
+<div class="canvas-container">
+<svg height="400" id="isomer-svg" style="background: #1e293b; border-radius: 8px;" viewbox="0 0 600 400" width="600"></svg>
+</div>
+<div id="isomer-info" style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+<strong>Cis Isomer (MA₄B₂):</strong> Two B ligands are adjacent at 90° angle. Common in square planar and octahedral complexes.
+    </div>
+</div>
+<!-- CFT SANDBOX (COMPLETELY REDESIGNED) -->
+<div class="simulator-panel">
+<h3 style="color: white; margin-bottom: 1rem;">⚡ Crystal Field Splitting (CFT) Sandbox</h3>
+<p style="opacity: 0.8; margin-bottom: 1rem;">Watch d-orbitals split based on geometry and ligand strength. See high-spin vs low-spin configurations in real-time.</p>
+<div class="simulator-controls" id="cft-geom-controls">
+<button class="sim-btn active" onclick="setCFTGeometry('octahedral', this)">Octahedral</button>
+<button class="sim-btn" onclick="setCFTGeometry('tetrahedral', this)">Tetrahedral</button>
+</div>
+<div class="slider-container">
+<label for="ligand-strength">Ligand Strength:</label>
+<input id="ligand-strength" max="100" min="0" oninput="updateLigandStrength(this.value)" type="range" value="50"/>
+<span id="strength-label" style="min-width: 100px; font-weight: 600;">Medium</span>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">
+<span>Weak Field (I⁻, Br⁻)</span>
+<span>Strong Field (CN⁻, CO)</span>
+</div>
+<div class="canvas-container">
+<canvas height="550" id="cft-canvas" width="900"></canvas>
+</div>
+<div id="cft-info" style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+<div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
+<div><strong>Splitting Energy:</strong> <span id="delta-value">15000</span> cm⁻¹</div>
+<div><strong>Configuration:</strong> <span id="config-value">High Spin</span></div>
+<div><strong>Unpaired e⁻:</strong> <span id="unpaired-value">4</span></div>
+</div>
+</div>
+</div>
+<div class="simulator-panel">
+<h3 style="color: white; margin-bottom: 1rem;">🧪 NCERT Molecule Visualizer &amp; Color Module</h3>
+<p style="opacity: 0.8; margin-bottom: 1rem;">Select real NCERT examples to see electron filling and understand color through d-d transitions.</p>
+<div class="simulator-controls" id="molecule-controls">
+<button class="sim-btn active" id="mol-co-nh3" onclick="selectMolecule('co-nh3', this)">[Co(NH₃)₆]³⁺</button>
+<button class="sim-btn" id="mol-co-f" onclick="selectMolecule('co-f', this)">[CoF₆]³⁻</button>
+<button class="sim-btn" id="mol-ni-h2o" onclick="selectMolecule('ni-h2o', this)">[Ni(H₂O)₆]²⁺</button>
+<button class="sim-btn" id="mol-fe-cn" onclick="selectMolecule('fe-cn', this)">[Fe(CN)₆]³⁻</button>
+<button class="sim-btn" id="mol-sc-h2o" onclick="selectMolecule('sc-h2o', this)">[Sc(H₂O)₆]³⁺</button>
+</div>
+<div class="canvas-container">
+<canvas height="500" id="molecule-canvas" width="800"></canvas>
+</div>
+<div id="molecule-info" style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+<div>
+<strong>Complex:</strong> <span id="mol-name">[Co(NH₃)₆]³⁺</span><br/>
+<strong>Metal Oxidation State:</strong> <span id="mol-ox">Co³⁺</span><br/>
+<strong>d-electron count:</strong> <span id="mol-d">d⁶</span>
+</div>
+<div>
+<strong>Field Strength:</strong> <span id="mol-field">Strong</span><br/>
+<strong>Spin State:</strong> <span id="mol-spin">Low Spin</span><br/>
+<strong>Configuration:</strong> <span id="mol-config">t₂<sub>g</sub>⁶</span>
+</div>
+<div>
+<strong>Color:</strong> <span id="mol-color">Yellow-Orange</span><br/>
+<strong>Absorbs:</strong> <span id="mol-absorbs">Violet (~400 nm)</span><br/>
+<strong>Magnetic:</strong> <span id="mol-magnetic">Diamagnetic</span>
+</div>
+</div>
+</div>
+<button class="sim-btn" onclick="animatePhoton()" style="margin-top: 1rem; width: 100%; padding: 1rem; background: #3b82f6;">▶️ Animate Photon Absorption</button>
+</div>
+<div class="simulator-panel">
+<h3 style="color: white; margin-bottom: 1rem;">📛 IUPAC Nomenclature Builder</h3>
+<p style="opacity: 0.8; margin-bottom: 1rem;">Input a coordination compound formula and get a step-by-step IUPAC name breakdown.</p>
+<div class="iupac-builder">
+<input class="iupac-input" id="iupac-input" placeholder="Enter formula: e.g., [Co(NH3)5Cl]Cl2 or K3[Fe(CN)6]" type="text" value="[Co(NH3)5Cl]Cl2"/>
+<button class="sim-btn" onclick="buildIUPAC()" style="background: var(--primary); width: 100%; color: white;">Generate IUPAC Name</button>
+<ul class="iupac-steps mt-1" id="iupac-steps">
+<li>Identify cation and anion parts: <strong>[Co(NH₃)₅Cl]²⁺</strong> (cation) and <strong>2Cl⁻</strong> (anions)</li>
+<li>Calculate oxidation state: Let x = Co oxidation state. x + 5(0) + (-1) = +2. Therefore x = <strong>+3</strong></li>
+<li>List ligands alphabetically: <strong>ammine (NH₃)</strong> and <strong>chlorido (Cl⁻)</strong></li>
+<li>Add prefixes for count: <strong>penta</strong>ammine (5 NH₃) and <strong>chlorido</strong> (1 Cl⁻)</li>
+<li>Combine: <strong>pentaamminechlorido</strong></li>
+<li>Add metal name with oxidation state: <strong>cobalt(III)</strong></li>
+<li>Add counter ion: <strong>chloride</strong></li>
+</ul>
+<div class="result-box" id="iupac-result">
+<strong>Final IUPAC Name:</strong><br/>
+        Pentaamminechloridocobalt(III) chloride
+      </div>
+</div>
+</div>
+<footer class="kedar-footer" style="text-align:center;padding:16px 0;margin-top:32px;font-size:1.3em;font-weight:700;color:#38bdf8;border-top:2px solid rgba(56, 189, 248, 0.3);">Powered by Kedar's Chemistry 😎</footer></div>
+</div>
+<script>
+// ===== TAB SWITCHING =====
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  
+  document.getElementById(tabId).classList.add('active');
+  
+  const buttons = document.querySelectorAll('.tab-btn');
+  const tabIndex = ['tab1', 'tab2', 'tab3', 'tab4'].indexOf(tabId);
+  buttons[tabIndex].classList.add('active');
+  
+  if (tabId === 'tab4') {
+    setTimeout(() => {
+      drawIsomer();
+      drawCFT();
+      drawMolecule();
+    }, 100);
+  }
+}
+
+// ===== 3D ISOMERISM VISUALIZER =====
+let currentGeometry = 'octahedral';
+let currentIsomer = 'cis';
+
+function switchGeometry(geom, btn) {
+  currentGeometry = geom;
+  document.querySelectorAll('#geom-controls .sim-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  drawIsomer();
+}
+
+function setIsomer(isomer, btn) {
+  currentIsomer = isomer;
+  document.querySelectorAll('#isomer-controls .sim-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  drawIsomer();
+}
+
+function drawIsomer() {
+  const svg = document.getElementById('isomer-svg');
+  const info = document.getElementById('isomer-info');
+  svg.innerHTML = '';
+  
+  if (currentGeometry === 'octahedral') {
+    drawOctahedral(svg, currentIsomer, info);
+  } else {
+    drawTetrahedral(svg, info);
+  }
+}
+
+function drawOctahedral(svg, isomer, info) {
+  const cx = 300, cy = 200;
+  
+  const metal = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  metal.setAttribute('cx', cx);
+  metal.setAttribute('cy', cy);
+  metal.setAttribute('r', 25);
+  metal.setAttribute('fill', '#3b82f6');
+  metal.setAttribute('stroke', 'white');
+  metal.setAttribute('stroke-width', 3);
+  svg.appendChild(metal);
+  
+  const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  text.setAttribute('x', cx);
+  text.setAttribute('y', cy + 8);
+  text.setAttribute('text-anchor', 'middle');
+  text.setAttribute('fill', 'white');
+  text.setAttribute('font-size', '18');
+  text.setAttribute('font-weight', 'bold');
+  text.textContent = 'M';
+  svg.appendChild(text);
+  
+  const positions = [
+    {x: cx - 120, y: cy, label: 'L1'},
+    {x: cx + 120, y: cy, label: 'L2'},
+    {x: cx, y: cy - 120, label: 'L3'},
+    {x: cx, y: cy + 120, label: 'L4'},
+    {x: cx - 85, y: cy - 85, label: 'L5'},
+    {x: cx + 85, y: cy + 85, label: 'L6'}
+  ];
+  
+  let ligandTypes = [];
+  
+  if (isomer === 'cis') {
+    ligandTypes = ['B', 'A', 'A', 'A', 'B', 'A'];
+    info.innerHTML = '<strong>Cis Isomer (MA₄B₂):</strong> Two B ligands are adjacent at 90° angle. Common in square planar and octahedral complexes.';
+  } else if (isomer === 'trans') {
+    ligandTypes = ['B', 'B', 'A', 'A', 'A', 'A'];
+    info.innerHTML = '<strong>Trans Isomer (MA₄B₂):</strong> Two B ligands are opposite at 180° angle. Has a plane of symmetry.';
+  } else if (isomer === 'fac') {
+    ligandTypes = ['B', 'A', 'B', 'A', 'B', 'A'];
+    info.innerHTML = '<strong>Facial Isomer (MA₃B₃):</strong> Three B ligands occupy one face of the octahedron.';
+  } else if (isomer === 'mer') {
+    ligandTypes = ['B', 'A', 'A', 'B', 'B', 'A'];
+    info.innerHTML = '<strong>Meridional Isomer (MA₃B₃):</strong> Three B ligands lie in a plane (meridian) of the octahedron.';
+  } else if (isomer === 'optical') {
+    drawOpticalIsomer(svg, cx, cy, info);
+    return;
+  }
+  
+  positions.forEach((pos, i) => {
+    const type = ligandTypes[i];
+    const color = type === 'A' ? '#10b981' : '#ef4444';
+    
+    const bond = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    bond.setAttribute('x1', cx);
+    bond.setAttribute('y1', cy);
+    bond.setAttribute('x2', pos.x);
+    bond.setAttribute('y2', pos.y);
+    bond.setAttribute('stroke', 'white');
+    bond.setAttribute('stroke-width', 2);
+    svg.appendChild(bond);
+    
+    const ligand = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    ligand.setAttribute('cx', pos.x);
+    ligand.setAttribute('cy', pos.y);
+    ligand.setAttribute('r', 18);
+    ligand.setAttribute('fill', color);
+    ligand.setAttribute('stroke', 'white');
+    ligand.setAttribute('stroke-width', 2);
+    svg.appendChild(ligand);
+    
+    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    label.setAttribute('x', pos.x);
+    label.setAttribute('y', pos.y + 6);
+    label.setAttribute('text-anchor', 'middle');
+    label.setAttribute('fill', 'white');
+    label.setAttribute('font-size', '14');
+    label.setAttribute('font-weight', 'bold');
+    label.textContent = type;
+    svg.appendChild(label);
+  });
+}
+
+function drawOpticalIsomer(svg, cx, cy, info) {
+  const offset = 150;
+  
+  const leftCx = cx - offset;
+  drawOctahedralComplex(svg, leftCx, cy, 'd-form', '#3b82f6');
+  
+  const mirror = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  mirror.setAttribute('x1', cx);
+  mirror.setAttribute('y1', cy - 150);
+  mirror.setAttribute('x2', cx);
+  mirror.setAttribute('y2', cy + 150);
+  mirror.setAttribute('stroke', '#fbbf24');
+  mirror.setAttribute('stroke-width', 3);
+  mirror.setAttribute('stroke-dasharray', '5,5');
+  svg.appendChild(mirror);
+  
+  const mirrorText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  mirrorText.setAttribute('x', cx);
+  mirrorText.setAttribute('y', cy - 160);
+  mirrorText.setAttribute('text-anchor', 'middle');
+  mirrorText.setAttribute('fill', '#fbbf24');
+  mirrorText.setAttribute('font-size', '14');
+  mirrorText.textContent = 'Mirror Plane';
+  svg.appendChild(mirrorText);
+  
+  const rightCx = cx + offset;
+  drawOctahedralComplex(svg, rightCx, cy, 'l-form', '#7c3aed');
+  
+  info.innerHTML = '<strong>Optical Isomers:</strong> Non-superimposable mirror images (enantiomers). The complex has no plane of symmetry.';
+}
+
+function drawOctahedralComplex(svg, cx, cy, label, color) {
+  const metal = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  metal.setAttribute('cx', cx);
+  metal.setAttribute('cy', cy);
+  metal.setAttribute('r', 18);
+  metal.setAttribute('fill', color);
+  metal.setAttribute('stroke', 'white');
+  metal.setAttribute('stroke-width', 2);
+  svg.appendChild(metal);
+  
+  const positions = [
+    {x: cx - 70, y: cy},
+    {x: cx + 70, y: cy},
+    {x: cx, y: cy - 70},
+    {x: cx, y: cy + 70}
+  ];
+  
+  positions.forEach(pos => {
+    const bond = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    bond.setAttribute('x1', cx);
+    bond.setAttribute('y1', cy);
+    bond.setAttribute('x2', pos.x);
+    bond.setAttribute('y2', pos.y);
+    bond.setAttribute('stroke', 'white');
+    bond.setAttribute('stroke-width', 2);
+    svg.appendChild(bond);
+    
+    const ligand = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    ligand.setAttribute('cx', pos.x);
+    ligand.setAttribute('cy', pos.y);
+    ligand.setAttribute('r', 14);
+    ligand.setAttribute('fill', '#10b981');
+    ligand.setAttribute('stroke', 'white');
+    ligand.setAttribute('stroke-width', 2);
+    svg.appendChild(ligand);
+  });
+  
+  const labelText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  labelText.setAttribute('x', cx);
+  labelText.setAttribute('y', cy + 110);
+  labelText.setAttribute('text-anchor', 'middle');
+  labelText.setAttribute('fill', 'white');
+  labelText.setAttribute('font-size', '14');
+  labelText.setAttribute('font-weight', 'bold');
+  labelText.textContent = label;
+  svg.appendChild(labelText);
+}
+
+function drawTetrahedral(svg, info) {
+  const cx = 300, cy = 200;
+  
+  info.innerHTML = '<strong>Tetrahedral Complexes:</strong> Do NOT show geometric isomerism because all positions are equivalent. Only optical isomerism is possible for certain asymmetric complexes.';
+  
+  const metal = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  metal.setAttribute('cx', cx);
+  metal.setAttribute('cy', cy);
+  metal.setAttribute('r', 25);
+  metal.setAttribute('fill', '#3b82f6');
+  metal.setAttribute('stroke', 'white');
+  metal.setAttribute('stroke-width', 3);
+  svg.appendChild(metal);
+  
+  const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  text.setAttribute('x', cx);
+  text.setAttribute('y', cy + 8);
+  text.setAttribute('text-anchor', 'middle');
+  text.setAttribute('fill', 'white');
+  text.setAttribute('font-size', '18');
+  text.setAttribute('font-weight', 'bold');
+  text.textContent = 'M';
+  svg.appendChild(text);
+  
+  const positions = [
+    {x: cx, y: cy - 100},
+    {x: cx - 90, y: cy + 50},
+    {x: cx + 90, y: cy + 50},
+    {x: cx, y: cy + 30}
+  ];
+  
+  positions.forEach((pos, i) => {
+    const bond = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    bond.setAttribute('x1', cx);
+    bond.setAttribute('y1', cy);
+    bond.setAttribute('x2', pos.x);
+    bond.setAttribute('y2', pos.y);
+    bond.setAttribute('stroke', 'white');
+    bond.setAttribute('stroke-width', 2);
+    svg.appendChild(bond);
+    
+    const ligand = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    ligand.setAttribute('cx', pos.x);
+    ligand.setAttribute('cy', pos.y);
+    ligand.setAttribute('r', 18);
+    ligand.setAttribute('fill', '#10b981');
+    ligand.setAttribute('stroke', 'white');
+    ligand.setAttribute('stroke-width', 2);
+    svg.appendChild(ligand);
+    
+    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    label.setAttribute('x', pos.x);
+    label.setAttribute('y', pos.y + 6);
+    label.setAttribute('text-anchor', 'middle');
+    label.setAttribute('fill', 'white');
+    label.setAttribute('font-size', '14');
+    label.setAttribute('font-weight', 'bold');
+    label.textContent = 'L';
+    svg.appendChild(label);
+  });
+}
+
+drawIsomer();
+
+// ===== CFT SANDBOX (COMPLETELY REDESIGNED) =====
+let cftGeometry = 'octahedral';
+let ligandStrength = 50;
+
+function setCFTGeometry(geom, btn) {
+  cftGeometry = geom;
+  document.querySelectorAll('#cft-geom-controls .sim-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  drawCFT();
+}
+
+function updateLigandStrength(value) {
+  ligandStrength = parseInt(value);
+  const label = document.getElementById('strength-label');
+  
+  if (value < 33) {
+    label.textContent = 'Weak Field';
+    label.style.color = '#ef4444';
+  } else if (value > 66) {
+    label.textContent = 'Strong Field';
+    label.style.color = '#3b82f6';
+  } else {
+    label.textContent = 'Medium';
+    label.style.color = '#fbbf24';
+  }
+  
+  drawCFT();
+}
+
+function drawCFT() {
+  const canvas = document.getElementById('cft-canvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  ctx.fillStyle = '#0f172a';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+  // Draw energy axis
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(80, 50);
+  ctx.lineTo(80, 500);
+  ctx.stroke();
+  
+  // Arrow at top
+  ctx.beginPath();
+  ctx.moveTo(75, 60);
+  ctx.lineTo(80, 50);
+  ctx.lineTo(85, 60);
+  ctx.stroke();
+  
+  // Energy label
+  ctx.save();
+  ctx.translate(50, 275);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillStyle = 'white';
+  ctx.font = 'bold 18px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('Energy', 0, 0);
+  ctx.restore();
+  
+  // Calculate delta based on ligand strength
+  let delta = (ligandStrength / 100) * 300; // 0 to 300 pixels
+  let t2gY, egY;
+  
+  if (cftGeometry === 'octahedral') {
+    // Octahedral: t2g lower (higher Y), eg higher (lower Y)
+    t2gY = 380;
+    egY = 380 - delta;
+    
+    document.getElementById('delta-value').textContent = Math.round(delta * 100);
+    
+    // Draw t2g level (3 orbitals)
+    ctx.strokeStyle = '#3b82f6';
+    ctx.lineWidth = 8;
+    for (let i = 0; i < 3; i++) {
+      ctx.beginPath();
+      ctx.moveTo(200 + i * 120, t2gY);
+      ctx.lineTo(280 + i * 120, t2gY);
+      ctx.stroke();
+    }
+    
+    // Draw eg level (2 orbitals)
+    ctx.strokeStyle = '#ef4444';
+    for (let i = 0; i < 2; i++) {
+      ctx.beginPath();
+      ctx.moveTo(260 + i * 120, egY);
+      ctx.lineTo(340 + i * 120, egY);
+      ctx.stroke();
+    }
+    
+    // Labels for t2g
+    ctx.fillStyle = '#3b82f6';
+    ctx.font = 'bold 16px Arial';
+    ctx.textAlign = 'left';
+    ctx.fillText('t₂g', 560, t2gY - 10);
+    ctx.fillStyle = 'white';
+    ctx.font = '14px Arial';
+    ctx.fillText('dxy, dyz, dzx', 560, t2gY + 10);
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '12px Arial';
+    ctx.fillText('(Lower energy)', 560, t2gY + 28);
+    
+    // Labels for eg
+    ctx.fillStyle = '#ef4444';
+    ctx.font = 'bold 16px Arial';
+    ctx.fillText('eg', 560, egY - 10);
+    ctx.fillStyle = 'white';
+    ctx.font = '14px Arial';
+    ctx.fillText('dx²-y², dz²', 560, egY + 10);
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '12px Arial';
+    ctx.fillText('(Higher energy)', 560, egY + 28);
+    
+  } else {
+    // Tetrahedral: e lower, t2 higher (opposite)
+    t2gY = 200;
+    egY = 200 + delta;
+    
+    document.getElementById('delta-value').textContent = Math.round(delta * 100 * 4/9);
+    
+    // Draw e level (2 orbitals)
+    ctx.strokeStyle = '#ef4444';
+    ctx.lineWidth = 8;
+    for (let i = 0; i < 2; i++) {
+      ctx.beginPath();
+      ctx.moveTo(260 + i * 120, t2gY);
+      ctx.lineTo(340 + i * 120, t2gY);
+      ctx.stroke();
+    }
+    
+    // Draw t2 level (3 orbitals)
+    ctx.strokeStyle = '#3b82f6';
+    for (let i = 0; i < 3; i++) {
+      ctx.beginPath();
+      ctx.moveTo(200 + i * 120, egY);
+      ctx.lineTo(280 + i * 120, egY);
+      ctx.stroke();
+    }
+    
+    // Labels for e
+    ctx.fillStyle = '#ef4444';
+    ctx.font = 'bold 16px Arial';
+    ctx.textAlign = 'left';
+    ctx.fillText('e', 560, t2gY - 10);
+    ctx.fillStyle = 'white';
+    ctx.font = '14px Arial';
+    ctx.fillText('dx²-y², dz²', 560, t2gY + 10);
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '12px Arial';
+    ctx.fillText('(Lower energy)', 560, t2gY + 28);
+    
+    // Labels for t2
+    ctx.fillStyle = '#3b82f6';
+    ctx.font = 'bold 16px Arial';
+    ctx.fillText('t₂', 560, egY - 10);
+    ctx.fillStyle = 'white';
+    ctx.font = '14px Arial';
+    ctx.fillText('dxy, dyz, dzx', 560, egY + 10);
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '12px Arial';
+    ctx.fillText('(Higher energy)', 560, egY + 28);
+  }
+  
+  // Draw delta arrow
+  ctx.strokeStyle = '#fbbf24';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(540, t2gY);
+  ctx.lineTo(540, egY);
+  ctx.stroke();
+  
+  // Arrowheads
+  ctx.beginPath();
+  ctx.moveTo(535, t2gY - 10);
+  ctx.lineTo(540, t2gY);
+  ctx.lineTo(545, t2gY - 10);
+  ctx.stroke();
+  
+  ctx.beginPath();
+  ctx.moveTo(535, egY + 10);
+  ctx.lineTo(540, egY);
+  ctx.lineTo(545, egY + 10);
+  ctx.stroke();
+  
+  // Delta label
+  ctx.fillStyle = '#fbbf24';
+  ctx.font = 'bold 20px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(cftGeometry === 'octahedral' ? 'Δo' : 'Δt', 570, (t2gY + egY) / 2);
+  
+  // Determine high spin vs low spin
+  const isHighSpin = ligandStrength < 50;
+  document.getElementById('config-value').textContent = isHighSpin ? 'High Spin' : 'Low Spin';
+  
+  // Calculate unpaired electrons for d6 (Co3+ case)
+  let unpaired;
+  if (cftGeometry === 'octahedral') {
+    unpaired = isHighSpin ? 4 : 0;
+  } else {
+    unpaired = isHighSpin ? 2 : 0;
+  }
+  document.getElementById('unpaired-value').textContent = unpaired;
+  
+  // Draw electrons (simplified for d6 octahedral)
+  if (cftGeometry === 'octahedral') {
+    if (isHighSpin) {
+      // t2g: 3 up, 1 down in first orbital; eg: 2 up
+      drawElectrons(ctx, 200, t2gY, [2, 1, 1]); // First orbital has 2, others have 1
+      drawElectrons(ctx, 260, egY, [1, 1]); // Both have 1
+    } else {
+      // t2g: all 6 electrons (3 pairs)
+      drawElectrons(ctx, 200, t2gY, [2, 2, 2]); // All orbitals full
+    }
+  } else {
+    if (isHighSpin) {
+      // e: 2 up; t2: 2 up, 2 down in first orbital
+      drawElectrons(ctx, 260, t2gY, [1, 1]); // Both have 1
+      drawElectrons(ctx, 200, egY, [2, 1, 1]); // First has 2, others have 1
+    } else {
+      // e: all 4 electrons (2 pairs)
+      drawElectrons(ctx, 260, t2gY, [2, 2]); // Both orbitals full
+    }
+  }
+}
+
+function drawElectrons(ctx, x, y, electrons) {
+  electrons.forEach((count, i) => {
+    if (count >= 1) {
+      // Up arrow (yellow)
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath();
+      ctx.moveTo(x + i * 30 + 35, y - 25);
+      ctx.lineTo(x + i * 30 + 40, y - 15);
+      ctx.lineTo(x + i * 30 + 30, y - 15);
+      ctx.closePath();
+      ctx.fill();
+      
+      ctx.fillRect(x + i * 30 + 33, y - 15, 4, 18);
+    }
+    if (count >= 2) {
+      // Down arrow (red)
+      ctx.fillStyle = '#ef4444';
+      ctx.beginPath();
+      ctx.moveTo(x + i * 30 + 45, y + 5);
+      ctx.lineTo(x + i * 30 + 50, y - 5);
+      ctx.lineTo(x + i * 30 + 40, y - 5);
+      ctx.closePath();
+      ctx.fill();
+      
+      ctx.fillRect(x + i * 30 + 43, y - 5, 4, 18);
+    }
+  });
+}
+
+drawCFT();
+
+// ===== NCERT MOLECULE VISUALIZER =====
+const molecules = {
+  'co-nh3': {
+    name: '[Co(NH₃)₆]³⁺',
+    metal: 'Co³⁺',
+    dCount: 6,
+    field: 'Strong',
+    spin: 'Low Spin',
+    config: 't₂g⁶',
+    color: 'Yellow-Orange',
+    absorbs: 'Violet (~400 nm)',
+    magnetic: 'Diamagnetic',
+    absorbedColor: '#8b5cf6',
+    emittedColor: '#f59e0b'
+  },
+  'co-f': {
+    name: '[CoF₆]³⁻',
+    metal: 'Co³⁺',
+    dCount: 6,
+    field: 'Weak',
+    spin: 'High Spin',
+    config: 't₂g⁴ eg²',
+    color: 'Blue-Green',
+    absorbs: 'Red (~650 nm)',
+    magnetic: 'Paramagnetic (4 unpaired)',
+    absorbedColor: '#ef4444',
+    emittedColor: '#10b981'
+  },
+  'ni-h2o': {
+    name: '[Ni(H₂O)₆]²⁺',
+    metal: 'Ni²⁺',
+    dCount: 8,
+    field: 'Weak',
+    spin: 'High Spin',
+    config: 't₂g⁶ eg²',
+    color: 'Green',
+    absorbs: 'Red (~650 nm)',
+    magnetic: 'Paramagnetic (2 unpaired)',
+    absorbedColor: '#ef4444',
+    emittedColor: '#10b981'
+  },
+  'fe-cn': {
+    name: '[Fe(CN)₆]³⁻',
+    metal: 'Fe³⁺',
+    dCount: 5,
+    field: 'Strong',
+    spin: 'Low Spin',
+    config: 't₂g⁵',
+    color: 'Yellow',
+    absorbs: 'Blue (~450 nm)',
+    magnetic: 'Paramagnetic (1 unpaired)',
+    absorbedColor: '#3b82f6',
+    emittedColor: '#fbbf24'
+  },
+  'sc-h2o': {
+    name: '[Sc(H₂O)₆]³⁺',
+    metal: 'Sc³⁺',
+    dCount: 0,
+    field: 'Weak',
+    spin: 'N/A',
+    config: 't₂g⁰ eg⁰',
+    color: 'Colorless',
+    absorbs: 'None (no d-d transition)',
+    magnetic: 'Diamagnetic',
+    absorbedColor: 'none',
+    emittedColor: 'white'
+  }
+};
+
+let currentMolecule = 'co-nh3';
+
+function selectMolecule(mol, btn) {
+  currentMolecule = mol;
+  document.querySelectorAll('#molecule-controls .sim-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const data = molecules[mol];
+  document.getElementById('mol-name').textContent = data.name;
+  document.getElementById('mol-ox').textContent = data.metal;
+  document.getElementById('mol-d').textContent = 'd' + data.dCount;
+  document.getElementById('mol-field').textContent = data.field;
+  document.getElementById('mol-spin').textContent = data.spin;
+  document.getElementById('mol-config').textContent = data.config;
+  document.getElementById('mol-color').textContent = data.color;
+  document.getElementById('mol-absorbs').textContent = data.absorbs;
+  document.getElementById('mol-magnetic').textContent = data.magnetic;
+  
+  drawMolecule();
+}
+
+function drawMolecule() {
+  const canvas = document.getElementById('molecule-canvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  ctx.fillStyle = '#0f172a';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+  const data = molecules[currentMolecule];
+  
+  drawCFTDiagram(ctx, 100, 250, data);
+  drawComplexMolecule(ctx, 600, 250, data);
+}
+
+function drawCFTDiagram(ctx, x, y, data) {
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(x, y - 180);
+  ctx.lineTo(x, y + 180);
+  ctx.stroke();
+  
+  const t2gY = y + 80;
+  ctx.strokeStyle = '#3b82f6';
+  ctx.lineWidth = 4;
+  for (let i = 0; i < 3; i++) {
+    ctx.beginPath();
+    ctx.moveTo(x + 20 + i * 50, t2gY);
+    ctx.lineTo(x + 60 + i * 50, t2gY);
+    ctx.stroke();
+  }
+  
+  const egY = y - 100;
+  ctx.strokeStyle = '#ef4444';
+  for (let i = 0; i < 2; i++) {
+    ctx.beginPath();
+    ctx.moveTo(x + 50 + i * 50, egY);
+    ctx.lineTo(x + 90 + i * 50, egY);
+    ctx.stroke();
+  }
+  
+  ctx.fillStyle = '#3b82f6';
+  ctx.font = 'bold 14px Arial';
+  ctx.textAlign = 'left';
+  ctx.fillText('t₂g', x + 180, t2gY + 5);
+  
+  ctx.fillStyle = '#ef4444';
+  ctx.fillText('eg', x + 180, egY + 5);
+  
+  ctx.strokeStyle = '#fbbf24';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(x + 220, t2gY);
+  ctx.lineTo(x + 220, egY);
+  ctx.stroke();
+  
+  ctx.fillStyle = '#fbbf24';
+  ctx.font = 'bold 12px Arial';
+  ctx.fillText('Δo', x + 230, (t2gY + egY) / 2);
+}
+
+function drawComplexMolecule(ctx, x, y, data) {
+  ctx.fillStyle = '#3b82f6';
+  ctx.beginPath();
+  ctx.arc(x, y, 35, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  
+  ctx.fillStyle = 'white';
+  ctx.font = 'bold 18px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(data.metal.charAt(0), x, y + 6);
+  
+  const positions = [
+    {x: x - 120, y: y},
+    {x: x + 120, y: y},
+    {x: x, y: y - 120},
+    {x: x, y: y + 120},
+    {x: x - 85, y: y - 85},
+    {x: x + 85, y: y + 85}
+  ];
+  
+  positions.forEach(pos => {
+    ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+    
+    ctx.fillStyle = '#10b981';
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 22, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  });
+  
+  if (data.color !== 'Colorless') {
+    const gradient = ctx.createRadialGradient(x, y, 35, x, y, 180);
+    gradient.addColorStop(0, data.emittedColor + '60');
+    gradient.addColorStop(1, data.emittedColor + '00');
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(x, y, 180, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  
+  ctx.fillStyle = 'white';
+  ctx.font = 'bold 16px Arial';
+  ctx.fillText('Color: ' + data.color, x, y + 200);
+}
+
+drawMolecule();
+
+let photonAnimating = false;
+
+function animatePhoton() {
+  if (photonAnimating) return;
+  photonAnimating = true;
+  
+  const canvas = document.getElementById('molecule-canvas');
+  const ctx = canvas.getContext('2d');
+  const data = molecules[currentMolecule];
+  
+  if (data.dCount === 0) {
+    alert('No d-electrons available for d-d transition! Complex is colorless.');
+    photonAnimating = false;
+    return;
+  }
+  
+  let photonX = 0;
+  const photonY = 150;
+  const targetX = 100;
+  
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawMolecule();
+    
+    ctx.fillStyle = data.absorbedColor;
+    ctx.beginPath();
+    ctx.arc(photonX, photonY, 10, 0, Math.PI * 2);
+    ctx.fill();
+    
+    const gradient = ctx.createRadialGradient(photonX, photonY, 0, photonX, photonY, 25);
+    gradient.addColorStop(0, data.absorbedColor);
+    gradient.addColorStop(1, data.absorbedColor + '00');
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(photonX, photonY, 25, 0, Math.PI * 2);
+    ctx.fill();
+    
+    photonX += 6;
+    
+    if (photonX < targetX) {
+      requestAnimationFrame(animate);
+    } else {
+      animateElectronJump();
+    }
+  }
+  
+  animate();
+}
+
+function animateElectronJump() {
+  const canvas = document.getElementById('molecule-canvas');
+  const ctx = canvas.getContext('2d');
+  const data = molecules[currentMolecule];
+  
+  let jumpProgress = 0;
+  
+  function animateJump() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawMolecule();
+    
+    const startY = 330;
+    const endY = 150;
+    const currentY = startY - (startY - endY) * jumpProgress;
+    
+    ctx.fillStyle = '#fbbf24';
+    ctx.beginPath();
+    ctx.arc(120, currentY, 8, 0, Math.PI * 2);
+    ctx.fill();
+    
+    jumpProgress += 0.04;
+    
+    if (jumpProgress < 1) {
+      requestAnimationFrame(animateJump);
+    } else {
+      setTimeout(() => {
+        animateEmission();
+      }, 500);
+    }
+  }
+  
+  animateJump();
+}
+
+function animateEmission() {
+  const canvas = document.getElementById('molecule-canvas');
+  const ctx = canvas.getContext('2d');
+  const data = molecules[currentMolecule];
+  
+  let emissionProgress = 0;
+  
+  function animateEmit() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawMolecule();
+    
+    const gradient = ctx.createRadialGradient(600, 250, 0, 600, 250, 200 * emissionProgress);
+    gradient.addColorStop(0, data.emittedColor + 'ff');
+    gradient.addColorStop(0.5, data.emittedColor + '80');
+    gradient.addColorStop(1, data.emittedColor + '00');
+    
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(600, 250, 200 * emissionProgress, 0, Math.PI * 2);
+    ctx.fill();
+    
+    emissionProgress += 0.015;
+    
+    if (emissionProgress < 1) {
+      requestAnimationFrame(animateEmit);
+    } else {
+      photonAnimating = false;
+    }
+  }
+  
+  animateEmit();
+}
+
+// ===== IUPAC BUILDER =====
+function buildIUPAC() {
+  const input = document.getElementById('iupac-input').value;
+  const steps = document.getElementById('iupac-steps');
+  const result = document.getElementById('iupac-result');
+  
+  steps.innerHTML = '';
+  
+  if (input.includes('[Co(NH3)5Cl]Cl2')) {
+    steps.innerHTML = `
+      <li>Identify cation and anion parts: <strong>[Co(NH₃)₅Cl]²⁺</strong> (cation) and <strong>2Cl⁻</strong> (anions)</li>
+      <li>Calculate oxidation state: Let x = Co oxidation state. x + 5(0) + (-1) = +2. Therefore x = <strong>+3</strong></li>
+      <li>List ligands alphabetically: <strong>ammine (NH₃)</strong> and <strong>chlorido (Cl⁻)</strong></li>
+      <li>Add prefixes for count: <strong>penta</strong>ammine (5 NH₃) and <strong>chlorido</strong> (1 Cl⁻)</li>
+      <li>Combine: <strong>pentaamminechlorido</strong></li>
+      <li>Add metal name with oxidation state: <strong>cobalt(III)</strong></li>
+      <li>Add counter ion: <strong>chloride</strong></li>
+    `;
+    result.innerHTML = '<strong>Final IUPAC Name:</strong><br>Pentaamminechloridocobalt(III) chloride';
+  } else if (input.includes('K3[Fe(CN)6]')) {
+    steps.innerHTML = `
+      <li>Identify cation and anion parts: <strong>3K⁺</strong> (cations) and <strong>[Fe(CN)₆]³⁻</strong> (anion)</li>
+      <li>Calculate oxidation state: Let x = Fe oxidation state. x + 6(-1) = -3. Therefore x = <strong>+3</strong></li>
+      <li>List ligands: <strong>cyanido (CN⁻)</strong></li>
+      <li>Add prefix: <strong>hexa</strong>cyanido (6 CN⁻)</li>
+      <li>Add metal name: Since complex is anion, add "-ate" → <strong>ferrate(III)</strong></li>
+      <li>Add cation: <strong>potassium</strong></li>
+    `;
+    result.innerHTML = '<strong>Final IUPAC Name:</strong><br>Potassium hexacyanidoferrate(III)';
+  } else {
+    steps.innerHTML = '<li>Custom parsing for: <strong>' + input + '</strong></li><li>For best results, try standard formulas like [Co(NH₃)₅Cl]Cl₂ or K₃[Fe(CN)₆]</li>';
+    result.innerHTML = '<strong>Note:</strong> Custom compound detected. Please use standard NCERT formulas for detailed breakdown.';
+  }
+}
+
+console.log('Coordination Compounds Study Notes loaded successfully!');
+</script>
+</body>
+</html>
