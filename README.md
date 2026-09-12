@@ -4,7 +4,7 @@
 > *Curated & Engineered by Kedar Krishna • Bhubaneswar, Odisha*
 
 [![Live Portal](https://img.shields.io/badge/Live_Portal-GitHub_Pages-00F0FF?style=for-the-badge&logo=github)](https://kedar773.github.io/cbse-chemistry-alt/)
-[![Android APK](https://img.shields.io/badge/Android_App-Download_APK-10B981?style=for-the-badge&logo=android)](https://github.com/kedar773/chemistry-app/releases/download/v1.0.0/app-release.apk)
+[![Android APK](https://img.shields.io/badge/Android_App-Download_APK-10B981?style=for-the-badge&logo=android)](https://github.com/kedar773/chemistry-app-alt/releases/download/v1.0.0/app-release.apk)
 [![Target Exam](https://img.shields.io/badge/Target-CBSE_11_&_12_|_JEE_Main_&_Adv-FFB703?style=for-the-badge)](https://kedar773.github.io/cbse-chemistry-alt/)
 [![Engine Status](https://img.shields.io/badge/Engine_Status-100%25_Exam_Ready-00F0FF?style=for-the-badge)](https://kedar773.github.io/cbse-chemistry-alt/)
 [![Architecture](https://img.shields.io/badge/Theme-Obsidian_Cyber_Dark-050508?style=for-the-badge)](https://kedar773.github.io/cbse-chemistry-alt/)
@@ -13,8 +13,8 @@
 
 ## 🌐 Quick Access Links
 * 🚀 **Official Web Portal**: [**https://kedar773.github.io/cbse-chemistry-alt/**](https://kedar773.github.io/cbse-chemistry-alt/)
-* 📱 **Android App Download (v1.0.0 APK)**: [**Download Direct APK**](https://github.com/kedar773/chemistry-app/releases/download/v1.0.0/app-release.apk)
-* 🛠️ **Mobile App Source Repository**: [**kedar773/chemistry-app**](https://github.com/kedar773/chemistry-app)
+* 📱 **Android App Download (v1.0.0 APK)**: [**Download Direct APK**](https://github.com/kedar773/chemistry-app-alt/releases/download/v1.0.0/app-release.apk)
+* 🛠️ **Mobile App Source Repository**: [**kedar773/chemistry-app-alt**](https://github.com/kedar773/chemistry-app-alt)
 
 ---
 
@@ -87,7 +87,7 @@ KEDAR'S CHEMISTRY ENGINE
 ---
 
 ## 📱 Android Application Setup
-1. Download the latest compiled APK: [**app-release.apk**](https://github.com/kedar773/chemistry-app/releases/download/v1.0.0/app-release.apk)
+1. Download the latest compiled APK: [**app-release.apk**](https://github.com/kedar773/chemistry-app-alt/releases/download/v1.0.0/app-release.apk)
 2. On your Android device, tap the downloaded file and select **Install**.
 3. Enjoy 100% offline study access with full chapter notes and guides everywhere you go.
 

@@ -521,10 +521,11 @@ if (cubeCanvas && typeof THREE !== 'undefined') {
   function updateScrollytelling() {
     if (!scrollyContainer) return;
     updateRendererSize();
+    const stickyTopOffset = window.innerWidth <= 1024 ? 56 : 0;
     const rect = scrollyContainer.getBoundingClientRect();
     const scrollDist = scrollyContainer.offsetHeight - window.innerHeight;
     if (scrollDist <= 0) return;
-    let rawProgress = -rect.top / scrollDist;
+    let rawProgress = (stickyTopOffset - rect.top) / scrollDist;
     let progress = Math.max(0, Math.min(1, rawProgress));
 
     if (progressFill) {
@@ -585,9 +586,10 @@ if (cubeCanvas && typeof THREE !== 'undefined') {
   stepDots.forEach((dot) => {
     dot.addEventListener('click', function () {
       const step = parseInt(this.getAttribute('data-step'));
+      const stickyTopOffset = window.innerWidth <= 1024 ? 56 : 0;
       const rect = scrollyContainer.getBoundingClientRect();
       const scrollDist = scrollyContainer.offsetHeight - window.innerHeight;
-      const targetScrollTop = window.scrollY + rect.top + ((step + 0.5) / 6) * scrollDist;
+      const targetScrollTop = window.scrollY + rect.top - stickyTopOffset + ((step + 0.5) / 6) * scrollDist;
       window.scrollTo({ top: targetScrollTop, behavior: 'smooth' });
     });
   });

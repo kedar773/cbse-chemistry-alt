@@ -4,6 +4,7 @@
    ========================================================================== */
 
 :root {
+  --cyber-nav-height: 56px;
   --bg-space: #050508;
   --bg-surface: #0B0D14;
   --bg-card: rgba(14, 17, 26, 0.82);
@@ -611,6 +612,7 @@ body {
 .scrolly-outer-container {
   position: relative;
   min-height: 600vh;
+  scroll-margin-top: var(--cyber-nav-height, 56px);
   background: radial-gradient(circle at 50% 25%, #080a14 0%, #050508 65%);
   border-top: 1px solid var(--border-dim);
   border-bottom: 1px solid var(--border-dim);
@@ -667,6 +669,9 @@ body {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+.feature-header-meta {
+  display: block;
 }
 .feature-index-row {
   display: flex;
@@ -1676,35 +1681,114 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) {
-  /* Scrollytelling Container & Sticky Viewport Pinning */
+  /* Responsive Cyber Navigation */
+  .cyber-nav {
+    padding: 0.55rem 4vw;
+    height: var(--cyber-nav-height);
+    box-sizing: border-box;
+  }
+  .nav-left {
+    gap: 0.75rem;
+  }
+  .brand-logo {
+    gap: 0.6rem;
+  }
+  .brand-emblem {
+    width: 36px;
+    height: 36px;
+  }
+  .brand-title-group h1 {
+    font-size: 0.96rem;
+    white-space: nowrap;
+  }
+  .brand-title-group span {
+    font-size: 0.58rem;
+    white-space: nowrap;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-right {
+    gap: 0.45rem;
+  }
+  .btn-cyber-outline {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.72rem;
+  }
+  .btn-cyber-primary {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.72rem;
+  }
+
+  /* Responsive Hero Section */
+  .cyber-hero {
+    padding: 3.2rem 4vw 2rem;
+  }
+  .hero-tag-badge {
+    font-size: 0.68rem;
+    margin-bottom: 1.1rem;
+    padding: 0.28rem 0.75rem;
+  }
+  .hero-headline {
+    font-size: clamp(1.9rem, 6vw, 2.7rem);
+    margin-bottom: 0.85rem;
+  }
+  .hero-subtext {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.55;
+  }
+  .hero-cta-group {
+    margin-bottom: 2rem;
+    gap: 0.75rem;
+  }
+  .hero-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    padding: 0.85rem;
+  }
+  .stat-box {
+    padding: 0.5rem;
+  }
+  .stat-box:nth-child(2) {
+    border-right: none;
+  }
+  .stat-num {
+    font-size: 1.55rem;
+  }
+  .stat-label {
+    font-size: 0.66rem;
+  }
+
+  /* Scrollytelling Container & Centered Sticky Viewport */
   .scrolly-outer-container {
-    min-height: 480vh;
+    min-height: 360vh;
+    scroll-margin-top: var(--cyber-nav-height);
     touch-action: pan-y;
   }
   .scrolly-sticky-stage {
     position: sticky;
-    top: 0;
-    height: 100vh;
-    height: 100dvh;
+    top: var(--cyber-nav-height);
+    height: calc(100dvh - var(--cyber-nav-height));
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center; /* Centers 3D element and Core Syllabus cards in the viewport */
     align-items: center;
-    padding: 0.5rem 1rem 0.6rem;
-    gap: 0;
+    padding: 0.4rem 1rem;
+    gap: 0.4rem;
     overflow: hidden;
     box-sizing: border-box;
     touch-action: pan-y;
   }
 
-  /* 1. Top Section: Class & Branch Header (15vh) */
+  /* 1. Top Section: Streamlined Step & Branch Header */
   .scrolly-left-col {
     width: 100%;
-    max-width: 480px;
-    height: 15vh;
-    min-height: 82px;
-    max-height: 115px;
+    max-width: 420px;
+    height: auto;
+    min-height: 48px;
+    max-height: 64px;
     position: relative;
     display: flex;
     align-items: center;
@@ -1722,7 +1806,7 @@ body {
     align-items: center;
     text-align: center;
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
     transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
   }
@@ -1731,74 +1815,86 @@ body {
     transform: translateY(0);
     pointer-events: auto;
   }
-  .feature-index-row {
-    font-size: 0.68rem;
-    margin-bottom: 0.15rem;
+  .feature-header-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 0.45rem;
+    margin-bottom: 0.18rem;
+  }
+  .feature-index-row {
+    font-size: 0.66rem;
+    margin-bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
   }
   .feature-index-row .index-num {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1;
   }
   .feature-branch-badge {
-    padding: 0.15rem 0.55rem;
-    font-size: 0.62rem;
-    margin-bottom: 0.22rem;
+    padding: 0.12rem 0.48rem;
+    font-size: 0.6rem;
+    margin-bottom: 0;
+    display: inline-flex;
+    align-items: center;
   }
   .feature-headline {
-    font-size: clamp(0.98rem, 3.4vw, 1.25rem);
+    font-size: clamp(0.92rem, 3.6vw, 1.12rem);
     line-height: 1.15;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0;
+    font-weight: 800;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
   }
   .feature-desc {
-    display: none; /* Hide verbose paragraph to allow 3D element and Core Syllabus to co-exist */
+    display: none;
   }
   .feature-cta-btn {
-    padding: 0.26rem 0.75rem;
-    font-size: 0.68rem;
-    gap: 0.35rem;
+    display: none;
   }
 
-  /* 2. Central 3D Centerpiece: Proportional to Viewport Height (27vh) */
+  /* 2. Central 3D Centerpiece: In Center of Viewport */
   .scrolly-center-col {
     position: relative;
     width: 100%;
-    height: 27vh;
-    min-height: 130px;
-    max-height: 205px;
+    height: 155px;
+    min-height: 135px;
+    max-height: 170px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 5;
     flex-shrink: 0;
     pointer-events: none;
+    margin: 0;
   }
   #web3CubeCanvas {
-    width: min(180px, 25vh);
-    height: min(180px, 25vh);
-    max-width: 180px;
-    max-height: 180px;
+    width: 150px;
+    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
     margin: 0 auto;
     display: block;
     pointer-events: none;
     touch-action: pan-y;
   }
   .scrolly-stage-glow {
-    width: min(210px, 28vh);
-    height: min(210px, 28vh);
-    filter: blur(35px);
+    width: 175px;
+    height: 175px;
+    filter: blur(28px);
   }
 
-  /* 3. Core Syllabus Box: Sized in Balanced Ratio (~40vh) with Respect to Screen & 3D Centerpiece */
+  /* 3. Core Syllabus Box: Centered Directly Beneath 3D Centerpiece */
   .scrolly-right-col {
     width: 100%;
-    max-width: 480px;
-    height: 40vh;
-    min-height: 190px;
-    max-height: 270px;
+    max-width: 420px;
+    height: auto;
+    min-height: 200px;
+    max-height: 255px;
     position: relative;
     display: flex;
     align-items: center;
@@ -1814,7 +1910,7 @@ body {
     flex-direction: column;
     justify-content: center;
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
     transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
   }
@@ -1825,7 +1921,7 @@ body {
   }
   .chapters-card-inner {
     padding: 0.45rem 0.8rem;
-    border-radius: 9px;
+    border-radius: 10px;
     height: 100%;
     box-sizing: border-box;
     display: flex;
@@ -1834,55 +1930,54 @@ body {
   }
   .chapters-card-header {
     font-size: 0.62rem;
-    margin-bottom: 0.22rem;
-    padding-bottom: 0.18rem;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.16rem;
     letter-spacing: 0.05em;
   }
   .chapters-items-list {
-    gap: 0.25rem;
+    gap: 0.22rem;
     display: flex;
     flex-direction: column;
   }
   .chapter-item-row {
-    padding: 0.22rem 0.48rem;
+    padding: 0.2rem 0.45rem;
     border-radius: 5px;
   }
   .chapter-name-text {
-    font-size: 0.74rem;
+    font-size: 0.7rem;
     line-height: 1.2;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px;
+    max-width: 175px;
   }
   .chapter-sub-text {
-    font-size: 0.6rem;
+    font-size: 0.56rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px;
+    max-width: 175px;
   }
   .chapter-glow-pill {
-    font-size: 0.58rem;
-    padding: 0.12rem 0.38rem;
+    font-size: 0.54rem;
+    padding: 0.1rem 0.32rem;
   }
   .branch-concept-chips {
-    margin-top: 0.22rem;
-    padding-top: 0.22rem;
-    gap: 0.25rem;
+    margin-top: 0.2rem;
+    padding-top: 0.18rem;
+    gap: 0.22rem;
     display: flex;
     flex-wrap: wrap;
   }
   .concept-tag-chip {
-    font-size: 0.56rem;
-    padding: 0.1rem 0.35rem;
+    font-size: 0.54rem;
+    padding: 0.08rem 0.32rem;
   }
-  /* On compact screens hide 3rd and 4th chips to prevent vertical expansion */
   .concept-tag-chip:nth-child(n+3) {
     display: none;
   }
 
-  /* 4. Bottom Horizontal Step Indicator Dots (4vh) */
+  /* 4. Bottom Horizontal Step Indicator Dots */
   .scrolly-progress-nav {
     display: flex;
     position: relative;
@@ -1892,11 +1987,11 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 0.6rem;
-    height: 4vh;
-    min-height: 24px;
+    gap: 0.5rem;
+    height: 24px;
     z-index: 30;
     flex-shrink: 0;
+    margin-top: 0.1rem;
   }
   .progress-track-line,
   .progress-fill-line {
@@ -1905,16 +2000,10 @@ body {
   .scrolly-step-dot {
     width: 22px;
     height: 22px;
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     border-width: 1px;
   }
 
-  .hero-stats-bar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .stat-box:nth-child(2) {
-    border-right: none;
-  }
   .centers-grid {
     grid-template-columns: 1fr;
   }
@@ -1922,64 +2011,92 @@ body {
 
 @media (max-width: 640px) {
   .scrolly-sticky-stage {
-    padding: 0.35rem 0.65rem 0.45rem;
+    padding: 0.3rem 0.65rem 0.35rem;
+    gap: 0.35rem;
   }
   .scrolly-left-col {
-    height: 14vh;
-    min-height: 75px;
-    max-height: 98px;
+    min-height: 44px;
+    max-height: 58px;
   }
   .feature-headline {
-    font-size: clamp(0.9rem, 3.8vw, 1.1rem);
-    margin-bottom: 0.2rem;
+    font-size: clamp(0.88rem, 3.8vw, 1.05rem);
   }
   .scrolly-center-col {
-    height: 25vh;
-    min-height: 115px;
-    max-height: 165px;
+    height: 145px;
+    min-height: 130px;
+    max-height: 155px;
   }
   #web3CubeCanvas {
-    width: min(150px, 23vh);
-    height: min(150px, 23vh);
-    max-width: 150px;
-    max-height: 150px;
+    width: 140px;
+    height: 140px;
+    max-width: 140px;
+    max-height: 140px;
   }
   .scrolly-stage-glow {
-    width: min(165px, 25vh);
-    height: min(165px, 25vh);
-    filter: blur(28px);
+    width: 160px;
+    height: 160px;
+    filter: blur(25px);
   }
   .scrolly-right-col {
-    height: 43vh;
-    min-height: 180px;
-    max-height: 245px;
+    min-height: 190px;
+    max-height: 240px;
   }
   .chapters-card-inner {
-    padding: 0.38rem 0.65rem;
+    padding: 0.4rem 0.65rem;
   }
   .chapter-item-row {
-    padding: 0.18rem 0.42rem;
+    padding: 0.18rem 0.4rem;
   }
   .chapter-name-text {
-    font-size: 0.7rem;
-    max-width: 160px;
+    font-size: 0.68rem;
+    max-width: 155px;
   }
   .chapter-sub-text {
-    font-size: 0.58rem;
-    max-width: 160px;
+    font-size: 0.54rem;
+    max-width: 155px;
   }
   .chapter-glow-pill {
-    font-size: 0.54rem;
-    padding: 0.1rem 0.32rem;
+    font-size: 0.52rem;
+    padding: 0.08rem 0.3rem;
   }
   .scrolly-progress-nav {
-    gap: 0.45rem;
-    height: 3.5vh;
+    gap: 0.4rem;
+    height: 22px;
   }
   .scrolly-step-dot {
     width: 20px;
     height: 20px;
-    font-size: 0.55rem;
+    font-size: 0.54rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cyber-nav {
+    padding: 0.5rem 3vw;
+  }
+  .brand-title-group h1 {
+    font-size: 0.88rem;
+  }
+  .brand-title-group span {
+    font-size: 0.54rem;
+  }
+  .brand-emblem {
+    width: 32px;
+    height: 32px;
+  }
+  .mini-atom {
+    width: 24px;
+    height: 24px;
+  }
+  .btn-download-apk {
+    padding: 0.32rem 0.55rem;
+    font-size: 0.68rem;
+  }
+  #contactModalToggle .btn-text {
+    display: none;
+  }
+  #contactModalToggle {
+    padding: 0.32rem 0.48rem;
   }
 }
 
