@@ -2132,3 +2132,309 @@ body {
   }
 }
 
+/* ==========================================================================
+   KEDAR'S STEM ACADEMY MODAL & TRIGGER (CYBER DARK THEME)
+   ========================================================================== */
+
+.btn-cyber-academy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.85rem;
+  border-radius: 6px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(10, 11, 18, 0.8);
+  color: #00F0FF;
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+  text-decoration: none;
+}
+
+.btn-cyber-academy:hover {
+  background: rgba(0, 240, 255, 0.15);
+  border-color: #00F0FF;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.academy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 3, 6, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 99999;
+  animation: academyCyberFadeIn 0.2s ease;
+}
+
+@keyframes academyCyberFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.academy-modal-dialog {
+  background: #080910;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 50px rgba(0, 240, 255, 0.18), 0 25px 50px rgba(0, 0, 0, 0.9);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.academy-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: #0c0e18;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.academy-brand-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.academy-header-emblem {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.academy-title {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 1.4rem;
+  color: #00F0FF;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+  margin: 0;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.academy-subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0.2rem 0 0;
+  font-weight: 500;
+}
+
+.academy-modal-close {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #94a3b8;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.academy-modal-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #f87171;
+}
+
+.academy-modal-body {
+  padding: 1.5rem;
+}
+
+.academy-intro-note {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+  background: rgba(0, 240, 255, 0.05);
+  border-left: 3px solid #00F0FF;
+  padding: 0.65rem 1rem;
+  border-radius: 4px;
+}
+
+.academy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.academy-card {
+  display: flex;
+  flex-direction: column;
+  background: #0c0e18;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.academy-card:hover {
+  transform: translateY(-3px);
+  border-color: #00F0FF;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+}
+
+.academy-card.is-current {
+  border: 1.5px solid #10B981;
+  background: rgba(16, 185, 129, 0.06);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+}
+
+.academy-card.card-physics {
+  border-top: 3px solid #00F0FF;
+}
+
+.academy-card.card-maths {
+  border-top: 3px solid #FFB703;
+}
+
+.academy-card.card-chemistry {
+  border-top: 3px solid #10B981;
+}
+
+.academy-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.academy-card-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-physics {
+  background: rgba(0, 240, 255, 0.15);
+  color: #00F0FF;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.badge-maths {
+  background: rgba(255, 183, 3, 0.15);
+  color: #FFB703;
+  border: 1px solid rgba(255, 183, 3, 0.3);
+}
+
+.badge-chemistry {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.academy-status-current {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.2);
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-family: var(--font-mono);
+}
+
+.academy-status-available {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+.academy-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.academy-card-desc {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+  flex: 1;
+}
+
+.academy-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: #00F0FF;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.academy-card.is-current .academy-card-action {
+  color: #10B981;
+}
+
+.academy-arrow {
+  transition: transform 0.2s ease;
+}
+
+.academy-card:hover .academy-arrow {
+  transform: translateX(4px);
+}
+
+.academy-footer-meta {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.academy-mentor-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.academy-dot {
+  color: #475569;
+}
+
+@media (max-width: 640px) {
+  .academy-grid {
+    grid-template-columns: 1fr;
+  }
+  .academy-modal-dialog {
+    max-height: 95vh;
+  }
+}
+
+
